@@ -1,0 +1,253 @@
+---
+
+---
+
+<header class="main-header">
+    <div class="header-container">
+        <div class="logo-section">
+            <a href="/home">
+                <img
+                    src="/logo-oberstaff.png"
+                    alt="Oberstaff Logo"
+                    class="logo"
+                />
+            </a>
+        </div>
+
+        <button
+            class="mobile-menu-toggle"
+            aria-label="Abrir menú"
+            id="menu-toggle"
+        >
+            <iconify-icon
+                icon="solar:hamburger-menu-linear"
+                class="hamburger-icon"></iconify-icon>
+        </button>
+
+        <div class="header-nav-wrapper" id="nav-wrapper">
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#como-funciona">Cómo Funciona</a></li>
+                    <li><a href="#perfiles">Perfiles</a></li>
+                    <li><a href="#precios">Precios</a></li>
+                </ul>
+            </nav>
+
+            <div class="auth-section">
+                <span class="phone-number">
+                    <iconify-icon icon="solar:phone-bold" class="phone-icon"
+                    ></iconify-icon>
+                    +34 930 289 966
+                </span>
+                <a href="/login" class="login-link">Log in</a>
+                <a href="/register" class="signup-button">Sign Up</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<script>
+    const menuToggle = document.getElementById("menu-toggle");
+    const navWrapper = document.getElementById("nav-wrapper");
+
+    if (menuToggle && navWrapper) {
+        menuToggle.addEventListener("click", () => {
+            navWrapper.classList.toggle("is-open");
+
+            // Toggle icon (optional: change to 'X' icon)
+            const icon = menuToggle.querySelector("iconify-icon");
+            if (icon) {
+                if (navWrapper.classList.contains("is-open")) {
+                    icon.setAttribute("icon", "solar:close-square-linear");
+                } else {
+                    icon.setAttribute("icon", "solar:hamburger-menu-linear");
+                }
+            }
+        });
+    }
+</script>
+
+<style>
+    .main-header {
+        width: 100%;
+        background: white;
+        border-bottom: 1px solid #f0f0f0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        padding: 0.75rem 0;
+    }
+
+    .header-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+    }
+
+    .logo-section {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .auth-section {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .logo {
+        height: 40px;
+        display: block;
+    }
+
+    .mobile-menu-toggle {
+        display: none; /* Hidden on desktop */
+    }
+
+    .header-nav-wrapper {
+        display: contents; /* Allows children to participate in the container grid */
+    }
+
+    .nav-links {
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav-links ul {
+        list-style: none;
+        display: flex;
+        gap: 2.5rem;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-links a {
+        font-family: "Poppins", sans-serif;
+        text-decoration: none;
+        color: #444; /* Light black */
+        font-weight: 500;
+        font-size: 0.95rem;
+        transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+        color: #ff66cc; /* Pink hover */
+    }
+
+    .auth-section {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        justify-content: flex-end;
+    }
+
+    .phone-number {
+        font-weight: 500;
+        color: #333;
+        font-size: 0.95rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .phone-icon {
+        color: #444;
+        font-size: 0.85rem;
+    }
+
+    .login-link {
+        font-family: "Poppins", sans-serif;
+        text-decoration: none;
+        color: #1b1b1b;
+        font-weight: 700;
+        font-size: 0.95rem;
+        transition: color 0.2s ease;
+    }
+
+    .login-link:hover {
+        color: #ff66cc; /* Pink hover */
+    }
+
+    .signup-button {
+        font-family: "Poppins", sans-serif;
+        text-decoration: none;
+        background-color: #ff66cc;
+        color: #1b1b1b;
+        padding: 0.6rem 1.5rem;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        transition: transform 0.2s ease;
+        display: inline-block;
+    }
+
+    .signup-button:hover {
+        transform: scale(1.05); /* Grows a bit on hover */
+    }
+
+    @media (max-width: 1024px) {
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .mobile-menu-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .hamburger-icon {
+            font-size: 2rem;
+            color: #1b1b1b;
+        }
+
+        .header-nav-wrapper {
+            position: fixed;
+            top: 65px; /* Adjust based on header height */
+            left: 0;
+            width: 100%;
+            height: calc(100vh - 65px);
+            background: white;
+            flex-direction: column;
+            padding: 1.5rem 2rem;
+            gap: 1.5rem;
+            display: none; /* Hidden by default */
+            z-index: 1000;
+            overflow-y: auto;
+        }
+
+        .header-nav-wrapper.is-open {
+            display: flex;
+        }
+
+        .nav-links ul {
+            flex-direction: column;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: 1.2rem;
+        }
+
+        .auth-section {
+            flex-direction: column;
+            width: 100%;
+            padding-top: 2rem;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .signup-button {
+            width: 100%;
+            text-align: center;
+        }
+    }
+</style>

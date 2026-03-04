@@ -1,5 +1,6 @@
 ---
-import Sidebar from '../components/Sidebar.astro';
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 
 interface Props {
 	title: string;
@@ -15,25 +16,24 @@ const { title } = Astro.props;
 		<meta name="description" content="Agente de voz IA" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+			rel="stylesheet"
+		/>
+		<script
+			src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"
+		></script>
 		<title>{title}</title>
 	</head>
 	<body>
 		<div class="app-container">
-			<Sidebar />
+			<Header />
 			<main class="main-content">
 				<slot />
-				<footer class="main-footer">
-					<p>&copy; 2025. Todos los derechos reservados</p>
-					<div class="footer-links">
-						<a href="#">Política de Privacidad</a>
-						<span class="separator">|</span>
-						<a href="#">Términos de Uso</a>
-					</div>
-				</footer>
 			</main>
+			<Footer />
 		</div>
 	</body>
 </html>
@@ -42,13 +42,13 @@ const { title } = Astro.props;
 	:root {
 		--primary: #1a1a1a;
 		--primary-hover: #333333;
-		--bg-gradient-start: #fce7f3;
+		--bg-gradient-start: #fff0f7; /* Very light pink based on #ff66cc */
 		--bg-gradient-end: #f5d0fe;
-		--sidebar-bg: #fff0f5; /* Very light pink/off-white for sidebar */
+		--sidebar-bg: #fff0f7; /* Consistent light pink */
 		--text-color: #1a1a1a;
 		--card-bg: #ffffff;
 	}
-	
+
 	* {
 		box-sizing: border-box;
 		margin: 0;
@@ -56,17 +56,27 @@ const { title } = Astro.props;
 	}
 
 	html {
-		font-family: 'Outfit', sans-serif;
-		background-color: #fcf4f9; /* Light pinkish background for the whole app */
+		font-family: "Inter", sans-serif;
+		background-color: white; /* Light pinkish background for the whole app */
 		color: var(--text-color);
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-family: "Poppins", sans-serif;
 	}
 
 	body {
 		min-height: 100vh;
 	}
-	
+
 	.app-container {
 		display: flex;
+		flex-direction: column;
 		min-height: 100vh;
 	}
 
@@ -76,34 +86,8 @@ const { title } = Astro.props;
 		display: flex;
 		flex-direction: column;
 		overflow-y: auto;
-		height: 100vh;
 	}
 
-	.main-footer {
-		margin-top: auto;
-		padding-top: 3rem;
-		padding-bottom: 1rem;
-		text-align: center;
-		color: #666;
-		font-size: 0.9rem;
-	}
-
-	.footer-links {
-		display: flex;
-		justify-content: center;
-		gap: 0.5rem;
-		margin-top: 0.5rem;
-	}
-
-	.separator {
-		color: #ccc;
-	}
-
-	.footer-links a {
-		text-decoration: none;
-		color: #888;
-	}
-	
 	/* Utility for cards */
 	.card {
 		background: white;
@@ -111,7 +95,7 @@ const { title } = Astro.props;
 		padding: 1.5rem;
 		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 	}
-	
+
 	button {
 		cursor: pointer;
 		font-family: inherit;
