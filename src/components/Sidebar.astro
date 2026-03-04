@@ -1,0 +1,140 @@
+---
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1); // remove the first "/"
+---
+<aside class="sidebar">
+	<div class="workspace-selector">
+		<div class="workspace-icon">O</div>
+		<span>Oberstaff's Workspace</span>
+	</div>
+
+	<nav class="side-nav">
+		<ul>
+			<li>
+				<a href="/home" class={currentPath === 'home' ? 'active' : ''}>
+					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-grid"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+					Dashboard
+				</a>
+			</li>
+			<li>
+				<a href="/agents" class={currentPath === 'agents' ? 'active' : ''}>
+					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+					Agente
+				</a>
+			</li>
+			<li>
+				<a href="/history" class={currentPath === 'history' ? 'active' : ''}>
+					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+					Historial
+				</a>
+			</li>
+			<li>
+				<a href="/metrics" class={currentPath === 'metrics' ? 'active' : ''}>
+					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-pie-chart"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg>
+					Métricas
+				</a>
+			</li>
+			<li>
+				<a href="/settings" class={currentPath === 'settings' ? 'active' : ''}>
+					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-settings"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+					Configuración
+				</a>
+			</li>
+		</ul>
+	</nav>
+</aside>
+
+<style>
+	.sidebar {
+		width: 250px;
+		background: #FAFAFA; /* Off-white background */
+		border-right: 1px solid #f0f0f0;
+		padding: 2rem 1.5rem;
+		display: flex;
+		flex-direction: column;
+		height: 100vh;
+	}
+
+	.workspace-selector {
+		display: flex;
+		align-items: center;
+		padding: 0.75rem 1rem;
+		background: #fdfdfd;
+		border-radius: 12px;
+		margin-bottom: 2.5rem;
+		border: 1px solid #eee;
+		font-weight: 500;
+		font-size: 0.9rem;
+		gap: 0.75rem;
+	}
+
+	.workspace-icon {
+		width: 28px;
+		height: 28px;
+		background: #ffeaf5;
+		color: #ff69b4;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-weight: 700;
+		font-size: 0.9rem;
+	}
+
+	.side-nav ul {
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	.side-nav a {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		padding: 0.75rem 1rem;
+		border-radius: 8px;
+		font-size: 0.95rem;
+		font-weight: 500;
+		color: #555;
+		transition: all 0.2s;
+		position: relative; /* Ensure relative positioning for child elements or pseudo-elements */
+		overflow: hidden; /* Keep pseudo-elements contained */
+	}
+
+	.side-nav a svg {
+		stroke-width: 2;
+    stroke: #555; /* Default icon color */
+    z-index: 1; /* Keep content above background */
+	}
+	
+	.side-nav a span {
+		z-index: 1;
+	}
+
+	.side-nav a.active {
+		background: #ffe6f2; /* Light pink background */
+		color: #1a1a1a;
+		font-weight: 600;
+	}
+	
+	.side-nav a.active svg {
+		stroke: #1a1a1a;
+	}
+
+	.side-nav a.active::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		height: 60%;
+		width: 5px;
+		background-color: #ff69b4; /* Darker pink left marker */
+		border-radius: 0 4px 4px 0;
+	}
+
+	.side-nav a:hover:not(.active) {
+		background: #f8f8f8;
+	}
+</style>

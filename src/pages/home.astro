@@ -1,0 +1,467 @@
+---
+import DashboardLayout from '../layouts/DashboardLayout.astro';
+---
+
+<DashboardLayout title="Dashboard | Agent">
+	<div class="welcome-section">
+		<h1>Te damos la bienvenida, Cande</h1>
+		<p>¿Qué tan activo ha sido tu agente hoy? Exploremos</p>
+	</div>
+
+	<div class="dashboard-grid">
+		<!-- Left Column -->
+		<div class="main-column">
+			<div class="stats-row">
+				<!-- Daily Calls Card -->
+				<div class="card stat-card">
+					<h3>Llamadas del día (12/11/2025)</h3>
+					<div class="circle-progress">
+						<svg viewBox="0 0 36 36" class="circular-chart">
+							<path class="circle-bg"
+								d="M18 2.0845
+									a 15.9155 15.9155 0 0 1 0 31.831
+									a 15.9155 15.9155 0 0 1 0 -31.831"
+							/>
+							<path class="circle"
+								stroke-dasharray="75, 100"
+								d="M18 2.0845
+									a 15.9155 15.9155 0 0 1 0 31.831
+									a 15.9155 15.9155 0 0 1 0 -31.831"
+							/>
+							<text x="18" y="20.35" class="percentage">128</text>
+						</svg>
+					</div>
+				</div>
+
+				<!-- Plan Card -->
+				<div class="card plan-card">
+					<h3>Plan actual</h3>
+					<div class="star-icon">
+						<!-- Star SVG -->
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="url(#grad1)" stroke="none" class="gold-star">
+                            <defs>
+                                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" style="stop-color:#bf953f;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#fcf6ba;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+							<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+						</svg>
+					</div>
+					<p class="plan-name">Plan premium</p>
+				</div>
+			</div>
+
+			<!-- Appointments Card -->
+			<div class="card appointments-card">
+				<h3>Últimas citas agendadas</h3>
+				<div class="appointment-list">
+					<div class="appointment-item">
+						<div class="appt-details">
+							<p><strong>Nombre:</strong> Mauricio Mejia</p>
+							<p><strong>Fecha de la cita:</strong> 20/11/2025 a las 10:00am</p>
+							<p><strong>Teléfono:</strong> +34 969 65 21 82</p>
+							<p><strong>Correo:</strong> mauriciomej@gmail.com</p>
+						</div>
+					</div>
+					<div class="appointment-item">
+						<div class="appt-details">
+							<p><strong>Nombre:</strong> Luis Villareal</p>
+							<p><strong>Fecha de la cita:</strong> 15/11/2025 a las 08:00am</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Call History Card -->
+			<div class="card history-card">
+				<div class="card-header">
+					<h3>Historial de llamadas</h3>
+					<button class="btn-dark-small">Ver historial completo</button>
+				</div>
+				<div class="history-table">
+					<div class="table-header">
+						<span>Fecha</span>
+						<span>Duración</span>
+						<span>ID de llamada</span>
+						<span>Desde</span>
+					</div>
+					<div class="table-row">
+						<span>2025-12-18, 18:21:30</span>
+						<span>4:30</span>
+						<span>2252366521563</span>
+						<span>+ 34 646 95 48</span>
+					</div>
+					<div class="table-row">
+						<span>2025-12-18, 15:31:50</span>
+						<span>8:23</span>
+						<span>6653254256934</span>
+						<span>+ 34 948 56 32</span>
+					</div>
+					<div class="table-row">
+						<span>2025-12-17, 13:21:30</span>
+						<span>5:17</span>
+						<span>4566569253694</span>
+						<span>+ 34 976 45 65</span>
+					</div>
+				</div>
+			</div>
+
+			<!-- WhatsApp Promo Card -->
+			<div class="card whatsapp-card">
+				<div class="whatsapp-content">
+					<h3>¡Expande tu negocio!</h3>
+					<p>Agrega tu agente a WhatsApp</p>
+					<div class="whatsapp-icon">
+						<img src="/whatsapp-logo.png" alt="WhatsApp" width="50" height="50" />
+					</div>
+					<button class="btn-dark">Conectar</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- Right Column -->
+		<div class="side-column">
+			<!-- Agent Details Card -->
+			<div class="card agent-card">
+				<h3>Detalles</h3>
+				<div class="agent-info-group">
+					<label>Nombre del agente</label>
+					<p class="value">Oberstaff - Agente principal</p>
+				</div>
+				<div class="agent-info-group">
+					<label>Tipo de agente</label>
+					<p class="value">Prompt - Multiple</p>
+				</div>
+				<div class="agent-info-group">
+					<label>Voz del agente</label>
+					<p class="value">Lucía - Voz española</p>
+				</div>
+				<div class="agent-info-group">
+					<label>Teléfono del agente</label>
+					<p class="value">+34 919 56 89 21</p>
+				</div>
+				<button class="btn-dark-small">Editar</button>
+				<p class="last-modified">Modificado por última vez el: 11/11/2025 a las 09:54</p>
+			</div>
+
+			<!-- Obervoice Promo -->
+			<div class="card promo-card">
+				<h4>¿Necesitas hacer una llamada? Accede a</h4>
+				<div class="brand-logo">
+					<img src="/obervoice-logo.png" alt="Obervoice" style="height: 40px;" />
+				</div>
+				<button class="btn-dark">Ir</button>
+			</div>
+
+			<!-- Create Agent Promo -->
+			<div class="card promo-card">
+				<h4>¿Necesitas más asistencia? Crea otro agente</h4>
+				<button class="btn-dark">Crear agente</button>
+			</div>
+		</div>
+	</div>
+</DashboardLayout>
+
+<style>
+	.welcome-section {
+		margin-bottom: 2rem;
+	}
+	
+	h1 {
+		font-size: 2rem;
+		font-weight: 700;
+		margin-bottom: 0.5rem;
+	}
+	
+	.welcome-section p {
+		color: #555;
+	}
+
+	.dashboard-grid {
+		display: grid;
+		grid-template-columns: 2fr 1fr;
+		gap: 1.5rem;
+		width: 100%;
+	}
+
+	.main-column {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+	}
+
+	.side-column {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+	}
+
+	.stats-row {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1.5rem;
+	}
+
+	.stat-card, .plan-card {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		min-height: 200px;
+	}
+
+	h3 {
+		font-size: 1rem;
+		color: #888;
+		font-weight: 500;
+		margin-bottom: 1rem;
+		width: 100%;
+		text-align: left;
+	}
+	
+	.stat-card h3, .plan-card h3 {
+		text-align: left;
+		align-self: flex-start;
+		margin-bottom: auto;
+		font-size: 0.9rem;
+	}
+
+	/* Circular Chart */
+	.circle-progress {
+		width: 120px;
+		height: 120px;
+	}
+	
+	.circular-chart {
+		display: block;
+		margin: 0 auto;
+		max-width: 100%;
+		max-height: 100%;
+	}
+	
+	.circle-bg {
+		fill: none;
+		stroke: #eee;
+		stroke-width: 3.8;
+	}
+	
+	.circle {
+		fill: none;
+		stroke: #2E2E2E;
+		stroke-width: 2.8;
+		stroke-linecap: round;
+	}
+	
+	.percentage {
+		fill: #000;
+		font-family: 'Outfit', sans-serif;
+		font-weight: bold;
+		font-size: 0.6rem;
+		text-anchor: middle;
+	}
+
+	/* Star Icon */
+	.star-icon svg {
+		width: 80px;
+		height: 80px;
+		filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+	}
+	
+	.plan-name {
+		font-weight: 600;
+		font-size: 1.1rem;
+		margin-top: auto;
+	}
+
+	/* Appointments with custom heavy alternating background */
+	.appointment-list {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+	
+	.appointment-item {
+		background-color: #fbedf6; /* Light pink background */
+		padding: 1rem;
+		border-radius: 12px;
+	}
+	
+	.appointment-item:last-child {
+		background-color: #f9f0f6; /* Slightly different shade if needed or same */
+	}
+
+	.appt-details p {
+		font-size: 0.85rem;
+		margin-bottom: 0.25rem;
+		color: #444;
+	}
+	
+	.appt-details strong {
+		color: #777;
+		font-weight: 500;
+	}
+
+	/* History Table */
+	.card-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 1rem;
+	}
+	
+	.card-header h3 {
+		margin-bottom: 0;
+	}
+
+	.history-table {
+		width: 100%;
+		font-size: 0.85rem;
+	}
+	
+	.table-header, .table-row {
+		display: grid;
+		grid-template-columns: 1.5fr 1fr 1.5fr 1fr;
+		padding: 0.75rem 0.5rem;
+		align-items: center;
+	}
+	
+	.table-header {
+		color: #999;
+		font-weight: 500;
+		font-size: 0.8rem;
+	}
+	
+	.table-row {
+		background-color: #f7eff4; /* Alternating row color base */
+		border-radius: 8px;
+		margin-bottom: 0.5rem;
+		color: #333;
+		font-weight: 500;
+	}
+
+	/* WhatsApp Card */
+	.whatsapp-card {
+		display: flex;
+		justify-content: center;
+		padding: 2.5rem;
+	}
+	
+	.whatsapp-content {
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1rem;
+	}
+
+	.whatsapp-content h3 {
+		text-align: center;
+		color: #1a1a1a;
+		font-weight: 700;
+		font-size: 1.1rem;
+		margin-bottom: 0;
+	}
+	
+	.whatsapp-content p {
+		color: #444;
+		margin-bottom: 0.5rem;
+	}
+
+	/* Agent Details */
+	.agent-card {
+		display: flex;
+		flex-direction: column;
+		gap: 1.25rem;
+		min-height: 480px; /* Make it tall */
+	}
+
+	.agent-info-group label {
+		display: block;
+		font-size: 0.8rem;
+		color: #999;
+		margin-bottom: 0.25rem;
+	}
+	
+	.agent-info-group .value {
+		font-weight: 600;
+		color: #1a1a1a;
+		font-size: 0.95rem;
+	}
+	
+	.last-modified {
+		font-size: 0.7rem;
+		color: #aaa;
+		margin-top: auto;
+	}
+
+	/* Promo Cards */
+	.promo-card {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		gap: 1.5rem;
+		min-height: 200px;
+	}
+	
+	.promo-card h4 {
+		font-size: 1rem;
+		font-weight: 600;
+		color: #1a1a1a;
+		max-width: 80%;
+	}
+	
+	.brand-logo {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		font-size: 1.5rem;
+		font-weight: 700;
+		color: #1a1a1a;
+	}
+	
+	.blue-icon {
+		background: #007bff;
+		width: 32px;
+		height: 32px;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	
+	.blue-icon svg {
+		width: 18px;
+		height: 18px;
+	}
+
+	/* Buttons */
+	.btn-dark {
+		background: #2d2d2d;
+		color: white;
+		border: none;
+		border-radius: 50px;
+		padding: 0.75rem 2rem;
+		font-weight: 500;
+		font-size: 0.9rem;
+		transition: background 0.2s;
+	}
+	.btn-dark:hover {
+		background: #000;
+	}
+
+	.btn-dark-small {
+		background: #2d2d2d;
+		color: white;
+		border: none;
+		border-radius: 50px;
+		padding: 0.5rem 1.5rem;
+		font-weight: 500;
+		font-size: 0.85rem;
+		align-self: flex-start;
+	}
+
+</style>
