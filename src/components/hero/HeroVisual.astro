@@ -1,0 +1,41 @@
+---
+import FloatingCard from "./FloatingCard.astro";
+import "../../styles/hero/HeroVisual.css";
+---
+
+<div class="hero-visual">
+    <div class="image-wrapper">
+        <img
+            src="/hero-img.webp"
+            alt="Talento Oberstaff"
+            class="main-hero-img"
+        />
+
+        <FloatingCard
+            name="Juan Escobar"
+            role="Especialista SEO"
+            location="VE REMOTO DESDE VZLA"
+            image="/img1-hero (1).webp"
+            class="card-juan"
+            delay="0s"
+        />
+
+        <FloatingCard
+            name="Mateo Ricci"
+            role="Diseñador UI/UX"
+            location="AR REMOTO DESDE ARG"
+            image="/img2-hero.webp"
+            class="card-mateo"
+            delay="0.5s"
+        />
+
+        <FloatingCard
+            name="Camila Vargas"
+            role="Desarrolladora Web"
+            location="CO REMOTO DESDE COL"
+            image="/img3-hero.webp"
+            class="card-camila"
+            delay="1s"
+        />
+    </div>
+</div>

@@ -1,0 +1,84 @@
+.floating-card {
+    position: absolute;
+    background: white;
+    padding: 8px 12px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    width: max-content;
+    animation: subtleFloat 4s ease-in-out infinite;
+    z-index: 10;
+}
+
+@keyframes subtleFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.floating-card img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.floating-card strong {
+    font-size: 12px;
+    color: #333;
+    font-family: "Poppins", sans-serif;
+}
+
+.floating-card span {
+    font-size: 11px;
+    color: #777;
+    font-family: "Inter", sans-serif;
+}
+
+.location {
+    font-size: 9px;
+    color: #5c5cff;
+    font-style: normal;
+    font-weight: 700;
+    margin-top: 1px;
+    font-family: "Inter", sans-serif;
+}
+
+/* Mobile adjustments */
+@media (max-width: 1024px) {
+    .floating-card {
+        padding: 4px 8px;
+        gap: 4px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .floating-card img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .floating-card strong {
+        font-size: 9px;
+    }
+
+    .floating-card span {
+        font-size: 8px;
+    }
+
+    .floating-card .location {
+        font-size: 7px;
+    }
+}

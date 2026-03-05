@@ -1,0 +1,155 @@
+.hero-text-content {
+    max-width: 550px;
+}
+
+.hero-text-content .badge-new {
+    display: inline-flex;
+    align-items: center;
+    background: #f0f0ff;
+    color: #5c5cff;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-family: "Poppins", sans-serif;
+}
+
+.hero-text-content .badge-new .dot {
+    width: 6px;
+    height: 6px;
+    background: #5c5cff;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.hero-text-content h1 {
+    font-size: 46px;
+    font-weight: 800;
+    line-height: 1.1;
+    color: #1b1b1b;
+    margin-bottom: 24px;
+    letter-spacing: -1.2px;
+    font-family: "Poppins", sans-serif;
+}
+
+.hero-text-content .hero-description {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    max-width: 450px;
+    font-family: "Inter", sans-serif;
+}
+
+.hero-text-content .highlight {
+    color: #ff66cc;
+    font-weight: 600;
+}
+
+.hero-text-content .social-proof {
+    font-weight: 700;
+    color: #464951;
+    margin-bottom: 30px;
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+}
+
+.hero-text-content .hero-actions {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.hero-oberstaff .btn-primary {
+    background-color: #ff66cc;
+    color: #1b1b1b;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    font-size: 13px;
+    font-family: "Poppins", sans-serif;
+}
+
+.hero-oberstaff .btn-primary:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(255, 102, 204, 0.3);
+}
+
+.hero-text-content .btn-secondary {
+    background-color: white;
+    color: #1b1b1b;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    border: 2px solid #1b1b1b;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    transition: all 0.3s ease;
+    font-family: "Poppins", sans-serif;
+}
+
+.hero-text-content .btn-secondary:hover {
+    background-color: #1b1b1b;
+    color: white;
+    transform: translateY(-4px);
+}
+
+.hero-text-content .btn-secondary:hover iconify-icon {
+    color: #ff66cc;
+}
+
+.btn-icon-right {
+    margin-left: 8px;
+    font-size: 1.1rem;
+}
+
+.btn-icon-left {
+    margin-right: 8px;
+    font-size: 1.2rem;
+}
+
+.note-icon {
+    color: #ff66cc;
+    vertical-align: middle;
+    margin-right: 4px;
+    font-size: 1rem;
+}
+
+.hero-text-content .hero-footer-note {
+    font-size: 13px;
+    color: #999;
+    display: flex;
+    align-items: center;
+    font-family: "Inter", sans-serif;
+}
+
+@media (max-width: 1024px) {
+    .hero-text-content h1 {
+        font-size: 32px;
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .hero-text-content .hero-description {
+        margin: 0 auto 20px auto;
+        font-size: 16px;
+    }
+
+    .hero-text-content .hero-actions {
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+}

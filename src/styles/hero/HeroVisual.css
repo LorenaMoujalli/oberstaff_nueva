@@ -1,0 +1,58 @@
+.hero-visual {
+    position: relative;
+}
+
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+.main-hero-img {
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 20px;
+    display: block !important;
+    position: relative;
+    z-index: 5;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.card-juan {
+    top: 10%;
+    left: -40px;
+}
+
+.card-mateo {
+    bottom: 20%;
+    left: -30px;
+}
+
+.card-camila {
+    bottom: 10%;
+    right: -25px;
+}
+
+@media (max-width: 1024px) {
+    .image-wrapper {
+        margin-top: 40px;
+        max-width: 240px;
+    }
+
+    .card-juan {
+        top: 5%;
+        left: -30px;
+    }
+
+    .card-mateo {
+        bottom: 15%;
+        left: -25px;
+    }
+
+    .card-camila {
+        bottom: 5%;
+        right: -20px;
+    }
+}

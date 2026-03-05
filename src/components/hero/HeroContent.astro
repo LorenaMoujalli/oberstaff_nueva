@@ -1,0 +1,185 @@
+---
+import "../../styles/hero/HeroContent.css";
+---
+
+<div class="hero-text-content">
+    <div class="badge-new">
+        <span class="dot"></span> Contrata sin fronteras
+    </div>
+    <h1>Contratar talento remoto en LATAM para empresas en España</h1>
+    <p class="hero-description">
+        En Oberstaff hacemos posible <span class="highlight"
+            >contratar talento</span
+        > cualificado en Latinoamérica mediante reclutamiento remoto, integración
+        rápida y ahorro operativo sin riesgos legales.
+    </p>
+    <p class="social-proof">Más de 5.000 empresas confían en Oberstaff.</p>
+
+    <div class="hero-actions">
+        <a href="#" class="btn-primary"
+            >Agenda una llamada gratis <iconify-icon
+                icon="solar:alt-arrow-right-linear"
+                class="btn-icon-right"></iconify-icon></a
+        >
+        <a href="#" class="btn-secondary">
+            <iconify-icon icon="solar:play-circle-bold" class="btn-icon-left"
+            ></iconify-icon> Ver cómo funciona
+        </a>
+    </div>
+    <p class="hero-footer-note">
+        <iconify-icon
+            icon="solar:check-circle-bold"
+            class="note-icon"
+            color="#ff66cc"></iconify-icon> Sin tarjeta de crédito · Sin compromiso
+    </p>
+</div>
+
+<style>
+    .hero-text-content {
+        max-width: 550px;
+    }
+
+    .badge-new {
+        display: inline-flex;
+        align-items: center;
+        background: #f0f0ff;
+        color: #5c5cff;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        font-family: "Poppins", sans-serif;
+    }
+
+    .badge-new .dot {
+        width: 6px;
+        height: 6px;
+        background: #5c5cff;
+        border-radius: 50%;
+        margin-right: 8px;
+    }
+
+    h1 {
+        font-size: 46px;
+        font-weight: 800;
+        line-height: 1.1;
+        color: #1b1b1b;
+        margin-bottom: 24px;
+        letter-spacing: -1.2px;
+        font-family: "Poppins", sans-serif;
+    }
+
+    .hero-description {
+        font-size: 18px;
+        color: #666;
+        line-height: 1.5;
+        margin-bottom: 30px;
+        max-width: 450px;
+        font-family: "Inter", sans-serif;
+    }
+
+    .highlight {
+        color: #ff66cc;
+        font-weight: 600;
+    }
+
+    .social-proof {
+        font-weight: 700;
+        color: #464951;
+        margin-bottom: 30px;
+        font-size: 14px;
+        font-family: "Poppins", sans-serif;
+    }
+
+    .hero-actions {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    .btn-primary {
+        background-color: #ff66cc;
+        color: #1b1b1b;
+        text-decoration: none;
+        padding: 10px 20px;
+        border-radius: 50px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        transition: all 0.3s ease;
+        font-size: 13px;
+        font-family: "Poppins", sans-serif;
+    }
+
+    .btn-primary:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 4px 12px rgba(255, 102, 204, 0.3);
+    }
+
+    .btn-secondary {
+        background-color: white;
+        color: #1b1b1b;
+        text-decoration: none;
+        padding: 10px 20px;
+        border-radius: 50px;
+        font-weight: 600;
+        border: 2px solid #1b1b1b;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 13px;
+        transition: all 0.3s ease;
+        font-family: "Poppins", sans-serif;
+    }
+
+    .btn-secondary:hover {
+        background-color: #1b1b1b;
+        color: white;
+        transform: translateY(-4px);
+    }
+
+    .btn-secondary:hover iconify-icon {
+        color: #ff66cc;
+    }
+
+    .btn-icon-right {
+        margin-left: 8px;
+        font-size: 1.1rem;
+    }
+
+    .btn-icon-left {
+        margin-right: 8px;
+        font-size: 1.2rem;
+    }
+
+    .note-icon {
+        color: #ff66cc;
+        vertical-align: middle;
+        margin-right: 4px;
+        font-size: 1rem;
+    }
+
+    .hero-footer-note {
+        font-size: 13px;
+        color: #999;
+        display: flex;
+        align-items: center;
+        font-family: "Inter", sans-serif;
+    }
+
+    @media (max-width: 1024px) {
+        h1 {
+            font-size: 32px;
+        }
+        .hero-description {
+            margin: 0 auto 20px auto;
+            font-size: 16px;
+        }
+        .hero-actions {
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+</style>

@@ -1,10 +1,16 @@
 ---
-import DashboardLayout from '../layouts/DashboardLayout.astro';
+import DashboardLayout from "../layouts/DashboardLayout.astro";
+import Hero from "../components/hero/Hero.astro";
 ---
 
 <DashboardLayout title="Oberstaff">
 	<div class="welcome-section">
-		<h1>hola</h1>
+		<Hero />
 	</div>
 </DashboardLayout>
 
+<style>
+	.welcome-section {
+		/* Add any page-specific container styles here if needed */
+	}
+</style>

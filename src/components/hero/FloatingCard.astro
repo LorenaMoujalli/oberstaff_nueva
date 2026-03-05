@@ -1,0 +1,26 @@
+---
+import "../../styles/hero/FloatingCard.css";
+
+interface Props {
+    name: string;
+    role: string;
+    location: string;
+    image: string;
+    class?: string;
+    delay?: string;
+}
+
+const { name, role, location, image, class: className, delay } = Astro.props;
+---
+
+<div
+    class:list={["floating-card", className]}
+    style={`animation-delay: ${delay};`}
+>
+    <img src={image} alt={name} />
+    <div class="card-info">
+        <strong>{name}</strong>
+        <span>{role}</span>
+        <em class="location">{location}</em>
+    </div>
+</div>
