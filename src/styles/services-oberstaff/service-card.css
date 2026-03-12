@@ -1,0 +1,91 @@
+/* --- Cards --- */
+.service-card {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: left;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+    border: 1px solid #f0f0f0;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Iconos --- */
+.icon-box {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    font-size: 24px;
+}
+
+.purple-bg {
+    background-color: #f0f0ff;
+    color: #5c5cff;
+}
+
+.pink-bg {
+    background-color: #fff0f5;
+    color: #ff4081;
+}
+
+.orange-bg {
+    background-color: #fff5f0;
+    color: #ff6633;
+}
+
+.gray-bg {
+    background-color: #f4f4f5;
+    color: #71717a;
+}
+
+/* --- Textos de Tarjeta --- */
+.service-card h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    min-height: 72px;
+    /* Mantiene alineación */
+}
+
+.service-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #3333ff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.arrow-icon {
+    font-size: 18px;
+    transition: transform 0.2s;
+}
+
+.service-link:hover {
+    color: #ff66cc;
+    gap: 12px;
+}
+
+.service-link:hover .arrow-icon {
+    transform: translateX(4px);
+}

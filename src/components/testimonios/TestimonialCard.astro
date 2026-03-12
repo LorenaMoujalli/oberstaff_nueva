@@ -1,0 +1,35 @@
+---
+import Stars from "./Stars.astro";
+import "../../styles/testimonios/testimonial-card.css";
+
+interface Props {
+    clientName: string;
+    clientMeta: string;
+    benefits: string[];
+    videoUrl?: string;
+}
+
+const { clientName, clientMeta, benefits, videoUrl = "/home" } = Astro.props;
+---
+
+<article class="testimonial-card">
+    <Stars />
+    <h3 class="client-name">{clientName}</h3>
+    <p class="client-meta">{clientMeta}</p>
+
+    <ul class="benefit-list">
+        {
+            benefits.map((benefit) => (
+                <li>
+                    <span class="check">✓</span> {benefit}
+                </li>
+            ))
+        }
+    </ul>
+
+    <a href={videoUrl} class="video-link">
+        <iconify-icon icon="mdi:play-circle-outline" class="play-icon"
+        ></iconify-icon>
+        Ver testimonio en vídeo
+    </a>
+</article>

@@ -1,0 +1,33 @@
+---
+import "../../styles/services-oberstaff/service-card.css";
+
+interface Props {
+    icon: string;
+    title: string;
+    description: string;
+    linkText: string;
+    href?: string;
+    colorClass: string;
+}
+
+const {
+    icon,
+    title,
+    description,
+    linkText,
+    href = "/home",
+    colorClass,
+} = Astro.props;
+---
+
+<article class="service-card">
+    <div class={`icon-box ${colorClass}`}>
+        <iconify-icon icon={icon}></iconify-icon>
+    </div>
+    <h3>{title}</h3>
+    <p>{description}</p>
+    <a href={href} class="service-link">
+        {linkText}
+        <iconify-icon icon="mdi:arrow-right" class="arrow-icon"></iconify-icon>
+    </a>
+</article>

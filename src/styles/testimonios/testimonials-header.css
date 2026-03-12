@@ -1,0 +1,14 @@
+.testimonials-title {
+    font-size: 32px;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-bottom: 60px;
+    letter-spacing: -0.5px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .testimonials-title {
+        font-size: 26px;
+    }
+}

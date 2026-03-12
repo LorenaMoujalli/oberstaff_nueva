@@ -1,0 +1,25 @@
+.stats-oberstaff {
+    background-color: #ffffff;
+    padding: 80px 20px;
+    font-family: 'Inter', -apple-system, sans-serif;
+}
+
+.stats-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+}
+
+/* Responsividad para móviles */
+@media (max-width: 850px) {
+    .stats-oberstaff {
+        padding: 50px 20px;
+    }
+
+    .stats-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+}

@@ -1,0 +1,21 @@
+---
+import "../../styles/faq/faq-item.css";
+
+interface Props {
+    question: string;
+}
+
+const { question } = Astro.props;
+---
+
+<div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+        {question}
+        <iconify-icon icon="mdi:chevron-down" class="faq-icon"></iconify-icon>
+    </button>
+    <div class="faq-answer">
+        <div class="faq-answer-content">
+            <slot />
+        </div>
+    </div>
+</div>

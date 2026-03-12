@@ -1,0 +1,23 @@
+---
+import "../../styles/profiles/profile-card.css";
+
+interface Props {
+    icon: string;
+    title: string;
+    quote: string;
+    roles: string;
+    iconColorClass: string;
+}
+
+const { icon, title, quote, roles, iconColorClass } = Astro.props;
+---
+
+<article class="profile-card">
+    <div class="card-header">
+        <iconify-icon icon={icon} class={`profile-icon ${iconColorClass}`}
+        ></iconify-icon>
+        <h3>{title}</h3>
+    </div>
+    <p class="quote">"{quote}"</p>
+    <p class="roles">{roles}</p>
+</article>

@@ -1,0 +1,31 @@
+.press-mentions {
+    padding: 80px 20px;
+    background-color: rgb(247 248 248 / var(--tw-bg-opacity, 1));
+    font-family: 'Inter', -apple-system, sans-serif;
+    text-align: center;
+    border-top: 1px solid #e5e7eb;
+}
+
+.press-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.mentions-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+    .press-mentions {
+        padding: 50px 20px;
+    }
+
+    .mentions-wrapper {
+        flex-direction: column;
+        gap: 30px;
+    }
+}

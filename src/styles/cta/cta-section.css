@@ -1,0 +1,112 @@
+.cta-dark-section {
+    background-color: #25262b;
+    /* Gris oscuro del diseño */
+    padding: 80px 20px;
+    text-align: center;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+}
+
+.cta-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.cta-headline {
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    letter-spacing: -1.2px;
+}
+
+.cta-subtext {
+    font-size: 18px;
+    color: #b0b0b0;
+    /* Texto secundario suavizado */
+    line-height: 1.6;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.btn-pink-pill {
+    background-color: #ff66cc;
+    /* Rosa vibrante corporativo */
+    color: white;
+    text-decoration: none;
+    padding: 16px 32px;
+    border-radius: 100px;
+    /* Estilo cápsula total */
+    font-size: 16px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    border: none;
+    gap: 10px;
+}
+
+.btn-pink-pill:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 102, 204, 0.4);
+    background-color: #ff66cc;
+}
+
+.cta-btn-icon {
+    font-size: 22px;
+}
+
+.btn-outline-text {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-outline-text:hover {
+    color: #ff66cc;
+}
+
+.cta-arrow-icon {
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.btn-outline-text:hover .cta-arrow-icon {
+    transform: translateX(5px);
+}
+
+/* Ajustes para móviles */
+@media (max-width: 768px) {
+    .cta-dark-section {
+        padding: 50px 20px;
+    }
+
+    .cta-headline {
+        font-size: 30px;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .btn-pink-pill {
+        width: 100%;
+        justify-content: center;
+    }
+}

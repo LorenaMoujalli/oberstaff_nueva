@@ -1,0 +1,56 @@
+.stat-card {
+    text-align: center;
+    padding: 20px 40px;
+}
+
+/* Divisores verticales sutiles */
+.border-sides {
+    border-left: 1px solid #d1d5db;
+    border-right: 1px solid #d1d5db;
+}
+
+/* Estilos de los Números Grandes */
+.stat-number {
+    font-size: 56px;
+    font-weight: 800;
+    margin: 0 0 8px 0;
+    letter-spacing: -2px;
+}
+
+/* Colores específicos */
+.pink-text {
+    color: #ff66cc;
+}
+
+.blue-text {
+    color: #3333ff;
+}
+
+.orange-text {
+    color: #ff6633;
+}
+
+/* Estilos de las Etiquetas */
+.stat-label {
+    font-size: 16px;
+    color: #374151;
+    font-weight: 600;
+    line-height: 1.4;
+    max-width: 220px;
+    margin: 0 auto;
+}
+
+/* Responsividad para móviles */
+@media (max-width: 850px) {
+    .border-sides {
+        border-left: none;
+        border-right: none;
+        border-top: 1px solid #d1d5db;
+        border-bottom: 1px solid #d1d5db;
+        padding: 40px 20px;
+    }
+
+    .stat-number {
+        font-size: 48px;
+    }
+}

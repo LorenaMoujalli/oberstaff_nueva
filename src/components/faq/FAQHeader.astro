@@ -1,0 +1,11 @@
+---
+import "../../styles/faq/faq-header.css";
+
+interface Props {
+    title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<h2 class="faq-main-title">{title}</h2>

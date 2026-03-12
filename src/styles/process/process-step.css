@@ -1,0 +1,94 @@
+.step-item {
+    flex: 1;
+    position: relative;
+    z-index: 2;
+}
+
+/* Círculos con números */
+.step-number-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.number {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 800;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 2px solid #e5e7eb;
+    /* Borde más visible */
+}
+
+/* Colores específicos de los números */
+.number.blue {
+    color: #3333ff;
+}
+
+.number.pink {
+    background-color: #ff66cc;
+    /* Rosado solicitado */
+    color: white;
+    box-shadow: 0 10px 20px rgba(255, 102, 204, 0.3);
+    border: none;
+}
+
+.number.orange {
+    color: #ff6633;
+}
+
+/* Textos */
+.step-item h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 15px;
+}
+
+.step-item p {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    padding: 0 10px;
+}
+
+/* Badges inferiores */
+.badge {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.badge.gray-blue {
+    background-color: #f0f0ff;
+    color: #3333ff;
+}
+
+/* Azul solicitado */
+.badge.light-pink-alt {
+    background-color: #fff0ff;
+    color: #ff66cc;
+}
+
+/* Rosado solicitado */
+.badge.light-orange {
+    background-color: #fff5f0;
+    color: #ff6633;
+}
+
+@media (max-width: 850px) {
+    .step-item p {
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

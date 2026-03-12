@@ -1,0 +1,24 @@
+---
+import "../../styles/process/process-step.css";
+
+interface Props {
+    number: string;
+    title: string;
+    description: string;
+    badgeText: string;
+    colorClass: string;
+    badgeClass: string;
+}
+
+const { number, title, description, badgeText, colorClass, badgeClass } =
+    Astro.props;
+---
+
+<div class="step-item">
+    <div class="step-number-container">
+        <div class={`number ${colorClass}`}>{number}</div>
+    </div>
+    <h3>{title}</h3>
+    <p>{description}</p>
+    <span class={`badge ${badgeClass}`}>{badgeText}</span>
+</div>

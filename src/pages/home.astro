@@ -1,14 +1,34 @@
 ---
 import DashboardLayout from "../layouts/DashboardLayout.astro";
 import Hero from "../components/hero/Hero.astro";
+import TrustSection from "../components/banner-patrocinadores/TrustSection.astro";
+import StatsSection from "../components/stats-oberstaff/StatsSection.astro";
+import ServicesSection from "../components/services-oberstaff/ServicesSection.astro";
+import ProcessSection from "../components/process/ProcessSection.astro";
+import ProfilesSection from "../components/profiles/ProfilesSection.astro";
+import BenefitsSection from "../components/benefits/BenefitsSection.astro";
+import TestimonialsSection from "../components/testimonios/TestimonialsSection.astro";
+import FAQSection from "../components/faq/FAQSection.astro";
+import PressSection from "../components/press/PressSection.astro";
+import CTASection from "../components/cta/CTASection.astro";
 ---
 
 <DashboardLayout title="Oberstaff">
 	<div class="welcome-section">
-		<Hero />
+		<Hero />	
+		<TrustSection /> <!-- Patrocinadores-->
+		<StatsSection /> <!-- Estadísticas 70% - 30 - 100%-->
+		<ServicesSection /> <!-- Servicios -->
+		<ProcessSection /> <!-- El Proceso 1-2-3-->
+		<ProfilesSection /> <!-- Perfiles--> 
+		<BenefitsSection /> <!-- Beneficios -->
+		<TestimonialsSection /> <!-- Testimonios -->
+		<FAQSection /> <!-- Preguntas Frecuentes -->
+		<PressSection /> <!-- Menciones -->
+		<CTASection /> <!-- Agendar llamada -->
 	</div>
 </DashboardLayout>
-
+ 
 <style>
 	.welcome-section {
 		/* Add any page-specific container styles here if needed */

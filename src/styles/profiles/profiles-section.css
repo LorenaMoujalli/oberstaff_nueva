@@ -1,0 +1,60 @@
+.profiles-section {
+    background-color: rgb(247 248 248 / var(--tw-bg-opacity, 1));
+    /* Fondo grisáceo muy tenue recientemente actualizado por el usuario */
+    padding: 80px 20px;
+    font-family: "Inter", sans-serif;
+}
+
+.profiles-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.profiles-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.profiles-header h2 {
+    font-size: 36px;
+    font-weight: 800;
+    color: #1a1a1a;
+    letter-spacing: -1.2px;
+    margin-bottom: 20px;
+}
+
+.profiles-header p {
+    font-size: 18px;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+/* Grid de 3 columnas */
+.profiles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .profiles-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .profiles-section {
+        padding: 50px 20px;
+    }
+
+    .profiles-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profiles-header h2 {
+        font-size: 28px;
+    }
+}

@@ -1,0 +1,42 @@
+---
+import ProcessStep from "./ProcessStep.astro";
+import "../../styles/process/process-section.css";
+---
+
+<section class="process-section" id="como-funciona">
+    <div class="process-container">
+        <h2 class="process-title">
+            Cómo reducir costes de personal contratando talento remoto en
+            Latinoamérica
+        </h2>
+
+        <div class="steps-wrapper">
+            <ProcessStep
+                number="1"
+                title="Nos cuentas qué necesitas"
+                description="Cuéntanos el perfil que buscas y, con nuestro reclutamiento remoto, encontraremos candidatos que encajen. Ideal para contratar talento en el extranjero desde España."
+                badgeText="Gratis · Sin compromiso"
+                colorClass="blue"
+                badgeClass="gray-blue"
+            />
+
+            <ProcessStep
+                number="2"
+                title="Nosotros contratamos a la persona"
+                description="Contratamos al candidato seleccionado y nos ocupamos de nóminas, contratos y compliance. Sin riesgos legales para ti."
+                badgeText="Sin permanencia"
+                colorClass="pink"
+                badgeClass="light-pink-alt"
+            />
+
+            <ProcessStep
+                number="3"
+                title="Trabaja con los mejores"
+                description="Tu nuevo profesional se integra a tu equipo en tu misma zona horaria. Paga menos que en España y accede a talento de primer nivel."
+                badgeText="En 30 días"
+                colorClass="orange"
+                badgeClass="light-orange"
+            />
+        </div>
+    </div>
+</section>

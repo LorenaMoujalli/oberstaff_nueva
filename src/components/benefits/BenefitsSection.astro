@@ -1,0 +1,65 @@
+---
+import BenefitItem from "./BenefitItem.astro";
+import BenefitsHeader from "./BenefitsHeader.astro";
+import BenefitInfoBox from "./BenefitInfoBox.astro";
+import "../../styles/benefits/benefits-section.css";
+
+const benefits = [
+    {
+        icon: "mdi:shield-check-outline",
+        title: "Sin riesgo legal ni administrativo",
+        subtitle: "Oberstaff es el empleador legal — tú no asumes nada.",
+        text: "Contratos, nóminas, seguridad social y compliance local: todo bajo nuestra responsabilidad. Tú diriges el profesional, nosotros gestionamos la relación laboral.",
+        colorClass: "blue-icon",
+    },
+    {
+        icon: "mdi:lightning-bolt-outline",
+        title: "Personal externo listo en 30 días",
+        subtitle: "Proceso de selección rápido y sin complicaciones.",
+        text: "Nuestro proceso de reclutamiento remoto evalúa y preselecciona candidatos para que tú solo decidas con quién trabajar.",
+        colorClass: "orange-icon",
+    },
+    {
+        icon: "mdi:clock-outline",
+        title: "Zona horaria idéntica",
+        subtitle: "100% compatible con horario español.",
+        text: "Tu equipo trabaja en tu misma franja horaria. Sin desfase, sin depender de Asia o Europa del Este.",
+        colorClass: "gray-icon",
+    },
+    {
+        icon: "mdi:cash-multiple",
+        title: "Factura única para tu empresa",
+        subtitle: "Simplifica contabilidad y pagos.",
+        text: "Recibes una factura mensual por el servicio y centralizamos pagos y gestión administrativa, para que tu equipo en España no tenga que lidiar con trámites en cada país.",
+        colorClass: "cyan-icon",
+    },
+    {
+        icon: "mdi:calendar-remove-outline",
+        title: "Sin permanencia",
+        subtitle: "Cancela cuando quieras, sin penalizaciones.",
+        text: "Ajusta a tu personal remoto según las necesidades reales de tu negocio. Total flexibilidad operativa.",
+        colorClass: "purple-icon",
+    },
+    {
+        icon: "mdi:check-decagram-outline",
+        title: "Talento evaluado con rigor",
+        subtitle: "Pruebas psicométricas + entrevista previa.",
+        text: "Toda la contratación de talento pasa por una evaluación exhaustiva. Puedes entrevistarlos antes de decidir.",
+        colorClass: "green-icon",
+    },
+];
+---
+
+<section class="benefits-section">
+    <div class="benefits-container">
+        <BenefitsHeader
+            title="La forma más rápida de reducir costes de personal hasta un 70%"
+        />
+
+        <div class="benefits-grid">
+            {benefits.map((benefit) => <BenefitItem {...benefit} />)}
+        </div>
+
+        <BenefitInfoBox />
+    </div>
+</section>

@@ -1,0 +1,52 @@
+.services-oberstaff {
+    background-color: rgb(247 248 248 / var(--tw-bg-opacity, 1));
+    padding: 80px 20px;
+    font-family: "Inter", sans-serif;
+    text-align: center;
+}
+
+/*#f9fafb
+#f6f6f9*/
+
+.services-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+/* --- Header --- */
+.services-header h2 {
+    font-size: 32px;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-bottom: 15px;
+    letter-spacing: -1px;
+}
+
+.services-header p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 60px;
+}
+
+/* --- Grid --- */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 850px) {
+    .services-oberstaff {
+        padding: 50px 20px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .services-header h2 {
+        font-size: 26px;
+    }
+}

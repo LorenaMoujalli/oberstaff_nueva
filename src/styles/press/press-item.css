@@ -1,0 +1,47 @@
+.mention-item {
+    color: #8a8a8a;
+    display: flex;
+    align-items: center;
+    cursor: default;
+    transition: color 0.3s ease;
+}
+
+.mention-item:hover {
+    color: #333;
+}
+
+/* 1. El Mundo Financiero */
+.em-financiero {
+    font-size: 24px;
+    letter-spacing: -0.5px;
+}
+
+.em-financiero .bold-text {
+    font-weight: 800;
+    margin-right: 4px;
+}
+
+.em-financiero .light-text {
+    font-weight: 300;
+}
+
+/* 2. mdomadridiario */
+.mdo-madridiario {
+    font-size: 22px;
+    font-style: italic;
+}
+
+.mdo-madridiario .mdo-prefix {
+    font-weight: 800;
+}
+
+.mdo-madridiario .mdo-main {
+    font-weight: 400;
+}
+
+/* 3. REGIÓN DIGITAL */
+.region-digital {
+    font-size: 20px;
+    font-weight: 700;
+    gap: 12px;
+}

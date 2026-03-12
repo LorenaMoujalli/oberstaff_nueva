@@ -1,0 +1,11 @@
+---
+import "../../styles/benefits/benefits-header.css";
+
+interface Props {
+    title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<h2 class="benefits-main-title">{title}</h2>

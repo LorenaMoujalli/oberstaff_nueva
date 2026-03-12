@@ -1,0 +1,27 @@
+---
+import StatCard from "./StatCard.astro";
+import "../../styles/stats-oberstaff/stats-section.css";
+---
+
+<section class="stats-oberstaff">
+    <div class="stats-container">
+        <StatCard
+            number="70%"
+            label="Ahorro vs. contratación en España"
+            colorClass="pink-text"
+        />
+
+        <StatCard
+            number="30"
+            label="Días hasta incorporar a tu candidato"
+            colorClass="blue-text"
+            extraClass="border-sides"
+        />
+
+        <StatCard
+            number="100%"
+            label="Compatible con Zona horaria de España (CET/CEST)"
+            colorClass="orange-text"
+        />
+    </div>
+</section>

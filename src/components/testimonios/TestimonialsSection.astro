@@ -1,0 +1,48 @@
+---
+import TestimonialCard from "./TestimonialCard.astro";
+import TestimonialsHeader from "./TestimonialsHeader.astro";
+import "../../styles/testimonios/testimonials-section.css";
+
+const testimonials = [
+    {
+        clientName: "Shadai Iborra",
+        clientMeta: "CEO · @amediastory - Barcelona, España.",
+        benefits: [
+            "2 profesionales a tiempo completo",
+            "Ahorro significativo en costes",
+        ],
+    },
+    {
+        clientName: "Fernando Calderón",
+        clientMeta: "CEO · bybeautypro.com - Madrid, España",
+        benefits: [
+            "Editor de vídeo incorporado",
+            '"Proceso rápido y sin complicaciones"',
+        ],
+    },
+    {
+        clientName: "Kate McCaffert",
+        clientMeta: "KM Real Estate",
+        benefits: [
+            "+2 años trabajando con Oberstaff",
+            "Equipo remoto integrado",
+        ],
+    },
+];
+---
+
+<section class="testimonials-section">
+    <div class="testimonials-container">
+        <TestimonialsHeader
+            title="Empresas que ya contratan talento remoto en Latinoamérica"
+        />
+
+        <div class="testimonials-grid">
+            {
+                testimonials.map((testimonial) => (
+                    <TestimonialCard {...testimonial} />
+                ))
+            }
+        </div>
+    </div>
+</section>

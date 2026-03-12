@@ -1,0 +1,17 @@
+---
+import "../../styles/stats-oberstaff/stat-card.css";
+
+interface Props {
+    number: string;
+    label: string;
+    colorClass: string;
+    extraClass?: string;
+}
+
+const { number, label, colorClass, extraClass = "" } = Astro.props;
+---
+
+<div class={`stat-card ${extraClass}`}>
+    <h2 class={`stat-number ${colorClass}`}>{number}</h2>
+    <p class="stat-label">{label}</p>
+</div>

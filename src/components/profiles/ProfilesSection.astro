@@ -1,0 +1,89 @@
+---
+import ProfileCard from "./ProfileCard.astro";
+import "../../styles/profiles/profiles-section.css";
+
+const profiles = [
+    {
+        icon: "mdi:chart-line",
+        title: "Estrategia Comercial",
+        quote: "Más ventas, pipeline lleno y clientes que repiten",
+        roles: "Ejecutivo de Ventas · SDR · Especialista en CRM",
+        iconColorClass: "purple-text",
+    },
+    {
+        icon: "mdi:bullhorn-outline",
+        title: "Marketing Digital",
+        quote: "Tu marca visible donde están tus clientes",
+        roles: "Especialista SEO · Especialista Google Ads · Meta Ads",
+        iconColorClass: "pink-text",
+    },
+    {
+        icon: "mdi:pencil-outline",
+        title: "Redacción y Copywriting",
+        quote: "Palabras que venden, contenido que posiciona",
+        roles: "Copywriter · Redactor de Contenidos",
+        iconColorClass: "orange-text",
+    },
+    {
+        icon: "mdi:cellphone",
+        title: "Redes Sociales",
+        quote: "Redes activas, audiencia creciendo, empresa escalando",
+        roles: "Community Manager",
+        iconColorClass: "blue-text",
+    },
+    {
+        icon: "mdi:palette-outline",
+        title: "Diseño",
+        quote: "Imagen profesional que genera confianza",
+        roles: "Diseñador Gráfico · Diseñador UI/UX",
+        iconColorClass: "purple-text",
+    },
+    {
+        icon: "mdi:video-outline",
+        title: "Vídeo",
+        quote: "Vídeos que paran el scroll y convierten",
+        roles: "Editor de Vídeo",
+        iconColorClass: "pink-text",
+    },
+    {
+        icon: "mdi:folder-account-outline",
+        title: "Asistente Virtual",
+        quote: "Tu operación organizada, tú enfocado en crecer",
+        roles: "Asistente Virtual",
+        iconColorClass: "orange-text",
+    },
+    {
+        icon: "mdi:calculator",
+        title: "Contabilidad",
+        quote: "Finanzas al día, sin sorpresas ni errores",
+        roles: "Auxiliar Contable",
+        iconColorClass: "blue-text",
+    },
+    {
+        icon: "mdi:code-tags",
+        title: "Desarrollo y Tech",
+        quote: "El talento tech que necesitas, sin el coste impagable",
+        roles: "Desarrollador WP · Web · Mobile",
+        iconColorClass: "purple-text",
+    },
+];
+---
+
+<section class="profiles-section" id="perfiles">
+    <div class="profiles-container">
+        <header class="profiles-header">
+            <h2>
+                Contratación de talento remoto - maximiza tu margen operativo
+            </h2>
+            <p>
+                Estos son algunos de los perfiles que pueden impulsar tus
+                objetivos de negocio, con disponibilidad en la misma franja
+                horaria.
+            </p>
+        </header>
+
+        <div class="profiles-grid">
+            {profiles.map((profile) => <ProfileCard {...profile} />)}
+        </div>
+    </div>
+</section>

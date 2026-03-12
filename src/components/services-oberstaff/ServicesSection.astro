@@ -1,0 +1,50 @@
+---
+import ServiceCard from "./ServiceCard.astro";
+import "../../styles/services-oberstaff/services-section.css";
+---
+
+<section class="services-oberstaff" id="servicios">
+    <div class="services-container">
+        <header class="services-header">
+            <h2>
+                Todo lo que necesitas para incorporar profesionales de
+                Latinoamérica
+            </h2>
+            <p>Con un equipo que gestiona el proceso de principio a fin.</p>
+        </header>
+
+        <div class="services-grid">
+            <ServiceCard
+                icon="mdi:scale-balance"
+                title="Employer of Record (EOR)"
+                description="Puedes contratar personal extranjero sin necesidad de constituir una empresa local. Gestionamos contratos, nóminas y compliance legal."
+                linkText="Saber más sobre EOR"
+                colorClass="purple-bg"
+            />
+
+            <ServiceCard
+                icon="mdi:account-group"
+                title="Outsourcing de Personal"
+                description="Externaliza la gestión completa de tu equipo remoto: búsqueda, selección, contratación y gestión mensual."
+                linkText="Saber más sobre Outsourcing"
+                colorClass="pink-bg"
+            />
+
+            <ServiceCard
+                icon="mdi:laptop"
+                title="Staff Augmentation"
+                description="Refuerza tu equipo de tecnología con desarrolladores, QA, DevOps y más perfiles IT de primer nivel. Integración inmediata."
+                linkText="Saber más sobre Staff Aug"
+                colorClass="orange-bg"
+            />
+
+            <ServiceCard
+                icon="mdi:clipboard-text-outline"
+                title="Contract of Record (CoR)"
+                description="Formaliza la relación con freelancers y contratistas independientes. Gestionamos el contrato, el pago y el cumplimiento normativo."
+                linkText="Saber más sobre CoR"
+                colorClass="gray-bg"
+            />
+        </div>
+    </div>
+</section>

@@ -1,0 +1,144 @@
+---
+import FAQHeader from "./FAQHeader.astro";
+import FAQItem from "./FAQItem.astro";
+import "../../styles/faq/faq-section.css";
+
+const faqs = [
+    {
+        question: "¿Qué es una agencia de staffing remoto y cómo funciona?",
+        answers: [
+            "Una agencia de staffing remoto como Oberstaff se encarga de buscar, seleccionar y contratar talento en el extranjero en nombre de tu empresa.",
+            "Tú defines el perfil, nosotros encontramos al candidato ideal, gestionamos el contrato y las nóminas, y ese profesional trabaja para ti en tu misma zona horaria. Sin que tengas que abrir empresa en otro país ni asumir riesgo legal.",
+        ],
+    },
+    {
+        question: "¿La persona trabajará solo para mí?",
+        answers: [
+            "Sí, 100% para ti a jornada completa. Tu colaborador remoto trabajará en exclusiva para tu empresa, integrándose totalmente a tu equipo y cultura corporativa.",
+        ],
+    },
+    {
+        question: "¿Puedo prescindir de la persona cuando quiera?",
+        answers: [
+            "Sí, solamente requerimos un preaviso de 30 días. Esta flexibilidad laboral te permite ajustar tu personal remoto según las necesidades de tu negocio sin ataduras contractuales.",
+        ],
+    },
+    {
+        question: "¿Qué coste tiene prescindir de sus servicios?",
+        answers: [
+            "0 €. No te penalizamos por prescindir del servicio. Creemos en ganarnos tu confianza con resultados, no con penalizaciones. Total flexibilidad para tu empresa.",
+        ],
+    },
+    {
+        question: "¿Tengo que pagar beneficios como la seguridad social?",
+        answers: [
+            "No, en lo absoluto, uno de los principales beneficios es que no tienes que pagar seguridad social ni otros costes laborales asociados a una incorporación local.",
+            "Se factura como un servicio profesional externo, reduciendo significativamente tus costes laborales.",
+        ],
+    },
+    {
+        question: "¿Puedo entrevistar a la persona antes de que comience?",
+        answers: [
+            "Claro, como parte de nuestro proceso de selección, te compartimos de 3 a 5 perfiles para que los entrevistes y elijas el candidato que mejor encaje.",
+        ],
+    },
+    {
+        question:
+            "¿Cuánto tiempo tarda el proceso desde la selección hasta la contratación?",
+        answers: [
+            "Normalmente, entre 2 semanas y 1 mes, según el perfil. Así que, si necesitas contratar personal extranjero el proceso suele ser ágil gracias a nuestro pool de perfiles preseleccionado.",
+        ],
+    },
+    {
+        question: "¿Cómo me hacen el cobro?",
+        answers: [
+            "El pago es automático, mensual, con tarjeta de débito o crédito. Recibes una única factura que simplifica la gestión administrativa, sin complicaciones de seguridad social ni trámites laborales adicionales.",
+        ],
+    },
+    {
+        question: "¿Cuánto cuesta?",
+        answers: [
+            "El precio mensual varía según nivel educativo, experiencia y país de residencia del profesional contratado, con tarifas desde 690€/mes todo incluido.",
+            "En Oberstaff pagas una cuota fija mensual que incluye el salario del profesional y nuestros costes administrativos (gestión, cambio de divisa y transferencias).",
+            "El importe que te damos es el coste total, sin cargos ocultos ni sorpresas adicionales.",
+        ],
+    },
+    {
+        question: "¿En qué países de Latinoamérica operan?",
+        content: "countries",
+    },
+    {
+        question:
+            "¿Cuál es la diferencia entre EOR, Outsourcing y Staff Augmentation?",
+        content: "definitions",
+    },
+];
+---
+
+<section class="faq-section">
+    <div class="faq-container">
+        <FAQHeader
+            title="Todo lo que necesitas saber antes de contratar talento en LATAM"
+        />
+
+        <div class="faq-list">
+            {
+                faqs.map((faq) => (
+                    <FAQItem question={faq.question}>
+                        {faq.answers &&
+                            faq.answers.map((answer) => <p>{answer}</p>)}
+
+                        {faq.content === "countries" && (
+                            <>
+                                <p>
+                                    Operamos en los principales mercados, los
+                                    que poseen la mayor concentración de talento
+                                    profesional y zonas horarias compatibles con
+                                    España:
+                                </p>
+                                <p>
+                                    <span class="subtle-bold">
+                                        Colombia, Argentina, México, Venezuela,
+                                        Chile, Perú y Uruguay.
+                                    </span>
+                                </p>
+                            </>
+                        )}
+
+                        {faq.content === "definitions" && (
+                            <>
+                                <ul class="faq-list-bullets">
+                                    <li>
+                                        <span class="subtle-bold">EOR:</span>{" "}
+                                        contratas en LATAM sin abrir empresa;
+                                        Oberstaff es el empleador legal.
+                                    </li>
+                                    <li>
+                                        <span class="subtle-bold">
+                                            Outsourcing:
+                                        </span>{" "}
+                                        externalizas un servicio completo; el
+                                        proveedor gestiona al equipo.
+                                    </li>
+                                    <li>
+                                        <span class="subtle-bold">
+                                            Staff Augmentation:
+                                        </span>{" "}
+                                        añades perfiles a tu equipo existente;
+                                        tú los gestionas en el día a día.
+                                    </li>
+                                </ul>
+                                <p class="faq-cta-text">
+                                    ¿No sabes cuál necesitas? Agenda una llamada
+                                    gratuita y te orientamos.
+                                </p>
+                            </>
+                        )}
+                    </FAQItem>
+                ))
+            }
+        </div>
+    </div>
+
+    <script src="../../scripts/faq.js"></script>
+</section>
