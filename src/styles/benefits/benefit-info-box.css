@@ -1,6 +1,6 @@
 .highlight-info-box {
-    background-color: #fff9fb;
-    border: 1px solid #ffe0eb;
+    background-color: #fff0f5; /* A bit more intense red/pink */
+    border: 1px solid #ffccd5;
     border-radius: 12px;
     padding: 25px;
     text-align: center;
@@ -18,4 +18,5 @@
     font-size: 20px;
     vertical-align: middle;
     margin-right: 5px;
+    color: #eab308; /* Yellow for the lightbulb */
 }

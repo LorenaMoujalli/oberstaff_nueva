@@ -1,6 +1,7 @@
 ---
 import TestimonialCard from "./TestimonialCard.astro";
 import TestimonialsHeader from "./TestimonialsHeader.astro";
+import VideoTestimonialModal from "../video/VideoTestimonialModal.astro";
 import "../../styles/testimonios/testimonials-section.css";
 
 const testimonials = [
@@ -11,6 +12,7 @@ const testimonials = [
             "2 profesionales a tiempo completo",
             "Ahorro significativo en costes",
         ],
+        videoId: "_CxlPfluS7M",
     },
     {
         clientName: "Fernando Calderón",
@@ -19,6 +21,7 @@ const testimonials = [
             "Editor de vídeo incorporado",
             '"Proceso rápido y sin complicaciones"',
         ],
+        videoId: "24KxCAFGrDs",
     },
     {
         clientName: "Kate McCaffert",
@@ -27,6 +30,7 @@ const testimonials = [
             "+2 años trabajando con Oberstaff",
             "Equipo remoto integrado",
         ],
+        videoId: "9RLgpEF-GVA",
     },
 ];
 ---
@@ -46,3 +50,5 @@ const testimonials = [
         </div>
     </div>
 </section>
+
+<VideoTestimonialModal />

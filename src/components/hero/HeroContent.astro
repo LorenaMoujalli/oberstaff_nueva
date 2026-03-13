@@ -1,5 +1,6 @@
 ---
 import "../../styles/hero/HeroContent.css";
+import VideoPrincipalModal from "../video/VideoPrincipalModal.astro";
 ---
 
 <div class="hero-text-content">
@@ -21,9 +22,10 @@ import "../../styles/hero/HeroContent.css";
                 icon="solar:alt-arrow-right-linear"
                 class="btn-icon-right"></iconify-icon></a
         >
-        <a href="/home" class="btn-secondary">
+        <a href="javascript:void(0)" class="btn-secondary" id="openVideoModal">
             <iconify-icon icon="solar:play-circle-bold" class="btn-icon-left"
-            ></iconify-icon> Ver cómo funciona
+            ></iconify-icon>
+            Ver cómo funciona
         </a>
     </div>
     <p class="hero-footer-note">
@@ -33,6 +35,8 @@ import "../../styles/hero/HeroContent.css";
             color="#ff66cc"></iconify-icon> Sin tarjeta de crédito · Sin compromiso
     </p>
 </div>
+
+<VideoPrincipalModal />
 
 <style>
     .hero-text-content {

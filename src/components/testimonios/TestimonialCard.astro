@@ -7,9 +7,10 @@ interface Props {
     clientMeta: string;
     benefits: string[];
     videoUrl?: string;
+    videoId?: string;
 }
 
-const { clientName, clientMeta, benefits, videoUrl = "/home" } = Astro.props;
+const { clientName, clientMeta, benefits, videoUrl = "/home", videoId } = Astro.props;
 ---
 
 <article class="testimonial-card">
@@ -27,7 +28,7 @@ const { clientName, clientMeta, benefits, videoUrl = "/home" } = Astro.props;
         }
     </ul>
 
-    <a href={videoUrl} class="video-link">
+    <a href="javascript:void(0)" class="video-link open-testimonial-video" data-video-id={videoId}>
         <iconify-icon icon="mdi:play-circle-outline" class="play-icon"
         ></iconify-icon>
         Ver testimonio en vídeo

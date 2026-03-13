@@ -7,7 +7,7 @@
         <div class="logo-section">
             <a href="/home">
                 <img
-                    src="/logo-oberstaff.png"
+                    src="/logo-oberstaff.webp"
                     alt="Oberstaff Logo"
                     class="logo"
                 />
@@ -40,8 +40,10 @@
                     ></iconify-icon>
                     +34 930 289 966
                 </span>
+                <!-- 
                 <a href="/home" class="login-link">Log in</a>
                 <a href="/home" class="signup-button">Sign Up</a>
+                -->
             </div>
         </div>
     </div>
@@ -50,20 +52,34 @@
 <script>
     const menuToggle = document.getElementById("menu-toggle");
     const navWrapper = document.getElementById("nav-wrapper");
+    const navLinksList = document.querySelectorAll(".nav-links a");
+
+    // Función para alternar el menú y el icono
+    function toggleMenu() {
+        if (!navWrapper) return;
+        navWrapper.classList.toggle("is-open");
+
+        const icon = menuToggle?.querySelector("iconify-icon");
+        if (icon) {
+            if (navWrapper.classList.contains("is-open")) {
+                icon.setAttribute("icon", "solar:close-square-linear");
+            } else {
+                icon.setAttribute("icon", "solar:hamburger-menu-linear");
+            }
+        }
+    }
 
     if (menuToggle && navWrapper) {
-        menuToggle.addEventListener("click", () => {
-            navWrapper.classList.toggle("is-open");
+        menuToggle.addEventListener("click", toggleMenu);
 
-            // Toggle icon (optional: change to 'X' icon)
-            const icon = menuToggle.querySelector("iconify-icon");
-            if (icon) {
+        // Cerrar el menú al hacer clic en un enlace
+        navLinksList.forEach(link => {
+            link.addEventListener("click", () => {
+                // Solo ejecutar si el menú está abierto
                 if (navWrapper.classList.contains("is-open")) {
-                    icon.setAttribute("icon", "solar:close-square-linear");
-                } else {
-                    icon.setAttribute("icon", "solar:hamburger-menu-linear");
+                    toggleMenu();
                 }
-            }
+            });
         });
     }
 </script>
@@ -218,10 +234,10 @@
 
         .header-nav-wrapper {
             position: fixed;
-            top: 65px; /* Adjust based on header height */
+            top: 56px; /* Ajustado para coincidir exactamente con la altura del header (40px logo + 16px padding) */
             left: 0;
             width: 100%;
-            height: calc(100vh - 65px);
+            height: calc(100vh - 56px);
             background: white;
             flex-direction: column;
             padding: 1.5rem 2rem;
