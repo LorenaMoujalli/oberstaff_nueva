@@ -1,0 +1,300 @@
+---
+import DashboardLayoutServicios from "../../layouts/DashboardLayoutServicios.astro";
+import HeroService from "../../components/hero-servicios/HeroService.astro";
+import ConEorService from "../../components/conEorServicios/ConEorService.astro";
+import BeneficiosSeccion from "../../components/beneficios-eor-servicios/BeneficiosSeccion.astro";
+import EorStepsSection from "../../components/eor-steps-servicios/EorStepsSection.astro";
+import EorCta from "../../components/eor-cta-servicios/EorCta.astro";
+import FeaturesSection from "../../components/oberstaff-features-servicios/FeaturesSection.astro";
+import CoberturaSeccion from "../../components/geografica-servicios/CoberturaSeccion.astro";
+import PricingSection from "../../components/pricing-servicios/PricingSection.astro";
+import CasosExitoSection from "../../components/casos-exito-servicios/CasosExitoSection.astro";
+import RolesSection from "../../components/roles-servicios/RolesSection.astro";
+import FAQSection from "../../components/faq-servicios/FAQSection.astro";
+import OtrosServiciosSection from "../../components/otros-servicios-servicios/OtrosServiciosSection.astro";
+import ContactFormSection from "../../components/form/ContactFormSection.astro";
+import ArticulosSection from "../../components/articulos-servicios/ArticulosSection.astro";
+---
+
+<DashboardLayoutServicios>
+	<div class="service-detail-container">
+		<div class="fade-in-section">
+			<HeroService
+				label="EMPLOYER OF RECORD"
+				title="Contrata en Latinoamérica."
+				highlight="Sin abrir entidad."
+				description="Oberstaff actúa como EOR en LATAM. Tú gestionas el trabajo, nosotros nos encargamos del contrato, la nómina y el cumplimiento legal. <br> <strong>Todo en regla, sin riesgos.</strong>"
+				videoImg="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200"
+				remoteCountry="CO"
+				floatingText="Cero Riesgo Legal"
+				stat1Number="70%"
+				stat1Label="AHORRO EN<br>COSTOS"
+				stat2Number="5.000+"
+				stat2Label="EMPRESAS<br>CONFÍAN"
+			/>
+		</div>
+
+		<div class="fade-in-section">
+			<ConEorService
+				eyebrow="¿Qué es un Employer of Record?"
+				title="Tú diriges. Nosotros somos el<br>empleador legal."
+				description="Un Employer of Record (EOR) es la entidad legal que contrata a los empleados en nombre de otra empresa. Tú defines las tareas and objetivos, Oberstaff gestiona todo el cumplimiento."
+				negativeTitle="SIN EOR"
+				positiveTitle="CON OBERSTAFF EOR"
+				badge="Recomendado"
+				negativeIcon="solar:close-circle-linear"
+				positiveIcon="solar:check-circle-linear"
+				negativeItems={[
+					"Abrir empresa local: 3-6 meses",
+					"Riesgo legal elevado",
+					"Gestión de nómina interna",
+					"Cumplimiento local complejo",
+					"Altos costos fijos",
+				]}
+				positiveItems={[
+					"Contratación en 48 horas",
+					"Cero riesgo legal",
+					"Nómina gestionada",
+					"Cumplimiento garantizado",
+					"Ahorro del 70%",
+				]}
+			/>
+		</div>
+
+		<div class="fade-in-section">
+			<BeneficiosSeccion
+				beneficios={[
+					{
+						icon: "mdi:scale-balance",
+						title: "Cumplimiento legal garantizado",
+						description:
+							"Contratos adaptados a la legislación laboral de cada país, sin errores ni sorpresas.",
+						colorClass: "icon-legal",
+					},
+					{
+						icon: "solar:calculator-linear",
+						title: "Nómina y beneficios automatizados",
+						description:
+							"Pago puntual en moneda local, seguridad social, vacaciones y todo lo obligatorio gestionado.",
+						colorClass: "icon-nomina",
+					},
+					{
+						icon: "solar:shield-check-linear",
+						title: "Sin responsabilidad laboral directa",
+						description:
+							"Oberstaff asume la relación jurídica con el empleado. Tu empresa queda protegida ante cualquier contingencia.",
+						colorClass: "icon-responsabilidad",
+					},
+				]}
+			/>
+		</div>
+
+		<div class="fade-in-section">
+			<EorStepsSection
+				title="Employer of record services"
+				subtitle="De 0 al primer día laboral en 4 pasos."
+				steps={[
+					{
+						title: "Nos cuentas quién necesitas",
+						lineColorClass: "line-black",
+						description:
+							"Compártenos el perfil que buscas: rol, salario, país de Latinoamérica y fecha de inicio. Nosotros hacemos el resto.",
+					},
+					{
+						title: "Firmamos los contratos",
+						lineColorClass: "line-pink",
+						description:
+							"Redactamos contratos conformes a la legislación local y los firmamos en nombre de tu empresa. Sin burocracia.",
+					},
+					{
+						title: "El empleado entra a tu equipo",
+						lineColorClass: "line-orange",
+						description:
+							"El profesional se integra directamente a tu operación. Tú gestionas su día a día como si fuera tu empleado directo.",
+					},
+					{
+						title: "Nuestro EOR services se encarga de todo",
+						lineColorClass: "line-blue",
+						description:
+							"Nómina, impuestos, bajas, vacaciones y cumplimiento continuo. Sin sorpresas, sin desvíos de tu foco.",
+					},
+				]}
+			/>
+		</div>
+
+		<div class="fade-in-section">
+			<EorCta
+				title="¿Listo para contratar en Latinoamérica sin riesgos?"
+				text="Habla con uno de nuestros especialistas EOR y recibe una propuesta personalizada en menos de 24 horas. Sin compromiso."
+				buttonText="Solicitar propuesta gratuita"
+				buttonHref="#contacto-eor"
+			/>
+		</div>
+
+		<div class="fade-in-section">
+			<FeaturesSection
+				eyebrow="Por qué Oberstaff EOR"
+				title="Todo lo que necesitas sobre nuestro employer of record services"
+				subtitle="Diseñado para empresas españolas que quieran expandirse rápido en Latinoamérica, sin asumir riesgos innecesarios."
+				features={[
+					{
+						title: "Contratación en 48 horas",
+						description:
+							"Desde la firma del acuerdo hasta el primer día laboral. Sin esperas, sin trámites interminables.",
+						icon: "solar:bolt-bold-duotone",
+						colorClass: "icon-blue",
+					},
+					{
+						title: "Cobertura en 10+ países",
+						description:
+							"Employer of record Colombia, México, Argentina, Venezuela, Chile, Ecuador y más. Un solo proveedor para toda Latinoamérica.",
+						icon: "solar:global-bold-duotone",
+						colorClass: "icon-green",
+					},
+					{
+						title: "Ahorra hasta un 70%",
+						description:
+							"Accede a talento de primer nivel a una fracción del costo en mercados como España, EE.UU. o el Reino Unido.",
+						icon: "solar:wad-of-money-bold-duotone",
+						colorClass: "icon-yellow",
+					},
+					{
+						title: "Cero riesgo laboral",
+						description:
+							"Oberstaff asume la responsabilidad jurídica como empleador. Tu empresa en España queda protegida de cualquier reclamación.",
+						icon: "solar:shield-check-bold-duotone",
+						colorClass: "icon-red",
+					},
+					{
+						title: "Flexibilidad total",
+						description:
+							"Escala hacia arriba o hacia abajo sin penalizaciones. Ajusta tu equipo según la evolución de tu negocio.",
+						icon: "solar:refresh-square-bold-duotone",
+						colorClass: "icon-purple",
+					},
+					{
+						title: "Nómina automatizada y puntual",
+						description:
+							"Nos encargamos del pago de nómina, beneficios sociales, vacaciones y liquidaciones gestionadas al día, siempre, tu solo de hacer crecer tu negocio.",
+						icon: "solar:chart-2-bold-duotone",
+						colorClass: "icon-pink",
+					},
+					{
+						title: "Zona horaria compatible",
+						description:
+							"Los profesionales de LATAM trabajan en tu horario. Coordinación real, sin barreras de comunicación.",
+						icon: "solar:history-bold-duotone",
+						colorClass: "icon-cyan",
+					},
+					{
+						title: "Soporte dedicado",
+						description:
+							"Tendrás a tu disposición un equipo de soporte que estará disponible cuando lo necesites.",
+						icon: "solar:chat-round-dots-bold-duotone",
+						colorClass: "icon-indigo",
+					},
+					{
+						title: "Sin contrato de permanencia",
+						description:
+							"Empieza a usar nuestro EOR Employer Of Record en LATAM sin compromisos a largo plazo. Si algo cambia, adaptamos sin complicaciones.",
+						icon: "solar:document-text-bold-duotone",
+						colorClass: "icon-orange",
+					},
+				]}
+			/>
+		</div>
+
+		<div class="fade-in-section">
+			<CoberturaSeccion
+				title="Cobertura geográfica - Eor españa"
+				description="Contrata talento en toda Latinoamérica. Presencia legal activa en los principales mercados de talento de habla hispana."
+				countries={[
+					{ code: "CO", name: "EOR Colombia" },
+					{ code: "AR", name: "EOR Argentina" },
+					{ code: "MX", name: "EOR México" },
+					{ code: "VE", name: "EOR Venezuela" },
+					{ code: "PE", name: "Perú" },
+					{ code: "EC", name: "Ecuador" },
+					{ code: "PY", name: "Paraguay" },
+				]}
+			/>
+		</div>
+
+		<div class="fade-in-section">
+			<PricingSection
+				eyebrow="Planes EOR"
+				title="Precios simples y sin sorpresas."
+				subtitle="Paga por profesional, no por funcionalidades. Sin costes ocultos."
+				plans={[
+					{
+						badge: "MÁS POPULAR",
+						title: "EOR Completo",
+						price: "690",
+						currency: "€",
+						period: "/ empleado / mes",
+						teamSize: "Para equipos de 4-20 empleados",
+						features: [
+							"Contrata empleados en LATAM a tiempo completo sin crear una entidad legal.",
+							"Gestiona nómina y pagos de forma simple y centralizada.",
+							"Administra la relación laboral (altas, documentación y cumplimiento) desde un solo lugar.",
+						],
+						ctaText: "Comenzar ahora",
+						ctaHref: "#contacto-eor",
+					},
+				]}
+			/>
+		</div>
+
+		<div class="fade-in-section">
+			<CasosExitoSection
+				title="CASOS DE ÉXITO"
+				subtitle="Empresas Españolas que ya confían en Oberstaff EOR."
+				testimonials={[
+					{
+						stars: 5,
+						text: "Gracias a Oberstaff pudimos incorporar talento de primer nivel a nuestro equipo a un costo muy competitivo. El proceso fue rápido y sin complicaciones. En menos de una semana ya teníamos a nuestra persona trabajando.",
+						author: "Fernando Calderón",
+						role: "CEO · BEAUTYPRO",
+					},
+					{
+						stars: 5,
+						text: "Con Oberstaff pude dar trabajo a dos personas a tiempo completo ahorrando costes significativos. Lo que más valoro es que ellos se encargan de todo lo legal: yo me dedico solo a hace crecer mi negocio.",
+						author: "Shadai Iborra",
+						role: "CEO · @AMEDIASTORY",
+					},
+					{
+						stars: 5,
+						text: "I've been working with Oberstaff for about 2 years. They handle everything: contracts, payments and HR admin. My team in Latin America is fantastic and the cost savings have been game-changing for our business.",
+						author: "Kate McCafferty",
+						role: "KM REAL ESTATE",
+					},
+				]}
+			/>
+		</div>
+
+		<div class="fade-in-section">
+			<FAQSection />
+		</div>
+
+		<div class="fade-in-section">
+			<OtrosServiciosSection />
+		</div>
+
+		<div class="fade-in-section">
+			<RolesSection />
+		</div>
+
+		<div class="fade-in-section">
+			<ContactFormSection />
+		</div>
+
+		<div class="fade-in-section">
+			<ArticulosSection />
+		</div>
+	</div>
+</DashboardLayoutServicios>
+
+<style>
+	.service-detail-container {
+	}
+</style>

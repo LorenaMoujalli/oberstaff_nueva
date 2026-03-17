@@ -1,9 +1,9 @@
 ---
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import HeaderServicios from "../components/HeaderServicios.astro";
+import FooterServicios from "../components/FooterServicios.astro";
 
 interface Props {
-}
+} 
 
 const { } = Astro.props;
 ---
@@ -30,11 +30,11 @@ const { } = Astro.props;
 	</head>
 	<body>
 		<div class="app-container">
-			<Header />
+			<HeaderServicios />
 			<main class="main-content">
 				<slot />
 			</main>
-			<Footer />
+			<FooterServicios />
 		</div>
 	</body>
 </html>

@@ -1,0 +1,37 @@
+---
+import "../../styles/conEorServicios/ConEorCard.css";
+
+interface Props {
+    title: string;
+    items: string[];
+    featured?: boolean;
+    badge?: string;
+    headerIcon: string;
+    iconStyle?: "positive" | "negative";
+}
+
+const { title, items, featured = false, badge, headerIcon, iconStyle = "negative" } = Astro.props;
+const headerClass = iconStyle === "positive" ? "card-header positive-header" : "card-header negative-header";
+const listClass = iconStyle === "positive" ? "eor-list list-positive" : "eor-list list-negative";
+---
+
+<div class={`eor-card${featured ? " featured" : ""}`}>
+    {badge && <div class="eor-badge">{badge}</div>}
+    <div class={headerClass}>
+        <iconify-icon
+            icon={headerIcon}
+            style={iconStyle === "positive" ? "color: #ff66cc;" : ""}
+        ></iconify-icon>
+        {title}
+    </div>
+    <ul class={listClass}>
+        {items.map((item) => (
+            <li>
+                <span class={iconStyle === "positive" ? "icon-check" : "icon-x"}>
+                    {iconStyle === "positive" ? "✓" : "✕"}
+                </span>
+                {item}
+            </li>
+        ))}
+    </ul>
+</div>

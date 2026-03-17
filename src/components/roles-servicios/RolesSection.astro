@@ -1,0 +1,98 @@
+---
+import RoleCard from "./RoleCard.astro";
+import "../../styles/roles-servicios/RolesSection.css";
+
+interface Role {
+    icon: string;
+    title: string;
+    description: string;
+    colorClass?: string;
+}
+
+interface Props {
+    title?: string;
+    subtitle?: string;
+    description?: string;
+    roles?: Role[];
+}
+
+const defaultRoles: Role[] = [
+    {
+        icon: "solar:chart-2-linear",
+        title: "Estrategia Comercial",
+        description: "Ejecutivo de Ventas · SDR · CRM",
+        colorClass: "icon-blue"
+    },
+    {
+        icon: "solar:volume-loud-linear", // Altavoz / Anuncio para Marketing
+        title: "Marketing Digital",
+        description: "SEO · Google Ads · Meta Ads",
+        colorClass: "icon-green"
+    },
+    {
+        icon: "solar:pen-new-square-linear",
+        title: "Redacción y Copywriting",
+        description: "Copywriter · Redactor de Contenidos",
+        colorClass: "icon-orange"
+    },
+    {
+        icon: "solar:smartphone-linear",
+        title: "Redes Sociales",
+        description: "Community Manager",
+        colorClass: "icon-pink"
+    },
+    {
+        icon: "solar:pallete-2-linear", // Paleta de colores para Diseño Gráfico
+        title: "Diseño",
+        description: "Diseñador Gráfico · Diseñador UI/UX",
+        colorClass: "icon-purple"
+    },
+    {
+        icon: "solar:videocamera-record-linear",
+        title: "Vídeo",
+        description: "Editor de Vídeo",
+        colorClass: "icon-red"
+    },
+    {
+        icon: "solar:user-speak-linear",
+        title: "Asistencia Gerencial",
+        description: "Asistente Virtual",
+        colorClass: "icon-cyan"
+    },
+    {
+        icon: "solar:calculator-linear",
+        title: "Contabilidad",
+        description: "Auxiliar Contable",
+        colorClass: "icon-yellow"
+    },
+    {
+        icon: "solar:code-linear",
+        title: "Desarrollo y Tech",
+        description: "WordPress · Web · Mobile",
+        colorClass: "icon-indigo"
+    }
+];
+
+const {
+    title = "ROLES QUE PUEDES CONTRATAR CON EOR",
+    subtitle = "¿Ya sabes qué perfil necesitas?",
+    description = "Contrata con nuestro servicio de Employer of Record en España a los profesionales más demandados de Latinoamérica. Tú eliges el perfil, nosotros gestionamos todo lo legal.",
+    roles = defaultRoles
+} = Astro.props;
+---
+
+<section class="roles-eor" id="roles-eor">
+    <div class="roles-header">
+        <h2>{title}</h2>
+        <h3>{subtitle}</h3>
+        <p>{description}</p>
+    </div>
+
+    <div class="roles-grid">
+        {
+            roles.map((role) => (
+                <RoleCard {...role} />
+            ))
+        }
+    </div>
+</section>

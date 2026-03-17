@@ -1,0 +1,32 @@
+---
+import "../../styles/casos-exito-servicios/CasosExitoSection.css";
+import TestimonialCard from "./TestimonialCard.astro";
+
+interface Testimonial {
+    stars: number;
+    text: string;
+    author: string;
+    role: string;
+}
+
+interface Props {
+    title: string;
+    subtitle: string;
+    testimonials: Testimonial[];
+}
+
+const { title, subtitle, testimonials } = Astro.props;
+---
+
+<section class="casos-exito">
+    <div class="casos-header">
+        <h2 set:html={title}></h2>
+        <p set:html={subtitle}></p>
+    </div>
+
+    <div class="casos-grid">
+        {testimonials.map((testimonial) => (
+            <TestimonialCard {...testimonial} />
+        ))}
+    </div>
+</section>

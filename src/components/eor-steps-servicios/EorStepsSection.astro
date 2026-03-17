@@ -1,0 +1,35 @@
+---
+import "../../styles/eor-steps-servicios/EorSteps.css";
+import StepItem from "./StepItem.astro";
+
+interface Step {
+    title: string;
+    description: string;
+    lineColorClass: string;
+}
+
+interface Props {
+    title: string;
+    subtitle: string;
+    steps: Step[];
+}
+
+const { title, subtitle, steps } = Astro.props;
+---
+
+<section class="eor-steps">
+    <div class="steps-header">
+        <h2 set:html={title}></h2>
+        <p>{subtitle}</p>
+    </div>
+
+    <div class="steps-grid">
+        {steps.map((step) => (
+            <StepItem 
+                title={step.title}
+                description={step.description}
+                lineColorClass={step.lineColorClass}
+            />
+        ))}
+    </div>
+</section>

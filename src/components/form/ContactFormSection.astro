@@ -1,0 +1,53 @@
+---
+import "../../styles/form/contact-form.css";
+import ContactForm from "./ContactForm.astro";
+---
+
+<section class="eor-contact-form" id="contacto-eor">
+    <div class="contact-container">
+        <div class="contact-info">
+            <h2>
+                Accede al mejor talento de LATAM por una fracción del
+                coste.
+            </h2>
+            <p>
+                Cuéntanos qué necesitas y un especialista EOR te prepara
+                una propuesta, sin compromiso.
+            </p>
+
+            <div class="timer-text">
+                <iconify-icon icon="solar:clock-circle-linear" class="info-icon"></iconify-icon> Rellenarlo te lleva menos de 60 segundos.
+            </div>
+
+            <div class="trust-badge">
+                <div class="badge-icon"><iconify-icon icon="solar:shield-warning-linear" class="info-icon"></iconify-icon></div>
+                <span>Datos 100% seguros y confidenciales</span>
+            </div>
+
+            <div class="trust-badge">
+                <div class="badge-icon"><iconify-icon icon="solar:bolt-linear" class="info-icon"></iconify-icon></div>
+                <span>Respuesta en menos de 24 horas laborables</span>
+            </div>
+        </div>
+
+        <ContactForm />
+    </div>
+</section>
+
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    .eor-contact-form {
+        background-color: #23242a; /* Fondo oscuro */
+        padding: 50px 20px;
+        font-family:
+            "Inter",
+            -apple-system,
+            sans-serif;
+        color: #ffffff;
+        display: flex;
+        justify-content: center;
+    }
+</style>

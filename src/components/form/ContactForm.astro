@@ -1,0 +1,56 @@
+---
+import "../../styles/form/form-elements.css";
+---
+
+<div class="form-card">
+    <form action="#" method="POST" class="form-grid">
+        <div class="form-group">
+            <label>Nombre *</label>
+            <input
+                type="text"
+                placeholder="Tu nombre"
+                required
+            />
+        </div>
+        <div class="form-group">
+            <label>Apellido *</label>
+            <input
+                type="text"
+                placeholder="Tu apellido"
+                required
+            />
+        </div>
+        <div class="form-group full-width">
+            <label>Nombre de la empresa</label>
+            <input type="text" placeholder="Ej. Acme Corp" />
+        </div>
+        <div class="form-group">
+            <label>Email *</label>
+            <input
+                type="email"
+                placeholder="correo@empresa.com"
+                required
+            />
+        </div>
+        <div class="form-group">
+            <label>Teléfono *</label>
+            <input
+                type="tel"
+                placeholder="+34 600 000 000"
+                required
+            />
+        </div>
+        <div class="form-group full-width">
+            <label>Comentarios</label>
+            <textarea
+                rows="2"
+                placeholder="¿Qué perfil estás buscando?"
+            ></textarea>
+        </div>
+        <div class="full-width">
+            <button type="submit" class="btn-submit"
+                >Solicitar propuesta EOR</button
+            >
+        </div>
+    </form>
+</div>

@@ -1,0 +1,25 @@
+---
+interface Props {
+    label: string;
+    title: string;
+    highlight: string;
+    description: string;
+}
+
+const { label, title, highlight, description } = Astro.props;
+import "../../styles/hero-servicios/HeroContent.css";
+---
+
+<div class="service-label">{label}</div>
+
+<h1 class="main-title">
+    {title} <br>
+    <span class="pink-highlight">{highlight}</span>
+</h1>
+
+<p class="hero-description" set:html={description}></p>
+
+<div class="hero-actions">
+    <a href="#contacto-eor" class="btn-pink">Agendar llamada gratis</a>
+    <a href="#roles-eor" class="btn-outline">Conoce los perfiles</a>
+</div>

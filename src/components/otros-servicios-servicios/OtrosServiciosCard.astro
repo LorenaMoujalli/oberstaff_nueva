@@ -1,0 +1,25 @@
+---
+import "../../styles/otros-servicios-servicios/OtrosServiciosCard.css";
+
+interface Props {
+    icon: string;
+    title: string;
+    description: string;
+    href: string;
+    colorClass?: string;
+}
+
+const { icon, title, description, href, colorClass = "icon-blue" } = Astro.props;
+---
+
+<div class="servicio-card">
+    <div class={`servicio-icon ${colorClass}`}>
+        <iconify-icon icon={icon}></iconify-icon>
+    </div>
+    <h4>{title}</h4>
+    <p>{description}</p>
+    <a href={href} class="link-mas">
+        Ver más
+        <iconify-icon icon="solar:alt-arrow-right-bold"></iconify-icon>
+    </a>
+</div>

@@ -1,0 +1,27 @@
+---
+import "../../styles/casos-exito-servicios/TestimonialCard.css";
+
+interface Props {
+    stars: number;
+    text: string;
+    author: string;
+    role: string;
+}
+
+const { stars, text, author, role } = Astro.props;
+---
+
+<div class="testimonial-card">
+    <div class="stars">
+        {[...Array(stars)].map((_) => (
+            <iconify-icon icon="solar:star-bold"></iconify-icon>
+        ))}
+    </div>
+    <p class="testimonial-text">
+        "{text}"
+    </p>
+    <div class="author-info">
+        <h4>{author}</h4>
+        <p>{role}</p>
+    </div>
+</div>

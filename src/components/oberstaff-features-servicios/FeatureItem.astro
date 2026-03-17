@@ -1,0 +1,22 @@
+---
+import "../../styles/oberstaff-features-servicios/FeatureItem.css";
+
+interface Props {
+    title: string;
+    description: string;
+    icon: string;
+    colorClass: string;
+}
+
+const { title, description, icon, colorClass } = Astro.props;
+---
+
+<div class="feature-item">
+    <div class="feature-icon-title">
+        <div class={`feature-icon ${colorClass}`}>
+            <iconify-icon icon={icon}></iconify-icon>
+        </div>
+        <h3 set:html={title}></h3>
+    </div>
+    <p set:html={description}></p>
+</div>

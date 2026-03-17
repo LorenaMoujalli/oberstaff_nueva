@@ -1,14 +1,28 @@
-.faq-main-title {
-    font-size: 32px;
-    font-weight: 800;
-    color: #1a1a1a;
+.faq-header-container {
     text-align: center;
     margin-bottom: 50px;
+}
+
+.faq-main-title {
+    font-size: 36px;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin: 0 0 15px 0;
     line-height: 1.2;
+}
+
+.faq-subtitle {
+    font-size: 18px;
+    color: #666;
+    margin: 0;
+    line-height: 1.5;
 }
 
 @media (max-width: 768px) {
     .faq-main-title {
-        font-size: 26px;
+        font-size: 28px;
+    }
+    .faq-subtitle {
+        font-size: 16px;
     }
 }

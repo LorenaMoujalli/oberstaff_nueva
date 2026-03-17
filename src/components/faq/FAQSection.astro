@@ -3,7 +3,18 @@ import FAQHeader from "./FAQHeader.astro";
 import FAQItem from "./FAQItem.astro";
 import "../../styles/faq/faq-section.css";
 
-const faqs = [
+interface FAQ {
+    question: string;
+    answers?: string[];
+    content?: string;
+}
+
+interface Props {
+    title?: string;
+    faqs?: FAQ[];
+}
+
+const homeFaqs: FAQ[] = [
     {
         question: "¿Qué es una agencia de staffing remoto y cómo funciona?",
         answers: [
@@ -73,12 +84,17 @@ const faqs = [
         content: "definitions",
     },
 ];
+
+const { 
+    title = "Todo lo que necesitas saber antes de contratar talento en LATAM", 
+    faqs = homeFaqs 
+} = Astro.props;
 ---
 
 <section class="faq-section">
     <div class="faq-container">
         <FAQHeader
-            title="Todo lo que necesitas saber antes de contratar talento en LATAM"
+            title={title}
         />
 
         <div class="faq-list">

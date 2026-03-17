@@ -1,0 +1,20 @@
+---
+import "../../styles/eor-cta-servicios/EorCta.css";
+
+interface Props {
+    title: string;
+    text: string;
+    buttonText: string;
+    buttonHref: string;
+}
+
+const { title, text, buttonText, buttonHref } = Astro.props;
+---
+
+<section class="eor-cta">
+    <div class="cta-content">
+        <h2 class="cta-title" set:html={title}></h2>
+        <p class="cta-text" set:html={text}></p>
+        <a href={buttonHref} class="cta-button">{buttonText}</a>
+    </div>
+</section>

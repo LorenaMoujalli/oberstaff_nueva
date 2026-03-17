@@ -1,0 +1,105 @@
+.pricing-card {
+    max-width: 380px;
+    margin: 0 auto;
+    background: #fff;
+    border: 2px solid #ff66b2;
+    border-radius: 20px;
+    padding: 30px 25px;
+    position: relative;
+    box-shadow: 0 15px 30px rgba(255, 102, 178, 0.06);
+}
+
+.badge-popular {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ff66b2;
+    color: #000; /* Texto y estrella en negro */
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.price-container {
+    margin-bottom: 15px;
+    color: #666;
+    font-size: 14px;
+}
+
+.price-amount {
+    font-size: 40px;
+    font-weight: 900;
+    color: #1a1a1a;
+}
+
+.price-currency {
+    font-size: 28px;
+}
+
+/* Etiqueta azul claro */
+.team-size-tag {
+    background-color: #e8ebff;
+    color: #4d4dff;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 13px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.pricing-features {
+    text-align: left;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 25px 0;
+}
+
+.pricing-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 12px;
+    font-size: 13px;
+    line-height: 1.4;
+    color: #444;
+    font-weight: 500;
+}
+
+.check-icon {
+    color: #ff66b2;
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: -1px;
+}
+
+.btn-pricing {
+    display: block;
+    background-color: #ff66b2;
+    color: white; /* Texto del botón en negro */
+    text-decoration: none;
+    padding: 14px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 15px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    text-align: center;
+}
+
+.btn-pricing:hover {
+    background-color: #ff4da6;
+    transform: scale(1.02);
+}

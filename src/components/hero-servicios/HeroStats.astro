@@ -1,0 +1,27 @@
+---
+interface Props {
+    stat1Number: string;
+    stat1Label: string;
+    stat2Number: string;
+    stat2Label: string;
+}
+
+const { stat1Number, stat1Label, stat2Number, stat2Label } = Astro.props;
+import "../../styles/hero-servicios/HeroStats.css";
+---
+
+<div class="stats-section">
+    <div class="stats-container">
+        <div class="stat-block">
+            <span class="number pink-text">{stat1Number}</span>
+            <span class="label" set:html={stat1Label}></span>
+        </div>
+        
+        <div class="vertical-divider"></div>
+        
+        <div class="stat-block">
+            <span class="number blue-text">{stat2Number}</span>
+            <span class="label" set:html={stat2Label}></span>
+        </div>
+    </div>
+</div>
