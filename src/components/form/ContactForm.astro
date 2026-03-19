@@ -1,5 +1,13 @@
 ---
 import "../../styles/form/form-elements.css";
+
+interface Props {
+    buttonText?: string;
+}
+
+const {
+    buttonText = "Solicitar propuesta EOR"
+} = Astro.props;
 ---
 
 <div class="form-card">
@@ -49,7 +57,7 @@ import "../../styles/form/form-elements.css";
         </div>
         <div class="full-width">
             <button type="submit" class="btn-submit"
-                >Solicitar propuesta EOR</button
+                >{buttonText}</button
             >
         </div>
     </form>

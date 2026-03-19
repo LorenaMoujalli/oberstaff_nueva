@@ -4,9 +4,11 @@ interface Props {
     stat1Label: string;
     stat2Number: string;
     stat2Label: string;
+    stat3Number?: string;
+    stat3Label?: string;
 }
 
-const { stat1Number, stat1Label, stat2Number, stat2Label } = Astro.props;
+const { stat1Number, stat1Label, stat2Number, stat2Label, stat3Number, stat3Label } = Astro.props;
 import "../../styles/hero-servicios/HeroStats.css";
 ---
 
@@ -23,5 +25,15 @@ import "../../styles/hero-servicios/HeroStats.css";
             <span class="number blue-text">{stat2Number}</span>
             <span class="label" set:html={stat2Label}></span>
         </div>
+        
+        {stat3Number && stat3Label && (
+            <>
+                <div class="vertical-divider"></div>
+                <div class="stat-block">
+                    <span class="number orange-text">{stat3Number}</span>
+                    <span class="label" set:html={stat3Label}></span>
+                </div>
+            </>
+        )}
     </div>
 </div>

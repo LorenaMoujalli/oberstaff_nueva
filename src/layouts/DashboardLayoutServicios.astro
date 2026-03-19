@@ -3,17 +3,26 @@ import HeaderServicios from "../components/HeaderServicios.astro";
 import FooterServicios from "../components/FooterServicios.astro";
 
 interface Props {
+	title?: string;
+	description?: string;
+	keywords?: string;
 } 
 
-const { } = Astro.props;
+const { 
+	title = "Contratar talento en LATAM y ahorra hasta 70%",
+	description = "Tu próximo gran profesional está en LATAM. Oberstaff te ayuda a contratar talento remoto validado, integrado y listo para trabajar contigo.",
+	keywords = "Contratar talento"
+} = Astro.props;
+
+
 ---
 
 <!doctype html>
 <html lang="es">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Tu próximo gran profesional está en LATAM. Oberstaff te ayuda a contratar talento remoto validado, integrado y listo para trabajar contigo." />
-		<meta name="keywords" content="Contratar talento" />
+		<meta name="description" content={description} />
+		<meta name="keywords" content={keywords} />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -26,7 +35,7 @@ const { } = Astro.props;
 			src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"
 		></script>
 		<script src="../scripts/scroll-animations.ts"></script>
-		<title>Contratar talento en LATAM y ahorra hasta 70%</title>
+		<title>{title}</title>
 	</head>
 	<body>
 		<div class="app-container">

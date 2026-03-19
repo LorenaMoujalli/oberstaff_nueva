@@ -16,6 +16,12 @@ interface Props {
     stat1Label: string;
     stat2Number: string;
     stat2Label: string;
+    stat3Number?: string;
+    stat3Label?: string;
+    primaryBtnText?: string;
+    primaryBtnHref?: string;
+    secondaryBtnText?: string;
+    secondaryBtnHref?: string;
 }
 
 const props = Astro.props;
@@ -34,6 +40,10 @@ const props = Astro.props;
             title={props.title}
             highlight={props.highlight}
             description={props.description}
+            primaryBtnText={props.primaryBtnText}
+            primaryBtnHref={props.primaryBtnHref}
+            secondaryBtnText={props.secondaryBtnText}
+            secondaryBtnHref={props.secondaryBtnHref}
         />
     </div>
 
@@ -42,5 +52,7 @@ const props = Astro.props;
         stat1Label={props.stat1Label}
         stat2Number={props.stat2Number}
         stat2Label={props.stat2Label}
+        stat3Number={props.stat3Number}
+        stat3Label={props.stat3Label}
     />
 </section>

@@ -15,22 +15,29 @@ import OtrosServiciosSection from "../../components/otros-servicios-servicios/Ot
 import ContactFormSection from "../../components/form/ContactFormSection.astro";
 import ArticulosSection from "../../components/articulos-servicios/ArticulosSection.astro";
 ---
-
-<DashboardLayoutServicios>
+<DashboardLayoutServicios
+	title="Employer of Record | Contrata en LATAM · Oberstaff"
+	description="¿Quieres contratar en LATAM? Oberstaff es tu Employer of Record: gestionamos contratos, nómina e impuestos. Sin riesgos para tu empresa. Expandete en Latinoamérica sin riesgos gracias a un Employer of Record que se encarga de contratos, nómina y cumplimiento local."
+	keywords="Employer of record"
+>
 	<div class="service-detail-container">
 		<div class="fade-in-section">
 			<HeroService
-				label="EMPLOYER OF RECORD"
+				label="EMPLOYER OF RECORD · EOR"
 				title="Contrata en Latinoamérica."
 				highlight="Sin abrir entidad."
-				description="Oberstaff actúa como EOR en LATAM. Tú gestionas el trabajo, nosotros nos encargamos del contrato, la nómina y el cumplimiento legal. <br> <strong>Todo en regla, sin riesgos.</strong>"
+				description="Oberstaff actúa como Employer of Record (EOR) en LATAM. Tú gestionas el trabajo, nosotros nos encargamos del contrato, la nómina y el cumplimiento legal. <br> <strong>Todo en regla, sin riesgos.</strong>"
 				videoImg="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200"
 				remoteCountry="CO"
 				floatingText="Cero Riesgo Legal"
 				stat1Number="70%"
 				stat1Label="AHORRO EN<br>COSTOS"
 				stat2Number="5.000+"
-				stat2Label="EMPRESAS<br>CONFÍAN"
+				stat2Label="EMPRESAS<br>CONFÍAN EN<br> NOSOTROS"
+				primaryBtnText="Agendar llamada gratis"
+				primaryBtnHref="#contacto"
+				secondaryBtnText="Conoce los perfiles profesionales"
+				secondaryBtnHref="#roles"
 			/>
 		</div>
 
@@ -38,7 +45,7 @@ import ArticulosSection from "../../components/articulos-servicios/ArticulosSect
 			<ConEorService
 				eyebrow="¿Qué es un Employer of Record?"
 				title="Tú diriges. Nosotros somos el<br>empleador legal."
-				description="Un Employer of Record (EOR) es la entidad legal que contrata a los empleados en nombre de otra empresa. Tú defines las tareas and objetivos, Oberstaff gestiona todo el cumplimiento."
+				description="Un Employer of Record (EOR) es la entidad legal que contrata a los empleados en nombre de otra empresa. Tú defines las tareas, el horario y los objetivos. Oberstaff gestiona contratos, nómina, impuestos y cumplimiento legal."
 				negativeTitle="SIN EOR"
 				positiveTitle="CON OBERSTAFF EOR"
 				badge="Recomendado"
@@ -52,7 +59,7 @@ import ArticulosSection from "../../components/articulos-servicios/ArticulosSect
 					"Altos costos fijos",
 				]}
 				positiveItems={[
-					"Contratación en 48 horas",
+					"Una sola factura de servicio",
 					"Cero riesgo legal",
 					"Nómina gestionada",
 					"Cumplimiento garantizado",
@@ -82,7 +89,7 @@ import ArticulosSection from "../../components/articulos-servicios/ArticulosSect
 						icon: "solar:shield-check-linear",
 						title: "Sin responsabilidad laboral directa",
 						description:
-							"Oberstaff asume la relación jurídica con el empleado. Tu empresa queda protegida ante cualquier contingencia.",
+							"Oberstaff asume la relación jurídica con el empleado. Tu empresa en España queda protegida ante cualquier contingencia.",
 						colorClass: "icon-responsabilidad",
 					},
 				]}
@@ -127,7 +134,7 @@ import ArticulosSection from "../../components/articulos-servicios/ArticulosSect
 				title="¿Listo para contratar en Latinoamérica sin riesgos?"
 				text="Habla con uno de nuestros especialistas EOR y recibe una propuesta personalizada en menos de 24 horas. Sin compromiso."
 				buttonText="Solicitar propuesta gratuita"
-				buttonHref="#contacto-eor"
+				buttonHref="#contacto"
 			/>
 		</div>
 
@@ -187,7 +194,7 @@ import ArticulosSection from "../../components/articulos-servicios/ArticulosSect
 						colorClass: "icon-cyan",
 					},
 					{
-						title: "Soporte dedicado",
+						title: "Soporte humano",
 						description:
 							"Tendrás a tu disposición un equipo de soporte que estará disponible cuando lo necesites.",
 						icon: "solar:chat-round-dots-bold-duotone",
@@ -239,7 +246,7 @@ import ArticulosSection from "../../components/articulos-servicios/ArticulosSect
 							"Administra la relación laboral (altas, documentación y cumplimiento) desde un solo lugar.",
 						],
 						ctaText: "Comenzar ahora",
-						ctaHref: "#contacto-eor",
+						ctaHref: "#contacto",
 					},
 				]}
 			/>
@@ -247,7 +254,7 @@ import ArticulosSection from "../../components/articulos-servicios/ArticulosSect
 
 		<div class="fade-in-section">
 			<CasosExitoSection
-				title="CASOS DE ÉXITO"
+				title="Casos de Éxito"
 				subtitle="Empresas Españolas que ya confían en Oberstaff EOR."
 				testimonials={[
 					{

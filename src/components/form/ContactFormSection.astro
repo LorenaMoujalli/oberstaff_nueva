@@ -1,19 +1,25 @@
 ---
 import "../../styles/form/contact-form.css";
 import ContactForm from "./ContactForm.astro";
+
+interface Props {
+    title?: string;
+    subtitle?: string;
+    buttonText?: string;
+}
+
+const {
+    title = "Accede al mejor talento de LATAM por una fracción del coste.",
+    subtitle = "Cuéntanos qué necesitas y un especialista EOR te prepara una propuesta, sin compromiso.",
+    buttonText = "Solicitar propuesta EOR"
+} = Astro.props;
 ---
 
-<section class="eor-contact-form" id="contacto-eor">
+<section class="eor-contact-form" id="contacto">
     <div class="contact-container">
         <div class="contact-info">
-            <h2>
-                Accede al mejor talento de LATAM por una fracción del
-                coste.
-            </h2>
-            <p>
-                Cuéntanos qué necesitas y un especialista EOR te prepara
-                una propuesta, sin compromiso.
-            </p>
+            <h2>{title}</h2>
+            <p>{subtitle}</p>
 
             <div class="timer-text">
                 <iconify-icon icon="solar:clock-circle-linear" class="info-icon"></iconify-icon> Rellenarlo te lleva menos de 60 segundos.
@@ -30,7 +36,7 @@ import ContactForm from "./ContactForm.astro";
             </div>
         </div>
 
-        <ContactForm />
+        <ContactForm buttonText={buttonText} />
     </div>
 </section>
 
