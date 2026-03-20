@@ -2,138 +2,156 @@
 import DashboardLayoutServicios from "../../layouts/DashboardLayoutServicios.astro";
 import HeroService from "../../components/hero-servicios/HeroService.astro";
 import ConEorService from "../../components/conEorServicios/ConEorService.astro";
-import BeneficiosSeccion from "../../components/beneficios-eor-servicios/BeneficiosSeccion.astro";
+//import BeneficiosSeccion from "../../components/beneficios-eor-servicios/BeneficiosSeccion.astro";
 import EorStepsSection from "../../components/eor-steps-servicios/EorStepsSection.astro";
 import EorCta from "../../components/eor-cta-servicios/EorCta.astro";
 import FeaturesSection from "../../components/oberstaff-features-servicios/FeaturesSection.astro";
 import CoberturaSeccion from "../../components/geografica-servicios/CoberturaSeccion.astro";
 //import PricingSection from "../../components/pricing-servicios/PricingSection.astro";
 import CasosExitoSection from "../../components/casos-exito-servicios/CasosExitoSection.astro";
-import RolesSection from "../../components/roles-servicios/RolesSection.astro";
-import FAQSectionPersonal from "../../components/faq-servicios/FAQSection-personal.astro";
+import RolesSectionStaff from "../../components/roles-servicios/roles-staff.astro";
+import FAQSectionStaff from "../../components/faq-servicios/FAQSection-staff.astro";
+import QueEsStaffSection from "../../components/QueesStaff-servicios/QueEsStaffSection.astro";
 import BeneficiosSeccionPersonal from "../../components/beneficios-eor-servicios/BeneficiosSeccion-personal.astro";
 //import OtrosServiciosSection from "../../components/otros-servicios-servicios/OtrosServiciosSection.astro";
 import ContactFormSection from "../../components/form/ContactFormSection.astro";
 //import ArticulosSection from "../../components/articulos-servicios/ArticulosSection.astro";
 ---
 
-<DashboardLayoutServicios 
-    title="Outsourcing de Personal Remoto LATAM | Oberstaff"
-    description="Ahorra hasta un 70% frente al mercado español con outsourcing de personal en LATAM. Escala tu equipo remoto sin permanencia mínima ni riesgos legales."
-    keywords="outsourcing de personal"
+<DashboardLayoutServicios
+    title="Staff Augmentation con Talento de LATAM | Oberstaff"
+    description="Amplía tu equipo con profesionales IT remotos de LATAM. Staff augmentation flexible para empresas españolas: hasta 70% de ahorro, sin permanencia mínima."
+    keywords="staff augmentation"
 >
     <div class="service-detail-container">
         <div class="fade-in-section">
             <HeroService
-                label="Outsourcing de Personal"
-                title="Talento remoto de LATAM"
+                label="Staff Augmentation"
+                title="Staff Augmentation"
                 highlight="para empresas españolas"
-                description="Delega la <strong>selección, contratación y administración</strong>  de personal a Oberstaff. Con nuestro servicio de  <strong>outsourcing de personal</strong> accede a talento top de Latinoamérica hasta por un 70% menos que en España, en tu horario y sin abrir entidad en LATAM. <br>"
+                description="Amplía tu equipo con profesionales remotos de LATAM. Con nuestro servicio de staff augmentation, accede a talento IT y digital top con hasta un 70% de ahorro frente al mercado español."
                 videoImg="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200"
                 remoteCountry="CO"
                 floatingText="Cero Riesgo Legal"
                 stat1Number="5.000+"
                 stat1Label="Confian en Oberstaff"
                 stat2Number="70%"
-                stat2Label="Ahorro vs. mercado español"
+                stat2Label="Ahorro vs. España"
                 stat3Number="10"
                 stat3Label="Paises en LATAM"
                 primaryBtnText="Agendar llamada gratis"
                 primaryBtnHref="#contacto"
-                secondaryBtnText="Recibir propuesta en <24h"
+                secondaryBtnText="Recibir propuesta en 24h"
                 secondaryBtnHref="#"
             />
         </div>
 
+        <QueEsStaffSection />
+
         <div class="fade-in-section">
             <ConEorService
-                eyebrow="¿Qué es el outsourcing de personal con talento LATAM?"
-                title="Talento de Latinoamérica para tu empresa española. Sin complicaciones."
-                description="Con Oberstaff puedes externalizar la selección, contratación y administración de trabajadores remotos de LATAM para tu empresa Española. Tú diriges el trabajo, nosotros gestionamos contratos, nóminas y el cumplimiento legal en cada país."
-                negativeTitle="Sin outsourcing"
-                positiveTitle="Con Oberstaff"
+                eyebrow="Staff Augmentation"
+                title="Contratar en España vs. ampliar equipo en Latinoamérica"
+                description="Conoce las diferencias clave entre contratar talento local en España y ampliar tu equipo con profesionales remotos de LATAM a través de Oberstaff."
+                negativeTitle="Sin team augmentation"
+                positiveTitle="Con Oberstaff (Talento LATAM)"
                 badge="Recomendado"
                 negativeIcon="solar:close-circle-linear"
                 positiveIcon="solar:check-circle-linear"
                 negativeItems={[
-                    "Salarios elevados del mercado espanol",
+                    "Salarios elevados del mercado español",
+                    "Procesos de selección lentos y costosos",
                     "Riesgo legal y laboral directo",
-                    "Departamento RRHH costoso e interno",
-                    "Difícil escalar el equipo rapido",
+                    "Difícil escalar el equipo rápido",
+                    "Administración de nóminas compleja",
                 ]}
                 positiveItems={[
-                    "Talento de LATAM igual de calificado por hasta un 70% menos. ",
+                    "Talento IT de LATAM igual de cualificado por hasta un 70% menos ",
+                    "Proceso ágil y mucho más económico en pocos días dispondrás de tu profesional remoto",
                     "Cumplimiento legal en LATAM gestionado al 100%",
-                    "Administración de personal completamente externalizada",
-                    "Escala tu equipo remoto sin limites ni permanencia",
+                    "Amplía o reduce el equipo sin permanencia mínima",
+                    "Una única factura mensual en euros para ti",
                 ]}
             />
         </div>
 
         <div class="fade-in-section">
             <BeneficiosSeccionPersonal
+                title="Nuestros servicios de IT Staff Augmentation"
+                subtitle=" Tu equipo técnico ampliado, sin fricción"
+                description="Desde la búsqueda del candidato en LATAM hasta la gestión mensual de su contrato. Oberstaff cubre cada fase del team augmentation para que tu empresa española solo tenga que dirigir el trabajo."
                 beneficios={[
                     {
                         icon: "mdi:account-search",
-                        title: "Outsourcing Seleccion de Personal LATAM",
+                        title: "Selección de Talento IT",
                         description:
-                            "Identificamos, evaluamos y seleccionamos talento remoto en Colombia, Venezuela, México, Argentina y 6 países más. Perfiles con español nativo listos para trabajar en tu horario.",
+                            "Identificamos y evaluamos perfiles técnicos en toda LATAM: desarrolladores, diseñadores UX, data engineers, QA y más. Candidatos con español nativo listos en tu horario.",
                         colorClass: "icon-legal",
                     },
                     {
                         icon: "mdi:file-document-edit",
-                        title: " Outsourcing Contratación de Personal",
+                        title: "Contratación y Alta",
                         description:
-                            "Redactamos, firmamos el contrato laboral y coordinamos la incorporación del profesional remoto. Cumplimiento legal garantizado desde el primer día.",
+                            "Nos encargamos de toda la contratación del profesional. Coordinamos la incorporación del profesional remoto con cumplimiento legal garantizado desde el primer día.",
                         colorClass: "icon-nomina",
                     },
                     {
-                        icon: "solar:calculator-linear",
-                        title: "Outsourcing Administracion de Personal",
+                        icon: "solar:folder-linear",
+                        title: "Administración del Personal",
                         description:
-                            "Olvídate de nóminas, seguridad social, vacaciones, bajas y liquidaciones. Oberstaff se encarga de todo, tu equipo remoto perfectamente administrado mes a mes.",
+                            "Nóminas, seguridad social, vacaciones, bajas y liquidaciones. Oberstaff se encarga de todo el ciclo administrativo mes a mes.",
                         colorClass: "icon-responsabilidad",
                     },
                     {
-                        icon: "solar:star-linear",
-                        title: "Outsourcing de Personal Especializado",
+                        icon: "solar:bolt-linear",
+                        title: "Integración en tu Equipo",
                         description:
-                            "Desarrolladores, diseñadores, financieros y marketers de LATAM con alta cualificación. Talento de primer nivel a una fracción del coste español, trabajando en remoto para ti.",
+                            "El profesional se incorpora directamente en tus herramientas y flujos de trabajo. Tú defines tareas y prioridades. Nosotros aseguramos disponibilidad.",
                         colorClass: "icon-legal",
                     },
                 ]}
             />
         </div>
 
+
+  <div class="fade-in-section">
+            <RolesSectionStaff
+                label="Ampliación del equipo (Team augmentation)"
+                title="Talento IT y digital de LATAM para tu organización"
+                description="Perfiles disponibles para incorporarse a tu empresa española."
+            />
+        </div>
+
+
         <div class="fade-in-section">
             <EorStepsSection
-                label="Proceso de personal outsourcing"
-                title="De cero a equipo remoto"
-                subtitle="Un proceso ágil para que tu empresa española incorpore talento de LATAM sin trámites, sin entidad local y sin riesgos legales."
+                label="Tu primer profesional remoto de LATAM"
+                title="De cero a equipo ampliado "
+                subtitle="Un proceso ágil para que tu empresa española incorpore talento IT de LATAM sin trámites, sin entidad local y sin riesgos legales."
                 steps={[
                     {
                         title: "Defines el perfil",
                         lineColorClass: "line-black",
                         description:
-                            "Nos explicas el rol, habilidades y presupuesto. Nosotros buscamos en toda LATAM.",
+                            "Nos explicas el rol, stack técnico y presupuesto. Buscamos en toda LATAM.",
                     },
                     {
                         title: "Selección del candidato",
                         lineColorClass: "line-pink",
                         description:
-                            "Nuestra empresa de selección de personal te presenta candidatos de LATAM. Tu decides a quién incorporar.",
+                            "Te presentamos 3-5 candidatos preseleccionados. Tú decides quién se incorpora.",
                     },
                     {
                         title: "Contratación y alta",
                         lineColorClass: "line-orange",
                         description:
-                            "Nos encargamos del contrato y la documentación laboral. El profesional comienza en menos de 48 horas tras tu selección.",
+                            "Contrato y documentación incluidos; inicio en 48h tras tu selección",
                     },
                     {
-                        title: "Equipo remoto trabajando",
+                        title: "Equipo ampliado",
                         lineColorClass: "line-blue",
                         description:
-                            "El profesional se incorpora en remoto. Gestionamos nóminas mes a mes.",
+                            "El profesional se integra en tu equipo. Gestionamos nóminas mes a mes.",
                     },
                 ]}
             />
@@ -141,8 +159,8 @@ import ContactFormSection from "../../components/form/ContactFormSection.astro";
 
         <div class="fade-in-section">
             <EorCta
-                title="¿Listo para contratar talento de LATAM para tu empresa Española?"
-                text=" Habla con nuestros especialistas y recibe una propuesta personalizada en menos de 24 horas. Primera consulta gratuita y sin compromiso."
+                title="¿Listo para ampliar tu equipo con talento de LATAM?"
+                text=" Habla con nuestros especialistas y recibe una propuesta personalizada en menos de 24 horas."
                 buttonText="Solicitar propuesta gratuita"
                 buttonHref="#contacto"
             />
@@ -150,49 +168,49 @@ import ContactFormSection from "../../components/form/ContactFormSection.astro";
 
         <div class="fade-in-section">
             <FeaturesSection
-                eyebrow="POR QUÉ ELEGIR OBERSTAFF como tu empresa selección de personal"
-                title="Todo lo que necesita tu empresa"
-                subtitle="Diseñado para empresas españolas que quieren crecer con agilidad y reducir costes  accediendo al mismo tiempo al mejor talento de LATAM"
+                eyebrow="Por qué elegir Oberstaff como tu staff augmentation company"
+                title="Todo lo que necesita tu empresa española"
+                subtitle="Diseñado para empresas españolas que quieren escalar con agilidad y acceder al mejor talento IT de LATAM."
                 features={[
                     {
                         title: "Cero riesgo laboral",
                         description:
-                            "Oberstaff asume la responsabilidad jurídica. Tu empresa queda protegida.",
+                            "Oberstaff asume la responsabilidad jurídica en LATAM. Tu empresa española queda completamente protegida.",
                         icon: "solar:shield-check-bold-duotone",
                         colorClass: "icon-blue",
                     },
                     {
                         title: "Zona horaria compatible",
                         description:
-                            "Horario compatible con CET. Tu equipo en LATAM trabaja contigo en tiempo real.",
+                            "Horario compatible con CET. Tu equipo en LATAM trabaja contigo en tiempo real, sin desfases.",
                         icon: "solar:global-bold-duotone",
                         colorClass: "icon-green",
                     },
                     {
-                        title: "Español nativo sin barreras",
+                        title: "Español nativo",
                         description:
-                            "Todo el talento de LATAM habla español como lengua materna. Comunicación fluida.",
+                            "Todo el talento de LATAM habla español como lengua materna. Comunicación fluida desde el primer día.",
                         icon: "solar:user-speak-bold-duotone",
                         colorClass: "icon-yellow",
                     },
                     {
-                        title: "Gestión de la Nómina",
+                        title: "Una factura en euros",
                         description:
-                            "Nos encargamos de pagarle al profesional remoto. Tu empresa recibe una única factura mensual en euros.",
+                            "Nos encargamos de pagar al profesional en LATAM. Tu empresa recibe una única factura mensual en euros.",
                         icon: "solar:chart-2-bold-duotone",
                         colorClass: "icon-red",
                     },
                     {
-                        title: "Soporte dedicado",
+                        title: "Soporte humano",
                         description:
-                            "Tendrás a tu disposición un equipo de soporte que estará disponible cuando lo necesites.",
+                            "Tendrás a tu disposición un equipo de soporte que estará disponible para cualquier incidencia. Acompañamiento continuo.",
                         icon: "solar:chat-round-dots-bold-duotone",
                         colorClass: "icon-indigo",
                     },
                     {
                         title: "Sin permanencia minima",
                         description:
-                            "Adapta o cancela el servicio cuando lo requieras. Flexibilidad total sin penalizaciones.",
+                            "Adapta o cancela el servicio cuando tu negocio lo requiera. Flexibilidad total, sin penalizaciones.",
                         icon: "solar:refresh-square-bold-duotone",
                         colorClass: "icon-orange",
                     },
@@ -200,6 +218,7 @@ import ContactFormSection from "../../components/form/ContactFormSection.astro";
             />
         </div>
 
+        <!-- 
         <div class="fade-in-section">
             <RolesSection
                 title="Personal remoto especializado en diferentes áreas."
@@ -207,12 +226,12 @@ import ContactFormSection from "../../components/form/ContactFormSection.astro";
                 description="Nuestro servicio de outsourcing de personal especializado cubre las principales áreas digitales con candidatos preseleccionados y listos para incorporarse."
             />
         </div>
+        -->
 
         <div class="fade-in-section">
             <CoberturaSeccion
-                label="Cobertura"
-                title="Tu outsourcing de personal en 10 países de Latinoamérica."
-                description="Presencia activa en los principales mercados. Un único contrato con Oberstaff cubre a tus profesionales remotos en <strong> Colombia, Argentina, Venezuela y 7 países más</strong>. Sin entidad local. Sin burocracia adicional."
+                title="Tu acceso a talento IT en 10 países de LATAM"
+                description="Presencia activa en los principales mercados, un único contrato con Oberstaff cubre a tus profesionales remotos en Colombia, Argentina, Venezuela y 7 países más. Sin entidad local."
                 countries={[
                     { code: "CO", name: "Colombia" },
                     { code: "AR", name: "Argentina" },
@@ -257,18 +276,18 @@ import ContactFormSection from "../../components/form/ContactFormSection.astro";
 
         <div class="fade-in-section">
             <CasosExitoSection
-                label="Casos de Éxito"
-                title="Empresas españolas que ya confían en Oberstaff."
+                title="Empresas españolas que ya amplían su equipo con Oberstaff"
+                subtitle=""
                 testimonials={[
                     {
                         stars: 5,
-                        text: "Gracias a Oberstaff pudimos incorporar talento de primer nivel a nuestro equipo a un costo muy competitivo. El proceso fue rápido y sin complicaciones. En menos de una semana ya teníamos a nuestra persona trabajando.",
+                        text: "Estaba en busca de un editor de video para mi empresa y después de varias búsquedas sin éxito, encontré a Oberstaff en Instagram. Desde nuestra primera llamada, su profesionalismo y calidad de trabajo me dejaron impresionado. Ahora, gracias a su excelente servicio, he expandido mi contrato con ellos para incluir más personal",
                         author: "Fernando Calderón",
                         role: "CEO · BEAUTYPRO",
                     },
                     {
                         stars: 5,
-                        text: "Con Oberstaff pude dar trabajo a dos personas a tiempo completo ahorrando costes significativos. Lo que más valoro es que ellos se encargan de todo lo legal: yo me dedico solo a hace crecer mi negocio.",
+                        text: "Gracias a Oberstaff pude dar trabajo a dos personas a tiempo completo, ahorrando costes de reclutamiento, espacios de oficina y salario que tendría al hacerlo en España. Lo mejor de todo es que todo está incluido en una misma factura. Con Oberstaff, encontré la solución perfecta para mis necesidades de contratación remota y optimización de costes.",
                         author: "Shadai Iborra",
                         role: "CEO · @AMEDIASTORY",
                     },
@@ -282,8 +301,8 @@ import ContactFormSection from "../../components/form/ContactFormSection.astro";
             />
         </div>
 
-        <div class="fade-in-section">
-            <FAQSectionPersonal 
+           <div class="fade-in-section">
+            <FAQSectionStaff 
                 label="FAQ · PREGUNTAS FRECUENTES"
                 title="Todo lo que necesitas saber sobre el outsourcing de personal."
                 subtitle=""
@@ -298,9 +317,9 @@ import ContactFormSection from "../../components/form/ContactFormSection.astro";
 
         <div class="fade-in-section">
             <ContactFormSection
-                title="¿Listo para incorporar tu primer profesional de LATAM?"
-                subtitle="Cuéntanos qué perfil necesitas y en menos de 24 horas recibirás una propuesta personalizada sin compromiso."
-                buttonText="Solicitar propuesta"
+                title=" ¿Listo para ampliar tu equipo con talento IT de LATAM?"
+                subtitle="Cuéntanos qué perfil necesitas y en menos de 24 horas recibirás una propuesta personalizada sin compromiso. Primera consulta gratuita."
+                buttonText="Solicitar propuesta gratuita"
             />
         </div>
 

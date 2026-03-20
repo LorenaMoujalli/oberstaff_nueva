@@ -1,0 +1,10 @@
+.intro-block .section-label { display: block; color: #ff66cc; font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 15px; }
+.intro-block .section-title { font-size: 36px; font-weight: 800; color: #1b1b1b; margin-bottom: 30px; }
+.intro-block .main-description { font-size: 18px; color: #666; max-width: 800px; margin: 0 auto 50px auto; line-height: 1.6; }
+.intro-block .comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 100px; }
+.intro-block .comparison-grid.single-card { grid-template-columns: 1fr; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+@media (max-width: 768px) {
+    .intro-block .comparison-grid { grid-template-columns: 1fr; }
+    .intro-block .section-title { font-size: 28px; }
+}

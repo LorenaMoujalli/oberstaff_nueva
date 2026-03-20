@@ -1,0 +1,54 @@
+---
+import "../../styles/QueesStaff-servicios/intro-block.css";
+import ComparisonCard from "./ComparisonCard.astro";
+
+interface Props {
+  label?: string;
+  title?: string;
+  description?: string;
+  card1Icon?: string;
+  card2Icon?: string;
+  card1IconColor?: string;
+  card2IconColor?: string;
+  card1HtmlContent?: string;
+  card2HtmlContent?: string;
+}
+
+const { 
+  label = "¿Qué es el IT Staff Augmentation?", 
+  title = "Amplía tu equipo técnico sin contratar en España", 
+  description = "Con este modelo de contratación flexible puedes incorporar profesionales remotos de LATAM directamente a tu equipo existente, bajo tu supervisión, sin los costes ni la burocracia de una contratación local.",
+  card1Icon = "solar:users-group-rounded-linear",
+  card2Icon = "solar:document-text-linear",
+  card1IconColor,
+  card2IconColor,
+  card1HtmlContent = "En el <strong>outsourcing</strong> compras un resultado; en el <strong>Staff Augmentation</strong> integras talento. Tú mantienes el control absoluto del trabajo diario.",
+  card2HtmlContent = "Nosotros nos encargamos del papeleo. <strong>¿Por qué LATAM?</strong> Alta cualificación, español nativo, horario compatible y coste hasta un <strong>70% menor.</strong>"
+} = Astro.props;
+---
+
+<div class="intro-block">
+    <span class="section-label">{label}</span>
+    <h2 class="section-title">{title}</h2>
+    
+    <div class="main-description">
+        <p>{description}</p>
+    </div>
+
+    <div class={`comparison-grid ${!card2HtmlContent ? 'single-card' : ''}`}>
+        <ComparisonCard 
+            icon={card1Icon} 
+            iconColor={card1IconColor}
+            htmlContent={card1HtmlContent} 
+            isPink={true}
+        />
+        {card2HtmlContent && (
+            <ComparisonCard 
+                icon={card2Icon} 
+                iconColor={card2IconColor}
+                htmlContent={card2HtmlContent} 
+                isPink={true} 
+            />
+        )}
+    </div>
+</div>

@@ -1,0 +1,19 @@
+---
+import "../../styles/QueesStaff-servicios/comparison-card.css";
+
+interface Props {
+  icon: string;
+  iconColor?: string;
+  htmlContent: string;
+  isPink?: boolean;
+}
+
+const { icon, iconColor, htmlContent, isPink = false } = Astro.props;
+---
+
+<div class={`comp-card ${isPink ? 'pink-border' : ''}`}>
+    <div class="comp-icon" style={iconColor ? `color: ${iconColor};` : ""}>
+        <iconify-icon icon={icon}></iconify-icon>
+    </div>
+    <p set:html={htmlContent}></p>
+</div>

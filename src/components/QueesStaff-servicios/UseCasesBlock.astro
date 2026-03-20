@@ -1,0 +1,54 @@
+---
+import "../../styles/QueesStaff-servicios/use-cases-block.css";
+import UseCaseItem from "./UseCaseItem.astro";
+
+interface UseCase {
+  title: string;
+  description: string;
+}
+
+interface Props {
+  useCasesTitle?: string;
+  useCasesDescription?: string;
+  useCases?: UseCase[];
+}
+
+const defaultUseCases = [
+  {
+    title: "Capacidad operativa inmediata",
+    description: "El staff augmentation model te permite aumentar la fuerza de trabajo en proyectos estratégicos para cumplir plazos sin saturar a tu plantilla fija."
+  },
+  {
+    title: "Picos de Demanda",
+    description: "Escala tu equipo para lanzamientos o campañas estacionales y ajusta la estructura cuando la carga baje."
+  },
+  {
+    title: "Talento Especializado",
+    description: "Incopora expertos para procesos críticos de modernización de infraestructuras, digitalización o consultoría técnica especializada."
+  },
+  {
+    title: "Control y calidad",
+    description: "Suma perfiles de validación o cumplimiento para estabilizar entregas y minimizar riesgos operativos."
+  }
+];
+
+const { 
+  useCasesTitle = "Casos de uso habituales en empresas españolas", 
+  useCasesDescription = "Somos una staff augmentation company con la que puedes reforzar tu equipo cuando requieras velocidad sin aumentar tu estructura fija.",
+  useCases = defaultUseCases
+} = Astro.props;
+---
+
+<div class="use-cases-block">
+    <h2 class="section-title">{useCasesTitle}</h2>
+    <p class="use-cases-intro">{useCasesDescription}</p>
+
+    <div class="use-cases-grid">
+        {useCases.map((useCase) => (
+            <UseCaseItem 
+                title={useCase.title} 
+                description={useCase.description}
+            />
+        ))}
+    </div>
+</div>

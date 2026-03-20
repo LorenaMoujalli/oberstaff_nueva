@@ -1,14 +1,16 @@
 ---
 import "../../styles/faq/faq-header.css";
 interface Props {
+    label?: string;
     title: string;
     subtitle?: string;
 }
 
-const { title, subtitle } = Astro.props;
+const { label, title, subtitle } = Astro.props;
 ---
 
 <div class="faq-header-container">
+    {label && <span class="section-label" style="display: block; color: #ff66cc; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 15px;">{label}</span>}
     <h2 class="faq-main-title">{title}</h2>
     {subtitle && <p class="faq-subtitle">{subtitle}</p>}
 </div>

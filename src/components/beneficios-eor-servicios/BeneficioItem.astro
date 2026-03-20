@@ -2,18 +2,23 @@
 import "../../styles/beneficios-eor-servicios/beneficio-item.css";
 
 interface Props {
-    icon: string;
+    icon?: string;
+    number?: string;
     title: string;
     description: string;
     colorClass: string;
 }
 
-const { icon, title, description, colorClass } = Astro.props;
+const { icon, number, title, description, colorClass } = Astro.props;
 ---
 
 <div class="beneficio-col">
     <div class={`icon-container ${colorClass}`}>
-        <iconify-icon icon={icon}></iconify-icon>
+        {number ? (
+            <span class="step-number">{number}</span>
+        ) : (
+            icon && <iconify-icon icon={icon}></iconify-icon>
+        )}
     </div>
     <h3 class="beneficio-titulo">{title}</h3>
     <p class="beneficio-descripcion">{description}</p>

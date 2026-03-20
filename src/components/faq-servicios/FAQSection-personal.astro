@@ -30,14 +30,21 @@ const faqs = [
     } 
 ]; 
 
-const title = "FAQ";
+interface Props {
+    label?: string;
+    title?: string;
+    subtitle?: string;
+}
+
+const { label, title = "FAQ", subtitle = "Todo lo que necesitas saber sobre el outsourcing de personal." } = Astro.props;
 ---
 
 <section class="faq-section">
     <div class="faq-container">
         <FAQHeader
+            label={label}
             title={title}
-            subtitle="Todo lo que necesitas saber sobre el outsourcing de personal."
+            subtitle={subtitle}
         />
 
         <div class="faq-list">

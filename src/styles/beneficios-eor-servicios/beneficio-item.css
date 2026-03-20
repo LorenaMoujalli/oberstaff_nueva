@@ -18,6 +18,11 @@
     font-size: 22px;
 }
 
+.step-number {
+    font-size: 16px;
+    font-weight: 800;
+}
+
 .icon-legal {
     background-color: #e6e6ff;
     border: 1px solid #d4d4ff;

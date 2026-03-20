@@ -1,0 +1,14 @@
+.use-case-item {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    border: 2px solid #eaeaea;
+    text-align: center;
+    transition: 0.3s;
+}
+.use-case-item:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+
+.use-case-item .uc-header { text-align: center; margin-bottom: 15px; }
+.use-case-item .uc-header h3 { font-size: 17px; font-weight: 700; color: #1b1b1b; margin: 0; }
+
+.use-case-item p { font-size: 14px; color: #666; line-height: 1.5; margin: 0; }

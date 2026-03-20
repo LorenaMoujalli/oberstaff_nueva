@@ -9,16 +9,18 @@ interface Step {
 }
 
 interface Props {
+    label?: string;
     title: string;
     subtitle: string;
     steps: Step[];
 }
 
-const { title, subtitle, steps } = Astro.props;
+const { label, title, subtitle, steps } = Astro.props;
 ---
 
 <section class="eor-steps">
     <div class="steps-header">
+        {label && <span class="section-label" style="display: block; color: #ff66cc; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 15px;">{label}</span>}
         <h2 set:html={title}></h2>
         <p>{subtitle}</p>
     </div>
