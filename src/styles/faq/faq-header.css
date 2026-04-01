@@ -1,0 +1,36 @@
+.faq-header-container {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.faq-main-title {
+    font-size: 32px;
+    font-weight: 500;
+    color: #1B1B1B;
+    text-align: center;
+    margin: 0 auto 15px auto;
+    max-width: 850px;
+    letter-spacing: -1px;
+    line-height: 1.4;
+}
+
+.faq-main-title strong {
+    font-weight: 900;
+    color: #6663FD;
+}
+
+.faq-subtitle {
+    font-size: 18px;
+    color: #666;
+    margin: 0;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .faq-main-title {
+        font-size: 26px;
+    }
+    .faq-subtitle {
+        font-size: 16px;
+    }
+}

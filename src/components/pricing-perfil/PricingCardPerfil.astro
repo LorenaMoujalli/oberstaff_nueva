@@ -1,0 +1,44 @@
+---
+import "../../styles/pricing-perfil/pricing-card.css";
+import PricingHeader from "./PricingHeader.astro";
+import PricingPriceInfo from "./PricingPriceInfo.astro";
+import PricingFeatures from "./PricingFeatures.astro";
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+  priceLabel?: string;
+  priceAmount?: string;
+  pricePeriod?: string;
+  badgeText?: string;
+  features?: string[];
+  disclaimer?: string;
+}
+
+const {
+  title = "Precio community manager con Oberstaff",
+  subtitle = "Tarifas claras y sin sorpresas, el precio varía según la experiencia del perfil. Todo incluido: gestión, nómina y compliance.",
+  priceLabel = "DESDE",
+  priceAmount = "750€",
+  pricePeriod = "/mes",
+  badgeText = "Todo incluido · Jornada completa",
+  features = ["Estrategia multicanal", "Analítica avanzada", "Campañas y paid social", "Coordinación de equipo"],
+  disclaimer = "Precios orientativos. El coste final depende del perfil, país y nivel de experiencia. Sin costes ocultos ni comisiones adicionales."
+} = Astro.props;
+---
+<section class="pricing-card-section">
+    <div class="pricing-card">
+        <PricingHeader title={title} subtitle={subtitle} />
+        
+        <PricingPriceInfo 
+            priceLabel={priceLabel} 
+            priceAmount={priceAmount} 
+            pricePeriod={pricePeriod} 
+            badgeText={badgeText} 
+        />
+
+        <PricingFeatures features={features} />
+
+        <p class="pricing-disclaimer" set:html={disclaimer}></p>
+    </div>
+</section>

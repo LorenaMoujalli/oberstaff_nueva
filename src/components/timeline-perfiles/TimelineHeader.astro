@@ -1,0 +1,18 @@
+---
+import "../../styles/timeline-perfiles/timeline-header.css";
+
+interface Props {
+    title?: string;
+    subtitle?: string;
+}
+
+const {
+    title = "",
+    subtitle = ""
+} = Astro.props;
+---
+
+<header class="timeline-header">
+    <h2 set:html={title}></h2>
+    <p set:html={subtitle}></p>
+</header>

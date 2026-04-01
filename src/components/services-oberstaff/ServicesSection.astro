@@ -1,0 +1,59 @@
+---
+import ServiceCard from "./ServiceCard.astro";
+import "../../styles/services-oberstaff/services-section.css";
+---
+
+<section class="services-oberstaff" id="servicios">
+    <div class="services-container">
+        <header class="services-header">
+            <h2>
+              Servicios para <strong>incorporar profesionales de Latinoamérica</strong>
+            </h2>
+            <p class="section-description">
+                No todas las empresas necesitan la misma estructura. Por eso Oberstaff te orienta hacia el modelo más eficiente según el tipo de perfil, la relación de trabajo y el nivel de control que buscas.
+            </p>
+        </header>
+
+        <div class="services-grid">
+            <ServiceCard
+                icon="⚖️"
+                title="Employer of Record (EOR)"
+                description="Puedes contratar personal extranjero sin necesidad de constituir una empresa local. Gestionamos contratos, nóminas y compliance legal."
+                linkText="Conoce nuestro servicio de Employer of Record (EOR)"
+                href="#"
+                colorClass="purple-bg"
+                cardClass="card-purple"
+            />
+
+            <ServiceCard
+                icon="👥"
+                title="Outsourcing de Personal"
+                description="Externaliza la gestión completa de tu equipo remoto: búsqueda, selección, contratación y gestión mensual."
+                linkText="Conoce nuestro servicio de Outsourcing de personal"
+                href="#"
+                colorClass="pink-bg"
+                cardClass="card-green"
+            />
+
+            <ServiceCard
+                icon="💻"
+                title="Staff Augmentation"
+                description="Refuerza tu equipo de tecnología con desarrolladores, QA, DevOps y más perfiles IT de primer nivel. Integración inmediata."
+                linkText="Conoce nuestro servicio de Staff Augmentation"
+                href="#"
+                colorClass="orange-bg"
+                cardClass="card-pink"
+            />
+
+            <ServiceCard
+                icon="📋"
+                title="Contractor of Record (CoR)"
+                description="Formaliza la relación con freelancers y contratistas independientes. Oberstaff gestiona el contrato, el pago y el cumplimiento normativo sin convertirlos en empleados."
+                linkText="Conoce nuestro servicio de Contractor of Record"
+                href="#"
+                colorClass="gray-bg"
+                cardClass="card-lime"
+            />
+        </div>
+    </div>
+</section>

@@ -1,0 +1,28 @@
+---
+import "../../styles/articulos-servicios/articulo-card.css";
+
+export interface Props {
+    categoria: string;
+    titulo: string;
+    descripcion: string;
+    linkHref?: string;
+}
+
+const {
+    categoria,
+    titulo,
+    descripcion,
+    linkHref = "#",
+} = Astro.props;
+---
+
+<article class="recurso-card">
+    <span class="recurso-category">{categoria}</span>
+    <h3>{titulo}</h3>
+    <p>{descripcion}</p>
+    <a href={linkHref} class="leer-articulo"
+        >Leer artículo <iconify-icon
+            icon="solar:alt-arrow-right-linear"
+            class="arrow-icon"></iconify-icon></a
+    >
+</article>

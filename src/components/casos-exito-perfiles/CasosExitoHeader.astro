@@ -1,0 +1,8 @@
+---
+import "../../styles/casos-exito-perfiles/casos-exito-header.css";
+interface Props {
+  title?: string;
+}
+const { title = "" } = Astro.props;
+---
+<h2 class="section-title" set:html={title}></h2>

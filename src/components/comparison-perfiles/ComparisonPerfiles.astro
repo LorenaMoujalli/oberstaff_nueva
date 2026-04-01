@@ -1,0 +1,55 @@
+---
+import "../../styles/comparison-perfiles/comparison-perfiles.css";
+import ComparisonHeader from "./ComparisonHeader.astro";
+import ComparisonRow from "./ComparisonRow.astro";
+import type { ComparisonRowProps } from "./ComparisonRow.astro";
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+  competitors?: string[];
+  rows?: ComparisonRowProps[];
+  criterioLabel?: string;
+  oberstaffLabel?: string;
+}
+
+const {
+  title = "Comparativa: Precio community manager Oberstaff vs. otras opciones",
+  subtitle = 'Compara el coste real de <strong>contratar community manager</strong> para empresas en España, como freelance o a través de agencia frente a nuestro modelo de talento remoto desde LATAM.',
+  competitors = ["CM local España", "Contratar community manager freelance", "Agencia Social Media"],
+  rows = [],
+  criterioLabel = "Criterio",
+  oberstaffLabel = "Oberstaff (LATAM)"
+} = Astro.props;
+---
+
+<section class="comparison-section">
+    <div class="container">
+        <ComparisonHeader title={title} subtitle={subtitle} />
+
+        <div class="table-responsive">
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th class="col-criterio">{criterioLabel}</th>
+                        <th class="col-highlight">{oberstaffLabel}</th>
+                        {competitors.map((comp) => (
+                            <th set:html={comp}></th>
+                        ))}
+                    </tr>
+                </thead>
+                <tbody>
+                    {rows.map((row) => (
+                        <ComparisonRow 
+                            label={row.label}
+                            oberstaffValue={row.oberstaffValue}
+                            oberstaffBlueText={row.oberstaffBlueText}
+                            oberstaffNoPadding={row.oberstaffNoPadding}
+                            competitorValues={row.competitorValues}
+                        />
+                    ))}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>

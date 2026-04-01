@@ -1,0 +1,16 @@
+.press-subtitle {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #5A5A5A;
+    margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+    .press-subtitle {
+        font-size: 13px;
+        margin-bottom: 30px;
+    }
+}

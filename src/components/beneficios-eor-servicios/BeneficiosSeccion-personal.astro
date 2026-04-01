@@ -1,0 +1,48 @@
+---
+import "../../styles/beneficios-eor-servicios/beneficios-personal.css";
+import BeneficioItem from "./BeneficioItem.astro";
+
+interface Beneficio {
+    icon?: string;
+    number?: string;
+    title: string;
+    description: string;
+    colorClass: string;
+}
+
+interface Props {
+    title?: string;
+    subtitle?: string;
+    description?: string;
+    beneficios: Beneficio[];
+}
+
+const { 
+    title = "Somos tu empresa selección de personal remoto",
+    subtitle = "Todo el ciclo laboral, externalizado.",
+    description = "Desde la búsqueda del candidato en LATAM hasta la gestión mensual de la nómina. Oberstaff cubre cada fase, las empresas españolas solo tienen que dirigir el trabajo.",
+    beneficios 
+} = Astro.props;
+---
+
+<section class="beneficios-personal">
+    <div class="beneficios-personal-container">
+        <div class="beneficios-personal-header">
+            {title && <h2>{title}</h2>}
+            {subtitle && <h3>{subtitle}</h3>}
+            {description && <p>{description}</p>}
+        </div>
+
+        <div class="beneficios-personal-grid">
+            {beneficios.map((beneficio) => (
+                <BeneficioItem 
+                    icon={beneficio.icon}
+                    number={beneficio.number}
+                    title={beneficio.title}
+                    description={beneficio.description}
+                    colorClass={beneficio.colorClass}
+                />
+            ))}
+        </div>
+    </div>
+</section>

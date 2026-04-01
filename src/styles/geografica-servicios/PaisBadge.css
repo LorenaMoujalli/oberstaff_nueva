@@ -1,0 +1,33 @@
+.badge-pais {
+    background-color: #f3f4f6; /* Gris muy claro */
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.2s ease;
+}
+
+.badge-pais:hover {
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transform: translateY(-2px);
+}
+
+.codigo-pais {
+    font-weight: 800;
+    font-size: 14px;
+    color: #1a1a1a;
+    text-transform: uppercase;
+}
+
+.nombre-pais {
+    font-weight: 600;
+    font-size: 15px;
+    color: #333;
+}
+
+@media (max-width: 600px) {
+    .badge-pais { width: 100%; justify-content: center; }
+}

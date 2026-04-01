@@ -1,0 +1,45 @@
+---
+import "../../styles/form/contact-form.css";
+import ContactForm from "./ContactForm.astro";
+
+interface Props {
+    title?: string;
+    subtitle?: string;
+    buttonText?: string;
+}
+
+const {
+    title = "¿Listo para <strong>contratar talento remoto</strong> en Latinoamérica desde España?",
+    subtitle = "Déjanos tus requerimientos y un asesor te contactará en menos de 24 horas para orientarte sobre la mejor estructura, el tipo de perfil recomendado y el ahorro potencial para tu operación.",
+    buttonText = "Solicitar Presupuesto Gratuito"
+} = Astro.props;
+---
+ 
+<section class="eor-contact-form" id="contacto">
+    <div class="contact-container">
+        <div class="contact-info">
+            <h2 set:html={title} />
+            <p>{subtitle}</p>
+
+            <div class="contact-direct-card">
+                <div class="direct-icon-wrapper">
+                    <span class="direct-phone-emoji">📞</span>
+                </div>
+                <div class="direct-text">
+                    <span class="direct-label">Atención directa en España:</span>
+                    <a href="tel:+34930289966" class="direct-phone-link">+34 930 289 966</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-wrapper">
+            <ContactForm buttonText={buttonText} />
+        </div>
+    </div>
+</section>
+
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+</style>

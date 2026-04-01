@@ -1,0 +1,68 @@
+---
+import FAQHeader from "../faq/FAQHeader.astro";
+import FAQItem from "../faq/FAQItem.astro";
+import "../../styles/faq-servicios/faq-section.css";
+
+const faqs = [
+    {
+        question: "¿Qué diferencia hay entre EOR y PEO?",
+        answers: ["Un EOR Employer of Record es el empleador legal de los trabajadores en países donde tu empresa no tiene entidad. Un PEO (Professional Employer Organization) requiere que tu organización ya tenga presencia legal en ese país. Con Oberstaff EOR puedes contratar sin abrir empresa."]
+    },
+    {
+        question: "¿Puedo contratar en varios países a la vez?",
+        answers: ["Sí. Oberstaff opera en más de 10 países de Latinoamérica. Puedes tener profesionales en Colombia, Argentina y Venezuela al mismo tiempo con un único interlocutor y factura consolidada."]
+    },
+    {
+        question: "¿Cuánto tiempo tarda el proceso de contratación?",
+        answers: ["Dependiendo de la complejidad del perfil va de los 20 a los 30 días para la puesta en marcha"]
+    },
+    {
+        question: "¿Tengo que pagar seguridad social u otros beneficios?",
+        answers: [" Oberstaff gestiona toda la parte legal con el profesional. Tu factura mensual ya tiene todo incluido. Sin costes ocultos."]
+    },
+    {
+        question: "¿Cuánto cuesta el servicio de EOR?",
+        answers: ["El servicio de Employer of Record de Oberstaff tiene un coste desde 690 € por colaborador remoto contratado al mes. La tarifa incluye la gestión completa de la relación laboral: nómina, beneficios obligatorios, cumplimiento legal local y soporte continuo. Sin costes ocultos ni sorpresas."]
+    },
+    {
+        question: "¿Puedo entrevistar y seleccionar yo mismo al candidato?",
+        answers: ["Absolutamente. El proceso de selección es tuyo. Tú decides con quién trabajar. Oberstaff solo interviene para formalizar la relación laboral una vez que has tomado la decisión."]
+    },
+    {
+        question: "¿Qué pasa si necesito prescindir de un empleado?",
+        answers: ["Oberstaff gestiona todo el proceso de desvinculación conforme a la legislación local. Sin complicaciones ni riesgos legales para tu empresa en España."]
+    },
+    {
+        question: "¿Los empleados trabajan en mi horario?",
+        answers: ["Sí, los profesionales de LATAM tienen zonas horarias compatibles con Europa y América del Norte. Se adaptan a tu horario y se integran plenamente en la dinámica de tu equipo."]
+    },
+     {
+        question: "¿Hay permanencia mínima?",
+        answers: ["No exigimos contratos de permanencia. Puedes ajustar o cancelar el servicio cuando lo necesites sin penalizaciones. Tu negocio es flexible y tu solución de employer of record en españa también lo es."]
+    }
+]; 
+
+const title = "FAQ";
+---
+
+<section class="faq-section">
+    <div class="faq-container">
+        <FAQHeader
+            title={title}
+            subtitle="Preguntas frecuentes sobre el EOR services de Oberstaff"
+        />
+
+        <div class="faq-list">
+            {
+                faqs.map((faq) => (
+                    <FAQItem question={faq.question}>
+                        {faq.answers &&
+                            faq.answers.map((answer) => <p>{answer}</p>)}
+                    </FAQItem>
+                ))
+            }
+        </div>
+    </div>
+
+    <script src="../../scripts/faq.js"></script>
+</section>

@@ -1,0 +1,13 @@
+---
+import "../../styles/testimonios/stars.css";
+
+interface Props {
+    count?: number;
+}
+
+const { count = 5 } = Astro.props;
+---
+
+<div class="stars">
+    {Array.from({ length: count }).map(() => <span class="star">★</span>)}
+</div>

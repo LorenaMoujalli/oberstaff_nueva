@@ -1,0 +1,17 @@
+---
+import "../../styles/eor-steps-servicios/StepItem.css";
+
+interface Props {
+    title: string;
+    description: string;
+    lineColorClass: string;
+}
+
+const { title, description, lineColorClass } = Astro.props;
+---
+
+<div class="step-item">
+    <h3 class="step-title" set:html={title}></h3>
+    <div class={`step-line ${lineColorClass}`}></div>
+    <p class="step-description">{description}</p>
+</div>

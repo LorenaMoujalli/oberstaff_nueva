@@ -1,0 +1,48 @@
+.stat-card {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.stat-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Estilos de los Números Grandes */
+.stat-number {
+    font-size: 48px;
+    font-weight: 800;
+    margin: 0 0 5px 0;
+    letter-spacing: -1.5px;
+    background: linear-gradient(135deg, var(--brand-purple, #6663FD), #ff66cc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+}
+
+/* Estilos de las Etiquetas */
+.stat-label {
+      font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #374151;
+    font-weight: 600;
+    line-height: 1.4;
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+/* Responsividad para móviles */
+@media (max-width: 850px) {
+   
+
+    .stat-number {
+        font-size: 36px;
+    }
+}

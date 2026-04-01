@@ -1,0 +1,50 @@
+---
+import "../../styles/conEorServicios/ConEorService.css";
+import ConEorHeader from "./ConEorHeader.astro";
+import ConEorGrid from "./ConEorGrid.astro";
+
+interface Props {
+    eyebrow: string;
+    title: string;
+    description: string;
+    negativeTitle: string;
+    positiveTitle: string;
+    badge?: string;
+    negativeItems: string[];
+    positiveItems: string[];
+    negativeIcon?: string;
+    positiveIcon?: string;
+}
+
+const {
+    eyebrow,
+    title,
+    description,
+    negativeTitle,
+    positiveTitle,
+    badge,
+    negativeItems,
+    positiveItems,
+    negativeIcon,
+    positiveIcon,
+} = Astro.props;
+---
+
+<div class="eor-section">
+    <section class="eor-container">
+        <ConEorHeader
+            eyebrow={eyebrow}
+            title={title}
+            description={description}
+        />
+        <ConEorGrid
+            negativeTitle={negativeTitle}
+            positiveTitle={positiveTitle}
+            badge={badge}
+            negativeItems={negativeItems}
+            positiveItems={positiveItems}
+            negativeIcon={negativeIcon}
+            positiveIcon={positiveIcon}
+        />
+    </section>
+</div>

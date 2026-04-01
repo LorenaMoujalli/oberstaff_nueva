@@ -1,0 +1,146 @@
+---
+import FAQItem from "./FAQItem.astro";
+import "../../styles/faq/faq-section.css";
+
+interface FAQ {
+    question: string;
+    answers?: string[];
+    content?: string;
+}
+
+const homeFaqs: FAQ[] = [
+    {
+        question: "¿La persona trabajará solo para mí?",
+        answers: [
+            "Sí, 100% para ti a jornada completa. Tu colaborador remoto trabajará en exclusiva para tu empresa, integrándose totalmente a tu equipo y cultura corporativa.",
+        ],
+    },
+    {
+        question: "¿Puedo prescindir de la persona cuando quiera?",
+        answers: [
+            "Sí, solamente requerimos un preaviso de 30 días. Esta flexibilidad laboral te permite ajustar tu personal remoto según las necesidades de tu negocio sin ataduras contractuales.",
+        ],
+    },
+    {
+        question: "¿Qué coste tiene prescindir de sus servicios?",
+        answers: [
+            "0 €. No te penalizamos por prescindir del servicio. Creemos en ganarnos tu confianza con resultados, no con penalizaciones. Total flexibilidad para tu empresa.",
+        ],
+    },
+    {
+        question: "¿Cuánto tiempo tarda el proceso de incorporación?",
+        answers: [
+            "Varía según el perfil y el modelo, pero normalmente, entre 2 semanas y 1 mes. Así que, si necesitas Contratar personal extranjero el proceso suele ser ágil gracias a nuestro pool de perfiles preseleccionado.",
+        ],
+    },
+    {
+        question: "¿Cómo me hacen el cobro?",
+        answers: [
+            "El pago es automático, mensual, con tarjeta de débito o crédito. Recibes una única factura que simplifica la gestión administrativa, sin complicaciones.",
+        ],
+    },
+    {
+        question: "¿Cuánto cuesta?",
+        answers: [
+            "El precio mensual varía según nivel educativo, experiencia y país de residencia del profesional contratado, con tarifas desde 690€/mes todo incluido.",
+            "En Oberstaff pagas una cuota fija mensual que incluye el salario del profesional y nuestros costes administrativos (gestión, cambio de divisa y transferencias). ",
+           
+        ],
+    },
+    {
+        question: "¿En qué países de Latinoamérica operan?",
+        content: "countries",
+    },
+       {
+        question: "¿Pueden ayudarme si aún no sé qué perfil o qué estructura necesito?",
+        answers: [
+            "Sí, parte del valor de Oberstaff es ayudarte a definir el modelo correcto antes de ejecutar.",
+        ],
+    }   
+];
+
+interface Props {
+    title?: string;
+    faqs?: FAQ[];
+}
+
+const { 
+    title = "Todo lo que necesitas saber antes de <strong>contratar talento</strong> en LATAM", 
+    faqs = homeFaqs 
+} = Astro.props;
+---
+
+<section class="faq-section">
+    <div class="faq-container">
+        <div class="faq-columns">
+            <div class="faq-left-column">
+                <h2 class="faq-main-title" set:html={title} />
+                
+                <div class="faq-cta-card">
+                    <p>¿No sabes qué modelo de contratación necesitas para tu empresa?</p>
+                    <a href="#contacto" class="faq-cta-button">
+                        Agenda una llamada gratuita
+                    </a>
+                </div>
+            </div>
+
+            <div class="faq-right-column">
+                <div class="faq-scroll-container">
+                    {
+                        faqs.map((faq: FAQ) => (
+                            <FAQItem question={faq.question}>
+                                {faq.answers &&
+                                    faq.answers.map((answer: string) => <p>{answer}</p>)}
+
+                                {faq.content === "countries" && (
+                                    <>
+                                        <p>
+                                            Operamos en los principales mercados, los
+                                            que poseen la mayor concentración de talento
+                                            profesional y zonas horarias compatibles con
+                                            España:
+                                        </p>
+                                        <p>
+                                            <span class="subtle-bold">
+                                                Colombia, Argentina, México, Venezuela,
+                                                Chile, Perú y Uruguay.
+                                            </span>
+                                        </p>
+                                    </>
+                                )}
+
+                                {faq.content === "definitions" && (
+                                    <>
+                                        <ul class="faq-list-bullets">
+                                            <li>
+                                                <span class="subtle-bold">EOR:</span>{" "}
+                                                contratas en LATAM sin abrir empresa;
+                                                Oberstaff es el empleador legal.
+                                            </li>
+                                            <li>
+                                                <span class="subtle-bold">
+                                                    Outsourcing:
+                                                </span>{" "}
+                                                externalizas un servicio completo; el
+                                                proveedor gestiona al equipo.
+                                            </li>
+                                            <li>
+                                                <span class="subtle-bold">
+                                                    Staff Augmentation:
+                                                </span>{" "}
+                                                añades perfiles a tu equipo existente;
+                                                tú los gestionas en el día a día.
+                                            </li>
+                                        </ul>
+                                    </>
+                                )}
+                            </FAQItem>
+                        ))
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../scripts/faq.js"></script>
+</section>

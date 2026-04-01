@@ -1,0 +1,15 @@
+.guia-cards-section {
+    padding: 50px 20px;
+    background-color: white;
+    font-family: 'Inter', sans-serif;
+}
+.guia-container {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+.cards-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}

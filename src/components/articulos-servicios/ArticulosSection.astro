@@ -1,0 +1,42 @@
+---
+import "../../styles/articulos-servicios/articulos-section.css";
+import ArticuloCard from "./ArticuloCard.astro";
+
+const articulosInfo = [
+    {
+        categoria: "Outsourcing, Staff Augmentation y EOR",
+        titulo: "Nearshoring: Qué es y Cómo Puede Transformar tu Empresa",
+        descripcion: "La alternativa inteligente al offshoring para contratar talento de élite en tu mismo idioma y franja horaria.",
+        linkHref: "#"
+    },
+    {
+        categoria: "Outsourcing, Staff Augmentation y EOR",
+        titulo: "Servicios BPO: qué incluyen y cómo funcionan",
+        descripcion: "Optimiza tu empresa con servicios BPO: descubre qué incluyen, tipos y cómo implementarlos con éxito.",
+        linkHref: "#"
+    },
+    {
+        categoria: "Costos, Eficiencia y ROI del Talento",
+        titulo: "Cómo reducir gastos de personal con contratación remota",
+        descripcion: "Reduce gastos de personal con contratación remota. Optimiza costos y accede a talento global.",
+        linkHref: "#"
+    }
+];
+---
+
+<section class="recursos-contratacion">
+    <div class="recursos-header">
+        <h2>Recursos para contratar y gestionar equipos en Latinoamérica</h2>
+    </div>
+
+    <div class="recursos-grid">
+        {articulosInfo.map((articulo) => (
+            <ArticuloCard 
+                categoria={articulo.categoria}
+                titulo={articulo.titulo}
+                descripcion={articulo.descripcion}
+                linkHref={articulo.linkHref}
+            />
+        ))}
+    </div>
+</section>

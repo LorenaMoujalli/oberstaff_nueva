@@ -1,0 +1,39 @@
+---
+import "../../styles/cta-intermedio-perfil/cta-intermedio-perfil.css";
+
+interface Props {
+    alertText?: string;
+    title?: string;
+    description?: string;
+    buttonText?: string;
+    buttonHref?: string;
+}
+
+const {
+    alertText = 'Si estabas en modo <strong>"buscar community manager"</strong> sin saber por dónde empezar, aquí simplificamos el proceso para que tomes una decisión más rápida y con menos riesgo.',
+    title = "¿Ya sabes lo que necesitas?",
+    description = "Cuéntanos el perfil que requieres y recibe una propuesta personalizada en menos de 24 horas. Sin compromiso.",
+    buttonText = "Quiero Solicitar propuesta personalizada",
+    buttonHref = "#"
+} = Astro.props;
+---
+
+<section class="cta-final-section">
+    <div class="cta-container">
+        
+        {alertText && (
+            <div class="info-alert-box">
+                <p set:html={alertText}></p>
+            </div>
+        )}
+
+        <div class="cta-card">
+            <h2 set:html={title}></h2>
+            <p set:html={description}></p>
+            <a href={buttonHref} class="btn-primary-cta">
+                {buttonText}
+            </a>
+        </div>
+
+    </div>
+</section>

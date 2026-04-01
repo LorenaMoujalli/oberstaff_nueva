@@ -1,0 +1,23 @@
+---
+import "../../styles/benefits/benefit-item.css";
+
+interface Props {
+    icon: string;
+    title: string;
+    subtitle: string;
+    text: string;
+    colorClass: string;
+}
+
+const { icon, title, subtitle, text, colorClass } = Astro.props;
+---
+
+<div class="benefit-item">
+    <div class="benefit-header">
+        <iconify-icon icon={icon} class={`benefit-icon ${colorClass}`}
+        ></iconify-icon>
+        <h3>{title}</h3>
+    </div>
+    <p class="benefit-subtitle">{subtitle}</p>
+    <p class="benefit-text">{text}</p>
+</div>

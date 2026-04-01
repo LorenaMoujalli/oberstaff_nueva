@@ -1,0 +1,25 @@
+---
+import "../../styles/pricing-perfil/pricing-price-info.css";
+interface Props {
+  priceLabel?: string;
+  priceAmount?: string;
+  pricePeriod?: string;
+  badgeText?: string;
+}
+const { 
+  priceLabel = "DESDE", 
+  priceAmount = "750€", 
+  pricePeriod = "/mes", 
+  badgeText = "Todo incluido · Jornada completa" 
+} = Astro.props;
+---
+<div class="price-display">
+    <span class="price-label" set:html={priceLabel}></span>
+    <div class="main-price">
+        <Fragment set:html={priceAmount} /><span class="price-period" set:html={pricePeriod}></span>
+    </div>
+</div>
+{badgeText && (
+<div class="info-badge" set:html={badgeText}>
+</div>
+)}

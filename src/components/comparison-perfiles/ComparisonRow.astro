@@ -1,0 +1,30 @@
+---
+import "../../styles/comparison-perfiles/comparison-row.css";
+
+export interface ComparisonRowProps {
+  label: string;
+  oberstaffValue: string;
+  oberstaffNoPadding?: boolean;
+  oberstaffBlueText?: boolean;
+  competitorValues: string[];
+}
+
+interface Props extends ComparisonRowProps {}
+
+const {
+  label,
+  oberstaffValue,
+  oberstaffNoPadding,
+  oberstaffBlueText,
+  competitorValues
+} = Astro.props;
+---
+<tr>
+    <td class="row-label" set:html={label}></td>
+    <td class={`col-highlight ${oberstaffBlueText ? 'blue-text' : ''} ${oberstaffNoPadding ? 'no-padding' : ''}`}>
+        <Fragment set:html={oberstaffValue} />
+    </td>
+    {competitorValues.map((val) => (
+        <td set:html={val}></td>
+    ))}
+</tr>

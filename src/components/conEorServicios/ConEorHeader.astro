@@ -1,0 +1,15 @@
+---
+import "../../styles/conEorServicios/ConEorHeader.css";
+
+interface Props {
+    eyebrow: string;
+    title: string;
+    description: string;
+}
+
+const { eyebrow, title, description } = Astro.props;
+---
+
+<p class="eor-eyebrow">{eyebrow}</p>
+<h2 class="eor-title" set:html={title}></h2>
+<p class="eor-description" set:html={description}></p>

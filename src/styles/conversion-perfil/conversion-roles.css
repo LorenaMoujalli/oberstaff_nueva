@@ -1,0 +1,45 @@
+.section-divider {
+    border: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 30px;
+}
+
+.related-roles h3 {
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.roles-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.roles-links a {
+    color: #cbd5e0;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.roles-links a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.roles-links a:hover iconify-icon {
+    color: white !important;
+    transition: color 0.2s;
+}
+
+@media (max-width: 768px) {
+    .roles-links { flex-direction: column; gap: 15px; }
+}

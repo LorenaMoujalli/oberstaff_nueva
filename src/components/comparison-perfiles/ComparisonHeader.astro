@@ -1,0 +1,13 @@
+---
+import "../../styles/comparison-perfiles/comparison-header.css";
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+}
+const { title = "", subtitle = "" } = Astro.props;
+---
+<header class="comp-header">
+    <h2 set:html={title}></h2>
+    <p set:html={subtitle}></p>
+</header>

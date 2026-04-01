@@ -1,0 +1,57 @@
+/* --- Sección principal --- */
+.process-section {
+    padding: 80px 20px 80px 20px;
+    background-color: #FAFAFC;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+}
+
+.process-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* --- Título --- */
+.process-main-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    font-style: normal;
+    color: #1B1B1B;
+    margin: 0 auto 50px auto;
+    letter-spacing: -1px;
+    line-height: 1.4;
+    max-width: 850px;
+}
+
+.process-main-title strong {
+    font-weight: 900;
+    color: #6663FD;
+}
+
+/* --- Card principal (contenedor de 3 columnas) --- */
+.process-card {
+    display: flex;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+    border: 1px solid #ebebeb;
+    text-align: left;
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+    .process-card {
+        flex-direction: column;
+    }
+
+    .process-main-title {
+        font-size: 24px;
+        margin-bottom: 35px;
+    }
+
+    .process-section {
+        padding: 60px 20px;
+    }
+}

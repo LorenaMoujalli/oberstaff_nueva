@@ -1,0 +1,32 @@
+---
+import "../../styles/geografica-servicios/CoberturaSeccion.css";
+import PaisBadge from "./PaisBadge.astro";
+
+interface Country {
+    code: string;
+    name: string;
+}
+
+interface Props {
+    label?: string;
+    title: string;
+    description: string;
+    countries: Country[];
+}
+
+const { label, title, description, countries } = Astro.props;
+---
+
+<section class="cobertura-geografica">
+    <div class="cobertura-header">
+        {label && <span class="section-label" style="display: block; color: #ff66cc; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 15px;">{label}</span>}
+        <h2 set:html={title}></h2>
+        <p set:html={description}></p>
+    </div>
+
+    <div class="cobertura-badges">
+        {countries.map((country) => (
+            <PaisBadge code={country.code} name={country.name} />
+        ))}
+    </div>
+</section>

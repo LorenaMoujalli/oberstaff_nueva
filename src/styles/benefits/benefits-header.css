@@ -1,0 +1,24 @@
+.benefits-main-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    font-style: normal;
+    color: #1B1B1B;
+    text-align: center;
+    margin: 0 auto 40px auto;
+    max-width: 850px;
+    letter-spacing: -1px;
+    line-height: 1.4;
+}
+
+.benefits-main-title strong {
+    font-weight: 900;
+    color: #6663FD;
+}
+
+@media (max-width: 768px) {
+    .benefits-main-title {
+        font-size: 24px;
+        margin-bottom: 50px;
+    }
+}

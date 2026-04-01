@@ -1,0 +1,23 @@
+.lead-hero-section {
+    padding: 65px 20px;
+    background-color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+.lead-container {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+@media (max-width: 1024px) {
+    .lead-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 50px;
+    }
+}

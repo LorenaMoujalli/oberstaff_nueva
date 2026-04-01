@@ -1,0 +1,86 @@
+.profile-card {
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 16px;
+   border: 1px solid rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.profile-card:hover {
+   border-color: rgba(102, 99, 253, 0.3); /* Borde morado sutil al hover */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.profile-icon {
+    font-size: 16px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+}
+
+/* Colores de los iconos emoji */
+.purple-text { color: #5c5cff; }
+.pink-text   { color: #ff66cc; }
+.orange-text { color: #ff6633; }
+.blue-text   { color: #3333ff; }
+
+.profile-card h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0;
+}
+
+.quote {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    color: #666;
+    font-style: normal;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.roles-list {
+    list-style: none;
+    margin: 0;
+    padding-top: 15px;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.role-link {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #4A4A4A;
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.role-link:hover {
+    color: #6663FD;
+    transform: translateX(5px);
+}
+
+.role-link .arrow {
+    color: #4A4A4A;
+}
+
+.role-link:hover .arrow {
+    color: #6663FD;
+}

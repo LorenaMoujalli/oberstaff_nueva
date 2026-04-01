@@ -1,0 +1,21 @@
+---
+import "../../styles/process/process-menu.css";
+
+interface Props {
+    tabs: { id: number; label: string }[];
+}
+
+const { tabs } = Astro.props;
+---
+
+<div class="process-menu" id="process-menu">
+    {tabs.map((tab, i) => (
+        <div
+            class={`process-tab${i === 0 ? " active" : ""}`}
+            data-tab={tab.id}
+        >
+            <span class="process-tab-number">{tab.id}</span>
+            <span class="process-tab-label">{tab.label}</span>
+        </div>
+    ))}
+</div>

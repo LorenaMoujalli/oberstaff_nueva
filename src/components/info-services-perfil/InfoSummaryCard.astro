@@ -1,0 +1,32 @@
+---
+import "../../styles/info-services-perfil/info-summary-card.css";
+
+interface Props {
+    icon?: string;
+    title?: string;
+    items?: string[];
+    buttonText?: string;
+    buttonHref?: string;
+}
+
+const {
+    icon = "solar:clipboard-list-bold",
+    title = "Resumen del servicio",
+    items = [],
+    buttonText = "Solicitar candidatos →",
+    buttonHref = "#"
+} = Astro.props;
+---
+
+<aside class="service-summary-card">
+    <div class="summary-header">
+        <iconify-icon icon={icon} class="emoji-icon"></iconify-icon>
+        <h3>{title}</h3>
+    </div>
+    <ul class="summary-list">
+        {items.map((item) => (
+            <li><iconify-icon icon="solar:check-circle-bold" class="check-blue"></iconify-icon> <span set:html={item} /></li>
+        ))}
+    </ul>
+    <a href={buttonHref} class="btn-solicitar">{buttonText}</a>
+</aside>

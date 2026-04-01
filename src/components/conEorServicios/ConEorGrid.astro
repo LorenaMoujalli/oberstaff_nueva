@@ -1,0 +1,40 @@
+---
+import ConEorCard from "./ConEorCard.astro";
+
+interface Props {
+    negativeTitle: string;
+    positiveTitle: string;
+    badge?: string;
+    negativeItems: string[];
+    positiveItems: string[];
+    negativeIcon?: string;
+    positiveIcon?: string;
+}
+
+const {
+    negativeTitle,
+    positiveTitle,
+    badge = "Recomendado",
+    negativeItems,
+    positiveItems,
+    negativeIcon = "solar:close-circle-linear",
+    positiveIcon = "solar:check-circle-linear",
+} = Astro.props;
+---
+
+<div class="eor-grid">
+    <ConEorCard
+        title={negativeTitle}
+        items={negativeItems}
+        headerIcon={negativeIcon}
+        iconStyle="negative"
+    />
+    <ConEorCard
+        title={positiveTitle}
+        items={positiveItems}
+        featured={true}
+        badge={badge}
+        headerIcon={positiveIcon}
+        iconStyle="positive"
+    />
+</div>

@@ -1,0 +1,60 @@
+.trust-bar-section {
+    background-color: #f4f6f9; /* Gris azulado muy pálido de la captura */
+    padding: 40px 20px;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+}
+
+.trust-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.trust-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #6c7a91; /* Gris azulado para el texto superior */
+    letter-spacing: 1.5px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+.trust-features {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #0d2149; /* Azul marino profundo de los textos */
+}
+
+.check-icon {
+    color: #6366f1; /* Color púrpura/azul de los checks */
+    font-size: 18px;
+}
+
+/* Divisores verticales sutiles */
+.divider {
+    width: 1px;
+    height: 20px;
+    background-color: #d1d9e6;
+}
+
+/* Responsive */
+@media (max-width: 850px) {
+    .trust-features {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .divider {
+        display: none; /* Ocultar divisores en móvil */
+    }
+}

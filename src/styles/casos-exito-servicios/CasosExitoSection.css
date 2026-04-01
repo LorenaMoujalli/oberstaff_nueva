@@ -1,0 +1,46 @@
+.casos-exito {
+    font-family: 'Inter', -apple-system, sans-serif;
+    padding: 60px 20px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.casos-header {
+    margin-bottom: 60px;
+}
+
+.casos-header h2 {
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: #1a1a1a;
+    letter-spacing: -0.5px;
+}
+
+.casos-header p {
+    font-size: 18px;
+    color: #666;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.casos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+    .casos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .casos-header h2 { font-size: 28px; }
+    .casos-grid {
+        grid-template-columns: 1fr;
+    }
+}

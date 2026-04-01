@@ -1,0 +1,39 @@
+---
+import "../../styles/oberstaff-features-servicios/FeaturesSection.css";
+import FeatureItem from "./FeatureItem.astro";
+
+interface Feature {
+    title: string;
+    description: string;
+    icon: string;
+    colorClass: string;
+}
+
+interface Props {
+    eyebrow: string;
+    title: string;
+    subtitle: string;
+    features: Feature[];
+}
+
+const { eyebrow, title, subtitle, features } = Astro.props;
+---
+
+<section class="oberstaff-features">
+    <div class="features-header">
+        <span class="features-eyebrow" set:html={eyebrow}></span>
+        <h2 class="features-title" set:html={title}></h2>
+        <p class="features-subtitle" set:html={subtitle}></p>
+    </div>
+
+    <div class="features-grid">
+        {features.map((feature) => (
+            <FeatureItem 
+                title={feature.title}
+                description={feature.description}
+                icon={feature.icon}
+                colorClass={feature.colorClass}
+            />
+        ))}
+    </div>
+</section>

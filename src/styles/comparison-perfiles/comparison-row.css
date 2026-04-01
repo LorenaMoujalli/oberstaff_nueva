@@ -1,0 +1,39 @@
+.row-label { text-align: left !important; font-weight: 700; color: #444; width: 200px; }
+
+/* Resaltado columna Oberstaff */
+.col-highlight {
+    background-color: #f8fbff;
+    border-left: 2px solid #3b76f6 !important;
+    border-right: 2px solid #3b76f6 !important;
+    color: #0d2149;
+    font-weight: 700;
+}
+
+tr:last-child td.col-highlight {
+    border-bottom: 2px solid #3b76f6 !important;
+}
+
+/* Colores de Texto */
+.blue-text { color: #3b76f6; font-weight: 800; }
+.red-text { color: #555; }
+
+/* Iconos de estado */
+.icon-check { color: #10b981; font-size: 18px; vertical-align: text-bottom; margin-right: 6px; }
+.icon-cross { color: #ef4444; font-size: 18px; vertical-align: text-bottom; margin-right: 6px; }
+.icon-warning { color: #f59e0b; font-size: 18px; vertical-align: text-bottom; margin-right: 6px; }
+
+/* Badge final */
+.badge-blue {
+    background-color: #3b76f6;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 6px;
+    display: inline-block;
+    font-weight: 800;
+}
+
+.no-padding { padding: 10px 15px !important; }
+
+@media (max-width: 900px) {
+    .row-label { width: 120px; }
+}

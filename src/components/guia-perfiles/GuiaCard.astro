@@ -1,0 +1,20 @@
+---
+import "../../styles/guia-perfiles/guia-card.css";
+export interface GuiaCardProps {
+  icon: string;
+  iconColor?: string;
+  title: string;
+  description: string;
+}
+interface Props extends GuiaCardProps {}
+const { icon, iconColor = "#3b76f6", title, description } = Astro.props;
+---
+<div class="guia-card" style={`--hover-border: ${iconColor};`}>
+    <div class="card-icon" style={`color: ${iconColor}; background-color: ${iconColor}15;`}>
+        <iconify-icon icon={icon}></iconify-icon>
+    </div>
+    <div class="card-body">
+        <h3 set:html={title}></h3>
+        <p set:html={description}></p>
+    </div>
+</div>

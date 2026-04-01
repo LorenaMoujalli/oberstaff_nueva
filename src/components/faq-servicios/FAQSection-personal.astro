@@ -1,0 +1,63 @@
+---
+import FAQHeader from "../faq/FAQHeader.astro";
+import FAQItem from "../faq/FAQItem.astro";
+import "../../styles/faq-servicios/faq-section.css";
+
+const faqs = [
+    {
+        question: "¿Qué es el outsourcing de personal con talento de LATAM?",
+        answers: ["Es el servicio mediante el cual Oberstaff selecciona, contrata y administra trabajadores remotos de Latinoamérica para empresas españolas. La empresa dirige el trabajo; Oberstaff asume toda la gestión laboral y legal del colaborador."]
+    },
+    {
+        question: " ¿Qué incluye el outsourcing de selección de personal en LATAM?",
+        answers: ["Publicación de la oferta en LATAM, entrevistas técnicas y por competencias, evaluación de candidatos y presentación de terna finalista. Tú tomas la decisión final."]
+    },
+    {
+        question: " ¿En qué países de LATAM opera Oberstaff?",
+        answers: ["Oberstaff tiene presencia en Colombia, Argentina, Venezuela, Argentina y 7 países más. Un único proveedor para toda la región."]
+    },
+    {
+        question: "¿Cuánto cuesta el personal outsourcing de LATAM para empresas españolas?",
+        answers: [" Las suscripciones comienzan desde 690 EUR por profesional al mes. El precio incluye selección, contratación y administración de personal de LATAM. Sin cuotas de alta ni permanencia mínima."]
+    },
+    {
+        question: "¿Los trabajadores de LATAM trabajan en el horario español?",
+        answers: ["Si, el profesional que elijas se adaptará al horario de operación de tu organización. "]
+    },
+    {
+        question: "¿Hay permanencia mínima en los planes de outsourcing?",
+        answers: ["No, puedes ajustar, ampliar o cancelar el servicio cuando tu negocio lo requiera, sin penalizaciones de ningún tipo."]
+    } 
+]; 
+
+interface Props {
+    label?: string;
+    title?: string;
+    subtitle?: string;
+}
+
+const { label, title = "FAQ", subtitle = "Todo lo que necesitas saber sobre el outsourcing de personal." } = Astro.props;
+---
+
+<section class="faq-section">
+    <div class="faq-container">
+        <FAQHeader
+            label={label}
+            title={title}
+            subtitle={subtitle}
+        />
+
+        <div class="faq-list">
+            {
+                faqs.map((faq) => (
+                    <FAQItem question={faq.question}>
+                        {faq.answers &&
+                            faq.answers.map((answer) => <p>{answer}</p>)}
+                    </FAQItem>
+                ))
+            }
+        </div>
+    </div>
+
+    <script src="../../scripts/faq.js"></script>
+</section>

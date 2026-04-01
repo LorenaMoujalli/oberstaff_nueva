@@ -1,0 +1,28 @@
+---
+import "../../styles/roles-del-perfil/rol-card.css";
+interface Props {
+  title: string;
+  description: string;
+  icon: string;
+  iconColor: string;
+  borderColorClass: string;
+  techStack?: string[];
+}
+const { title, description, icon, iconColor, borderColorClass, techStack = [] } = Astro.props;
+---
+<div class={`perfil-card ${borderColorClass}`}>
+    <div class="card-content">
+        <span class="profile-icon">
+            <iconify-icon icon={icon} style={`color: ${iconColor};`}></iconify-icon>
+        </span>
+        <h3 set:html={title}></h3>
+        <p set:html={description}></p>
+    </div>
+    {techStack.length > 0 && (
+        <div class="tech-stack">
+            {techStack.map((tech) => (
+                <span class="tag">{tech}</span>
+            ))}
+        </div>
+    )}
+</div>

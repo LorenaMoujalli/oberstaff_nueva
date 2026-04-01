@@ -1,0 +1,68 @@
+.feature-item {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    background-color: #ffffff;
+    border: 1px solid #ebebeb; /* Borde gris sutil */
+    border-radius: 20px;
+    padding: 30px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Movimiento más fluido */
+}
+
+.feature-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
+    border-color: #e0e0e0;
+}
+
+.feature-icon-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.feature-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.feature-icon iconify-icon {
+    font-size: 22px;
+}
+
+/* Paleta de colores ajustada: fondos un poco más oscuros */
+.icon-blue { background-color: #cbebff; color: #2563eb; }
+.icon-green { background-color: #cbf9da; color: #16a34a; }
+.icon-yellow { background-color: #fef3ac; color: #ca8a04; }
+.icon-red { background-color: #fecaca; color: #dc2626; }
+.icon-purple { background-color: #e9d5ff; color: #9333ea; }
+.icon-pink { background-color: #fbcfe8; color: #db2777; }
+.icon-cyan { background-color: #a5f3fc; color: #0891b2; }
+.icon-indigo { background-color: #c7d2fe; color: #4f46e5; }
+.icon-orange { background-color: #fed7aa; color: #ea580c; }
+
+.feature-item h3 {
+    font-size: 17px;
+    font-weight: 800;
+    margin: 0;
+    color: #1a1a1a;
+    line-height: 1.3;
+}
+
+.feature-item p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+    font-weight: 400;
+}
+
+@media (max-width: 768px) {
+    .feature-item { padding: 25px; }
+}

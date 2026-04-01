@@ -1,0 +1,12 @@
+---
+import "../../styles/roles-del-perfil/roles-header.css";
+interface Props {
+  title?: string;
+  subtitle?: string;
+}
+const { title = "", subtitle = "" } = Astro.props;
+---
+<header class="perfiles-header">
+    <h2 class="perfiles-title" set:html={title}></h2>
+    <p class="perfiles-subtitle" set:html={subtitle}></p>
+</header>

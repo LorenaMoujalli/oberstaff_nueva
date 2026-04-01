@@ -1,0 +1,58 @@
+---
+import "../../styles/timeline-perfiles/timeline-perfiles.css";
+import TimelineHeader from "./TimelineHeader.astro";
+import TimelineItem from "./TimelineItem.astro";
+import type { TimelineItemProps } from "./TimelineItem.astro";
+
+interface Props {
+    title?: string;
+    subtitle?: string;
+    items?: TimelineItemProps[];
+}
+
+const {
+    title = "Cómo contratar un community manager con Oberstaff",
+    subtitle = "Un proceso sencillo, rápido y sin riesgo. Desde que nos contactas hasta que tienes a tu CM trabajando para tu organización.",
+    items = [
+        {
+            title: "Cuéntanos tu perfil",
+            timeTag: "30 minutos",
+            description: "Agenda una llamada gratuita. Analizamos las necesidades de tu empresa, el tipo de redes sociales, sector y nivel de experiencia requerido."
+        },
+        {
+            title: "Seleccionamos candidatos",
+            description: "Preseleccionamos 3-5 perfiles evaluados con pruebas técnicas y psicométricas. Tú eliges con quién quieres entrevistarte."
+        },
+        {
+            title: "Entrevistas y decisión",
+            timeTag: "A tu ritmo",
+            description: "Realizas entrevistas directamente con los candidatos preseleccionados. Tú tienes la última palabra. Sin compromisos hasta que decides."
+        },
+        {
+            title: "Tu CM empieza a trabajar",
+            timeTag: "Franja de apoyo",
+            timeTagGray: true,
+            description: "Oberstaff gestiona contrato, nómina y compliance. Tu CM se integra en tu equipo y empieza desde el primer día."
+        }
+    ]
+} = Astro.props;
+---
+
+<section class="timeline-section">
+    <div class="container">
+        <TimelineHeader title={title} subtitle={subtitle} />
+
+        <div class="timeline-wrapper">
+            <div class="vertical-line"></div>
+            {items.map((item, index) => (
+                <TimelineItem 
+                    index={index}
+                    title={item.title}
+                    description={item.description}
+                    timeTag={item.timeTag}
+                    timeTagGray={item.timeTagGray}
+                />
+            ))}
+        </div>
+    </div>
+</section>

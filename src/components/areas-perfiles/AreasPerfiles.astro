@@ -1,0 +1,25 @@
+---
+import "../../styles/areas-perfiles/areas-perfiles.css";
+import AreasHeader from "./AreasHeader.astro";
+import AreasGrid from "./AreasGrid.astro";
+import type { AreaCardProps } from "./AreasGrid.astro";
+
+interface Props {
+    title?: string;
+    subtitle?: string;
+    cards?: AreaCardProps[];
+}
+
+const {
+    title = undefined,
+    subtitle = undefined,
+    cards = undefined
+} = Astro.props;
+---
+
+<section class="areas-clave-section">
+    <div class="areas-container">
+        <AreasHeader title={title} subtitle={subtitle} />
+        <AreasGrid cards={cards} />
+    </div>
+</section>

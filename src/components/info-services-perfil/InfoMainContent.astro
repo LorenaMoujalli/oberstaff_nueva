@@ -1,0 +1,16 @@
+---
+import "../../styles/info-services-perfil/info-main-content.css";
+
+interface Props {
+    mainQuestion?: string;
+    answerText?: string;
+}
+
+const {
+    mainQuestion = "",
+    answerText = "",
+} = Astro.props;
+---
+
+<h2 class="main-question">{mainQuestion}</h2>
+<p class="answer-text" set:html={answerText} />

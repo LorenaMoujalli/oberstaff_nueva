@@ -1,0 +1,71 @@
+---
+import BlogHeader from "./BlogHeader.astro";
+import BlogCard from "./BlogCard.astro";
+import "../../styles/blog-home/blog-section.css";
+
+const articles = [
+    {
+        image: "/stack-tecnologico.webp",
+        alt: "Stack tecnológico",
+        title: "Stack tecnológico: qué es y cómo elegir el adecuado para tu empresa"
+    },
+    {
+        image: "/Cuanto-cobra-un-community-manager-en-espana.webp",
+        alt: "Costo Community Manager",
+        title: "Cuánto cobra un community manager en España"
+    },
+    {
+        image: "/Quality-Assurance.webp",
+        alt: "Quality Assurance",
+        title: "Quality Assurance: cómo mejorar la calidad y prevenir errores en una empresa"
+    },
+    {
+        image: "/Onboarding-digital.webp",
+        alt: "Onboarding digital",
+        title: "Onboarding digital: optimiza la integración de tu equipo remoto"
+    },
+    {
+        image: "/Portada-de-blog.webp",
+        alt: "Marketing y Recursos",
+        title: "Marketing y Recursos: estrategias para potenciar tu marca"
+    },
+    {
+        image: "/nearshoring.webp",
+        alt: "Nearshoring",
+        title: "Nearshoring: por qué las empresas españolas miran a Latinoamérica"
+    }
+];
+---
+
+<section class="blog-section">
+    <div class="blog-container">
+        <BlogHeader title="Blog y <strong>recursos</strong>" />
+
+        <div class="blog-wrapper">
+            <button class="nav-btn prev" id="blog-prev">
+                <iconify-icon icon="tabler:chevron-left"></iconify-icon>
+            </button>
+
+            <div class="blog-viewport">
+                <div class="blog-track" id="blog-track">
+                    {articles.map((article) => (
+                        <BlogCard {...article} />
+                    ))}
+                </div>
+            </div>
+
+            <button class="nav-btn next" id="blog-next">
+                <iconify-icon icon="tabler:chevron-right"></iconify-icon>
+            </button>
+        </div>
+    </div>
+</section>
+
+<script>
+    import { initBlogSlider } from "../../scripts/blog-slider.js";
+    
+    // Si usas SPA (View Transitions de Astro)
+    document.addEventListener('astro:page-load', initBlogSlider);
+    // Para carga inicial normal
+    document.addEventListener('DOMContentLoaded', initBlogSlider);
+</script>

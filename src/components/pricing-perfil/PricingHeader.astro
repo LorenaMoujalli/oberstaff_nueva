@@ -1,0 +1,10 @@
+---
+import "../../styles/pricing-perfil/pricing-header.css";
+interface Props {
+  title?: string;
+  subtitle?: string;
+}
+const { title = "", subtitle = "" } = Astro.props;
+---
+<h2 class="pricing-title" set:html={title}></h2>
+<p class="pricing-subtitle" set:html={subtitle}></p>

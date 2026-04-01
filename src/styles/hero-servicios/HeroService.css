@@ -1,0 +1,18 @@
+.hero-section {
+    background-color: #ffffff;
+    padding: 40px 20px 0 20px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    overflow: visible;
+}
+
+.hero-container {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    padding-bottom: 40px;
+}
+
+@media (max-width: 1024px) {
+    .hero-container { padding-bottom: 20px; }
+}

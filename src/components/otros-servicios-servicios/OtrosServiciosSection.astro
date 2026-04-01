@@ -1,0 +1,66 @@
+---
+import OtrosServiciosCard from "./OtrosServiciosCard.astro";
+import "../../styles/otros-servicios-servicios/OtrosServiciosSection.css";
+
+interface Servicio {
+    icon: string;
+    title: string;
+    description: string;
+    href: string;
+    colorClass?: string;
+}
+
+interface Props {
+    title?: string;
+    subtitle?: string;
+    description?: string;
+    servicios?: Servicio[];
+}
+
+const defaultServicios: Servicio[] = [
+    {
+        icon: "solar:link-round-bold",
+        title: "Staff Augmentation",
+        description: "Refuerza tu equipo de tecnología con desarrolladores, QA, DevOps y más perfiles IT.",
+        href: "/servicios/staff-augmentation",
+        colorClass: "icon-indigo"
+    },
+    {
+        icon: "solar:buildings-bold",
+        title: "Outsourcing de Personal",
+        description: "Externaliza funciones completas con equipos gestionados por Oberstaff.",
+        href: "/servicios/outsourcing-de-personal",
+        colorClass: "icon-emerald"
+    },
+    {
+        icon: "solar:document-text-bold",
+        title: "Contract Record",
+        description: "Gestión integral de contratos para freelancers y trabajadores por proyecto.",
+        href: "/servicios/contractor-of-Record",
+        colorClass: "icon-amber"
+    }
+];
+
+const { 
+    title = "Otros Servicios de Oberstaff",
+    subtitle = "¿No sabes qué modelo necesitas?",
+    description = "El EOR services es uno de los cuatro modelos de contratación que ofrece Oberstaff. Dependiendo de tu operación, puede que necesites un servicio diferente o combinar varios.",
+    servicios = defaultServicios
+} = Astro.props;
+---
+
+<section class="otros-servicios">
+    <div class="servicios-header">
+        <h2>{title}</h2>
+        <h3>{subtitle}</h3>
+        <p>{description}</p>
+    </div>
+
+    <div class="servicios-grid">
+        {
+            servicios.map((servicio) => (
+                <OtrosServiciosCard {...servicio} />
+            ))
+        }
+    </div>
+</section>

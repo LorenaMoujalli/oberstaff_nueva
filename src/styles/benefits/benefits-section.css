@@ -1,0 +1,222 @@
+.benefits-section {
+    padding: 80px 20px;
+   background-color: #FAFAFC;
+    font-family: 'Inter', sans-serif;
+}
+
+.benefits-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Tabs Wrapper Card */
+.benefits-tabs-wrapper {
+    background: #ffffff;
+    border-radius: 30px;
+    padding: 30px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+/* Tabs Menu */
+.benefits-tabs-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.tab-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    background-color: #F4F5F7;
+    border: none;
+    border-radius: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #4a4a4a;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tab-btn:hover {
+    background: #ebeef2;
+}
+
+.tab-btn.active {
+    background: #6663FD;
+    color: #ffffff;
+    box-shadow: 0 8px 20px rgba(102, 99, 253, 0.3);
+}
+
+.tab-icon-emoji {
+    font-size: 18px;
+}
+
+/* Removed icon colors from CSS as we are using emojis now */
+
+/* Tabs Content Area */
+.benefits-tabs-content {
+     background-color: #F8F9FA;
+    border-radius: 20px;
+       padding: 50px 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.tab-pane {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.pane-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.pane-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 5px;
+}
+
+.pane-icon-emoji {
+    font-size: 24px;
+}
+
+/* Removed individual color classes since emojis are not stylized via color */
+
+.pane-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    font-style: normal;
+    color: #1a1a1a;
+    margin: 0;
+    letter-spacing: -1px;
+}
+
+.pane-subtitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    font-style: normal;
+    color: #6663FD;
+    margin-bottom: 20px;
+}
+
+.pane-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: #5A5A5A;
+    line-height: 1.6;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .pane-header {
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+    
+    .pane-title {
+        font-size: 20px;
+        text-align: center;
+    }
+    
+    .pane-subtitle {
+        font-size: 16px;
+    }
+    
+    .pane-text {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    .benefits-tabs-wrapper {
+        padding: 20px;
+    }
+    
+    .benefits-tabs-content {
+        padding: 40px 20px;
+    }
+    
+    .benefits-tabs-menu {
+        gap: 10px;
+    }
+    
+    .tab-btn {
+        padding: 10px 15px;
+        font-size: 13px;
+        flex: 1 1 calc(50% - 10px);
+        justify-content: center;
+    }
+}
+
+/* Info Box Bottom */
+.benefits-info-box {
+    margin-top: 40px;
+    background: rgba(102, 99, 253, 0.05);
+   border: 1px solid rgba(102, 99, 253, 0.1);
+    border-radius: 12px;
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.benefits-info-box .info-icon {
+    font-size: 14px;
+}
+
+.benefits-info-box p {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    font-size: 14px;
+    color: #5A5A5A;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.benefits-info-box strong {
+    color: #1a1a1a;
+    font-weight: 700;
+}
+
+.benefits-info-box .dot {
+    color: #ff66cc; /* Pink/Purple dot as per brand */
+}
+
+@media (max-width: 768px) {
+    .benefits-info-box {
+        flex-direction: column;
+        text-align: center;
+        padding: 24px 20px;
+        margin-top: 30px;
+    }
+    
+    .benefits-info-box p {
+        font-size: 14px;
+    }
+}

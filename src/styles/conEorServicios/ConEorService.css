@@ -1,0 +1,17 @@
+.eor-section {
+    width: 100%;
+    background-color: rgb(247 248 248 / var(--tw-bg-opacity, 1));
+}
+
+.eor-container {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .eor-container { padding: 35px 20px; }
+}

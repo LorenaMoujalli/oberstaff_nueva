@@ -1,0 +1,420 @@
+---
+import DashboardLayoutPerfiles from "../../layouts/DashboardLayoutPerfiles.astro";
+import LeadHeroSection from "../../components/community-manager/LeadHeroSection.astro";
+import TrustBarPerfiles from "../../components/trust-bar-perfiles/TrustBarPerfiles.astro";
+import InfoServicePerfil from "../../components/info-services-perfil/InfoServicePerfil.astro";
+import AreasPerfiles from "../../components/areas-perfiles/AreasPerfiles.astro";
+import TimelinePerfiles from "../../components/timeline-perfiles/TimelinePerfiles.astro";
+import CTAIntermedioPerfil from "../../components/cta-intermedio-perfil/CTAIntermedioPerfil.astro";
+import ComparisonPerfiles from "../../components/comparison-perfiles/ComparisonPerfiles.astro";
+import PricingCardPerfil from "../../components/pricing-perfil/PricingCardPerfil.astro";
+import BeneficiosPerfil from "../../components/beneficios-perfil/BeneficiosPerfil.astro";
+import GuiaPerfiles from "../../components/guia-perfiles/GuiaPerfiles.astro";
+import CasosExitoPerfiles from "../../components/casos-exito-perfiles/CasosExitoPerfiles.astro";
+import FAQSectionDisenador from "../../components/faq-servicios/FAQSection-disenador.astro";
+import PressSection from "../../components/press/PressSection.astro";
+import ConversionPerfil from "../../components/conversion-perfil/ConversionPerfil.astro";
+import RolesPerfil from "../../components/roles-del-perfil/RolesPerfil.astro";
+---
+
+<DashboardLayoutPerfiles
+  title="Contratar Diseñador Gráfico Remoto | Oberstaff"
+  description="La forma más inteligente de contratar diseñador gráfico para tu empresa: talento remoto de LATAM, zona horaria española y sin riesgos legales. "
+  keywords="contratar diseñador gráfico"
+>
+  <div class="service-detail-container" id="inicio">
+    <LeadHeroSection
+      topLabel="Diseñador Gráfico Remoto · Latinoamérica"
+      title="Contratar diseñador gráfico para empresas españolas"
+      cardTitle="Comienza ahora"
+      buttonText="Solicitar propuesta personalizada"
+      footerLinkText="Ver cómo funciona →"
+      footerLinkHref="#como-contratar"
+    >
+      <Fragment slot="description">
+        Conecta tu negocio con un diseñador gráfico remoto de LATAM, evaluado,
+        con horario compatible y capacidad para integrarse de verdad en tu
+        equipo.
+      </Fragment>
+    </LeadHeroSection>
+
+    <div class="fade-in-section">
+      <TrustBarPerfiles
+        title="+5.000 empresas confían en nosotros"
+        features={[
+          "Dedicación exclusiva",
+          "Perfiles evaluados",
+          "Integración rápida",
+          "Horario compatible con España",
+        ]}
+      />
+    </div>
+
+    <div class="fade-in-section">
+      <InfoServicePerfil
+        mainQuestion="Contratar diseñador gráfico nunca fue tan sencillo"
+        answerText="Oberstaff te conecta con profesionales creativos de Latinoamérica, preseleccionados y evaluados, que trabajan 100% en remoto para tu empresa española."
+        priceBoxTitle=""
+        priceBoxText={`Sin complicaciones legales, gestión de nóminas o los costes de un trabajador presencial. Nosotros somos el empleador legal y tú gestionas el día a día del profesional.`}
+        summaryTitle="Checklist de ventajas"
+        summaryItems={[
+          "Ahorro de hasta un 70% en costes de personal",
+          "Diseñadores evaluados con pruebas técnicas y psicométricas",
+          "Sin riesgo legal",
+          "Factura mensual en euros para tu empresa",
+          "Sin permanencia mínima — cancela cuando quieras",
+        ]}
+        buttonText="Solicitar candidatos →"
+        buttonHref="#inicio"
+      />
+    </div>
+
+    <div class="fade-in-section">
+      <AreasPerfiles
+        title="¿Qué puede hacer un diseñador gráfico en remoto por tu empresa?"
+        subtitle="Nuestros diseñadores dominan las herramientas y disciplinas que tu negocio necesita, desde branding hasta diseño para redes sociales."
+        cards={[
+          {
+            icon: "solar:pen-new-square-bold-duotone",
+            iconColor: "#8b5cf6",
+            title: "Branding e Identidad Visual",
+            description:
+              "Creación de logotipos, paletas cromáticas, tipografías corporativas y manual de marca. Construye una identidad coherente y memorable.",
+          },
+          {
+            icon: "solar:smartphone-bold-duotone",
+            iconColor: "#ec4899",
+            title: "Diseño para Redes Sociales",
+            description:
+              "Creatividades para Instagram, LinkedIn, Facebook y TikTok. Contenido visual alineado con tu marca.",
+          },
+          {
+            icon: "solar:videocamera-bold-duotone",
+            iconColor: "#14b8a6",
+            title: "Motion Graphics",
+            description:
+              "Animaciones para redes, intros de vídeo, infografías animadas y contenido dinámico para publicidad digital.",
+          },
+          {
+            icon: "ph:presentation-chart-duotone",
+            iconColor: "#eab308",
+            title: "Piezas para marketing y ventas",
+            description:
+              "Diapositivas corporativas, Dossiers, decks de inversión y material de ventas visualmente impactante y bien estructurado.",
+          },
+        ]}
+      />
+    </div>
+
+    <div class="fade-in-section">
+      <div id="como-contratar" style="scroll-margin-top: 80px;">
+        <TimelinePerfiles
+          title="Tu diseñador gráfico remoto, listo en pocos días"
+          subtitle=" Un proceso sencillo y transparente, sin burocracia."
+          items={[
+            {
+              title: " Cuéntanos qué necesitas",
+              timeTag: "15 min · Sin compromiso",
+              description:
+                "Agenda una llamada gratuita y explícanos el perfil de diseñador que necesita tu empresa, herramientas, horas y especialidad.",
+            },
+            {
+              title: "Preseleccionamos candidatos",
+              description:
+                "Nuestro equipo selecciona entre 3-5 perfiles evaluados que encajan con tus requisitos técnicos, de idioma y zona horaria.",
+            },
+            {
+              title: "Entrevista y eliges tú",
+              timeTag: "Tú tienes la última palabra",
+              description:
+                "Entrevistas directamente a los candidatos y decides con quién quieres trabajar. Nosotros no decidimos por ti.",
+            },
+            {
+              title: "Empieza a trabajar",
+              timeTag: "",
+              timeTagGray: true,
+              description:
+                "Oberstaff gestiona el contrato, la nómina y el compliance. Recibes una factura mensual en euros y diriges a tu diseñador.",
+            },
+          ]}
+        />
+      </div>
+    </div>
+
+    <div class="fade-in-section">
+      <CTAIntermedioPerfil
+        alertText=""
+        title="¿Ya sabes lo que necesitas?"
+        description="Cuéntanos el perfil que requieres y recibe una propuesta personalizada en menos de 24 horas. Sin compromiso."
+        buttonText="Quiero Solicitar propuesta personalizada"
+        buttonHref="#inicio"
+      />
+    </div>
+
+    <div class="fade-in-section">
+      <RolesPerfil
+        title="Perfiles de diseñador gráfico remoto disponibles"
+        subtitle="Encuentra el perfil que mejor se adapta a las necesidades de tu empresa."
+        roles={[
+          {
+            title: "Diseñador de Branding",
+            description: "Identidad visual y marca corporativa",
+            icon: "solar:tag-bold-duotone",
+            iconColor: "#3b76f6",
+            borderColorClass: "border-blue",
+            techStack: ["Illustrator", "Photoshop", "Brand Strategy"],
+          },
+          {
+            title: "Diseñador de Redes Sociales",
+            description: "Creatividades para RRSS y campañas digitales",
+            icon: "solar:smartphone-bold-duotone",
+            iconColor: "#8b5cf6",
+            borderColorClass: "border-purple",
+            techStack: ["Canva Pro", "Meta Ads", "Adobe Express"],
+          },
+          {
+            title: "Diseñador Editorial",
+            description: "Catálogos, folletos y material impreso",
+            icon: "solar:printer-bold-duotone",
+            iconColor: "#f97316",
+            borderColorClass: "border-orange",
+            techStack: ["InDesign", "Print-Ready", "Packaging"],
+          },
+          {
+            title: "Motion Designer",
+            description: "Animaciones y contenido audiovisual",
+            icon: "solar:clapperboard-play-bold-duotone",
+            iconColor: "#ff66cc",
+            borderColorClass: "border-pink",
+            techStack: ["After Effects", "Premiere", "Lottie"],
+          },
+        ]}
+      />
+    </div>
+
+    <div class="fade-in-section">
+      <ComparisonPerfiles
+        title="¿Cuánto cuesta contratar un diseñador gráfico? Oberstaff vs freelance vs agencia"
+        subtitle="Compara el coste real, la dedicación y la carga operativa de cada alternativa cuando una empresa española necesita diseño gráfico de forma constante."
+        competitors={[
+          "Diseñador local España",
+          "Contratar diseñador",
+          "Agencia",
+        ]}
+        rows={[
+          {
+            label: "Coste mensual orientativo",
+            oberstaffValue: "Desde 850€",
+            oberstaffBlueText: true,
+            competitorValues: [
+              "1.900-3.300€/mes + costes laborales",
+              "1.800-2.400€/mes",
+              "Variable según alcance y cuenta",
+            ],
+          },
+          {
+            label: "Dedicación exclusiva",
+            oberstaffValue: "Sí, full time para tu empresa",
+            competitorValues: [
+              "Sí",
+              `<iconify-icon icon="solar:danger-triangle-bold" class="icon-warning" style="color: #f59e0b;"></iconify-icon> No siempre`,
+              `<iconify-icon icon="solar:close-circle-bold" class="icon-cross" style="color: #ef4444;"></iconify-icon> No`,
+            ],
+          },
+          {
+            label: "Gestión legal y administrativa",
+            oberstaffValue: "La asume Oberstaff",
+            competitorValues: [
+              `<iconify-icon icon="solar:close-circle-bold" class="icon-cross" style="color: #ef4444;"></iconify-icon> La asume tu empresa`,
+              "Facturación externa",
+              "Incluida bajo modelo agencia",
+            ],
+          },
+          {
+            label: "Horario España",
+            oberstaffValue: `<iconify-icon icon="solar:check-circle-bold" class="icon-check" style="color: #10b981;"></iconify-icon> Compatible`,
+            competitorValues: [
+              "Compatible",
+              `<iconify-icon icon="solar:danger-triangle-bold" class="icon-warning" style="color: #f59e0b;"></iconify-icon> Depende de disponibilidad`,
+              "Depende de carga",
+            ],
+          },
+          {
+            label: "Escalabilidad y continuidad",
+            oberstaffValue: `<iconify-icon icon="solar:check-circle-bold" class="icon-check" style="color: #10b981;"></iconify-icon> Alta, con soporte continuo`,
+            competitorValues: [
+              `<iconify-icon icon="solar:close-circle-bold" class="icon-cross" style="color: #ef4444;"></iconify-icon> Media`,
+              `<iconify-icon icon="solar:danger-triangle-bold" class="icon-warning" style="color: #f59e0b;"></iconify-icon> Puede variar por proyectos`,
+              `<iconify-icon icon="solar:close-circle-bold" class="icon-cross" style="color: #ef4444;"></iconify-icon> Alta, pero menos personalización diaria`,
+            ],
+          },
+          {
+            label: "Sin permanencia",
+            oberstaffValue: "Sí",
+            competitorValues: [
+              `<iconify-icon icon="solar:close-circle-bold" class="icon-cross" style="color: #ef4444;"></iconify-icon> No siempre`,
+              `<iconify-icon icon="solar:close-circle-bold" class="icon-cross" style="color: #ef4444;"></iconify-icon> Según contrato`,
+              "No siempre",
+            ],
+          },
+        ]}
+      />
+    </div>
+
+    <div class="fade-in-section">
+      <PricingCardPerfil
+        title="Precio diseñador gráfico con Oberstaff"
+        subtitle="Tarifas claras y sin sorpresas. Todo incluido: gestión, nómina y compliance."
+        priceLabel="DESDE"
+        priceAmount="850€"
+        pricePeriod="/mes"
+        badgeText="Todo incluido · jornada completa · sin costes ocultos"
+        features={[
+          "Branding e identidad visual · Illustrator y Photoshop",
+          "Diseño para redes sociales",
+          "Motion graphics",
+          "Diseño editorial · InDesign, print-ready y packaging",
+          "Piezas para marketing · banners, ads y presentaciones",
+        ]}
+        disclaimer="Precios orientativos. El coste final depende del perfil, país y nivel de experiencia. Sin costes ocultos ni comisiones adicionales."
+      />
+    </div>
+
+    <div class="fade-in-section">
+      <BeneficiosPerfil
+        title="¿Por qué contratar diseñadores gráficos con Oberstaff?"
+        subtitle="Combinamos integración real en equipo con una operativa más ligera para tu negocio, así te centras en resultados y no en fricción administrativa."
+        items={[
+          {
+            icon: "solar:user-check-rounded-bold-duotone",
+            iconColor: "#3b82f6",
+            title: "Dedicación exclusiva:",
+            description:
+              "Tu diseñador trabaja enfocado en tu negocio y tus prioridades.",
+          },
+          {
+            icon: "solar:rocket-bold-duotone",
+            iconColor: "#f59e0b",
+            title: "Integración rápida:",
+            description:
+              "Se incorpora a tus reuniones, utiliza tus herramientas y sistema de feedback.",
+          },
+          {
+            icon: "solar:shield-check-bold-duotone",
+            iconColor: "#8b5cf6",
+            title: "Operativa resuelta:",
+            description:
+              "Oberstaff es el empleador legal — tú no asumes nada. Contratos, nóminas y seguridad social: todo bajo nuestra responsabilidad.",
+          },
+        ]}
+      />
+    </div>
+
+    <div class="fade-in-section">
+      <GuiaPerfiles
+        title="¿Cómo contratar diseñador remoto para tu empresa española?"
+        intro="Contratar un diseñador gráfico remoto de Latinoamérica es más sencillo de lo que parece si sigues el proceso adecuado. Estos son los puntos clave que debes tener en cuenta."
+        items={[
+          {
+            icon: "solar:earth-bold-duotone",
+            iconColor: "#3b82f6",
+            title: "Diseñador gráfico remoto vs diseñador local",
+            description:
+              "Antes de decidir, compara bien las opciones. Un diseñador presencial en España puede superar los 2.500€/mes en coste total; un freelance te da flexibilidad pero sin dedicación exclusiva.Un diseñador remoto de Colombia, Argentina o Venezuela con Oberstaff combina lo mejor de ambos: jornada completa, exclusividad y desde 850€/mes, sin que asumas ninguna relación laboral directa.",
+          },
+          {
+            icon: "solar:user-id-bold-duotone",
+            iconColor: "#f59e0b",
+            title: "¿Qué buscar al contratar diseñadores gráficos?",
+            description:
+              "Antes de contratar diseñador gráfico freelance o en remoto, es importante valorar su portfolio y definir bien el perfil antes de lanzar la búsqueda. Pregúntate qué especialidad necesitas (branding, RRSS, motion…), qué herramientas debe dominar y si necesitas alguien con experiencia en empresas europeas. Cuanto más concreto sea el briefing, más rápido y mejor será el encaje. En Oberstaff te ayudamos a definirlo en una llamada de 15 minutos.",
+          },
+          {
+            icon: "solar:shield-check-bold-duotone",
+            iconColor: "#ec4899",
+            title:
+              "Páginas para contratar diseñadores gráficos: ventajas de Oberstaff",
+            description:
+              "Existen varias plataformas para contratar diseñadores gráficos, como marketplaces de freelancers o agencias de diseño. Sin embargo, Oberstaff ofrece un modelo diferente: talento dedicado en exclusiva a tu empresa, con contrato estable y toda la gestión laboral cubierta. Esto significa mayor compromiso, mejor integración en tu equipo y ausencia de riesgos legales para tu negocio.",
+          },
+        ]}
+      />
+    </div>
+
+    <div class="fade-in-section">
+      <CasosExitoPerfiles
+        title="Empresas Españolas que ya confían en Oberstaff"
+        cases={[
+          {
+            name: "Shadai Iborra",
+            position: "CEO @amediastory - Barcelona",
+            achievements: [
+              { text: "· CM integrada en 3 semanas" },
+              { text: "· Ahorro del 65% vs local", highlight: true },
+              { text: "· Castellano perfecto" },
+            ],
+          },
+          {
+            name: "Fernando Calderón",
+            position: "CEO bybeautypro.com - Madrid",
+            achievements: [
+              { text: "· CM + editor de video" },
+              { text: "· Proceso rápido y sin complicaciones" },
+              { text: "· Redes +40% en 4 meses", highlight: true },
+            ],
+          },
+          {
+            name: "Kate McCaffert",
+            position: "KM Real Estate - Marbella",
+            achievements: [
+              { text: "· +2 años con la misma CM", highlight: true },
+              { text: "· Equipo remoto integrado al 100%" },
+              { text: "· LinkedIn e Instagram con éxito" },
+            ],
+          },
+        ]}
+      />
+    </div>
+
+    <div class="fade-in-section">
+      <FAQSectionDisenador
+        title="Todo lo que necesitas saber antes de contratar diseñador gráfico remoto"
+        subtitle="Resolvemos las dudas más frecuentes de empresas españolas que quieren incorporar diseño gráfico remoto de Latam."
+      />
+    </div>
+  </div>
+
+  <div class="fade-in-section">
+    <PressSection />
+  </div>
+
+  <div class="fade-in-section">
+    <ConversionPerfil
+      title="¿Listo para contratar tu diseñador gráfico remoto?"
+      subtitle="Completa el formulario (tardarás menos de 1 minuto) y en <24 horas recibirás de parte de nuestros especialistas una propuesta personalizada sin compromiso."
+      buttonText="Solicitar propuesta gratuita"
+      relatedRoles={[
+        {
+          label: "Contratar diseñador web",
+          icon: "solar:laptop-minimalistic-bold-duotone",
+          iconColor: "#ec4899",
+        },
+        {
+          label: "Contratar community manager ",
+          icon: "solar:smartphone-bold-duotone",
+          iconColor: "#eab308",
+        },
+        {
+          label: "Editor de video remoto  ",
+          icon: "solar:videocamera-bold-duotone",
+          iconColor: "#10b981",
+        },
+      ]}
+    />
+  </div>
+</DashboardLayoutPerfiles>
+
+<style>
+  .service-detail-container {
+  }
+</style>

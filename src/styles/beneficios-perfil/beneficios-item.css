@@ -1,0 +1,33 @@
+.benefit-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 35px 25px;
+    background-color: #ffffff;
+    border: 2px solid #e5e7eb;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.benefit-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    border-color: #3b76f6;
+}
+.benefit-icon {
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+.benefit-item h3 {
+    font-size: 17px;
+    font-weight: 800;
+    color: #0d2149;
+    line-height: 1.3;
+    margin: 0;
+}
+.benefit-item p {
+    font-size: 14px;
+    color: #777;
+    line-height: 1.6;
+    margin: 0;
+}

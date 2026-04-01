@@ -1,0 +1,70 @@
+.roles-eor {
+    font-family: 'Inter', -apple-system, sans-serif;
+    padding: 60px 20px;
+    /* Reduced vertical padding */
+    background-color: rgb(247 248 248 / var(--tw-bg-opacity, 1));
+    text-align: center;
+    color: #1a1a1a;
+}
+
+.roles-header {
+    margin-bottom: 50px;
+}
+
+.roles-header h2 {
+    font-size: 36px;
+    /* Standardized size */
+    font-weight: 800;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+}
+
+.roles-header h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.roles-header p {
+    font-size: 18px;
+    /* Standardized size */
+    color: #666;
+    max-width: 850px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+.roles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    /* Reduced gap for compactness */
+    max-width: 1100px;
+    /* Reduced max-width to fit in view */
+    margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+    .roles-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .roles-header h2 {
+        font-size: 28px;
+    }
+
+    .roles-header p {
+        font-size: 16px;
+    }
+
+    .roles-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .roles-eor {
+        padding: 60px 20px;
+    }
+}

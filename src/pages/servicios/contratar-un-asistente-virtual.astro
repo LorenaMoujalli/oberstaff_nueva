@@ -1,0 +1,528 @@
+---
+import DashboardLayoutPerfiles from "../../layouts/DashboardLayoutPerfiles.astro";
+import LeadHeroSection from "../../components/community-manager/LeadHeroSection.astro";
+import TrustBarPerfiles from "../../components/trust-bar-perfiles/TrustBarPerfiles.astro";
+import InfoServicePerfil from "../../components/info-services-perfil/InfoServicePerfil.astro";
+import AreasPerfiles from "../../components/areas-perfiles/AreasPerfiles.astro";
+import TimelinePerfiles from "../../components/timeline-perfiles/TimelinePerfiles.astro";
+import CTAIntermedioPerfil from "../../components/cta-intermedio-perfil/CTAIntermedioPerfil.astro";
+import ComparisonPerfiles from "../../components/comparison-perfiles/ComparisonPerfiles.astro";
+import PricingCardPerfil from "../../components/pricing-perfil/PricingCardPerfil.astro";
+import BeneficiosPerfil from "../../components/beneficios-perfil/BeneficiosPerfil.astro";
+import GuiaPerfiles from "../../components/guia-perfiles/GuiaPerfiles.astro";
+import CasosExitoPerfiles from "../../components/casos-exito-perfiles/CasosExitoPerfiles.astro";
+import FAQSectionAsistente from "../../components/faq-servicios/FAQSection-asistente.astro";
+import PressSection from "../../components/press/PressSection.astro";
+import ConversionPerfil from "../../components/conversion-perfil/ConversionPerfil.astro";
+import RolesPerfil from "../../components/roles-del-perfil/RolesPerfil.astro";
+---
+
+<DashboardLayoutPerfiles
+    title="Contratar un Asistente Virtual para tu empresa"
+    description="Talento remoto de LATAM, español nativo y hasta un 70% de ahorro para empresas en España que buscan contratar un asistente virtual. Consulta gratuita. "
+    keywords="contratar un asistente virtual"
+>
+    <div class="service-detail-container" id="inicio">
+        <LeadHeroSection
+            topLabel=""
+            title="Contratar un asistente virtual desde Latinoamérica para tu negocio en España"
+            cardTitle="Comienza ahora"
+            buttonText="Solicitar propuesta personalizada"
+            footerLinkText="Ver cómo funciona →"
+            footerLinkHref="#como-contratar"
+        >
+            <Fragment slot="description">
+                Incorpora un asistente virtual para empresas ya evaluado de
+                LATAM. Mismo idioma, horario compatible, hasta un 70% de ahorro
+                en costes y sin complicaciones legales ni administrativas.
+            </Fragment>
+        </LeadHeroSection>
+
+        <div class="fade-in-section">
+            <TrustBarPerfiles
+                title="+5.000 empresas confían en nosotros"
+                features={[
+                    "Dedicación exclusiva",
+                    "Perfiles evaluados",
+                    "Integración rápida",
+                    "Horario compatible con España",
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <InfoServicePerfil
+                mainQuestion="¿Qué hace un asistente virtual para empresas?"
+                answerText="Un asistente virtual administrativo ayuda a tu organización a descargar tareas operativas que frenan al equipo: agenda, correo, seguimiento, reportes, atención al cliente y coordinación interna. "
+                priceBoxTitle="¿Cuánto cuesta contratar un asistente virtual en España?"
+                priceBoxText={`El coste de contratar una persona local para tareas administrativas puede crecer rápido cuando sumas salario, Seguridad Social, selección y gestión, aproximadamente entre 1500-2500€/mes. Con Oberstaff, puedes acceder a un asistente virtual remoto desde a partir de 690 €/mes, con todo incluido y sin asumir riesgos legales.`}
+                summaryTitle="Checklist de ventajas"
+                summaryItems={[
+                    "Asistentes virtuales evaluados con pruebas técnicas y psicométricas",
+                    "Sin riesgo legal",
+                    "Factura mensual en euros para tu empresa",
+                    "Sin permanencia mínima — cancela cuando quieras",
+                ]}
+                buttonText="Solicitar propuesta personalizada →"
+                buttonHref="#inicio"
+            /> 
+        </div> 
+
+
+        
+
+        <!--
+    <div class="fade-in-section">
+      <AreasPerfiles
+        title="¿Qué puede hacer un diseñador gráfico en remoto por tu empresa?"
+        subtitle="Nuestros diseñadores dominan las herramientas y disciplinas que tu negocio necesita, desde branding hasta diseño para redes sociales."
+        cards={[
+          {
+            icon: "solar:pen-new-square-bold-duotone",
+            iconColor: "#8b5cf6",
+            title: "Branding e Identidad Visual",
+            description:
+              "Creación de logotipos, paletas cromáticas, tipografías corporativas y manual de marca. Construye una identidad coherente y memorable.",
+          },
+          {
+            icon: "solar:smartphone-bold-duotone",
+            iconColor: "#ec4899",
+            title: "Diseño para Redes Sociales",
+            description:
+              "Creatividades para Instagram, LinkedIn, Facebook y TikTok. Contenido visual alineado con tu marca.",
+          },
+          {
+            icon: "solar:videocamera-bold-duotone",
+            iconColor: "#14b8a6",
+            title: "Motion Graphics",
+            description:
+              "Animaciones para redes, intros de vídeo, infografías animadas y contenido dinámico para publicidad digital.",
+          },
+          {
+            icon: "ph:presentation-chart-duotone",
+            iconColor: "#eab308",
+            title: "Piezas para marketing y ventas",
+            description:
+              "Diapositivas corporativas, Dossiers, decks de inversión y material de ventas visualmente impactante y bien estructurado.",
+          },
+        ]}
+      />
+    </div>
+    -->
+
+        <div class="fade-in-section">
+            <AreasPerfiles
+                title="Todo lo que puede hacer tu asistente virtual remoto"
+                subtitle="Desde la gestión de agenda hasta el soporte a clientes, tu AV cubre todas las áreas administrativas clave de tu negocio."
+                cards={[
+                    {
+                        icon: "ph:calendar-duotone",
+                        iconColor: "#8b5cf6",
+                        title: "Gestión de agenda y calendario",
+                        description:
+                            "Organización de reuniones, coordinación de horarios, recordatorios y gestión de viajes.",
+                    },
+                    {
+                        icon: "ph:envelope-simple-duotone",
+                        iconColor: "#ec4899",
+                        title: "Gestión de correo y comunicaciones",
+                        description:
+                            " Clasificación, respuesta y seguimiento de emails. Atención a clientes y proveedores.",
+                    },
+                    {
+                        icon: "ph:file-text-duotone",
+                        iconColor: "#14b8a6",
+                        title: "Documentación y archivo",
+                        description:
+                            "Preparación de informes, presentaciones, contratos y gestión documental.",
+                    },
+                    {
+                        icon: "ph:briefcase-duotone",
+                        iconColor: "#eab308",
+                        title: "Soporte a dirección y gerencia",
+                        description:
+                            "Asistencia ejecutiva, preparación de reuniones, actas y seguimiento de tareas.",
+                    },
+                    {
+                        icon: "ph:calculator-duotone",
+                        iconColor: "#ef4444",
+                        title: "Facturación y control de gastos",
+                        description:
+                            "Gestión de facturas, seguimiento de pagos y soporte al departamento financiero.",
+                    },
+                    {
+                        icon: "ph:wrench-duotone",
+                        iconColor: "#3b82f6",
+                        title: "Herramientas y sistemas de gestión",
+                        description:
+                            "G Suite, Microsoft 365, Notion, Asana, Slack, CRM y plataformas de colaboración.",
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <div id="como-contratar" style="scroll-margin-top: 80px;">
+                <TimelinePerfiles
+                    title="Cómo contratar un asistente virtual con Oberstaff"
+                    subtitle="Un proceso ágil y sin riesgo. Desde que nos contactas hasta que tu asistente virtual está trabajando para ti."
+                    items={[
+                        {
+                            title: "Cuéntanos tu perfil",
+                            timeTag: "15 minutos",
+                            description:
+                                "Llamada gratuita de 15 min. Analizamos necesidades, herramientas y experiencia requerida.",
+                        },
+                        {
+                            title: "Seleccionamos candidatos",
+                            timeTag: "Perfiles evaluados",
+                            timeTagGray: true,
+                            description:
+                                "Preseleccionamos 3–5 perfiles evaluados técnica y psicométricamente.",
+                        },
+                        {
+                            title: "Entrevistas y decisión",
+                            timeTag: "A tu ritmo",
+                            description:
+                                "Entrevistas directas con los candidatos. Tú eliges a quién contratar.",
+                        },
+                        {
+                            title: "Tu AV empieza a trabajar",
+                            timeTag: "En <48 horas después de tu elección",
+                            timeTagGray: true,
+                            description:
+                                "Oberstaff gestiona contrato, nómina y compliance. ",
+                        },
+                    ]}
+                />
+            </div>
+        </div>
+
+        <div class="fade-in-section">
+            <CTAIntermedioPerfil
+                alertText="Si estás comparando opciones de asistentes virtuales para negocios, aquí simplificamos el proceso para que contrates más rápido y con menos riesgo."
+                title="¿Ya sabes lo que necesitas?"
+                description="Cuéntanos el perfil de tu asistente virtual y recibe una propuesta personalizada en menos de 24 horas. Sin compromiso."
+                buttonText="Solicitar propuesta personalizada"
+                buttonHref="#inicio"
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <RolesPerfil
+                title="Perfiles de asistentes virtuales disponibles"
+                subtitle=""
+                roles={[
+                    {
+                        title: "Asistente Administrativo virtual",
+                        description:
+                            "Gestión de agenda, emails, documentos y coordinación interna.",
+                        icon: "ph:desktop-duotone",
+                        iconColor: "#3b76f6",
+                        borderColorClass: "border-blue",
+                        techStack: [
+                            "Google Workspace",
+                            "Notion",
+                            "Asana",
+                            "Trello",
+                            "Slack",
+                        ],
+                    },
+                    {
+                        title: "Atención al Cliente",
+                        description:
+                            "Soporte, gestión de incidencias y fidelización.",
+                        icon: "ph:headset-duotone",
+                        iconColor: "#8b5cf6",
+                        borderColorClass: "border-purple",
+                        techStack: [
+                            "Zendesk",
+                            "Intercom",
+                            "Freshdesk",
+                            "WhatsApp Business",
+                        ],
+                    },
+                    {
+                        title: "Asistente Virtual para eCommerce",
+                        description:
+                            "Gestión de pedidos, fichas de producto y atención posventa. ",
+                        icon: "ph:shopping-cart-duotone",
+                        iconColor: "#f97316",
+                        borderColorClass: "border-orange",
+                        techStack: ["Shopify", "Amazon Seller", "Klaviyo"],
+                    },
+                    {
+                        title: "Asistente Personal",
+                        description:
+                            "Gestión de agenda compleja, viajes, reuniones y comunicaciones.",
+                        icon: "ph:suitcase-duotone",
+                        iconColor: "#ff66cc",
+                        borderColorClass: "border-pink",
+                        techStack: ["Calendly", "Notion", "Zoom", "Asana"],
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <ComparisonPerfiles
+                title="Asistente virtual España: Oberstaff vs. otras opciones"
+                subtitle="Compara el coste real de contratar un asistente administrativo virtual en España frente a nuestro modelo de talento remoto desde LATAM."
+                criterioLabel="Criterio"
+                oberstaffLabel="Oberstaff"
+                competitors={["Local", "Freelance", "Agencia"]}
+                rows={[
+                    {
+                        label: "Coste mensual",
+                        oberstaffValue: "Desde 690€",
+                        oberstaffBlueText: true,
+                        competitorValues: [
+                            "1.500-2.500€/mes",
+                            "800-2.000€",
+                            "1.200-4.000€",
+                        ],
+                    },
+                    {
+                        label: "Dedicación exclusiva",
+                        oberstaffValue: "Sí",
+                        competitorValues: [
+                            "Sí",
+                            `<iconify-icon icon="solar:danger-triangle-bold" class="icon-warning" style="color: #f59e0b;"></iconify-icon> Varios clientes`,
+                            `<iconify-icon icon="solar:close-circle-bold" class="icon-cross" style="color: #ef4444;"></iconify-icon> No`,
+                        ],
+                    },
+                    {
+                        label: "Gestión legal",
+                        oberstaffValue: "Oberstaff",
+                        competitorValues: [
+                            `<iconify-icon icon="solar:close-circle-bold" class="icon-cross" style="color: #ef4444;"></iconify-icon> Tú lo gestionas`,
+                            "Autónomo",
+                            "Sí",
+                        ],
+                    },
+                    {
+                        label: "Zona horaria España",
+                        oberstaffValue: `<iconify-icon icon="solar:check-circle-bold" class="icon-check" style="color: #10b981;"></iconify-icon> Compatible`,
+                        competitorValues: [
+                            "Compatible",
+                            `<iconify-icon icon="solar:danger-triangle-bold" class="icon-warning" style="color: #f59e0b;"></iconify-icon> Sin horario fijo`,
+                            "Repartido",
+                        ],
+                    },
+                    {
+                        label: "Sin permanencia",
+                        oberstaffValue: `<iconify-icon icon="solar:check-circle-bold" class="icon-check" style="color: #10b981;"></iconify-icon> Sí`,
+                        competitorValues: [
+                            `<iconify-icon icon="solar:close-circle-bold" class="icon-cross" style="color: #ef4444;"></iconify-icon> Indemnizaciones`,
+                            `<iconify-icon icon="solar:danger-triangle-bold" class="icon-warning" style="color: #f59e0b;"></iconify-icon>  Según contrato`,
+                            `<iconify-icon icon="solar:close-circle-bold" class="icon-cross" style="color: #ef4444;"></iconify-icon> Contratos largos`,
+                        ],
+                    },
+                    {
+                        label: "Perfil evaluado",
+                        oberstaffValue: "Técnico + psico",
+                        competitorValues: [
+                            `<iconify-icon icon="solar:close-circle-bold" class="icon-cross" style="color: #ef4444;"></iconify-icon> Tú seleccionas`,
+                            `<iconify-icon icon="solar:close-circle-bold" class="icon-cross" style="color: #ef4444;"></iconify-icon> Solo CV`,
+                            "Sí",
+                        ],
+                    },
+                    {
+                        label: "Ahorro vs local",
+                        oberstaffValue: `<span class="badge-blue">Hasta 70%</span>`,
+                        oberstaffNoPadding: true,
+                        competitorValues: [
+                            "-",
+                            `<iconify-icon icon="solar:danger-triangle-bold" class="icon-cross" style="color: #f59e0b;"></iconify-icon> Variable`,
+                            "Variable",
+                        ],
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <PricingCardPerfil
+                title="Precio asistente virtual con Oberstaff"
+                subtitle="Tarifas claras y sin sorpresas. Todo incluido: gestión, nómina y compliance. El precio varía según la experiencia del perfil."
+                priceLabel="DESDE"
+                priceAmount="690€"
+                pricePeriod="/mes"
+                badgeText="Todo incluido · jornada completa · sin costes ocultos"
+                features={[
+                    "Gestión de agenda y correo",
+                    "Documentación y soporte administrativo",
+                    "Factura única en euros · sin gestiones",
+                    "Contrato flexible · cancela con 30 días",
+                    "Herramientas de colaboración remota",
+                    "Soporte a dirección y gerencia",
+                ]}
+                disclaimer="Precios orientativos. El coste final depende del perfil, país y nivel de experiencia. Sin costes ocultos ni comisiones adicionales."
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <BeneficiosPerfil
+                title="Por qué contratar asistente virtual con Oberstaff"
+                subtitle="Más que un servicio de selección: somos tu socio operativo para acceder al mejor talento administrativo remoto."
+                items={[
+                    {
+                        icon: "solar:user-check-rounded-bold-duotone",
+                        iconColor: "#3b82f6",
+                        title: "Dedicación exclusiva:",
+                        description:
+                            "Tu AV trabaja enfocado en tu negocio y tus prioridades.",
+                    },
+                    {
+                        icon: "solar:rocket-bold-duotone",
+                        iconColor: "#f59e0b",
+                        title: "Integración rápida:",
+                        description:
+                            "Se incorpora a tus reuniones, utiliza tus herramientas y sistema de feedback.",
+                    },
+                    {
+                        icon: "solar:shield-check-bold-duotone",
+                        iconColor: "#8b5cf6",
+                        title: "Operativa resuelta:",
+                        description:
+                            "Oberstaff es el empleador legal — tú no asumes nada. Contratos, nóminas y seguridad social: todo bajo nuestra responsabilidad.",
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <GuiaPerfiles
+                title="¿Cómo contratar un asistente virtual para tu negocio?"
+                intro="Claves para tomar la mejor decisión antes de incorporar un asistente virtual para empresas y acertar con el perfil, el modelo de trabajo y el nivel de soporte que tu operación realmente necesita."
+                items={[
+                    {
+                        icon: "ph:users-duotone",
+                        iconColor: "#3b82f6",
+                        title: "¿Es mejor contratar asistente virtual freelance o uno integrado en remoto?",
+                        description:
+                            "Si necesitas seguimiento diario, coordinación con tu equipo y una persona que forme parte de tu organización, un perfil remoto estable como el de Oberstaff funciona mejor y a menor coste total.",
+                    },
+                    {
+                        icon: "ph:magnifying-glass-duotone",
+                        iconColor: "#f59e0b",
+                        title: "¿Qué buscar al contratar un asistente virtual administrativo?",
+                        description:
+                            "No contrates ayuda genérica, antes es importante que definas bien tus objetivos: ¿necesitas apoyo en gestión de agenda, correo, facturación, atención a clientes o coordinación de proyectos? Cuanto más concreto sea el briefing, más rápido podrá el profesional integrarse en tus flujos de trabajo. Nosotros te ayudamos a definir el perfil exacto en una llamada de 15 minutos.",
+                    },
+                    {
+                        icon: "ph:toolbox-duotone",
+                        iconColor: "#ec4899",
+                        title: "¿Qué herramientas debería dominar los asistentes virtuales para negocios?",
+                        description:
+                            "Un buen perfil debe sentirse cómodo con Google Workspace o Microsoft 365, calendarios compartidos, Notion, Asana, Trello, Slack, CRM y sistemas de gestión documental.",
+                    },
+                    {
+                        icon: "ph:user-gear-duotone",
+                        iconColor: "#14b8a6",
+                        title: "¿Secretaria virtual o asistente administrativo remoto?",
+                        description:
+                            "Muchas búsquedas empiezan con el término secretaria virtual para empresas, pero hoy el rol suele ir mucho más allá de contestar correos o agendar reuniones. En la práctica, lo que mejor funciona es un asistente administrativo virtual capaz de seguir procesos, coordinar tareas y dar soporte operativo constante al negocio.",
+                    },
+                    {
+                        icon: "ph:arrows-left-right-duotone",
+                        iconColor: "#8b5cf6",
+                        title: "¿Qué diferencia hay entre un asistente virtual remoto y un asistente administrativo tradicional?",
+                        description:
+                            "El rol es parecido, pero contratar un asistente virtual en España a través del modelo remoto aporta más flexibilidad, ahorro de costes y acceso a talento internacional alineado con tu horario",
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <CasosExitoPerfiles
+                title="Empresas Españolas que ya confían en Oberstaff"
+                cases={[
+                    {
+                        name: "Shadai Iborra",
+                        position: "CEO @amediastory - Barcelona",
+                        achievements: [
+                            { text: "· CM integrada en 3 semanas" },
+                            {
+                                text: "· Ahorro del 65% vs local",
+                                highlight: true,
+                            },
+                            { text: "· Castellano perfecto" },
+                        ],
+                    },
+                    {
+                        name: "Fernando Calderón",
+                        position: "CEO bybeautypro.com - Madrid",
+                        achievements: [
+                            { text: "· CM + editor de video" },
+                            { text: "· Proceso rápido y sin complicaciones" },
+                            {
+                                text: "· Redes +40% en 4 meses",
+                                highlight: true,
+                            },
+                        ],
+                    },
+                    {
+                        name: "Kate McCaffert",
+                        position: "KM Real Estate - Marbella",
+                        achievements: [
+                            {
+                                text: "· +2 años con la misma CM",
+                                highlight: true,
+                            },
+                            { text: "· Equipo remoto integrado al 100%" },
+                            { text: "· LinkedIn e Instagram con éxito" },
+                        ],
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <FAQSectionAsistente
+                title="Todo lo que necesitas saber antes de contratar tu asistente virtual"
+                subtitle="Resolvemos las dudas más frecuentes sobre el proceso, precios y funcionamiento del servicio."
+            />
+        </div>
+    </div>
+
+    <div class="fade-in-section">
+        <PressSection />
+    </div>
+
+    <div class="fade-in-section">
+        <ConversionPerfil
+            title="Encuentra el asistente virtual adecuado para tu negocio"
+            subtitle="Rellena el formulario (menos de 1 minuto) y en menos de 24 horas recibirás una propuesta personalizada sin compromiso. Primera consulta gratuita."
+            buttonText="Solicitar propuesta gratuita"
+            relatedRoles={[
+                {
+                    label: "Contratar diseñador Gráfico",
+                    icon: "solar:pen-new-square-bold-duotone",
+                    iconColor: "#ec4899",
+                },
+                {
+                    label: "Community manager",
+                    icon: "solar:smartphone-bold-duotone",
+                    iconColor: "#eab308",
+                },
+                {
+                    label: "Editor de video remoto",
+                    icon: "solar:videocamera-bold-duotone",
+                    iconColor: "#10b981",
+                },
+                 {
+                    label: "Analista de datos",
+                    icon: "solar:chart-square-bold-duotone",
+                    iconColor: "#eab308",
+                },
+            ]}
+        />
+    </div>
+</DashboardLayoutPerfiles>
+
+<style>
+    .service-detail-container {
+    }
+</style>

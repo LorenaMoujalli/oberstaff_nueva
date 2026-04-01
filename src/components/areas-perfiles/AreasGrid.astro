@@ -1,0 +1,67 @@
+---
+import "../../styles/areas-perfiles/areas-grid.css";
+
+export interface AreaCardProps {
+    icon: string;
+    iconColor: string;
+    title: string;
+    description: string;
+}
+
+interface Props {
+    cards?: AreaCardProps[];
+}
+
+const {
+    cards = [
+        {
+            icon: "ph:device-mobile-duotone",
+            iconColor: "#8b5cf6",
+            title: "Gestión de redes sociales",
+            description: "Instagram, LinkedIn, Facebook, Tik Tok, X. Calendarios editoriales adaptados al sector."
+        },
+        {
+            icon: "solar:pen-new-square-bold-duotone",
+            iconColor: "#ec4899",
+            title: "Creación de contenido",
+            description: "Copies, creatividades con Canva/Adobe, guiones para reels y stories. Voz de marca coherente."
+        },
+        {
+            icon: "solar:chat-round-line-bold-duotone",
+            iconColor: "#14b8a6",
+            title: "Gestión de comunidad",
+            description: "Respuesta a DMs y comentarios, moderación, atención al cliente en redes. Marca siempre activa."
+        },
+        {
+            icon: "solar:chart-square-bold-duotone",
+            iconColor: "#eab308",
+            title: "Analítica e informes",
+            description: "KPIs: alcance, engagement, conversiones. Informes mensuales con insights estratégicos."
+        },
+        {
+            icon: "solar:target-bold-duotone",
+            iconColor: "#ef4444",
+            title: "Estrategia de contenido",
+            description: "Audiencias, posicionamiento de marca, hashtags, tendencias. Alineado con objetivos de negocio."
+        },
+        {
+            icon: "ph:megaphone-duotone",
+            iconColor: "#3b82f6",
+            title: "Campañas y paid social",
+            description: "Apoyo en Meta Ads y LinkedIn Ads. Coordinación con el equipo de marketing."
+        }
+    ]
+} = Astro.props;
+---
+
+<div class={`areas-grid ${cards.length === 4 ? 'grid-2x2' : ''}`}>
+    {cards.map((card) => (
+        <article class="area-card">
+            <div class="area-icon" style={`color: ${card.iconColor};`}>
+                <iconify-icon icon={card.icon}></iconify-icon>
+            </div>
+            <h3>{card.title}</h3>
+            <p>{card.description}</p>
+        </article>
+    ))}
+</div>

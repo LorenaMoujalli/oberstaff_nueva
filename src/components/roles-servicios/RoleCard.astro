@@ -1,0 +1,22 @@
+---
+import "../../styles/roles-servicios/RoleCard.css";
+
+interface Props {
+    icon: string;
+    title: string;
+    description: string;
+    colorClass?: string;
+}
+
+const { icon, title, description, colorClass = "icon-default" } = Astro.props;
+---
+
+<div class="role-card">
+    <div class={`role-icon ${colorClass}`}>
+        <iconify-icon icon={icon}></iconify-icon>
+    </div>
+    <div class="role-info">
+        <h4>{title}</h4>
+        <p>{description}</p>
+    </div>
+</div>

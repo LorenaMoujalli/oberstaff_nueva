@@ -1,0 +1,23 @@
+.timeline-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.timeline-header h2 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #0d2149;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+}
+
+.timeline-header p {
+    font-size: 15px;
+    color: #777;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .timeline-header h2 { font-size: 28px; }
+}

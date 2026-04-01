@@ -1,0 +1,35 @@
+---
+import "../../styles/timeline-perfiles/timeline-item.css";
+
+export interface TimelineItemProps {
+    title: string;
+    description: string;
+    timeTag?: string;
+    timeTagGray?: boolean;
+}
+
+interface Props extends TimelineItemProps {
+    index: number;
+}
+
+const { index, title, description, timeTag, timeTagGray } = Astro.props;
+
+// determine layout alignment based on index (even -> right, odd -> left)
+const alignment = index % 2 === 0 ? "right" : "left";
+const tagClass = timeTagGray ? "time-tag gray" : "time-tag";
+---
+
+<div class={`timeline-item ${alignment}`}>
+    <div class="step-number">{index + 1}</div>
+    <div class="content-card">
+        {timeTag ? (
+            <div class="card-header">
+                <h3>{title}</h3>
+                <span class={tagClass}>{timeTag}</span>
+            </div>
+        ) : (
+            <h3>{title}</h3>
+        )}
+        <p set:html={description}></p>
+    </div>
+</div>

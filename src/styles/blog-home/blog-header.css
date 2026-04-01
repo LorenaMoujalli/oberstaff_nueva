@@ -1,0 +1,54 @@
+/* Header */
+.blog-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.blog-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    font-style: normal;
+    color: #1B1B1B;
+    text-align: center;
+    letter-spacing: -1px;
+    line-height: 1.4;
+}
+
+.blog-title strong {
+    font-weight: 900;
+    color: #6663FD;
+}
+
+.view-all {
+    position: absolute;
+    right: 0;
+    color: #6663FD;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    transition: opacity 0.3s ease;
+}
+
+.view-all:hover {
+    opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+    .blog-title {
+        font-size: 24px;
+    }
+    .view-all {
+        position: static;
+        display: block;
+        margin-top: 10px;
+    }
+    .blog-header {
+        flex-direction: column;
+        text-align: center;
+    }
+}

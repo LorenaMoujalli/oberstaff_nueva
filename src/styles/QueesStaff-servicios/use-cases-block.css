@@ -1,0 +1,6 @@
+.use-cases-block .section-title { font-size: 36px; font-weight: 800; color: #1b1b1b; margin-bottom: 10px; }
+.use-cases-block .use-cases-intro { font-size: 18px; color: #666; max-width: 800px; margin: 0 auto 60px auto; line-height: 1.6; }
+.use-cases-block .use-cases-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 30px; }
+@media (max-width: 768px) {
+    .use-cases-block .section-title { font-size: 28px; }
+}

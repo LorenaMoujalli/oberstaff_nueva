@@ -1,0 +1,99 @@
+.eor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    align-items: stretch;
+}
+
+.eor-card {
+    background: white;
+    border-radius: 20px;
+    padding: 35px;
+    text-align: left;
+    position: relative;
+    border: 1.5px solid #ccc;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    transition: all 0.3s ease;
+}
+
+.eor-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.07);
+    border-color: #aaa;
+}
+
+.eor-card.featured {
+    border: 1.5px solid #ff66cc;
+    box-shadow: 0 4px 20px rgba(255, 102, 204, 0.18), 0 0 0 4px rgba(255, 102, 204, 0.07);
+}
+
+.eor-card.featured:hover {
+    box-shadow: 0 12px 35px rgba(255, 102, 204, 0.22), 0 0 0 6px rgba(255, 102, 204, 0.09);
+    border-color: #ff66cc;
+}
+
+.eor-badge {
+    position: absolute;
+    top: -12px;
+    right: 25px;
+    background: #ff66cc;
+    color: #1b1b1b;
+    font-size: 11px;
+    font-weight: 900;
+    padding: 5px 14px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.card-header iconify-icon {
+    margin-right: 15px;
+    font-size: 28px;
+}
+
+.negative-header { color: #888; }
+.positive-header { color: #1a1a1a; }
+
+.eor-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.eor-list li {
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.list-negative li { color: #999; }
+.list-positive li { color: #444; }
+
+.icon-x {
+    color: #bbb;
+    font-size: 18px;
+    font-weight: 700;
+    display: flex;
+    flex-shrink: 0;
+    margin-right: 18px;
+}
+
+.icon-check {
+    color: #ff66cc;
+    font-size: 18px;
+    font-weight: 700;
+    display: flex;
+    flex-shrink: 0;
+    margin-right: 18px;
+}

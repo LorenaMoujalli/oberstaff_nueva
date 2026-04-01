@@ -1,0 +1,15 @@
+---
+import "../../styles/pricing-perfil/pricing-features.css";
+interface Props {
+  features?: string[];
+}
+const { features = [] } = Astro.props;
+---
+<div class="features-grid">
+    {features.map((feature) => (
+        <div class="feature-item">
+            <iconify-icon icon="solar:check-read-linear" class="check-icon"></iconify-icon>
+            <span set:html={feature}></span>
+        </div>
+    ))}
+</div>

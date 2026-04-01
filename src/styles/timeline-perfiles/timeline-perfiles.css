@@ -1,0 +1,32 @@
+.timeline-section {
+    padding: 60px 20px;
+    background-color: #ffffff;
+    font-family: 'Inter', sans-serif;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Estructura de la Línea de Tiempo */
+.timeline-wrapper {
+    position: relative;
+    padding: 20px 0;
+}
+
+/* Línea vertical central */
+.vertical-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #d1d5db;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .vertical-line { left: 20px; }
+}

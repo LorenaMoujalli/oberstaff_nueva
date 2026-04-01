@@ -1,0 +1,27 @@
+---
+import "../../styles/casos-exito-perfiles/casos-exito-perfiles.css";
+import CasosExitoHeader from "./CasosExitoHeader.astro";
+import CasoExitoCard from "./CasoExitoCard.astro";
+import type { CasoExitoCardProps } from "./CasoExitoCard.astro";
+
+interface Props {
+  title?: string;
+  cases?: CasoExitoCardProps[];
+}
+
+const { title = "", cases = [] } = Astro.props;
+---
+<section class="trust-cases-section">
+    <div class="container">
+        <CasosExitoHeader title={title} />
+        <div class="cases-grid">
+            {cases.map((c) => (
+                <CasoExitoCard 
+                    name={c.name}
+                    position={c.position}
+                    achievements={c.achievements}
+                />
+            ))}
+        </div>
+    </div>
+</section>

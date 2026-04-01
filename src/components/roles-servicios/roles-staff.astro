@@ -1,0 +1,79 @@
+---
+import RoleCard from "./RoleCard.astro";
+import "../../styles/roles-servicios/RolesSection.css";
+
+interface Role {
+    icon: string;
+    title: string;
+    description: string;
+    colorClass?: string;
+}
+
+interface Props {
+    label?: string;
+    title?: string;
+    subtitle?: string;
+    description?: string;
+    roles?: Role[];
+}
+
+const defaultRoles: Role[] = [
+    {
+        icon: "solar:chart-2-linear",
+        title: "Data & Analytics",
+        description: "Data Analyst · Data Engineer · BI Developer",
+        colorClass: "icon-green",
+    },
+    {
+        icon: "solar:pallete-2-linear",
+        title: "Diseño UX/UI",
+        description: "UX Designer · UI Designer · Product Design",
+        colorClass: "icon-purple",
+    },
+    {
+        icon: "solar:volume-loud-linear",
+        title: "Marketing Digital",
+        description: "SEO · Google Ads · Meta Ads · Content",
+        colorClass: "icon-red",
+    },
+    {
+        icon: "solar:cloud-linear",
+        title: "DevOps & Cloud",
+        description: "DevOps · AWS · Azure · SysAdmin",
+        colorClass: "icon-cyan",
+    },
+    {
+        icon: "solar:shield-check-linear",
+        title: "QA & Testing",
+        description: "QA Manual · QA Automation · Test Analyst",
+        colorClass: "icon-yellow",
+    },
+    {
+        icon: "solar:code-linear",
+        title: "Desarrollo y Tech",
+        description: "Dev Frontend · Backend · Fullstack · Mobile · Wordpress",
+        colorClass: "icon-indigo",
+    },
+];
+
+const {
+    label,
+    title = "Roles que Puedes Contratar con EOR",
+    subtitle = "",
+    description = "Contrata con nuestro servicio de Employer of Record en España a los profesionales más demandados de Latinoamérica. Tú eliges el perfil, nosotros gestionamos todo lo legal.",
+    roles = defaultRoles,
+} = Astro.props;
+---
+
+<section class="roles-eor" id="roles">
+    <div class="roles-header">
+        {label && <span class="section-label" style="display: block; color: #ff66cc; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 15px;">{label}</span>}
+        <h2>{title}</h2>
+        {subtitle && <h3>{subtitle}</h3>}
+        <p>{description}</p>
+    </div>
+
+    <div class="roles-grid">
+        {roles.map((role) => <RoleCard {...role} />)}
+    </div>
+</section>

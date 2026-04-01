@@ -1,0 +1,371 @@
+---
+import DashboardLayoutServicios from "../../layouts/DashboardLayoutServicios.astro";
+import HeroService from "../../components/hero-servicios/HeroService.astro";
+import ConEorService from "../../components/conEorServicios/ConEorService.astro";
+//import BeneficiosSeccion from "../../components/beneficios-eor-servicios/BeneficiosSeccion.astro";
+import EorStepsSection from "../../components/eor-steps-servicios/EorStepsSection.astro";
+import EorCta from "../../components/eor-cta-servicios/EorCta.astro";
+import FeaturesSection from "../../components/oberstaff-features-servicios/FeaturesSection.astro";
+import CoberturaSeccion from "../../components/geografica-servicios/CoberturaSeccion.astro";
+//import PricingSection from "../../components/pricing-servicios/PricingSection.astro";
+import CasosExitoSection from "../../components/casos-exito-servicios/CasosExitoSection.astro";
+import RolesSection from "../../components/roles-servicios/RolesSection.astro";
+import FAQSectionContractor from "../../components/faq-servicios/FAQSectionContractor.astro";
+import QueEsStaffSection from "../../components/QueesStaff-servicios/QueEsStaffSection.astro";
+import BeneficiosSeccionPersonal from "../../components/beneficios-eor-servicios/BeneficiosSeccion-personal.astro";
+//import OtrosServiciosSection from "../../components/otros-servicios-servicios/OtrosServiciosSection.astro";
+import ContactFormSection from "../../components/form/ContactFormSection.astro";
+//import ArticulosSection from "../../components/articulos-servicios/ArticulosSection.astro";
+---
+
+<DashboardLayoutServicios
+    title="Contractor of Record para empresas españolas | Oberstaff"
+    description="Contrata profesionales remotos de LATAM sin entidad local. Nuestro contractor of record gestiona contratos, pagos y compliance por ti. Propuesta en 24h."
+    keywords="Contractor of Record"
+>
+    <div class="service-detail-container">
+        <div class="fade-in-section">
+            <HeroService
+                label="Contractor of Record"
+                title="Contractor of Record en LATAM:"
+                highlight="el talento es tuyo, el contrato es nuestro."
+                description="Oberstaff actúa como tu Contractor of Record en Latinoamérica. Tú diriges el trabajo; nosotros gestionamos el contrato, los pagos y el cumplimiento legal en cada país. Accede a talento remoto top con hasta un 70% de ahorro frente al mercado español."
+                videoImg="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200"
+                remoteCountry="CO"
+                floatingText="Cero Riesgo Legal"
+                stat1Number="5.000+"
+                stat1Label="Empresas confían en Oberstaff"
+                stat2Number="70%"
+                stat2Label="Ahorro vs. contratación en España"
+                stat3Number="10"
+                stat3Label="Países en LATAM cubiertos"
+                primaryBtnText="Recibir propuesta en 24h"
+                primaryBtnHref="#contacto"
+                secondaryBtnText="Conocer el servicio"
+                secondaryBtnHref="#"
+            />
+        </div>
+
+        <QueEsStaffSection 
+            label="¿Qué es el Contractor of Record?"
+            title="Contratación internacional sin entidad local"
+            description="El contractor of record meaning en su definición más práctica: es la empresa que actúa como intermediaria legal para contratar profesionales independientes en otro país. Tú defines el trabajo; Oberstaff firma el contrato con el profesional en LATAM, gestiona los pagos y garantiza el cumplimiento normativo en cada país."
+            card1Icon="solar:lightbulb-linear"
+            card1IconColor="#facc15"
+            card1HtmlContent="<strong>COR vs. EOR en una frase:</strong> con un Employer of Record el profesional se incorpora como empleado; con un Contractor of Record trabaja como independiente. Dos modelos distintos, misma seguridad legal y mismo respaldo de Oberstaff. Tú eliges el que mejor encaja con tu situación."
+            card2HtmlContent=""
+            useCasesTitle="Cuándo usar un Contractor of Record" 
+            useCasesDescription="El COR es la opción ideal cuando necesitas flexibilidad y velocidad sin estructura fija."
+            useCases={[
+                {
+                    title: "Proyectos puntuales y sprints",
+                    description: "Necesitas un desarrollador o diseñador para un proyecto de 3-6 meses sin comprometer una contratación indefinida."
+                },
+                {
+                    title: "Validar talento antes de contratar",
+                    description: "Trabaja con el profesional en modalidad contractor antes de convertirlo en empleado fijo a través de nuestro servicio EOR."
+                },
+                {
+                    title: "Expansión a LATAM sin filial",
+                    description: "Quieres operar con talento en múltiples países sin constituir entidades legales en cada uno."
+                },
+                {
+                    title: "Talento especializado y escaso",
+                    description: "Perfiles técnicos difíciles de encontrar en España (IA, Data, Cloud) con disponibilidad inmediata en LATAM."
+                }
+            ]}
+        />
+
+        <div class="fade-in-section">
+            <ConEorService
+                eyebrow=""
+                title="Gestionarlo internamente vs. hacerlo con Oberstaff"
+                description=""
+                negativeTitle="Sin contractor of record"
+                positiveTitle="Con Oberstaff (Talento LATAM)"
+                badge="Recomendado"
+                negativeIcon="solar:close-circle-linear"
+                positiveIcon="solar:check-circle-linear"
+                negativeItems={[
+                    "Contratos dispersos",
+                    "Pagos manuales a varios países",
+                    "Más carga administrativa",
+                    "Escalar es más complejo",
+                    "Más fricción operativa",
+                ]}
+                positiveItems={[
+                    "Operativa más centralizada ",
+                    "Pagos y seguimiento simplificados",
+                    "Más foco para tu equipo interno",
+                    "Modelo útil para contratación internacional",
+                    "Mejor experiencia para empresa y contractor",
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <BeneficiosSeccionPersonal
+                title=""
+                subtitle="Cómo funciona nuestro servicio: de cero a profesional operativo en 4 pasos"
+                description="Nuestro servicio de remote contractor of record está diseñado para que tú solo te preocupes de dirigir el trabajo, nosotros gestionamos el resto."
+                beneficios={[
+                    {
+                        number: "1",
+                        title: "Define el perfil",
+                        description:
+                            "Nos explicas el rol, stack técnico, disponibilidad y presupuesto. Buscamos en toda LATAM.",
+                        colorClass: "icon-legal",
+                    },
+                    {
+                        number: "2",
+                        title: "Selección del candidato",
+                        description:
+                            "Te presentamos 3-5 candidatos preseleccionados con español nativo. Tú decides quién se incorpora.",
+                        colorClass: "icon-nomina",
+                    },
+                    {
+                        number: "3",
+                        title: "Contrato y alta COR",
+                        description:
+                            "Oberstaff firma el contrato con el profesional. Cumplimiento legal garantizado desde el primer día.",
+                        colorClass: "icon-responsabilidad",
+                    },
+                    {
+                        number: "4",
+                        title: "Profesional operativo",
+                        description:
+                            "El contractor se integra en tu equipo. Tú defines las tareas. Nosotros gestionamos los pagos mes a mes.",
+                        colorClass: "icon-legal",
+                    },
+                ]}
+            />
+        </div>
+
+          <div class="fade-in-section">
+            <EorCta
+                title="¿Listo para contratar tu primer profesional remoto de LATAM?"
+                text="Habla con nuestros especialistas y recibe una propuesta personalizada en menos de 24 horas."
+                buttonText="Solicitar propuesta gratuita"
+                buttonHref="#contacto"
+            />
+        </div>
+
+
+   <div class="fade-in-section">
+            <RolesSection
+                title="Perfiles remotos de Latinoamérica"
+                subtitle=""
+                description="Profesionales independientes cualificados listos para incorporarse a tu empresa."
+            />
+        </div>
+
+        
+        <div class="fade-in-section">
+            <FeaturesSection
+                eyebrow=""
+                title="Todo lo que necesita tu empresa para contratar en LATAM"
+                subtitle=""
+                features={[
+                    {
+                        title: "Cero riesgo laboral",
+                        description:
+                            "Oberstaff asume la responsabilidad jurídica en cada país Tu empresa española queda protegida ante cualquier reclamación.",
+                        icon: "solar:shield-check-bold-duotone",
+                        colorClass: "icon-blue",
+                    },
+                    {
+                        title: "Zona horaria compatible",
+                        description:
+                            "Horario compatible con CET. Tu contractor trabaja contigo en tiempo real, sin desfases que frenen la colaboración.",
+                        icon: "solar:global-bold-duotone",
+                        colorClass: "icon-green",
+                    },
+                    {
+                        title: "Español nativo",
+                        description:
+                            "Todo el talento de LATAM habla español como lengua materna. Comunicación fluida y sin barreras desde el primer día.",
+                        icon: "solar:user-speak-bold-duotone",
+                        colorClass: "icon-yellow",
+                    },
+                    {
+                        title: "Una factura en euros",
+                        description:
+                            "Nos encargamos de pagar al profesional en moneda local. Tu empresa española recibe una única factura mensual en euros.",
+                        icon: "solar:chart-2-bold-duotone",
+                        colorClass: "icon-red",
+                    },
+                    {
+                        title: "Soporte humano",
+                        description:
+                            "Nunca gestionas solo. Tienes un equipo de soporte disponible en cada etapa del proceso.",
+                        icon: "solar:chat-round-dots-bold-duotone",
+                        colorClass: "icon-indigo",
+                    },
+                    {
+                        title: "Sin permanencia minima",
+                        description:
+                            "Adapta o cancela el contrato cuando tu negocio lo requiera. Flexibilidad total para proyectos cortos o largos.",
+                        icon: "solar:refresh-square-bold-duotone",
+                        colorClass: "icon-orange",
+                    },
+                ]}
+            />
+        </div>
+
+        <!--
+        <div class="fade-in-section">
+            <EorStepsSection
+                label="Tu primer profesional remoto de LATAM"
+                title="De cero a equipo ampliado "
+                subtitle="Un proceso ágil para que tu empresa española incorpore talento IT de LATAM sin trámites, sin entidad local y sin riesgos legales."
+                steps={[
+                    {
+                        title: "Defines el perfil",
+                        lineColorClass: "line-black",
+                        description:
+                            "Nos explicas el rol, stack técnico y presupuesto. Buscamos en toda LATAM.",
+                    },
+                    {
+                        title: "Selección del candidato",
+                        lineColorClass: "line-pink",
+                        description:
+                            "Te presentamos 3-5 candidatos preseleccionados. Tú decides quién se incorpora.",
+                    },
+                    {
+                        title: "Contratación y alta",
+                        lineColorClass: "line-orange",
+                        description:
+                            "Contrato y documentación incluidos; inicio en 48h tras tu selección",
+                    },
+                    {
+                        title: "Equipo ampliado",
+                        lineColorClass: "line-blue",
+                        description:
+                            "El profesional se integra en tu equipo. Gestionamos nóminas mes a mes.",
+                    },
+                ]}
+            />
+        </div>
+
+       -->
+
+
+        <!-- 
+        <div class="fade-in-section">
+            <RolesSection
+                title="Personal remoto especializado en diferentes áreas."
+                subtitle="¿Ya sabes qué perfil necesitas externalizar?"
+                description="Nuestro servicio de outsourcing de personal especializado cubre las principales áreas digitales con candidatos preseleccionados y listos para incorporarse."
+            />
+        </div>
+        -->
+
+        <div class="fade-in-section">
+            <CoberturaSeccion
+                title="Contratación internacional en 10 países"
+                description="Una única suscripción con Oberstaff te da acceso a contratación internacional en 10 mercados. Ideal para empresas que quieren acceso a perfiles cualificados sin abrir entidad local."
+                countries={[
+                    { code: "CO", name: "Colombia" },
+                    { code: "AR", name: "Argentina" },
+                    { code: "MX", name: "México" },
+                    { code: "VE", name: "Venezuela" },
+                    { code: "PE", name: "Perú" },
+                    { code: "EC", name: "Ecuador" },
+                    { code: "PY", name: "Paraguay" },
+                    { code: "CH", name: "Chile" },
+                    { code: "UR", name: "Uruguay" },
+                    { code: "PA", name: "Panamá" },
+                ]}
+            />
+        </div>
+
+        <!-- 
+		<div class="fade-in-section">
+			<PricingSection
+				eyebrow="Planes EOR"
+				title="Precios simples y sin sorpresas."
+				subtitle="Paga por profesional, no por funcionalidades. Sin costes ocultos."
+				plans={[
+					{
+						badge: "MÁS POPULAR",
+						title: "EOR Completo",
+						price: "690",
+						currency: "€",
+						period: "/ empleado / mes",
+						teamSize: "Para equipos de 4-20 empleados",
+						features: [
+							"Contrata empleados en LATAM a tiempo completo sin crear una entidad legal.",
+							"Gestiona nómina y pagos de forma simple y centralizada.",
+							"Administra la relación laboral (altas, documentación y cumplimiento) desde un solo lugar.",
+						],
+						ctaText: "Comenzar ahora",
+						ctaHref: "#contacto",
+					},
+				]}
+			/>
+		</div>
+        -->
+
+        <div class="fade-in-section">
+            <CasosExitoSection
+                title="Empresas españolas que ya contratan con Oberstaff"
+                subtitle=""
+                testimonials={[
+                    {
+                        stars: 5,
+                        text: "Estaba en busca de un editor de video para mi empresa y después de varias búsquedas sin éxito, encontré a Oberstaff. Desde nuestra primera llamada, su profesionalismo me dejó impresionado. He expandido mi contrato para incluir más personal.",
+                        author: "Fernando Calderón",
+                        role: "CEO · BEAUTYPRO",
+                    },
+                    {
+                        stars: 5,
+                        text: "Gracias a Oberstaff pude dar trabajo a dos personas a tiempo completo, ahorrando costes de reclutamiento, espacios de oficina y salario que tendría al hacerlo en España. Lo mejor de todo es que todo está incluido en una misma factura.",
+                        author: "Shadai Iborra",
+                        role: "CEO · @AMEDIASTORY",
+                    },
+                    {
+                        stars: 5,
+                        text: "I've been working with Oberstaff for about 2 years. They handle everything: contracts, payments and HR admin. My team in Latin America is fantastic and the cost savings have been game-changing for our business.",
+                        author: "Kate McCafferty",
+                        role: "KM REAL ESTATE",
+                    },
+                ]}
+            />
+        </div>
+
+     
+        <div class="fade-in-section">
+            <FAQSectionContractor 
+                label=""
+                title="Todo lo que necesitas saber antes de empezar"
+                subtitle=""
+            />
+        </div>
+
+
+        <!-- 
+		<div class="fade-in-section">
+			<OtrosServiciosSection />
+		</div>
+        -->
+
+        <div class="fade-in-section">
+            <ContactFormSection
+                title="¿Listo para incorporar tu próximo profesional remoto?"
+                subtitle="Cuéntanos qué perfil necesitas y en menos de 24 horas recibirás una propuesta personalizada sin compromiso. Primera consulta gratuita con nuestros especialistas en contratación internacional."
+                buttonText="Solicitar propuesta gratuita"
+            />
+        </div>
+
+        <!--  
+		<div class="fade-in-section">
+			<ArticulosSection />
+		</div>
+        -->
+    </div>
+</DashboardLayoutServicios>
+
+<style>
+    .service-detail-container {
+    }
+</style>

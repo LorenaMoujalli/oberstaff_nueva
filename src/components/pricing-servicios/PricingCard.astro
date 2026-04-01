@@ -1,0 +1,56 @@
+---
+import "../../styles/pricing-servicios/PricingCard.css";
+
+interface Props {
+    badge?: string;
+    title: string;
+    price: string;
+    currency: string;
+    period: string;
+    teamSize: string;
+    features: string[];
+    ctaText: string;
+    ctaHref: string;
+}
+
+const { 
+    badge, 
+    title, 
+    price, 
+    currency, 
+    period, 
+    teamSize, 
+    features, 
+    ctaText, 
+    ctaHref 
+} = Astro.props;
+---
+
+<div class="pricing-card">
+    {badge && (
+        <div class="badge-popular">
+            <span>★</span> {badge}
+        </div>
+    )}
+    
+    <h3 class="card-title">{title}</h3>
+    
+    <div class="price-container">
+        Desde <span class="price-amount">{price} <span class="price-currency">{currency}</span></span> {period}
+    </div>
+
+    <div class="team-size-tag">
+        {teamSize}
+    </div>
+
+    <ul class="pricing-features">
+        {features.map((feature) => (
+            <li>
+                <span class="check-icon">✓</span>
+                <span>{feature}</span>
+            </li>
+        ))}
+    </ul>
+
+    <a href={ctaHref} class="btn-pricing">{ctaText}</a>
+</div>

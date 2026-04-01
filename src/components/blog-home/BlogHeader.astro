@@ -1,0 +1,15 @@
+---
+import "../../styles/blog-home/blog-header.css";
+
+interface Props {
+    title: string;
+    viewAllLink?: string;
+}
+
+const { title, viewAllLink = "#" } = Astro.props;
+---
+
+<div class="blog-header">
+    <h2 class="blog-title" set:html={title} />
+    <a href={viewAllLink} class="view-all">Ver todos los artículos →</a>
+</div>

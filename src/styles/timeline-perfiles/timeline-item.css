@@ -1,0 +1,81 @@
+.timeline-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 25px;
+    position: relative;
+    z-index: 2;
+}
+
+.timeline-item.right { justify-content: flex-end; }
+.timeline-item.left { justify-content: flex-start; }
+
+/* Círculos con números */
+.step-number {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    background-color: #3b76f6;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 13px;
+    box-shadow: 0 0 0 6px #ffffff;
+}
+
+/* Tarjetas de contenido */
+.content-card {
+    width: 44%;
+    background: white;
+    padding: 20px 25px;
+    border-radius: 10px;
+    border: 1.5px solid #d1d5db;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    text-align: left;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.content-card h3 {
+    font-size: 16.5px;
+    font-weight: 800;
+    color: #0d2149;
+    margin: 0;
+}
+
+.content-card p {
+    font-size: 13.5px;
+    color: #666;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Etiquetas de tiempo */
+.time-tag {
+    font-size: 11px;
+    font-weight: 600;
+    background-color: #f4f6f9;
+    color: #999;
+    padding: 3px 8px;
+    border-radius: 4px;
+}
+
+.time-tag.gray { background-color: #f0f0f0; color: #888; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .step-number { left: 20px; transform: none; }
+    .timeline-item { justify-content: flex-start; padding-left: 50px; }
+    .content-card { width: 100%; }
+    .timeline-item.right, .timeline-item.left { justify-content: flex-start; }
+}

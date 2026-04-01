@@ -1,0 +1,22 @@
+---
+import "../../styles/blog-home/blog-card.css";
+
+interface Props {
+    image: string;
+    alt: string;
+    title: string;
+    link?: string;
+}
+
+const { image, alt, title, link = "#" } = Astro.props;
+---
+
+<article class="blog-card">
+    <div class="card-image">
+        <img src={image} alt={alt}>
+    </div>
+    <div class="card-body">
+        <h3>{title}</h3>
+        <a href={link} class="read-more">Leer artículo</a>
+    </div>
+</article>

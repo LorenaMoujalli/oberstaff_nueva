@@ -1,0 +1,37 @@
+.mention-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.mention-item:hover {
+    transform: translateY(-5px);
+}
+
+.press-logo {
+    max-height: 35px; /* Unified professional height for better balance */
+    width: auto;
+    filter: none;
+    opacity: 1;
+    transition: all 0.4s ease;
+    object-fit: contain;
+}
+
+.mention-item:hover .press-logo {
+    transform: scale(1.05);
+}
+
+/* Individual adjustments for visual weight balance */
+.em-financiero .press-logo {
+    max-height: 60px; /* Slightly larger as it is more horizontal */
+}
+
+.mdo-madridiario .press-logo {
+    max-height: 25px; /* Smaller as it is more "boxy" or heavy */
+}
+
+.region-digital .press-logo {
+    max-height: 30px; /* Balanced height */
+}

@@ -1,0 +1,10 @@
+---
+import "../../styles/beneficios-perfil/beneficios-header.css";
+interface Props {
+  title?: string;
+  subtitle?: string;
+}
+const { title = "", subtitle = "" } = Astro.props;
+---
+<h2 class="benefits-main-title" set:html={title}></h2>
+{subtitle && <p class="benefits-main-subtitle" set:html={subtitle}></p>}

@@ -1,0 +1,33 @@
+---
+import "../../styles/guia-perfiles/guia-perfiles.css";
+import GuiaHeader from "./GuiaHeader.astro";
+import GuiaCard from "./GuiaCard.astro";
+import type { GuiaCardProps } from "./GuiaCard.astro";
+
+interface Props {
+  title?: string;
+  intro?: string;
+  items?: GuiaCardProps[];
+}
+const { 
+  title = "", 
+  intro = "", 
+  items = [] 
+} = Astro.props;
+---
+<section class="guia-cards-section">
+    <div class="guia-container">
+        <GuiaHeader title={title} intro={intro} />
+
+        <div class="cards-grid">
+            {items.map((item) => (
+                <GuiaCard 
+                    icon={item.icon}
+                    iconColor={item.iconColor}
+                    title={item.title}
+                    description={item.description}
+                />
+            ))}
+        </div>
+    </div>
+</section>

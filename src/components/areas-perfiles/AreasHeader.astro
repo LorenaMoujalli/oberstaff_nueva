@@ -1,0 +1,18 @@
+---
+import "../../styles/areas-perfiles/areas-header.css";
+
+interface Props {
+    title?: string;
+    subtitle?: string;
+}
+
+const {
+    title = "Desde la estrategia de contenido hasta la gestión de comunidades, tu CM de LATAM cubre todas las áreas clave de tu presencia digital.",
+    subtitle = "Cuando una empresa busca <strong>contratar community manager</strong>, no solo necesita alguien que publique en redes. Necesita una persona que entienda la marca, mantenga la consistencia del mensaje y convierta la actividad social en una herramienta real de crecimiento.",
+} = Astro.props;
+---
+
+<header class="areas-header">
+    <h2 set:html={title} />
+    <p set:html={subtitle} />
+</header>

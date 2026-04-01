@@ -1,0 +1,74 @@
+.recurso-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid #f0f0f0;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+    cursor: pointer;
+}
+
+.recurso-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+    border-color: #e0e0e0;
+}
+
+.recurso-card:hover h3 {
+    color: #6663fd;
+}
+
+.recurso-category {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #ff66b2; /* Rosa de la marca */
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.recurso-card h3 {
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1.3;
+    margin-bottom: 15px;
+    color: #1a1a1a;
+    transition: color 0.3s ease;
+}
+
+.recurso-card p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+
+.leer-articulo {
+    color: #1a1a1a;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: gap 0.2s ease;
+}
+
+.leer-articulo:hover {
+    gap: 10px;
+}
+
+.arrow-icon {
+    font-size: 18px;
+}
+
+@media (max-width: 768px) {
+    .recurso-card {
+        padding: 25px;
+    }
+}

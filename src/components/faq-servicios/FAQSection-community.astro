@@ -1,0 +1,90 @@
+---
+import FAQHeader from "../faq/FAQHeader.astro";
+import FAQItem from "../faq/FAQItem.astro";
+import "../../styles/faq-servicios/faq-section.css";
+
+const faqs = [
+    {
+        question:
+            "¿Cuánto cuesta contratar community manager con Oberstaff?",
+        answers: [
+            "Desde 750€/mes, todo incluido. Hasta un 70% de ahorro frente a un CM local en España.",
+        ],
+    },
+    {
+        question: "¿El CM trabajará solo para mi empresa?",
+        answers: [
+            "Sí, 100% en exclusiva a jornada completa. Se integra con tus herramientas, voz de marca y cultura corporativa.",
+        ],
+    },
+    {
+        question: "¿Cuándo conviene contratar un community manager?",
+        answers: [
+            "Cuando tu empresa necesita constancia en redes y seguimiento diario de la comunidad, pero no quiere saturar a perfiles internos con esa tarea.",
+        ],
+    },
+    {
+        question:
+            "¿Es mejor contratar community manager freelance o uno integrado en remoto?", 
+        answers: [
+            "Si buscas apoyo puntual, un freelance puede servir. Si necesitas seguimiento diario y coordinación con tu equipo, un perfil remoto estable funciona mejor.",
+        ],
+    },
+    {
+        question: "¿Puedo prescindir del CM cuando quiera?",
+        answers: [
+            "Sí, solo 30 días de preaviso. Sin penalizaciones ni indemnizaciones.",
+        ],
+    },
+    {
+        question: "¿En qué países de LATAM están?",
+        answers: [
+            "Colombia, Argentina, México, Venezuela, Chile, Perú y Uruguay — zonas horarias compatibles con España.",
+        ],
+    },
+     {
+        question: "¿Cómo se evalúa a los candidatos?",
+        answers: [
+            "Prueba técnica de social media + evaluación psicométrica + entrevista con nuestro equipo de selección.",
+        ],
+    },
+     {
+        question: "¿Contratar community manager? Precio y tarifas en España",
+        answers: [
+            "Contratar un community manager local en España cuesta entre 2.000€ y 2.800€ brutos al mes, sin contar Seguridad Social ni otros gastos. ",
+        ],
+    },
+];
+
+interface Props {
+    title?: string;
+    subtitle?: string;
+}
+
+const {
+    title = "FAQ",
+    subtitle = "Todo lo que necesitas saber antes de empezar"
+} = Astro.props;
+---
+
+<section class="faq-section">
+    <div class="faq-container">
+        <FAQHeader
+            title={title}
+            subtitle={subtitle}
+        />
+
+        <div class="faq-list">
+            {
+                faqs.map((faq) => (
+                    <FAQItem question={faq.question}>
+                        {faq.answers &&
+                            faq.answers.map((answer) => <p>{answer}</p>)}
+                    </FAQItem>
+                ))
+            }
+        </div>
+    </div>
+
+    <script src="../../scripts/faq.js"></script>
+</section>

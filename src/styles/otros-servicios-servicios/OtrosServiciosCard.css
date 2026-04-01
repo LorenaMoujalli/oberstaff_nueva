@@ -1,0 +1,75 @@
+.servicio-card {
+    background: #ffffff;
+    padding: 35px 25px; /* Slighting reduced padding for compactness */
+    border-radius: 20px;
+    border: 1px solid #eee;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.servicio-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+    border-color: #e0e0e0;
+}
+
+.servicio-icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+/* Variaciones de color para iconos */
+.servicio-icon.icon-indigo { background-color: #f0f2ff; color: #4d4dff; }
+.servicio-icon.icon-emerald { background-color: #ecfdf5; color: #10b981; }
+.servicio-icon.icon-amber { background-color: #fffbeb; color: #f59e0b; }
+
+.servicio-icon iconify-icon {
+    color: inherit;
+}
+
+.servicio-card h4 {
+    font-size: 19px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    color: #1a1a1a;
+}
+
+.servicio-card p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+
+.link-mas {
+    color: #6663fd; /* Color solicitado */
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.3s ease;
+}
+
+.link-mas:hover {
+    color: #ff66cc; /* Hover solicitado */
+    gap: 10px;
+}
+
+@media (max-width: 768px) {
+    .servicio-card {
+        padding: 30px 20px;
+    }
+}

@@ -1,0 +1,82 @@
+---
+import FAQHeader from "../faq/FAQHeader.astro";
+import FAQItem from "../faq/FAQItem.astro";
+import "../../styles/faq-servicios/faq-section.css";
+
+const faqs = [
+    {
+        question: "¿Qué significa contractor of record?",
+        answers: [
+            " Es un servicio que formaliza la relación con un profesional independiente en otro país. Tú diriges el trabajo; el proveedor gestiona contrato, pagos y cumplimiento operativo.",
+        ],
+    },
+    {
+        question:
+            "¿Qué es contractor of record remote para las empresas españolas?",
+        answers: [
+            "Puedes contratar profesionales remotos sin que tu empresa asuma el contrato ni las obligaciones legales en el país del profesional. Oberstaff actúa como representante legal local.",
+        ],
+    },
+    {
+        question: "¿Es lo mismo contract of record que contractor of record?",
+        answers: [
+            "Contract of record es una variante o búsqueda imprecisa. La expresión correcta para este servicio es contractor of record.",
+        ],
+    },
+    {
+        question: "¿Qué diferencia hay entre employer of record vs contractor?",
+        answers: [
+            "Ambos permiten contratar talento en LATAM sin entidad local y con seguridad legal. La diferencia: el EOR incorpora al profesional como empleado; el COR, como independiente. En Oberstaff ofrecemos ambos y te ayudamos a elegir el modelo adecuado.",
+        ],
+    },
+    {
+        question: "¿Un agent of record es lo mismo que un COR?",
+        answers: [
+            "No siempre, el término agent of record se usa en otros contextos como seguros o representación comercial. Para la contratación de profesionales remotos internacionales, el término correcto es Contractor of Record. Si tienes dudas sobre qué modelo encaja con tu necesidad, nuestro equipo puede orientarte sin compromiso.",
+        ],
+    },
+    {
+        question: "¿Cuánto tiempo tarda en incorporarse un profesional remoto?",
+        answers: [
+            "El proceso está diseñado para que el profesional esté operativo en menos de 48 horas después de tu selección. La búsqueda y presentación de candidatos suele tardar entre 3 y 7 días laborables.",
+        ],
+    },
+    {
+        question: "¿Cuánto cuesta el servicio este servicio?",
+        answers: [
+            "Los planes comienzan desde 690 EUR por profesional al mes. El precio incluye selección, contratación y administración mensual. Sin cuotas de alta ni permanencia mínima.",
+        ],
+    },
+];
+
+interface Props {
+    label?: string;
+    title?: string;
+    subtitle?: string;
+}
+
+const {
+    label,
+    title = "FAQ",
+    subtitle = "Todo lo que necesitas saber sobre el outsourcing de personal.",
+} = Astro.props;
+---
+
+<section class="faq-section">
+    <div class="faq-container">
+        <FAQHeader label={label} title={title} subtitle={subtitle} />
+
+        <div class="faq-list">
+            {
+                faqs.map((faq) => (
+                    <FAQItem question={faq.question}>
+                        {faq.answers &&
+                            faq.answers.map((answer) => <p>{answer}</p>)}
+                    </FAQItem>
+                ))
+            }
+        </div>
+    </div>
+
+    <script src="../../scripts/faq.js"></script>
+</section>

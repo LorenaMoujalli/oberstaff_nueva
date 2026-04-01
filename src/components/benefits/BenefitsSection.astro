@@ -1,0 +1,115 @@
+---
+import BenefitsHeader from "./BenefitsHeader.astro";
+import "../../styles/benefits/benefits-section.css";
+
+const benefits = [
+    {
+        id: "riesgo-legal",
+        shortTitle: "Sin Riesgo Legal",
+        icon: "🛡️",
+        title: "Menos carga administrativa",
+        subtitle: "Sin riesgo",
+        text: "Oberstaff te ayuda a ordenar contratación, documentación y gestión recurrente.",
+        colorClass: "blue",
+    },
+    {
+        id: "menos-30-dias", 
+        shortTitle: "<30 Días",
+        icon: "⚡",
+        title: "Personal externo listo en <30 días",
+        subtitle: "Proceso de selección rápido y sin complicaciones",
+        text: "Nuestro proceso de reclutamiento remoto evalúa y preselecciona candidatos para que tú solo decidas con quién trabajar.",
+        colorClass: "orange",
+    },
+    {
+        id: "zona-horaria",
+        shortTitle: "Zona Horaria",
+        icon: "🕐",
+        title: "Zona horaria idéntica",
+        subtitle: "100% compatible con horario español",
+        text: "Tu equipo trabaja en tu misma franja horaria. Sin desfase, sin depender de Asia o Europa del Este.",
+        colorClass: "gray",
+    },
+    {
+        id: "factura-unica",
+        shortTitle: "Factura Única",
+        icon: "💶",
+        title: "Factura única para tu empresa",
+        subtitle: "Simplifica contabilidad y pagos",
+        text: "Recibes una factura mensual por el servicio y centralizamos pagos y gestión administrativa, para que tu equipo en España no tenga que lidiar con trámites en cada país.",
+        colorClass: "cyan",
+    },
+    {
+        id: "sin-permanencia",
+        shortTitle: "Sin Permanencia",
+        icon: "📅",
+        title: "Sin permanencia",
+        subtitle: "Cancela cuando quieras, sin penalizaciones",
+        text: "Ajusta a tu personal remoto según las necesidades reales de tu negocio. Total flexibilidad operativa.",
+        colorClass: "purple",
+    },
+    {
+        id: "talento-evaluado",
+        shortTitle: "Talento Evaluado",
+        icon: "✅",
+        title: "Talento evaluado con rigor",
+        subtitle: "Pruebas psicométricas + entrevista previa",
+        text: "Toda la contratación de talento pasa por una evaluación exhaustiva. Puedes entrevistarlos antes de decidir.",
+        colorClass: "green",
+    },
+];
+---
+
+<section class="benefits-section" id="como-funciona">
+    <div class="benefits-container">
+        <BenefitsHeader
+            title="La forma más rápida de <strong>reducir costes de personal</strong> hasta un 70%"
+        />
+
+        <div class="benefits-tabs-wrapper">
+            <div class="benefits-tabs-menu">
+                {benefits.map((benefit, index) => (
+                    <button 
+                        class={`tab-btn ${index === 0 ? 'active' : ''}`} 
+                        data-tab={benefit.id}
+                    >
+                        <span class="tab-icon-emoji">{benefit.icon}</span>
+                        <span>{benefit.shortTitle}</span>
+                    </button>
+                ))}
+            </div>
+
+            <div class="benefits-tabs-content">
+                {benefits.map((benefit, index) => (
+                    <div 
+                        class={`tab-pane ${index === 0 ? 'active' : ''}`} 
+                        id={benefit.id}
+                    >
+                        <div class="pane-inner">
+                            <div class="pane-header">
+                                <span class="pane-icon-emoji">{benefit.icon}</span>
+                                <h3 class="pane-title">{benefit.title}</h3>
+                            </div>
+                            <h4 class="pane-subtitle">{benefit.subtitle}</h4>
+                            <p class="pane-text">{benefit.text}</p>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+
+        <div class="benefits-info-box">
+            <span class="info-icon">💡</span>
+            <p>
+                <strong>Oberstaff<span class="dot">.</span> factura en euros</strong>, todas las gestiones se hacen en tu idioma, en tu zona horaria y cumpliendo la normativa vigente para empresas españolas.
+            </p>
+        </div>
+    </div>
+</section>
+
+<script>
+    import { initBenefitsTabs } from "../../scripts/benefits-tabs.js";
+    
+    document.addEventListener('astro:page-load', initBenefitsTabs);
+    document.addEventListener('DOMContentLoaded', initBenefitsTabs);
+</script>

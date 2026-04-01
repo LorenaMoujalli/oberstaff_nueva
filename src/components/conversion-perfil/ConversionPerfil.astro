@@ -1,0 +1,30 @@
+---
+import "../../styles/conversion-perfil/conversion-perfil.css";
+import ConversionHeader from "./ConversionHeader.astro";
+import ConversionForm from "./ConversionForm.astro";
+import ConversionRoles from "./ConversionRoles.astro";
+import type { RoleLink } from "./ConversionRoles.astro";
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+  buttonText?: string;
+  rolesTitle?: string;
+  relatedRoles?: RoleLink[];
+}
+
+const { 
+  title = "Encuentra el perfil adecuado para tu empresa",
+  subtitle = "Rellena el formulario (tardarás menos de 1 minuto) y en menos de 24 horas recibirás de parte de nuestros especialistas una propuesta personalizada sin compromiso. Primera consulta gratuita.",
+  buttonText = "<iconify-icon icon='solar:arrow-right-bold-duotone' style='font-size: 20px;'></iconify-icon> Solicitar propuesta gratuita",
+  rolesTitle = "ROLES RELACIONADOS",
+  relatedRoles = []
+} = Astro.props;
+---
+<section class="conversion-section">
+    <div class="container-conversion">
+        <ConversionHeader title={title} subtitle={subtitle} />
+        <ConversionForm buttonText={buttonText} />
+        <ConversionRoles rolesTitle={rolesTitle} relatedRoles={relatedRoles} />
+    </div>
+</section>

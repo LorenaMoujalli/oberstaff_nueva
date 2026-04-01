@@ -1,0 +1,52 @@
+---
+import "../../styles/info-services-perfil/info-service-perfil.css";
+import InfoMainContent from "./InfoMainContent.astro";
+import InfoPriceBox from "./InfoPriceBox.astro";
+import InfoSummaryCard from "./InfoSummaryCard.astro";
+
+interface Props {
+    mainQuestion?: string;
+    answerText?: string;
+    priceBoxTitle?: string;
+    priceBoxText?: string;
+    summaryIcon?: string;
+    summaryTitle?: string;
+    summaryItems?: string[];
+    buttonText?: string;
+    buttonHref?: string;
+}
+
+const {
+    mainQuestion = "¿Qué hace un profesional para empresas?",
+    answerText = "",
+    priceBoxTitle = "¿Cuánto cuesta contratar?",
+    priceBoxText = "",
+    summaryIcon = "solar:clipboard-list-bold",
+    summaryTitle = "Resumen del servicio",
+    summaryItems = [
+        "Perfil a tiempo completo exclusivo para tu empresa",
+        "Zona horaria 100% compatible con España",
+        "Contrato flexible sin permanencia mínima",
+        "Sin riesgo legal. Oberstaff es el empleador"
+    ],
+    buttonText = "Solicitar candidatos →",
+    buttonHref = "#"
+} = Astro.props;
+---
+
+<section class="info-service-section">
+    <div class="info-container">
+        <div class="info-content">
+            <InfoMainContent mainQuestion={mainQuestion} answerText={answerText} />
+            <InfoPriceBox title={priceBoxTitle} text={priceBoxText} />
+        </div>
+
+        <InfoSummaryCard 
+            icon={summaryIcon}
+            title={summaryTitle}
+            items={summaryItems}
+            buttonText={buttonText}
+            buttonHref={buttonHref}
+        />
+    </div>
+</section>

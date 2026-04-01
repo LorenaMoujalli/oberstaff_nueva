@@ -1,0 +1,27 @@
+.hero-oberstaff {
+    background-color: #ffffff;
+    padding: 0px 20px;
+    min-height: calc(100vh - 120px);
+    display: flex;
+    align-items: center;
+}
+
+
+
+.hero-container {
+    max-width: 1750px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+
+    align-items: center;
+    padding-top: 45px; 
+}
+
+@media (max-width: 1024px) {
+    .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 30px;
+    }
+}

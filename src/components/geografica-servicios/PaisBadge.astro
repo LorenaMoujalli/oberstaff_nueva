@@ -1,0 +1,15 @@
+---
+import "../../styles/geografica-servicios/PaisBadge.css";
+
+interface Props {
+    code: string;
+    name: string;
+}
+
+const { code, name } = Astro.props;
+---
+
+<div class="badge-pais">
+    <span class="codigo-pais">{code}</span>
+    <span class="nombre-pais">{name}</span>
+</div>

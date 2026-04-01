@@ -1,0 +1,8 @@
+.price-display { margin-bottom: 12px; }
+.price-label { font-size: 12px; font-weight: 700; color: #9da8b7; letter-spacing: 2px; display: block; margin-bottom: 5px; }
+.main-price { font-size: 48px; font-weight: 900; color: #0d2149; line-height: 1; }
+.price-period { font-size: 16px; font-weight: 500; color: #9da8b7; }
+.info-badge { display: inline-block; background-color: #f0f5ff; color: #3b76f6; font-size: 13px; font-weight: 700; padding: 6px 16px; border-radius: 6px; margin-bottom: 20px; }
+@media (max-width: 768px) {
+    .main-price { font-size: 40px; }
+}

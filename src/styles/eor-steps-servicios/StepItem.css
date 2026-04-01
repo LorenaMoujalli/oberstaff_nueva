@@ -1,0 +1,37 @@
+.step-item {
+    text-align: left;
+}
+
+.step-title {
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.step-line {
+    height: 1.5px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Color classes for descriptive lines */
+.line-black { background-color: #333; }
+.line-pink { background-color: #ff4db8; }
+.line-orange { background-color: #ff8c66; }
+.line-blue { background-color: #5555ff; }
+
+.step-description {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+@media (max-width: 600px) {
+    .step-title { 
+        white-space: normal;
+    }
+}

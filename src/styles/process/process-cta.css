@@ -1,0 +1,58 @@
+/* --- CTA lateral (derecha) --- */
+.process-cta {
+    flex: 0 0 300px;
+    padding: 45px 50px;
+    border-left: 1px solid #f0f0f0;
+    background: #fafafe;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.process-cta h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1b1b1b;
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+}
+
+.process-cta p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 28px;
+    line-height: 1.5;
+}
+
+.process-cta-btn {
+    background-color: #66FF99;
+    color: #1b1b1b;
+    padding: 14px 26px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none;
+    border: 2px solid #66FF99;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.process-cta-btn:hover {
+    background-color: transparent;
+    color: #6aca8a;
+    border-color: #6aca8a; 
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+    .process-cta {
+        flex: none;
+        border-left: none;
+        border-top: 1px solid #ebebeb;
+        padding: 35px 25px;
+    }
+}

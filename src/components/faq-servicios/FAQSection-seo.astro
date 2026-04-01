@@ -1,0 +1,89 @@
+---
+import FAQHeader from "../faq/FAQHeader.astro";
+import FAQItem from "../faq/FAQItem.astro";
+import "../../styles/faq-servicios/faq-section.css";
+
+const faqs = [
+    {
+        question: "¿Cuánto cuesta contratar experto SEO con Oberstaff?",
+        answers: [
+            "Para este perfil las suscripciones inician desde 900€/mes todo incluido (contrato, nómina, gestión laboral). El precio exacto varía según el nivel de experiencia, especialidad y país del candidato. No hay costes ocultos ni cargos adicionales.",
+        ],
+    },
+    {
+        question: "¿El profesional trabajará solo para mi empresa?",
+        answers: [
+            "Sí, 100% en exclusiva a jornada completa. Tu especialista en SEO remoto se integra en tu equipo, asiste a reuniones, usa tus herramientas y trabaja solo para ti. No es un freelance compartido entre varios clientes.",
+        ],
+    },
+    {
+        question:
+            "¿En qué herramientas están especializados los expertos SEO de Oberstaff?",
+        answers: [
+            "Nuestros especialistas dominan: Semrush, Ahrefs, Moz, Screaming Frog, Google Search Console, Google Analytics 4, Looker Studio, Surfer, WordPress y otras. Al hacer el briefing, nos indicas qué herramientas necesitas.",
+        ],
+    },
+    {
+        question: "¿Cuánto tiempo tarda el proceso de contratación?",
+        answers: [
+            "Normalmente presentamos perfiles en pocos días y el proceso completo puede resolverse en menos de 30 días, según seniority y complejidad del perfil.",
+        ],
+    },
+    {
+        question:
+            "¿Tengo que pagar la Seguridad Social de los profesionales SEO?",
+        answers: [
+            "No. Oberstaff actúa como empleador legal del colaborador en su país. Tú pagas una única factura de servicio mensual en euros, sin asumir ninguna obligación laboral directa.",
+        ],
+    },
+    {
+        question: "¿Puedo prescindir de la persona si no funciona?",
+        answers: [
+            "Sí. Solo necesitamos 30 días de preaviso, sin penalizaciones ni indemnizaciones. Si el perfil no encaja durante los primeros días, gestionamos el reemplazo sin coste adicional.",
+        ],
+    },
+    {
+        question:
+            "¿De qué países de Latinoamérica son los expertos en posicionamiento web?",
+        answers: [
+            "Operamos principalmente en Colombia, Argentina, México, Venezuela, Chile y Perú. Todos con zona horaria compatible y alta concentración de talento.",
+        ],
+    },
+    {
+        question:
+            "¿Qué diferencia hay entre contratar consultor SEO freelance y con Oberstaff?",
+        answers: [
+            "Con un freelance obtienes disponibilidad parcial y variable, sin compromiso de dedicación exclusiva. Con Oberstaff tienes un experto SEO a jornada completa, exclusivo para tu empresa, con contrato estable y toda la gestión laboral resuelta.",
+        ],
+    },
+];
+
+interface Props {
+    title?: string;
+    subtitle?: string;
+}
+
+const {
+    title = "FAQ",
+    subtitle = "Todo lo que necesitas saber antes de empezar",
+} = Astro.props;
+---
+
+<section class="faq-section">
+    <div class="faq-container">
+        <FAQHeader title={title} subtitle={subtitle} />
+
+        <div class="faq-list">
+            {
+                faqs.map((faq) => (
+                    <FAQItem question={faq.question}>
+                        {faq.answers &&
+                            faq.answers.map((answer) => <p>{answer}</p>)}
+                    </FAQItem>
+                ))
+            }
+        </div>
+    </div>
+
+    <script src="../../scripts/faq.js"></script>
+</section>

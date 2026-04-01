@@ -1,0 +1,41 @@
+---
+import "../../styles/roles-del-perfil/roles-perfil.css";
+import RolesHeader from "./RolesHeader.astro";
+import RolCard from "./RolCard.astro";
+
+export interface RoleProfileData {
+  title: string;
+  description: string;
+  icon: string;
+  iconColor: string;
+  borderColorClass: string;
+  techStack?: string[];
+}
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+  roles?: RoleProfileData[];
+  customClass?: string;
+}
+
+const { 
+  title = "Perfiles de profesionales remotos disponibles", 
+  subtitle = "Encuentra el perfil que mejor se adapta a las necesidades de tu negocio.",
+  roles = [],
+  customClass = ""
+} = Astro.props;
+---
+<section class="perfiles-disponibles">
+    <div class="container-perfiles">
+        <RolesHeader title={title} subtitle={subtitle} />
+        
+        {roles.length > 0 && (
+            <div class={`perfiles-grid ${customClass}`}>
+                {roles.map((role) => (
+                    <RolCard {...role} />
+                ))}
+            </div>
+        )}
+    </div>
+</section>

@@ -1,0 +1,79 @@
+---
+import "../../styles/process/process-section.css";
+import ProcessMenu from "./ProcessMenu.astro";
+import ProcessPane from "./ProcessPane.astro";
+import ProcessCTA from "./ProcessCTA.astro";
+
+const tabs = [
+    { id: 1, label: "Selección" },
+    { id: 2, label: "Contratación" },
+    { id: 3, label: "Integración" },
+];
+
+const panes = [
+    {
+        id: 1,
+        badge: "Gratis · Sin compromiso",
+        title: "1. Nos cuentas qué necesitas",
+        description:
+            "Cuéntanos el perfil que buscas y, con nuestro reclutamiento remoto, encontraremos candidatos que encajen con tu empresa y cultura. Ideal si quieres contratar talento en el extranjero desde España, sin complicaciones.",
+        active: true,
+    },
+    {
+        id: 2,
+        badge: "Sin permanencia",
+        title: "2. Te proponemos la estructura adecuada",
+        description:
+            "Te orientamos sobre cuál es el modelo que necesitas de acuerdo a tus necesidades.",
+    },
+    {
+        id: 3,
+        badge: "En <30 días", 
+        title: "3. Trabaja con los mejores",
+        description:
+            "Tu nuevo profesional se integra a tu equipo en tu misma zona horaria. Paga menos que en España y accede a talento de primer nivel.",
+    },
+];
+---
+
+<section class="process-section">
+    <div class="process-container">
+        <h2 class="process-main-title">
+            Cómo <strong>reducir costes de personal</strong> contratando talento remoto en Latinoamérica
+        </h2>
+
+        <div class="process-card">
+            <ProcessMenu tabs={tabs} />
+
+            <div class="process-content">
+                {panes.map((pane) => (
+                    <ProcessPane
+                        id={pane.id}
+                        badge={pane.badge}
+                        title={pane.title}
+                        description={pane.description}
+                        active={pane.active ?? false}
+                    />
+                ))}
+            </div>
+
+            <ProcessCTA />
+        </div>
+    </div>
+</section>
+
+<script>
+    document.querySelectorAll(".process-tab").forEach((tab) => {
+        tab.addEventListener("click", () => {
+            const tabId = (tab as HTMLElement).dataset.tab;
+
+            // Menú: activar tab seleccionado
+            document.querySelectorAll(".process-tab").forEach((t) => t.classList.remove("active"));
+            tab.classList.add("active");
+
+            // Contenido: mostrar panel correspondiente
+            document.querySelectorAll(".process-pane").forEach((p) => p.classList.remove("active"));
+            document.getElementById(`process-pane-${tabId}`)?.classList.add("active");
+        });
+    });
+</script>

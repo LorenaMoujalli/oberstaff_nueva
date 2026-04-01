@@ -1,0 +1,14 @@
+---
+import "../../styles/press/press-item.css";
+
+interface Props {
+    name: string;
+    className?: string;
+}
+
+const { name, className = "" } = Astro.props;
+---
+
+<div class={`mention-item ${className}`}>
+    <slot />
+</div>

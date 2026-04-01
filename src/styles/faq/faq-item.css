@@ -1,0 +1,100 @@
+.faq-item {
+    background: #ffffff;
+    border: 1px solid #f0f0f0;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.faq-item:hover {
+    border-color: #e0e0e0;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+}
+
+.faq-item.active {
+    border-color: #6663FD;
+    box-shadow: 0 10px 40px rgba(102, 99, 253, 0.08);
+}
+
+.faq-question {
+    width: 100%;
+    padding: 24px 30px;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.faq-question span {
+    max-width: 90%;
+    line-height: 1.4;
+}
+
+.faq-toggle-icon {
+    font-size: 24px;
+    font-weight: 400;
+    color: #6663FD;
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.faq-item.active .faq-toggle-icon {
+    transform: rotate(45deg); /* Turns the + into an x? Or just rotate? Image shows + */
+}
+
+/* If we want to rotate + to x */
+.faq-item.active .faq-toggle-icon {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s ease-out;
+}
+
+.faq-item.active .faq-answer {
+    grid-template-rows: 1fr;
+}
+
+.faq-answer-content {
+    overflow: hidden;
+}
+
+.faq-answer-content p {
+    font-family: 'Poppins', sans-serif;
+    padding: 0 30px 25px 30px;
+    margin: 0;
+    color: #555;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.faq-answer-content ul {
+    padding: 0 30px 25px 50px;
+    margin: 0;
+}
+
+.faq-answer-content ul li {
+    margin-bottom: 8px;
+    color: #555;
+    font-size: 15px;
+}
+
+@media (max-width: 600px) {
+    .faq-question {
+        padding: 20px 25px;
+        font-size: 15px;
+    }
+}

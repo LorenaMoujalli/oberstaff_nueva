@@ -1,0 +1,19 @@
+---
+import "../../styles/process/process-pane.css";
+
+interface Props {
+    id: number;
+    badge: string;
+    title: string;
+    description: string;
+    active?: boolean;
+}
+
+const { id, badge, title, description, active = false } = Astro.props;
+---
+
+<div id={`process-pane-${id}`} class={`process-pane${active ? " active" : ""}`}>
+    <span class="process-badge">{badge}</span>
+    <h3>{title}</h3>
+    <p>{description}</p>
+</div>

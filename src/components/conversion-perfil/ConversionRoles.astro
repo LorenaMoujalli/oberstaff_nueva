@@ -1,0 +1,30 @@
+---
+import "../../styles/conversion-perfil/conversion-roles.css";
+export interface RoleLink {
+  href?: string;
+  icon: string;
+  iconColor?: string;
+  label: string;
+}
+interface Props {
+  rolesTitle?: string;
+  relatedRoles?: RoleLink[];
+}
+const { rolesTitle = "ROLES RELACIONADOS", relatedRoles = [] } = Astro.props;
+---
+{relatedRoles.length > 0 && (
+    <>
+        <hr class="section-divider">
+        <div class="related-roles">
+            <h3 set:html={rolesTitle}></h3>
+            <div class="roles-links">
+                {relatedRoles.map(role => (
+                    <a href={role.href || "#"}>
+                        {role.icon && <iconify-icon icon={role.icon} style={`font-size: 18px; color: ${role.iconColor || '#a0aec0'};`}></iconify-icon>}
+                        {role.label}
+                    </a>
+                ))}
+            </div>
+        </div>
+    </>
+)}

@@ -1,0 +1,28 @@
+.eor-eyebrow {
+    color: #ff66cc;
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin-bottom: 12px;
+}
+
+.eor-title {
+    font-size: 36px;
+    font-weight: 900;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    color: #1a1a1a;
+}
+
+.eor-description {
+    font-size: 17px;
+    color: #666;
+    line-height: 1.6;
+    max-width: 750px;
+    margin: 0 auto 40px;
+}
+
+@media (max-width: 768px) {
+    .eor-title { font-size: 28px; }
+}

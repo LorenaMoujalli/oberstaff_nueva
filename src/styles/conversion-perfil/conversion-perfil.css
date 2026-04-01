@@ -1,0 +1,12 @@
+.conversion-section {
+    background-color: rgb(18 43 93 / var(--tw-bg-opacity, 1));
+    padding: 60px 20px;
+    font-family: 'Inter', sans-serif;
+    color: white;
+    text-align: center;
+}
+
+.container-conversion {
+    max-width: 1100px;
+    margin: 0 auto;
+}

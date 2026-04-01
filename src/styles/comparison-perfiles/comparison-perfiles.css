@@ -1,0 +1,52 @@
+.comparison-section {
+    padding: 60px 20px;
+ background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1));
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+}
+
+.container { max-width: 1200px; margin: 0 auto; }
+
+.table-responsive { 
+    overflow: auto; 
+    margin: 20px 0; 
+    border: 2px solid #d1d5db;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+    background: #fff;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    color: #555;
+    background: #fff;
+    margin: 0;
+}
+
+/* Estilos de Celdas */
+.comparison-table th, .comparison-table td {
+    padding: 20px 15px;
+    border-bottom: 1px solid #d1d5db;
+    border-right: 1px solid #e5e7eb;
+    text-align: center;
+}
+
+.comparison-table th:last-child, .comparison-table td:last-child {
+    border-right: none;
+}
+
+.comparison-table tr:last-child td {
+    border-bottom: none;
+}
+
+th.col-highlight {
+    border-top: none !important;
+    border-bottom: 1px solid #d1d5db !important;
+    background-color: #f0f7ff;
+}
+
+@media (max-width: 900px) {
+    .comparison-table { font-size: 12px; }
+}

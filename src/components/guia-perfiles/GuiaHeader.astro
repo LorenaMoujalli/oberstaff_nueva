@@ -1,0 +1,10 @@
+---
+import "../../styles/guia-perfiles/guia-header.css";
+interface Props {
+  title?: string;
+  intro?: string;
+}
+const { title = "", intro = "" } = Astro.props;
+---
+<h2 class="guia-title" set:html={title}></h2>
+{intro && <p class="guia-intro" set:html={intro}></p>}

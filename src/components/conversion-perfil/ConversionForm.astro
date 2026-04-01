@@ -1,0 +1,18 @@
+---
+import "../../styles/conversion-perfil/conversion-form.css";
+interface Props {
+  buttonText?: string;
+}
+const { buttonText = "<iconify-icon icon='solar:arrow-right-bold-duotone' style='font-size: 20px;'></iconify-icon> Solicitar propuesta gratuita" } = Astro.props;
+---
+<div class="form-card-horizontal">
+    <form class="horizontal-form">
+        <div class="form-grid">
+            <input type="text" placeholder="Nombre completo *" required>
+            <input type="email" placeholder="Email corporativo *" required>
+            <input type="text" placeholder="Empresa *" required>
+            <input type="tel" placeholder="Teléfono *" required>
+        </div>
+        <button type="submit" class="btn-submit-blue" set:html={buttonText}></button>
+    </form>
+</div>

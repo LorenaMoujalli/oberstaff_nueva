@@ -1,0 +1,21 @@
+---
+import "../../styles/community-manager/lead-hero-content.css";
+
+interface Props {
+    topLabel?: string;
+    title?: string;
+}
+
+const {
+    topLabel = "",
+    title = "",
+} = Astro.props;
+---
+
+<div class="lead-text-content">
+    {topLabel && <span class="top-label">{topLabel}</span>}
+    <h1>{title}</h1>
+    <p class="lead-description">
+        <slot />
+    </p>
+</div>

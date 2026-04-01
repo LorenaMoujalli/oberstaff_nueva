@@ -1,0 +1,76 @@
+---
+import DashboardLayout from "../layouts/DashboardLayout.astro";
+import Hero from "../components/hero/Hero.astro";
+import TrustSection from "../components/banner-patrocinadores/TrustSection.astro";
+import StatsSection from "../components/stats-oberstaff/StatsSection.astro";
+import ServicesSection from "../components/services-oberstaff/ServicesSection.astro";
+import ProcessOberstaff from "../components/process/ProcessOberstaff.astro";
+import ProfilesSection from "../components/profiles/ProfilesSection.astro";
+import BenefitsSection from "../components/benefits/BenefitsSection.astro";
+import TestimonialsSection from "../components/testimonios/TestimonialsSection.astro";
+import FAQSection from "../components/faq/FAQSection.astro";
+import ContactFormSection from "../components/form/ContactFormSection.astro";
+import PressSection from "../components/press/PressSection.astro";
+import BlogSection from "../components/blog-home/BlogSection.astro";
+
+
+---
+
+<DashboardLayout>
+	<div class="welcome-section">
+		<div class="fade-in-section">
+			<Hero />
+		</div>
+		<div class="fade-in-section">
+			<TrustSection />
+		</div>
+		<div class="fade-in-section">
+			<StatsSection />
+		</div>
+		<div class="fade-in-section">
+			<ServicesSection />
+		</div>
+
+
+		<div class="fade-in-section">
+			<ProcessOberstaff />
+		</div>
+
+
+		<div class="fade-in-section">
+			<ProfilesSection />
+		</div>
+		<div class="fade-in-section">
+			<BenefitsSection />
+		</div>
+		<div class="fade-in-section">
+			<TestimonialsSection />
+		</div>
+		<div class="fade-in-section">
+			<FAQSection />
+		</div>
+		<div class="fade-in-section">
+			<PressSection />
+		</div>
+
+   <div class="fade-in-section">
+            <ContactFormSection />
+        </div>
+
+		
+        <div class="fade-in-section">
+            <BlogSection />
+        </div>
+
+
+        </div>
+
+		
+	</div>
+</DashboardLayout>
+ 
+<style>
+	.welcome-section {
+		/* Add any page-specific container styles here if needed */
+	}
+</style>

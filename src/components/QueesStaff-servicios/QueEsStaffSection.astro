@@ -1,0 +1,56 @@
+---
+import "../../styles/QueesStaff-servicios/que-es-staff-section.css";
+import IntroBlock from "./IntroBlock.astro";
+import UseCasesBlock from "./UseCasesBlock.astro";
+
+interface Props {
+  label?: string;
+  title?: string;
+  description?: string;
+  card1Icon?: string;
+  card2Icon?: string;
+  card1IconColor?: string;
+  card2IconColor?: string;
+  card1HtmlContent?: string;
+  card2HtmlContent?: string;
+  useCasesTitle?: string;
+  useCasesDescription?: string;
+  useCases?: { title: string; description: string; }[];
+}
+
+const { 
+  label, 
+  title, 
+  description, 
+  card1Icon,
+  card2Icon,
+  card1IconColor,
+  card2IconColor,
+  card1HtmlContent, 
+  card2HtmlContent,
+  useCasesTitle,
+  useCasesDescription,
+  useCases
+} = Astro.props;
+---
+
+<section class="staff-aug-section">
+    <div class="container">
+        <IntroBlock
+            label={label}
+            title={title}
+            description={description}
+            card1Icon={card1Icon}
+            card2Icon={card2Icon}
+            card1IconColor={card1IconColor}
+            card2IconColor={card2IconColor}
+            card1HtmlContent={card1HtmlContent}
+            card2HtmlContent={card2HtmlContent}
+        />
+        <UseCasesBlock 
+            useCasesTitle={useCasesTitle}
+            useCasesDescription={useCasesDescription}
+            useCases={useCases}
+        />
+    </div>
+</section>

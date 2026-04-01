@@ -1,0 +1,37 @@
+---
+import PressHeader from "./PressHeader.astro";
+import PressItem from "./PressItem.astro";
+import "../../styles/press/press-section.css";
+---
+
+<section class="press-mentions">
+    <div class="press-container">
+        <PressHeader title="Nos han mencionado en:" />
+
+        <div class="mentions-wrapper">
+            <PressItem name="Madridiario" className="mdo-madridiario">
+                <img
+                    src="/logo-madridiario.webp"
+                    alt="Madridiario Logo"
+                    class="press-logo"
+                />
+            </PressItem>
+
+            <PressItem name="El Mundo Financiero" className="em-financiero">
+                <img
+                    src="/logo-mundo-financiero.webp"
+                    alt="El Mundo Financiero Logo"
+                    class="press-logo"
+                />
+            </PressItem>
+
+            <PressItem name="Region Digital" className="region-digital">
+                <img
+                    src="/logo-region-digital.webp"
+                    alt="Región Digital Logo"
+                    class="press-logo"
+                />
+            </PressItem>
+        </div>
+    </div>
+</section>

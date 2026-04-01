@@ -1,0 +1,35 @@
+---
+import "../../styles/trust-bar-perfiles/trust-bar-perfiles.css";
+
+interface Props {
+    title?: string;
+    features?: string[];
+}
+
+const {
+    title = "+5.000 EMPRESAS CONFÍAN EN NOSOTROS",
+    features = [
+        "Perfiles preevaluados en social media",
+        "Incorporación rápida",
+        "Soporte durante todo el proceso"
+    ]
+} = Astro.props;
+---
+
+<section class="trust-bar-section">
+    <div class="trust-container">
+        {title && <h3 class="trust-title">{title}</h3>}
+
+        <div class="trust-features">
+            {features.map((feature, index) => (
+                <>
+                    <div class="feature-item">
+                        <iconify-icon icon="solar:check-circle-bold" class="check-icon"></iconify-icon>
+                        <span>{feature}</span>
+                    </div>
+                    {index < features.length - 1 && <div class="divider"></div>}
+                </>
+            ))}
+        </div>
+    </div>
+</section>

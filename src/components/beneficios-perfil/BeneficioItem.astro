@@ -1,0 +1,18 @@
+---
+import "../../styles/beneficios-perfil/beneficios-item.css";
+export interface BeneficioItemProps {
+  icon: string;
+  iconColor?: string;
+  title: string;
+  description: string;
+}
+interface Props extends BeneficioItemProps {}
+const { icon, iconColor = "#3b76f6", title, description } = Astro.props;
+---
+<div class="benefit-item">
+    <div class="benefit-icon">
+        <iconify-icon icon={icon} style={`color: ${iconColor};`}></iconify-icon>
+    </div>
+    <h3 set:html={title}></h3>
+    <p set:html={description}></p>
+</div>

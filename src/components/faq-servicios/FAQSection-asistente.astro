@@ -1,0 +1,78 @@
+---
+import FAQHeader from "../faq/FAQHeader.astro";
+import FAQItem from "../faq/FAQItem.astro";
+import "../../styles/faq-servicios/faq-section.css";
+
+const faqs = [
+    {
+        question:
+            "¿Cuánto cuesta contratar un asistente virtual con Oberstaff?",
+        answers: [
+            "Desde 690€/mes, todo incluido. Hasta un 70% de ahorro frente a un asistente administrativo local en España. Sin costes ocultos ni comisiones adicionales.",
+        ],
+    },
+    {
+        question: "¿El asistente virtual trabajará solo para mi compañia?",
+        answers: [
+            "Sí, 100% en exclusiva a jornada completa. Tu asistente se integra con tus herramientas, flujos de trabajo y cultura corporativa.",
+        ],
+    },
+    {
+        question: "¿Cuándo conviene contratar un asistente virtual administrativo?",
+        answers: [
+            "Cuando tu equipo necesita apoyo administrativo constante pero no quiere asumir los costes y complejidad de una contratación local.",
+        ],
+    },
+    {
+        question:
+            "¿Puedo prescindir del asistente virtual cuando quiera?", 
+        answers: [
+            "Sí, solo 30 días de preaviso. Sin penalizaciones ni indemnizaciones.",
+        ],
+    },
+    {
+        question: "¿En qué países de LATAM están?",
+        answers: [
+            "Colombia, Argentina, México, Venezuela, Chile, Perú y Uruguay — zonas horarias compatibles con España.",
+        ],
+    },
+    {
+        question: "¿Cómo se evalúa a los candidatos?",
+        answers: [
+            "Prueba técnica administrativa + evaluación psicométrica + entrevista con nuestro equipo de selección.",
+        ],
+    } 
+];
+
+interface Props {
+    title?: string;
+    subtitle?: string;
+}
+
+const {
+    title = "FAQ",
+    subtitle = "Todo lo que necesitas saber antes de empezar"
+} = Astro.props;
+---
+
+<section class="faq-section">
+    <div class="faq-container">
+        <FAQHeader
+            title={title}
+            subtitle={subtitle}
+        />
+
+        <div class="faq-list">
+            {
+                faqs.map((faq) => (
+                    <FAQItem question={faq.question}>
+                        {faq.answers &&
+                            faq.answers.map((answer) => <p>{answer}</p>)}
+                    </FAQItem>
+                ))
+            }
+        </div>
+    </div>
+
+    <script src="../../scripts/faq.js"></script>
+</section>

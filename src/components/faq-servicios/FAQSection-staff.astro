@@ -1,0 +1,70 @@
+---
+import FAQHeader from "../faq/FAQHeader.astro";
+import FAQItem from "../faq/FAQItem.astro";
+import "../../styles/faq-servicios/faq-section.css";
+
+const faqs = [
+    {
+        question:
+            "¿Qué es el IT staff augmentation y en qué se diferencia del outsourcing?",
+        answers: [
+            "El staff augmentation IT es un modelo en el que incorporas profesionales remotos de LATAM a tu equipo existente bajo tu propia supervisión. A diferencia del outsourcing, tú diriges el trabajo día a día; Oberstaff se encarga de la contratación, administración y pagos del profesional.",
+        ],
+    },
+    {
+        question: "¿Qué perfiles IT ofrece Oberstaff?",
+        answers: [
+            "Ofrecemos desarrolladores frontend, backend y full stack, diseñadores UX/UI, data analysts, DevOps, QA testers, especialistas en marketing digital y más. Todos los perfiles tienen español nativo y experiencia contrastada.",
+        ],
+    },
+    {
+        question: " ¿Cuánto tiempo tarda en incorporarse un perfil IT?",
+        answers: [
+            "Nuestro proceso está diseñado para que el profesional esté incorporado en menos de 48 horas después de tu selección.",
+        ],
+    },
+    {
+        question:
+            "¿Qué incluyen los servicios de nearshore staff augmentation con Oberstaff?",
+        answers: [
+            "El servicio incluye selección del candidato en LATAM, contratación laboral local, administración de nóminas, gestión de bajas y soporte. Una única factura mensual en euros para tu empresa española.",
+        ],
+    },
+    {
+        question: "¿Cuánto cuesta este servicio para empresas españolas?",
+        answers: [
+            "Los planes comienzan desde 690 EUR por profesional al mes. El precio incluye selección, contratación y administración. Sin cuotas de alta ni permanencia mínima.",
+        ],
+    },
+    {
+        question: "¿Hay permanencia mínima en este modelo?",
+        answers: [
+            "No. Puedes ajustar, ampliar o cancelar el servicio cuando tu negocio lo requiera, sin penalizaciones de ningún tipo. Flexibilidad total.",
+        ],
+    },
+];
+
+const title = "FAQ";
+---
+
+<section class="faq-section">
+    <div class="faq-container">
+        <FAQHeader
+            title={title}
+            subtitle="Todo lo que necesitas saber antes de empezar"
+        />
+
+        <div class="faq-list">
+            {
+                faqs.map((faq) => (
+                    <FAQItem question={faq.question}>
+                        {faq.answers &&
+                            faq.answers.map((answer) => <p>{answer}</p>)}
+                    </FAQItem>
+                ))
+            }
+        </div>
+    </div>
+
+    <script src="../../scripts/faq.js"></script>
+</section>

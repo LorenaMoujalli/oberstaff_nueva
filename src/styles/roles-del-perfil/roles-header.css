@@ -1,0 +1,6 @@
+.perfiles-title { font-size: 32px; font-weight: 800; color: #0d2149; margin-bottom: 10px; letter-spacing: -1.0px; }
+.perfiles-subtitle { font-size: 16px; color: #666; margin-bottom: 35px; }
+
+@media (max-width: 768px) {
+    .perfiles-title { font-size: 24px; }
+}

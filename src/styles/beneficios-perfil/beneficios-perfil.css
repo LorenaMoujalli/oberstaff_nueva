@@ -1,0 +1,24 @@
+.benefits-highlights-section {
+    padding: 50px 20px;
+    background-color: white;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+}
+.benefits-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    text-align: left;
+}
+@media (max-width: 992px) {
+    .benefits-grid {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+        margin: 0 auto;
+        gap: 35px;
+    }
+}

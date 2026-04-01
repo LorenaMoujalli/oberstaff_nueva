@@ -1,0 +1,38 @@
+---
+import "../../styles/community-manager/lead-hero-section.css";
+import LeadHeroContent from "./LeadHeroContent.astro";
+import LeadHeroForm from "./LeadHeroForm.astro";
+
+interface Props {
+    topLabel?: string;
+    title?: string;
+    cardTitle?: string;
+    buttonText?: string;
+    footerLinkText?: string;
+    footerLinkHref?: string;
+}
+
+const {
+    topLabel = "CONTRATAR TALENTO REMOTO DESDE LATINOAMÉRICA",
+    title = "Delega el crecimiento de tu empresa en talento experto",
+    cardTitle = "Comienza ahora",
+    buttonText = "Ver perfiles pre-evaluados",
+    footerLinkText = "Ver cómo funciona el modelo EOR →",
+    footerLinkHref = "#",
+} = Astro.props;
+---
+
+<section class="lead-hero-section">
+    <div class="lead-container">
+        <LeadHeroContent topLabel={topLabel} title={title}>
+            <slot name="description" />
+        </LeadHeroContent>
+
+        <LeadHeroForm 
+            cardTitle={cardTitle}
+            buttonText={buttonText}
+            footerLinkText={footerLinkText}
+            footerLinkHref={footerLinkHref}
+        />
+    </div>
+</section>

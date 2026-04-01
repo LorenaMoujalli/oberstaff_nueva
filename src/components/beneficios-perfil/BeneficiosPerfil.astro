@@ -1,0 +1,33 @@
+---
+import "../../styles/beneficios-perfil/beneficios-perfil.css";
+import BeneficiosHeader from "./BeneficiosHeader.astro";
+import BeneficioItem from "./BeneficioItem.astro";
+import type { BeneficioItemProps } from "./BeneficioItem.astro";
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+  items?: BeneficioItemProps[];
+}
+const { 
+  title = "", 
+  subtitle = "", 
+  items = [] 
+} = Astro.props;
+---
+<section class="benefits-highlights-section">
+    <div class="benefits-container">
+        <BeneficiosHeader title={title} subtitle={subtitle} />
+
+        <div class="benefits-grid">
+            {items.map((item) => (
+                <BeneficioItem 
+                    icon={item.icon}
+                    iconColor={item.iconColor}
+                    title={item.title}
+                    description={item.description}
+                />
+            ))}
+        </div>
+    </div>
+</section>

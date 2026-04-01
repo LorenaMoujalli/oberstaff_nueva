@@ -1,0 +1,20 @@
+.main-question {
+    font-size: 34px;
+    font-weight: 600;
+    color: #0d2149;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+}
+
+.answer-text {
+    font-size: 17px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+@media (max-width: 900px) {
+    .main-question {
+        font-size: 28px;
+    }
+}

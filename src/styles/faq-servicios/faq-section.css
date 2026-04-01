@@ -1,0 +1,22 @@
+.faq-section {
+    background-color: #f7f8f8;
+    padding: 60px 20px;
+    font-family: 'Inter', sans-serif;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+@media (max-width: 768px) {
+    .faq-section {
+        padding: 50px 20px;
+    }
+}

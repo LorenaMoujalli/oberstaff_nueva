@@ -1,0 +1,25 @@
+---
+import "../../styles/casos-exito-perfiles/caso-exito-card.css";
+export interface Logro {
+  text: string;
+  highlight?: boolean;
+}
+export interface CasoExitoCardProps {
+  name: string;
+  position: string;
+  achievements: Logro[];
+}
+interface Props extends CasoExitoCardProps {}
+const { name, position, achievements = [] } = Astro.props;
+---
+<div class="case-card">
+    <div class="card-header">
+        <h3 set:html={name}></h3>
+        <p class="position" set:html={position}></p>
+    </div>
+    <ul class="achievements-list">
+        {achievements.map((ach) => (
+            <li class={ach.highlight ? "highlight-blue" : ""} set:html={ach.text}></li>
+        ))}
+    </ul>
+</div>

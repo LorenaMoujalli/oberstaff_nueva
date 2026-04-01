@@ -1,0 +1,39 @@
+---
+import "../../styles/pricing-servicios/PricingSection.css";
+import PricingCard from "./PricingCard.astro";
+
+interface Plan {
+    badge?: string;
+    title: string;
+    price: string;
+    currency: string;
+    period: string;
+    teamSize: string;
+    features: string[];
+    ctaText: string;
+    ctaHref: string;
+}
+
+interface Props {
+    eyebrow: string;
+    title: string;
+    subtitle: string;
+    plans: Plan[];
+}
+
+const { eyebrow, title, subtitle, plans } = Astro.props;
+---
+
+<section class="eor-pricing">
+    <div class="pricing-header">
+        <span class="pricing-eyebrow">{eyebrow}</span>
+        <h2 set:html={title}></h2>
+        <p set:html={subtitle}></p>
+    </div>
+
+    <div class="plans-container">
+        {plans.map((plan) => (
+            <PricingCard {...plan} />
+        ))}
+    </div>
+</section>
