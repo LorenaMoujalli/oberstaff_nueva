@@ -42,9 +42,18 @@
     background: #d4d4d4;
 }
 
+/* ==========================================================================
+   VERSION MOVIL (RESPONSIVE)
+   ========================================================================== */
+
 @media (max-width: 768px) {
+    /* --- stats-container --- */
     .stats-container { gap: 20px; }
+    
+    /* --- stat-block --- */
     .stat-block .number { font-size: 24px; }
     .stat-block .label { font-size: 8px; }
+    
+    /* --- vertical-divider --- */
     .vertical-divider { height: 30px; }
 }

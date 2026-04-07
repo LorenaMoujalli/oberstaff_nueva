@@ -116,35 +116,57 @@
     }
 }
 
+/* ==========================================================================
+   VERSION MOVIL (RESPONSIVE)
+   ========================================================================== */
+
 @media (max-width: 1024px) {
+    /* --- franja-empresas-container --- */
     .franja-empresas-container {
         flex-direction: column;
         text-align: center;
         gap: 50px;
     }
     
+    /* --- franja-stats-left --- */
     .franja-stats-left {
         justify-content: center;
     }
     
+    /* --- franja-stat-block --- */
     .franja-stat-block {
         align-items: center;
         text-align: center;
     }
 
+    /* --- franja-logos-slider --- */
     .franja-logos-slider {
         max-width: 100%;
         width: 100%;
     }
 }
 
+@media (max-width: 768px) {
+    /* --- franja-stat-block & franja-stats-left --- */
+}
+
 @media (max-width: 480px) {
+    /* --- franja-number --- */
     .franja-number { font-size: 42px; }
+
+    /* --- franja-stat-block --- */
     .franja-stat-block { gap: 5px; }
+
+    /* --- franja-vertical-divider --- */
     .franja-vertical-divider { height: 35px; }
+
+    /* --- franja-stats-left --- */
     .franja-stats-left { gap: 20px; }
-    /* Ajuste de logo-item para pantallas pequeñas */
+
+    /* --- logo-item (Logos de empresas) --- */
     .logo-item { width: 110px; padding-right: 40px; }
+
+    /* --- franja-label --- */
     .franja-label { font-size: 9px; }
     
     @keyframes scrollLogos {

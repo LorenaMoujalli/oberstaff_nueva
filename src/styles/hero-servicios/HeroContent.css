@@ -101,27 +101,45 @@
 }
 
 
+/* ==========================================================================
+   VERSION MOVIL (RESPONSIVE)
+   ========================================================================== */
+
 @media (max-width: 1024px) {
+    /* --- main-title --- */
     .main-title { font-size: 48px; }
 }
 
 @media (max-width: 768px) {
+    /* --- service-label --- */
     .service-label { margin-bottom: 20px; }
+
+    /* --- pre-title --- */
     .pre-title { font-size: 18px; margin-top: 15px; }
+
+    /* --- main-title --- */
     .main-title { font-size: 32px; letter-spacing: -1px; }
+
+    /* --- hero-description --- */
     .hero-description { font-size: 16px; margin-bottom: 30px; padding: 0 10px; }
     
+    /* --- hero-actions (botones) --- */
     .hero-actions { 
         flex-direction: column; 
         align-items: center; 
         gap: 12px; 
         padding: 0 20px;
     }
+    
+    /* --- btn-pink & btn-outline --- */
     .btn-pink, .btn-outline { width: 100%; text-align: center; }
 }
 
 @media (max-width: 480px) {
+    /* --- main-title --- */
     .main-title { font-size: 28px; }
+
+    /* --- hero-description --- */
     .hero-description { font-size: 15px; }
 }
 

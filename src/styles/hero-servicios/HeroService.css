@@ -58,12 +58,20 @@
     z-index: 1; /* El contenido siempre por encima de la aurora */
 }
 
+/* ==========================================================================
+   VERSION MOVIL (RESPONSIVE)
+   ========================================================================== */
+
 @media (max-width: 1024px) {
+    /* --- hero-container --- */
     .hero-container { padding-bottom: 20px; }
 }
 
 @media (max-width: 768px) {
+    /* --- glow-aurora (Pink and Purple) --- */
     .pink-glow { width: 350px; height: 350px; }
     .purple-glow { width: 300px; height: 400px; }
+
+    /* --- hero-section container --- */
     .hero-section { padding: 10px 20px; }
 }
