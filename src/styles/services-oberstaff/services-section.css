@@ -29,8 +29,9 @@
 }
 
 .section-description {
+    font-family: 'Poppins', sans-serif;
     font-size: 18px;
-    color: #666;
+    color: #5A5A5A;
     line-height: 1.6;
     max-width: 850px;
     margin: 0 auto 50px auto;

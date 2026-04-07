@@ -6,61 +6,57 @@
 }
 
 .eor-card {
-    background: white;
-    border-radius: 20px;
-    padding: 35px;
+    background-color: #F8F9FA;
+    border: 1px solid #E9ECEF;
+    border-radius: 24px;
+    padding: 50px 40px; 
     text-align: left;
     position: relative;
-    border: 1.5px solid #ccc;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-    transition: all 0.3s ease;
-}
-
-.eor-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.07);
-    border-color: #aaa;
 }
 
 .eor-card.featured {
-    border: 1.5px solid #ff66cc;
-    box-shadow: 0 4px 20px rgba(255, 102, 204, 0.18), 0 0 0 4px rgba(255, 102, 204, 0.07);
-}
-
-.eor-card.featured:hover {
-    box-shadow: 0 12px 35px rgba(255, 102, 204, 0.22), 0 0 0 6px rgba(255, 102, 204, 0.09);
-    border-color: #ff66cc;
+    background-color: #FFFFFF;
+    border: 2px solid #6663FD;
+    box-shadow: 0 20px 60px rgba(102, 99, 253, 0.12);
+    transform: scale(1.03);
+    z-index: 2;
 }
 
 .eor-badge {
+    font-family: 'Poppins', sans-serif;
     position: absolute;
-    top: -12px;
-    right: 25px;
-    background: #ff66cc;
-    color: #1b1b1b;
-    font-size: 11px;
-    font-weight: 900;
-    padding: 5px 14px;
-    border-radius: 20px;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #66FF99;
+    color: #1B1B1B;
+    font-size: 12px;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    padding: 6px 20px;
+    border-radius: 50px;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px rgba(102, 255, 153, 0.3);
 }
 
 .card-header {
+    font-family: 'Montserrat', sans-serif;
     display: flex;
     align-items: center;
-    margin-bottom: 25px;
-    font-size: 22px;
-    font-weight: 800;
+    justify-content: left;
+    margin-bottom: 35px;
+    padding-bottom: 25px;
+    font-size: 26px;
+    font-weight: 700;
+    border-bottom: 1px solid #F1F1F1;
 }
 
 .card-header iconify-icon {
-    margin-right: 15px;
-    font-size: 28px;
+    display: none;
 }
 
-.negative-header { color: #888; }
-.positive-header { color: #1a1a1a; }
+.negative-header { color: #5A5A5A; }
+.positive-header { color: #1B1B1B; }
 
 .eor-list {
     list-style: none;
@@ -69,31 +65,58 @@
 }
 
 .eor-list li {
+    font-family: 'Poppins', sans-serif;
     margin-bottom: 16px;
     display: flex;
-    align-items: center;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 1.4;
+    align-items: flex-start;
+    font-size: 15px;
+    line-height: 1.5;
 }
 
-.list-negative li { color: #999; }
-.list-positive li { color: #444; }
+.list-negative li { color: #5A5A5A; }
+.list-positive li { color: #1B1B1B; font-weight: 600; }
 
 .icon-x {
-    color: #bbb;
-    font-size: 18px;
-    font-weight: 700;
+    color: #FF4D4D;
+    width: 24px;
+    height: 24px;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 900;
     flex-shrink: 0;
-    margin-right: 18px;
+    margin-right: 12px;
+    margin-top: 2px; 
 }
 
 .icon-check {
-    color: #ff66cc;
-    font-size: 18px;
-    font-weight: 700;
+    background-color: #1B1B1B;
+    color: #66FF99;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
     flex-shrink: 0;
-    margin-right: 18px;
+    margin-right: 12px;
+    margin-top: 2px; 
+    font-weight: 900;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+    .eor-card.featured {
+        transform: scale(1);
+        margin: 20px 0;
+    }
+
+    .eor-badge {
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: nowrap;
+        width: auto;
+    }
 }

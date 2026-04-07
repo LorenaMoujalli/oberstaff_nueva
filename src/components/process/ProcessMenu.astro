@@ -2,7 +2,7 @@
 import "../../styles/process/process-menu.css";
 
 interface Props {
-    tabs: { id: number; label: string }[];
+    tabs: { id: number; label: string; icon?: string }[];
 }
 
 const { tabs } = Astro.props;
@@ -14,7 +14,17 @@ const { tabs } = Astro.props;
             class={`process-tab${i === 0 ? " active" : ""}`}
             data-tab={tab.id}
         >
-            <span class="process-tab-number">{tab.id}</span>
+            <div class="process-tab-number">
+                {tab.icon ? (
+                    tab.icon.includes(":") ? (
+                        <iconify-icon icon={tab.icon} width="14"></iconify-icon>
+                    ) : (
+                        <span style="font-size: 14px;">{tab.icon}</span>
+                    )
+                ) : (
+                    <span>{tab.id}</span>
+                )}
+            </div>
             <span class="process-tab-label">{tab.label}</span>
         </div>
     ))}

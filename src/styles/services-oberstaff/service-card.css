@@ -8,7 +8,7 @@
   
     text-align: left;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-     border: 1px solid rgba(0, 0, 0, 0.03);
+        border: 1px solid rgba(0, 0, 0, 0.03);
     transition:
         transform 0.3s ease,
         box-shadow 0.3s ease,
@@ -43,13 +43,14 @@
 
 /* --- Caja de Icono --- */
 .icon-box {
-    width: 52px;
-    height: 52px;
-    border-radius: 12px;
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 25px;
+    border: none;
 }
 
 .icon-emoji {
@@ -78,6 +79,7 @@
 
 /* --- Textos --- */
 .service-card h3 {
+    font-family: 'Montserrat', sans-serif;
     font-size: 20px;
     font-weight: 700;
     color: #1a1a1a;
@@ -87,7 +89,7 @@
 .service-card p {
        font-family: 'Poppins', sans-serif;
     font-size: 15px;
-    color: #555;
+    color: #5A5A5A;
     line-height: 1.6;
     margin-bottom: 25px;
     min-height: 72px;
@@ -118,6 +120,36 @@
 .service-link:hover .arrow-icon {
     transform: translateX(4px);
 }
+
+/* Hover específicos para la página de Employer */
+.employer-use-cases-grid .service-card:nth-child(1):hover {
+    border-color: #FF66CC !important;
+    box-shadow: 0 15px 40px rgba(255, 102, 204, 0.15) !important;
+}
+.employer-use-cases-grid .service-card:nth-child(2):hover {
+    border-color: #66FF99 !important;
+    box-shadow: 0 15px 40px rgba(102, 255, 153, 0.15) !important;
+}
+.employer-use-cases-grid .service-card:nth-child(3):hover {
+    border-color: #6663FD !important;
+    box-shadow: 0 15px 40px rgba(102, 99, 253, 0.15) !important;
+}
+.employer-use-cases-grid .service-card:nth-child(4):hover {
+    border-color: #CCFF66 !important;
+    box-shadow: 0 15px 40px rgba(204, 255, 102, 0.15) !important;
+}
+
+.employer-use-cases-grid .service-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Ocultar degradado de esquina solo en Employer */
+.employer-use-cases-grid .card-gradient-bg {
+    display: none;
+}
+
+
+
 
 /* --- Responsivo --- */
 @media (max-width: 850px) {

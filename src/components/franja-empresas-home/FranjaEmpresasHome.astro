@@ -1,0 +1,52 @@
+---
+import "../../styles/franja-empresas-home/FranjaEmpresasHome.css";
+
+interface Props {
+    stat1Number: string;
+    stat1Label: string;
+    stat2Number: string;
+    stat2Label: string;
+}
+
+const { stat1Number, stat1Label, stat2Number, stat2Label } = Astro.props;
+---
+
+<div class="franja-empresas-section">
+    <div class="franja-empresas-container">
+        
+        <!-- Bloque Izquierdo: Estadísticas -->
+        <div class="franja-stats-left">
+            <div class="franja-stat-block">
+                <span class="franja-number franja-gradient-text">{stat1Number}</span>
+                <span class="franja-label" set:html={stat1Label}></span>
+            </div>
+
+            <div class="franja-vertical-divider"></div>
+
+            <div class="franja-stat-block">
+                <span class="franja-number franja-gradient-text">{stat2Number}</span>
+                <span class="franja-label" set:html={stat2Label}></span>
+            </div>
+        </div>
+
+        <!-- Bloque Derecho: Slider de Logos -->
+        <div class="franja-logos-slider">
+            <div class="logos-track">
+                <!-- Logos dinámicos de public -->
+                <img src="/logo-terranova.webp" alt="Terranova Logo" class="logo-item" />
+                <img src="/logo-orion.webp" alt="Orion Logo" class="logo-item" />
+                <img src="/logo-aether-nexus.webp" alt="Aether Nexus Logo" class="logo-item" />
+                <img src="/logo-orbital.webp" alt="Orbital Logo" class="logo-item" />
+                <img src="/logo-aether.webp" alt="Aether Logo" class="logo-item" />
+                
+                <!-- Duplicados para el loop suave -->
+                <img src="/logo-terranova.webp" alt="Terranova Logo" class="logo-item" />
+                <img src="/logo-orion.webp" alt="Orion Logo" class="logo-item" />
+                <img src="/logo-aether-nexus.webp" alt="Aether Nexus Logo" class="logo-item" />
+                <img src="/logo-orbital.webp" alt="Orbital Logo" class="logo-item" />
+                <img src="/logo-aether.webp" alt="Aether Logo" class="logo-item" />
+            </div>
+        </div>
+
+    </div>
+</div>

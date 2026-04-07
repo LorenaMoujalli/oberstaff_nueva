@@ -1,0 +1,154 @@
+.franja-empresas-section {
+    padding: 60px 0;
+    background-color: #FAFAFC;
+    border-top: 1px solid rgba(0, 0, 0, 0.03);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.franja-empresas-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+    padding: 0 20px;
+}
+
+/* Bloque Izquierdo: Estadísticas */
+.franja-stats-left {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-shrink: 0;
+}
+
+.franja-stat-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.franja-number {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 5px;
+    letter-spacing: -1.5px;
+}
+
+/* Degradado en los números */
+.franja-gradient-text {
+    background: linear-gradient(90deg, #6663fd 0%, #C576F5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+.franja-label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: #5A5A5A;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    text-transform: uppercase;
+}
+
+.franja-vertical-divider {
+    width: 1px;
+    height: 48px;
+    background: #e2e2e2;
+}
+
+/* Bloque Derecho: Slider de Logos */
+.franja-logos-slider {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    max-width: 600px;
+    /* Efecto de desvanecimiento elegante a los lados */
+    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+.logos-track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    animation: scrollLogos 25s linear infinite;
+}
+
+.logo-item {
+    width: 240px;
+    height: 85px;
+    object-fit: contain;
+    opacity: 0.5;
+    transition: all 0.4s ease;
+    filter: grayscale(1);
+    flex-shrink: 0;
+    /* Espaciado constante para loop perfecto */
+    padding-right: 100px;
+    cursor: pointer;
+}
+
+.logo-item:hover {
+    opacity: 1;
+    filter: grayscale(0);
+    transform: scale(1.08); /* Ligeramente más grande al hover */
+}
+
+/* Detener animación al pasar el ratón */
+.franja-logos-slider:hover .logos-track {
+    animation-play-state: paused;
+}
+
+@keyframes scrollLogos {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        /* Se desplaza exactamente el 50% de la pista (un juego completo de logos + sus paddings) */
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 1024px) {
+    .franja-empresas-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 50px;
+    }
+    
+    .franja-stats-left {
+        justify-content: center;
+    }
+    
+    .franja-stat-block {
+        align-items: center;
+        text-align: center;
+    }
+
+    .franja-logos-slider {
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .franja-number { font-size: 42px; }
+    .franja-stat-block { gap: 5px; }
+    .franja-vertical-divider { height: 35px; }
+    .franja-stats-left { gap: 20px; }
+    /* Ajuste de logo-item para pantallas pequeñas */
+    .logo-item { width: 110px; padding-right: 40px; }
+    .franja-label { font-size: 9px; }
+    
+    @keyframes scrollLogos {
+        from { transform: translateX(0); }
+        to { transform: translateX(-50%); } 
+    }
+}

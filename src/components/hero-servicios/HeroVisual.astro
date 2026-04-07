@@ -2,32 +2,43 @@
 import VideoPrincipalModal from "../video/VideoPrincipalModal.astro";
 interface Props {
     videoImg: string;
-    remoteCountry: string;
+    remoteCountry?: string;
     floatingText: string;
+    badgeRightTitle?: string;
+    badgeRightText?: string;
 }
 
-const { videoImg, remoteCountry, floatingText } = Astro.props;
+const { 
+    videoImg, 
+    remoteCountry = "CO", 
+    floatingText, 
+    badgeRightTitle = "100%", 
+    badgeRightText = "Cumplimiento" 
+} = Astro.props;
 import "../../styles/hero-servicios/HeroVisual.css";
 ---
 
-<div class="video-preview">
-    <img src={videoImg} alt="Visual Service">
-    <a href="#" id="openVideoModal" class="play-button" aria-label="Reproducir video principal">
-        <iconify-icon icon="solar:play-bold"></iconify-icon>
-    </a>
-</div>
-
-<div class="badge-remoto">
-    <span class="dot">●</span>
-    <span class="text">REMOTO DESDE</span>
-    <span class="country">{remoteCountry}</span>
-</div>
-
-<div class="floating-card">
-    <div class="icon-shield">
-        <iconify-icon icon="solar:shield-check-bold"></iconify-icon>
+<div class="hero-visual-wrapper">
+    <!-- Elemento flotante Izquierdo -->
+    <div class="floating-badge badge-left">
+        <span class="icon-emoji">🛡️</span>
+        <span>{floatingText}</span>
     </div>
-    <span>{floatingText}</span>
+
+    <!-- Video Central -->
+    <div class="video-preview">
+        <img src={videoImg} alt="Visual Service">
+        <a href="#" id="openVideoModal" class="play-button" aria-label="Reproducir video principal">
+            <iconify-icon icon="solar:play-bold"></iconify-icon>
+        </a>
+    </div>
+
+    <!-- Elemento flotante Derecho -->
+    <div class="floating-badge badge-right">
+        <span class="icon-emoji">🔹</span>
+        <span class="text">{badgeRightTitle}</span>
+        <span class="country">{badgeRightText}</span>
+    </div>
 </div>
 
 <VideoPrincipalModal />

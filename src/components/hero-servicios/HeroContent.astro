@@ -1,6 +1,6 @@
 ---
 interface Props {
-    label: string;
+    preTitle?: string;
     title: string;
     highlight: string;
     description: string;
@@ -11,7 +11,7 @@ interface Props {
 }
 
 const { 
-    label, 
+    preTitle,
     title, 
     highlight, 
     description,
@@ -23,7 +23,8 @@ const {
 import "../../styles/hero-servicios/HeroContent.css";
 ---
 
-<div class="service-label">{label}</div>
+
+{preTitle && <div class="pre-title">{preTitle}</div>}
 
 <h1 class="main-title">
     {title} <br>

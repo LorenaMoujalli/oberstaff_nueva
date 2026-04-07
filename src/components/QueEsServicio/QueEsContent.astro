@@ -1,0 +1,52 @@
+---
+interface InfoItem {
+    icon: string;
+    title: string;
+    description: string;
+}
+
+interface Props {
+    imageSrc: string;
+    imageAlt: string;
+    badgeText: string;
+    quoteText: string;
+    infoItems: InfoItem[];
+}
+
+const { imageSrc, imageAlt, badgeText, quoteText, infoItems } = Astro.props;
+import "../../styles/QueEsServicio/QueEsContent.css";
+---
+
+<div class="que-es-main-content">
+    <div class="que-es-image-wrapper">
+        <div class="image-card">
+            <img src={imageSrc} alt={imageAlt}>
+        </div>
+        <div class="floating-badge-bottom">
+            <span class="check-pink">✓</span>
+            <strong>{badgeText}</strong>
+        </div>
+    </div>
+
+    <div class="que-es-info-list">
+        <div class="quote-blue-border">
+            {quoteText}
+        </div>
+
+        {infoItems.map((item) => (
+            <div class="info-item">
+                <div class="icon-box">
+                    {item.icon.includes(':') ? (
+                        <iconify-icon icon={item.icon}></iconify-icon>
+                    ) : (
+                        <span class="emoji-icon">{item.icon}</span>
+                    )}
+                </div>
+                <div class="text-box">
+                    <h3>{item.title}</h3>
+                    <p set:html={item.description}></p>
+                </div>
+            </div>
+        ))}
+    </div>
+</div>

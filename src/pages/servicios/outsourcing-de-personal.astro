@@ -2,7 +2,7 @@
 import DashboardLayoutServicios from "../../layouts/DashboardLayoutServicios.astro";
 import HeroService from "../../components/hero-servicios/HeroService.astro";
 import ConEorService from "../../components/conEorServicios/ConEorService.astro";
-import BeneficiosSeccion from "../../components/beneficios-eor-servicios/BeneficiosSeccion.astro";
+//import BeneficiosSeccion from "../../components/beneficios-eor-servicios/BeneficiosSeccion.astro";
 import EorStepsSection from "../../components/eor-steps-servicios/EorStepsSection.astro";
 import EorCta from "../../components/eor-cta-servicios/EorCta.astro";
 import FeaturesSection from "../../components/oberstaff-features-servicios/FeaturesSection.astro";
@@ -11,10 +11,12 @@ import CoberturaSeccion from "../../components/geografica-servicios/CoberturaSec
 import CasosExitoSection from "../../components/casos-exito-servicios/CasosExitoSection.astro";
 import RolesSection from "../../components/roles-servicios/RolesSection.astro";
 import FAQSectionPersonal from "../../components/faq-servicios/FAQSection-personal.astro";
-import BeneficiosSeccionPersonal from "../../components/beneficios-eor-servicios/BeneficiosSeccion-personal.astro";
+//import BeneficiosSeccionPersonal from "../../components/beneficios-eor-servicios/BeneficiosSeccion-personal.astro";
 //import OtrosServiciosSection from "../../components/otros-servicios-servicios/OtrosServiciosSection.astro";
 import ContactFormSection from "../../components/form/ContactFormSection.astro";
 //import ArticulosSection from "../../components/articulos-servicios/ArticulosSection.astro";
+import ProcessOberstaff from "../../components/process/ProcessOberstaff.astro";
+import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
 ---
 
 <DashboardLayoutServicios 
@@ -26,18 +28,13 @@ import ContactFormSection from "../../components/form/ContactFormSection.astro";
         <div class="fade-in-section">
             <HeroService
                 label="Outsourcing de Personal"
+                preTitle="Outsourcing de personal remoto en LATAM:"
                 title="Talento remoto de LATAM"
                 highlight="para empresas españolas"
                 description="Delega la <strong>selección, contratación y administración</strong>  de personal a Oberstaff. Con nuestro servicio de  <strong>outsourcing de personal</strong> accede a talento top de Latinoamérica hasta por un 70% menos que en España, en tu horario y sin abrir entidad en LATAM. <br>"
-                videoImg="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200"
+                videoImg="/fondo-video.webp"
                 remoteCountry="CO"
                 floatingText="Cero Riesgo Legal"
-                stat1Number="5.000+"
-                stat1Label="Confian en Oberstaff"
-                stat2Number="70%"
-                stat2Label="Ahorro vs. mercado español"
-                stat3Number="10"
-                stat3Label="Paises en LATAM"
                 primaryBtnText="Agendar llamada gratis"
                 primaryBtnHref="#contacto"
                 secondaryBtnText="Recibir propuesta en <24h"
@@ -70,6 +67,8 @@ import ContactFormSection from "../../components/form/ContactFormSection.astro";
             />
         </div>
 
+
+        <!-- 
         <div class="fade-in-section">
             <BeneficiosSeccionPersonal
                 beneficios={[
@@ -104,6 +103,7 @@ import ContactFormSection from "../../components/form/ContactFormSection.astro";
                 ]}
             />
         </div>
+        -->
 
         <div class="fade-in-section">
             <EorStepsSection

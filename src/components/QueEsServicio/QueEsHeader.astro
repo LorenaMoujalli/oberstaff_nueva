@@ -1,0 +1,29 @@
+---
+interface Props {
+    title: string;
+    description: string;
+    highlightWord?: string;
+}
+
+const { title, description, highlightWord = "" } = Astro.props;
+import "../../styles/QueEsServicio/QueEsHeader.css";
+
+// Split title by highlightWord if provided
+let parts = [title];
+if (highlightWord && title.includes(highlightWord)) {
+    parts = title.split(highlightWord);
+}
+---
+
+<header class="que-es-header">
+    <h2 id="que-es-title">
+        {highlightWord && parts.length > 1 ? (
+            <>
+                {parts[0]} <span class="blue-text">{highlightWord}</span> {parts[1]}
+            </>
+        ) : (
+            title
+        )}
+    </h2>
+    <p set:html={description}></p>
+</header>

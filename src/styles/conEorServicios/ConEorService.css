@@ -1,6 +1,7 @@
 .eor-section {
     width: 100%;
-    background-color: rgb(247 248 248 / var(--tw-bg-opacity, 1));
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #ebebeb;
 }
 
 .eor-container {

@@ -22,7 +22,7 @@ const listClass = iconStyle === "positive" ? "eor-list list-positive" : "eor-lis
             icon={headerIcon}
             style={iconStyle === "positive" ? "color: #ff66cc;" : ""}
         ></iconify-icon>
-        {title}
+        <span set:html={title}></span>
     </div>
     <ul class={listClass}>
         {items.map((item) => (
@@ -30,7 +30,7 @@ const listClass = iconStyle === "positive" ? "eor-list list-positive" : "eor-lis
                 <span class={iconStyle === "positive" ? "icon-check" : "icon-x"}>
                     {iconStyle === "positive" ? "✓" : "✕"}
                 </span>
-                {item}
+                <span set:html={item}></span>
             </li>
         ))}
     </ul>

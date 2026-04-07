@@ -1,0 +1,18 @@
+---
+interface Props {
+    icon: string;
+    title: string;
+    description: string;
+}
+
+const { icon, title, description } = Astro.props;
+import "../../styles/QueEsServicio/QueEsDifference.css";
+---
+
+<div class="que-es-difference-box">
+    <div class="diff-icon">{icon}</div>
+    <div class="diff-text">
+        <h3>{title}</h3>
+        <p set:html={description}></p>
+    </div>
+</div>

@@ -1,0 +1,67 @@
+---
+import QueEsHeader from "./QueEsHeader.astro";
+import QueEsContent from "./QueEsContent.astro";
+import QueEsDifference from "./QueEsDifference.astro";
+
+interface InfoItem {
+    icon: string;
+    title: string;
+    description: string;
+}
+
+interface Props {
+    title: string;
+    description: string;
+    highlightWord?: string;
+    imageSrc: string;
+    imageAlt: string;
+    badgeText: string;
+    quoteText: string;
+    infoItems: InfoItem[];
+    diffIcon?: string;
+    diffTitle?: string;
+    diffDescription?: string;
+}
+
+const { 
+    title, 
+    description, 
+    highlightWord, 
+    imageSrc, 
+    imageAlt, 
+    badgeText, 
+    quoteText, 
+    infoItems,
+    diffIcon,
+    diffTitle,
+    diffDescription
+} = Astro.props;
+
+import "../../styles/QueEsServicio/QueEsServicio.css";
+---
+
+<section class="que-es-servicio-section">
+    <div class="que-es-container">
+        <QueEsHeader 
+            title={title} 
+            description={description} 
+            highlightWord={highlightWord} 
+        />
+
+        <QueEsContent 
+            imageSrc={imageSrc} 
+            imageAlt={imageAlt} 
+            badgeText={badgeText} 
+            quoteText={quoteText} 
+            infoItems={infoItems} 
+        />
+
+        {diffTitle && (
+            <QueEsDifference 
+                icon={diffIcon || "💡"} 
+                title={diffTitle} 
+                description={diffDescription || ""} 
+            />
+        )}
+    </div>
+</section>

@@ -4,43 +4,80 @@ import ProcessMenu from "./ProcessMenu.astro";
 import ProcessPane from "./ProcessPane.astro";
 import ProcessCTA from "./ProcessCTA.astro";
 
-const tabs = [
-    { id: 1, label: "Selección" },
-    { id: 2, label: "Contratación" },
-    { id: 3, label: "Integración" },
-];
+interface ProcessItem {
+    label: string;
+    badge: string;
+    title: string;
+    description: string;
+    icon?: string;
+    badgeColor?: string;
+    badgeBg?: string;
+}
 
-const panes = [
-    {
-        id: 1,
-        badge: "Gratis · Sin compromiso",
-        title: "1. Nos cuentas qué necesitas",
-        description:
-            "Cuéntanos el perfil que buscas y, con nuestro reclutamiento remoto, encontraremos candidatos que encajen con tu empresa y cultura. Ideal si quieres contratar talento en el extranjero desde España, sin complicaciones.",
-        active: true,
-    },
-    {
-        id: 2,
-        badge: "Sin permanencia",
-        title: "2. Te proponemos la estructura adecuada",
-        description:
-            "Te orientamos sobre cuál es el modelo que necesitas de acuerdo a tus necesidades.",
-    },
-    {
-        id: 3,
-        badge: "En <30 días", 
-        title: "3. Trabaja con los mejores",
-        description:
-            "Tu nuevo profesional se integra a tu equipo en tu misma zona horaria. Paga menos que en España y accede a talento de primer nivel.",
-    },
-];
+interface Props {
+    title?: string;
+    items?: ProcessItem[];
+    ctaTitle?: string;
+    ctaDescription?: string;
+    ctaBtnText?: string;
+    ctaBtnHref?: string;
+    id?: string;
+    className?: string;
+}
+
+const {
+    title = 'Cómo <strong>reducir costes de personal</strong> contratando talento remoto en Latinoamérica',
+    items = [
+        {
+            label: "Selección",
+            badge: "Gratis · Sin compromiso",
+            title: "1. Nos cuentas qué necesitas",
+            description:
+                "Cuéntanos el perfil que buscas y, con nuestro reclutamiento remoto, encontraremos candidatos que encajen con tu empresa y cultura. Ideal si quieres contratar talento en el extranjero desde España, sin complicaciones.",
+        },
+        {
+            label: "Contratación",
+            badge: "Sin permanencia",
+            title: "2. Te proponemos la estructura adecuada",
+            description:
+                "Te orientamos sobre cuál es el modelo que necesitas de acuerdo a tus necesidades.",
+        },
+        {
+            label: "Integración",
+            badge: "En <30 días",
+            title: "3. Trabaja con los mejores",
+            description:
+                "Tu nuevo profesional se integra a tu equipo en tu misma zona horaria. Paga menos que en España y accede a talento de primer nivel.",
+        },
+    ],
+    ctaTitle,
+    ctaDescription,
+    ctaBtnText,
+    ctaBtnHref,
+    id = `process-${Math.random().toString(36).substr(2, 9)}`,
+    className = "",
+} = Astro.props;
+
+// Prepare tabs and panes from items with consistent IDs
+const tabs = items.map((item, index) => ({ 
+    id: index + 1, 
+    label: item.label,
+    icon: item.icon
+}));
+const panes = items.map((item, index) => ({ 
+    id: index + 1, 
+    badge: item.badge, 
+    title: item.title, 
+    description: item.description,
+    active: index === 0,
+    badgeColor: item.badgeColor,
+    badgeBg: item.badgeBg
+}));
 ---
 
-<section class="process-section">
+<section class={`process-section ${className}`} id={id}>
     <div class="process-container">
-        <h2 class="process-main-title">
-            Cómo <strong>reducir costes de personal</strong> contratando talento remoto en Latinoamérica
-        </h2>
+        <h2 class="process-main-title" set:html={title} />
 
         <div class="process-card">
             <ProcessMenu tabs={tabs} />
@@ -52,28 +89,52 @@ const panes = [
                         badge={pane.badge}
                         title={pane.title}
                         description={pane.description}
-                        active={pane.active ?? false}
+                        active={pane.active}
+                        badgeColor={pane.badgeColor}
+                        badgeBg={pane.badgeBg}
                     />
                 ))}
             </div>
 
-            <ProcessCTA />
+            <ProcessCTA 
+                title={ctaTitle}
+                description={ctaDescription}
+                btnText={ctaBtnText}
+                btnHref={ctaBtnHref}
+            />
         </div>
     </div>
 </section>
 
-<script>
-    document.querySelectorAll(".process-tab").forEach((tab) => {
-        tab.addEventListener("click", () => {
-            const tabId = (tab as HTMLElement).dataset.tab;
+<script define:vars={{ id }}>
+    function initProcessTabs() {
+        const section = document.getElementById(id);
+        if (!section) return;
+        
+        const tabs = section.querySelectorAll(".process-tab");
+        const panes = section.querySelectorAll(".process-pane");
 
-            // Menú: activar tab seleccionado
-            document.querySelectorAll(".process-tab").forEach((t) => t.classList.remove("active"));
-            tab.classList.add("active");
+        tabs.forEach((tab) => {
+            tab.addEventListener("click", () => {
+                const tabId = tab.dataset.tab;
 
-            // Contenido: mostrar panel correspondiente
-            document.querySelectorAll(".process-pane").forEach((p) => p.classList.remove("active"));
-            document.getElementById(`process-pane-${tabId}`)?.classList.add("active");
+                // Menú: activar tab seleccionado dentro de esta sección
+                tabs.forEach((t) => t.classList.remove("active"));
+                tab.classList.add("active");
+
+                // Contenido: mostrar panel correspondiente dentro de esta sección
+                panes.forEach((p) => p.classList.remove("active"));
+                const activePane = section.querySelector(`#process-pane-${tabId}`);
+                if (activePane) {
+                    activePane.classList.add("active");
+                }
+            });
         });
-    });
+    }
+
+    // Initialize on load
+    initProcessTabs();
+
+    // Re-initialize for view transitions if using them
+    document.addEventListener('astro:after-swap', initProcessTabs);
 </script>

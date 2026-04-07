@@ -1,8 +1,9 @@
 ---
 import DashboardLayoutServicios from "../../layouts/DashboardLayoutServicios.astro";
 import HeroService from "../../components/hero-servicios/HeroService.astro";
+import FranjaEmpresasHome from "../../components/franja-empresas-home/FranjaEmpresasHome.astro";
 import ConEorService from "../../components/conEorServicios/ConEorService.astro";
-import BeneficiosSeccion from "../../components/beneficios-eor-servicios/BeneficiosSeccion.astro";
+//import BeneficiosSeccion from "../../components/beneficios-eor-servicios/BeneficiosSeccion.astro";
 import EorStepsSection from "../../components/eor-steps-servicios/EorStepsSection.astro";
 import EorCta from "../../components/eor-cta-servicios/EorCta.astro";
 import FeaturesSection from "../../components/oberstaff-features-servicios/FeaturesSection.astro";
@@ -14,6 +15,10 @@ import FAQSection from "../../components/faq-servicios/FAQSection.astro";
 import OtrosServiciosSection from "../../components/otros-servicios-servicios/OtrosServiciosSection.astro";
 import ContactFormSection from "../../components/form/ContactFormSection.astro";
 import ArticulosSection from "../../components/articulos-servicios/ArticulosSection.astro";
+import QueEsServicioSection from "../../components/QueEsServicio/QueEsServicioSection.astro";
+import ServicesSection from "../../components/services-oberstaff/ServicesSection.astro"; 
+import ProcessOberstaff from "../../components/process/ProcessOberstaff.astro";
+import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
 ---
 <DashboardLayoutServicios
 	title="Employer of Record | Contrata en LATAM · Oberstaff"
@@ -24,77 +29,234 @@ import ArticulosSection from "../../components/articulos-servicios/ArticulosSect
 		<div class="fade-in-section">
 			<HeroService
 				label="EMPLOYER OF RECORD · EOR"
-				title="Contrata en Latinoamérica."
-				highlight="Sin abrir entidad."
-				description="Oberstaff actúa como Employer of Record (EOR) en LATAM. Tú gestionas el trabajo, nosotros nos encargamos del contrato, la nómina y el cumplimiento legal. <br> <strong>Todo en regla, sin riesgos.</strong>"
-				videoImg="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200"
+				preTitle="Employer of Record para empresas españolas:"
+				title="Contrata profesionales"
+				highlight="legalmente sin abrir filial"
+				description="<span style='color: #1B1B1B; font-weight: 800;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> actúa como Employer of Record (EOR) en LATAM. Tú gestionas el trabajo, nosotros nos encargamos del contrato, la nómina y el cumplimiento legal. Todo en regla, sin riesgos."
+				videoImg="/fondo-video.webp"
 				remoteCountry="CO"
 				floatingText="Cero Riesgo Legal"
-				stat1Number="70%"
-				stat1Label="AHORRO EN<br>COSTOS"
-				stat2Number="5.000+"
-				stat2Label="EMPRESAS<br>CONFÍAN EN<br> NOSOTROS"
-				primaryBtnText="Agendar llamada gratis"
+				primaryBtnText="Recibir propuesta en <24h"
 				primaryBtnHref="#contacto"
-				secondaryBtnText="Conoce los perfiles profesionales"
-				secondaryBtnHref="#roles"
+				secondaryBtnText="Hablar con un especialista EOR"
+				secondaryBtnHref="#contacto"
 			/>
 		</div>
+
+		<div class="fade-in-section">
+			<FranjaEmpresasHome
+				stat1Number="70%"
+				stat1Label="AHORRO EN COSTOS"
+				stat2Number="+500"
+				stat2Label="EMPRESAS CONFÍAN EN NOSOTROS"
+			/>
+		</div> 
+
+		<div class="fade-in-section">
+			<QueEsServicioSection 
+				title="¿Qué es un Employer of Record?"
+				highlightWord="Employer of Record?"
+				description="Un Employer of Record (EOR) es la entidad legal que contrata a los empleados en nombre de otra empresa. <span style='color: #1B1B1B; font-weight: 800;'>Tú defines las tareas, el horario y los objetivos.</span>"
+				imageSrc="/img-queEs.webp"
+				imageAlt="Profesional trabajando"
+				badgeText="Contratos al día"
+				quoteText="Tú diriges, nosotros somos el empleador legal."
+				infoItems={[
+					{
+						icon: "⚙️",
+						title: "¿Cómo funciona?",
+						description: "En la práctica, <span style='color: #1B1B1B; font-weight: 700;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 700;'>.</span> se convierte en el empleador legal del profesional y asume la gestión del contrato, la nómina, la seguridad social, los impuestos laborales y el cumplimiento normativo aplicable."
+					},
+					{
+						icon: "🏢",
+						title: "¿Sirve para mi empresa?",
+						description: "Para una organización española, el EOR es una vía rápida y segura para contratar empleados en LATAM sin abrir una filial, sin montar una estructura de RR. HH. local y sin asumir directamente el riesgo laboral en cada país."
+					}
+				]}
+				diffIcon="💡"
+				diffTitle="Diferencia clave frente a CoR"
+				diffDescription="Con EOR el profesional entra como empleado y existe relación laboral formal. Con CoR el profesional opera como independiente. Si necesitas payroll, seguridad social y cumplimiento laboral continuo, el modelo correcto es EOR."
+			/>
+		</div> 
+
+		<div class="fade-in-section">
+			<ServicesSection 
+				title="¿Cuándo usar este <strong>servicio?</strong>"
+				description="El EOR España es la opción ideal cuando quieres contratar sin crear una entidad legal propia."
+				customClass="employer-use-cases"
+				services={[
+					{
+						icon: "🌎",
+						title: "Expansión en LATAM sin filial",
+						description: "Quieres incorporar empleados en Colombia, Venezuela, Argentina u otros mercados, sin esperar meses a constituir una compañía local.",
+						linkText: "",
+						href: "",
+						customIconBg: "rgba(255, 102, 204, 0.1)",
+						cardClass: "card-green"
+					},
+					{
+						icon: "⚡",
+						title: "Equipos estables y contratación recurrente",
+						description: "Cuando el rol será estable, recurrente y parte estructural de tu operación diaria.",
+						linkText: "",
+						href: "",
+						customIconBg: "rgba(102, 255, 153, 0.1)",
+						cardClass: "card-pink"
+					},
+					{
+						icon: "🛡️",
+						title: "Cuando necesitas una relación laboral formal",
+						description: "Cuando necesitas establecer horarios, supervisión directa, integración profunda en el equipo y continuidad a largo plazo.",
+						linkText: "",
+						href: "",
+						customIconBg: "rgba(102, 99, 253, 0.1)",
+						cardClass: "card-lime"
+					},
+					{
+						icon: "👥",
+						title: "Reducción de carga legal y administrativa",
+						description: "Quieres que contratos, nómina, impuestos, vacaciones, bajas y desvinculaciones se gestionen correctamente desde el primer día.",
+						linkText: "",
+						href: "",
+						customIconBg: "rgba(204, 255, 102, 0.2)",
+						cardClass: "card-lime"
+					}
+				]}
+			/>
+		</div>
+
+
 
 		<div class="fade-in-section">
 			<ConEorService
-				eyebrow="¿Qué es un Employer of Record?"
-				title="Tú diriges. Nosotros somos el<br>empleador legal."
-				description="Un Employer of Record (EOR) es la entidad legal que contrata a los empleados en nombre de otra empresa. Tú defines las tareas, el horario y los objetivos. Oberstaff gestiona contratos, nómina, impuestos y cumplimiento legal."
-				negativeTitle="SIN EOR"
-				positiveTitle="CON OBERSTAFF EOR"
-				badge="Recomendado"
-				negativeIcon="solar:close-circle-linear"
-				positiveIcon="solar:check-circle-linear"
+				eyebrow=""
+				title="Gestionarlo internamente vs. hacerlo con <span style='color: #6663FD; font-weight: 900;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> EOR"
+				description=""
+				negativeTitle="Sin EOR" 
+				positiveTitle="Con <span style='font-weight: 900;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> EOR"
+				badge="La opción inteligente"
+				negativeIcon=""
+				positiveIcon=""
 				negativeItems={[
-					"Abrir empresa local: 3-6 meses",
-					"Riesgo legal elevado",
-					"Gestión de nómina interna",
-					"Cumplimiento local complejo",
-					"Altos costos fijos",
+					"Obligación de abrir empresa local (3-6 meses)",
+					"Gestión dispersa de nómina, bajas y obligaciones.",
+					"Mayor exposición jurídica frente a empleados extranjeros.",
+					"Más carga interna de RR. HH. y administración.",
+					"Escalar en varios países implica más complejidad.",
 				]}
 				positiveItems={[
-					"Una sola factura de servicio",
-					"Cero riesgo legal",
-					"Nómina gestionada",
-					"Cumplimiento garantizado",
-					"Ahorro del 70%",
+					"Alta laboral inmediata usando nuestra estructura legal.",
+					"Una sola estructura para payroll y cumplimiento.",
+					"<span style='font-weight: 800;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> asume el rol de empleador legal.",
+					"Tu equipo se enfoca en dirigir, no en operar la nómina.",
+					"Un solo partner para expansión laboral regional.",
 				]}
 			/>
 		</div>
 
+
+			<div class="fade-in-section">
+		<ProcessOberstaff 
+  className="process-employer"
+  title="¿Qué incluye nuestra gestión como <strong>Empleador Legal?</strong>"
+  items={[
+    { 
+      label: "Estructuración", 
+      badge: "100% Legal", 
+      title: "Estructuración Contractual", 
+      description: "Redactamos y firmamos el contrato conforme a la legislación del país donde se incorpora el profesional.",
+      icon: "🔍",
+      badgeColor: "#6663FD",
+      badgeBg: "rgba(102, 99, 253, 0.1)"
+    },
+    { 
+      label: "Payroll", 
+      badge: "Gestión total", 
+      title: "Payroll y Administración", 
+      description: "Gestionamos payroll, recibos, calendario de pago y la administración mensual del profesional.",
+      icon: "📝",
+      badgeColor: "#66FF99",
+      badgeBg: "rgba(102, 255, 153, 0.15)"
+    },
+    { 
+      label: "Nómina", 
+      badge: "Sin riesgos", 
+      title: "Nómina, impuestos y beneficios obligatorios", 
+      description: "Gestionamos salarios, impuestos, seguridad social, vacaciones y demás obligaciones laborales aplicables.",
+      icon: "🗂️",
+      badgeColor: "#FF66CC",
+      badgeBg: "rgba(255, 102, 204, 0.1)"
+    },
+    { 
+      label: "Cumplimiento", 
+      badge: "Soporte continuo", 
+      title: "Cumplimiento y soporte continuo", 
+      description: "Administramos incidencias, cambios contractuales, bajas y acompañamiento operativo mes a mes.",
+      icon: "⚡",
+      badgeColor: "#1B1B1B",
+      badgeBg: "rgba(204, 255, 102, 0.3)"
+    }
+  ]}
+  ctaTitle="Empieza a ahorrar hoy"
+  ctaDescription="Un equipo dedicado gestionará todo el proceso por ti."
+  ctaBtnText="Agendar llamada"
+/>
+</div>
+
+<!--
 		<div class="fade-in-section">
-			<BeneficiosSeccion
-				beneficios={[
+			<ProfilesSection 
+				title="Perfiles que puedes <strong>contratar con EOR</strong>"
+				description="El servicio Employer of Record profesionaliza tu expansión en LATAM mediante una relación laboral formal. Protege la integridad de tu empresa integrando talento legalmente en departamentos clave:"
+				profiles={[
 					{
-						icon: "mdi:scale-balance",
-						title: "Cumplimiento legal garantizado",
-						description:
-							"Contratos adaptados a la legislación laboral de cada país, sin errores ni sorpresas.",
-						colorClass: "icon-legal",
+						icon: "🤝",
+						title: "Operaciones comerciales y representación",
+						quote: "Representar a tu empresa con dedicación exclusiva exige un contrato laboral formal para evitar riesgos jurídicos.",
+						roles: [
+							{ label: "Ejecutivo de Ventas", href: "#" },
+							{ label: "SDR", href: "#" },
+							{ label: "Customer Success", href: "#" },
+						],
+						iconColorClass: "purple-text",
 					},
 					{
-						icon: "solar:calculator-linear",
-						title: "Nómina y beneficios automatizados",
-						description:
-							"Pago puntual en moneda local, seguridad social, vacaciones y todo lo obligatorio gestionado.",
-						colorClass: "icon-nomina",
+						icon: "📊",
+						title: "Finanzas y administración",
+						quote: "Para perfiles con acceso a datos críticos. Este modelo asegura subordinación legal, exclusividad y cumplimiento normativo local.",
+						roles: [
+							{ label: "Auxiliar contable", href: "#" },
+							{ label: "Asistente virtual", href: "#" },
+						],
+						iconColorClass: "blue-text",
 					},
 					{
-						icon: "solar:shield-check-linear",
-						title: "Sin responsabilidad laboral directa",
-						description:
-							"Oberstaff asume la relación jurídica con el empleado. Tu empresa en España queda protegida ante cualquier contingencia.",
-						colorClass: "icon-responsabilidad",
+						icon: "📣",
+						title: "Equipos de Marketing In-House",
+						quote: "Si tu marketing exige exclusividad, usar acuerdos externos es un riesgo legal. El EOR los formaliza como empleados de tu plantilla global.",
+						roles: [
+							{ label: "Experto SEO", href: "#" },
+							{ label: "Especialista Google Ads", href: "#" },
+							{ label: "Especialista Meta Ads", href: "#" },
+							{ label: "Community Manager", href: "#" },
+						],
+						iconColorClass: "pink-text",
 					},
+					{
+						icon: "💻",
+						title: "Tecnología",
+						quote: "Para quienes desarrollan tu código o sistemas, necesitas un contrato laboral formal que garantice la cesión de Propiedad Intelectual (IP) y NDAs blindados.",
+						roles: [
+							{ label: "Desarrollador WordPress", href: "#" },
+							{ label: "Desarrollador Web", href: "#" },
+							{ label: "Desarrollador Mobile", href: "#" },
+						],
+						iconColorClass: "orange-text",
+					}
 				]}
 			/>
 		</div>
+
 
 		<div class="fade-in-section">
 			<EorStepsSection
@@ -286,11 +448,11 @@ import ArticulosSection from "../../components/articulos-servicios/ArticulosSect
 		<div class="fade-in-section">
 			<OtrosServiciosSection />
 		</div>
-
+ 
 		<div class="fade-in-section">
 			<RolesSection />
 		</div>
-
+ 
 		<div class="fade-in-section">
 			<ContactFormSection />
 		</div>
@@ -298,10 +460,31 @@ import ArticulosSection from "../../components/articulos-servicios/ArticulosSect
 		<div class="fade-in-section">
 			<ArticulosSection />
 		</div>
+		 -->
+		 
 	</div>
 </DashboardLayoutServicios>
 
 <style>
 	.service-detail-container {
+	}
+
+	/* --- Estilos específicos para el componente de proceso en Employer --- */
+	:global(.process-employer .process-menu) {
+		background-color: #FAFAFC;
+	}
+
+	:global(.process-employer .process-tab-label) {
+		color: #5A5A5A;
+		font-weight: 600;
+	}
+
+	:global(.process-employer .process-tab:hover) {
+		background-color: #f0f0f5;
+		color: #1B1B1B;
+	}
+
+	:global(.process-employer .process-tab.active) {
+		background-color: #ffffff;
 	}
 </style>

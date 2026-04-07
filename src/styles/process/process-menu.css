@@ -1,7 +1,7 @@
 /* --- Menú lateral (izquierda) --- */
 .process-menu {
     flex: 0 0 220px;
-    background-color: #fcfcfc;
+       background-color: #FAFAFC;
     border-right: 1px solid #f0f0f0;
     display: flex;
     flex-direction: column;
@@ -16,13 +16,14 @@
     cursor: pointer;
     transition: all 0.25s ease;
     border-left: 4px solid transparent;
-    color: #888;
+    color: #5A5A5A;
+    font-weight: 600;
     user-select: none;
 }
 
 .process-tab:hover {
-    background-color: #f7f7ff;
-    color: #6663FD;
+    background-color: #f0f0f5;
+    color: #1B1B1B;
 }
 
 .process-tab.active {
@@ -56,6 +57,25 @@
     font-family: 'Poppins', sans-serif;
 }
 
+/* --- Variantes específicas --- */
+.process-employer .process-menu {
+    background-color: #FAFAFC;
+}
+
+.process-employer .process-tab-label {
+    color: #5A5A5A;
+    font-weight: 600;
+}
+
+.process-employer .process-tab:hover {
+    background-color: #f0f0f5;
+    color: #1B1B1B;
+}
+
+.process-employer .process-tab.active {
+    background-color: #ffffff;
+}
+
 /* --- Responsive --- */
 @media (max-width: 900px) {
     .process-menu {
@@ -63,20 +83,46 @@
         flex-direction: row;
         border-right: none;
         border-bottom: 1px solid #ebebeb;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        justify-content: flex-start;
+        padding-bottom: 8px; /* Room for scrollbar */
+    }
+
+    .process-menu::-webkit-scrollbar {
+        height: 4px;
+        display: block;
+    }
+
+    .process-menu::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 10px;
+    }
+
+    .process-menu::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border-radius: 10px;
+    }
+
+    .process-menu::-webkit-scrollbar-thumb:hover {
+        background: #6663FD;
     }
 
     .process-tab {
-        flex: 1;
-        justify-content: center;
-        padding: 18px 10px;
+        flex: 0 0 auto;
+        min-width: 150px;
+        justify-content: flex-start;
+        padding: 16px 22px;
         border-left: none;
         border-bottom: 3px solid transparent;
-        flex-direction: column;
-        gap: 6px;
-        text-align: center;
+        flex-direction: row;
+        gap: 12px;
+        text-align: left;
     }
 
     .process-tab.active {
+        background-color: #ffffff;
         border-left: none;
         border-bottom: 3px solid #6663FD;
     }

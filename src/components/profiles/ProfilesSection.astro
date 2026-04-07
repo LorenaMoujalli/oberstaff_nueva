@@ -2,115 +2,128 @@
 import ProfileCard from "./ProfileCard.astro";
 import "../../styles/profiles/profiles-section.css";
 
-const profiles = [
-    {
-        icon: "📈",
-        title: "Estrategia Comercial",
-        quote: "Más ventas, pipeline lleno y clientes que repiten",
-        roles: [
-            { label: "Ejecutivo de Ventas", href: "#" },
-            { label: "SDR", href: "#" },
-            { label: "Especialista en CRM", href: "#" },
-        ],
-        iconColorClass: "purple-text",
-    },
-    {
-        icon: "📣",
-        title: "Marketing Digital",
-        quote: "Tu marca visible donde están tus clientes",
-        roles: [
-            { label: "Especialista SEO", href: "#" },
-            { label: "Especialista Google Ads", href: "#" },
-            { label: "Especialista Meta Ads", href: "#" },
-        ],
-        iconColorClass: "pink-text",
-    },
-    {
-        icon: "✍️",
-        title: "Redacción y Copywriting",
-        quote: "Palabras que venden, contenido que posiciona",
-        roles: [
-            { label: "Copywriter", href: "#" },
-            { label: "Redactor de Contenidos", href: "#" },
-        ],
-        iconColorClass: "orange-text",
-    },
-    {
-        icon: "📱",
-        title: "Redes Sociales",
-        quote: "Redes activas, audiencia creciendo, empresa escalando",
-        roles: [
-            { label: "Community Manager", href: "#" },
-        ],
-        iconColorClass: "blue-text",
-    },
-    {
-        icon: "🎨",
-        title: "Diseño",
-        quote: "Imagen profesional que genera confianza",
-        roles: [
-            { label: "Diseñador Gráfico", href: "#" },
-            { label: "Diseñador UI/UX", href: "#" },
-        ],
-        iconColorClass: "purple-text",
-    },
-    {
-        icon: "🎬",
-        title: "Vídeo",
-        quote: "Vídeos que paran el scroll y convierten",
-        roles: [
-            { label: "Editor de Vídeo", href: "#" },
-        ],
-        iconColorClass: "pink-text",
-    },
-    {
-        icon: "🗂️",
-        title: "Asistente Virtual",
-        quote: "Tu operación organizada, tú enfocado en crecer",
-        roles: [
-            { label: "Asistente Virtual", href: "#" },
-        ],
-        iconColorClass: "orange-text",
-    },
-    {
-        icon: "🧮",
-        title: "Contabilidad",
-        quote: "Finanzas al día, sin sorpresas ni errores",
-        roles: [
-            { label: "Auxiliar Contable", href: "#" },
-        ],
-        iconColorClass: "blue-text",
-    },
-    {
-        icon: "⚙️",
-        title: "Desarrollo y Tech",
-        quote: "El talento tech que necesitas, sin el coste que no puedes asumir",
-        roles: [
-            { label: "Desarrollador WordPress", href: "#" },
-            { label: "Desarrollador Web", href: "#" },
-            { label: "Desarrollador Mobile", href: "#" },
-        ],
-        iconColorClass: "purple-text",
-    },
-];
+interface Role {
+    label: string;
+    href: string;
+}
+
+interface Profile {
+    icon: string;
+    title: string;
+    quote: string;
+    roles: Role[];
+    iconColorClass: string;
+}
+
+interface Props {
+    title?: string;
+    description?: string;
+    profiles?: Profile[];
+}
+
+const {
+    title = 'Contratación de talento remoto - maximiza tu <strong>margen operativo</strong>',
+    description = 'Estos son algunos de los perfiles que pueden impulsar tus objetivos de negocio, con disponibilidad en la misma franja horaria y una integración fluida con tu equipo. Si buscas contratar talento especializado sin los costes de una contratación local, aquí tienes las categorías más demandadas.',
+    profiles = [
+        {
+            icon: "📈",
+            title: "Estrategia Comercial",
+            quote: "Más ventas, pipeline lleno y clientes que repiten",
+            roles: [
+                { label: "Ejecutivo de Ventas", href: "#" },
+                { label: "SDR", href: "#" },
+                { label: "Especialista en CRM", href: "#" },
+            ],
+            iconColorClass: "purple-text",
+        },
+        {
+            icon: "📣",
+            title: "Marketing Digital",
+            quote: "Tu marca visible donde están tus clientes",
+            roles: [
+                { label: "Especialista SEO", href: "#" },
+                { label: "Especialista Google Ads", href: "#" },
+                { label: "Especialista Meta Ads", href: "#" },
+            ],
+            iconColorClass: "pink-text",
+        },
+        {
+            icon: "✍️",
+            title: "Redacción y Copywriting",
+            quote: "Palabras que venden, contenido que posiciona",
+            roles: [
+                { label: "Copywriter", href: "#" },
+                { label: "Redactor de Contenidos", href: "#" },
+            ],
+            iconColorClass: "orange-text",
+        },
+        {
+            icon: "📱",
+            title: "Redes Sociales",
+            quote: "Redes activas, audiencia creciendo, empresa escalando",
+            roles: [
+                { label: "Community Manager", href: "#" },
+            ],
+            iconColorClass: "blue-text",
+        },
+        {
+            icon: "🎨",
+            title: "Diseño",
+            quote: "Imagen profesional que genera confianza",
+            roles: [
+                { label: "Diseñador Gráfico", href: "#" },
+                { label: "Diseñador UI/UX", href: "#" },
+            ],
+            iconColorClass: "purple-text",
+        },
+        {
+            icon: "🎬",
+            title: "Vídeo",
+            quote: "Vídeos que paran el scroll y convierten",
+            roles: [
+                { label: "Editor de Vídeo", href: "#" },
+            ],
+            iconColorClass: "pink-text",
+        },
+        {
+            icon: "🗂️",
+            title: "Asistente Virtual",
+            quote: "Tu operación organizada, tú enfocado en crecer",
+            roles: [
+                { label: "Asistente Virtual", href: "#" },
+            ],
+            iconColorClass: "orange-text",
+        },
+        {
+            icon: "🧮",
+            title: "Contabilidad",
+            quote: "Finanzas al día, sin sorpresas ni errores",
+            roles: [
+                { label: "Auxiliar Contable", href: "#" },
+            ],
+            iconColorClass: "blue-text",
+        },
+        {
+            icon: "⚙️",
+            title: "Desarrollo y Tech",
+            quote: "El talento tech que necesitas, sin el coste que no puedes asumir",
+            roles: [
+                { label: "Desarrollador WordPress", href: "#" },
+                { label: "Desarrollador Web", href: "#" },
+                { label: "Desarrollador Mobile", href: "#" },
+            ],
+            iconColorClass: "purple-text",
+        },
+    ]
+} = Astro.props;
 ---
 
 <section class="profiles-section" id="perfiles">
     <div class="profiles-container">
         <header class="profiles-header">
             <div class="header-sticky">
-                <h2>
-                    Contratación de talento remoto - maximiza tu
-                    <strong>margen operativo</strong>
-                </h2>
-                <p>
-                    Estos son algunos de los perfiles que pueden impulsar tus
-                    objetivos de negocio, con disponibilidad en la misma franja
-                    horaria y una integración fluida con tu equipo. Si buscas
-                    contratar talento especializado sin los costes de una
-                    contratación local, aquí tienes las categorías más
-                    demandadas.
-                </p>
+                <h2 set:html={title} />
+                <p set:html={description} />
             </div>
         </header>
 

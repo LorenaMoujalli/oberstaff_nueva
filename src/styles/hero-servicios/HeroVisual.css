@@ -1,17 +1,35 @@
+.hero-visual-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+    margin: 0 auto 30px auto;
+    position: relative;
+    max-width: 100%;
+}
+
 .video-preview {
-    width: 100px;
-    height: 100px;
-    margin: 0 auto 20px auto;
+    width: 110px;
+    height: 110px;
     position: relative;
     border-radius: 24px;
     overflow: hidden;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-    background: #f0f0f0;
+    padding: 6px;
+    background: linear-gradient(135deg, rgba(255, 102, 204, 0.4), rgba(102, 99, 253, 0.4));
+    flex-shrink: 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+}
+
+.video-preview:hover {
+   transform: scale(1.05);
+  box-shadow: 0 15px 30px rgba(102, 99, 253, 0.2);
 }
 
 .video-preview img {
     width: 100%;
     height: 100%;
+    border-radius: 18px;
     object-fit: cover;
 }
 
@@ -21,72 +39,56 @@
     left: 50%;
     transform: translate(-50%, -50%);
     background: #ffffff;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 14px;
     color: #1b1b1b;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
     text-decoration: none;
     cursor: pointer;
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.play-button:hover {
-    transform: translate(-50%, -50%) scale(1.15);
-    background: #ff66b2; /* Rosa de la marca al hacer hover para resaltar */
-    color: #ffffff;
-}
 
-/* Badge Remoto */
-.badge-remoto {
-    position: absolute;
-    top: 10px;
-    right: -20px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    padding: 6px 14px;
+
+/* Base de los Elementos Flotantes */
+.floating-badge {
     background: #ffffff;
-    border: 1px solid #6663fd;
-    border-radius: 100px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    animation: subtleFloat 4s ease-in-out infinite;
-    animation-delay: 1s;
-}
-
-.badge-remoto .dot { color: #5c5cff; font-size: 8px; }
-.badge-remoto .country { color: #1b1b1b; }
-
-/* Card Flotante */
-.floating-card {
-    position: absolute;
-    left: -120px;
-    top: 200px;
-    background: white;
-    padding: 10px 16px;
-    border: 1px solid #e2e2e2;
-    border-radius: 12px;
+    padding: 10px 20px;
+    border: 1px solid rgba(0, 0, 0, 0.05); /* Sutil, como en el ajuste del usuario */
+    border-radius: 50px;
     display: flex;
     align-items: center;
     gap: 10px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
     font-weight: 600;
     font-size: 13px;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
     animation: subtleFloat 4s ease-in-out infinite;
 }
 
-.icon-shield {
-    background: #fff0f9;
-    color: #ff66cc;
-    padding: 5px;
-    border-radius: 6px;
+.icon-emoji {
+    font-size: 16px; /* Ligeramente mayor para que se vea bien junto al texto */
     display: flex;
+    align-items: center;
+}
+
+.badge-left {
+    animation-delay: 0s;
+}
+
+.badge-right {
+    animation-delay: 1s;
+}
+
+.badge-right .country { 
+    color: #1b1b1b; 
+    margin-left: 2px;
 }
 
 @keyframes subtleFloat {
@@ -94,43 +96,48 @@
     50% { transform: translateY(-10px); }
 }
 
-@media (max-width: 1024px) {
-    .badge-remoto {
-        top: 0px;
-        right: 0px;
-        padding: 4px 10px;
-        font-size: 9px;
+@media (max-width: 768px) {
+    .hero-visual-wrapper {
+        gap: 12px;
     }
-    .badge-remoto .dot { font-size: 6px; }
+    
+    .video-preview {
+        width: 90px;
+        height: 90px;
+    }
 
-    .floating-card {
-        left: 0px;
-        top: 150px;
+    .floating-badge {
         padding: 6px 12px;
-        font-size: 11px;
+        font-size: 10px;
+        gap: 6px;
+    }
+    
+    .icon-emoji {
+        font-size: 12px;
     }
 }
 
-@media (max-width: 768px) {
-    .badge-remoto {
-        top: -15px;
-        right: -10px;
-        padding: 2px 7px;
-        font-size: 7px;
+@media (max-width: 480px) {
+    .hero-visual-wrapper {
+        gap: 8px;
+        flex-wrap: nowrap;
     }
-    .badge-remoto .dot { font-size: 4px; }
-
-    .floating-card {
-        left: -10px;
-        top: 80px;
-        padding: 3px 8px;
-        font-size: 8px;
+    
+    .video-preview {
+        width: 70px;
+        height: 70px;
+        border-radius: 14px;
     }
-    .icon-shield {
-        padding: 2px;
-        border-radius: 3px;
-    }
-    .icon-shield iconify-icon {
+    
+    .play-button {
+        width: 25px;
+        height: 25px;
         font-size: 10px;
+    }
+
+    .floating-badge {
+        padding: 4px 8px;
+        font-size: 8px;
+        gap: 4px;
     }
 }

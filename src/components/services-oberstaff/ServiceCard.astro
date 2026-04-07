@@ -7,8 +7,9 @@ interface Props {
     description: string;
     linkText: string;
     href?: string;
-    colorClass: string;
+    colorClass?: string;
     cardClass: string;
+    customIconBg?: string;
 }
 
 const {
@@ -17,20 +18,26 @@ const {
     description,
     linkText,
     href = "/home",
-    colorClass,
+    colorClass = "",
     cardClass,
+    customIconBg,
 } = Astro.props;
 ---
 
 <article class={`service-card ${cardClass}`}>
     <div class="card-gradient-bg"></div>
-    <div class={`icon-box ${colorClass}`}>
+    <div 
+        class={`icon-box ${colorClass}`} 
+        style={customIconBg ? `background-color: ${customIconBg};` : ""}
+    >
         <span class="icon-emoji">{icon}</span>
     </div>
     <h3>{title}</h3>
     <p>{description}</p>
-    <a href={href} class="service-link">
-        {linkText}
-        <iconify-icon icon="mdi:arrow-right" class="arrow-icon"></iconify-icon>
-    </a>
+    {linkText && (
+        <a href={href} class="service-link">
+            {linkText}
+            <iconify-icon icon="mdi:arrow-right" class="arrow-icon"></iconify-icon>
+        </a>
+    )}
 </article>

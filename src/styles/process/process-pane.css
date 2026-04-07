@@ -21,9 +21,9 @@
 .process-badge {   
     font-family: 'Poppins', sans-serif;
     display: inline-block;
-    padding: 5px 14px;
-    border-radius: 50px; 
-    font-size: 11px;
+    padding: 6px 14px;
+    border-radius: 20px; 
+    font-size: 12px;
     font-weight: 700;
     letter-spacing: 0.5px;
     text-transform: uppercase; 

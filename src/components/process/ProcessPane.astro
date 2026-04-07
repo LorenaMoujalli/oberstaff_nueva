@@ -7,13 +7,15 @@ interface Props {
     title: string;
     description: string;
     active?: boolean;
+    badgeColor?: string;
+    badgeBg?: string;
 }
 
-const { id, badge, title, description, active = false } = Astro.props;
+const { id, badge, title, description, active = false, badgeColor, badgeBg } = Astro.props;
 ---
 
 <div id={`process-pane-${id}`} class={`process-pane${active ? " active" : ""}`}>
-    <span class="process-badge">{badge}</span>
+    <span class="process-badge" style={{ color: badgeColor, backgroundColor: badgeBg }}>{badge}</span>
     <h3>{title}</h3>
     <p>{description}</p>
 </div>

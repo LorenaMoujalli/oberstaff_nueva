@@ -1,9 +1,23 @@
 ---
 import "../../styles/process/process-cta.css";
+
+interface Props {
+    title?: string;
+    description?: string;
+    btnText?: string;
+    btnHref?: string;
+}
+
+const {
+    title = "Empieza a ahorrar hoy",
+    description = "Un equipo dedicado gestionará todo el proceso por ti, de principio a fin.",
+    btnText = "Agendar llamada",
+    btnHref = "#contacto"
+} = Astro.props;
 ---
 
 <div class="process-cta">
-    <h4>Empieza a ahorrar hoy</h4>
-    <p>Un equipo dedicado gestionará todo el proceso por ti, de principio a fin.</p>
-    <a href="#contacto" class="process-cta-btn">Agendar llamada</a>
+    <h4 set:html={title} />
+    <p set:html={description} />
+    <a href={btnHref} class="process-cta-btn">{btnText}</a>
 </div>
