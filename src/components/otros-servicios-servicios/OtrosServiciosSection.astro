@@ -7,7 +7,9 @@ interface Servicio {
     title: string;
     description: string;
     href: string;
+    linkText?: string;
     colorClass?: string;
+    hoverClass?: string;
 }
 
 interface Props {
@@ -42,7 +44,7 @@ const defaultServicios: Servicio[] = [
 ];
 
 const { 
-    title = "Otros Servicios de Oberstaff",
+    title = "Otros servicios de <span style='font-weight: 900; color: #6663FD;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span>",
     subtitle = "¿No sabes qué modelo necesitas?",
     description = "El EOR services es uno de los cuatro modelos de contratación que ofrece Oberstaff. Dependiendo de tu operación, puede que necesites un servicio diferente o combinar varios.",
     servicios = defaultServicios
@@ -51,7 +53,7 @@ const {
 
 <section class="otros-servicios">
     <div class="servicios-header">
-        <h2>{title}</h2>
+        <h2 set:html={title} />
         <h3>{subtitle}</h3>
         <p>{description}</p>
     </div>

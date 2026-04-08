@@ -6,15 +6,16 @@ interface Props {
     description: string;
     icon: string;
     colorClass: string;
+    cardClass?: string;
 }
 
-const { title, description, icon, colorClass } = Astro.props;
+const { title, description, icon, colorClass, cardClass = "" } = Astro.props;
 ---
 
-<div class="feature-item">
+<div class={`feature-item ${cardClass}`}>
     <div class="feature-icon-title">
-        <div class={`feature-icon ${colorClass}`}>
-            <iconify-icon icon={icon}></iconify-icon>
+        <div class="feature-icon">
+            {icon.includes(':') ? <iconify-icon icon={icon}></iconify-icon> : <span class="emoji-icon">{icon}</span>}
         </div>
         <h3 set:html={title}></h3>
     </div>

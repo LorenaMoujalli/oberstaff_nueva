@@ -1,13 +1,7 @@
 .eor-contact-form {
-    background-color: #ffffff;
-    /* User switched back to white in image maybe? 
-    Wait, previous user request was background-color: #FAFAFC; 
-    I'll use #FAFAFC or white as it looks very bright in image. 
-    I'll follow the #FAFAFC from previous request as it's the brand color user wanted.
-    However the image looks very close to white. */
-    background-color: #FAFAFC;
+    background-color: #FFFFFF;
     padding: 80px 20px;
-    font-family: 'Inter', sans-serif;
+
 }
 
 .contact-container {
@@ -55,7 +49,7 @@
     align-items: center;
     gap: 20px;
     background: #ffffff;
-    border-radius: 20px;
+    border-radius: 12px;
  padding: 15px 25px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
         border: 1px solid rgba(102, 99, 253, 0.2);
@@ -84,6 +78,7 @@
 }
 
 .direct-label {
+    font-family: 'Poppins', sans-serif;
     font-size: 13px;
     color: #5A5A5A;
     margin-bottom: 4px;
@@ -91,8 +86,8 @@
 
 .direct-phone-link {
     font-family: 'Poppins', sans-serif;
-    font-size: 18px;
-    font-weight: 800;
+    font-size: 16px;
+    font-weight: 700;
     color: #1a1a1a;
     text-decoration: none;
     transition: color 0.3s ease;
@@ -100,6 +95,11 @@
 
 .direct-phone-link:hover {
     color: #6663FD;
+}
+
+/* Desactivar hover en la variante de employer */
+.eor-contact-form.employer-variant .direct-phone-link:hover {
+    color: #1a1a1a;
 }
 
 /* Responsive */

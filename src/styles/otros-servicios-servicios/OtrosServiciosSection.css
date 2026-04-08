@@ -1,9 +1,11 @@
 .otros-servicios {
     font-family: 'Inter', -apple-system, sans-serif;
     padding: 80px 20px;
-    background-color: #fcfcfc;
+    background-color: #FFFFFF;
     text-align: center;
     color: #1a1a1a;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
 }
 
 .servicios-header {
@@ -11,10 +13,12 @@
 }
 
 .servicios-header h2 {
-    font-size: 36px; /* Unified title size */
-    font-weight: 800;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px; /* Unified title size */
+    font-weight: 700;
     margin-bottom: 15px;
     letter-spacing: -0.5px;
+    color: #1B1B1B;
 }
 
 .servicios-header h3 {
@@ -25,11 +29,12 @@
 }
 
 .servicios-header p {
-    font-size: 18px; /* Unified subtitle size */
-    color: #666;
-    max-width: 800px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px; /* Unified subtitle size */
+    color: #5A5A5A;
+   max-width: 900px;
     margin: 0 auto;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 .servicios-grid {

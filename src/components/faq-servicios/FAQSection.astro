@@ -1,7 +1,6 @@
 ---
-import FAQHeader from "../faq/FAQHeader.astro";
 import FAQItem from "../faq/FAQItem.astro";
-import "../../styles/faq-servicios/faq-section.css";
+import "../../styles/faq/faq-section.css";
 
 const faqs = [
     {
@@ -42,25 +41,70 @@ const faqs = [
     }
 ]; 
 
-const title = "FAQ";
+interface Props {
+    title?: string;
+    ctaText?: string;
+    ctaButtonText?: string;
+    ctaButtonHref?: string;
+}
+
+const {
+    title = "Todo lo que necesitas saber antes de su <strong>expansión en LATAM</strong>",
+    ctaText = "¿No sabes qué modelo de contratación necesitas para tu empresa?",
+    ctaButtonText = "Agenda una llamada gratuita",
+    ctaButtonHref = "#contacto"
+} = Astro.props;
 ---
+
+<style>
+    .faq-cta-card {
+        text-align: center !important;
+    }
+
+    .faq-cta-button {
+        font-family: 'Poppins', sans-serif;
+        background-color: transparent !important;
+        background: none !important;
+        color: #0000EE !important;
+        border: none !important;
+        padding: 0 !important;
+        width: auto !important;
+        text-align: center !important;
+        display: inline-block !important;
+        transition: none !important;
+        font-size: 15px !important;
+        margin: 0 auto !important;
+    }
+
+   
+</style>
 
 <section class="faq-section">
     <div class="faq-container">
-        <FAQHeader
-            title={title}
-            subtitle="Preguntas frecuentes sobre el EOR services de Oberstaff"
-        />
+        <div class="faq-columns">
+            <div class="faq-left-column">
+                <h2 class="faq-main-title" set:html={title} />
+                
+                <div class="faq-cta-card">
+                    <p>{ctaText}</p>
+                    <a href={ctaButtonHref} class="faq-cta-button">
+                        {ctaButtonText}
+                    </a>
+                </div>
+            </div>
 
-        <div class="faq-list">
-            {
-                faqs.map((faq) => (
-                    <FAQItem question={faq.question}>
-                        {faq.answers &&
-                            faq.answers.map((answer) => <p>{answer}</p>)}
-                    </FAQItem>
-                ))
-            }
+            <div class="faq-right-column">
+                <div class="faq-scroll-container">
+                    {
+                        faqs.map((faq) => (
+                            <FAQItem question={faq.question}>
+                                {faq.answers &&
+                                    faq.answers.map((answer) => <p>{answer}</p>)}
+                            </FAQItem>
+                        ))
+                    }
+                </div>
+            </div>
         </div>
     </div>
 

@@ -1,41 +1,194 @@
+/* ============================================================
+   COBERTURA GEOGRAFICA — Two-column layout with map
+   ============================================================ */
+
 .cobertura-geografica {
-    font-family: 'Inter', -apple-system, sans-serif;
-    padding: 60px 20px;
+   
+    padding: 60px 60px;
     background-color: #ffffff;
-    border-top: 1px solid #ebebeb;
+    display: grid;
+    grid-template-columns: 1.3fr 1.3fr;
+    align-items: center;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
     border-bottom: 1px solid #ebebeb;
-    text-align: center;
-    color: #1a1a1a;
 }
 
-.cobertura-header {
-    margin-bottom: 50px;
+/* --- Left column: text --- */
+.cobertura-text {
+    text-align: left;
 }
 
-.cobertura-header h2 {
-    font-size: 36px;
-    font-weight: 800;
+.cobertura-text h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    font-style: normal;
+    color: #1B1B1B;
+    line-height: 1.25;
     margin-bottom: 20px;
-    letter-spacing: -0.5px;
+    letter-spacing: -0.02em;
 }
 
-.cobertura-header p {
-    color: #666;
+.cobertura-text p {
+    font-family: 'Poppins', sans-serif;
     font-size: 18px;
-    max-width: 800px;
-    margin: 0 auto;
-    line-height: 1.5;
+    color: #5A5A5A;
+    line-height: 1.6;
+    max-width: 450px;
 }
 
-.cobertura-badges {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    max-width: 1000px;
+/* --- Right column: map --- */
+.cobertura-map-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.cobertura-map-img {
+    width: 100%;
+    height: 550px;
+    max-width: 600px;
+    object-fit: contain;
+    display: block;
     margin: 0 auto;
+    filter: grayscale(100%) opacity(0.25);
+    position: relative;
+    z-index: 1;
+}
+
+/* --- Floating country badges --- */
+.map-country-badge {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+   background: rgba(255, 255, 255, 0.95);
+       backdrop-filter: blur(8px);
+       border-top: 1px solid rgba(0, 0, 0, 0.05);
+       border-right: 1px solid rgba(0, 0, 0, 0.05);
+           border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+font-size: 14px;
+font-weight: 700;
+color: #1B1B1B;
+   
+    border-left: 4px solid transparent; /* Se colorea vía inline style */
+    border-radius: 50px;
+    padding: 5px 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    white-space: nowrap;
+   
+       transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    cursor: default;
+    z-index: 10;
+    
+    /* Subtle floating animation */
+    animation: mapFloat 5s ease-in-out infinite;
+}
+
+.map-country-badge:nth-child(odd) {
+    animation-duration: 6s;
+    animation-delay: -1.5s;
+}
+
+.map-country-badge:nth-child(3n) {
+    animation-duration: 7s;
+    animation-delay: -3s;
+}
+
+@keyframes mapFloat {
+    0%, 100% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+    }
+    33% {
+        transform: translateY(-5px) translateX(2px) rotate(0.5deg);
+    }
+    66% {
+        transform: translateY(-8px) translateX(-2px) rotate(-0.5deg);
+    }
+}
+
+.map-country-badge:hover {
+    transform: translateY(-5px) scale(1.02);
+    animation-play-state: paused;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+
+.map-badge-img-wrapper {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+    align-items: center;
+    justify-content: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    flex-shrink: 0;
+}
+
+.map-badge-flag-img {
+    width: 100%;
+    height: 100%;
+    /*object-fit: cover;*/
+}
+
+.map-badge-name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: #1B1B1B;
+    letter-spacing: -0.01em;
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+    .cobertura-geografica {
+        grid-template-columns: 1fr;
+        padding: 0px 24px;
+        gap: 40px;
+    }
+
+    .cobertura-text {
+        text-align: center;
+    }
+
+    /* Eliminar saltos de línea del título en móvil */
+    .cobertura-text h2 br {
+        display: none;
+    }
+
+    .cobertura-text p {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .cobertura-map-wrapper {
+        min-height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cobertura-map-img {
+        height: 450px !important;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .map-country-badge {
+        font-size: 11px;
+        padding: 5px 10px;
+    }
+
+    .map-badge-flag {
+        font-size: 16px;
+    }
 }
 
 @media (max-width: 600px) {
-    .cobertura-header h2 { font-size: 26px; }
+    .cobertura-text h2 {
+        font-size: 26px;
+    }
 }

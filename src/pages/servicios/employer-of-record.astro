@@ -10,16 +10,17 @@ import FeaturesSection from "../../components/oberstaff-features-servicios/Featu
 import CoberturaSeccion from "../../components/geografica-servicios/CoberturaSeccion.astro";
 import PricingSection from "../../components/pricing-servicios/PricingSection.astro";
 import CasosExitoSection from "../../components/casos-exito-servicios/CasosExitoSection.astro";
-import RolesSection from "../../components/roles-servicios/RolesSection.astro";
+//import RolesSection from "../../components/roles-servicios/RolesSection.astro";
 import FAQSection from "../../components/faq-servicios/FAQSection.astro";
 import OtrosServiciosSection from "../../components/otros-servicios-servicios/OtrosServiciosSection.astro";
 import ContactFormSection from "../../components/form/ContactFormSection.astro";
-import ArticulosSection from "../../components/articulos-servicios/ArticulosSection.astro";
+//import ArticulosSection from "../../components/articulos-servicios/ArticulosSection.astro";
 import QueEsServicioSection from "../../components/QueEsServicio/QueEsServicioSection.astro";
-import ServicesSection from "../../components/services-oberstaff/ServicesSection.astro"; 
+import ServicesSection from "../../components/services-oberstaff/ServicesSection.astro";
 import ProcessOberstaff from "../../components/process/ProcessOberstaff.astro";
 import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
 ---
+
 <DashboardLayoutServicios
 	title="Employer of Record | Contrata en LATAM · Oberstaff"
 	description="¿Quieres contratar en LATAM? Oberstaff es tu Employer of Record: gestionamos contratos, nómina e impuestos. Sin riesgos para tu empresa. Expandete en Latinoamérica sin riesgos gracias a un Employer of Record que se encarga de contratos, nómina y cumplimiento local."
@@ -50,10 +51,10 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
 				stat2Number="+500"
 				stat2Label="EMPRESAS CONFÍAN EN NOSOTROS"
 			/>
-		</div> 
+		</div>
 
 		<div class="fade-in-section">
-			<QueEsServicioSection 
+			<QueEsServicioSection
 				title="¿Qué es un Employer of Record?"
 				highlightWord="Employer of Record?"
 				description="Un Employer of Record (EOR) es la entidad legal que contrata a los empleados en nombre de otra empresa. <span style='color: #1B1B1B; font-weight: 800;'>Tú defines las tareas, el horario y los objetivos.</span>"
@@ -65,22 +66,24 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
 					{
 						icon: "⚙️",
 						title: "¿Cómo funciona?",
-						description: "En la práctica, <span style='color: #1B1B1B; font-weight: 700;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 700;'>.</span> se convierte en el empleador legal del profesional y asume la gestión del contrato, la nómina, la seguridad social, los impuestos laborales y el cumplimiento normativo aplicable."
+						description:
+							"En la práctica, <span style='color: #1B1B1B; font-weight: 700;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 700;'>.</span> se convierte en el empleador legal del profesional y asume la gestión del contrato, la nómina, la seguridad social, los impuestos laborales y el cumplimiento normativo aplicable.",
 					},
 					{
 						icon: "🏢",
 						title: "¿Sirve para mi empresa?",
-						description: "Para una organización española, el EOR es una vía rápida y segura para contratar empleados en LATAM sin abrir una filial, sin montar una estructura de RR. HH. local y sin asumir directamente el riesgo laboral en cada país."
-					}
+						description:
+							"Para una organización española, el EOR es una vía rápida y segura para contratar empleados en LATAM sin abrir una filial, sin montar una estructura de RR. HH. local y sin asumir directamente el riesgo laboral en cada país.",
+					},
 				]}
 				diffIcon="💡"
 				diffTitle="Diferencia clave frente a CoR"
 				diffDescription="Con EOR el profesional entra como empleado y existe relación laboral formal. Con CoR el profesional opera como independiente. Si necesitas payroll, seguridad social y cumplimiento laboral continuo, el modelo correcto es EOR."
 			/>
-		</div> 
+		</div>
 
 		<div class="fade-in-section">
-			<ServicesSection 
+			<ServicesSection
 				title="¿Cuándo usar este <strong>servicio?</strong>"
 				description="El EOR España es la opción ideal cuando quieres contratar sin crear una entidad legal propia."
 				customClass="employer-use-cases"
@@ -88,51 +91,53 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
 					{
 						icon: "🌎",
 						title: "Expansión en LATAM sin filial",
-						description: "Quieres incorporar empleados en Colombia, Venezuela, Argentina u otros mercados, sin esperar meses a constituir una compañía local.",
+						description:
+							"Quieres incorporar empleados en Colombia, Venezuela, Argentina u otros mercados, sin esperar meses a constituir una compañía local.",
 						linkText: "",
 						href: "",
 						customIconBg: "rgba(255, 102, 204, 0.1)",
-						cardClass: "card-green"
+						cardClass: "card-green",
 					},
 					{
 						icon: "⚡",
 						title: "Equipos estables y contratación recurrente",
-						description: "Cuando el rol será estable, recurrente y parte estructural de tu operación diaria.",
+						description:
+							"Cuando el rol será estable, recurrente y parte estructural de tu operación diaria.",
 						linkText: "",
 						href: "",
 						customIconBg: "rgba(102, 255, 153, 0.1)",
-						cardClass: "card-pink"
+						cardClass: "card-pink",
 					},
 					{
 						icon: "🛡️",
 						title: "Cuando necesitas una relación laboral formal",
-						description: "Cuando necesitas establecer horarios, supervisión directa, integración profunda en el equipo y continuidad a largo plazo.",
+						description:
+							"Cuando necesitas establecer horarios, supervisión directa, integración profunda en el equipo y continuidad a largo plazo.",
 						linkText: "",
 						href: "",
 						customIconBg: "rgba(102, 99, 253, 0.1)",
-						cardClass: "card-lime"
+						cardClass: "card-lime",
 					},
 					{
 						icon: "👥",
 						title: "Reducción de carga legal y administrativa",
-						description: "Quieres que contratos, nómina, impuestos, vacaciones, bajas y desvinculaciones se gestionen correctamente desde el primer día.",
+						description:
+							"Quieres que contratos, nómina, impuestos, vacaciones, bajas y desvinculaciones se gestionen correctamente desde el primer día.",
 						linkText: "",
 						href: "",
 						customIconBg: "rgba(204, 255, 102, 0.2)",
-						cardClass: "card-lime"
-					}
+						cardClass: "card-lime",
+					},
 				]}
 			/>
 		</div>
-
-
 
 		<div class="fade-in-section">
 			<ConEorService
 				eyebrow=""
 				title="Gestionarlo internamente vs. hacerlo con <span style='color: #6663FD; font-weight: 900;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> EOR"
 				description=""
-				negativeTitle="Sin EOR" 
+				negativeTitle="Sin EOR"
 				positiveTitle="Con <span style='font-weight: 900;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> EOR"
 				badge="La opción inteligente"
 				negativeIcon=""
@@ -154,60 +159,62 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
 			/>
 		</div>
 
-
-			<div class="fade-in-section">
-		<ProcessOberstaff 
-  className="process-employer"
-  title="¿Qué incluye nuestra gestión como <strong>Empleador Legal?</strong>"
-  items={[
-    { 
-      label: "Estructuración", 
-      badge: "100% Legal", 
-      title: "Estructuración Contractual", 
-      description: "Redactamos y firmamos el contrato conforme a la legislación del país donde se incorpora el profesional.",
-      icon: "🔍",
-      badgeColor: "#6663FD",
-      badgeBg: "rgba(102, 99, 253, 0.1)"
-    },
-    { 
-      label: "Payroll", 
-      badge: "Gestión total", 
-      title: "Payroll y Administración", 
-      description: "Gestionamos payroll, recibos, calendario de pago y la administración mensual del profesional.",
-      icon: "📝",
-      badgeColor: "#66FF99",
-      badgeBg: "rgba(102, 255, 153, 0.15)"
-    },
-    { 
-      label: "Nómina", 
-      badge: "Sin riesgos", 
-      title: "Nómina, impuestos y beneficios obligatorios", 
-      description: "Gestionamos salarios, impuestos, seguridad social, vacaciones y demás obligaciones laborales aplicables.",
-      icon: "🗂️",
-      badgeColor: "#FF66CC",
-      badgeBg: "rgba(255, 102, 204, 0.1)"
-    },
-    { 
-      label: "Cumplimiento", 
-      badge: "Soporte continuo", 
-      title: "Cumplimiento y soporte continuo", 
-      description: "Administramos incidencias, cambios contractuales, bajas y acompañamiento operativo mes a mes.",
-      icon: "⚡",
-      badgeColor: "#1B1B1B",
-      badgeBg: "rgba(204, 255, 102, 0.3)"
-    }
-  ]}
-  ctaTitle="Empieza a ahorrar hoy"
-  ctaDescription="Un equipo dedicado gestionará todo el proceso por ti."
-  ctaBtnText="Agendar llamada"
-/>
-</div>
-
-<!--
 		<div class="fade-in-section">
-			<ProfilesSection 
+			<ProcessOberstaff
+				className="process-employer"
+				title="¿Qué incluye nuestra gestión como <strong>Empleador Legal?</strong>"
+				items={[
+					{
+						label: "Estructuración",
+						badge: "100% Legal",
+						title: "Estructuración Contractual",
+						description:
+							"Redactamos y firmamos el contrato conforme a la legislación del país donde se incorpora el profesional.",
+						icon: "🔍",
+						badgeColor: "#6663FD",
+						badgeBg: "rgba(102, 99, 253, 0.1)",
+					},
+					{
+						label: "Payroll",
+						badge: "Gestión total",
+						title: "Payroll y Administración",
+						description:
+							"Gestionamos payroll, recibos, calendario de pago y la administración mensual del profesional.",
+						icon: "📝",
+						badgeColor: "#66FF99",
+						badgeBg: "rgba(102, 255, 153, 0.15)",
+					},
+					{
+						label: "Nómina",
+						badge: "Sin riesgos",
+						title: "Nómina, impuestos y beneficios obligatorios",
+						description:
+							"Gestionamos salarios, impuestos, seguridad social, vacaciones y demás obligaciones laborales aplicables.",
+						icon: "🗂️",
+						badgeColor: "#FF66CC",
+						badgeBg: "rgba(255, 102, 204, 0.1)",
+					},
+					{
+						label: "Cumplimiento",
+						badge: "Soporte continuo",
+						title: "Cumplimiento y soporte continuo",
+						description:
+							"Administramos incidencias, cambios contractuales, bajas y acompañamiento operativo mes a mes.",
+						icon: "⚡",
+						badgeColor: "#1B1B1B",
+						badgeBg: "rgba(204, 255, 102, 0.3)",
+					},
+				]}
+				ctaTitle="Empieza a ahorrar hoy"
+				ctaDescription="Un equipo dedicado gestionará todo el proceso por ti."
+				ctaBtnText="Agendar llamada"
+			/>
+		</div>
+
+		<div class="fade-in-section profiles-employer-page">
+			<ProfilesSection
 				title="Perfiles que puedes <strong>contratar con EOR</strong>"
-				description="El servicio Employer of Record profesionaliza tu expansión en LATAM mediante una relación laboral formal. Protege la integridad de tu empresa integrando talento legalmente en departamentos clave:"
+				description="El servicio Employer of Record profesionaliza tu <br/> expansión en LATAM mediante una relación <br/> laboral formal. Protege la integridad de tu <br/> empresa integrando talento legalmente en <br/> departamentos clave:"
 				profiles={[
 					{
 						icon: "🤝",
@@ -252,40 +259,39 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
 							{ label: "Desarrollador Mobile", href: "#" },
 						],
 						iconColorClass: "orange-text",
-					}
+					},
 				]}
 			/>
 		</div>
 
-
 		<div class="fade-in-section">
 			<EorStepsSection
-				title="Employer of record services"
-				subtitle="De 0 al primer día laboral en 4 pasos."
+				title="Employer of record <strong>services:</strong>"
+				subtitle="De 0 al primer día laboral en <strong>4 pasos.</strong>"
 				steps={[
 					{
-						title: "Nos cuentas quién necesitas",
+						title: "Definición legal",
 						lineColorClass: "line-black",
 						description:
-							"Compártenos el perfil que buscas: rol, salario, país de Latinoamérica y fecha de inicio. Nosotros hacemos el resto.",
+							"Nos compartes el rol, rango salarial, país de contratación y fecha objetivo de inicio.",
 					},
 					{
-						title: "Firmamos los contratos",
+						title: "Estructuramos el alta laboral",
 						lineColorClass: "line-pink",
 						description:
-							"Redactamos contratos conformes a la legislación local y los firmamos en nombre de tu empresa. Sin burocracia.",
+							"Validamos encaje legal, preparamos contrato bajo la ley local y dejamos lista toda la documentación de incorporación.",
 					},
 					{
-						title: "El empleado entra a tu equipo",
+						title: "Activamos la relación laboral",
 						lineColorClass: "line-orange",
 						description:
-							"El profesional se integra directamente a tu operación. Tú gestionas su día a día como si fuera tu empleado directo.",
+							"El profesional entra como empleado bajo el esquema EOR y se integra a tu operación desde el primer día.",
 					},
 					{
-						title: "Nuestro EOR services se encarga de todo",
+						title: "Administramos payroll y cumplimiento",
 						lineColorClass: "line-blue",
 						description:
-							"Nómina, impuestos, bajas, vacaciones y cumplimiento continuo. Sin sorpresas, sin desvíos de tu foco.",
+							"Gestionamos la nómina, las obligaciones mensuales y cualquier incidencia laboral durante toda la relación. Tú recibes una sola factura consolidada.",
 					},
 				]}
 			/>
@@ -293,7 +299,7 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
 
 		<div class="fade-in-section">
 			<EorCta
-				title="¿Listo para contratar en Latinoamérica sin riesgos?"
+				title="¿Necesitas contratar en LATAM sin crear estructura legal propia?"
 				text="Habla con uno de nuestros especialistas EOR y recibe una propuesta personalizada en menos de 24 horas. Sin compromiso."
 				buttonText="Solicitar propuesta gratuita"
 				buttonHref="#contacto"
@@ -302,72 +308,57 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
 
 		<div class="fade-in-section">
 			<FeaturesSection
-				eyebrow="Por qué Oberstaff EOR"
-				title="Todo lo que necesitas sobre nuestro employer of record services"
-				subtitle="Diseñado para empresas españolas que quieran expandirse rápido en Latinoamérica, sin asumir riesgos innecesarios."
+				eyebrow=""
+				title="Por qué elegir a <span style='font-weight: 900; color: #6663FD;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span> como tu partner de Compliance"
+				subtitle="Todo lo que necesitas sobre nuestro employer of record services. Diseñado para negocios españoles que quieran expandirse rápido en Latinoamérica, sin asumir riesgos innecesarios."
 				features={[
 					{
-						title: "Contratación en 48 horas",
+						title: "Blindaje Jurídico",
 						description:
-							"Desde la firma del acuerdo hasta el primer día laboral. Sin esperas, sin trámites interminables.",
-						icon: "solar:bolt-bold-duotone",
+							"Al asumir nosotros la responsabilidad como empleadores, tu compañía en España queda protegida de inspecciones o reclamaciones laborales.",
+						icon: "🛡️",
 						colorClass: "icon-blue",
+						cardClass: "hover-purple",
 					},
 					{
-						title: "Cobertura en 10+ países",
+						title: "Relación laboral formal",
 						description:
-							"Employer of record Colombia, México, Argentina, Venezuela, Chile, Ecuador y más. Un solo proveedor para toda Latinoamérica.",
-						icon: "solar:global-bold-duotone",
+							"Contratas especialistas de forma correcta sin improvisar estructuras legales en cada país.",
+						icon: "🌎",
 						colorClass: "icon-green",
+						cardClass: "hover-green",
 					},
 					{
-						title: "Ahorra hasta un 70%",
+						title: "Payroll y administración centralizados",
 						description:
-							"Accede a talento de primer nivel a una fracción del costo en mercados como España, EE.UU. o el Reino Unido.",
-						icon: "solar:wad-of-money-bold-duotone",
+							"Tienes una sola contraparte para la operativa mensual, aunque el equipo esté distribuido en varios países.",
+						icon: "🗣️",
 						colorClass: "icon-yellow",
+						cardClass: "hover-pink",
 					},
 					{
-						title: "Cero riesgo laboral",
-						description:
-							"Oberstaff asume la responsabilidad jurídica como empleador. Tu empresa en España queda protegida de cualquier reclamación.",
-						icon: "solar:shield-check-bold-duotone",
-						colorClass: "icon-red",
-					},
-					{
-						title: "Flexibilidad total",
-						description:
-							"Escala hacia arriba o hacia abajo sin penalizaciones. Ajusta tu equipo según la evolución de tu negocio.",
-						icon: "solar:refresh-square-bold-duotone",
-						colorClass: "icon-purple",
-					},
-					{
-						title: "Nómina automatizada y puntual",
-						description:
-							"Nos encargamos del pago de nómina, beneficios sociales, vacaciones y liquidaciones gestionadas al día, siempre, tu solo de hacer crecer tu negocio.",
-						icon: "solar:chart-2-bold-duotone",
-						colorClass: "icon-pink",
-					},
-					{
-						title: "Zona horaria compatible",
+						title: "Compatibilidad horaria",
 						description:
 							"Los profesionales de LATAM trabajan en tu horario. Coordinación real, sin barreras de comunicación.",
-						icon: "solar:history-bold-duotone",
-						colorClass: "icon-cyan",
+						icon: "💶",
+						colorClass: "icon-red",
+						cardClass: "hover-yellow",
 					},
 					{
 						title: "Soporte humano",
 						description:
-							"Tendrás a tu disposición un equipo de soporte que estará disponible cuando lo necesites.",
-						icon: "solar:chat-round-dots-bold-duotone",
-						colorClass: "icon-indigo",
+							"Tendrás a tu disposición un equipo de soporte que estará disponible cuando lo necesites.Nuestro equipo local te acompaña en todo el proceso, desde la contratación hasta la gestión diaria. No estás solo.",
+						icon: "🔄",
+						colorClass: "icon-purple",
+						cardClass: "hover-purple",
 					},
 					{
-						title: "Sin contrato de permanencia",
+						title: "Sin permanencia mínima",
 						description:
 							"Empieza a usar nuestro EOR Employer Of Record en LATAM sin compromisos a largo plazo. Si algo cambia, adaptamos sin complicaciones.",
-						icon: "solar:document-text-bold-duotone",
-						colorClass: "icon-orange",
+						icon: "🤝",
+						colorClass: "icon-pink",
+						cardClass: "hover-green",
 					},
 				]}
 			/>
@@ -375,26 +366,26 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
 
 		<div class="fade-in-section">
 			<CoberturaSeccion
-				title="Cobertura geográfica - Eor españa"
-				description="Contrata talento en toda Latinoamérica. Presencia legal activa en los principales mercados de talento de habla hispana."
+				title="EOR España: Tu nómina<br/>centralizada en <span style='color: #6663FD; font-weight: 900; white-space: nowrap;'>10 países</span><br/><span style='color: #6663FD; font-weight: 900;'>de LATAM</span>"
+				description="Presencia legal activa en los principales mercados de talento de habla hispana."
 				countries={[
-					{ code: "CO", name: "EOR Colombia" },
-					{ code: "AR", name: "EOR Argentina" },
 					{ code: "MX", name: "EOR México" },
 					{ code: "VE", name: "EOR Venezuela" },
+					{ code: "CO", name: "EOR Colombia" },
+					{ code: "EC", name: "EOR Ecuador" },
 					{ code: "PE", name: "Perú" },
-					{ code: "EC", name: "Ecuador" },
 					{ code: "PY", name: "Paraguay" },
+					{ code: "AR", name: "EOR Argentina" },
 				]}
 			/>
 		</div>
 
 		<div class="fade-in-section">
 			<PricingSection
-				eyebrow="Planes EOR"
-				title="Precios simples y sin sorpresas."
+				eyebrow=""
+				title="Precios simples para tu <span style='font-weight: 900; color: #6663FD;'>expansión legal</span>"
 				subtitle="Paga por profesional, no por funcionalidades. Sin costes ocultos."
-				plans={[
+				plans={[ 
 					{
 						badge: "MÁS POPULAR",
 						title: "EOR Completo",
@@ -403,11 +394,11 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
 						period: "/ empleado / mes",
 						teamSize: "Para equipos de 4-20 empleados",
 						features: [
-							"Contrata empleados en LATAM a tiempo completo sin crear una entidad legal.",
+							"Contrato laboral local conforme a normativa.",
 							"Gestiona nómina y pagos de forma simple y centralizada.",
 							"Administra la relación laboral (altas, documentación y cumplimiento) desde un solo lugar.",
 						],
-						ctaText: "Comenzar ahora",
+						ctaText: "Solicitar propuesta",
 						ctaHref: "#contacto",
 					},
 				]}
@@ -416,52 +407,119 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
 
 		<div class="fade-in-section">
 			<CasosExitoSection
-				title="Casos de Éxito"
-				subtitle="Empresas Españolas que ya confían en Oberstaff EOR."
+				title="Empresas Españolas que ya confían en <span style='font-weight: 900; color: #6663FD;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span> EOR."
+				subtitle=""
 				testimonials={[
 					{
 						stars: 5,
-						text: "Gracias a Oberstaff pudimos incorporar talento de primer nivel a nuestro equipo a un costo muy competitivo. El proceso fue rápido y sin complicaciones. En menos de una semana ya teníamos a nuestra persona trabajando.",
+						avatar: "/fernando.webp",
+						text: "Gracias a <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong> pudimos incorporar talento de primer nivel a nuestro equipo a un costo muy competitivo. El proceso fue rápido y sin complicaciones. En menos de una semana ya teníamos a nuestra persona trabajando.",
 						author: "Fernando Calderón",
-						role: "CEO · BEAUTYPRO",
+						role: "CEO · BeautyPro",
 					},
 					{
 						stars: 5,
-						text: "Con Oberstaff pude dar trabajo a dos personas a tiempo completo ahorrando costes significativos. Lo que más valoro es que ellos se encargan de todo lo legal: yo me dedico solo a hace crecer mi negocio.",
+						avatar: "/sha.webp",
+						text: "Con <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong> pude dar trabajo a dos personas a tiempo completo ahorrando costes significativos. Lo que más valoro es que ellos se encargan de todo lo legal: yo me dedico solo a hace crecer mi negocio.",
 						author: "Shadai Iborra",
-						role: "CEO · @AMEDIASTORY",
+						role: "CEO · @amediastory",
 					},
 					{
 						stars: 5,
-						text: "I've been working with Oberstaff for about 2 years. They handle everything: contracts, payments and HR admin. My team in Latin America is fantastic and the cost savings have been game-changing for our business.",
+						avatar: "/Kate.webp",
+						text: "I've been working with <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong> for about 2 years. They handle everything: contracts, payments and HR admin. My team in Latin America is fantastic and the cost savings have been game-changing for our business.",
 						author: "Kate McCafferty",
-						role: "KM REAL ESTATE",
+						role: "KM Real Estate",
 					},
 				]}
 			/>
 		</div>
 
-		<div class="fade-in-section">
-			<FAQSection />
-		</div>
+		<FAQSection 
+    title="Preguntas frecuentes sobre el EOR services de <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong>"
+    ctaText="¿Aún tienes dudas sobre cómo funciona el modelo EOR en tu país?"
+    ctaButtonText="Agenda una llamada gratuita"
+/>
+
 
 		<div class="fade-in-section">
-			<OtrosServiciosSection />
+			<OtrosServiciosSection 
+                title="Otros servicios de <span style='font-weight: 900; color: #6663FD;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span>"
+                subtitle=""
+                description="¿No sabes qué modelo necesitas? El EOR services es uno de los cuatro modelos de contratación que ofrecemos. Dependiendo de tu operación, puedes necesitar un enfoque diferente:"
+                servicios={[
+                    {
+                        icon: "🔗",
+                        title: "Staff Augmentation",
+                        description: "Refuerza tu equipo de tecnología integrando desarrolladores y perfiles IT directamente a tus sprints.",
+                        href: "#",
+                        colorClass: "icon-pink",
+                        hoverClass: "hover-pink",
+                        linkText: "Ver servicio"
+                    },
+                    {
+                        icon: "🏢",
+                        title: "Outsourcing de Personal",
+                        description: "Externaliza funciones completas con equipos gestionados por <span style='font-weight: 700; color: #1B1B1B;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span>",
+                        href: "#",
+                        colorClass: "icon-green",
+                        hoverClass: "hover-green",
+                        linkText: "Ver servicio"
+                    },
+                    {
+                        icon: "📄",
+                        title: "Contractor of Record",
+                        description: "Gestión integral de contratos para freelancers y trabajadores por proyecto.",
+                        href: "#",
+                        colorClass: "icon-purple",
+                        hoverClass: "hover-purple",
+                        linkText: "Ver servicio"
+                    }
+                ]}
+            />
 		</div>
- 
+
+		<!-- 
 		<div class="fade-in-section">
 			<RolesSection />
 		</div>
- 
+		-->
+
 		<div class="fade-in-section">
-			<ContactFormSection />
+			<ContactFormSection 
+                title="Accede al mejor talento de LATAM con estructura laboral formal y <span style='font-weight: 900; color: #6663FD;'>sin crear entidad local</span>"
+                subtitle="Cuéntanos qué necesitas y un especialista EOR te prepara una propuesta, sin compromiso."
+                buttonText="Solicitar Propuesta gratuita"
+                directLabel="Rellenarlo te lleva"
+                phoneNumber="Menos de 60 segundos" 
+                phoneHref=""
+                directEmoji="⏱️"
+                formLabels={{
+                    name: "Nombre *",
+                    lastName: "Apellido *",
+                    company: "Nombre de la empresa",
+                    email: "Email corporativo *",
+                    phone: "Teléfono *",
+                    comments: "Comentarios"
+                }}
+                formPlaceholders={{
+                    name: "Tu nombre",
+                    lastName: "Tu apellido",
+                    company: "Nombre de tu organización",
+                    email: "nombre@tuempresa.com",
+                    phone: "+34 XXX XXX XXX",
+                    comments: "Cuéntanos brevemente sobre los perfiles que buscas..."
+                }}
+                customClass="employer-variant"
+            />
 		</div>
 
+
+		<!-- 
 		<div class="fade-in-section">
 			<ArticulosSection />
 		</div>
-		 -->
-		 
+-->
 	</div>
 </DashboardLayoutServicios>
 
@@ -471,17 +529,17 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
 
 	/* --- Estilos específicos para el componente de proceso en Employer --- */
 	:global(.process-employer .process-menu) {
-		background-color: #FAFAFC;
+		background-color: #fafafc;
 	}
 
 	:global(.process-employer .process-tab-label) {
-		color: #5A5A5A;
+		color: #5a5a5a;
 		font-weight: 600;
 	}
 
 	:global(.process-employer .process-tab:hover) {
 		background-color: #f0f0f5;
-		color: #1B1B1B;
+		color: #1b1b1b;
 	}
 
 	:global(.process-employer .process-tab.active) {

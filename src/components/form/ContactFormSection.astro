@@ -6,16 +6,30 @@ interface Props {
     title?: string;
     subtitle?: string;
     buttonText?: string;
+    directLabel?: string;
+    phoneNumber?: string;
+    phoneHref?: string;
+    directEmoji?: string;
+    formLabels?: any;
+    formPlaceholders?: any;
+    customClass?: string;
 }
 
 const {
     title = "¿Listo para <strong>contratar talento remoto</strong> en Latinoamérica desde España?",
     subtitle = "Déjanos tus requerimientos y un asesor te contactará en menos de 24 horas para orientarte sobre la mejor estructura, el tipo de perfil recomendado y el ahorro potencial para tu operación.",
-    buttonText = "Solicitar Presupuesto Gratuito"
+    buttonText = "Solicitar Presupuesto Gratuito",
+    directLabel = "Atención directa en España:",
+    phoneNumber = "+34 930 289 966",
+    phoneHref = "tel:+34930289966",
+    directEmoji = "📞",
+    formLabels,
+    formPlaceholders,
+    customClass = ""
 } = Astro.props;
 ---
  
-<section class="eor-contact-form" id="contacto">
+<section class={`eor-contact-form ${customClass}`} id="contacto">
     <div class="contact-container">
         <div class="contact-info">
             <h2 set:html={title} />
@@ -23,17 +37,26 @@ const {
 
             <div class="contact-direct-card">
                 <div class="direct-icon-wrapper">
-                    <span class="direct-phone-emoji">📞</span>
+                    <span class="direct-phone-emoji">{directEmoji}</span>
                 </div>
                 <div class="direct-text">
-                    <span class="direct-label">Atención directa en España:</span>
-                    <a href="tel:+34930289966" class="direct-phone-link">+34 930 289 966</a>
+                    <span class="direct-label">{directLabel}</span>
+                    {phoneHref ? (
+                        <a href={phoneHref} class="direct-phone-link">{phoneNumber}</a>
+                    ) : (
+                        <span class="direct-phone-link">{phoneNumber}</span>
+                    )}
                 </div>
             </div>
         </div>
 
         <div class="form-wrapper">
-            <ContactForm buttonText={buttonText} />
+            <ContactForm 
+                buttonText={buttonText} 
+                labels={formLabels}
+                placeholders={formPlaceholders}
+                customClass={customClass}
+            />
         </div>
     </div>
 </section>

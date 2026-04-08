@@ -1,8 +1,7 @@
 .eor-cta {
-    background-color: #25262b; /* Color oscuro de fondo */
-    padding: 60px 20px;
+    background: linear-gradient(95deg, #441a45 0%, #111111 55%, #111111 100%);
+    padding: 100px 0;
     text-align: center;
-    font-family: 'Inter', -apple-system, sans-serif;
     color: #ffffff;
 }
 
@@ -12,41 +11,49 @@
 }
 
 .cta-title {
-    font-size: 38px;
-    font-weight: 800;
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: 700;
     margin-bottom: 25px;
-    line-height: 1.2;
-    letter-spacing: -0.5px;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
 }
 
 .cta-text {
+    font-family: 'Poppins', sans-serif;
     font-size: 18px;
-    color: #ccc; /* Gris claro para el párrafo */
+    color: #D0D0D0; /* Gris muy claro para el párrafo */
     line-height: 1.6;
     margin-bottom: 40px;
     font-weight: 400;
 }
 
 .cta-button {
+    font-family: 'Poppins', sans-serif;
     display: inline-block;
-    background-color: #ffffff;
-    color: #1a1a1a;
-    padding: 18px 45px;
+    background-color: #FF66CC;
+        color: #FFFFFF;
+    padding: 16px 32px;
     border-radius: 50px; /* Botón muy redondeado */
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 700;
     text-decoration: none;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border: 2px solid var(--brand-pink);
+ 
 }
 
 .cta-button:hover {
-    transform: translateY(-2px);
-    background-color: #f3f3f3;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    color: #FF66CC;
+    background-color: transparent;
+    box-shadow: 0 5px 15px rgba(225, 102, 204, 0.3);
 }
 
 @media (max-width: 600px) {
+    .eor-cta {
+        padding: 70px 24px;
+    }
     .cta-title {
         font-size: 28px;
     }

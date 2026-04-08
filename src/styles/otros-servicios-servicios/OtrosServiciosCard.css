@@ -6,66 +6,86 @@
     box-shadow: 0 4px 20px rgba(0,0,0,0.02);
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     transition: all 0.3s ease;
     height: 100%;
+    text-align: left;
 }
 
 .servicio-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.06);
-    border-color: #e0e0e0;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.05);
 }
 
+.servicio-card.hover-pink:hover { border-color: #FF66CC; }
+.servicio-card.hover-green:hover { border-color: #66FF99; }
+.servicio-card.hover-purple:hover { border-color: #6663FD; }
+
 .servicio-icon {
-    width: 54px;
-    height: 54px;
+    width: 50px;
+    height: 50px;
     border-radius: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 26px;
+    font-size: 24px;
     margin-bottom: 20px;
 }
 
 /* Variaciones de color para iconos */
-.servicio-icon.icon-indigo { background-color: #f0f2ff; color: #4d4dff; }
-.servicio-icon.icon-emerald { background-color: #ecfdf5; color: #10b981; }
-.servicio-icon.icon-amber { background-color: #fffbeb; color: #f59e0b; }
+.servicio-icon.icon-pink { background-color: rgba(255, 102, 204, 0.1); color: #FF66CC; }
+.servicio-icon.icon-green { background-color: rgba(102, 255, 153, 0.1); color: #66FF99; }
+.servicio-icon.icon-purple { background-color: rgba(102, 99, 253, 0.1); color: #6663FD; }
+.servicio-icon.icon-blue { background-color: rgba(51, 153, 255, 0.1); color: #3399FF; }
+.servicio-icon.icon-orange { background-color: rgba(255, 153, 51, 0.1); color: #FF9933; }
 
-.servicio-icon iconify-icon {
+.servicio-icon iconify-icon,
+.emoji-icon {
     color: inherit;
+    line-height: 1;
+}
+
+.emoji-icon {
+    font-size: 24px;
 }
 
 .servicio-card h4 {
-    font-size: 19px;
-    font-weight: 800;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
     margin-bottom: 12px;
-    color: #1a1a1a;
+    color: #1B1B1B;
+    text-align: left;
 }
 
 .servicio-card p {
+    font-family: 'Poppins', sans-serif;
     font-size: 14px;
-    color: #666;
+    color: #5A5A5A;
     line-height: 1.6;
     margin-bottom: 25px;
     flex-grow: 1;
+    text-align: left;
 }
 
 .link-mas {
-    color: #6663fd; /* Color solicitado */
+    font-family: 'Poppins', sans-serif;
+    color: #1B1B1B; /* Color solicitado */
     text-decoration: none;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 14px;
+        border-bottom: 2px solid #66FF99;
+        padding-bottom: 2px;
+        transition: color 0.3s ease;
     display: flex;
     align-items: center;
     gap: 6px;
-    transition: all 0.3s ease;
+  
 }
 
 .link-mas:hover {
-    color: #ff66cc; /* Hover solicitado */
-    gap: 10px;
+    color: #6663FD;
+   
 }
 
 @media (max-width: 768px) {

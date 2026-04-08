@@ -8,8 +8,7 @@
 }
 
 .faq-item:hover {
-    border-color: #e0e0e0;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+    border-color: rgba(102, 99, 253, 0.3);
 }
 
 .faq-item.active {

@@ -1,6 +1,5 @@
 ---
 import "../../styles/geografica-servicios/CoberturaSeccion.css";
-import PaisBadge from "./PaisBadge.astro";
 
 interface Country {
     code: string;
@@ -8,25 +7,57 @@ interface Country {
 }
 
 interface Props {
-    label?: string;
     title: string;
     description: string;
     countries: Country[];
 }
 
-const { label, title, description, countries } = Astro.props;
+const { title, description, countries } = Astro.props;
+
+// Positions calibrated for the actual Latin America map image.
+// The image is portrait (~0.79:1 ratio), displayed with object-fit:contain inside a ~570x550px wrapper.
+// This creates ~68px letterboxing on each side → real map starts at ~12% from container left.
+// Top values = % of 550px wrapper height (image fills full height).
+// Left values = 12% offset + geographic position within the actual image area.
+const countryData: Record<string, { img: string; top: string; left: string; borderColor: string }> = {
+    MX: { img: "/mx.webp", top: "1%",   left: "15%", borderColor: "#FF66CC" }, // México — norte, zona central del mapa
+    CO: { img: "/co.webp", top: "20%",  left: "45%", borderColor: "#6663FD" }, // Colombia — noroeste Sudamérica
+    VE: { img: "/ve.webp", top: "27%",  left: "58%", borderColor: "#CCFF66" }, // Venezuela — derecha de Colombia, costa norte
+    EC: { img: "/ec.webp", top: "35%",  left: "40%", borderColor: "#66FF99" }, // Ecuador — bajo Colombia, costa pacífica norte
+    PE: { img: "/pe.webp", top: "45%",  left: "48%", borderColor: "#FF66CC" }, // Perú — bajo Ecuador, costa pacífica central
+    PY: { img: "/py.webp", top: "57%",  left: "70%", borderColor: "#6663FD" }, // Paraguay — interior, debajo de Brasil, sin salida al mar
+    AR: { img: "/ar.webp", top: "75%",  left: "60%", borderColor: "#66FF99" }, // Argentina — cono sur, parte inferior central
+};
 ---
 
 <section class="cobertura-geografica">
-    <div class="cobertura-header">
-        {label && <span class="section-label" style="display: block; color: #ff66cc; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 15px;">{label}</span>}
+    <!-- LEFT: Text content -->
+    <div class="cobertura-text">
         <h2 set:html={title}></h2>
         <p set:html={description}></p>
     </div>
 
-    <div class="cobertura-badges">
-        {countries.map((country) => (
-            <PaisBadge code={country.code} name={country.name} />
-        ))}
+    <!-- RIGHT: Map with floating country badges -->
+    <div class="cobertura-map-wrapper">
+        <img
+            src="/mapa-de-Latinoamérica.webp"
+            alt="Mapa de Latinoamérica"
+            class="cobertura-map-img"
+        />
+        {countries.map((country) => {
+            const data = countryData[country.code.toUpperCase()];
+            if (!data) return null;
+            return (
+                <div
+                    class="map-country-badge"
+                    style={`top: ${data.top}; left: ${data.left}; border-left-color: ${data.borderColor};`}
+                >
+                    <div class="map-badge-img-wrapper">
+                        <img src={data.img} alt={`Bandera de ${country.name}`} class="map-badge-flag-img" />
+                    </div>
+                    <span class="map-badge-name">{country.name}</span>
+                </div>
+            );
+        })}
     </div>
 </section>

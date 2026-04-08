@@ -19,7 +19,6 @@ const {
     price, 
     currency, 
     period, 
-    teamSize, 
     features, 
     ctaText, 
     ctaHref 
@@ -33,24 +32,38 @@ const {
         </div>
     )}
     
-    <h3 class="card-title">{title}</h3>
-    
-    <div class="price-container">
-        Desde <span class="price-amount">{price} <span class="price-currency">{currency}</span></span> {period}
+    <div class="card-body">
+
+        <!-- Columna izquierda: título, precio, CTA link -->
+        <div class="card-left">
+            <h3 class="card-title">{title}</h3>
+            
+            <div class="price-block">
+                <span class="price-desde">DESDE</span>
+                <div class="price-main">
+                    <span class="price-amount">{price}</span>
+                    <span class="price-currency">{currency}</span>
+                </div>
+                <span class="price-period">{period}</span>
+            </div>
+            
+            <a href={ctaHref} class="btn-pricing-link">{ctaText}</a>
+        </div>
+
+        <!-- Divisor vertical -->
+        <div class="card-divider"></div>
+
+        <!-- Columna derecha: features -->
+        <div class="card-right">
+            <ul class="pricing-features">
+                {features.map((feature) => (
+                    <li>
+                        <span class="check-icon">✓</span>
+                        <span set:html={feature}></span>
+                    </li>
+                ))}
+            </ul>
+        </div>
+
     </div>
-
-    <div class="team-size-tag">
-        {teamSize}
-    </div>
-
-    <ul class="pricing-features">
-        {features.map((feature) => (
-            <li>
-                <span class="check-icon">✓</span>
-                <span>{feature}</span>
-            </li>
-        ))}
-    </ul>
-
-    <a href={ctaHref} class="btn-pricing">{ctaText}</a>
 </div>

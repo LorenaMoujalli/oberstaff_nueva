@@ -3,6 +3,7 @@
     padding: 60px 20px;
     background-color: #ffffff;
     text-align: center;
+    border-top: 1px solid #f0f0f0;
 }
 
 .casos-header {
@@ -10,11 +11,13 @@
 }
 
 .casos-header h2 {
-    font-size: 36px;
-    font-weight: 800;
-    margin-bottom: 20px;
-    color: #1a1a1a;
-    letter-spacing: -0.5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+   margin: 0 auto;
+    color: #1B1B1B;
+    line-height: 1.4;
+        max-width: 900px;
 }
 
 .casos-header p {

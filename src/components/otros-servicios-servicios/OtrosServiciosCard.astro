@@ -6,20 +6,34 @@ interface Props {
     title: string;
     description: string;
     href: string;
+    linkText?: string;
     colorClass?: string;
+    hoverClass?: string;
 }
 
-const { icon, title, description, href, colorClass = "icon-blue" } = Astro.props;
+const { 
+    icon, 
+    title, 
+    description, 
+    href, 
+    linkText = "Ver más",
+    colorClass = "icon-blue",
+    hoverClass = "" 
+} = Astro.props;
 ---
 
-<div class="servicio-card">
+<div class={`servicio-card ${hoverClass}`}>
     <div class={`servicio-icon ${colorClass}`}>
-        <iconify-icon icon={icon}></iconify-icon>
+        {icon.length <= 2 ? (
+            <span class="emoji-icon">{icon}</span>
+        ) : (
+            <iconify-icon icon={icon}></iconify-icon>
+        )}
     </div>
-    <h4>{title}</h4>
-    <p>{description}</p>
+    <h4 set:html={title} />
+    <p set:html={description} />
     <a href={href} class="link-mas">
-        Ver más
-        <iconify-icon icon="solar:alt-arrow-right-bold"></iconify-icon>
+        {linkText}
+        <span class="arrow"> →</span>
     </a>
 </div>

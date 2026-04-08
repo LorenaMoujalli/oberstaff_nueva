@@ -6,22 +6,35 @@ interface Props {
     text: string;
     author: string;
     role: string;
+    avatar?: string;
 }
 
-const { stars, text, author, role } = Astro.props;
+const { stars, text, author, role, avatar } = Astro.props;
 ---
 
 <div class="testimonial-card">
-    <div class="stars">
-        {[...Array(stars)].map((_) => (
-            <iconify-icon icon="solar:star-bold"></iconify-icon>
-        ))}
+
+    <!-- Header: avatar + estrellas + nombre + cargo -->
+    <div class="testimonial-header">
+        {avatar && (
+            <img
+                src={avatar}
+                alt={`Foto de ${author}`}
+                class="testimonial-avatar"
+            />
+        )}
+        <div class="testimonial-header-info">
+            <div class="stars">
+                {[...Array(stars)].map((_) => (
+                    <span>★</span>
+                ))}
+            </div>
+            <h4 class="testimonial-author">{author}</h4>
+            <p class="testimonial-role">{role}</p>
+        </div>
     </div>
-    <p class="testimonial-text">
-        "{text}"
-    </p>
-    <div class="author-info">
-        <h4>{author}</h4>
-        <p>{role}</p>
-    </div>
+
+    <!-- Cita -->
+    <p class="testimonial-text" set:html={`"${text}"`}></p>
+
 </div>

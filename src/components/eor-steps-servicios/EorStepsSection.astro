@@ -1,6 +1,5 @@
 ---
 import "../../styles/eor-steps-servicios/EorSteps.css";
-import StepItem from "./StepItem.astro";
 
 interface Step {
     title: string;
@@ -16,22 +15,49 @@ interface Props {
 }
 
 const { label, title, subtitle, steps } = Astro.props;
+
+// Map each lineColorClass to specific circle colors matching the design
+const colorMap: Record<string, { circle: string; text?: string }> = {
+    "line-black":  { circle: "#ff66cc" },                  // pink - step 1
+    "line-pink":   { circle: "#6663FD" },                  // purple - step 2
+    "line-orange": { circle: "#66FF99", text: "#1B1B1B" }, // green - step 3
+    "line-blue":   { circle: "#CCFF66", text: "#1B1B1B" }, // lime - step 4
+};
 ---
 
 <section class="eor-steps">
     <div class="steps-header">
-        {label && <span class="section-label" style="display: block; color: #ff66cc; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 15px;">{label}</span>}
+        {label && <span class="section-label">{label}</span>}
         <h2 set:html={title}></h2>
-        <p>{subtitle}</p>
+        <p set:html={subtitle}></p>
     </div>
 
-    <div class="steps-grid">
-        {steps.map((step) => (
-            <StepItem 
-                title={step.title}
-                description={step.description}
-                lineColorClass={step.lineColorClass}
-            />
-        ))}
+    <div class="steps-wrapper">
+        <!-- Continuous line for all steps -->
+        <div class="timeline-track"></div>
+
+        <div class="steps-container">
+            {steps.map((step, i) => {
+                const colors = colorMap[step.lineColorClass] ?? { circle: "#6663FD" };
+                return (
+                    <div class="step-item">
+                        <div class="step-visual">
+                            <!-- Numbered circle -->
+                            <div
+                                class="step-circle"
+                                style={`background-color: ${colors.circle}; color: ${colors.text ?? "#ffffff"};`}
+                            >
+                                {String(i + 1).padStart(2, "0")}
+                            </div>
+                        </div>
+
+                        <div class="step-content">
+                            <h3 class="step-title" set:html={step.title}></h3>
+                            <p class="step-description">{step.description}</p>
+                        </div>
+                    </div>
+                );
+            })}
+        </div>
     </div>
 </section>

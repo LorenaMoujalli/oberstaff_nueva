@@ -26,6 +26,10 @@
     color: #1B1B1B;
 }
 
+.process-tab:hover .process-tab-label {
+    color: #1B1B1B;
+}
+
 .process-tab.active {
     background-color: #ffffff;
     border-left-color: #6663FD;
@@ -72,8 +76,17 @@
     color: #1B1B1B;
 }
 
+.process-employer .process-tab:hover .process-tab-label {
+    color: #1B1B1B;
+}
+
 .process-employer .process-tab.active {
     background-color: #ffffff;
+    color: #6663FD;
+}
+
+.process-employer .process-tab.active .process-tab-label {
+    color: #6663FD;
 }
 
 /* --- Responsive --- */

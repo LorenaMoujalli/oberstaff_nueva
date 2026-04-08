@@ -3,56 +3,90 @@ import "../../styles/form/form-elements.css";
 
 interface Props {
     buttonText?: string;
+    labels?: {
+        name?: string;
+        lastName?: string;
+        company?: string;
+        email?: string;
+        phone?: string;
+        comments?: string;
+    };
+    placeholders?: {
+        name?: string;
+        lastName?: string;
+        company?: string;
+        email?: string;
+        phone?: string;
+        comments?: string;
+    };
+    customClass?: string;
 }
 
 const {
-    buttonText = "Solicitar Presupuesto Gratuito"
+    buttonText = "Solicitar Presupuesto Gratuito",
+    labels = {
+        name: "Nombre *",
+        lastName: "Apellido *",
+        company: "Nombre de la empresa",
+        email: "Email corporativo *",
+        phone: "Teléfono *",
+        comments: "Comentarios / Perfil buscado"
+    },
+    placeholders = {
+        name: "Tu nombre",
+        lastName: "Tu apellido",
+        company: "Ej. Mi Empresa S.L.",
+        email: "nombre@tuempresa.com",
+        phone: "+34 XXX XXX XXX",
+        comments: "¿Qué tipo de profesional estás buscando?"
+    },
+    customClass = ""
 } = Astro.props;
 ---
 
-<div class="form-card">
+<div class={`form-card ${customClass}`}>
     <form action="#" method="POST" class="form-grid">
         <div class="form-group half-width">
-            <label>Nombre *</label>
+            <label>{labels.name}</label>
             <input
                 type="text"
-                placeholder="Tu nombre"
+                placeholder={placeholders.name}
                 required
             />
         </div>
         <div class="form-group half-width">
-            <label>Apellido *</label>
+            <label>{labels.lastName}</label>
             <input
                 type="text"
-                placeholder="Tu apellido"
+                placeholder={placeholders.lastName}
                 required
             />
         </div>
         <div class="form-group full-width">
-            <label>Nombre de la empresa</label>
-            <input type="text" placeholder="Ej. Mi Empresa S.L." />
+            <label>{labels.company}</label>
+            <input type="text" placeholder={placeholders.company} />
         </div>
         <div class="form-group half-width">
-            <label>Email corporativo *</label>
+            <label>{labels.email}</label>
             <input
                 type="email"
-                placeholder="nombre@tuempresa.com"
+                placeholder={placeholders.email}
                 required
             />
         </div>
         <div class="form-group half-width">
-            <label>Teléfono *</label>
+            <label>{labels.phone}</label>
             <input
                 type="tel"
-                placeholder="+34 XXX XXX XXX"
+                placeholder={placeholders.phone}
                 required
             />
         </div>
         <div class="form-group full-width">
-            <label>Comentarios / Perfil buscado</label>
+            <label>{labels.comments}</label>
             <textarea
                 rows="4"
-                placeholder="¿Qué tipo de profesional estás buscando?"
+                placeholder={placeholders.comments}
             ></textarea>
         </div>
         <div class="button-container-centered">

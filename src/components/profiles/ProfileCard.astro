@@ -23,7 +23,7 @@ const { icon, title, quote, roles, iconColorClass, url } = Astro.props;
         <span class={`profile-icon ${iconColorClass}`}>{icon}</span>
         <h3>{title}</h3>
     </div>
-    <p class="quote">{quote}</p>
+    <p class="quote" set:html={quote}></p>
     <ul class="roles-list">
         {roles.map((role) => (
             <li>

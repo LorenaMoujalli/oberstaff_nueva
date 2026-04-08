@@ -7,6 +7,7 @@ interface Feature {
     description: string;
     icon: string;
     colorClass: string;
+    cardClass?: string;
 }
 
 interface Props {
@@ -33,6 +34,7 @@ const { eyebrow, title, subtitle, features } = Astro.props;
                 description={feature.description}
                 icon={feature.icon}
                 colorClass={feature.colorClass}
+                cardClass={feature.cardClass}
             />
         ))}
     </div>

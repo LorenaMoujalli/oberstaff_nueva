@@ -1,51 +1,86 @@
+/* ============================================================
+   TESTIMONIAL CARD — Redesign
+   ============================================================ */
+
 .testimonial-card {
-    background: #f8f9fa; /* Fondo gris muy tenue */
-    padding: 40px;
-    border-radius: 20px;
+  background: #FFFFFF;
+        border: 1px solid rgba(0, 0, 0, 0.06);
+    padding: 35px 30px;
+    border-radius: 16px;
     text-align: left;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    transition: transform 0.3s ease;
     height: 100%;
+   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.02);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .testimonial-card:hover {
-    transform: translateY(-5px);
+     transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+}
+
+/* --- Header Layout --- */
+.testimonial-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.testimonial-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #eaeaea;
+}
+
+.testimonial-header-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .stars {
-    color: #ffcc00; /* Amarillo para las estrellas */
-    font-size: 14px;
-    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+    color: #FFC107; /* Amarillo para las estrellas */
+    font-size: 16px;
     display: flex;
-    gap: 2px;
+  letter-spacing: 2px;
+    margin-bottom: 5px;
 }
 
-.testimonial-text {
-    font-size: 15px;
-    line-height: 1.6;
-    color: #444;
-    font-style: italic;
-    margin-bottom: 30px;
-    flex-grow: 1;
+.testimonial-author {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0 0 3px 0;
+    color: #1B1B1B;
 }
 
-.author-info h4 {
-    font-size: 17px;
-    font-weight: 800;
-    margin: 0 0 5px 0;
-    color: #1a1a1a;
-}
-
-.author-info p {
-    font-size: 12px;
-    font-weight: 600;
-    color: #999;
-    text-transform: uppercase;
+.testimonial-role {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: #5A5A5A;
     margin: 0;
 }
 
+/* --- Texto --- */
+.testimonial-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #1B1B1B;
+    font-style: italic;
+    font-weight: 400;
+    margin: 0;
+    flex-grow: 1;
+}
+
 @media (max-width: 768px) {
-    .testimonial-card { padding: 30px; }
+    .testimonial-card {
+        padding: 30px 25px;
+    }
 }
