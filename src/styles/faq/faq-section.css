@@ -1,7 +1,7 @@
 .faq-section {
-    background-color: #ffffff;
+    background-color: #FAFAFC;
     padding: 100px 20px;
-    border-top: 1px solid #e5e5e5;
+
   
 }
 
@@ -97,10 +97,11 @@
 }
 
 /* Subtle bold utility */
+/*
 .subtle-bold {
-    font-weight: 700;
+  font-weight: 700;
     color: #1a1a1a;
-}
+}*/
 
 /* Bullet list in answers */
 .faq-list-bullets {

@@ -1,6 +1,6 @@
 .testimonial-card {
     background: #ffffff;
-    padding: 35px;
+    padding: 35px 30px;
     border-radius: 20px;
     text-align: left;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
@@ -96,8 +96,7 @@
 }
 
 .video-link:hover {
-    gap: 12px;
-    opacity: 0.9;
+   opacity: 0.7;
 }
 
 .play-icon {

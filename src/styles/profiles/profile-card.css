@@ -45,14 +45,15 @@
 }
 
 .blue-text {
-    color: #3333ff;
+    color: #6663FD;
+    font-weight: 900;
 }
 
 .profile-card h3 {
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     font-weight: 700;
-    color: #1a1a1a;
+    color: #1B1B1B;
     margin: 0;
 }
 

@@ -52,6 +52,7 @@
 .sponsor-logo:hover {
     opacity: 1;
     filter: grayscale(0%);
+    transform: scale(1.05);
 }
 
 .logo-oneplanet {

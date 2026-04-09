@@ -6,10 +6,10 @@
     padding: 30px 40px;
     display: flex;
     gap: 25px;
-    align-items: flex-start;
+    align-items: center;
 }
 
-.diff-icon { font-size: 24px; }
+.diff-icon { font-size: 32px;}
 
 .diff-text h3 {
     font-family: 'Montserrat', sans-serif;

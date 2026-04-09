@@ -5,8 +5,8 @@
 .image-wrapper {
     position: relative;
     width: 100%;
-    max-width: 420px;
-    margin: 0 0 0 auto;
+    max-width: 450px;
+    margin: -35px auto 0 auto;
 }
 
 .main-hero-img {
@@ -27,12 +27,12 @@
 
 .card-mateo {
     bottom: 10%;
-    left: 50px;
+    left: 100px;
 }
 
 .card-camila {
     bottom: 45%;
-    right: -50px;
+    right: -0px;
 }
 
 @media (max-width: 1024px) {

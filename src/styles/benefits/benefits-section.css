@@ -12,10 +12,12 @@
 /* Tabs Wrapper Card */
 .benefits-tabs-wrapper {
     background: #ffffff;
-    border-radius: 30px;
+    border-radius: 24px;
     padding: 30px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05);
     border: 1px solid rgba(0, 0, 0, 0.04);
+        max-width: 900px;
+    margin: 0 auto;
 }
 
 /* Tabs Menu */
@@ -38,7 +40,7 @@
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
     font-weight: 600;
-    color: #4a4a4a;
+    color: #5A5A5A;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -107,7 +109,7 @@
     font-size: 24px;
     font-weight: 800;
     font-style: normal;
-    color: #1a1a1a;
+    color: #1B1B1B;
     margin: 0;
     letter-spacing: -1px;
 }
@@ -179,11 +181,13 @@
     background: rgba(102, 99, 253, 0.05);
    border: 1px solid rgba(102, 99, 253, 0.1);
     border-radius: 12px;
-    padding: 20px 30px;
+    padding: 15px 20px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
+    align-items: flex-start;
+    justify-content: flex-start;
+ 
+    max-width: 710px;
+    margin: 40px auto;
 }
 
 .benefits-info-box .info-icon {

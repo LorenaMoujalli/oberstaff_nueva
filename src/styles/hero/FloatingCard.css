@@ -24,7 +24,7 @@
     }
 }
 
-.floating-card img {
+.floating-card .profile-img {
     width: 32px;
     height: 32px;
     border-radius: 50%;
@@ -55,6 +55,15 @@
     font-weight: 600;
     margin-top: 1px;
     font-family: "Inter", sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.map-icon {
+    width: 11px;
+    height: auto;
+    object-fit: contain;
 }
 
 /* Mobile adjustments */
@@ -66,7 +75,7 @@
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
-    .floating-card img {
+    .floating-card .profile-img {
         width: 20px;
         height: 20px;
     }
@@ -81,5 +90,10 @@
 
     .floating-card .location {
         font-size: 7px;
+        gap: 3px;
+    }
+
+    .floating-card .map-icon {
+        width: 10px;
     }
 }

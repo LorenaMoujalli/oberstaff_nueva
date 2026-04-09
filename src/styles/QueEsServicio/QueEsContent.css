@@ -1,8 +1,8 @@
 .que-es-main-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    align-items: center;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 80px;
+    align-items: flex-start;
     margin-bottom: 40px;
 }
 

@@ -54,7 +54,12 @@
 }
 
 .icon-emoji {
-    font-size: 26px;
+    font-size: 28px;
+    line-height: 1;
+}
+
+.icon-emoji-hero {
+    font-size: 13px;
     line-height: 1;
 }
 
@@ -82,7 +87,7 @@
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
     font-weight: 700;
-    color: #1a1a1a;
+    color: #1B1B1B;
     margin-bottom: 15px;
 }
 
@@ -112,14 +117,9 @@
     transition: transform 0.2s;
 }
 
-.service-link:hover {
-    gap: 12px;
-    opacity: 0.8;
-}
 
-.service-link:hover .arrow-icon {
-    transform: translateX(4px);
-}
+
+
 
 /* Hover específicos para la página de Employer */
 .employer-use-cases-grid .service-card:nth-child(1):hover {

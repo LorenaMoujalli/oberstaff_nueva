@@ -1,7 +1,7 @@
 /* --- Panel de contenido --- */
 .process-content {
     flex: 1;
-    padding: 55px 60px;
+    padding: 40px 50px;
 }
 
 .process-pane {
@@ -44,7 +44,7 @@
 .process-pane p {
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
-    color: #666;
+    color: #5A5A5A;
     line-height: 1.7;
 }
 

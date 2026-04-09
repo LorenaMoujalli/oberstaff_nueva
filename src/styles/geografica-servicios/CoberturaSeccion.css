@@ -4,12 +4,12 @@
 
 .cobertura-geografica {
    
-    padding: 60px 60px;
+    padding: 100px 0 120px;
     background-color: #ffffff;
     display: grid;
     grid-template-columns: 1.3fr 1.3fr;
     align-items: center;
-    gap: 60px;
+    gap: 40px;
     max-width: 1200px;
     margin: 0 auto;
     border-bottom: 1px solid #ebebeb;
@@ -36,7 +36,7 @@
     font-size: 18px;
     color: #5A5A5A;
     line-height: 1.6;
-    max-width: 450px;
+    max-width: 460px;
 }
 
 /* --- Right column: map --- */

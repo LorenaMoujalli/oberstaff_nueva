@@ -28,6 +28,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
         closeBtn.addEventListener("click", closeModal);
 
+        const modalCtaBtn = document.getElementById("modalCtaBtn");
+        if (modalCtaBtn) {
+            modalCtaBtn.addEventListener("click", function() {
+                closeModal();
+            });
+        }
+
         // Cerrar si hace clic fuera del video
         window.addEventListener("click", function(event) {
             if (event.target === modal) {

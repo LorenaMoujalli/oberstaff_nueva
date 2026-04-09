@@ -8,19 +8,23 @@ interface Props {
     image: string;
     class?: string;
     delay?: string;
+    mapIcon?: string;
 }
 
-const { name, role, location, image, class: className, delay } = Astro.props;
+const { name, role, location, image, class: className, delay, mapIcon } = Astro.props;
 ---
 
 <div
     class:list={["floating-card", className]}
     style={`animation-delay: ${delay};`}
 >
-    <img src={image} alt={name} />
+    <img src={image} alt={name} class="profile-img" />
     <div class="card-info">
         <strong>{name}</strong>
         <span>{role}</span>
-        <em class="location">{location}</em>
+        <em class="location">
+            {mapIcon && <img src={mapIcon} alt="Map icon" class="map-icon" />}
+            {location}
+        </em>
     </div>
 </div>

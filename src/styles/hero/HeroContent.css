@@ -16,7 +16,7 @@
 
 .hero-text-content .hero-description {
     font-size: 18px;
-    color: #666;
+    color: #5A5A5A;
     line-height: 1.5;
     margin-bottom: 30px;
     max-width: 650px;
@@ -26,7 +26,7 @@
 .hero-text-content .brand-text {
     font-family: 'Montserrat', sans-serif;
     font-weight: 900;
-    color: #464951;
+    color: #5A5A5A;
 }
 
 .hero-text-content .brand-dot {
@@ -54,7 +54,7 @@
 
 .hero-text-content .hero-actions {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
     gap: 15px;
     margin-bottom: 20px;
@@ -81,7 +81,7 @@
 
 .hero-oberstaff .btn-primary:hover {
     background-color: transparent;
-    color: #6aca8a;
+    color: #6aca8a;  
     border: 2px solid #6aca8a;
 }
 
@@ -126,7 +126,7 @@
 
 .btn-icon-left {
     margin-right: 8px;
-    font-size: 1.2rem;
+    font-size: 12px;
 }
 
 

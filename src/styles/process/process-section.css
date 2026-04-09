@@ -1,9 +1,10 @@
 /* --- Sección principal --- */
 .process-section {
     padding: 80px 20px 80px 20px;
-     background-color: #FFFFFF;
+     background-color: #FAFAFC;
     font-family: 'Inter', sans-serif;
     text-align: center;
+    border-top: 1px solid #e5e7eb;
 }
 
 .process-container {
@@ -38,6 +39,7 @@
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
     border: 1px solid #ebebeb;
     text-align: left;
+    min-height: 350px;
 }
 
 /* --- Responsive --- */
