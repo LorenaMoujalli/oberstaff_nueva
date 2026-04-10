@@ -4,7 +4,7 @@
 
 
 .hero-text-content h1 {
-    font-size: 50px;
+    font-size: 46px;
     font-weight: 900;
     line-height: 1.1;
     color: #1b1b1b;
@@ -19,7 +19,7 @@
     color: #5A5A5A;
     line-height: 1.5;
     margin-bottom: 30px;
-    max-width: 700px;
+    max-width: 650px;
     font-family: "Poppins", sans-serif;
     text-align: justify;
 }
