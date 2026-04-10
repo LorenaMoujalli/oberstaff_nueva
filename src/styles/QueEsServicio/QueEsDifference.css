@@ -13,10 +13,10 @@
 
 .diff-text h3 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
+    font-size: 18px; 
     
     color: #1B1B1B;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
 }
 
 .diff-text p {

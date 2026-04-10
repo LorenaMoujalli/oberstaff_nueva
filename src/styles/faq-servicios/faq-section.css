@@ -77,4 +77,10 @@
     .faq-section {
         padding: 50px 20px;
     }
+    
+    .faq-section .faq-cta-button {
+        width: auto;
+        padding: 12px 24px;
+        font-size: 14px;
+    }
 }

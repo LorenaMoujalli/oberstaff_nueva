@@ -4,7 +4,7 @@
     background-color: #ffffff;
     text-align: center;
     color: #1a1a1a;
-    border-top: 1px solid #e5e5e5;
+
    
 }
 
@@ -51,6 +51,7 @@
 }
 
 @media (max-width: 600px) {
-    .pricing-header h2 { font-size: 26px; }
+    .pricing-header h2 { font-size: 24px; }
     .eor-pricing { padding: 60px 16px; }
+    .pricing-header p { font-size: 16px; }
 }

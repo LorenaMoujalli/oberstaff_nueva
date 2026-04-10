@@ -35,6 +35,7 @@ color: #6663FD;
 @media (max-width: 850px) {
     .stats-oberstaff {
         padding: 50px 20px;
+        border-top: 1px solid #e5e7eb;
     }
 
     .stats-main-title {

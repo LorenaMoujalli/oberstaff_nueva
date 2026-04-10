@@ -202,7 +202,7 @@
     }
 
     .price-amount {
-        font-size: 60px;
+        font-size: 50px;
     }
 
     .price-currency {
@@ -220,6 +220,7 @@
 
     .price-main {
         justify-content: center;
+     
     }
 
     .price-period {

@@ -74,14 +74,15 @@
     color: #5c5cff;
     font-weight: 700;
     font-size: 18px;
-    margin-bottom: 35px;
+    margin-bottom: 45px;
+    margin-top: 25px;
     border-radius: 0 8px 8px 0;
 }
 
 .info-item {
     display: flex;
     gap: 15px;
-    margin-bottom: 25px;
+    margin-bottom: 35px;
 }
 
 .icon-box {
@@ -104,12 +105,12 @@
     font-size: 18px;
     
     color: #1B1B1B;
-    margin-bottom: 8px;
+    margin-bottom: 13px;
 }
 
 .text-box p {
     font-family: 'Poppins', sans-serif;
-    font-size: 15px;
+    font-size: 14.5px;
     color: #5A5A5A;
     line-height: 1.6;
     margin: 0;

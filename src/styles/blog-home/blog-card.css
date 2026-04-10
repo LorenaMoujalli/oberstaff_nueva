@@ -86,7 +86,10 @@
         flex: 0 0 100%;
     }
     .card-image {
-        height: 220px;
+        height: 190px;
+    }
+    .card-body {
+        padding: 15px 20px;
     }
     .card-body h3 {
         font-size: 16px;

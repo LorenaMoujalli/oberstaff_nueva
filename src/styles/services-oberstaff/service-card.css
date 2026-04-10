@@ -3,12 +3,12 @@
     position: relative;
     overflow: hidden;
     background: #ffffff;
-    padding: 40px;
+    padding: 30px;
     border-radius: 20px;
-  
+
     text-align: left;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-        border: 1px solid rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.03);
     transition:
         transform 0.3s ease,
         box-shadow 0.3s ease,
@@ -31,10 +31,21 @@
     transform: scale(1.1);
 }
 
-.service-card.card-purple { color: #6663FD; }
-.service-card.card-green { color: #6aca8a; }
-.service-card.card-pink { color: #FF66CC; }
-.service-card.card-lime { color: #9acd35; }
+.service-card.card-purple {
+    color: #6663FD;
+}
+
+.service-card.card-green {
+    color: #6aca8a;
+}
+
+.service-card.card-pink {
+    color: #FF66CC;
+}
+
+.service-card.card-lime {
+    color: #9acd35;
+}
 
 .service-card:hover {
     transform: translateY(-5px);
@@ -50,11 +61,16 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 25px;
-    border: none;
+    border: 1px solid rgba(0, 0, 0, 0.04);
 }
 
 .icon-emoji {
-    font-size: 28px;
+    font-size: 22px;
+    line-height: 1;
+}
+
+.icon-emoji-servicios-home {
+    font-size: 30px;
     line-height: 1;
 }
 
@@ -64,23 +80,58 @@
 }
 
 /* --- Fondos de icono por card --- */
-.purple-bg { background-color: #6663FD; }
-.pink-bg   { background-color: #6aca8a; }
-.orange-bg { background-color: #FF66CC; }
-.gray-bg   { background-color: #9acd35; }
+.purple-bg {
+    background-color: #6663FD;
+}
+
+.pink-bg {
+    background-color: #6aca8a;
+}
+
+.orange-bg {
+    background-color: #FF66CC;
+}
+
+.gray-bg {
+    background-color: #9acd35;
+}
 
 /* --- Hover de borde y color de link por card --- */
-.service-card.card-purple:hover { border-color: #6663FD; box-shadow: 0 15px 50px rgba(102, 99, 253, 0.2);}
-.service-card.card-purple .service-link { color: #6663FD; }
+.service-card.card-purple:hover {
+    border-color: #6663FD;
+    box-shadow: 0 15px 50px rgba(102, 99, 253, 0.2);
+}
 
-.service-card.card-green:hover { border-color: #6aca8a; box-shadow: 0 15px 50px rgba(102, 255, 153, 0.2);}
-.service-card.card-green .service-link { color: #6aca8a; }
+.service-card.card-purple .service-link {
+    color: #6663FD;
+}
 
-.service-card.card-pink:hover { border-color: #FF66CC;  box-shadow: 0 15px 50px rgba(255, 102, 204, 0.2); }
-.service-card.card-pink .service-link { color: #FF66CC; }
+.service-card.card-green:hover {
+    border-color: #6aca8a;
+    box-shadow: 0 15px 50px rgba(102, 255, 153, 0.2);
+}
 
-.service-card.card-lime:hover { border-color: #9acd35; box-shadow: 0 15px 50px rgba(204, 255, 102, 0.15);}
-.service-card.card-lime .service-link { color: #9acd35; }
+.service-card.card-green .service-link {
+    color: #6aca8a;
+}
+
+.service-card.card-pink:hover {
+    border-color: #FF66CC;
+    box-shadow: 0 15px 50px rgba(255, 102, 204, 0.2);
+}
+
+.service-card.card-pink .service-link {
+    color: #FF66CC;
+}
+
+.service-card.card-lime:hover {
+    border-color: #9acd35;
+    box-shadow: 0 15px 50px rgba(204, 255, 102, 0.15);
+}
+
+.service-card.card-lime .service-link {
+    color: #9acd35;
+}
 
 /* --- Textos --- */
 .service-card h3 {
@@ -92,7 +143,7 @@
 }
 
 .service-card p {
-       font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 15px;
     color: #5A5A5A;
     line-height: 1.6;
@@ -126,14 +177,17 @@
     border-color: #FF66CC !important;
     box-shadow: 0 15px 40px rgba(255, 102, 204, 0.15) !important;
 }
+
 .employer-use-cases-grid .service-card:nth-child(2):hover {
     border-color: #66FF99 !important;
     box-shadow: 0 15px 40px rgba(102, 255, 153, 0.15) !important;
 }
+
 .employer-use-cases-grid .service-card:nth-child(3):hover {
     border-color: #6663FD !important;
     box-shadow: 0 15px 40px rgba(102, 99, 253, 0.15) !important;
 }
+
 .employer-use-cases-grid .service-card:nth-child(4):hover {
     border-color: #CCFF66 !important;
     box-shadow: 0 15px 40px rgba(204, 255, 102, 0.15) !important;
@@ -153,5 +207,13 @@
 
 /* --- Responsivo --- */
 @media (max-width: 850px) {
-   
+    .icon-box {
+        width: 50px;
+        height: 50px;
+    }
+
+    .icon-emoji-servicios-home {
+        font-size: 22px;
+    }
+
 }

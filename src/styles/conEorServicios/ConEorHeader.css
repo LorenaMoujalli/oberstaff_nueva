@@ -10,7 +10,7 @@
 .eor-title {
 font-family: 'Montserrat', sans-serif;
     font-size: 32px;
-    
+    padding-left: 2px; padding-right: 2px;
     line-height: 1.15;
     margin-bottom: 20px;
     color: #1a1a1a;
@@ -25,5 +25,5 @@ font-family: 'Montserrat', sans-serif;
 }
 
 @media (max-width: 768px) {
-    .eor-title { font-size: 28px; }
+    .eor-title { font-size: 24px; }
 }

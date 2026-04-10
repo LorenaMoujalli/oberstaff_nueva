@@ -53,10 +53,11 @@
 }
 
 @media (max-width: 768px) {
-    .features-title { font-size: 28px; }
+    .features-title { font-size: 24px; }
     .features-grid {
         grid-template-columns: 1fr;
         gap: 20px;
     }
     .features-header { margin-bottom: 40px; }
+    .features-subtitle { font-size: 16px; }
 }

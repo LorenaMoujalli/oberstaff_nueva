@@ -18,7 +18,7 @@
 /* Bloque Izquierdo: Estadísticas */
 .franja-stats-left {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 40px;
     flex-shrink: 0;
 }
@@ -26,8 +26,8 @@
 .franja-stat-block {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
+    align-items: center;
+    text-align: center;
 }
 
 .franja-number {
@@ -59,6 +59,7 @@
 }
 
 .franja-vertical-divider {
+    align-self: center;
     width: 1px;
     height: 48px;
     background: #e2e2e2;
@@ -98,7 +99,8 @@
 .logo-item:hover {
     opacity: 1;
     filter: grayscale(0);
-    transform: scale(1.08); /* Ligeramente más grande al hover */
+    transform: scale(1.08);
+    /* Ligeramente más grande al hover */
 }
 
 /* Detener animación al pasar el ratón */
@@ -110,6 +112,7 @@
     from {
         transform: translateX(0);
     }
+
     to {
         /* Se desplaza exactamente el 50% de la pista (un juego completo de logos + sus paddings) */
         transform: translateX(-50%);
@@ -121,22 +124,24 @@
    ========================================================================== */
 
 @media (max-width: 1024px) {
+
     /* --- franja-empresas-container --- */
     .franja-empresas-container {
         flex-direction: column;
         text-align: center;
         gap: 50px;
     }
-    
+
     /* --- franja-stats-left --- */
     .franja-stats-left {
         justify-content: center;
     }
-    
+
     /* --- franja-stat-block --- */
     .franja-stat-block {
         align-items: center;
         text-align: center;
+        width: 160px;
     }
 
     /* --- franja-logos-slider --- */
@@ -151,26 +156,48 @@
 }
 
 @media (max-width: 480px) {
+
     /* --- franja-number --- */
-    .franja-number { font-size: 42px; }
+    .franja-number {
+        font-size: 42px;
+    }
 
     /* --- franja-stat-block --- */
-    .franja-stat-block { gap: 5px; }
+    .franja-stat-block {
+        width: 130px;
+        gap: 5px;
+    }
 
     /* --- franja-vertical-divider --- */
-    .franja-vertical-divider { height: 35px; }
+    .franja-vertical-divider {
+        height: 35px;
+    }
 
     /* --- franja-stats-left --- */
-    .franja-stats-left { gap: 20px; }
+    .franja-stats-left {
+        gap: 15px;
+    }
 
     /* --- logo-item (Logos de empresas) --- */
-    .logo-item { width: 110px; padding-right: 40px; }
+    .logo-item {
+        width: 200px;
+        padding-right: 40px;
+    }
 
     /* --- franja-label --- */
-    .franja-label { font-size: 9px; }
-    
+    .franja-label {
+        font-size: 10px;
+        white-space: normal;
+        line-height: 1.4;
+    }
+
     @keyframes scrollLogos {
-        from { transform: translateX(0); }
-        to { transform: translateX(-50%); } 
+        from {
+            transform: translateX(0);
+        }
+
+        to {
+            transform: translateX(-50%);
+        }
     }
 }

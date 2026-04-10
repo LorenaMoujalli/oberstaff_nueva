@@ -42,7 +42,7 @@
 }
 
 @media (max-width: 768px) {
-    .casos-header h2 { font-size: 28px; }
+    .casos-header h2 { font-size: 24px; }
     .casos-grid {
         grid-template-columns: 1fr;
     }

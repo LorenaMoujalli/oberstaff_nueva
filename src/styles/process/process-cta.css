@@ -79,4 +79,10 @@
         border-top: 1px solid #ebebeb;
         padding: 35px 25px;
     }
+    
+    .process-employer .process-cta {
+        align-items: flex-start;
+        text-align: left;
+    }
+
 }

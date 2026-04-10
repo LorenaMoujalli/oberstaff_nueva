@@ -168,7 +168,7 @@
     }
     
     .steps-header h2 {
-        font-size: 26px;
+        font-size: 24px;
     }
 
     .steps-wrapper {
@@ -219,4 +219,6 @@
     .step-description {
         font-size: 13px;
     }
+
+    .steps-header p { font-size: 16px; }
 }
