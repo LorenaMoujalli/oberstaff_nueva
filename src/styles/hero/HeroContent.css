@@ -49,7 +49,7 @@
     background: rgba(102, 99, 253, 0.05);
     border-left: 4px solid var(--brand-purple, #5c5cff);
     border-radius: 8px;
-    padding: 16px 16px; 
+    padding: 16px 16px;
     width: fit-content;
 }
 
@@ -84,7 +84,7 @@
 
 .hero-oberstaff .btn-primary:hover {
     background-color: transparent;
-    color: #6aca8a;  
+    color: #6aca8a;
     border: 2px solid #6aca8a;
 }
 
@@ -116,7 +116,7 @@
     background-color: transparent;
     color: #ff66cc;
     border-color: #ff66cc;
-   
+
 }
 
 .hero-text-content .btn-secondary:hover iconify-icon {
@@ -148,7 +148,7 @@
     .hero-text-content .hero-description {
         margin: 0 auto 20px auto;
         font-size: 16px;
-    
+
     }
 
     .desktop-br {
