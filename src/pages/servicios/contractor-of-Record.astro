@@ -1,366 +1,807 @@
 ---
 import DashboardLayoutServicios from "../../layouts/DashboardLayoutServicios.astro";
 import HeroService from "../../components/hero-servicios/HeroService.astro";
+import FranjaEmpresasHome from "../../components/franja-empresas-home/FranjaEmpresasHome.astro";
 import ConEorService from "../../components/conEorServicios/ConEorService.astro";
-//import from "../../components/beneficios-eor-servicios/BeneficiosSeccion.astro";
-//import EorStepsSection from "../../components/eor-steps-servicios/EorStepsSection.astro";
+//import BeneficiosSeccion from "../../components/beneficios-eor-servicios/BeneficiosSeccion.astro";
+import EorStepsSection from "../../components/eor-steps-servicios/EorStepsSection.astro";
 import EorCta from "../../components/eor-cta-servicios/EorCta.astro";
 import FeaturesSection from "../../components/oberstaff-features-servicios/FeaturesSection.astro";
 import CoberturaSeccion from "../../components/geografica-servicios/CoberturaSeccion.astro";
-//import PricingSection from "../../components/pricing-servicios/PricingSection.astro";
+import PricingSection from "../../components/pricing-servicios/PricingSection.astro";
 import CasosExitoSection from "../../components/casos-exito-servicios/CasosExitoSection.astro";
-import RolesSection from "../../components/roles-servicios/RolesSection.astro";
-import FAQSectionContractor from "../../components/faq-servicios/FAQSectionContractor.astro";
-import QueEsStaffSection from "../../components/QueesStaff-servicios/QueEsStaffSection.astro";
-//import BeneficiosSeccionPersonal from "../../components/beneficios-eor-servicios/BeneficiosSeccion-personal.astro";
-//import OtrosServiciosSection from "../../components/otros-servicios-servicios/OtrosServiciosSection.astro";
+//import RolesSection from "../../components/roles-servicios/RolesSection.astro";
+import FAQSection from "../../components/faq-servicios/FAQSectionContractor.astro";
+import OtrosServiciosSection from "../../components/otros-servicios-servicios/OtrosServiciosSection.astro";
 import ContactFormSection from "../../components/form/ContactFormSection.astro";
 //import ArticulosSection from "../../components/articulos-servicios/ArticulosSection.astro";
+import QueEsServicioSection from "../../components/QueEsServicio/QueEsServicioSection.astro";
+import ServicesSection from "../../components/services-oberstaff/ServicesSection.astro";
+import ProcessOberstaff from "../../components/process/ProcessOberstaff.astro";
+import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
 ---
 
 <DashboardLayoutServicios
     title="Contractor of Record para empresas españolas | Oberstaff"
-    description="Contrata profesionales remotos de LATAM sin entidad local. Nuestro contractor of record gestiona contratos, pagos y compliance por ti. Propuesta en 24h."
+    description="Contrata freelancers en LATAM ágilmente. Como tu Contractor of Record, gestionamos pagos, contratos y compliance internacional sin nexo laboral."
     keywords="Contractor of Record"
 >
     <div class="service-detail-container">
         <div class="fade-in-section">
             <HeroService
-                label="Contractor of Record"
+                label="CONTRACTOR OF RECORD • COR"
                 preTitle="Contractor of Record en LATAM:"
-                title="Contractor of Record en LATAM:"
-                highlight="el talento es tuyo, el contrato es nuestro."
-                description="Oberstaff actúa como tu Contractor of Record en Latinoamérica. Tú diriges el trabajo; nosotros gestionamos el contrato, los pagos y el cumplimiento legal en cada país. Accede a talento remoto top con hasta un 70% de ahorro frente al mercado español."
+                title="Contrata freelancers e independientes con respaldo legal"
+                highlight=""
+                description="Colabora con freelancers y profesionales independientes en LATAM de forma ágil. Como tu Contractor of Record, centralizamos tus pagos internacionales y blindamos tus contratos mercantiles contra riesgos de 'falsos autónomos'. Todo en una única factura."
                 videoImg="/fondo-video.webp"
                 remoteCountry="CO"
-                floatingText="Cero Riesgo Legal"
-                primaryBtnText="Recibir propuesta en 24h"
+                floatingText="Talento Tech Validado"
+                floatingIcon="💻"
+                badgeRightTitle=""
+                badgeRightText="Integración Ágil"
+                badgeRightIcon="⚡"
+                primaryBtnText="Recibir propuesta en <24h"
                 primaryBtnHref="#contacto"
-                secondaryBtnText="Conocer el servicio"
-                secondaryBtnHref="#"
+                secondaryBtnText="Hablar con un especialista COR"
+                secondaryBtnHref="#contacto"
+                underBtnText="↳ Tardarás menos de 1 minuto · Sin compromiso"
             />
         </div>
 
-        <QueEsStaffSection 
-            label="¿Qué es el Contractor of Record?"
-            title="Contratación internacional sin entidad local"
-            description="El contractor of record meaning en su definición más práctica: es la empresa que actúa como intermediaria legal para contratar profesionales independientes en otro país. Tú defines el trabajo; Oberstaff firma el contrato con el profesional en LATAM, gestiona los pagos y garantiza el cumplimiento normativo en cada país."
-            card1Icon="solar:lightbulb-linear"
-            card1IconColor="#facc15"
-            card1HtmlContent="<strong>COR vs. EOR en una frase:</strong> con un Employer of Record el profesional se incorpora como empleado; con un Contractor of Record trabaja como independiente. Dos modelos distintos, misma seguridad legal y mismo respaldo de Oberstaff. Tú eliges el que mejor encaja con tu situación."
-            card2HtmlContent=""
-            useCasesTitle="Cuándo usar un Contractor of Record" 
-            useCasesDescription="El COR es la opción ideal cuando necesitas flexibilidad y velocidad sin estructura fija."
-            useCases={[
-                {
-                    title: "Proyectos puntuales y sprints",
-                    description: "Necesitas un desarrollador o diseñador para un proyecto de 3-6 meses sin comprometer una contratación indefinida."
-                },
-                {
-                    title: "Validar talento antes de contratar",
-                    description: "Trabaja con el profesional en modalidad contractor antes de convertirlo en empleado fijo a través de nuestro servicio EOR."
-                },
-                {
-                    title: "Expansión a LATAM sin filial",
-                    description: "Quieres operar con talento en múltiples países sin constituir entidades legales en cada uno."
-                },
-                {
-                    title: "Talento especializado y escaso",
-                    description: "Perfiles técnicos difíciles de encontrar en España (IA, Data, Cloud) con disponibilidad inmediata en LATAM."
-                }
-            ]}
-        />
+        <div class="fade-in-section">
+            <FranjaEmpresasHome
+                stat1Number="100%"
+                stat1Label="Compliance para trabajadores independientes"
+                stat2Number="10"
+                stat2Label="Países en LATAM con red de pagos centralizada"
+                stat3Number="0"
+                stat3Label="Riesgo de contingencia por falsos autónomos"
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <QueEsServicioSection
+                title="¿Qué es un Contractor of Record?"
+                highlightWord="Contractor of Record?"
+                description="<span style='color: #1B1B1B; font-weight: 700;'>Contratación ágil de talento independiente sin fricción internacional.</span>"
+                imageSrc="/img-contractor.webp"
+                imageAlt="Profesional trabajando"
+                badgeText="Pago centralizado"
+                quoteText="El contractor of record meaning en su definición más práctica: es la empresa que actúa como intermediaria legal para contratar profesionales independientes en otro país. Tú defines el proyecto, los entregables y la relación de trabajo; <span style='color: #1B1B1B; font-weight: 700;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> estructura el contrato, coordina los pagos y sostiene la administración del servicio."
+                infoItems={[
+                    {
+                        icon: "🚀", 
+                        title: "",
+                        description:
+                            "Para las organizaciones españolas, el COR es la vía más ágil cuando necesita incorporar talento por proyecto, por sprint o por especialidad, pero <span style=' font-weight: 700;'>no necesita crear una relación laboral de empleado</span><span style='color: #FF66CC; font-weight: 900;'>.</span> No es un modelo de nómina; es un modelo pensado para independientes.",
+                    }
+                ]}
+                diffIcon="❌"
+                diffTitle="COR NO es el modelo adecuado si..."
+                diffDescription="Si necesitas horario fijo, subordinación continua, nómina, entonces no necesitas un COR; <a styles='color: #FF4D4D !important; text-decoration: none !important; font-weight: 700 !important;' href='/servicios/employer-of-record'>necesitas el modelo employer of record →</a>"
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <ServicesSection
+                title="Cuándo usar un <strong>Contractor of Record</strong>"
+                description="El COR es la opción ideal cuando necesitas flexibilidad y velocidad sin estructura fija."
+                customClass="employer-use-cases"
+                services={[
+                    {
+                        icon: "🚀",
+                        title: "Proyectos puntuales y de duración definida",
+                        description:
+                            "Necesitas un desarrollador o diseñador para un proyecto de 3-6 meses sin comprometer una contratación indefinida.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "rgba(255, 102, 204, 0.1)",
+                        cardClass: "card-green",
+                    },
+                    {
+                        icon: "🔍",
+                        title: "Colaboraciones con freelancers internacionales",
+                        description:
+                            "Trabaja con el experto en modalidad contractor antes de convertirlo en empleado fijo.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "rgba(102, 255, 153, 0.1)",
+                        cardClass: "card-pink",
+                    },
+                    {
+                        icon: "🌐",
+                        title: "Expansión flexible en varios países",
+                        description:
+                            "Cuándo quieres operar con especialistas independientes en distintos mercados sin abrir una estructura legal en cada uno.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "rgba(102, 99, 253, 0.1)",
+                        cardClass: "card-lime",
+                    },
+                    {
+                        icon: "💡",
+                        title: "Talento especializado y escaso",
+                        description:
+                            "Perfiles técnicos difíciles de encontrar en España (IA, Data, Cloud) con disponibilidad inmediata en Latinoamérica.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "rgba(204, 255, 102, 0.2)",
+                        cardClass: "card-lime",
+                    },
+                ]}
+            />
+        </div>
 
         <div class="fade-in-section">
             <ConEorService
                 eyebrow=""
-                title="Gestionarlo internamente vs. hacerlo con Oberstaff"
+                title="Gestionarlo internamente vs. hacerlo con <span style='color: #6663FD; font-weight: 900;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span>"
                 description=""
                 negativeTitle="Sin contractor of record"
-                positiveTitle="Con Oberstaff (Talento LATAM)"
-                badge="Recomendado"
-                negativeIcon="solar:close-circle-linear"
-                positiveIcon="solar:check-circle-linear"
+                positiveTitle="Con <span style='font-weight: 900;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span>"
+                badge="La opción inteligente"
+                negativeIcon=""
+                positiveIcon=""
                 negativeItems={[
-                    "Contratos dispersos",
-                    "Pagos manuales a varios países",
-                    "Más carga administrativa",
-                    "Escalar es más complejo",
-                    "Más fricción operativa",
+                    "Buscas al freelancer en múltiples plataformas",
+                    "Pagos manuales a múltiples países",
+                    "Contratos sin validez local",
+                    "Dificultad para escalar cuando trabajas con varios especialistas externos",
+                    "Caos administrativo persiguiendo facturas (invoices) de múltiples proveedores",
                 ]}
                 positiveItems={[
-                    "Operativa más centralizada ",
+                    "Acceso a nuestra red de especialistas pre-vetting",
                     "Pagos y seguimiento simplificados",
-                    "Más foco para tu equipo interno",
-                    "Modelo útil para contratación internacional",
-                    "Mejor experiencia para empresa y contractor",
+                    "Contrato local válido desde el primer día",
+                    "Modelo pensado para operar con independientes en distintos países de LATAM",
+                    "Centralización de toda tu red de talento externo en una sola factura.",
                 ]}
             />
         </div>
-<!--
+
         <div class="fade-in-section">
-            <BeneficiosSeccionPersonal
-                title=""
-                subtitle="Cómo funciona nuestro servicio: de cero a profesional operativo en 4 pasos"
-                description="Nuestro servicio de remote contractor of record está diseñado para que tú solo te preocupes de dirigir el trabajo, nosotros gestionamos el resto."
-                beneficios={[
+            <ProcessOberstaff
+                className="process-employer"
+                title="¿Que incluye nuestro servicio de <strong>Contractor of Record</strong>"
+                description="Desde la firma del contrato hasta la gestión mensual de pagos. <span style='color: #1B1B1B; font-weight: 700;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> cubre cada fase para que solo tengas que dirigir el trabajo."
+                items={[
                     {
-                        number: "1",
-                        title: "Define el perfil",
+                        label: "Validación",
+                        badge: "Paso 1",
+                        title: "Definición del modelo y validación de encaje",
                         description:
-                            "Nos explicas el rol, stack técnico, disponibilidad y presupuesto. Buscamos en toda LATAM.",
-                        colorClass: "icon-legal",
+                            "Te ayudamos a confirmar si el perfil debe entrar como contractor independiente o si, por su dedicación y naturaleza, conviene otro modelo.",
+                        icon: "🔍",
+                        badgeColor: "#6663FD",
+                        badgeBg: "rgba(102, 99, 253, 0.1)",
                     },
                     {
-                        number: "2",
-                        title: "Selección del candidato",
+                        label: "Contrato",
+                        badge: "Paso 2",
+                        title: "Contrato y alta documental",
                         description:
-                            "Te presentamos 3-5 candidatos preseleccionados con español nativo. Tú decides quién se incorpora.",
-                        colorClass: "icon-nomina",
+                            "Estructuramos la documentación contractual y dejamos ordenado el marco de colaboración desde el primer día.",
+                        icon: "📝",
+                        badgeColor: "#6aca8a",
+                        badgeBg: "rgba(102, 255, 153, 0.15)",
                     },
                     {
-                        number: "3",
+                        label: "Pagos",
+                        badge: "Paso 3",
+                        title: "Gestión mensual y pagos",
+                        description:
+                            "Centralizamos pagos, seguimiento y coordinación administrativa para que no gestiones múltiples países ni procesos manuales dispersos.",
+                        icon: "🗂️",
+                        badgeColor: "#FF66CC",
+                        badgeBg: "rgba(255, 102, 204, 0.1)",
+                    },
+                    {
+                        label: "Soporte",
+                        badge: "Continuidad",
+                        title: "Soporte continuo",
+                        description:
+                            "Te acompañamos en cambios de alcance, renovaciones, sustituciones y dudas operativas durante toda la relación con el especialista.",
+                        icon: "⚡",
+                        badgeColor: "#1B1B1B",
+                        badgeBg: "rgba(204, 255, 102, 0.3)",
+                    },
+                ]}
+                ctaTitle="Incorpora a tu freelance hoy"
+                ctaDescription="Un equipo dedicado gestionará todo el proceso legal y de pagos por ti."
+                ctaBtnText="Agendar llamada"
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <ProfilesSection
+                variant="grid"
+                title="Especialistas independientes que <span style='color: #6663FD; font-weight: 900;'>puedes incorporar con COR</span>"
+                description="Perfiles de alta especialización con disponibilidad para trabajar por proyecto. Español nativo y listos para integrarse a tu negocio."
+                profiles={[
+                    {
+                        icon: "💻",
+                        title: "Tecnología por proyecto",
+                        quote: "",
+                        description: "Talento autónomo para auditorías o desarrollo de módulos aislados, facturando honorarios por proyecto.",
+                        roles: [
+                            { label: "Desarrollador freelance", href: "#" },
+                            { label: "QA por release", href: "#" },
+                            { label: "DevOps por migración", href: "#" },
+                            { label: "Especialista en IA/Data por implementación", href: "#" }
+                        ],
+                        iconColorClass: "blue-text",
+                    },
+                    {
+                        icon: "🎨",
+                        title: "Creativos y Especialistas de Marketing por Proyecto",
+                        quote: "",
+                        description: "Para entregables por volumen. Relación estrictamente mercantil y sin riesgos laborales.",
+                        roles: [
+                            { label: "Experto SEO externo", href: "#" },
+                            { label: "Especialista Google Ads por campaña", href: "#" },
+                            { label: "Especialista Meta Ads por lanzamiento", href: "#" },
+                            { label: "Email marketer por proyecto", href: "#" }
+                        ],
+                        iconColorClass: "pink-text",
+                    },
+                    {
+                        icon: "📊",
+                        title: "Diseño y producto",
+                        quote: "",
+                        description: "Especialistas independientes para diseño e interfaces. Pagos por hitos y entregables bajo contrato mercantil.",
+                        roles: [
+                            { label: "Diseñador UI/UX por sprint", href: "#" },
+                            { label: "Diseñador gráfico por campañas", href: "#" },
+                            { label: "Editor de vídeo para picos de producción", href: "#" }
+                        ],
+                        iconColorClass: "purple-text",
+                    }
+                ]}
+            >
+            <!-- 
+                <div slot="bottom-alert" class="profiles-bottom-alert">
+                    <span class="alert-icon">🚨</span>
+                    <div class="alert-content">
+                        <h4>¿Necesitas perfiles no tecnológicos?</h4>
+                        <p>
+                            (Comerciales, administrativos, marketing, atención
+                            al cliente). Contamos con otros modelos con los
+                            cuales cubrimos esas áreas. <a href="#"
+                                >Ver soluciones globales →</a
+                            >
+                        </p>
+                    </div>
+                </div>
+                -->
+            </ProfilesSection>
+        </div>
+
+        <div class="fade-in-section">
+            <EorStepsSection
+                title="De necesidad a contractor operativo en <strong>4 pasos</strong>"
+                subtitle="Nuestro servicio de remote contractor of record está diseñado para que tú solo te preocupes de dirigir el trabajo — nosotros gestionamos el resto."
+                steps={[
+                    {
+                        title: "Nos explicas el rol.",
+                        lineColorClass: "line-black",
+                        description:
+                            "Alcance, tipo de perfil, duración, presupuesto y país o países de interés.",
+                    },
+                    {
+                        title: "Validamos el modelo",
+                        lineColorClass: "line-pink",
+                        description:
+                            "Confirmamos si la figura correcta es un especialista independiente y definimos la estructura operativa adecuada.",
+                    },
+                    {
                         title: "Contrato y alta COR",
+                        lineColorClass: "line-orange",
                         description:
-                            "Oberstaff firma el contrato con el profesional. Cumplimiento legal garantizado desde el primer día.",
-                        colorClass: "icon-responsabilidad",
+                            "Oberstaff organiza el marco contractual y deja lista la operativa de colaboración.",
                     },
                     {
-                        number: "4",
-                        title: "Profesional operativo",
+                        title: "Contractor operativo",
+                        lineColorClass: "line-blue",
                         description:
-                            "El contractor se integra en tu equipo. Tú defines las tareas. Nosotros gestionamos los pagos mes a mes.",
-                        colorClass: "icon-legal",
+                            "Tú diriges el trabajo y los entregables; nosotros sostenemos la administración y los pagos.",
                     },
                 ]}
             />
         </div>
- -->
-          <div class="fade-in-section">
+
+        <div class="fade-in-section">
             <EorCta
-                title="¿Listo para contratar tu primer profesional remoto de LATAM?"
-                text="Habla con nuestros especialistas y recibe una propuesta personalizada en menos de 24 horas."
-                buttonText="Solicitar propuesta gratuita"
-                buttonHref="#contacto"
+                title="¿Tienes un proyecto concreto y necesitas el especialista correcto?"
+                text="Cuéntanos qué perfil necesitas y te diremos si encaja como contractor, qué estructura conviene y cómo activar la colaboración con menos fricción."
+                buttonText="Solicitar propuesta gratuita →"
+                buttonHref="#contacto" 
             />
         </div>
 
-
-   <div class="fade-in-section">
-            <RolesSection
-                title="Perfiles remotos de Latinoamérica"
-                subtitle=""
-                description="Profesionales independientes cualificados listos para incorporarse a tu empresa."
-            />
-        </div>
-
-        
         <div class="fade-in-section">
             <FeaturesSection
                 eyebrow=""
-                title="Todo lo que necesita tu empresa para contratar en LATAM"
+                title="Beneficios de <span style='font-weight: 900; color: #6663FD;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span> como tu contractor of record"
                 subtitle=""
                 features={[
                     {
-                        title: "Cero riesgo laboral",
+                        title: "Flexibilidad real",
                         description:
-                            "Oberstaff asume la responsabilidad jurídica en cada país Tu empresa española queda protegida ante cualquier reclamación.",
-                        icon: "solar:shield-check-bold-duotone",
+                            "Modelo pensado para independientes, no fuerza una relación laboral cuando no la necesitas.",
+                        icon: "🛡️",
                         colorClass: "icon-blue",
+                        cardClass: "hover-purple",
                     },
                     {
-                        title: "Zona horaria compatible",
+                        title: "Menos fricción operativa",
                         description:
-                            "Horario compatible con CET. Tu contractor trabaja contigo en tiempo real, sin desfases que frenen la colaboración.",
-                        icon: "solar:global-bold-duotone",
+                            "Evitas contratos dispersos, pagos desordenados y seguimiento manual entre varios países.",
+                        icon: "🌎",
                         colorClass: "icon-green",
+                        cardClass: "hover-green",
                     },
                     {
-                        title: "Español nativo",
+                        title: "Mitigación de riesgos",
                         description:
-                            "Todo el talento de LATAM habla español como lengua materna. Comunicación fluida y sin barreras desde el primer día.",
-                        icon: "solar:user-speak-bold-duotone",
+                            "Bloquea el riesgo de que un contratista independiente reclame beneficios laborales en el futuro mediante contratos de servicios blindados.",
+                        icon: "🗣️",
                         colorClass: "icon-yellow",
+                        cardClass: "hover-pink",
                     },
                     {
-                        title: "Una factura en euros",
+                        title: "Rapidez de activación",
                         description:
-                            "Nos encargamos de pagar al profesional en moneda local. Tu empresa española recibe una única factura mensual en euros.",
-                        icon: "solar:chart-2-bold-duotone",
+                            "Puedes poner en marcha colaboraciones internacionales con más agilidad que una estructura tradicional.",
+                        icon: "💶",
                         colorClass: "icon-red",
+                        cardClass: "hover-yellow",
                     },
                     {
-                        title: "Soporte humano",
+                        title: "Modelo diseñado para independientes",
                         description:
-                            "Nunca gestionas solo. Tienes un equipo de soporte disponible en cada etapa del proceso.",
-                        icon: "solar:chat-round-dots-bold-duotone",
-                        colorClass: "icon-indigo",
-                    },
-                    {
-                        title: "Sin permanencia minima",
-                        description:
-                            "Adapta o cancela el contrato cuando tu negocio lo requiera. Flexibilidad total para proyectos cortos o largos.",
-                        icon: "solar:refresh-square-bold-duotone",
-                        colorClass: "icon-orange",
+                            "El servicio está pensado para freelancers y especialistas externos, no para simular una relación laboral.",
+                        icon: "🤝",
+                        colorClass: "icon-pink",
+                        cardClass: "hover-green",
                     },
                 ]}
             />
         </div>
-
-        <!--
-        <div class="fade-in-section">
-            <EorStepsSection
-                label="Tu primer profesional remoto de LATAM"
-                title="De cero a equipo ampliado "
-                subtitle="Un proceso ágil para que tu empresa española incorpore talento IT de LATAM sin trámites, sin entidad local y sin riesgos legales."
-                steps={[
-                    {
-                        title: "Defines el perfil",
-                        lineColorClass: "line-black",
-                        description:
-                            "Nos explicas el rol, stack técnico y presupuesto. Buscamos en toda LATAM.",
-                    },
-                    {
-                        title: "Selección del candidato",
-                        lineColorClass: "line-pink",
-                        description:
-                            "Te presentamos 3-5 candidatos preseleccionados. Tú decides quién se incorpora.",
-                    },
-                    {
-                        title: "Contratación y alta",
-                        lineColorClass: "line-orange",
-                        description:
-                            "Contrato y documentación incluidos; inicio en 48h tras tu selección",
-                    },
-                    {
-                        title: "Equipo ampliado",
-                        lineColorClass: "line-blue",
-                        description:
-                            "El profesional se integra en tu equipo. Gestionamos nóminas mes a mes.",
-                    },
-                ]}
-            />
-        </div>
-
-       -->
-
-
-        <!-- 
-        <div class="fade-in-section">
-            <RolesSection
-                title="Personal remoto especializado en diferentes áreas."
-                subtitle="¿Ya sabes qué perfil necesitas externalizar?"
-                description="Nuestro servicio de outsourcing de personal especializado cubre las principales áreas digitales con candidatos preseleccionados y listos para incorporarse."
-            />
-        </div>
-        -->
 
         <div class="fade-in-section">
             <CoberturaSeccion
-                title="Contratación internacional en 10 países"
-                description="Una única suscripción con Oberstaff te da acceso a contratación internacional en 10 mercados. Ideal para empresas que quieren acceso a perfiles cualificados sin abrir entidad local."
+                title="Contratación internacional<br/> de profesionales<br/> independientes en  <span style='color: #6663FD; font-weight: 900;'>10</span> <br>  <span style='color: #6663FD; font-weight: 900;'>países</span>"
+                description="Gestiona la contratación internacional en 10 mercados de Latinoamérica, sin preocuparte por las regulaciones financieras internacionales."
                 countries={[
-                    { code: "CO", name: "Colombia" },
-                    { code: "AR", name: "Argentina" },
                     { code: "MX", name: "México" },
                     { code: "VE", name: "Venezuela" },
-                    { code: "PE", name: "Perú" },
+                    { code: "CO", name: "Colombia" },
                     { code: "EC", name: "Ecuador" },
+                    { code: "PE", name: "Perú" },
                     { code: "PY", name: "Paraguay" },
-                    { code: "CH", name: "Chile" },
-                    { code: "UR", name: "Uruguay" },
+                    { code: "AR", name: "Argentina" },
+                    { code: "CL", name: "Chile" },
                     { code: "PA", name: "Panamá" },
+                    { code: "UY", name: "Uruguay" },
                 ]}
             />
         </div>
 
-        <!-- 
-		<div class="fade-in-section">
-			<PricingSection
-				eyebrow="Planes EOR"
-				title="Precios simples y sin sorpresas."
-				subtitle="Paga por profesional, no por funcionalidades. Sin costes ocultos."
-				plans={[
-					{
-						badge: "MÁS POPULAR",
-						title: "EOR Completo",
-						price: "690",
-						currency: "€",
-						period: "/ empleado / mes",
-						teamSize: "Para equipos de 4-20 empleados",
-						features: [
-							"Contrata empleados en LATAM a tiempo completo sin crear una entidad legal.",
-							"Gestiona nómina y pagos de forma simple y centralizada.",
-							"Administra la relación laboral (altas, documentación y cumplimiento) desde un solo lugar.",
-						],
-						ctaText: "Comenzar ahora",
-						ctaHref: "#contacto",
-					},
-				]}
-			/>
-		</div>
-        -->
+        <div class="fade-in-section">
+            <PricingSection
+                eyebrow=""
+                title="Precios simples y <span style='font-weight: 900; color: #6663FD;'>sin sorpresas</span>"
+                subtitle=""
+                plans={[
+                    {
+                        badge: "MÁS POPULAR",
+                        title: "Contractor of Record Completo",
+                        price: "690",
+                        currency: "€",
+                        period: "/ profesional / mes",
+                        teamSize: "Para equipos de 4-20 empleados",
+                        features: [
+                            "Contrato para profesional independiente",
+                            "Gestión de pagos y administración mensual",
+                            "Soporte humano en cada etapa del proceso",
+                            "Una única factura mensual en euros",
+                        ],
+                        ctaText: "Solicitar propuesta",
+                        ctaHref: "#contacto",
+                    },
+                ]}
+            />
+        </div>
 
         <div class="fade-in-section">
             <CasosExitoSection
-                title="Empresas españolas que ya contratan con Oberstaff"
+                title="Empresas españolas que ya contratan con <span style='font-weight: 900; color: #6663FD;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span>"
                 subtitle=""
                 testimonials={[
                     {
                         stars: 5,
-                        text: "Estaba en busca de un editor de video para mi empresa y después de varias búsquedas sin éxito, encontré a Oberstaff. Desde nuestra primera llamada, su profesionalismo me dejó impresionado. He expandido mi contrato para incluir más personal.",
+                        avatar: "/fernando.webp",
+                        text: "Estaba en busca de talento remoto especializado para mi empresa y después de varias búsquedas sin éxito, encontré a <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong> en Instagram. Desde nuestra primera llamada, su profesionalismo y calidad de trabajo me dejaron impresionado. Ahora, gracias a su excelente servicio, he expandido mi contrato con ellos para incluir más personal.",
                         author: "Fernando Calderón",
-                        role: "CEO · BEAUTYPRO",
+                        role: "CEO · BeautyPro",
                     },
                     {
                         stars: 5,
-                        text: "Gracias a Oberstaff pude dar trabajo a dos personas a tiempo completo, ahorrando costes de reclutamiento, espacios de oficina y salario que tendría al hacerlo en España. Lo mejor de todo es que todo está incluido en una misma factura.",
+                        avatar: "/sha.webp",
+                        text: "Con <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong>pude dar trabajo a dos personas a tiempo completo, ahorrando costes de reclutamiento, espacios de oficina y salario que tendría al hacerlo en España. <br> Lo mejor de todo es que todo está incluido en una misma factura. Con <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong> encontré la solución perfecta para mis necesidades de contratación remota y optimización de costes",
                         author: "Shadai Iborra",
-                        role: "CEO · @AMEDIASTORY",
-                    },
-                    {
-                        stars: 5,
-                        text: "I've been working with Oberstaff for about 2 years. They handle everything: contracts, payments and HR admin. My team in Latin America is fantastic and the cost savings have been game-changing for our business.",
-                        author: "Kate McCafferty",
-                        role: "KM REAL ESTATE",
+                        role: "CEO · @amediastory",
                     },
                 ]}
             />
         </div>
 
-     
+        <FAQSection
+            title="Todo lo que necesitas saber <strong>antes de empezar</strong>"
+            ctaText="¿Aún tienes dudas sobre cómo sumar talento freelance?"
+            ctaButtonText="Agenda una llamada gratuita"
+        />
+
         <div class="fade-in-section">
-            <FAQSectionContractor 
-                label=""
-                title="Todo lo que necesitas saber antes de empezar"
+            <OtrosServiciosSection
+                title="Otros modelos de <span style='font-weight: 900; color: #6663FD;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span>"
                 subtitle=""
+                description="El COR es el modelo adecuado para proyectos con freelancers. Pero si tu necesidad es diferente, Oberstaff tiene tres modelos más:"
+                servicios={[
+                    {
+                        icon: "🔗",
+                        title: "Employer of Record",
+                        description:
+                            "Ideal cuando necesitas contratar empleados en LATAM con relación laboral formal, nómina y cumplimiento local.",
+                        href: "#",
+                        colorClass: "icon-pink",
+                        hoverClass: "hover-pink",
+                        linkText: "Ver servicio",
+                    },
+                    {
+                        icon: "📄",
+                        title: "Outsourcing de Personal",
+                        description:
+                            "Para externalizar selección, contratación y administración.",
+                        href: "#",
+                        colorClass: "icon-green",
+                        hoverClass: "hover-green",
+                        linkText: "Ver servicio",
+                    },
+                    {
+                        icon: "🏢",
+                        title: "Staff Augmentation",
+                        description:
+                            "Ideal cuando quieres ampliar tu equipo tech y dirigir su trabajo día a día.",
+                        href: "#",
+                        colorClass: "icon-purple",
+                        hoverClass: "hover-purple",
+                        linkText: "Ver servicio",
+                    },
+                ]}
             />
         </div>
-
 
         <!-- 
 		<div class="fade-in-section">
-			<OtrosServiciosSection />
+			<RolesSection />
 		</div>
-        -->
+		-->
 
         <div class="fade-in-section">
             <ContactFormSection
-                title="¿Listo para incorporar tu próximo profesional remoto?"
-                subtitle="Cuéntanos qué perfil necesitas y en menos de 24 horas recibirás una propuesta personalizada sin compromiso. Primera consulta gratuita con nuestros especialistas en contratación internacional."
-                buttonText="Solicitar propuesta gratuita"
+                title="¿Listo para incorporar a tu próximo <span style='font-weight: 900; color: #6663FD;'>especialista independiente?</span>"
+                subtitle="Cuéntanos qué perfil necesitas, el tipo de proyecto y el plazo estimado. Te diremos si encaja con este modelo. en menos de 24 horas recibirás una propuesta personalizada sin compromiso. Primera consulta gratuita con nuestros especialistas en contratación internacional."
+                formTitle="Solicita tu propuesta gratis"
+                buttonText="Solicitar propuesta gratuita →"
+                directLabel="Rellenarlo te lleva"
+                phoneNumber="Menos de 60 segundos"
+                phoneHref=""
+                directEmoji="⏱️"
+                formLabels={{
+                    name: "Nombre *",
+                    lastName: "Apellido *",
+                    company: "Nombre de la empresa",
+                    email: "Email corporativo *",
+                    phone: "Teléfono *",
+                    comments: "¿Qué perfil técnico? *",
+                }}
+                formPlaceholders={{
+                    name: "Tu nombre",
+                    lastName: "Tu apellido",
+                    company: "Nombre de tu organización",
+                    email: "nombre@tuempresa.com",
+                    phone: "+34 XXX XXX XXX",
+                    comments:
+                        "Cuéntanos brevemente sobre el proyecto y especialista que buscas...",
+                }}
+                customClass="employer-variant"
             />
         </div>
 
-        <!--  
+        <!-- 
 		<div class="fade-in-section">
 			<ArticulosSection />
 		</div>
-        -->
+-->
     </div>
 </DashboardLayoutServicios>
 
 <style>
     .service-detail-container {
+    }
+
+    /* --- Ajuste de tamaño de título para Hero (Solo esta página) --- */
+    /*
+    :global(.hero-section .main-title) {
+        font-size: 45px !important;
+    }*/
+
+    @media (max-width: 768px) {
+        :global(.hero-section .main-title) {
+            font-size: 32px !important;
+        }
+    }
+
+    /* --- Personalización de QueEsDifferenceSection (Solo esta página) --- */
+    :global(.que-es-difference-box) {
+        background: rgba(255, 77, 77, 0.05) !important;
+        border-color: rgba(255, 77, 77, 0.2) !important;
+    }
+
+    :global(.que-es-difference-box .diff-text h3) {
+        color: #FF4D4D !important;
+    }
+
+    :global(.que-es-difference-box .diff-text p a) {
+        color: #FF4D4D !important;
+        text-decoration: none !important;
+        font-weight: 700 !important;
+    }
+
+    /* --- Perfiles Section (Solo esta página) --- */
+    :global(.variant-grid .profile-card .card-description) {
+        font-family: 'Poppins', sans-serif;
+        font-size: 13px;
+        color: #5A5A5A;
+        line-height: 1.6;
+        margin-bottom: 15px;
+       
+        border-top: none !important;
+    }
+
+    :global(.variant-grid .profile-card .card-header) {
+        border-bottom: none !important;
+        margin-bottom: 15px !important;
+        padding-bottom: 0 !important;
+    }
+
+    :global(.variant-grid .profile-card .roles-list) {
+        border-top: 1px solid rgba(0, 0, 0, 0.06) !important;
+        padding-top: 15px !important;
+        margin-top: 10px;
+    }
+
+    /* --- Estilos específicos para el componente de proceso en Employer --- */
+    :global(.process-employer .process-menu) {
+        background-color: #fafafc;
+    }
+
+    :global(.process-employer .process-tab-label) {
+        color: #5a5a5a;
+        font-weight: 600;
+    }
+
+    :global(.process-employer .process-tab:hover) {
+        background-color: #f0f0f5;
+        color: #1b1b1b;
+    }
+
+    :global(.process-employer .process-tab.active) {
+        background-color: #ffffff;
+    }
+
+    /* --- Estilos específicos para el botón CTA en Staff Augmentation --- */
+    :global(.process-employer .process-cta-btn) {
+        background-color: #6663fd;
+        color: #ffffff !important;
+        padding: 15px 35px !important;
+        border-radius: 50px !important;
+        font-weight: 700 !important;
+        font-family: "Montserrat", sans-serif !important;
+        font-style: normal !important;
+        font-size: 15px !important;
+        border: 2px solid #6663fd !important;
+        display: inline-block !important;
+        transition: all 0.3s ease !important;
+        text-decoration: none !important;
+    }
+
+    :global(.process-employer .process-cta-btn:hover) {
+        background-color: transparent !important;
+        color: #6663fd !important;
+        border: 2px solid #6663fd !important;
+        box-shadow: 0 8px 20px rgba(102, 99, 253, 0.15) !important;
+    }
+
+    /* --- Estilos específicos para el botón CTA en Pricing (Staff Augmentation) --- */
+    :global(.btn-pricing-link) {
+        background-color: #6663fd !important;
+        color: #ffffff !important;
+        padding: 13px 24px !important;
+        border-radius: 50px !important;
+        font-weight: 700 !important;
+        font-family: "Montserrat", sans-serif !important;
+        font-style: normal !important;
+        font-size: 15px !important;
+        border: 2px solid #6663fd !important;
+        display: inline-block !important;
+        transition: all 0.3s ease !important;
+        text-decoration: none !important;
+        max-width: 250px;
+    }
+
+    :global(.btn-pricing-link:hover) {
+        background-color: transparent !important;
+        color: #6663fd !important;
+        border: 2px solid #6663fd !important;
+        box-shadow: 0 8px 20px rgba(102, 99, 253, 0.15) !important;
+    }
+
+    /* --- Centrar testimonios (2 cards) en Staff Augmentation --- */
+    :global(.casos-grid) {
+        grid-template-columns: repeat(2, 1fr) !important;
+        max-width: 850px !important;
+    }
+
+    @media (max-width: 640px) {
+        :global(.casos-grid) {
+            grid-template-columns: 1fr !important;
+            max-width: 500px !important;
+        }
+    }
+
+    /* --- Botón FAQ en Staff Augmentation --- */
+    :global(
+        .service-detail-container .faq-section .faq-cta-card .faq-cta-button
+    ) {
+        background: #6663fd !important;
+        background-color: #6663fd !important;
+        color: #ffffff !important;
+        padding: 15px 30px !important;
+        border-radius: 50px !important;
+        font-weight: 700 !important;
+        font-family: "Montserrat", sans-serif !important;
+        font-size: 15px !important;
+        border: 2px solid #6663fd !important;
+        display: inline-block !important;
+        transition: all 0.3s ease !important;
+        text-decoration: none !important;
+        width: auto !important;
+    }
+
+    :global(
+        .service-detail-container
+            .faq-section
+            .faq-cta-card
+            .faq-cta-button:hover
+    ) {
+        background: transparent !important;
+        background-color: transparent !important;
+        color: #6663fd !important;
+        border: 2px solid #6663fd !important;
+        box-shadow: 0 8px 20px rgba(102, 99, 253, 0.15) !important;
+    }
+
+    /* --- Botón del formulario en Staff Augmentation --- */
+    :global(.employer-variant .btn-submit) {
+        background-color: #6663fd !important;
+        background: #6663fd !important;
+        border: 2px solid #6663fd !important;
+        color: #ffffff !important;
+    }
+
+    :global(.employer-variant .btn-submit:hover) {
+        background-color: transparent !important;
+        background: transparent !important;
+        color: #6663fd !important;
+        border: 2px solid #6663fd !important;
+        box-shadow: 0 8px 20px rgba(102, 99, 253, 0.15) !important;
+    }
+
+    :global(.employer-variant .form-title) {
+        font-family: "Montserrat", sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+        color: #1b1b1b;
+        margin-bottom: 25px;
+        text-align: left;
+    }
+
+    /* --- Alerta inferior (Perfiles no tecnológicos) --- */
+    .profiles-bottom-alert {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        background-color: rgba(255, 102, 204, 0.03);
+        border: 1px solid rgba(255, 102, 204, 0.15);
+        border-radius: 12px;
+        padding: 25px 30px;
+        margin-top: 70px;
+        text-align: left;
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .profiles-bottom-alert .alert-icon {
+        font-size: 32px;
+        flex-shrink: 0;
+    }
+
+    .profiles-bottom-alert .alert-content h4 {
+        font-family: "Montserrat", sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        color: #ff66cc;
+        margin: 0 0 8px 0;
+    }
+
+    .profiles-bottom-alert .alert-content p {
+        font-family: "Poppins", sans-serif;
+        font-size: 15px;
+        color: #5a5a5a;
+        margin: 0;
+        line-height: 1.6;
+    }
+
+    .profiles-bottom-alert .alert-content a {
+        font-weight: 700;
+        color: #ff66cc;
+        text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+        .profiles-bottom-alert {
+            flex-direction: column;
+            text-align: center;
+            gap: 15px;
+            padding: 20px;
+        }
+    }
+
+    /* --- Ajuste del quote en ¿Qué es Staff Augmentation? para que parezca un párrafo normal --- */
+    :global(.que-es-servicio-section .quote-blue-border) {
+        border-left: none !important;
+        padding: 0 !important;
+        background: none !important;
+        color: #5a5a5a !important;
+        font-weight: 400 !important;
+        font-size: 14.5px !important;
+        line-height: 1.6 !important;
+        margin-bottom: 35px !important;
+        margin-top: 0 !important;
+    }
+
+    /* --- Floating badge inferior en ¿Qué es Staff Aug? — esquina derecha, más estrecho --- */
+    :global(.que-es-servicio-section .floating-badge-bottom) {
+        left: auto !important;
+        right: -10px !important;
+        width: auto !important;
+        max-width: 240px !important;
+        padding: 14px 22px 14px 18px !important;
+        justify-content: flex-start !important;
+        animation: floatBadgeRight 4s ease-in-out infinite !important;
+    }
+
+    @keyframes floatBadgeRight {
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
     }
 </style>

@@ -17,48 +17,52 @@ interface Props {
     customClass?: string;
 }
 
-const { 
-    title = "Servicios para <strong>incorporar profesionales de Latinoamérica</strong>", 
+const {
+    title = "Servicios para <strong>incorporar profesionales de Latinoamérica</strong>",
     description = "No todas las empresas necesitan la misma estructura. Por eso Oberstaff te orienta hacia el modelo más eficiente según el tipo de perfil, la relación de trabajo y el nivel de control que buscas.",
     services = [
         {
             icon: "⚖️",
             title: "Employer of Record (EOR)",
-            description: "Contrata empleados en LATAM con contrato laboral formal, sin abrir una filial en el país.",
+            description:
+                "Contrata empleados en LATAM con contrato laboral formal, sin abrir una filial en el país.",
             linkText: "Conoce nuestro servicio de Employer of Record (EOR)",
             href: "/servicios/employer-of-record",
             colorClass: "purple-bg",
-            cardClass: "card-purple"
+            cardClass: "card-purple",
         },
         {
             icon: "👥",
             title: "Outsourcing de Personal",
-            description: "Delega la selección, contratación y gestión mensual de equipos comerciales, administrativos y de soporte",
+            description:
+                "Delega la selección, contratación y gestión mensual de equipos comerciales, administrativos y de soporte",
             linkText: "Conoce nuestro servicio de Outsourcing de personal",
             href: "/servicios/outsourcing-de-personal",
             colorClass: "pink-bg",
-            cardClass: "card-green"
+            cardClass: "card-green",
         },
         {
             icon: "💻",
             title: "Staff Augmentation",
-            description: "Refuerza tu equipo de tecnología con desarrolladores, QA, DevOps y más perfiles IT de primer nivel. Integrados integrados en tu stack desde el primer día.",
+            description:
+                "Refuerza tu equipo de tecnología con desarrolladores, QA, DevOps y más perfiles IT de primer nivel. Integrados integrados en tu stack desde el primer día.",
             linkText: "Conoce nuestro servicio de Staff Augmentation",
             href: "/servicios/staff-augmentation",
             colorClass: "orange-bg",
-            cardClass: "card-pink"
+            cardClass: "card-pink",
         },
         {
             icon: "📋",
             title: "Contractor of Record (CoR)",
-            description: "Formaliza la relación con freelancers e independientes sin crear un vínculo laboral de empleado.",
+            description:
+                "Formaliza la relación con freelancers e independientes sin crear un vínculo laboral de empleado.",
             linkText: "Conoce nuestro servicio de Contractor of Record",
-            href: "#",
+            href: "/servicios/contractor-of-Record",
             colorClass: "gray-bg",
-            cardClass: "card-lime"
-        }
+            cardClass: "card-lime",
+        },
     ],
-    customClass = ""
+    customClass = "",
 } = Astro.props;
 
 import ServiceCard from "./ServiceCard.astro";
@@ -68,24 +72,27 @@ import "../../styles/services-oberstaff/services-section.css";
 <section class={`services-oberstaff ${customClass}`} id="servicios">
     <div class="services-container">
         <header class="services-header">
-            <h2 id="services-title" set:html={title}></h2>
-            <p class="section-description" set:html={description}></p>
+            <h2 id="services-title" set:html={title} />
+            <p class="section-description" set:html={description} />
         </header>
 
-        <div class={`services-grid ${customClass ? customClass + '-grid' : ''}`}>
-            {services.map((service) => (
-                <ServiceCard
-                    icon={service.icon}
-                    title={service.title}
-                    description={service.description}
-                    linkText={service.linkText}
-                    href={service.href}
-                    colorClass={service.colorClass}
-                    cardClass={service.cardClass}
-                    customIconBg={service.customIconBg}
-                />
-            ))}
+        <div
+            class={`services-grid ${customClass ? customClass + "-grid" : ""}`}
+        >
+            {
+                services.map((service) => (
+                    <ServiceCard
+                        icon={service.icon}
+                        title={service.title}
+                        description={service.description}
+                        linkText={service.linkText}
+                        href={service.href}
+                        colorClass={service.colorClass}
+                        cardClass={service.cardClass}
+                        customIconBg={service.customIconBg}
+                    />
+                ))
+            }
         </div>
     </div>
 </section>
-

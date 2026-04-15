@@ -29,8 +29,7 @@ import "../../styles/QueEsServicio/QueEsContent.css";
     </div>
 
     <div class="que-es-info-list">
-        <div class="quote-blue-border">
-            {quoteText}
+        <div class="quote-blue-border" set:html={quoteText}>
         </div>
 
         {infoItems.map((item) => (

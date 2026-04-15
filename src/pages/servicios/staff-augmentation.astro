@@ -153,13 +153,13 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
                     "Mercado local más limitado o con costes más altos en ciertos perfiles.",
                     "Más rigidez para ajustar capacidad.",
                     "Mayor carga de contratación y fricción al cubrir gaps urgentes.",
-                    "Incorporación más lenta a herramientas y ritmo del equipo."
+                    "Incorporación más lenta a herramientas y ritmo del equipo.",
                 ]}
                 positiveItems={[
                     "Acceso a talento IT en desarrollo, data, QA, DevOps y UX a una fracción del coste local.",
                     "Escalas arriba o abajo según release o roadmap.",
                     " Oberstaff acelera selección, validación e incorporación del perfil técnico.",
-                    "El profesional se integra en tus dailies, stack y dinámicas de trabajo desde el inicio."
+                    "El profesional se integra en tus dailies, stack y dinámicas de trabajo desde el inicio.",
                 ]}
             />
         </div>
@@ -303,7 +303,8 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
                             (Comerciales, administrativos, marketing, atención
                             al cliente). Contamos con otros modelos con los
                             cuales cubrimos esas áreas. <a href="#"
-                                >Ver soluciones globales →</a>
+                                >Ver soluciones globales →</a
+                            >
                         </p>
                     </div>
                 </div>
@@ -414,7 +415,7 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
             <CoberturaSeccion
                 title="Reserva talento IT en los<br/> <span style='color: #6663FD; font-weight: 900;'>principales Hubs de</span><br/><span style='color: #6663FD; font-weight: 900;'> LATAM</span>"
                 description="Accede a los ecosistemas tecnológicos de mayor crecimiento en Latinoamérica. Validamos e integramos a los profesionales Senior y Mid-Level desde los países con mejor huso horario para trabajar en sincronía con tu equipo en España:"
-                countries={[ 
+                countries={[
                     { code: "MX", name: "México" },
                     { code: "VE", name: "Venezuela" },
                     { code: "CO", name: "Colombia" },
@@ -446,7 +447,7 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
                             "Búsqueda en 10 países",
                             "Evaluación técnica y por competencias",
                             "Integración directa en tus herramientas y flujos",
-                            "Una única factura mensual en euros"
+                            "Una única factura mensual en euros",
                         ],
                         ctaText: "Solicitar propuesta",
                         ctaHref: "#contacto",
@@ -473,7 +474,7 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
                         text: "Con <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong>pude dar trabajo a dos personas a tiempo completo, ahorrando costes de reclutamiento, espacios de oficina y salario que tendría al hacerlo en España. <br> Lo mejor de todo es que todo está incluido en una misma factura. Con <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong> encontré la solución perfecta para mis necesidades de contratación remota y optimización de costes",
                         author: "Shadai Iborra",
                         role: "CEO · @amediastory",
-                    }
+                    },
                 ]}
             />
         </div>
@@ -504,7 +505,7 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
                         icon: "👥",
                         title: "Outsourcing de Personal",
                         description:
-                            "Delega la selección, contratación y administración completa. Ideal para perfiles no tech o cuando prefieres gestión delegada<",
+                            "Delega la selección, contratación y administración completa. Ideal para perfiles no tech o cuando prefieres gestión delegada",
                         href: "#",
                         colorClass: "icon-green",
                         hoverClass: "hover-green",
@@ -535,7 +536,7 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
                 title="¿Listo para ampliar tu equipo con talento <span style='font-weight: 900; color: #6663FD;'>IT de LATAM?</span>"
                 subtitle="Cuéntanos sobre tu stack y qué perfil técnico necesitas y en menos de 24 horas recibirás una propuesta personalizada sin compromiso. Primera consulta gratuita."
                 formTitle="Solicita tu propuesta gratis"
-                buttonText="Solicitar perfiles IT ahora →" 
+                buttonText="Solicitar perfiles IT ahora →"
                 directLabel="Rellenarlo te lleva"
                 phoneNumber="Menos de 60 segundos"
                 phoneHref=""
@@ -653,7 +654,9 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
     }
 
     /* --- Botón FAQ en Staff Augmentation --- */
-    :global(.service-detail-container .faq-section .faq-cta-card .faq-cta-button) {
+    :global(
+        .service-detail-container .faq-section .faq-cta-card .faq-cta-button
+    ) {
         background: #6663fd !important;
         background-color: #6663fd !important;
         color: #ffffff !important;
@@ -669,7 +672,12 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
         width: auto !important;
     }
 
-    :global(.service-detail-container .faq-section .faq-cta-card .faq-cta-button:hover) {
+    :global(
+        .service-detail-container
+            .faq-section
+            .faq-cta-card
+            .faq-cta-button:hover
+    ) {
         background: transparent !important;
         background-color: transparent !important;
         color: #6663fd !important;
@@ -687,14 +695,14 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
 
     :global(.employer-variant .btn-submit:hover) {
         background-color: transparent !important;
-        background: transparent !important; 
+        background: transparent !important;
         color: #6663fd !important;
         border: 2px solid #6663fd !important;
         box-shadow: 0 8px 20px rgba(102, 99, 253, 0.15) !important;
     }
 
     :global(.employer-variant .form-title) {
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-size: 20px;
         font-weight: 700;
         color: #1b1b1b;
@@ -713,7 +721,7 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
         padding: 25px 30px;
         margin-top: 70px;
         text-align: left;
-        max-width:1000px;
+        max-width: 1000px;
         margin-left: auto;
         margin-right: auto;
     }
@@ -745,7 +753,6 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
         text-decoration: none;
     }
 
-   
     @media (max-width: 768px) {
         .profiles-bottom-alert {
             flex-direction: column;
@@ -753,8 +760,6 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
             gap: 15px;
             padding: 20px;
         }
-
-      
     }
 
     /* --- Ajuste del quote en ¿Qué es Staff Augmentation? para que parezca un párrafo normal --- */
@@ -782,7 +787,12 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
     }
 
     @keyframes floatBadgeRight {
-        0%, 100% { transform: translateY(0); }
-        50%       { transform: translateY(-10px); }
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
     }
 </style>

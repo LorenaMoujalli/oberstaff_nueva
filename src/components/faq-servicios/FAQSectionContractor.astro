@@ -1,80 +1,98 @@
 ---
-import FAQHeader from "../faq/FAQHeader.astro";
 import FAQItem from "../faq/FAQItem.astro";
-import "../../styles/faq-servicios/faq-section.css";
+import "../../styles/faq/faq-section.css";
 
 const faqs = [
     {
         question: "¿Qué significa contractor of record?",
-        answers: [
-            " Es un servicio que formaliza la relación con un profesional independiente en otro país. Tú diriges el trabajo; el proveedor gestiona contrato, pagos y cumplimiento operativo.",
-        ],
+        answers: ["Es un servicio que formaliza la relación con un experto independiente de otro país. Tú diriges el trabajo; el proveedor gestiona contrato, pagos y cumplimiento operativo."]
     },
     {
-        question:
-            "¿Qué es contractor of record remote para las empresas españolas?",
-        answers: [
-            "Puedes contratar profesionales remotos sin que tu empresa asuma el contrato ni las obligaciones legales en el país del profesional. Oberstaff actúa como representante legal local.",
-        ],
+        question: "¿Qué te permite un contractor of record remote?",
+        answers: ["Puedes contratar profesionales remotos sin que tu compañía asuma el contrato ni las obligaciones legales, Oberstaff actúa como representante legal local."]
     },
     {
         question: "¿Es lo mismo contract of record que contractor of record?",
-        answers: [
-            "Contract of record es una variante o búsqueda imprecisa. La expresión correcta para este servicio es contractor of record.",
-        ],
-    },
-    {
-        question: "¿Qué diferencia hay entre employer of record vs contractor?",
-        answers: [
-            "Ambos permiten contratar talento en LATAM sin entidad local y con seguridad legal. La diferencia: el EOR incorpora al profesional como empleado; el COR, como independiente. En Oberstaff ofrecemos ambos y te ayudamos a elegir el modelo adecuado.",
-        ],
+        answers: ["Contract of record es una variante o búsqueda imprecisa. La expresión correcta para este servicio es contractor of record."]
     },
     {
         question: "¿Un agent of record es lo mismo que un COR?",
-        answers: [
-            "No siempre, el término agent of record se usa en otros contextos como seguros o representación comercial. Para la contratación de profesionales remotos internacionales, el término correcto es Contractor of Record. Si tienes dudas sobre qué modelo encaja con tu necesidad, nuestro equipo puede orientarte sin compromiso.",
-        ],
+        answers: ["No siempre, el término agent of record se usa en otros contextos como seguros o representación comercial. Para la contratación de profesionales remotos internacionales, el término correcto es Contractor of Record. Si tienes dudas sobre qué modelo encaja con tu necesidad, nuestro equipo puede orientarte sin compromiso."]
     },
     {
-        question: "¿Cuánto tiempo tarda en incorporarse un profesional remoto?",
-        answers: [
-            "El proceso está diseñado para que el profesional esté operativo en menos de 48 horas después de tu selección. La búsqueda y presentación de candidatos suele tardar entre 3 y 7 días laborables.",
-        ],
+        question: "¿Qué pasa si el proyecto cambia de alcance o se alarga?",
+        answers: ["Oberstaff gestiona renovaciones, ampliaciones y cambios de alcance como parte del servicio. Sólo tienes que comunicarlo a tu gestor de cuenta y nosotros actualizamos el contrato con el contractor."]
     },
     {
-        question: "¿Cuánto cuesta el servicio este servicio?",
-        answers: [
-            "Los planes comienzan desde 690 EUR por profesional al mes. El precio incluye selección, contratación y administración mensual. Sin cuotas de alta ni permanencia mínima.",
-        ],
-    },
-];
+        question: "¿Cuánto tarda la activación?",
+        answers: ["Depende del perfil y del caso, pero la puesta en marcha suele ser mucho más rápida que montar una estructura propia en cada país."]
+    }
+]; 
 
 interface Props {
-    label?: string;
     title?: string;
-    subtitle?: string;
+    ctaText?: string;
+    ctaButtonText?: string;
+    ctaButtonHref?: string;
 }
 
 const {
-    label,
-    title = "FAQ",
-    subtitle = "Todo lo que necesitas saber sobre el outsourcing de personal.",
+    title = "Todo lo que necesitas saber antes de su <strong>expansión en LATAM</strong>",
+    ctaText = "¿No estás seguro de qué modelo necesitas? El staff augmentation es ideal para perfiles tech integrados en tu equipo. Pero dependiendo de tu operación, puede que necesites un servicio diferente o combinar varios.",
+    ctaButtonText = "Agenda una llamada gratuita",
+    ctaButtonHref = "#contacto"
 } = Astro.props;
 ---
 
+<style>
+    .faq-cta-card {
+        text-align: center !important;
+    }
+
+    .faq-cta-button {
+        font-family: 'Poppins', sans-serif;
+        background-color: transparent !important;
+        background: none !important;
+        color: #0000EE !important;
+        border: none !important;
+        padding: 0 !important;
+        width: auto !important;
+        text-align: center !important;
+        display: inline-block !important;
+        transition: none !important;
+        font-size: 15px !important;
+        margin: 0 auto !important;
+    }
+
+   
+</style>
+
 <section class="faq-section">
     <div class="faq-container">
-        <FAQHeader label={label} title={title} subtitle={subtitle} />
+        <div class="faq-columns">
+            <div class="faq-left-column">
+                <h2 class="faq-main-title" set:html={title} />
+                
+                <div class="faq-cta-card">
+                    <p>{ctaText}</p>
+                    <a href={ctaButtonHref} class="faq-cta-button">
+                        {ctaButtonText}
+                    </a>
+                </div>
+            </div>
 
-        <div class="faq-list">
-            {
-                faqs.map((faq) => (
-                    <FAQItem question={faq.question}>
-                        {faq.answers &&
-                            faq.answers.map((answer) => <p>{answer}</p>)}
-                    </FAQItem>
-                ))
-            }
+            <div class="faq-right-column">
+                <div class="faq-scroll-container">
+                    {
+                        faqs.map((faq) => (
+                            <FAQItem question={faq.question}>
+                                {faq.answers &&
+                                    faq.answers.map((answer) => <p>{answer}</p>)}
+                            </FAQItem>
+                        ))
+                    }
+                </div>
+            </div>
         </div>
     </div>
 
