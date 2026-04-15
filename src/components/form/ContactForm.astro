@@ -2,6 +2,7 @@
 import "../../styles/form/form-elements.css";
 
 interface Props {
+    formTitle?: string;
     buttonText?: string;
     labels?: {
         name?: string;
@@ -23,6 +24,7 @@ interface Props {
 }
 
 const {
+    formTitle,
     buttonText = "Solicitar Presupuesto Gratuito",
     labels = {
         name: "Nombre *",
@@ -45,6 +47,7 @@ const {
 ---
 
 <div class={`form-card ${customClass}`}>
+    {formTitle && <h3 class="form-title">{formTitle}</h3>}
     <form action="#" method="POST" class="form-grid">
         <div class="form-group half-width">
             <label>{labels.name}</label>

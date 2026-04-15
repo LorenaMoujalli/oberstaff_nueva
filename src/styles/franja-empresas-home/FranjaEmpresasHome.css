@@ -11,7 +11,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 60px;
+    gap: 40px;
     padding: 0 20px;
 }
 
@@ -32,11 +32,11 @@
 
 .franja-number {
     font-family: 'Montserrat', sans-serif;
-    font-size: 48px;
+    font-size: 42px;
     font-weight: 900;
     line-height: 1;
     margin-bottom: 5px;
-    letter-spacing: -1.5px;
+    letter-spacing: -1.2px;
 }
 
 /* Degradado en los números */
@@ -50,27 +50,28 @@
 
 .franja-label {
     font-family: 'Poppins', sans-serif;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 600;
     color: #5A5A5A;
     letter-spacing: 0.5px;
-    white-space: nowrap;
+    white-space: normal;
     text-transform: uppercase;
+    max-width: 180px;
 }
 
 .franja-vertical-divider {
     align-self: center;
     width: 1px;
-    height: 48px;
+    height: 36px;
     background: #e2e2e2;
 }
 
 /* Bloque Derecho: Slider de Logos */
 .franja-logos-slider {
-    flex: 1;
+    flex: 0.8;
     overflow: hidden;
     position: relative;
-    max-width: 600px;
+    max-width: 500px;
     /* Efecto de desvanecimiento elegante a los lados */
     mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
     -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
@@ -159,23 +160,30 @@
 
     /* --- franja-number --- */
     .franja-number {
-        font-size: 42px;
+        font-size: 32px;
     }
 
     /* --- franja-stat-block --- */
     .franja-stat-block {
-        width: 130px;
+        width: auto;
+        flex: 1;
+        min-width: 0;
         gap: 5px;
     }
 
     /* --- franja-vertical-divider --- */
     .franja-vertical-divider {
-        height: 35px;
+        height: 30px;
+        flex-shrink: 0;
     }
 
     /* --- franja-stats-left --- */
     .franja-stats-left {
-        gap: 15px;
+        gap: 10px;
+        width: 100%;
+        padding: 0 10px;
+        justify-content: space-around;
+        flex-wrap: nowrap;
     }
 
     /* --- logo-item (Logos de empresas) --- */

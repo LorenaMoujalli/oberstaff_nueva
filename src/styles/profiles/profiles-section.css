@@ -16,8 +16,7 @@
 
 .profiles-header {
     flex: 1;
-    position: sticky;
-    top: 100px;
+    position: relative;
     text-align: left;
     margin-bottom: 0;
 }
@@ -47,11 +46,77 @@
     line-height: 1.7;
 }
 
+/* ==========================================================================
+   VARIANTE GRID (Centrada)
+   ========================================================================== */
+
+.variant-grid .profiles-container {
+    display: block;
+    text-align: center;
+}
+
+.variant-grid .profiles-header {
+    margin-bottom: 50px;
+    position: static;
+    text-align: center;
+    width: 100%;
+}
+
+.variant-grid .header-centered h2 {
+   font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.variant-grid .header-centered p {
+    font-size: 18px;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.variant-grid .profiles-content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.variant-grid .profiles-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+/* --- Responsive para Variante Grid --- */
+@media (max-width: 1024px) {
+    .variant-grid .profiles-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .variant-grid .profiles-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .variant-grid .header-centered h2 {
+        font-size: 24px;
+    }
+
+    .variant-grid .header-centered p {
+        font-size: 16px;
+    }
+}
+
+/* ==========================================================================
+   ESTILOS ORIGINALES (MODIFICADOS PARA COMPATIBILIDAD)
+   ========================================================================== */
+
+.variant-sticky .profiles-scroll-container,
 .profiles-scroll-container {
     flex: 1.5;
     max-height: 440px;
     overflow-y: auto;
-    padding-top: 15px; /* Added padding to prevent clipping on hover */
+    padding-top: 15px;
     padding-right: 15px;
     padding-bottom: 20px;
     scrollbar-width: none;
@@ -62,7 +127,7 @@
     display: none;
 }
 
-/* Grid de cards */
+/* Grid de cards base */
 .profiles-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

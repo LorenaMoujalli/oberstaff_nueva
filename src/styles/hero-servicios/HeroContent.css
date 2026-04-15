@@ -64,6 +64,21 @@
     margin-bottom: 15px;
 }
 
+.primary-btn-container {
+    position: relative;
+    display: flex;
+}
+
+.under-btn-text {
+    font-family: 'Poppins', sans-serif;
+    position: absolute;
+    top: calc(100% + 20px);
+    left: calc(100% - 60px);
+    font-size: 13px;
+    color: #5A5A5A;
+    white-space: nowrap;
+}
+
 .btn-pink {
     background: #FF66CC;
     color: #FFFFFF;
@@ -132,6 +147,8 @@
     }
     
     /* --- btn-pink & btn-outline --- */
+    .primary-btn-container { width: 100%; flex-direction: column; }
+    .under-btn-text { position: static; white-space: normal; margin-top: 8px; text-align: center; }
     .btn-pink, .btn-outline { width: 100%; text-align: center; font-size: 14px; }
 }
 

@@ -19,6 +19,7 @@ interface Props {
     title?: string;
     description?: string;
     profiles?: Profile[];
+    variant?: 'sticky' | 'grid';
 }
 
 const {
@@ -114,23 +115,25 @@ const {
             ],
             iconColorClass: "purple-text",
         },
-    ]
+    ],
+    variant = 'sticky'
 } = Astro.props;
 ---
 
-<section class="profiles-section" id="perfiles">
+<section class={`profiles-section variant-${variant}`} id="perfiles">
     <div class="profiles-container">
         <header class="profiles-header">
-            <div class="header-sticky">
+            <div class={variant === 'sticky' ? 'header-sticky' : 'header-centered'}>
                 <h2 set:html={title} />
                 <p set:html={description} />
             </div>
         </header>
 
-        <div class="profiles-scroll-container">
+        <div class={variant === 'sticky' ? 'profiles-scroll-container' : 'profiles-content-wrapper'}>
             <div class="profiles-grid">
                 {profiles.map((profile) => <ProfileCard {...profile} />)}
             </div>
+            <slot name="bottom-alert" />
         </div>
     </div>
 </section>

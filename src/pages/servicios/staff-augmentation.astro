@@ -1,154 +1,343 @@
 ---
 import DashboardLayoutServicios from "../../layouts/DashboardLayoutServicios.astro";
 import HeroService from "../../components/hero-servicios/HeroService.astro";
+import FranjaEmpresasHome from "../../components/franja-empresas-home/FranjaEmpresasHome.astro";
 import ConEorService from "../../components/conEorServicios/ConEorService.astro";
-//impor"../../components/beneficios-eor-servicios/BeneficiosSeccion.astro";
+//import BeneficiosSeccion from "../../components/beneficios-eor-servicios/BeneficiosSeccion.astro";
 import EorStepsSection from "../../components/eor-steps-servicios/EorStepsSection.astro";
 import EorCta from "../../components/eor-cta-servicios/EorCta.astro";
 import FeaturesSection from "../../components/oberstaff-features-servicios/FeaturesSection.astro";
 import CoberturaSeccion from "../../components/geografica-servicios/CoberturaSeccion.astro";
-//import PricingSection from "../../components/pricing-servicios/PricingSection.astro";
+import PricingSection from "../../components/pricing-servicios/PricingSection.astro";
 import CasosExitoSection from "../../components/casos-exito-servicios/CasosExitoSection.astro";
-import RolesSectionStaff from "../../components/roles-servicios/roles-staff.astro";
-import FAQSectionStaff from "../../components/faq-servicios/FAQSection-staff.astro";
-import QueEsStaffSection from "../../components/QueesStaff-servicios/QueEsStaffSection.astro";
-//import BeneficiosSeccionPersonal from "../../components/beneficios-eor-servicios/BeneficiosSeccion-personal.astro";
-//import OtrosServiciosSection from "../../components/otros-servicios-servicios/OtrosServiciosSection.astro";
+//import RolesSection from "../../components/roles-servicios/RolesSection.astro";
+import FAQSection from "../../components/faq-servicios/FAQSection-staff.astro";
+import OtrosServiciosSection from "../../components/otros-servicios-servicios/OtrosServiciosSection.astro";
 import ContactFormSection from "../../components/form/ContactFormSection.astro";
 //import ArticulosSection from "../../components/articulos-servicios/ArticulosSection.astro";
+import QueEsServicioSection from "../../components/QueEsServicio/QueEsServicioSection.astro";
+import ServicesSection from "../../components/services-oberstaff/ServicesSection.astro";
+import ProcessOberstaff from "../../components/process/ProcessOberstaff.astro";
+import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
 ---
 
 <DashboardLayoutServicios
-    title="Staff Augmentation con Talento de LATAM | Oberstaff"
-    description="Amplía tu equipo con profesionales IT remotos de LATAM. Staff augmentation flexible para empresas españolas: hasta 70% de ahorro, sin permanencia mínima."
+    title="Staff Augmentation con Talento IT de LATAM | Oberstaff"
+    description="Amplía tu equipo con talento IT de LATAM. Staff augmentation flexible para empresas españolas: integración directa en tu stack, tus sprints y tu roadmap."
     keywords="staff augmentation"
 >
     <div class="service-detail-container">
         <div class="fade-in-section">
             <HeroService
-                label="Staff Augmentation"
-                preTitle="Staff Augmentation para empresas españolas:"
-                title="Staff Augmentation"
-                highlight="para empresas españolas"
-                description="Amplía tu equipo con profesionales remotos de LATAM. Con nuestro servicio de staff augmentation, accede a talento IT y digital top con hasta un 70% de ahorro frente al mercado español."
+                label="IT STAFF AUGMENTATION"
+                preTitle=""
+                title="Staff Augmentation para "
+                highlight="empresas españolas"
+                description="Amplía tu equipo con profesionales IT de LATAM que trabajan integrados en tus procesos, herramientas y reuniones. Con nuestro servicio de staff augmentation, tu empresa mantiene el control diario del trabajo mientras accede a talento técnico especializado de forma flexible y eficiente."
                 videoImg="/fondo-video.webp"
                 remoteCountry="CO"
-                floatingText="Cero Riesgo Legal"
-                primaryBtnText="Agendar llamada gratis"
+                floatingText="Talento Tech Validado"
+                floatingIcon="💻"
+                badgeRightTitle=""
+                badgeRightText="Integración Ágil"
+                badgeRightIcon="⚡"
+                primaryBtnText="Recibir propuesta en <24h"
                 primaryBtnHref="#contacto"
-                secondaryBtnText="Recibir propuesta en 24h"
-                secondaryBtnHref="#"
+                secondaryBtnText="Hablar con un especialista en staff augmentation IT"
+                secondaryBtnHref="#contacto"
+                underBtnText="↳ Tardarás menos de 1 minuto · Sin compromiso"
             />
         </div>
 
-        <QueEsStaffSection />
+        <div class="fade-in-section">
+            <FranjaEmpresasHome
+                stat1Number="+Top 5%"
+                stat1Label="Talento Tech validado"
+                stat2Number="100%"
+                stat2Label="De propiedad del código y los desarrollos"
+                stat3Number="0€"
+                stat3Label="Coste por reemplazo ágil"
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <QueEsServicioSection
+                title="¿Qué es el IT Staff Augmentation?"
+                highlightWord="IT Staff Augmentation?"
+                description="<span style='color: #1B1B1B; font-weight: 700;'>Tu equipo tech, con más músculo y sin más estructura.</span>"
+                imageSrc="/img-staff.webp"
+                imageAlt="Profesional trabajando"
+                badgeText="Talento IT especializado"
+                quoteText="El staff augmentation es un modelo que permite incorporar profesionales IT especializados —como desarrolladores, perfiles QA, data, DevOps, UX o producto— para que trabajen integrados en tu equipo como una extensión real de tu operación."
+                infoItems={[
+                    {
+                        icon: "⚙️",
+                        title: "",
+                        description:
+                            "<span style=' font-weight: 700;'>Tú defines prioridades, asignas tareas y diriges el trabajo diario</span>, mientras <span style='color: #1B1B1B; font-weight: 700;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 700;'>.</span> gestiona la administración del profesional en su país de origen.",
+                    },
+                    {
+                        icon: "🌍",
+                        title: "",
+                        description:
+                            "Para organizaciones españolas, Latinoamérica ofrece una ventaja competitiva clara en estos perfiles: <span style=' font-weight: 700;'>formación técnica de alto nivel, español nativo, franja horaria compatible con CET </span>y un coste significativamente menor que el mercado local.",
+                    },
+                ]}
+                diffIcon=""
+                diffTitle=""
+                diffDescription=""
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <ServicesSection
+                title="Casos de uso habituales en <strong>empresas españolas</strong>"
+                description="Somos una staff augmentation company con la que puedes reforzar tu equipo técnico cuando requieras velocidad sin perder el control de la ejecución"
+                customClass="employer-use-cases"
+                services={[
+                    {
+                        icon: "🚀",
+                        title: "Escasez de talento tech local",
+                        description:
+                            "Te faltan perfiles técnicos específicos (Kotlin,Data Engineering, QA) que en el mercado español son lentos o costosos de contratar localmente. LATAM te da acceso a ese talento en días.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "rgba(255, 102, 204, 0.1)",
+                        cardClass: "card-green",
+                    },
+                    {
+                        icon: "🔍",
+                        title: "Sprint con deadline crítico",
+                        description:
+                            "Tu equipo no llega a la release. Con un staff augmentation model flexible, sumas talento IT al sprint actual con tu mismo stack, entregando desde la primera semana.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "rgba(102, 255, 153, 0.1)",
+                        cardClass: "card-pink",
+                    },
+                    {
+                        icon: "🌐",
+                        title: "Migración o modernización tecnológica",
+                        description:
+                            "Estás migrando a cloud, cambiando de framework o modernizando legacy. Necesitas perfiles especializados que no tienes internamente.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "rgba(102, 99, 253, 0.1)",
+                        cardClass: "card-lime",
+                    },
+                    {
+                        icon: "💡",
+                        title: "Cobertura de baja o rotación",
+                        description:
+                            "Uno de tus expertos IT se va o está de baja. Necesitas cubrirlo con alguien que se integre en tu flujo de trabajo inmediatamente, sin frenar entregas.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "rgba(204, 255, 102, 0.2)",
+                        cardClass: "card-lime",
+                    },
+                ]}
+            />
+        </div>
 
         <div class="fade-in-section">
             <ConEorService
-                eyebrow="Staff Augmentation"
-                title="Contratar en España vs. ampliar equipo en Latinoamérica"
-                description="Conoce las diferencias clave entre contratar talento local en España y ampliar tu equipo con profesionales remotos de LATAM a través de Oberstaff."
+                eyebrow=""
+                title="Contratación Local vs. <span style='color: #6663FD; font-weight: 900;'>ampliar tu equipo técnico en LATAM</span>"
+                description=""
                 negativeTitle="Sin team augmentation"
-                positiveTitle="Con Oberstaff (Talento LATAM)"
-                badge="Recomendado"
-                negativeIcon="solar:close-circle-linear"
-                positiveIcon="solar:check-circle-linear"
+                positiveTitle="Con <span style='font-weight: 900;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span>"
+                badge="La opción inteligente"
+                negativeIcon=""
+                positiveIcon=""
                 negativeItems={[
-                    "Salarios elevados del mercado español",
-                    "Procesos de selección lentos y costosos",
-                    "Riesgo legal y laboral directo",
-                    "Difícil escalar el equipo rápido",
-                    "Administración de nóminas compleja",
+                    "Mercado local más limitado o con costes más altos en ciertos perfiles.",
+                    "Más rigidez para ajustar capacidad.",
+                    "Mayor carga de contratación y fricción al cubrir gaps urgentes.",
+                    "Incorporación más lenta a herramientas y ritmo del equipo."
                 ]}
                 positiveItems={[
-                    "Talento IT de LATAM igual de cualificado por hasta un 70% menos ",
-                    "Proceso ágil y mucho más económico en pocos días dispondrás de tu profesional remoto",
-                    "Cumplimiento legal en LATAM gestionado al 100%",
-                    "Amplía o reduce el equipo sin permanencia mínima",
-                    "Una única factura mensual en euros para ti",
+                    "Acceso a talento IT en desarrollo, data, QA, DevOps y UX a una fracción del coste local.",
+                    "Escalas arriba o abajo según release o roadmap.",
+                    " Oberstaff acelera selección, validación e incorporación del perfil técnico.",
+                    "El profesional se integra en tus dailies, stack y dinámicas de trabajo desde el inicio."
                 ]}
             />
         </div>
 
-
-        <!-- 
         <div class="fade-in-section">
-            <BeneficiosSeccionPersonal
-                title="Nuestros servicios de IT Staff Augmentation"
-                subtitle=" Tu equipo técnico ampliado, sin fricción"
-                description="Desde la búsqueda del candidato en LATAM hasta la gestión mensual de su contrato. Oberstaff cubre cada fase del team augmentation para que tu empresa española solo tenga que dirigir el trabajo."
-                beneficios={[
+            <ProcessOberstaff
+                className="process-employer"
+                title="Nuestro modelo de <strong>IT Staff Augmentation</strong>"
+                description="Tu equipo técnico ampliado, sin carga operativa. <span style='color: #1B1B1B; font-weight: 700;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> cubre cada fase del team augmentation para que tú solo dirijas las tareas y las prioridades."
+                items={[
                     {
-                        icon: "mdi:account-search",
+                        label: "Selección",
+                        badge: "Paso 1",
                         title: "Selección de Talento IT",
                         description:
-                            "Identificamos y evaluamos perfiles técnicos en toda LATAM: desarrolladores, diseñadores UX, data engineers, QA y más. Candidatos con español nativo listos en tu horario.",
-                        colorClass: "icon-legal",
+                            "Identificamos perfiles técnicos según el stack, seniority y necesidades de tu proyecto.",
+                        icon: "🔍",
+                        badgeColor: "#6663FD",
+                        badgeBg: "rgba(102, 99, 253, 0.1)",
                     },
                     {
-                        icon: "mdi:file-document-edit",
-                        title: "Contratación y Alta",
+                        label: "Validación",
+                        badge: "Paso 2",
+                        title: "Validación técnica y ajuste al proyecto",
                         description:
-                            "Nos encargamos de toda la contratación del profesional. Coordinamos la incorporación del profesional remoto con cumplimiento legal garantizado desde el primer día.",
-                        colorClass: "icon-nomina",
+                            "Filtramos candidatos según skills, experiencia y encaje con tus herramientas y ritmo de trabajo.",
+                        icon: "📝",
+                        badgeColor: "#6aca8a",
+                        badgeBg: "rgba(102, 255, 153, 0.15)",
                     },
                     {
-                        icon: "solar:folder-linear",
-                        title: "Administración del Personal",
+                        label: "Integración",
+                        badge: "Paso 3",
+                        title: "Integración directa en tu operación",
                         description:
-                            "Nóminas, seguridad social, vacaciones, bajas y liquidaciones. Oberstaff se encarga de todo el ciclo administrativo mes a mes.",
-                        colorClass: "icon-responsabilidad",
+                            "El profesional se incorpora a tus herramientas, reuniones y flujos como una extensión de tu equipo.",
+                        icon: "🗂️",
+                        badgeColor: "#FF66CC",
+                        badgeBg: "rgba(255, 102, 204, 0.1)",
                     },
                     {
-                        icon: "solar:bolt-linear",
-                        title: "Integración en tu Equipo",
+                        label: "Continuidad",
+                        badge: "Soporte",
+                        title: "Incorporación y continuidad sin fricción",
                         description:
-                            "El profesional se incorpora directamente en tus herramientas y flujos de trabajo. Tú defines tareas y prioridades. Nosotros aseguramos disponibilidad.",
-                        colorClass: "icon-legal",
+                            "Facilitamos la gestión necesaria para que la incorporación sea ordenada, estable y fácil de sostener.",
+                        icon: "⚡",
+                        badgeColor: "#1B1B1B",
+                        badgeBg: "rgba(204, 255, 102, 0.3)",
                     },
                 ]}
-            />
-        </div>
--->
-
-  <div class="fade-in-section">
-            <RolesSectionStaff
-                label="Ampliación del equipo (Team augmentation)"
-                title="Talento IT y digital de LATAM para tu organización"
-                description="Perfiles disponibles para incorporarse a tu empresa española."
+                ctaTitle="Amplía tu equipo hoy"
+                ctaDescription="Un experto IT evaluará tu stack y necesidades operativas."
+                ctaBtnText="Agendar llamada"
             />
         </div>
 
+        <div class="fade-in-section">
+            <ProfilesSection
+                variant="grid"
+                title="Ampliación del equipo <span style='color: #6663FD; font-weight: 900;'>(Team augmentation)</span>"
+                description="Talento técnico de Latinoamérica listo para integrarse en tu equipo de producto, desarrollo o infraestructura."
+                profiles={[
+                    {
+                        icon: "💻",
+                        title: "Desarrollo & Tech",
+                        quote: "",
+                        roles: [
+                            { label: "Dev Frontend", href: "#" },
+                            { label: "Dev Backend", href: "#" },
+                            { label: "Full Stack", href: "#" },
+                            { label: "Mobile", href: "#" },
+                            { label: "WordPress / Shopify", href: "#" },
+                        ],
+                        iconColorClass: "blue-text",
+                    },
+                    {
+                        icon: "🧠",
+                        title: "Data & Analytics",
+                        quote: "",
+                        roles: [
+                            { label: "Data Analyst", href: "#" },
+                            { label: "Data Engineer", href: "#" },
+                            { label: "BI Developer", href: "#" },
+                        ],
+                        iconColorClass: "pink-text",
+                    },
+                    {
+                        icon: "☁️",
+                        title: "DevOps & Cloud",
+                        quote: "",
+                        roles: [
+                            { label: "DevOps", href: "#" },
+                            { label: "AWS", href: "#" },
+                            { label: "Azure", href: "#" },
+                            { label: "SysAdmin", href: "#" },
+                            { label: "Solutions Architect", href: "#" },
+                        ],
+                        iconColorClass: "purple-text",
+                    },
+                    {
+                        icon: "🎨",
+                        title: "Diseño UX/UI",
+                        quote: "",
+                        roles: [
+                            { label: "UX Designer", href: "#" },
+                            { label: "UI Designer", href: "#" },
+                            { label: "Product Design", href: "#" },
+                        ],
+                        iconColorClass: "orange-text",
+                    },
+                    {
+                        icon: "⚙️",
+                        title: "QA & Testing",
+                        quote: "",
+                        roles: [
+                            { label: "QA Manual", href: "#" },
+                            { label: "QA Automation", href: "#" },
+                            { label: "Test Analyst", href: "#" },
+                        ],
+                        iconColorClass: "blue-text",
+                    },
+                    {
+                        icon: "🚀",
+                        title: "Otros perfiles tech",
+                        quote: "",
+                        roles: [
+                            { label: "Technical Writer", href: "#" },
+                            { label: "Scrum Master", href: "#" },
+                            { label: "Solutions Architect", href: "#" },
+                        ],
+                        iconColorClass: "pink-text",
+                    },
+                ]}
+            >
+                <div slot="bottom-alert" class="profiles-bottom-alert">
+                    <span class="alert-icon">🚨</span>
+                    <div class="alert-content">
+                        <h4>¿Necesitas perfiles no tecnológicos?</h4>
+                        <p>
+                            (Comerciales, administrativos, marketing, atención
+                            al cliente). Contamos con otros modelos con los
+                            cuales cubrimos esas áreas. <a href="#"
+                                >Ver soluciones globales →</a>
+                        </p>
+                    </div>
+                </div>
+            </ProfilesSection>
+        </div>
 
         <div class="fade-in-section">
             <EorStepsSection
-                label="Tu primer profesional remoto de LATAM"
-                title="De cero a equipo ampliado "
-                subtitle="Un proceso ágil para que tu empresa española incorpore talento IT de LATAM sin trámites, sin entidad local y sin riesgos legales."
+                title="Proceso de <strong>de Staff Augmentation</strong>"
+                subtitle="Un proceso diseñado para equipos tech que necesitan velocidad sin sacrificar calidad técnica."
                 steps={[
                     {
                         title: "Defines el perfil",
                         lineColorClass: "line-black",
                         description:
-                            "Nos explicas el rol, stack técnico y presupuesto. Buscamos en toda LATAM.",
+                            "Nos explicas el rol, stack técnico y presupuesto. Buscamos en toda Latinoamérica.",
                     },
                     {
-                        title: "Selección del candidato",
+                        title: "Match Técnico",
                         lineColorClass: "line-pink",
                         description:
-                            "Te presentamos 3-5 candidatos preseleccionados. Tú decides quién se incorpora.",
+                            "Identificamos y validamos perfiles técnicos con ajuste real a tu necesidad.",
                     },
                     {
-                        title: "Contratación y alta",
+                        title: "Tú eliges al profesional",
                         lineColorClass: "line-orange",
                         description:
-                            "Contrato y documentación incluidos; inicio en 48h tras tu selección",
+                            "Presentamos perfiles evaluados para que elijas al profesional ideal",
                     },
                     {
-                        title: "Equipo ampliado",
+                        title: "Se integra a tu operación",
                         lineColorClass: "line-blue",
                         description:
-                            "El profesional se integra en tu equipo. Gestionamos nóminas mes a mes.",
+                            "El talento se incorpora a tu operación diaria, herramientas y dinámica de trabajo.",
                     },
                 ]}
             />
@@ -156,179 +345,444 @@ import ContactFormSection from "../../components/form/ContactFormSection.astro";
 
         <div class="fade-in-section">
             <EorCta
-                title="¿Listo para ampliar tu equipo con talento de LATAM?"
-                text=" Habla con nuestros especialistas y recibe una propuesta personalizada en menos de 24 horas."
-                buttonText="Solicitar propuesta gratuita"
+                title="¿Listo para ampliar tu equipo con talento IT de LATAM?"
+                text="Habla con nuestros especialistas y recibe una propuesta personalizada en menos de 24 horas."
+                buttonText="Solicitar propuesta gratuita →"
                 buttonHref="#contacto"
             />
         </div>
 
         <div class="fade-in-section">
             <FeaturesSection
-                eyebrow="Por qué elegir Oberstaff como tu staff augmentation company"
-                title="Todo lo que necesita tu empresa española"
-                subtitle="Diseñado para empresas españolas que quieren escalar con agilidad y acceder al mejor talento IT de LATAM."
+                eyebrow=""
+                title="Por qué elegir <span style='font-weight: 900; color: #6663FD;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span> como tu staff augmentation company"
+                subtitle="Diseñado para negocios que quieren escalar con agilidad y acceder al mejor talento IT remoto."
                 features={[
                     {
-                        title: "Cero riesgo laboral",
+                        title: "Control total del trabajo diario",
                         description:
-                            "Oberstaff asume la responsabilidad jurídica en LATAM. Tu empresa española queda completamente protegida.",
-                        icon: "solar:shield-check-bold-duotone",
+                            "Tu equipo define tareas, prioridades, ritmo y calidad. No delegas la dirección de la operación.",
+                        icon: "🛡️",
                         colorClass: "icon-blue",
+                        cardClass: "hover-purple",
                     },
                     {
-                        title: "Zona horaria compatible",
+                        title: "Mayor velocidad de incorporación",
                         description:
-                            "Horario compatible con CET. Tu equipo en LATAM trabaja contigo en tiempo real, sin desfases.",
-                        icon: "solar:global-bold-duotone",
+                            "Sumas capacidad técnica con más agilidad que en un proceso tradicional local.",
+                        icon: "🌎",
                         colorClass: "icon-green",
+                        cardClass: "hover-green",
                     },
                     {
-                        title: "Español nativo",
+                        title: "Talento especializado",
                         description:
-                            "Todo el talento de LATAM habla español como lengua materna. Comunicación fluida desde el primer día.",
-                        icon: "solar:user-speak-bold-duotone",
+                            "Accedes a perfiles IT alineados con tu stack y tu necesidad operativa.",
+                        icon: "🗣️",
                         colorClass: "icon-yellow",
+                        cardClass: "hover-pink",
                     },
                     {
-                        title: "Una factura en euros",
+                        title: "Expertos alineados con tu horario",
                         description:
-                            "Nos encargamos de pagar al profesional en LATAM. Tu empresa recibe una única factura mensual en euros.",
-                        icon: "solar:chart-2-bold-duotone",
+                            "Facilitas reuniones, seguimiento y coordinación en tiempo real.",
+                        icon: "💶",
                         colorClass: "icon-red",
+                        cardClass: "hover-yellow",
                     },
                     {
-                        title: "Soporte humano",
+                        title: "Flexibilidad para escalar",
                         description:
-                            "Tendrás a tu disposición un equipo de soporte que estará disponible para cualquier incidencia. Acompañamiento continuo.",
-                        icon: "solar:chat-round-dots-bold-duotone",
-                        colorClass: "icon-indigo",
+                            "Ajustas capacidad según release o evolución del roadmap.",
+                        icon: "🔄",
+                        colorClass: "icon-purple",
+                        cardClass: "hover-purple",
                     },
                     {
-                        title: "Sin permanencia minima",
+                        title: "Integración natural en tu operación",
                         description:
-                            "Adapta o cancela el servicio cuando tu negocio lo requiera. Flexibilidad total, sin penalizaciones.",
-                        icon: "solar:refresh-square-bold-duotone",
-                        colorClass: "icon-orange",
+                            "El profesional se suma a tus herramientas, reuniones y dinámica diaria.",
+                        icon: "🤝",
+                        colorClass: "icon-pink",
+                        cardClass: "hover-green",
                     },
                 ]}
             />
         </div>
-
-        <!-- 
-        <div class="fade-in-section">
-            <RolesSection
-                title="Personal remoto especializado en diferentes áreas."
-                subtitle="¿Ya sabes qué perfil necesitas externalizar?"
-                description="Nuestro servicio de outsourcing de personal especializado cubre las principales áreas digitales con candidatos preseleccionados y listos para incorporarse."
-            />
-        </div>
-        -->
 
         <div class="fade-in-section">
             <CoberturaSeccion
-                title="Tu acceso a talento IT en 10 países de LATAM"
-                description="Presencia activa en los principales mercados, un único contrato con Oberstaff cubre a tus profesionales remotos en Colombia, Argentina, Venezuela y 7 países más. Sin entidad local."
-                countries={[
-                    { code: "CO", name: "Colombia" },
-                    { code: "AR", name: "Argentina" },
+                title="Reserva talento IT en los<br/> <span style='color: #6663FD; font-weight: 900;'>principales Hubs de</span><br/><span style='color: #6663FD; font-weight: 900;'> LATAM</span>"
+                description="Accede a los ecosistemas tecnológicos de mayor crecimiento en Latinoamérica. Validamos e integramos a los profesionales Senior y Mid-Level desde los países con mejor huso horario para trabajar en sincronía con tu equipo en España:"
+                countries={[ 
                     { code: "MX", name: "México" },
                     { code: "VE", name: "Venezuela" },
-                    { code: "PE", name: "Perú" },
+                    { code: "CO", name: "Colombia" },
                     { code: "EC", name: "Ecuador" },
+                    { code: "PE", name: "Perú" },
                     { code: "PY", name: "Paraguay" },
-                    { code: "CH", name: "Chile" },
-                    { code: "UR", name: "Uruguay" },
+                    { code: "AR", name: "Argentina" },
+                    { code: "CL", name: "Chile" },
                     { code: "PA", name: "Panamá" },
+                    { code: "UY", name: "Uruguay" },
                 ]}
             />
         </div>
 
-        <!-- 
-		<div class="fade-in-section">
-			<PricingSection
-				eyebrow="Planes EOR"
-				title="Precios simples y sin sorpresas."
-				subtitle="Paga por profesional, no por funcionalidades. Sin costes ocultos."
-				plans={[
-					{
-						badge: "MÁS POPULAR",
-						title: "EOR Completo",
-						price: "690",
-						currency: "€",
-						period: "/ empleado / mes",
-						teamSize: "Para equipos de 4-20 empleados",
-						features: [
-							"Contrata empleados en LATAM a tiempo completo sin crear una entidad legal.",
-							"Gestiona nómina y pagos de forma simple y centralizada.",
-							"Administra la relación laboral (altas, documentación y cumplimiento) desde un solo lugar.",
-						],
-						ctaText: "Comenzar ahora",
-						ctaHref: "#contacto",
-					},
-				]}
-			/>
-		</div>
-        -->
+        <div class="fade-in-section">
+            <PricingSection
+                eyebrow=""
+                title="Precios simples y <span style='font-weight: 900; color: #6663FD;'>sin sorpresas</span>"
+                subtitle=""
+                plans={[
+                    {
+                        badge: "MÁS POPULAR",
+                        title: "Staff Augmentation Completo",
+                        price: "690",
+                        currency: "€",
+                        period: "/ profesional / mes",
+                        teamSize: "Para equipos de 4-20 empleados",
+                        features: [
+                            "Búsqueda en 10 países",
+                            "Evaluación técnica y por competencias",
+                            "Integración directa en tus herramientas y flujos",
+                            "Una única factura mensual en euros"
+                        ],
+                        ctaText: "Solicitar propuesta",
+                        ctaHref: "#contacto",
+                    },
+                ]}
+            />
+        </div>
 
         <div class="fade-in-section">
             <CasosExitoSection
-                title="Empresas españolas que ya amplían su equipo con Oberstaff"
+                title="Empresas españolas que ya amplían su equipo con <span style='font-weight: 900; color: #6663FD;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span>"
                 subtitle=""
                 testimonials={[
                     {
                         stars: 5,
-                        text: "Estaba en busca de un editor de video para mi empresa y después de varias búsquedas sin éxito, encontré a Oberstaff en Instagram. Desde nuestra primera llamada, su profesionalismo y calidad de trabajo me dejaron impresionado. Ahora, gracias a su excelente servicio, he expandido mi contrato con ellos para incluir más personal",
+                        avatar: "/fernando.webp",
+                        text: "Estaba en busca de talento remoto especializado para mi empresa y después de varias búsquedas sin éxito, encontré a <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong> en Instagram. Desde nuestra primera llamada, su profesionalismo y calidad de trabajo me dejaron impresionado. Ahora, gracias a su excelente servicio, he expandido mi contrato con ellos para incluir más personal.",
                         author: "Fernando Calderón",
-                        role: "CEO · BEAUTYPRO",
+                        role: "CEO · BeautyPro",
                     },
                     {
                         stars: 5,
-                        text: "Gracias a Oberstaff pude dar trabajo a dos personas a tiempo completo, ahorrando costes de reclutamiento, espacios de oficina y salario que tendría al hacerlo en España. Lo mejor de todo es que todo está incluido en una misma factura. Con Oberstaff, encontré la solución perfecta para mis necesidades de contratación remota y optimización de costes.",
+                        avatar: "/sha.webp",
+                        text: "Con <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong>pude dar trabajo a dos personas a tiempo completo, ahorrando costes de reclutamiento, espacios de oficina y salario que tendría al hacerlo en España. <br> Lo mejor de todo es que todo está incluido en una misma factura. Con <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong> encontré la solución perfecta para mis necesidades de contratación remota y optimización de costes",
                         author: "Shadai Iborra",
-                        role: "CEO · @AMEDIASTORY",
+                        role: "CEO · @amediastory",
+                    }
+                ]}
+            />
+        </div>
+
+        <FAQSection
+            title="Todo lo que necesitas saber <strong>antes de empezar</strong>"
+            ctaText="¿Aún tienes dudas sobre cómo sumar talento IT?"
+            ctaButtonText="Agenda una llamada gratuita"
+        />
+
+        <div class="fade-in-section">
+            <OtrosServiciosSection
+                title="Otros servicios de <span style='font-weight: 900; color: #6663FD;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span>"
+                subtitle=""
+                description="¿No sabes qué modelo necesitas? El EOR services es uno de los cuatro modelos de contratación que ofrece Oberstaff. Dependiendo de tu operación,puedes necesitar un enfoque diferente:"
+                servicios={[
+                    {
+                        icon: "🔗",
+                        title: "Employer of Record",
+                        description:
+                            "Incorpora empleados con contrato laboral pleno en LATAM, sin abrir entidad local.",
+                        href: "#",
+                        colorClass: "icon-pink",
+                        hoverClass: "hover-pink",
+                        linkText: "Ver servicio",
                     },
                     {
-                        stars: 5,
-                        text: "I've been working with Oberstaff for about 2 years. They handle everything: contracts, payments and HR admin. My team in Latin America is fantastic and the cost savings have been game-changing for our business.",
-                        author: "Kate McCafferty",
-                        role: "KM REAL ESTATE",
+                        icon: "👥",
+                        title: "Outsourcing de Personal",
+                        description:
+                            "Delega la selección, contratación y administración completa. Ideal para perfiles no tech o cuando prefieres gestión delegada<",
+                        href: "#",
+                        colorClass: "icon-green",
+                        hoverClass: "hover-green",
+                        linkText: "Ver servicio",
+                    },
+                    {
+                        icon: "📄",
+                        title: "Contractor of Record",
+                        description:
+                            "Gestión integral de contratos para freelancers y trabajadores por proyecto.",
+                        href: "#",
+                        colorClass: "icon-purple",
+                        hoverClass: "hover-purple",
+                        linkText: "Ver servicio",
                     },
                 ]}
             />
         </div>
 
-           <div class="fade-in-section">
-            <FAQSectionStaff 
-                label="FAQ · PREGUNTAS FRECUENTES"
-                title="Todo lo que necesitas saber sobre el outsourcing de personal."
-                subtitle=""
+        <!-- 
+		<div class="fade-in-section">
+			<RolesSection />
+		</div>
+		-->
+
+        <div class="fade-in-section">
+            <ContactFormSection
+                title="¿Listo para ampliar tu equipo con talento <span style='font-weight: 900; color: #6663FD;'>IT de LATAM?</span>"
+                subtitle="Cuéntanos sobre tu stack y qué perfil técnico necesitas y en menos de 24 horas recibirás una propuesta personalizada sin compromiso. Primera consulta gratuita."
+                formTitle="Solicita tu propuesta gratis"
+                buttonText="Solicitar perfiles IT ahora →" 
+                directLabel="Rellenarlo te lleva"
+                phoneNumber="Menos de 60 segundos"
+                phoneHref=""
+                directEmoji="⏱️"
+                formLabels={{
+                    name: "Nombre *",
+                    lastName: "Apellido *",
+                    company: "Nombre de la empresa",
+                    email: "Email corporativo *",
+                    phone: "Teléfono *",
+                    comments: "¿Qué perfil técnico necesitas? *",
+                }}
+                formPlaceholders={{
+                    name: "Tu nombre",
+                    lastName: "Tu apellido",
+                    company: "Nombre de tu organización",
+                    email: "nombre@tuempresa.com",
+                    phone: "+34 XXX XXX XXX",
+                    comments:
+                        "Cuéntanos brevemente sobre tu stack y el seniority que buscas...",
+                }}
+                customClass="employer-variant"
             />
         </div>
 
         <!-- 
 		<div class="fade-in-section">
-			<OtrosServiciosSection />
-		</div>
-        -->
-
-        <div class="fade-in-section">
-            <ContactFormSection
-                title=" ¿Listo para ampliar tu equipo con talento IT de LATAM?"
-                subtitle="Cuéntanos qué perfil necesitas y en menos de 24 horas recibirás una propuesta personalizada sin compromiso. Primera consulta gratuita."
-                buttonText="Solicitar propuesta gratuita"
-            />
-        </div>
-
-        <!--  
-		<div class="fade-in-section">
 			<ArticulosSection />
 		</div>
-        -->
+-->
     </div>
 </DashboardLayoutServicios>
 
 <style>
     .service-detail-container {
+    }
+
+    /* --- Estilos específicos para el componente de proceso en Employer --- */
+    :global(.process-employer .process-menu) {
+        background-color: #fafafc;
+    }
+
+    :global(.process-employer .process-tab-label) {
+        color: #5a5a5a;
+        font-weight: 600;
+    }
+
+    :global(.process-employer .process-tab:hover) {
+        background-color: #f0f0f5;
+        color: #1b1b1b;
+    }
+
+    :global(.process-employer .process-tab.active) {
+        background-color: #ffffff;
+    }
+
+    /* --- Estilos específicos para el botón CTA en Staff Augmentation --- */
+    :global(.process-employer .process-cta-btn) {
+        background-color: #6663fd;
+        color: #ffffff !important;
+        padding: 15px 35px !important;
+        border-radius: 50px !important;
+        font-weight: 700 !important;
+        font-family: "Montserrat", sans-serif !important;
+        font-style: normal !important;
+        font-size: 15px !important;
+        border: 2px solid #6663fd !important;
+        display: inline-block !important;
+        transition: all 0.3s ease !important;
+        text-decoration: none !important;
+    }
+
+    :global(.process-employer .process-cta-btn:hover) {
+        background-color: transparent !important;
+        color: #6663fd !important;
+        border: 2px solid #6663fd !important;
+        box-shadow: 0 8px 20px rgba(102, 99, 253, 0.15) !important;
+    }
+
+    /* --- Estilos específicos para el botón CTA en Pricing (Staff Augmentation) --- */
+    :global(.btn-pricing-link) {
+        background-color: #6663fd !important;
+        color: #ffffff !important;
+        padding: 13px 24px !important;
+        border-radius: 50px !important;
+        font-weight: 700 !important;
+        font-family: "Montserrat", sans-serif !important;
+        font-style: normal !important;
+        font-size: 15px !important;
+        border: 2px solid #6663fd !important;
+        display: inline-block !important;
+        transition: all 0.3s ease !important;
+        text-decoration: none !important;
+        max-width: 250px;
+    }
+
+    :global(.btn-pricing-link:hover) {
+        background-color: transparent !important;
+        color: #6663fd !important;
+        border: 2px solid #6663fd !important;
+        box-shadow: 0 8px 20px rgba(102, 99, 253, 0.15) !important;
+    }
+
+    /* --- Centrar testimonios (2 cards) en Staff Augmentation --- */
+    :global(.casos-grid) {
+        grid-template-columns: repeat(2, 1fr) !important;
+        max-width: 850px !important;
+    }
+
+    @media (max-width: 640px) {
+        :global(.casos-grid) {
+            grid-template-columns: 1fr !important;
+            max-width: 500px !important;
+        }
+    }
+
+    /* --- Botón FAQ en Staff Augmentation --- */
+    :global(.service-detail-container .faq-section .faq-cta-card .faq-cta-button) {
+        background: #6663fd !important;
+        background-color: #6663fd !important;
+        color: #ffffff !important;
+        padding: 15px 30px !important;
+        border-radius: 50px !important;
+        font-weight: 700 !important;
+        font-family: "Montserrat", sans-serif !important;
+        font-size: 15px !important;
+        border: 2px solid #6663fd !important;
+        display: inline-block !important;
+        transition: all 0.3s ease !important;
+        text-decoration: none !important;
+        width: auto !important;
+    }
+
+    :global(.service-detail-container .faq-section .faq-cta-card .faq-cta-button:hover) {
+        background: transparent !important;
+        background-color: transparent !important;
+        color: #6663fd !important;
+        border: 2px solid #6663fd !important;
+        box-shadow: 0 8px 20px rgba(102, 99, 253, 0.15) !important;
+    }
+
+    /* --- Botón del formulario en Staff Augmentation --- */
+    :global(.employer-variant .btn-submit) {
+        background-color: #6663fd !important;
+        background: #6663fd !important;
+        border: 2px solid #6663fd !important;
+        color: #ffffff !important;
+    }
+
+    :global(.employer-variant .btn-submit:hover) {
+        background-color: transparent !important;
+        background: transparent !important; 
+        color: #6663fd !important;
+        border: 2px solid #6663fd !important;
+        box-shadow: 0 8px 20px rgba(102, 99, 253, 0.15) !important;
+    }
+
+    :global(.employer-variant .form-title) {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+        color: #1b1b1b;
+        margin-bottom: 25px;
+        text-align: left;
+    }
+
+    /* --- Alerta inferior (Perfiles no tecnológicos) --- */
+    .profiles-bottom-alert {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        background-color: rgba(255, 102, 204, 0.03);
+        border: 1px solid rgba(255, 102, 204, 0.15);
+        border-radius: 12px;
+        padding: 25px 30px;
+        margin-top: 70px;
+        text-align: left;
+        max-width:1000px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .profiles-bottom-alert .alert-icon {
+        font-size: 32px;
+        flex-shrink: 0;
+    }
+
+    .profiles-bottom-alert .alert-content h4 {
+        font-family: "Montserrat", sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        color: #ff66cc;
+        margin: 0 0 8px 0;
+    }
+
+    .profiles-bottom-alert .alert-content p {
+        font-family: "Poppins", sans-serif;
+        font-size: 15px;
+        color: #5a5a5a;
+        margin: 0;
+        line-height: 1.6;
+    }
+
+    .profiles-bottom-alert .alert-content a {
+        font-weight: 700;
+        color: #ff66cc;
+        text-decoration: none;
+    }
+
+   
+    @media (max-width: 768px) {
+        .profiles-bottom-alert {
+            flex-direction: column;
+            text-align: center;
+            gap: 15px;
+            padding: 20px;
+        }
+
+      
+    }
+
+    /* --- Ajuste del quote en ¿Qué es Staff Augmentation? para que parezca un párrafo normal --- */
+    :global(.que-es-servicio-section .quote-blue-border) {
+        border-left: none !important;
+        padding: 0 !important;
+        background: none !important;
+        color: #5a5a5a !important;
+        font-weight: 400 !important;
+        font-size: 14.5px !important;
+        line-height: 1.6 !important;
+        margin-bottom: 35px !important;
+        margin-top: 0 !important;
+    }
+
+    /* --- Floating badge inferior en ¿Qué es Staff Aug? — esquina derecha, más estrecho --- */
+    :global(.que-es-servicio-section .floating-badge-bottom) {
+        left: auto !important;
+        right: -10px !important;
+        width: auto !important;
+        max-width: 240px !important;
+        padding: 14px 22px 14px 18px !important;
+        justify-content: flex-start !important;
+        animation: floatBadgeRight 4s ease-in-out infinite !important;
+    }
+
+    @keyframes floatBadgeRight {
+        0%, 100% { transform: translateY(0); }
+        50%       { transform: translateY(-10px); }
     }
 </style>

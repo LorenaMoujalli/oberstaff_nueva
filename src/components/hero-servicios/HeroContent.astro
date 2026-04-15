@@ -8,6 +8,7 @@ interface Props {
     primaryBtnHref?: string;
     secondaryBtnText?: string;
     secondaryBtnHref?: string;
+    underBtnText?: string;
 }
 
 const { 
@@ -18,7 +19,8 @@ const {
     primaryBtnText = "Agendar llamada gratis",
     primaryBtnHref = "#contacto",
     secondaryBtnText = "Conoce los perfiles profesionales",
-    secondaryBtnHref = "#roles"
+    secondaryBtnHref = "#roles",
+    underBtnText
 } = Astro.props;
 import "../../styles/hero-servicios/HeroContent.css";
 ---
@@ -34,6 +36,9 @@ import "../../styles/hero-servicios/HeroContent.css";
 <p class="hero-description" set:html={description}></p>
 
 <div class="hero-actions">
-    <a href={primaryBtnHref} class="btn-pink">{primaryBtnText}</a>
+    <div class="primary-btn-container">
+        <a href={primaryBtnHref} class="btn-pink">{primaryBtnText}</a>
+        {underBtnText && <span class="under-btn-text">{underBtnText}</span>}
+    </div>
     <a href={secondaryBtnHref} class="btn-outline">{secondaryBtnText}</a>
 </div>

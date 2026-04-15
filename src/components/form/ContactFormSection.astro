@@ -5,6 +5,7 @@ import ContactForm from "./ContactForm.astro";
 interface Props {
     title?: string;
     subtitle?: string;
+    formTitle?: string;
     buttonText?: string;
     directLabel?: string;
     phoneNumber?: string;
@@ -18,6 +19,7 @@ interface Props {
 const {
     title = "¿Listo para <strong>contratar talento remoto</strong> en Latinoamérica desde España?",
     subtitle = "Cuéntanos qué perfil necesitas, qué objetivo buscas cubrir y qué nivel de control quieres tener sobre la operación. Con esa información podremos orientarte hacia la estructura más conveniente para tu negocio y ayudarte a activar el proceso con menos fricción.",
+    formTitle,
     buttonText = "Solicitar Presupuesto Gratuito",
     directLabel = "Atención directa en España:",
     phoneNumber = "+34 930 289 966",
@@ -52,6 +54,7 @@ const {
 
         <div class="form-wrapper">
             <ContactForm 
+                formTitle={formTitle}
                 buttonText={buttonText} 
                 labels={formLabels}
                 placeholders={formPlaceholders}

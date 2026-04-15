@@ -106,3 +106,34 @@
     justify-content: space-between;
     width: 100%;
 }
+
+/* ==========================================================================
+   ESTILOS PARA VARIANTE GRID (TEAM AUGMENTATION)
+   ========================================================================== */
+
+.variant-grid .profile-card {
+    text-align: left;
+    padding: 24px;
+    height: 100%;
+    justify-content: flex-start;
+}
+
+.variant-grid .profile-card .quote {
+    display: none;
+}
+
+.variant-grid .profile-card .roles-list {
+    border-top: none;
+    padding-top: 5px;
+}
+
+.variant-grid .profile-card .role-link {
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.variant-grid .profile-card .card-header h3 {
+    font-size: 16px;
+    font-weight: 700;
+}

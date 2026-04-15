@@ -16,6 +16,7 @@ interface ProcessItem {
 
 interface Props {
     title?: string;
+    description?: string;
     items?: ProcessItem[];
     ctaTitle?: string;
     ctaDescription?: string;
@@ -27,6 +28,7 @@ interface Props {
 
 const {
     title = 'Cómo <strong>reducir costes de personal</strong> contratando talento remoto en Latinoamérica',
+    description,
     items = [
         {
             label: "Selección",
@@ -78,6 +80,7 @@ const panes = items.map((item, index) => ({
 <section class={`process-section ${className}`} id={id}>
     <div class="process-container">
         <h2 class="process-main-title" set:html={title} />
+        {description && <p class="process-description" set:html={description} />}
 
         <div class="process-card">
             <ProcessMenu tabs={tabs} />

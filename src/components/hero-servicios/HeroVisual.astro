@@ -4,16 +4,20 @@ interface Props {
     videoImg: string;
     remoteCountry?: string;
     floatingText: string;
+    floatingIcon?: string;
     badgeRightTitle?: string;
     badgeRightText?: string;
+    badgeRightIcon?: string;
 }
 
 const { 
     videoImg, 
     remoteCountry = "CO", 
     floatingText, 
+    floatingIcon = "🛡️",
     badgeRightTitle = "100%", 
-    badgeRightText = "Cumplimiento" 
+    badgeRightText = "Cumplimiento",
+    badgeRightIcon = "🔹"
 } = Astro.props;
 import "../../styles/hero-servicios/HeroVisual.css";
 ---
@@ -21,7 +25,7 @@ import "../../styles/hero-servicios/HeroVisual.css";
 <div class="hero-visual-wrapper">
     <!-- Elemento flotante Izquierdo -->
     <div class="floating-badge badge-left">
-        <span class="icon-emoji-hero">🛡️</span>
+        <span class="icon-emoji-hero">{floatingIcon}</span>
         <span>{floatingText}</span>
     </div>
 
@@ -35,7 +39,7 @@ import "../../styles/hero-servicios/HeroVisual.css";
 
     <!-- Elemento flotante Derecho -->
     <div class="floating-badge badge-right">
-        <span class="icon-emoji-hero">🔹</span>
+        <span class="icon-emoji-hero">{badgeRightIcon}</span>
         <span class="text">{badgeRightTitle}</span>
         <span class="country">{badgeRightText}</span>
     </div>

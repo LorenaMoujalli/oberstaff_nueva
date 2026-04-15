@@ -12,10 +12,15 @@ interface Props {
     videoImg: string;
     remoteCountry: string;
     floatingText: string;
+    floatingIcon?: string;
+    badgeRightTitle?: string;
+    badgeRightText?: string;
+    badgeRightIcon?: string;
     primaryBtnText?: string;
     primaryBtnHref?: string;
     secondaryBtnText?: string;
     secondaryBtnHref?: string;
+    underBtnText?: string;
 }
 
 const props = Astro.props;
@@ -33,6 +38,10 @@ const props = Astro.props;
             videoImg={props.videoImg} 
             remoteCountry={props.remoteCountry} 
             floatingText={props.floatingText} 
+            floatingIcon={props.floatingIcon}
+            badgeRightTitle={props.badgeRightTitle}
+            badgeRightText={props.badgeRightText}
+            badgeRightIcon={props.badgeRightIcon}
         />
         
         <HeroContent 
@@ -44,6 +53,7 @@ const props = Astro.props;
             primaryBtnHref={props.primaryBtnHref}
             secondaryBtnText={props.secondaryBtnText}
             secondaryBtnHref={props.secondaryBtnHref}
+            underBtnText={props.underBtnText}
         />
     </div>
 </section>

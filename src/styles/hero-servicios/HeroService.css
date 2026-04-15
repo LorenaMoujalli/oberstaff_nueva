@@ -17,6 +17,7 @@
   text-align: center;
   overflow: hidden;
   /* Importante para contener el efecto aurora */
+  padding-bottom: 20px; 
 }
 
 
