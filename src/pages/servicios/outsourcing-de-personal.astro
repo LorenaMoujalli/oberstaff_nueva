@@ -11,7 +11,7 @@ import CoberturaSeccion from "../../components/geografica-servicios/CoberturaSec
 import PricingSection from "../../components/pricing-servicios/PricingSection.astro";
 import CasosExitoSection from "../../components/casos-exito-servicios/CasosExitoSection.astro";
 //import RolesSection from "../../components/roles-servicios/RolesSection.astro";
-import FAQSection from "../../components/faq-servicios/FAQSection.astro";
+import FAQSection from "../../components/faq-servicios/FAQSection-personal.astro";
 import OtrosServiciosSection from "../../components/otros-servicios-servicios/OtrosServiciosSection.astro";
 import ContactFormSection from "../../components/form/ContactFormSection.astro";
 //import ArticulosSection from "../../components/articulos-servicios/ArticulosSection.astro";
@@ -27,20 +27,28 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
 	keywords="outsourcing de personal"
 >
 	<div class="service-detail-container">
-		<div class="fade-in-section">
+		<div class="fade-in-section hero-outsourcing-custom">
 			<HeroService
 				label="OUTSOURCING DE PERSONAL"
 				preTitle="Outsourcing de Personal para empresas españolas"
-				title="Equipos de negocio"
-				highlight="desde LATAM"
-				description="Delega la selección, contratación y administración de perfiles comerciales, administrativos, de marketing y de soporte a <span style='color: #1B1B1B; font-weight: 800;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> Con nuestro servicio de outsourcing de personal, tu negocio mantiene el foco estratégico mientras nosotros gestionamos todo el ciclo operativo de tus colaboradores en Latinoamérica."
+				title="Equipos de negocio desde"
+				highlight="LATAM"
+				description="Delega la selección, contratación y administración de perfiles comerciales, administrativos, de marketing y de soporte a <span style='color: #1B1B1B; font-weight: 700;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> Con nuestro servicio de outsourcing de personal, tu negocio mantiene el foco estratégico mientras nosotros gestionamos todo el ciclo operativo de tus colaboradores en Latinoamérica."
 				videoImg="/fondo-video.webp"
 				remoteCountry="CO"
 				floatingText="Operativa Delegada"
+				floatingIcon="⚙️"
+				badgeRightTitle=""
+				badgeRightText="Foco Estratégico"
+				badgeRightIcon="📈"
 				primaryBtnText="Recibir propuesta en menos de 24h →"
 				primaryBtnHref="#contacto"
-				secondaryBtnText="Hablar con un especialista en outsourcing de personal"
+				secondaryBtnText="Hablar con un especialista en outsourcing de personal "
 				secondaryBtnHref="#contacto"
+				underBtnText="↳ Tardarás menos de 1 minuto · Sin compromiso"
+				modalTitle="¿Listo para externalizar tu equipo en LATAM?"
+				modalDescription="Un especialista te explicará cómo delegar tu carga administrativa."
+				modalBtnText="Agendar asesoría gratuita"
 			/>
 		</div>
 
@@ -50,18 +58,20 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
 				stat1Label="De Ahorro en costes de infraestructura y gestión local"
 				stat2Number="10"
 				stat2Label="Países con cobertura operativa en LATAM"
-			/> 
+				stat3Number="100%"
+				stat3Label="de la carga administrativa delegada"
+			/>
 		</div>
-		
-		<div class="fade-in-section">
+
+		<div class="fade-in-section hide-quote-border diff-custom-layout">
 			<QueEsServicioSection
-				title="QUÉ ES EL OUTSOURCING DE PERSONAL CON TALENTO DE LATAM"
-				highlightWord="CON TALENTO DE LATAM"
+				title="Qué es el outsourcing de personal con talento de LATAM"
+				highlightWord="con talento de LATAM"
 				description="<span style='color: #1B1B1B; font-weight: 700;'>Externaliza las funciones operativas de tu negocio sin ampliar tu estructura interna.</span> El outsourcing de personal, te permite delegar a <span style='color: #1B1B1B; font-weight: 800;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> la selección, contratación y administración mensual de profesionales de áreas funcionales y de negocio: comercial, administración, marketing y soporte al cliente."
-				imageSrc="/img-queEs.webp"
+				imageSrc="/img-outsourcing.webp"
 				imageAlt="Profesional trabajando"
-				badgeText="Contratos al día"
-				quoteText="Tú diriges, nosotros somos el empleador legal."
+				badgeText="Carga administrativa 0%"
+				quoteText=""
 				infoItems={[
 					{
 						icon: "⚙️",
@@ -78,14 +88,13 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
 				]}
 				diffIcon="💡"
 				diffTitle="¿En qué se diferencia este modelo?"
-				diffDescription="Con EOR el profesional entra como empleado y existe relación laboral formal. Con CoR el profesional opera como independiente. Si necesitas payroll, seguridad social y cumplimiento laboral continuo, el modelo correcto es EOR."
-				
+				diffDescription='<div class="diff-grid"><div class="diff-item"><strong>Staff Augmentation:</strong><span>Sumas talento a tu equipo y diriges el trabajo día a día.</span></div><div class="diff-item"><strong>Employer of Record (EOR):</strong><span>Contratas empleados sin abrir entidad local.</span></div><div class="diff-item highlighted"><strong>Outsourcing de Personal:</strong><span>Delegas la selección, contratación y administración del personal para reducir carga operativa interna.</span></div></div>'
 			/>
 		</div>
 
 		<div class="fade-in-section">
 			<ServicesSection
-				title="¿CUÁNDO USAR ESTE <span style='color: #6663FD; font-weight: 900;'>SERVICIO?</span>"
+				title="¿Cuándo usar este <span style='color: #6663FD; font-weight: 900;'>servicio?</span>"
 				description="El outsourcing de personal es la opción ideal cuando quieres delegar la carga administrativa del ciclo laboral y centrarte exclusivamente en el core de tu negocio."
 				customClass="employer-use-cases"
 				services={[
@@ -138,8 +147,8 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
 				eyebrow=""
 				title="Sin outsourcing vs. Con <span style='color: #6663FD; font-weight: 900;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span>"
 				description=""
-				negativeTitle="SIN OUTSOURCING PERSONAL"
-				positiveTitle="CON <span style='font-weight: 900;'>OBERSTAFF</span><span style='color: #FF66CC; font-weight: 900;'>.</span>"
+				negativeTitle="Sin outsourcing de personal"
+				positiveTitle="Con <span style='font-weight: 900;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span>"
 				badge="La opción inteligente"
 				negativeIcon=""
 				positiveIcon=""
@@ -213,60 +222,90 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
 			/>
 		</div>
 
-		<div class="fade-in-section profiles-employer-page">
-			<ProfilesSection
-				title="PERFILES DE NEGOCIO QUE <strong>PUEDES EXTERNALIZAR</strong>"
-				description="Nuestro servicio de outsourcing de personal especializado cubre las principales áreas funcionales y de negocio con candidatos preseleccionados y listos para incorporarse."
-				profiles={[
-					{
-						icon: "💼",
-						title: "Operaciones Comerciales y Ventas",
-						quote: "Representar a tu empresa con dedicación exclusiva exige un contrato laboral formal para evitar riesgos jurídicos.",
-						roles: [
-							{ label: "Ejecutivo de ventas", href: "#" },
-							{ label: "SDR / BDR", href: "#" },
-							{ label: "Especialista en CRM", href: "#" },
-						],
-						iconColorClass: "purple-text",
-					},
-					{
-						icon: "📣",
-						title: "Marketing y comunicación",
-						quote: "Para perfiles con acceso a datos críticos. Este modelo asegura subordinación legal, exclusividad y cumplimiento normativo local.",
-						roles: [
-							{ label: "Especialista Google Ads", href: "#" },
-							{ label: "Especialista Meta Ads", href: "#" },
-							{ label: "Email marketing", href: "#" },
+		  <div class="fade-in-section">
+            <ProfilesSection
+                variant="grid"
+                title="Perfiles de negocio que <span style='color: #6663FD; font-weight: 900;'>puedes externalizar</span>"
+                description="Nuestro servicio de outsourcing de personal especializado cubre las principales áreas funcionales y de negocio con candidatos preseleccionados y listos para incorporarse"
+                profiles={[
+                    {
+                        icon: "💼",
+                        title: "Operaciones Comerciales y Ventas",
+                        quote: "",
+                        roles: [
+                            { label: "Ejecutivo de ventas", href: "#" },
+                            { label: "SDR / BDR", href: "#" },
+                            { label: "Especialista en CRM", href: "#" }, 
+                        ],
+                        iconColorClass: "blue-text",
+                    },
+                    {
+                        icon: "📣",
+                        title: "Marketing y comunicación",
+                        quote: "",
+                        roles: [
+                            { label: "Especialista Google Ads", href: "#" },
+                            { label: "Especialista Meta Ads", href: "#" },
+                            { label: "Email marketing", href: "#" },
+                            { label: "Community Manager", href: "#" },
 							{ label: "Experto SEO", href: "#" },
-							{ label: "Community Manager", href: "#" },
-						],
-						iconColorClass: "blue-text",
-					},
-					{
-						icon: "📊",
-						title: "Finanzas y administración",
-						quote: "Si tu marketing exige exclusividad, usar acuerdos externos es un riesgo legal. El EOR los formaliza como empleados de tu plantilla global.",
-						roles: [
-							{ label: "Asistente virtual", href: "#" },
-							{ label: "Contable", href: "#" },
-							
-						],
-						iconColorClass: "pink-text",
-					},
-					{
-						icon: "🎨",
-						title: "Creatividad y contenido",
-						quote: "Para quienes desarrollan tu código o sistemas, necesitas un contrato laboral formal que garantice la cesión de Propiedad Intelectual (IP) y NDAs blindados.",
-						roles: [
-							{ label: "Diseñador gráfico", href: "#" },
-							{ label: "Editor de vídeo", href: "#" },
-							{ label: "Copywriter", href: "#" },
-						],
-						iconColorClass: "orange-text",
-					},
-				]}
-			/>
-		</div>
+                        ],
+                        iconColorClass: "pink-text",
+                    },
+                    {
+                        icon: "📊",
+                        title: "Data & Analytics",
+                        quote: "",
+                        roles: [
+                            { label: "Asistente virtual", href: "#" },
+                            { label: "Contable", href: "#" }
+                        ],
+                        iconColorClass: "purple-text",
+                    },
+                    {
+                        icon: "🎨",
+                        title: "Creatividad y contenido",
+                        quote: "",
+                        roles: [
+                            { label: "Diseñador Gráfico", href: "#" },
+                            { label: "Editor de Video", href: "#" },
+                            { label: "Copywriter", href: "#" },
+                        ],
+                        iconColorClass: "orange-text",
+                    },
+                    {
+                        icon: "🗣️",
+                        title: "Soporte y atención al cliente (BPO",
+                        quote: "",
+                        roles: [
+                            { label: "Teleoperador", href: "#" },
+                            { label: "Customer Success", href: "#" }
+                        ],
+                        iconColorClass: "blue-text",
+                    },
+                    {
+                        icon: "📁",
+                        title: "Operaciones y logística",
+                        quote: "",
+                        roles: [
+                            { label: "Coordinador de operaciones", href: "#" },
+                            { label: "Project Manager", href: "#" }
+                        ],
+                        iconColorClass: "pink-text",
+                    },
+                ]}
+            >
+                <div slot="bottom-alert" class="profiles-bottom-alert">
+                    <span class="alert-icon">🚨</span>
+                    <div class="alert-content">
+                        <h4> ¿Necesitas perfiles tecnológicos?</h4>
+                        <p>
+                            Desarrolladores, QA, DevOps, data engineers y otros perfiles IT se gestionan a través de nuestro servicio de  <strong>Staff Augmentation</strong>, donde se integran directamente en tu equipo técnico, tus herramientas y tus sprints. <a href="#">Ver Staff Augmentation →</a>
+                        </p>
+                    </div>
+                </div>
+            </ProfilesSection>
+        </div>
 
 		<div class="fade-in-section">
 			<EorStepsSection
@@ -367,22 +406,24 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
 				]}
 			/>
 		</div>
-
-		<div class="fade-in-section">
-			<CoberturaSeccion
-				title="Tu outsourcing de personal en <span style='color: #6663FD; font-weight: 900; white-space: nowrap;'>10 países de Latinoamérica</span>"
-				description="Un único contrato con <span style='font-weight: 900; color: #1B1B1B;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span> te permite externalizar procesos apoyándote en profesionales de Colombia, Argentina, Venezuela y 7 países más. Tu compañía se expande operativamente con una sola estructura de gestión."
-				countries={[
-					{ code: "MX", name: "México" },
-					{ code: "VE", name: "Venezuela" },
-					{ code: "CO", name: "Colombia" },
-					{ code: "EC", name: "Ecuador" },
-					{ code: "PE", name: "Perú" },
-					{ code: "PY", name: "Paraguay" },
-					{ code: "AR", name: "Argentina" },
-				]}
-			/>
-		</div>
+    <div class="fade-in-section">
+            <CoberturaSeccion
+                title="Tu outsourcing de personal<br/> <span style='color: #6663FD; font-weight: 900;'>en 10 países de</span><br/><span style='color: #6663FD; font-weight: 900;'> Latinoamérica</span>"
+                description="Un único contrato con <span style='font-weight: 700; color: #1B1B1B;'>Oberstaff</span><span style='font-weight: 700; color: #FF66CC;'>.</span> te permite externalizar procesos apoyándote en profesionales de Colombia, Argentina, Venezuela y 7 países más. Tu compañía se expande operativamente con una sola estructura de gestión."
+                countries={[
+                    { code: "MX", name: "México" },
+                    { code: "VE", name: "Venezuela" },
+                    { code: "CO", name: "Colombia" },
+                    { code: "EC", name: "Ecuador" },
+                    { code: "PE", name: "Perú" },
+                    { code: "PY", name: "Paraguay" },
+                    { code: "AR", name: "Argentina" },
+                    { code: "CL", name: "Chile" },
+                    { code: "PA", name: "Panamá" },
+                    { code: "UY", name: "Uruguay" },
+                ]}
+            />
+        </div>
 
 		<div class="fade-in-section">
 			<PricingSection
@@ -410,32 +451,31 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
 			/>
 		</div>
 
-		<div class="fade-in-section">
-			<CasosExitoSection
-				title="Empresas españolas que ya externalizan con <span style='font-weight: 900; color: #6663FD;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span>"
-				subtitle=""
-				testimonials={[
-					{
-						stars: 5,
-						avatar: "/fernando.webp",
-						text: "“Estaba en busca de talento remoto especializado para mi empresa y después de varias búsquedas sin éxito, encontré a Oberstaff en Instagram. Desde nuestra primera llamada, su profesionalismo y calidad de trabajo me dejaron impresionado. Ahora, gracias a su excelente servicio, he expandido mi contrato con ellos para incluir más personal.",
-						author: "Fernando Calderón",
-						role: "CEO · BeautyPro",
-					},
-					{
-						stars: 5,
-						avatar: "/sha.webp",
-						text: "Con Oberstaff pude dar trabajo a dos personas a tiempo completo, ahorrando costes de reclutamiento, espacios de oficina y salario que tendría al hacerlo en España. Lo mejor de todo es que todo está incluido en una misma factura. Con Oberstaff, encontré la solución perfecta para mis necesidades de contratación remota y optimización de costes",
-						author: "Shadai Iborra",
-						role: "CEO · @amediastory",
-					},
-
-				]}
-			/>
-		</div>
+		  <div class="fade-in-section">
+            <CasosExitoSection
+                title="Empresas españolas que ya amplían su equipo con <span style='font-weight: 900; color: #6663FD;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span>"
+                subtitle=""
+                testimonials={[
+                    {
+                        stars: 5,
+                        avatar: "/fernando.webp",
+                        text: "Estaba en busca de talento remoto especializado para mi empresa y después de varias búsquedas sin éxito, encontré a <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong> en Instagram. Desde nuestra primera llamada, su profesionalismo y calidad de trabajo me dejaron impresionado. Ahora, gracias a su excelente servicio, he expandido mi contrato con ellos para incluir más personal.",
+                        author: "Fernando Calderón",
+                        role: "CEO · BeautyPro",
+                    },
+                    {
+                        stars: 5,
+                        avatar: "/sha.webp",
+                        text: "Con <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong>pude dar trabajo a dos personas a tiempo completo, ahorrando costes de reclutamiento, espacios de oficina y salario que tendría al hacerlo en España. <br> Lo mejor de todo es que todo está incluido en una misma factura. Con <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong> encontré la solución perfecta para mis necesidades de contratación remota y optimización de costes",
+                        author: "Shadai Iborra",
+                        role: "CEO · @amediastory",
+                    },
+                ]}
+            />
+        </div>
 
 		<FAQSection
-			title="Todo lo que necesitas saber sobre el <strong>outsourcing de personal</strong>"
+			title="Todo lo que necesitas <br> saber sobre el <br> <strong>outsourcing de personal</strong>"
 			ctaText="¿Aún tienes dudas sobre cómo externalizar procesos?"
 			ctaButtonText="Agenda una llamada gratuita"
 		/>
@@ -444,7 +484,7 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
 			<OtrosServiciosSection
 				title="Otros modelos de <span style='font-weight: 900; color: #6663FD;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span>"
 				subtitle=""
-				description="¿No sabes qué modelo necesitas? El outsourcing de personal es uno de los cuatro modelos de contratación que ofrece Oberstaff. Dependiendo de tu operación, puede que necesites un servicio diferente o combinar varios."
+				description="¿No sabes qué modelo necesitas? El outsourcing de personal es uno de los cuatro modelos de contratación que ofrece  Oberstaff. Dependiendo de tu operación, puede que necesites un servicio diferente o combinar varios."
 				servicios={[
 					{
 						icon: "🔗",
@@ -490,7 +530,7 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
 			<ContactFormSection
 				title="¿Listo para externalizar la gestión de tu próximo <span style='font-weight: 900; color: #6663FD;'>profesional de negocio?</span>"
 				subtitle="Cuéntanos qué perfil remoto de área funcional necesitas y en menos de 24 horas recibirás una propuesta personalizada sin compromiso."
-				buttonText="→ Solicitar propuesta gratuita"
+				buttonText="Solicitar propuesta gratuita → "
 				directLabel="Rellenarlo te lleva"
 				phoneNumber="Menos de 60 segundos"
 				phoneHref=""
@@ -545,5 +585,401 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
 
 	:global(.process-employer .process-tab.active) {
 		background-color: #ffffff;
+	}
+
+	/* Estilos para ensanchar los botones del hero y evitar salto de línea */
+	:global(.hero-outsourcing-custom .hero-container) {
+		max-width: 1100px !important;
+	}
+
+	:global(.hero-outsourcing-custom .hero-actions .btn-pink),
+	:global(.hero-outsourcing-custom .hero-actions .btn-outline) {
+		white-space: nowrap !important;
+		padding-left: 45px !important;
+		padding-right: 45px !important;
+		text-align: center !important;
+		display: inline-flex !important;
+		justify-content: center !important;
+		align-items: center !important;
+	}
+
+	@media (max-width: 1100px) {
+		/* En pantallas que no quepan los dos botones en linea, permitimos el wrap del contenedor pero no del texto */
+		:global(.hero-outsourcing-custom .hero-actions) {
+			flex-wrap: wrap;
+			gap: 20px;
+		}
+	}
+
+	@media (max-width: 768px) {
+		:global(.hero-outsourcing-custom .hero-actions .btn-pink),
+		:global(.hero-outsourcing-custom .hero-actions .btn-outline) {
+			white-space: normal !important; /* En móvil sí permitimos wrap para evitar desborde */
+			padding-left: 20px !important;
+			padding-right: 20px !important;
+			min-width: 100% !important;
+		}
+	}
+
+	/* Ocultar el recuadro de quote en la sección Qué Es */
+	:global(.hide-quote-border .quote-blue-border) {
+		display: none !important;
+	}
+
+	/* Estilos para el layout personalizado de la comparativa (Difference Box) */
+	:global(.diff-custom-layout .que-es-difference-box) {
+		display: block !important;
+		max-width: 100% !important;
+		background: rgba(204, 255, 102, 0.1) !important;
+		border: 1px solid rgba(204, 255, 102, 0.3) !important;
+		padding: 30px 40px !important;
+		border-radius: 20px !important;
+		text-align: left !important;
+	}
+
+	:global(.diff-custom-layout .diff-icon) {
+		display: inline-flex !important;
+		font-size: 32px !important;
+		margin-right: 15px !important;
+		vertical-align: middle !important;
+		align-items: center !important;
+	}
+
+	:global(.diff-custom-layout .diff-text) {
+		display: inline !important;
+	}
+
+	:global(.diff-custom-layout .diff-text h3) {
+		display: inline-flex !important;
+		margin: 0 !important;
+		font-weight: 800 !important;
+		font-size: 18px !important;
+		color: #1b1b1b !important;
+		white-space: nowrap !important;
+		vertical-align: middle !important;
+		align-items: center !important;
+	}
+
+	:global(.diff-custom-layout .diff-text p) {
+		display: block !important;
+		width: 100% !important;
+		margin-top: 35px !important;
+	}
+
+	:global(.diff-custom-layout .diff-grid) {
+		display: grid !important;
+		grid-template-columns: repeat(3, 1fr) !important;
+		gap: 30px !important;
+		width: 100% !important;
+		align-items: stretch !important;
+	}
+
+	:global(.diff-custom-layout .diff-item) {
+		display: flex !important;
+		flex-direction: column !important;
+		gap: 10px !important;
+	}
+
+	:global(.diff-custom-layout .diff-item strong) {
+		font-family: "Poppins", sans-serif !important;
+		font-size: 16px !important;
+		color: #1b1b1b !important;
+		font-weight: 700 !important;
+	}
+
+	:global(.diff-custom-layout .diff-item span) {
+		font-family: "Poppins", sans-serif !important;
+		font-size: 14px !important;
+		color: #5a5a5a !important;
+		line-height: 1.5 !important;
+	}
+
+	:global(.diff-custom-layout .highlighted span) {
+		color: #1b1b1b !important;
+	}
+
+	:global(.diff-custom-layout .highlighted) {
+		background: rgba(255, 255, 255, 0.5) !important;
+		padding: 25px !important;
+		border-radius: 12px !important;
+		border-left: 3px solid #6663fd !important;
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
+		transform: translateY(-5px) !important;
+	}
+
+	:global(.diff-custom-layout .highlighted strong) {
+		color: #6663fd !important;
+	}
+
+	@media (max-width: 1100px) {
+		:global(.diff-custom-layout .diff-text h3) {
+			white-space: normal !important;
+		}
+	}
+
+	@media (max-width: 900px) {
+		:global(.diff-custom-layout .diff-grid) {
+			grid-template-columns: 1fr !important;
+			gap: 25px !important;
+		}
+
+		:global(.diff-custom-layout .que-es-difference-box) {
+			padding: 30px 20px !important;
+			display: block !important;
+		}
+
+		:global(.diff-custom-layout .diff-icon) {
+			display: inline-block !important;
+			margin-bottom: 20px !important;
+		}
+
+		:global(.diff-custom-layout .diff-text h3) {
+			display: inline-block !important;
+			vertical-align: middle !important;
+		}
+
+		:global(.diff-custom-layout .highlighted) {
+			transform: none !important;
+		}
+	}
+	/* Estilos para el botón del proceso (Process CTA) */
+	:global(.process-employer .process-cta-btn) {
+		background-color: #6663fd !important;
+		color: #ffffff !important;
+		padding: 14px 32px !important;
+		border-radius: 50px !important;
+		font-weight: 700 !important;
+		display: inline-block !important;
+		border: 2px solid #6663fd !important;
+		transition: all 0.3s ease !important;
+		font-family: "Poppins", sans-serif !important;
+		font-size: 15px !important;
+		text-align: center !important;
+	}
+
+	:global(.process-employer .process-cta-btn:hover) {
+		background-color: transparent !important;
+		color: #6663fd !important;
+		box-shadow: 0 5px 15px rgba(102, 99, 253, 0.2) !important;
+	}
+
+	/* Estilos para el botón de Pricing (Solicitar propuesta) */
+	:global(.eor-pricing .btn-pricing-link) {
+		font-family: "Poppins", sans-serif !important;
+		background-color: #6663fd !important;
+		color: #ffffff !important;
+		padding: 15px 40px !important;
+		border-radius: 50px !important;
+		font-weight: 700 !important;
+		font-family: "Montserrat", sans-serif !important;
+		font-size: 15px !important;
+		border: 2px solid #6663fd !important;
+		display: inline-block !important;
+		transition: all 0.3s ease !important;
+		text-align: center !important;
+		text-decoration: none !important;
+		width: fit-content !important;
+	}
+
+	:global(.eor-pricing .btn-pricing-link:hover) {
+		background-color: transparent !important;
+		color: #6663fd !important;
+		box-shadow: 0 8px 25px rgba(102, 99, 253, 0.2) !important;
+	}
+
+	/* Estilos para el botón de FAQ (Agenda una llamada) */
+	:global(.faq-section .faq-cta-button) {
+		font-family: "Poppins", sans-serif !important; 
+		background-color: #6663fd !important;
+		color: #ffffff !important;
+		padding: 15px 40px !important;
+		border-radius: 50px !important;
+		font-weight: 700 !important;
+		
+		font-size: 15px !important;
+		border: 2px solid #6663fd !important;
+		display: inline-block !important;
+		transition: all 0.3s ease !important;
+		text-align: center !important;
+		text-decoration: none !important;
+		width: fit-content !important;
+		margin-top: 20px !important;
+	}
+
+	:global(.faq-section .faq-cta-button:hover) {
+		background-color: transparent !important;
+		color: #6663fd !important;
+		box-shadow: 0 8px 25px rgba(102, 99, 253, 0.2) !important;
+	}
+
+	/* Estilos para el botón del formulario (btn-submit) */
+	:global(.eor-contact-form .btn-submit) {
+		background-color: #6663fd !important;
+		color: #ffffff !important;
+		padding: 16px 45px !important;
+		border-radius: 50px !important;
+		font-weight: 700 !important;
+		font-family: "Poppins", sans-serif !important;
+		font-size: 15px !important;
+		border: 2px solid #6663fd !important;
+		display: inline-block !important;
+		transition: all 0.3s ease !important;
+		text-align: center !important;
+		text-decoration: none !important;
+		width: 100% !important;
+		max-width: fit-content !important;
+		cursor: pointer !important;
+	}
+
+	:global(.eor-contact-form .btn-submit:hover) {
+		background-color: transparent !important;
+		color: #6663fd !important;
+		box-shadow: 0 8px 25px rgba(102, 99, 253, 0.2) !important;
+	}
+
+	/* Estilos para el botón de la sección CTA (cta-button) */
+	:global(.eor-cta .cta-button) {
+		background-color: #6663fd !important;
+		color: #ffffff !important;
+		padding: 16px 45px !important;
+		border-radius: 50px !important;
+		font-weight: 700 !important;
+		font-family: "Poppins", sans-serif !important;
+		font-size: 16px !important;
+		border: 2px solid #6663fd !important;
+		display: inline-block !important;
+		transition: all 0.3s ease !important;
+		text-align: center !important;
+		text-decoration: none !important;
+		width: fit-content !important;
+	}
+
+	:global(.eor-cta .cta-button:hover) {
+		background-color: transparent !important;
+		color: #6663fd !important;
+		box-shadow: 0 8px 25px rgba(102, 99, 253, 0.2) !important;
+	}
+
+	/* Centrar testimonios (2 cards) */
+	:global(.casos-grid) {
+		grid-template-columns: repeat(2, 1fr) !important;
+		max-width: 850px !important;
+	}
+
+	@media (max-width: 640px) {
+		:global(.casos-grid) {
+			grid-template-columns: 1fr !important;
+			max-width: 500px !important;
+		}
+		:global(.eor-cta .cta-button) {
+	
+		font-size: 14px !important;
+	
+	}
+
+	:global(.faq-section .faq-cta-button) {
+	
+		font-size: 14px !important;
+	
+	}
+
+		:global(.eor-contact-form .btn-submit) {
+	
+		font-size: 14px !important;
+	
+	}
+
+	}
+	/* --- Alerta inferior (Perfiles tecnológicos) en ProfilesSection --- */
+	.profiles-bottom-alert {
+		display: flex;
+		align-items: center;
+		gap: 30px;
+		background: rgba(102, 99, 253, 0.05);
+		border: 1px solid rgba(102, 99, 253, 0.2);
+		border-radius: 24px;
+		padding: 35px 45px;
+		margin-top: 80px;
+		text-align: left;
+		max-width: 1050px;
+		margin-left: auto;
+		margin-right: auto;
+		position: relative;
+		overflow: hidden;
+	}
+
+	
+
+
+
+	.alert-icon {
+		font-size: 32px;
+		flex-shrink: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		z-index: 1;
+	}
+
+	.alert-content {
+		position: relative;
+		z-index: 1;
+	}
+
+	.alert-content h4 {
+		font-family: "Montserrat", sans-serif;
+		font-size: 18px;
+		font-weight: 700;
+		color: #6663fd;
+		margin: 0 0 12px 0;
+		letter-spacing: -0.5px;
+	}
+
+	.alert-content p {
+		font-family: "Poppins", sans-serif;
+		font-size: 15px;
+		color: #5a5a5a;
+		margin: 0;
+		line-height: 1.6;
+		max-width: 800px;
+	}
+
+	.alert-content a {
+		font-weight: 700;
+		color: #6663fd;
+		text-decoration: none;
+		transition: all 0.3s ease;
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		margin-top: 8px;
+		position: relative;
+	}
+
+	
+
+	@media (max-width: 768px) {
+		.profiles-bottom-alert {
+			flex-direction: column;
+			text-align: center;
+			gap: 20px;
+			padding: 40px 25px;
+			margin-top: 60px;
+			border-radius: 20px;
+		}
+
+		.alert-icon {
+			margin: 0 auto;
+			font-size: 28px;
+		}
+
+		.alert-content h4 {
+			font-size: 19px;
+		}
+
+		.alert-content p {
+			font-size: 15px;
+		}
 	}
 </style>

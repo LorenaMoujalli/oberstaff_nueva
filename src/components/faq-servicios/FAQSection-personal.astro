@@ -1,61 +1,94 @@
 ---
-import FAQHeader from "../faq/FAQHeader.astro";
 import FAQItem from "../faq/FAQItem.astro";
-import "../../styles/faq-servicios/faq-section.css";
+import "../../styles/faq/faq-section.css";
 
 const faqs = [
     {
         question: "¿Qué es el outsourcing de personal con talento de LATAM?",
-        answers: ["Es el servicio mediante el cual Oberstaff selecciona, contrata y administra trabajadores remotos de Latinoamérica para empresas españolas. La empresa dirige el trabajo; Oberstaff asume toda la gestión laboral y legal del colaborador."]
+        answers: ["Es el servicio mediante el cual Oberstaff centraliza la selección, incorporación y gestión administrativa de perfiles comerciales, administrativos, de marketing y de soporte en Latinoamérica para empresas españolas. Tu organización define la necesidad; nosotros ordenamos la operación para reducir la carga interna asociada a funciones recurrentes."]
     },
     {
-        question: " ¿Qué incluye el outsourcing de selección de personal en LATAM?",
-        answers: ["Publicación de la oferta en LATAM, entrevistas técnicas y por competencias, evaluación de candidatos y presentación de terna finalista. Tú tomas la decisión final."]
+        question: "¿Qué tipo de perfiles cubre este servicio?",
+        answers: ["Este modelo está diseñado para perfiles comerciales, administrativos, de marketing y soporte, como SDR, customer success, contabilidad, asistencia virtual, soporte al cliente y funciones de back office. Si necesitas perfiles tecnológicos como desarrolladores, QA, DevOps o data, el modelo adecuado es Staff Augmentation."]
     },
     {
-        question: " ¿En qué países de LATAM opera Oberstaff?",
-        answers: ["Oberstaff tiene presencia en Colombia, Argentina, Venezuela, Argentina y 7 países más. Un único proveedor para toda la región."]
+        question: "¿Qué incluye el outsourcing de selección de personal?",
+        answers: ["Publicación de la vacante en Latinoamérica, entrevistas por competencias, evaluación de candidatos y presentación de una terna finalista. Tu empresa toma la decisión final."]
     },
     {
-        question: "¿Cuánto cuesta el personal outsourcing de LATAM para empresas españolas?",
-        answers: [" Las suscripciones comienzan desde 690 EUR por profesional al mes. El precio incluye selección, contratación y administración de personal de LATAM. Sin cuotas de alta ni permanencia mínima."]
+        question: "¿Cuánto tarda la incorporación?",
+        answers: ["Depende del perfil y de la disponibilidad, pero en funciones comerciales, administrativas, de marketing y soporte el proceso suele avanzar con agilidad una vez validado el candidato y completada la documentación necesaria."]
     },
     {
-        question: "¿Los trabajadores de LATAM trabajan en el horario español?",
-        answers: ["Si, el profesional que elijas se adaptará al horario de operación de tu organización. "]
-    },
-    {
-        question: "¿Hay permanencia mínima en los planes de outsourcing?",
-        answers: ["No, puedes ajustar, ampliar o cancelar el servicio cuando tu negocio lo requiera, sin penalizaciones de ningún tipo."]
-    } 
+        question: "¿Qué pasa si el volumen de mi operativa baja?",
+        answers: ["El modelo de outsourcing de personal es flexible, puedes ajustar el tamaño del equipo externalizado según las temporadas de alta o baja demanda de tu negocio sin lidiar con despidos o finiquitos en España."]
+    }
 ]; 
 
 interface Props {
-    label?: string;
     title?: string;
-    subtitle?: string;
+    ctaText?: string;
+    ctaButtonText?: string;
+    ctaButtonHref?: string;
 }
 
-const { label, title = "FAQ", subtitle = "Todo lo que necesitas saber sobre el outsourcing de personal." } = Astro.props;
+const {
+    title = "Todo lo que necesitas saber antes de su <strong>expansión en LATAM</strong>",
+    ctaText = "¿No estás seguro de qué modelo necesitas? El staff augmentation es ideal para perfiles tech integrados en tu equipo. Pero dependiendo de tu operación, puede que necesites un servicio diferente o combinar varios.",
+    ctaButtonText = "Agenda una llamada gratuita",
+    ctaButtonHref = "#contacto"
+} = Astro.props;
 ---
+
+<style>
+    .faq-cta-card {
+        text-align: center !important;
+    }
+
+    .faq-cta-button {
+        font-family: 'Poppins', sans-serif;
+        background-color: transparent !important;
+        background: none !important;
+        color: #0000EE !important;
+        border: none !important;
+        padding: 0 !important;
+        width: auto !important;
+        text-align: center !important;
+        display: inline-block !important;
+        transition: none !important;
+        font-size: 15px !important;
+        margin: 0 auto !important;
+    }
+
+   
+</style>
 
 <section class="faq-section">
     <div class="faq-container">
-        <FAQHeader
-            label={label}
-            title={title}
-            subtitle={subtitle}
-        />
+        <div class="faq-columns">
+            <div class="faq-left-column">
+                <h2 class="faq-main-title" set:html={title} />
+                
+                <div class="faq-cta-card">
+                    <p>{ctaText}</p>
+                    <a href={ctaButtonHref} class="faq-cta-button">
+                        {ctaButtonText}
+                    </a>
+                </div>
+            </div>
 
-        <div class="faq-list">
-            {
-                faqs.map((faq) => (
-                    <FAQItem question={faq.question}>
-                        {faq.answers &&
-                            faq.answers.map((answer) => <p>{answer}</p>)}
-                    </FAQItem>
-                ))
-            }
+            <div class="faq-right-column">
+                <div class="faq-scroll-container">
+                    {
+                        faqs.map((faq) => (
+                            <FAQItem question={faq.question}>
+                                {faq.answers &&
+                                    faq.answers.map((answer) => <p>{answer}</p>)}
+                            </FAQItem>
+                        ))
+                    }
+                </div>
+            </div>
         </div>
     </div>
 

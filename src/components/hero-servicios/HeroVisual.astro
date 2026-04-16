@@ -8,6 +8,9 @@ interface Props {
     badgeRightTitle?: string;
     badgeRightText?: string;
     badgeRightIcon?: string;
+    modalTitle?: string;
+    modalDescription?: string;
+    modalBtnText?: string;
 }
 
 const { 
@@ -17,7 +20,10 @@ const {
     floatingIcon = "🛡️",
     badgeRightTitle = "100%", 
     badgeRightText = "Cumplimiento",
-    badgeRightIcon = "🔹"
+    badgeRightIcon = "🔹",
+    modalTitle,
+    modalDescription,
+    modalBtnText
 } = Astro.props;
 import "../../styles/hero-servicios/HeroVisual.css";
 ---
@@ -45,4 +51,8 @@ import "../../styles/hero-servicios/HeroVisual.css";
     </div>
 </div>
 
-<VideoPrincipalModal />
+<VideoPrincipalModal 
+    modalTitle={modalTitle}
+    modalDescription={modalDescription}
+    modalBtnText={modalBtnText}
+/>

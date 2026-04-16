@@ -1,5 +1,15 @@
 ---
+interface Props {
+    modalTitle?: string;
+    modalDescription?: string;
+    modalBtnText?: string;
+}
 
+const {
+    modalTitle = "¿Listo para expandir tu equipo en LATAM?",
+    modalDescription = "Un especialista te explicará exactamente cuánto puedes ahorrar con nuestro modelo EOR.",
+    modalBtnText = "Agendar asesoría gratuita"
+} = Astro.props;
 ---
 
 <div id="videoModal" class="modal-overlay">
@@ -11,13 +21,10 @@
             <div id="player"></div>
         </div>
         <div class="modal-info">
-            <h2>¿Listo para expandir tu equipo en LATAM?</h2>
-            <p>
-                Un especialista te explicará exactamente cuánto puedes ahorrar
-                con nuestro modelo EOR.
-            </p>
+            <h2 set:html={modalTitle}></h2>
+            <p set:html={modalDescription}></p>
             <a href="#contacto" id="modalCtaBtn" class="modal-btn"
-                >Agendar asesoría gratuita</a
+                >{modalBtnText}</a
             >
         </div>
     </div>
