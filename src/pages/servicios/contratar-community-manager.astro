@@ -1,21 +1,811 @@
 ---
 import DashboardLayoutPerfiles from "../../layouts/DashboardLayoutPerfiles.astro";
-import LeadHeroSection from "../../components/community-manager/LeadHeroSection.astro";
-import TrustBarPerfiles from "../../components/trust-bar-perfiles/TrustBarPerfiles.astro";
-import InfoServicePerfil from "../../components/info-services-perfil/InfoServicePerfil.astro";
-import AreasPerfiles from "../../components/areas-perfiles/AreasPerfiles.astro";
-import TimelinePerfiles from "../../components/timeline-perfiles/TimelinePerfiles.astro";
-import CTAIntermedioPerfil from "../../components/cta-intermedio-perfil/CTAIntermedioPerfil.astro";
-import ComparisonPerfiles from "../../components/comparison-perfiles/ComparisonPerfiles.astro";
-import PricingCardPerfil from "../../components/pricing-perfil/PricingCardPerfil.astro";
-import BeneficiosPerfil from "../../components/beneficios-perfil/BeneficiosPerfil.astro";
-import GuiaPerfiles from "../../components/guia-perfiles/GuiaPerfiles.astro";
-import CasosExitoPerfiles from "../../components/casos-exito-perfiles/CasosExitoPerfiles.astro";
-import FAQSectionCommunity from "../../components/faq-servicios/FAQSection-community.astro";
-import PressSection from "../../components/press/PressSection.astro";
-import ConversionPerfil from "../../components/conversion-perfil/ConversionPerfil.astro";
-import RolesPerfil from "../../components/roles-del-perfil/RolesPerfil.astro";
 ---
+
+<style is:global>
+  /* --- GLOBAL / SHARED --- */
+  .pink-dot {
+    color: #FF66CC;
+    font-weight: 900;
+  }
+
+  .service-detail-container {
+    width: 100%;
+    background-color: transparent;
+    color: #1a1a1a;
+  }
+
+  .gradient-text {
+    background: linear-gradient(90deg, #6663FD, #6663FD);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
+  }
+
+  .gradient-text-alt {
+    background: linear-gradient(90deg, #6663FD, #FF66CC);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* --- HERO (DARK) --- */
+  .hero-custom {
+    position: relative;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 5%;
+    z-index: 1;
+    background-color: #000;
+    color: #fff;
+    overflow: hidden;
+  }
+
+  .glow-bg {
+    position: absolute;
+    filter: blur(120px);
+    opacity: 0.5;
+    z-index: -1;
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .pink-glow {
+    top: -10%;
+    left: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 102, 204, 0.4) 0%, rgba(255, 102, 204, 0) 70%);
+  }
+
+  .purple-glow {
+    bottom: 10%;
+    right: -5%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(102, 99, 253, 0.3) 0%, rgba(102, 99, 253, 0) 70%);
+  }
+
+  .hero-content-wrapper {
+    max-width: 1400px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .label-accent {
+    color: #FF66CC;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    margin-bottom: 24px;
+    display: block;
+    text-transform: uppercase;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 4.5vw, 3.5rem);
+    line-height: 1.15;
+    font-weight: 800;
+    margin-bottom: 32px;
+    color: #fff;
+    max-width: 850px;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .hero-description {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 48px;
+    max-width: 640px;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .hero-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .badge-item {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 10px 20px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+
+  .badge-item:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+  }
+
+  .badge-icon {
+    font-size: 1.1rem;
+  }
+
+  .badge-text {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #fff;
+  }
+
+  .hero-form-section {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .form-card {
+    background: #fff;
+    padding: 56px 48px;
+    border-radius: 40px;
+    width: 100%;
+    max-width: 520px;
+    color: #1a1a1a;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+  }
+
+  .form-title {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+    line-height: 1.2;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .form-subtitle {
+    font-size: 1.05rem;
+    color: #555;
+    margin-bottom: 36px;
+    line-height: 1.5;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .form-group input {
+    width: 100%;
+    padding: 20px 24px;
+    border: 1px solid #e0e0e0;
+    border-radius: 14px;
+    font-size: 1rem;
+    background-color: #fcfcfc;
+    transition: all 0.3s ease;
+    font-family: inherit;
+  }
+
+  .form-group input:focus {
+    outline: none;
+    border-color: #FF66CC;
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgba(255, 102, 204, 0.1);
+  }
+
+  .submit-btn {
+    background: #FF66CC;
+    color: #fff;
+    border: none;
+    padding: 22px;
+    border-radius: 50px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(255, 102, 204, 0.4);
+    filter: brightness(1.05);
+  }
+
+  .emoji-wave {
+    font-size: 1.3rem;
+  }
+
+  .form-footer {
+    margin-top: 28px;
+    text-align: center;
+  }
+
+  .footer-note {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 14px;
+  }
+
+  .footer-link {
+    font-size: 0.95rem;
+    color: #444;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    transition: all 0.3s ease;
+  }
+
+  .footer-link:hover {
+    color: #1a1a1a;
+    transform: translateX(5px);
+  }
+
+  /* --- SENCILLO SECTION --- */
+  .sencillo-section {
+    background-color: #fff;
+    padding: 120px 5%;
+    color: #1a1a1a;
+  }
+
+  .sencillo-container {
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  .sencillo-header {
+    text-align: center;
+    margin-bottom: 100px;
+    max-width: 950px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .sencillo-title {
+    font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+    font-weight: 800;
+    margin-bottom: 28px;
+    line-height: 1.2;
+    font-family: 'Montserrat', sans-serif;
+    color: #1a1a1a;
+  }
+
+  .blue-text {
+    color: #6366F1;
+  }
+
+  .sencillo-subtitle {
+    font-size: 1.15rem;
+    color: #555;
+    line-height: 1.8;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .sencillo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: center;
+  }
+
+  .sencillo-visual {
+    width: 100%;
+  }
+
+  .image-wrapper {
+    position: relative;
+    border-radius: 40px;
+    overflow: visible;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.08);
+  }
+
+  .main-img {
+    width: 100%;
+    display: block;
+    filter: grayscale(100%);
+    border-radius: 40px;
+  }
+
+  .image-badge {
+    position: absolute;
+    bottom: -30px;
+    right: 20px;
+    background: #fff;
+    padding: 15px 30px;
+    border-radius: 60px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    z-index: 2;
+  }
+
+  .badge-check {
+    color: #FF66CC;
+    font-weight: 950;
+    font-size: 1.1rem;
+  }
+
+  .badge-name {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #1a1a1a;
+  }
+
+  .pink-box {
+    background-color: #FFF0F7;
+    border-left: 6px solid #FF66CC;
+    padding: 40px;
+    border-radius: 0 25px 25px 0;
+    margin-bottom: 50px;
+  }
+
+  .pink-box p {
+    color: #D63399;
+    font-weight: 600;
+    line-height: 1.7;
+    font-size: 1.1rem;
+  }
+
+  .checklist-container {
+    margin-bottom: 60px;
+  }
+
+  .checklist-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 32px;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .checklist {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .check-icon {
+    color: #10B981;
+    font-weight: 900;
+    font-size: 1.3rem;
+    margin-top: -2px;
+  }
+
+  .check-text {
+    font-size: 1.05rem;
+    color: #444;
+    line-height: 1.6;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .secondary-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 40px;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 60px;
+    color: #1a1a1a;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.05rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    font-family: 'Poppins', sans-serif;
+  }
+
+  /* --- RESPONSIBILITIES SECTION --- */
+  .responsibilities-section {
+    background-color: #FAFAFA;
+    padding: 60px 5% 120px 5%;
+    position: relative;
+  }
+
+  .section-divider {
+    height: 1px;
+    background-color: #eee;
+    margin-bottom: 60px;
+    width: 100%;
+  }
+
+  .responsibilities-container {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .responsibilities-header {
+    text-align: center;
+    margin-bottom: 80px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .responsibilities-title {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 800;
+    margin-bottom: 24px;
+    line-height: 1.2;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .responsibilities-description {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.7;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .responsibilities-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  .resp-card {
+    background-color: #fff;
+    padding: 48px 40px;
+    border-radius: 30px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+    transition: all 0.4s ease;
+    border: 1px solid rgba(0,0,0,0.02);
+  }
+
+  .resp-card-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    line-height: 1.3;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .resp-card-text {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  /* --- HIRING PROCESS SECTION --- */
+  .hiring-process-section {
+    background-color: #ffffff;
+    padding: 60px 5% 120px 5%;
+    text-align: center;
+  }
+
+  .hiring-process-container {
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  .hiring-title {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 800;
+    margin-bottom: 24px;
+    line-height: 1.2;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .hiring-subtitle {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.7;
+    max-width: 850px;
+    margin: 0 auto;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .step-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    font-weight: 900;
+    font-family: 'Montserrat', sans-serif;
+    border: 6px solid #fff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .step-label {
+    font-size: 1.2rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .timeline-wrapper {
+    position: relative;
+    padding-top: 40px;
+    margin-top: 40px;
+  }
+
+  .timeline-line {
+    position: absolute;
+    top: 70px; /* Centered with circles */
+    left: 10%;
+    width: 80%;
+    height: 4px;
+    background: linear-gradient(90deg, #FF66CC 0%, #6663FD 33%, #66FF99 66%, #CCFF66 100%);
+    border-radius: 2px;
+    z-index: 1;
+  }
+
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .step-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .step-visual {
+    margin-bottom: 32px;
+  }
+
+  .step-text {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .step-badge {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  .badge-purple {
+    background-color: #F3E8FF;
+    color: #6663FD;
+  }
+
+  .badge-blue {
+    background-color: #E0F2FE;
+    color: #0369A1;
+  }
+
+  /* --- FINAL CTA SECTION --- */
+  .final-cta-section {
+    background: linear-gradient(95deg, #441a45 0%, #111111 40%, #111111 100%) !important;
+    padding: 120px 5% !important;
+    text-align: center !important;
+    color: #ffffff !important;
+    position: relative;
+    z-index: 10;
+    display: block !important;
+  }
+
+  .final-cta-container {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .final-cta-title {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: clamp(2.2rem, 5vw, 3.5rem) !important;
+    font-weight: 800 !important;
+    margin-bottom: 24px !important;
+    line-height: 1.2 !important;
+    color: #ffffff !important;
+    display: block !important;
+  }
+
+  .final-cta-description {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 1.2rem !important;
+    color: #D0D0D0 !important;
+    line-height: 1.7 !important;
+    margin-bottom: 48px !important;
+    max-width: 750px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block !important;
+  }
+
+  .final-cta-button {
+    font-family: 'Poppins', sans-serif !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background-color: #FF66CC !important;
+    color: #FFFFFF !important;
+    padding: 22px 48px !important;
+    border-radius: 60px !important;
+    font-size: 1.15rem !important;
+    font-weight: 800 !important;
+    text-decoration: none !important;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+    box-shadow: 0 15px 35px rgba(255, 102, 204, 0.4) !important;
+    border: none !important;
+  }
+
+  .final-cta-button:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 25px 50px rgba(255, 102, 204, 0.6) !important;
+    filter: brightness(1.1) !important;
+  }
+
+  /* --- AVAILABLE PROFILES SECTION --- */
+  .available-profiles-section {
+    background-color: #FAFAFC;
+    padding: 120px 5%;
+    text-align: center;
+  }
+
+  .profiles-wrapper {
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  .profiles-header-alt {
+    margin-bottom: 80px;
+  }
+
+  .profiles-title-alt {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+    font-weight: 800;
+    margin-bottom: 24px;
+    color: #1a1a1a;
+  }
+
+  .profiles-subtitle-alt {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.15rem;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .profiles-grid-alt {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  .profile-card-alt {
+    background: #ffffff;
+    padding: 48px;
+    border-radius: 30px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.05);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(0,0,0,0.02);
+    transition: all 0.4s ease;
+  }
+
+  .profile-card-alt:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.08);
+  }
+
+  .profile-header-top {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .profile-card-icon {
+    font-size: 1.8rem;
+  }
+
+  .profile-card-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #1a1a1a;
+  }
+
+  .profile-card-description {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.05rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 32px;
+    flex-grow: 1;
+  }
+
+  .tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 40px;
+  }
+
+  .tag-pill {
+    background-color: #f1f1f1;
+    color: #666;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .profile-card-button {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px 24px;
+    border: 1px solid #e0e0e0;
+    background: #fff;
+    color: #1a1a1a;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    width: 100%;
+  }
+
+  .profile-card-button:hover {
+    background: #fdfdfd;
+    border-color: #1a1a1a;
+    transform: translateY(-2px);
+  }
+
+  /* --- RESPONSIVE --- */
+  @media (max-width: 1024px) {
+    .hero-content-wrapper, .sencillo-grid {
+      grid-template-columns: 1fr;
+      gap: 60px;
+      text-align: center;
+    }
+    .profiles-grid-alt {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .hero-custom, .sencillo-section, .responsibilities-section, .hiring-process-section, .final-cta-section, .available-profiles-section {
+      padding: 80px 24px !important;
+    }
+
+    .final-cta-title, .profiles-title-alt {
+      font-size: 2.3rem !important;
+    }
+
+    .profile-card-alt {
+      padding: 30px;
+    }
+
+    .profile-card-title {
+      font-size: 1.4rem;
+    }
+  }
+</style>
 
 <DashboardLayoutPerfiles
   title="Contratar Community Manager para Empresas Españolas"
@@ -24,14 +814,793 @@ import RolesPerfil from "../../components/roles-del-perfil/RolesPerfil.astro";
 >
   <div class="service-detail-container" id="inicio">
     
-     
-    hero
+    <!-- HERO SECTION (DARK) -->
+    <section class="hero-custom">
+      <div class="glow-bg pink-glow"></div>
+      <div class="glow-bg purple-glow"></div>
 
+      <div class="hero-content-wrapper">
+        <div class="hero-text-section">
+          <span class="label-accent">CONTRATAR COMMUNITY MANAGER REMOTO DESDE LATINOAMÉRICA</span>
+          <h1 class="hero-title">
+            Delega el crecimiento de tu comunidad digital en talento experto, sin el riesgo ni la burocracia laboral local.
+          </h1>
+          <p class="hero-description">
+            Con <strong>Oberstaff<span class="pink-dot">.</span></strong> puedes contratar Community Manager especializado en social media, evaluado técnica y psicométricamente. Que trabaja en tu zona horaria, con español nativo y dedicación exclusiva para tu negocio.
+          </p>
+
+          <div class="hero-badges">
+            <div class="badge-item">
+              <span class="badge-icon">🎯</span>
+              <span class="badge-text">Dedicación exclusiva</span>
+            </div>
+            <div class="badge-item">
+              <span class="badge-icon">📋</span>
+              <span class="badge-text">Perfiles evaluados</span>
+            </div>
+            <div class="badge-item">
+              <span class="badge-icon">⚡</span>
+              <span class="badge-text">Integración rápida</span>
+            </div>
+            <div class="badge-item">
+              <span class="badge-icon">🕒</span>
+              <span class="badge-text">Horario compatible CET</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-form-section">
+          <div class="form-card">
+            <h2 class="form-title">Encuentra a tu CM ideal hoy</h2>
+            <p class="form-subtitle">Accede a perfiles pre-evaluados listos para integrarse.</p>
+            
+            <form class="contact-form">
+              <div class="form-group">
+                <input type="text" placeholder="Nombre completo *" required />
+              </div>
+              <div class="form-group">
+                <input type="email" placeholder="Email corporativo *" required />
+              </div>
+              <div class="form-group">
+                <input type="text" placeholder="Empresa *" required />
+              </div>
+              <div class="form-group">
+                <input type="tel" placeholder="Teléfono *" required />
+              </div>
+
+              <button type="submit" class="submit-btn">
+                <span class="emoji-wave">👋</span> Ver perfiles pre-evaluados y solicitar propuesta
+              </button>
+            </form>
+
+            <div class="form-footer">
+              <p class="footer-note">↳ Tardarás menos de 1 minuto · Sin compromiso</p>
+              <a href="#" class="footer-link">Ver cómo funciona el modelo EOR →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SENCILLO SECTION (LIGHT) -->
+    <section class="sencillo-section">
+      <div class="sencillo-container">
+        <div class="sencillo-header">
+          <h2 class="sencillo-title">Contratar un community manager <span class="blue-text">nunca fue tan sencillo</span></h2>
+          <p class="sencillo-subtitle">
+            Te conectamos con gestores de redes sociales especializados en comunidad digital. Profesionales que conocen las plataformas, dominan la voz de marca y saben convertir la actividad social en resultados reales para tu negocio.
+          </p>
+        </div>
+
+        <div class="sencillo-grid">
+          <div class="sencillo-visual">
+            <div class="image-wrapper">
+              <img src="/cm-sencillo-woman.png" alt="Community Manager trabajando" class="main-img" />
+              <div class="image-badge">
+                <span class="badge-check">✓</span>
+                <span class="badge-name">Creciendo Digital</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="sencillo-content">
+            <div class="pink-box">
+              <p>Tú marcas los objetivos y las estrategias. Tu CM los ejecuta con dedicación exclusiva. Nosotros asumimos toda la parte legal y administrativa.</p>
+            </div>
+
+            <div class="checklist-container">
+              <h3 class="checklist-title">Checklist de ventajas:</h3>
+              <ul class="checklist">
+                <li>
+                  <span class="check-icon">✓</span>
+                  <span class="check-text">Community Managers evaluados con prueba técnicas de social media y test psicométricos.</span>
+                </li>
+                <li>
+                  <span class="check-icon">✓</span>
+                  <span class="check-text">Sin riesgo legal — <strong>Oberstaff<span class="pink-dot">.</span></strong> es el empleador.</span>
+                </li>
+                <li>
+                  <span class="check-icon">✓</span>
+                  <span class="check-text">Factura mensual en euros para tu empresa.</span>
+                </li>
+                <li>
+                  <span class="check-icon">✓</span>
+                  <span class="check-text">Sin permanencia mínima.</span>
+                </li>
+              </ul>
+            </div>
+
+            <a href="#inicio" class="secondary-cta">
+              <span class="dot">·</span> Solicitar candidatos <span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESPONSIBILITIES / QUE HACE SECTION (LIGHT GRAY) -->
+    <section class="responsibilities-section">
+      <div class="section-divider"></div>
+      <div class="responsibilities-container">
+        <header class="responsibilities-header">
+          <h2 class="responsibilities-title">¿Qué hace un community manager <span class="blue-text">para empresas?</span></h2>
+          <p class="responsibilities-description">
+            Es la voz digital de tu marca: gestiona la reputación online, crea contenido de valor, responde a tu comunidad y convierte seguidores en clientes. Cuando una empresa busca contratar community manager, no solo necesita alguien que publique en redes: necesita una persona que entienda la marca, mantenga la consistencia del mensaje y convierta la actividad social en una herramienta real de crecimiento.
+          </p>
+        </header>
+
+        <div class="responsibilities-grid">
+          <article class="resp-card">
+            <div class="resp-icon">📱</div>
+            <h3 class="resp-card-title">Gestión de perfiles sociales</h3>
+            <p class="resp-card-text">Programación de calendarios editoriales en Instagram, LinkedIn, TikTok, Facebook y X. Adaptación de la estrategia a los algoritmos de cada plataforma.</p>
+          </article>
+
+          <article class="resp-card">
+            <div class="resp-icon">📝</div>
+            <h3 class="resp-card-title">Curación y adaptación de formatos</h3>
+            <p class="resp-card-text">Estructurización de publicaciones diarias, curación de tendencias y adaptación de mensajes para cada red social, para que la voz de tu marca se mantenga activa.</p>
+          </article>
+
+          <article class="resp-card">
+            <div class="resp-icon-alt">💭</div>
+            <h3 class="resp-card-title">Gestión de comunidad</h3>
+            <p class="resp-card-text">Respuesta ágil a mensajes directos (DMs) y comentarios y moderación de crisis de reputación online. Tu marca siempre conectada con su audiencia.</p>
+          </article>
+
+          <article class="resp-card">
+            <div class="resp-icon">📊</div>
+            <h3 class="resp-card-title">Analítica y Social Listening</h3>
+            <p class="resp-card-text">Medición de KPIs: alcance, engagement rate, clics y crecimiento de seguidores. Informes mensuales con insights estratégicos.</p>
+          </article>
+
+          <article class="resp-card">
+            <div class="resp-icon">🎯</div>
+            <h3 class="resp-card-title">Estrategia de Social Media</h3>
+            <p class="resp-card-text">Estudio de audiencias digitales, análisis de competidores, selección estratégica de hashtags y detección de tendencias nativas para maximizar el alcance orgánico.</p>
+          </article>
+
+          <article class="resp-card">
+            <div class="resp-icon-alt-2">📢</div>
+            <h3 class="resp-card-title">Soporte en distribución Paid Social</h3>
+            <p class="resp-card-text">Gestión de la comunidad que interactúa con tus anuncios en Meta Ads y LinkedIn Ads, apoyando al equipo de performance marketing.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW TO HIRE / PROCESO SECTION (WHITE) -->
+    <section class="hiring-process-section">
+      <div class="section-divider"></div>
+      <div class="hiring-process-container">
+        <header class="hiring-header">
+          <h2 class="hiring-title">Cómo contratar un community manager con <span class="gradient-text">Oberstaff<span class="pink-dot">.</span></span></h2>
+          <p class="hiring-subtitle">
+            Un proceso sencillo, rápido y sin riesgo. Si estabas en modo "buscar community manager" sin saber por dónde empezar, aquí simplificamos el proceso para que tomes una decisión más rápida y con menos riesgo.
+          </p>
+        </header>
+
+        <div class="timeline-wrapper">
+          <div class="timeline-line"></div>
+          <div class="steps-grid">
+            <div class="step-item">
+              <div class="step-visual"><div class="step-circle" style="background-color: #FF66CC;">01</div></div>
+              <div class="step-info">
+                <h3 class="step-label">Cuéntanos tu perfil</h3>
+                <p class="step-text">Agenda una llamada de 15 minutos. Analizamos el sector, las redes, el tono de marca y la experiencia requerida.</p>
+                <span class="step-badge badge-purple">15 min · Sin compromiso</span>
+              </div>
+            </div>
+            <div class="step-item">
+              <div class="step-visual"><div class="step-circle" style="background-color: #6663FD;">02</div></div>
+              <div class="step-info">
+                <h3 class="step-label">Seleccionamos candidatos</h3>
+                <p class="step-text">Preseleccionamos 3-5 CMs: prueba técnica de social media + test psicométrico + entrevista previa.</p>
+                <span class="step-badge badge-blue">📋 Perfiles evaluados</span>
+              </div>
+            </div>
+            <div class="step-item">
+              <div class="step-visual"><div class="step-circle" style="background-color: #66FF99; color: #1a1a1a;">03</div></div>
+              <div class="step-info">
+                <h3 class="step-label">Entrevistas y decisión</h3>
+                <p class="step-text">Realizas entrevistas con los candidatos. Sin compromisos hasta que decides.</p>
+                <span class="step-badge badge-purple">Tú tienes la última palabra</span>
+              </div>
+            </div>
+            <div class="step-item">
+              <div class="step-visual"><div class="step-circle" style="background-color: #CCFF66; color: #1a1a1a;">04</div></div>
+              <div class="step-info">
+                <h3 class="step-label">Tu CM empieza a trabajar</h3>
+                <p class="step-text"><strong>Oberstaff.</strong> gestiona contrato, nómina y compliance. Tu CM recibe acceso a tus perfiles desde el primer día.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA SECTION (DARK) -->
+    <section class="final-cta-section" id="contacto">
+      <div class="final-cta-container">
+        <h2 class="final-cta-title">¿Ya sabes lo que necesitas?</h2>
+        <p class="final-cta-description">
+          Cuéntanos el perfil de Community Manager que requieres y recibe una propuesta personalizada en menos de 24 horas. Sin compromiso.
+        </p>
+        <a href="#inicio" class="final-cta-button">
+          👉 Quiero Solicitar propuesta personalizada
+        </a>
+      </div>
+    </section>
+
+    <!-- AVAILABLE PROFILES SECTION (WHITE) -->
+    <section class="available-profiles-section">
+      <div class="profiles-wrapper">
+        <header class="profiles-header-alt">
+          <h2 class="profiles-title-alt">Perfiles de community manager <span class="gradient-text-alt">remoto disponibles</span></h2>
+          <p class="profiles-subtitle-alt">Encuentra al profesional de comunicación digital que mejor conecte con el tono de tu audiencia.</p>
+        </header>
+
+        <div class="profiles-grid-alt">
+          <!-- Card 1 -->
+          <article class="profile-card-alt">
+            <div class="profile-header-top">
+              <span class="profile-card-icon">🎴</span>
+              <h3 class="profile-card-title">Gestor de Redes Sociales</h3>
+            </div>
+            <p class="profile-card-description">Gestión y publicación en Instagram, TikTok, Facebook y X. Crecimiento orgánico y engagement.</p>
+            <div class="tags-container">
+              <span class="tag-pill">Meta Business</span>
+              <span class="tag-pill">Creator Studio</span>
+              <span class="tag-pill">Metricool</span>
+              <span class="tag-pill">Canva</span>
+            </div>
+            <a href="#inicio" class="profile-card-button">Solicitar más información →</a>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="profile-card-alt">
+            <div class="profile-header-top">
+              <span class="profile-card-icon">💼</span>
+              <h3 class="profile-card-title">CM LinkedIn & B2B</h3>
+            </div>
+            <p class="profile-card-description">Comunicación institucional y generación de leads en entornos profesionales.</p>
+            <div class="tags-container">
+              <span class="tag-pill">LinkedIn</span>
+              <span class="tag-pill">Sales Navigator</span>
+              <span class="tag-pill">Taplio</span>
+              <span class="tag-pill">Notion</span>
+            </div>
+            <a href="#inicio" class="profile-card-button">Solicitar más información →</a>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="profile-card-alt">
+            <div class="profile-header-top">
+              <span class="profile-card-icon">🛒</span>
+              <h3 class="profile-card-title">CM para eCommerce</h3>
+            </div>
+            <p class="profile-card-description">Orientado a conversión de catálogo y social commerce. Gestiona reseñas, atención al cliente por DM y lanzamientos de producto.</p>
+            <div class="tags-container">
+              <span class="tag-pill">Shopify</span>
+              <span class="tag-pill">Klaviyo</span>
+              <span class="tag-pill">Meta Ads</span>
+              <span class="tag-pill">Trustpilot</span>
+            </div>
+            <a href="#inicio" class="profile-card-button">Solicitar más información →</a>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="profile-card-alt">
+            <div class="profile-header-top">
+              <span class="profile-card-icon">⭐</span>
+              <h3 class="profile-card-title">CM para Marca Personal</h3>
+            </div>
+            <p class="profile-card-description">Construye y gestiona la presencia digital de profesionales, influencers, coaches y emprendedores con voz propia.</p>
+            <div class="tags-container">
+              <span class="tag-pill">Instagram</span>
+              <span class="tag-pill">LinkedIn</span>
+              <span class="tag-pill">TikTok</span>
+              <span class="tag-pill">Linktree</span>
+            </div>
+            <a href="#inicio" class="profile-card-button">Solicitar más información →</a>
+          </article>
+        </div>
+      </div>
+    </section>
 
   </div>
+  <div class="oberstaff-section-wrapper" style="background-color: #ffffff; padding: 60px 20px; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+    
+    <div class="oberstaff-header" style="text-align: center; max-width: 900px; margin: 0 auto 50px auto;">
+        <h2 style="font-size: 32px; font-weight: 800; color: #1a1a1a; margin-bottom: 20px; line-height: 1.2;">
+            Comparativa: Precio community manager <span style="color: #6366f1;">Oberstaff.</span> <br> vs. otras opciones
+        </h2>
+        <p style="font-size: 16px; color: #666; line-height: 1.6;">
+            Compara el coste real de contratar community manager para empresas en España, como freelance o a través de agencia frente a nuestro modelo de talento remoto desde LATAM.
+        </p>
+    </div>
 
-  <style>
-    .service-detail-container {
-    }
-  </style>
+    <div class="oberstaff-table-container" style="max-width: 1100px; margin: 0 auto; overflow-x: auto;">
+        <table style="width: 100%; border-collapse: collapse; min-width: 800px; text-align: center; table-layout: fixed;">
+            <thead>
+                <tr>
+                    <th style="padding: 20px; text-align: left; color: #666; font-weight: 600;">Criterio</th>
+                    <th class="highlight-col-header" style="padding: 20px; color: #d946ef; font-weight: 800; border-left: 2px solid #fdf2f8; border-right: 2px solid #fdf2f8; border-top: 2px solid #fdf2f8; background-color: #fdf2f8; border-radius: 15px 15px 0 0;">Oberstaff. (LATAM)</th>
+                    <th style="padding: 20px; color: #666; font-weight: 600;">CM local España</th>
+                    <th style="padding: 20px; color: #666; font-weight: 600;">Freelance</th>
+                    <th style="padding: 20px; color: #666; font-weight: 600;">Agencia Social Media</th>
+                </tr>
+            </thead>
+            <tbody style="font-size: 14px; color: #444;">
+                <tr>
+                    <td style="padding: 20px; text-align: left; font-weight: 700; border-bottom: 1px solid #f0f0f0;">Coste mensual</td>
+                    <td style="padding: 20px; font-weight: 900; font-size: 16px; border-left: 2px solid #fdf2f8; border-right: 2px solid #fdf2f8; background-color: #fdf2f8;">750-1.200€</td>
+                    <td style="padding: 20px; border-bottom: 1px solid #f0f0f0;">2.000–2.800€</td>
+                    <td style="padding: 20px; border-bottom: 1px solid #f0f0f0;">800–2.000€</td>
+                    <td style="padding: 20px; border-bottom: 1px solid #f0f0f0;">1.500–4.000€</td>
+                </tr>
+                <tr>
+                    <td style="padding: 20px; text-align: left; font-weight: 700; border-bottom: 1px solid #f0f0f0;">Dedicación exclusiva a tus redes</td>
+                    <td style="padding: 20px; border-left: 2px solid #fdf2f8; border-right: 2px solid #fdf2f8; background-color: #fdf2f8;"><span style="color: #22c55e;">✓</span> Sí, jornada completa</td>
+                    <td style="padding: 20px; border-bottom: 1px solid #f0f0f0;"><span style="color: #22c55e;">✓</span> Sí</td>
+                    <td style="padding: 20px; border-bottom: 1px solid #f0f0f0;"><span style="color: #f59e0b;">⚠</span> Múltiples cuentas</td>
+                    <td style="padding: 20px; border-bottom: 1px solid #f0f0f0;"><span style="color: #ef4444;">✕</span> No, compartida</td>
+                </tr>
+                <tr>
+                    <td style="padding: 20px; text-align: left; font-weight: 700; border-bottom: 1px solid #f0f0f0;">Gestión legal y nómina</td>
+                    <td style="padding: 20px; border-left: 2px solid #fdf2f8; border-right: 2px solid #fdf2f8; background-color: #fdf2f8;"><span style="color: #22c55e;">✓</span> Oberstaff</td>
+                    <td style="padding: 20px; border-bottom: 1px solid #f0f0f0;"><span style="color: #ef4444;">✕</span> Tú lo gestionas</td>
+                    <td style="padding: 20px; border-bottom: 1px solid #f0f0f0;"><span style="color: #ef4444;">✕</span> Factura autónomo</td>
+                    <td style="padding: 20px; border-bottom: 1px solid #f0f0f0;"><span style="color: #22c55e;">✓</span> Sí</td>
+                </tr>
+                <tr>
+                    <td style="padding: 20px; text-align: left; font-weight: 700; border-bottom: 1px solid #f0f0f0;">Zona horaria España</td>
+                    <td style="padding: 20px; border-left: 2px solid #fdf2f8; border-right: 2px solid #fdf2f8; background-color: #fdf2f8;"><span style="color: #22c55e;">✓</span> Compatible</td>
+                    <td style="padding: 20px; border-bottom: 1px solid #f0f0f0;"><span style="color: #22c55e;">✓</span> Compatible</td>
+                    <td style="padding: 20px; border-bottom: 1px solid #f0f0f0;"><span style="color: #f59e0b;">⚠</span> Sin horario fijo</td>
+                    <td style="padding: 20px; border-bottom: 1px solid #f0f0f0;"><span style="color: #f59e0b;">⚠</span> Repartido</td>
+                </tr>
+                <tr>
+                    <td style="padding: 20px; text-align: left; font-weight: 700; border-bottom: 1px solid #f0f0f0;">Sin permanencia</td>
+                    <td style="padding: 20px; border-left: 2px solid #fdf2f8; border-right: 2px solid #fdf2f8; background-color: #fdf2f8;"><span style="color: #22c55e;">✓</span> Compatible</td>
+                    <td style="padding: 20px; border-bottom: 1px solid #f0f0f0;"><span style="color: #ef4444;">✕</span> Indemnizaciones</td>
+                    <td style="padding: 20px; border-bottom: 1px solid #f0f0f0;"><span style="color: #f59e0b;">⚠</span> Según contrato</td>
+                    <td style="padding: 20px; border-bottom: 1px solid #f0f0f0;"><span style="color: #ef4444;">✕</span> Contratos largos</td>
+                </tr>
+                <tr>
+                    <td style="padding: 20px; text-align: left; font-weight: 700; border-bottom: 1px solid #f0f0f0;">Perfil creativo evaluado</td>
+                    <td style="padding: 20px; border-left: 2px solid #fdf2f8; border-right: 2px solid #fdf2f8; background-color: #fdf2f8;"><span style="color: #22c55e;">✓</span> Técnica + Psico</td>
+                    <td style="padding: 20px; border-bottom: 1px solid #f0f0f0;"><span style="color: #ef4444;">✕</span> Tú seleccionas</td>
+                    <td style="padding: 20px; border-bottom: 1px solid #f0f0f0;"><span style="color: #ef4444;">✕</span> Solo portafolio</td>
+                    <td style="padding: 20px; border-bottom: 1px solid #f0f0f0;"><span style="color: #22c55e;">✓</span> Sí</td>
+                </tr>
+                <tr>
+                    <td style="padding: 20px; text-align: left; font-weight: 700;">Ahorro estimado vs local</td>
+                    <td style="padding: 20px; font-weight: 900; border-left: 2px solid #fdf2f8; border-right: 2px solid #fdf2f8; border-bottom: 2px solid #fdf2f8; background-color: #fdf2f8; border-radius: 0 0 15px 15px;">Hasta 70% en MKT</td>
+                    <td style="padding: 20px; color: #999;">—</td>
+                    <td style="padding: 20px;"><span style="color: #ef4444;">✕</span> Sin compliance</td>
+                    <td style="padding: 20px;">Variable</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <style>
+        @media (max-width: 768px) {
+            .oberstaff-header h2 { font-size: 24px !important; }
+            .oberstaff-table-container table { font-size: 12px !important; }
+        }
+    </style>
+</div>
+<div class="oberstaff-pricing-full-section" style="background-color: #FAFAFC; padding: 80px 20px; font-family: 'Inter', sans-serif;">
+    
+    <div class="header-content" style="text-align: center; max-width: 800px; margin: 0 auto 60px auto;">
+        <h2 style="font-size: 34px; font-weight: 800; color: #1a1a1a; margin-bottom: 25px;">
+            Precio community manager <span style="color: #6366f1;">con Oberstaff</span>
+        </h2>
+        <p style="font-size: 18px; color: #666; line-height: 1.6;">
+            El precio de un community manager local puede superar los 2.000 €/mes. <br>
+            Con <strong>Oberstaff.</strong>, accedes al mismo nivel de talento desde 750 €/mes, todo incluido y sin complicaciones legales.
+        </p>
+    </div>
+
+    <div class="pricing-card-wrapper" style="max-width: 1000px; margin: 0 auto; background: #fff; border: 1.5px solid #ff00c81a; border-radius: 40px; box-shadow: 0 20px 50px rgba(0,0,0,0.04); display: flex; flex-wrap: wrap; overflow: hidden;">
+        
+        <div class="price-column" style="flex: 1; min-width: 320px; padding: 60px; border-right: 1px solid #f0f0f0;">
+            <div style="margin-bottom: 40px;">
+                <h3 style="font-size: 26px; font-weight: 800; color: #1a1a1a; margin: 0;">Fee mensual único</h3>
+                <p style="font-size: 16px; color: #888; margin-top: 5px;">Jornada completa</p>
+            </div>
+
+            <div style="display: flex; align-items: baseline; margin-bottom: 40px;">
+                <span style="font-size: 14px; font-weight: 700; color: #aaa; margin-right: 15px;">DESDE</span>
+                <span style="font-size: 72px; font-weight: 900; color: #ff00c8; line-height: 1;">750€</span>
+                <span style="font-size: 16px; font-weight: 600; color: #aaa; margin-left: 10px;">/ mes</span>
+            </div>
+
+            <a href="#" style="display: block; background-color: #ff5dd6; color: white; text-align: center; padding: 18px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 17px; margin-bottom: 30px; transition: 0.3s;">
+                Solicitar propuesta
+            </a>
+
+            <p style="font-size: 12px; color: #999; line-height: 1.5; margin: 0;">
+                * Precios orientativos. El coste final depende del perfil, país y nivel de experiencia. Sin costes ocultos.
+            </p>
+        </div>
+
+        <div class="features-column" style="flex: 1.2; min-width: 320px; padding: 60px; display: flex; align-items: center; background-color: #ffffff;">
+            <ul style="list-style: none; padding: 0; margin: 0; width: 100%;">
+                <li style="display: flex; align-items: center; margin-bottom: 25px; font-size: 17px; color: #444;">
+                    <span style="width: 24px; height: 24px; background: #fdf2f8; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0; color: #ff00c8; font-weight: bold; font-size: 12px;">✓</span>
+                    Estrategia multicanal.
+                </li>
+                <li style="display: flex; align-items: center; margin-bottom: 25px; font-size: 17px; color: #444;">
+                    <span style="width: 24px; height: 24px; background: #fdf2f8; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0; color: #ff00c8; font-weight: bold; font-size: 12px;">✓</span>
+                    Moderación y protección de reputación de marca.
+                </li>
+                <li style="display: flex; align-items: center; margin-bottom: 25px; font-size: 17px; color: #444;">
+                    <span style="width: 24px; height: 24px; background: #fdf2f8; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0; color: #ff00c8; font-weight: bold; font-size: 12px;">✓</span>
+                    Analítica mensual con informes de resultados.
+                </li>
+                <li style="display: flex; align-items: center; font-size: 17px; color: #444;">
+                    <span style="width: 24px; height: 24px; background: #fdf2f8; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0; color: #ff00c8; font-weight: bold; font-size: 12px;">✓</span>
+                    Coordinación total con tu equipo de marketing.
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <style>
+        @media (max-width: 768px) {
+            .price-column {
+                border-right: none !important;
+                border-bottom: 1px solid #ffffff !important;
+                padding: 40px 30px !important;
+                text-align: center !important;
+            }
+            .price-column div { justify-content: center !important; }
+            .features-column { padding: 40px 30px !important; }
+            .header-content h2 { font-size: 26px !important; }
+        }
+    </style>
+</div>
+<section class="oberstaff-why-section" style="padding: 80px 20px; background-color: #fff; font-family: 'Inter', sans-serif; color: #1a1a1a;">
+    <div class="oberstaff-container" style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start;">
+        
+        <div class="content-left">
+            <h2 style="font-size: 36px; font-weight: 800; line-height: 1.2; margin-bottom: 25px;">
+                ¿Por qué contratar community manager con <span style="color: #6366f1;">Oberstaff.</span>?
+            </h2>
+            <p style="font-size: 16px; color: #666; line-height: 1.6; margin-bottom: 45px;">
+                Combinamos la inmersión profunda de un perfil In-House que entiende la esencia de tu feed, con la agilidad de un servicio externo para que te centres en los likes, leads y resultados.
+            </p>
+
+            <div class="benefit-item" style="display: flex; gap: 20px; margin-bottom: 35px;">
+                <div class="icon-box" style="width: 45px; height: 45px; background: #f8f9fa; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                    <span style="font-size: 20px;">🎯</span>
+                </div>
+                <div>
+                    <h4 style="font-size: 18px; font-weight: 700; margin: 0 0 10px 0;">Dedicación exclusiva</h4>
+                    <p style="font-size: 14px; color: #666; margin: 0; line-height: 1.5;">Tu CM no reparte su atención. Trabaja enfocado en tu calendario editorial, tus tendencias y tu comunidad diaria.</p>
+                </div>
+            </div>
+
+            <div class="benefit-item" style="display: flex; gap: 20px; margin-bottom: 35px;">
+                <div class="icon-box" style="width: 45px; height: 45px; background: #f8f9fa; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                    <span style="font-size: 20px;">⚡</span>
+                </div>
+                <div>
+                    <h4 style="font-size: 18px; font-weight: 700; margin: 0 0 10px 0;">Integración rápida</h4>
+                    <p style="font-size: 14px; color: #666; margin: 0; line-height: 1.5;">El perfil se incorpora a tus videollamadas, utiliza tus herramientas y capta tu tono de voz.</p>
+                </div>
+            </div>
+
+            <div class="benefit-item" style="display: flex; gap: 20px;">
+                <div class="icon-box" style="width: 45px; height: 45px; background: #f8f9fa; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                    <span style="font-size: 20px;">🛡️</span>
+                </div>
+                <div>
+                    <h4 style="font-size: 18px; font-weight: 700; margin: 0 0 10px 0;">Operativa resuelta</h4>
+                    <p style="font-size: 14px; color: #666; margin: 0; line-height: 1.5;"><strong>Oberstaff.</strong> es el empleador legal — tú no asumes nada. Pagas una sola factura mensual en euros, deducible para tu negocio, en tu idioma y huso horario.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-right">
+            <div style="margin-bottom: 30px; border-radius: 25px; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.1);">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1000&auto=format&fit=crop" alt="Equipo trabajando" style="width: 100%; display: block; filter: grayscale(100%);">
+            </div>
+
+            <div style="background-color: #f8f9fa; padding: 40px; border-radius: 20px; border: 1px solid #eee;">
+                <h3 style="font-size: 20px; font-weight: 800; margin: 0 0 25px 0;">¿Cómo buscar un CM estratégico?</h3>
+                
+                <div style="margin-bottom: 20px;">
+                    <h5 style="font-size: 14px; font-weight: 800; margin: 0 0 5px 0;">Freelance vs. Dedicación exclusiva</h5>
+                    <p style="font-size: 13px; color: #666; margin: 0; line-height: 1.5;">Con un freelance obtienes disponibilidad parcial. Con <strong>Oberstaff.</strong> tienes jornada completa exclusiva y gestión laboral resuelta.</p>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <h5 style="font-size: 14px; font-weight: 800; margin: 0 0 5px 0;">¿Dónde busco Community Manager?</h5>
+                    <p style="font-size: 13px; color: #666; margin: 0; line-height: 1.5;">Frente a agencias y marketplaces, ofrecemos talento In-House remoto sin riesgos legales para tu negocio.</p>
+                </div>
+
+                <div>
+                    <h5 style="font-size: 14px; font-weight: 800; margin: 0 0 5px 0;">Herramientas clave</h5>
+                    <p style="font-size: 13px; color: #666; margin: 0; line-height: 1.5;">Notion, Metricool, Meta Business Suite, Canva y analítica nativa.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        @media (max-width: 992px) {
+            .oberstaff-container {
+                grid-template-columns: 1fr !important;
+                gap: 40px !important;
+            }
+            .content-left { text-align: center; }
+            .benefit-item { text-align: left; }
+            .content-left h2 { font-size: 28px !important; }
+        }
+    </style>
+</section>
+
+<section class="oberstaff-testimonials-section" style="padding: 80px 20px; background-color: #FAFAFC; font-family: 'Inter', sans-serif;">
+    
+    <div style="text-align: center; max-width: 900px; margin: 0 auto 50px auto;">
+        <h2 style="font-size: 32px; font-weight: 800; color: #1a1a1a; letter-spacing: -0.5px;">
+            Empresas Españolas que ya confían en <span style="color: #6366f1;">Oberstaff.</span>
+        </h2>
+    </div>
+
+    <div class="testimonials-grid" style="max-width: 1100px; margin: 0 auto; display: flex; gap: 30px; flex-wrap: wrap; justify-content: center;">
+        
+        <div class="testimonial-card" style="flex: 1; min-width: 320px; max-width: 500px; background: #fff; border: 1px solid #f0f0f0; border-radius: 20px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.03);">
+            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 25px;">
+                <img src="https://i.imgur.com/8Km9tLL.png" alt="Shadai Iborra" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover;">
+                <div>
+                    <div style="color: #ffb400; font-size: 14px; margin-bottom: 5px;">★★★★★</div>
+                    <h4 style="margin: 0; font-size: 18px; font-weight: 800; color: #1a1a1a;">Shadai Iborra</h4>
+                    <p style="margin: 0; font-size: 13px; color: #888;">CEO · @amediastory — Barcelona</p>
+                </div>
+            </div>
+            <p style="font-size: 15px; color: #444; line-height: 1.6; font-style: italic; margin: 0;">
+                "Con <strong>Oberstaff.</strong> pude dar trabajo a dos personas a tiempo completo, ahorrando costes de reclutamiento, espacios de oficina y salario que tendría al hacerlo en España. Lo mejor de todo es que todo está incluido en una misma factura."
+            </p>
+        </div>
+
+        <div class="testimonial-card" style="flex: 1; min-width: 320px; max-width: 500px; background: #fff; border: 1px solid #f0f0f0; border-radius: 20px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.03);">
+            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 25px;">
+                <img src="https://i.imgur.com/X2W6yL8.png" alt="Fernando Calderón" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover;">
+                <div>
+                    <div style="color: #ffb400; font-size: 14px; margin-bottom: 5px;">★★★★★</div>
+                    <h4 style="margin: 0; font-size: 18px; font-weight: 800; color: #1a1a1a;">Fernando Calderón</h4>
+                    <p style="margin: 0; font-size: 13px; color: #888;">CEO · bybeautypro.com — Madrid</p>
+                </div>
+            </div>
+            <p style="font-size: 15px; color: #444; line-height: 1.6; font-style: italic; margin: 0;">
+                "Estaba en busca de un editor de video para mi empresa y después de varias búsquedas sin éxito, encontré a <strong>Oberstaff.</strong> en Instagram. Desde nuestra primera llamada, su profesionalismo y calidad de trabajo me dejaron impresionado."
+            </p>
+        </div>
+
+    </div>
+
+    <style>
+        @media (max-width: 768px) {
+            .oberstaff-testimonials-section h2 { font-size: 26px !important; }
+            .testimonial-card { padding: 30px !important; }
+        }
+    </style>
+</section>
+
+<section class="oberstaff-press-section" style="padding: 60px 20px; background-color: #fff; font-family: 'Inter', sans-serif;">
+    
+    <div style="text-align: center; margin-bottom: 40px;">
+        <h3 style="font-size: 14px; font-weight: 700; color: #4b5563; text-transform: uppercase; letter-spacing: 2px; margin: 0;">
+            Prensa y menciones
+        </h3>
+    </div>
+
+    <div class="press-logos-container" style="max-width: 1000px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 60px; flex-wrap: wrap; opacity: 0.7;">
+        
+        <div class="press-logo" style="max-width: 180px;">
+            <img src="https://www.elmundofinanciero.com/images/logo.png" alt="El Mundo Financiero" style="width: 100%; height: auto; filter: grayscale(100%) contrast(1.2);">
+        </div>
+
+        <div class="press-logo" style="max-width: 220px;">
+            <img src="https://www.madridiario.es/img/logo.png" alt="Madridiario" style="width: 100%; height: auto; filter: grayscale(100%) contrast(1.2);">
+        </div>
+
+        <div class="press-logo" style="max-width: 200px;">
+            <img src="https://www.regiondigital.com/templates/rd/images/logo.png" alt="Región Digital" style="width: 100%; height: auto; filter: grayscale(100%) contrast(1.2);">
+        </div>
+
+    </div>
+
+    <style>
+        .press-logo img {
+            transition: opacity 0.3s ease, filter 0.3s ease;
+        }
+        .press-logo img:hover {
+            opacity: 1;
+            filter: grayscale(0%) contrast(1);
+        }
+        
+        @media (max-width: 768px) {
+            .press-logos-container {
+                gap: 30px !important;
+            }
+            .press-logo {
+                max-width: 140px !important;
+            }
+        }
+    </style>
+</section>
+
+<section class="oberstaff-faq-section" style="padding: 80px 20px; background-color: #FAFAFC; font-family: 'Inter', sans-serif; color: #1a1a1a;">
+    <div class="oberstaff-faq-container" style="max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: start;">
+        
+        <div class="faq-content-left">
+            <h2 style="font-size: 36px; font-weight: 800; line-height: 1.2; margin-bottom: 25px;">
+                Todo lo que necesitas saber antes de <span style="color: #6366f1;">contratar un CM</span>
+            </h2>
+            <p style="font-size: 16px; color: #666; line-height: 1.6; margin-bottom: 35px;">
+                Resolvemos las dudas más frecuentes sobre el proceso, precios y funcionamiento del servicio.
+            </p>
+            <a href="#" class="faq-cta-button" style="display: inline-block; background-color: #6366f1; color: white; padding: 15px 30px; border-radius: 12px; font-weight: 700; text-decoration: none; font-size: 16px; transition: transform 0.2s ease; box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);">
+                Hablar con asesor →
+            </a>
+        </div>
+
+        <div class="faq-accordion">
+            <div class="faq-item">¿Cuánto cuesta contratar community manager con Oberstaff? <span class="faq-icon">+</span></div>
+            <div class="faq-item">¿El CM trabajará solo para mi empresa? <span class="faq-icon">+</span></div>
+            <div class="faq-item">¿Cuándo conviene contratar un community manager? <span class="faq-icon">+</span></div>
+            <div class="faq-item">¿Es mejor contratar CM freelance o uno integrado en remoto? <span class="faq-icon">+</span></div>
+            <div class="faq-item">¿Puedo prescindir del CM cuando quiera? <span class="faq-icon">+</span></div>
+            <div class="faq-item">¿En qué países de LATAM están? <span class="faq-icon">+</span></div>
+            <div class="faq-item">¿Cómo garantizan que el candidato sabe gestionar redes? <span class="faq-icon">+</span></div>
+            <div class="faq-item">¿Contratar community manager? Precio y tarifas en España <span class="faq-icon">+</span></div>
+        </div>
+    </div>
+
+    <style>
+        .faq-accordion {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .faq-item {
+            background-color: #fff;
+            border: 1px solid #f0f0f0;
+            border-radius: 12px;
+            padding: 22px 25px;
+            font-size: 15px;
+            font-weight: 700;
+            color: #1a1a1a;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+
+        .faq-item:hover {
+            border-color: #6366f1;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .faq-icon {
+            color: #6366f1;
+            font-size: 20px;
+            font-weight: 400;
+        }
+
+        .faq-cta-button:hover {
+            transform: translateY(-2px);
+            background-color: #5558e6;
+        }
+
+        @media (max-width: 992px) {
+            .oberstaff-faq-container {
+                grid-template-columns: 1fr !important;
+                gap: 40px !important;
+                text-align: center;
+            }
+            .faq-item {
+                text-align: left;
+            }
+            .faq-content-left h2 {
+                font-size: 28px !important;
+            }
+        }
+    </style>
+</section>
+
+<section class="oberstaff-contact-section" style="padding: 100px 20px; background-color: #fff; font-family: 'Inter', sans-serif; color: #1a1a1a;">
+    <div class="oberstaff-contact-container" style="max-width: 1100px; margin: 0 auto; display: flex; align-items: center; gap: 60px; flex-wrap: wrap;">
+        
+        <div class="contact-text" style="flex: 1; min-width: 320px;">
+            <h2 style="font-size: 36px; font-weight: 800; line-height: 1.2; margin-bottom: 25px;">
+                Encuentra al Community Manager ideal para <span style="color: #6366f1;">dinamizar tu marca</span>
+            </h2>
+            <p style="font-size: 18px; color: #666; line-height: 1.6; margin: 0;">
+                Rellena el formulario y en menos de 24 horas recibirás una propuesta de talento social media personalizada, sin ningún compromiso. Primera sesión de consultoría gratuita.
+            </p>
+        </div>
+
+        <div class="contact-form-wrapper" style="flex: 1; min-width: 320px; background: #fff; border-radius: 30px; padding: 50px; box-shadow: 0 20px 50px rgba(0,0,0,0.05); border: 1px solid #f0f0f0;">
+            <form style="display: flex; flex-direction: column; gap: 20px;">
+                <input type="text" placeholder="Nombre completo *" style="width: 100%; padding: 18px 25px; border-radius: 12px; border: 1px solid #e5e7eb; background: #f9fafb; font-size: 15px; outline: none; box-sizing: border-box;">
+                
+                <input type="text" placeholder="Nombre de la empresa *" style="width: 100%; padding: 18px 25px; border-radius: 12px; border: 1px solid #e5e7eb; background: #f9fafb; font-size: 15px; outline: none; box-sizing: border-box;">
+                
+                <div class="form-row-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <input type="email" placeholder="Email *" style="width: 100%; padding: 18px 25px; border-radius: 12px; border: 1px solid #e5e7eb; background: #f9fafb; font-size: 15px; outline: none; box-sizing: border-box;">
+                    <input type="tel" placeholder="Teléfono *" style="width: 100%; padding: 18px 25px; border-radius: 12px; border: 1px solid #e5e7eb; background: #f9fafb; font-size: 15px; outline: none; box-sizing: border-box;">
+                </div>
+
+                <button type="submit" style="background-color: #6366f1; color: white; border: none; padding: 20px; border-radius: 50px; font-weight: 700; font-size: 16px; cursor: pointer; transition: background 0.3s ease; box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3); margin-top: 10px;">
+                    Solicitar propuesta gratuita →
+                </button>
+                
+                <p style="text-align: center; font-size: 13px; color: #999; margin: 0;">
+                    Nota: Rellenarlo te lleva menos de 1 minuto
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <style>
+        .contact-form-wrapper input:focus {
+            border-color: #6366f1;
+            background-color: #fff;
+        }
+
+        .contact-form-wrapper button:hover {
+            background-color: #5558e6;
+            transform: translateY(-1px);
+        }
+
+        @media (max-width: 768px) {
+            .oberstaff-contact-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 40px;
+            }
+            .contact-form-wrapper {
+                padding: 30px 20px;
+                border-radius: 20px;
+            }
+            .form-row-grid {
+                grid-template-columns: 1fr !important;
+            }
+            .contact-text h2 {
+                font-size: 28px !important;
+            }
+        }
+    </style>
+</section>
+
 </DashboardLayoutPerfiles>
