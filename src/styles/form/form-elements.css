@@ -120,4 +120,9 @@
         text-align: left;
         /* Asegura que los labels estén a la izquierda en móvil */
     }
+    .btn-submit {
+ 
+    font-size: 12px;
+   
+}
 }

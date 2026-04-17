@@ -117,7 +117,7 @@
 }
 
 @media (max-width: 900px) {
-    .que-es-main-content { grid-template-columns: 1fr; gap: 40px; }
+    .que-es-main-content { grid-template-columns: 1fr; gap: 90px; }
     .floating-badge-bottom { 
         width: calc(100% + 34px); 
         padding: 15px 20px; 
