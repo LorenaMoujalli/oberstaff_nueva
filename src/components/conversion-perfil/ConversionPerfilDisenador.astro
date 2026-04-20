@@ -1,0 +1,193 @@
+---
+interface Props {
+    title?: string;
+    subtitle?: string;
+    buttonText?: string;
+    noteText?: string;
+}
+
+const {
+    title = "¿Listo para contratar diseñador gráfico dedicado y <strong>transformar la calidad visual de tu negocio?</strong>",
+    subtitle = "Completa este breve formulario y en un plazo inferior a 24 horas te enviaremos una propuesta de talento creativo, sin ningún tipo de atadura.",
+    buttonText = "Solicitar propuesta gratuita →",
+    noteText = "Nota: Rellenarlo te lleva menos de 1 minuto",
+} = Astro.props;
+---
+
+<style>
+    .conv-d-section {
+        background: white;
+        padding: 100px 20px;
+        border-top: 1px solid #f0f0f0;
+    }
+
+    .conv-d-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        max-width: 1100px;
+        margin: 0 auto;
+        align-items: center;
+    }
+
+    /* ── Left column ── */
+    .conv-d-left h2 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 1.25;
+        color: #1B1B1B;
+        margin: 0 0 20px 0;
+        letter-spacing: -0.5px;
+    }
+
+    .conv-d-left h2 :global(strong) {
+        color: #6663FD;
+        font-weight: 900;
+    }
+
+    .conv-d-left p {
+        font-family: 'Poppins', sans-serif;
+        font-size: 18px;
+        font-weight: 400;
+        color: #5A5A5A;
+        line-height: 1.7;
+        margin: 0;
+    }
+
+    /* ── Right column: card ── */
+    .conv-d-card {
+           background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+    }
+
+    .conv-d-form {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .conv-d-form input {
+        width: 100%;
+       border: 1px solid #E0E0E0;
+        border-radius: 8px;
+        padding: 14px 18px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 14px;
+        color: #1B1B1B;
+       background-color: #FAFAFC;
+    transition: all 0.3s ease;
+    width: 100%;
+    }
+
+    .conv-d-form input::placeholder {
+        color: #AAAAAA;
+    }
+
+    .conv-d-form input:focus {
+        border-color: #6663FD;
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(102, 99, 253, 0.1);
+    }
+
+    .conv-d-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+    }
+
+    .conv-d-btn {
+        font-family: 'Poppins', sans-serif;
+        width: 100%;
+        background: #6663FD;
+        color: #ffffff;
+        border: 2px solid transparent;
+        border-radius: 50px;
+        padding: 10px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        font-size: 13px;
+        cursor: pointer;
+        transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        margin-top: 4px;
+    }
+
+    .conv-d-btn:hover {
+        background: transparent;
+        color: #6663FD;
+        border: 2px solid #6663FD;
+    }
+
+    .conv-d-note {
+        font-family: 'Poppins', sans-serif;
+        font-size: 12px;
+        color: #5A5A5A;
+        text-align: center;
+        margin: 0;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+        .conv-d-container {
+            grid-template-columns: 1fr;
+            gap: 48px;
+        }
+
+        .conv-d-left h2 {
+            font-size: 28px;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .conv-d-section {
+            padding: 60px 20px;
+        }
+
+        .conv-d-left h2 {
+            font-size: 24px;
+            text-align: center;
+        }
+
+        .conv-d-row {
+            grid-template-columns: 1fr;
+        }
+
+        .conv-d-card {
+            padding: 28px 20px;
+        }
+
+        .conv-d-left p {
+            font-size: 16px;
+            text-align: center;
+        }
+    }
+</style>
+
+<section class="conv-d-section">
+    <div class="conv-d-container">
+
+        <!-- Columna izquierda: texto -->
+        <div class="conv-d-left">
+            <h2 set:html={title} />
+            <p>{subtitle}</p>
+        </div>
+
+        <!-- Columna derecha: formulario -->
+        <div class="conv-d-card">
+            <form class="conv-d-form">
+                <input type="text" placeholder="Nombre completo *" required />
+                <input type="text" placeholder="Nombre de la empresa *" required />
+                <div class="conv-d-row">
+                    <input type="email" placeholder="Email *" required />
+                    <input type="tel" placeholder="Teléfono *" required />
+                </div>
+                <button type="submit" class="conv-d-btn">{buttonText}</button>
+                <p class="conv-d-note">{noteText}</p>
+            </form>
+        </div>
+
+    </div>
+</section>

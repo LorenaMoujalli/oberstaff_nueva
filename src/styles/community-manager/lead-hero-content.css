@@ -1,46 +1,165 @@
+/* ──────────────────────────────────────────
+   LEAD HERO CONTENT — Left column
+────────────────────────────────────────── */
 .lead-text-content {
     flex: 1.2;
     text-align: left;
 }
 
+/* Top label — pink/magenta, uppercase */
 .top-label {
-    font-size: 13px;
-    font-weight: 700;
-    color: #6c757d;
-    letter-spacing: 0.5px;
+    font-family: 'Montserrat', sans-serif;
+        background: linear-gradient(90deg, #FF66CC, #FA3AB5);
+    font-size: 12px;
+    font-weight: 800;
+  /*  color: #FF66CC;*/
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
     display: block;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
 }
 
+/* Main H1 — white, large, bold */
 .lead-text-content h1 {
+    font-family: 'Montserrat', sans-serif;
     font-size: 42px;
     font-weight: 800;
-    color: #0d2149;
-    line-height: 1.1;
-    margin-bottom: 25px;
-    letter-spacing: -1px;
+    color: #ffffff;
+    line-height: 1.08;
+    margin-bottom: 22px;
+    letter-spacing: -1.2px;
 }
 
+/* Description paragraph */
 .lead-description {
-    font-size: 17px;
-    color: #555;
-    line-height: 1.5;
-    max-width: 500px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: #D0D0D0;
+    line-height: 1.7;
+    max-width: 650px;
 }
 
 .lead-description strong {
-    color: #0d2149;
-    font-weight: 800;
+    color: #ffffff;
+    font-weight: 700;
 }
 
+/* ──────────────────────────────────────────
+   BADGES GRID — 2-column check pills
+────────────────────────────────────────── */
+.badges-grid {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: start;
+    gap: 10px;
+    margin-top: 28px;
+}
+
+.badge-pill {
+    font-family: 'Poppins', sans-serif;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    width: fit-content;
+      background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #FFFFFF;
+    border-radius: 50px;
+    padding: 9px 16px;
+
+    font-size: 13px;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+.badge-emoji {
+    font-size: 15px;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.badge-icon {
+    font-size: 15px;
+    color: #10b981;
+    flex-shrink: 0;
+    display: flex;
+}
+
+/* ──────────────────────────────────────────
+   FEATURE PILLS — 2×2 grid
+────────────────────────────────────────── */
+.lead-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.lead-feature-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 50px;
+    padding: 8px 16px;
+    color: #d1d9ee;
+    font-size: 13px;
+    font-weight: 500;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.lead-feature-pill:hover {
+    background: rgba(255, 255, 255, 0.13);
+    border-color: rgba(255, 255, 255, 0.22);
+}
+
+.lead-feature-pill iconify-icon {
+    font-size: 16px;
+    flex-shrink: 0;
+    display: flex;
+}
+
+/* ──────────────────────────────────────────
+   RESPONSIVE
+────────────────────────────────────────── */
 @media (max-width: 1024px) {
     .lead-text-content {
         text-align: center;
     }
+
+    .lead-text-content h1 {
+        font-size: 36px;
+    }
+
     .lead-description {
         margin: 0 auto;
     }
-    .lead-text-content h1 {
-        font-size: 34px;
+
+    .lead-features {
+        justify-content: center;
     }
+
+    .badges-grid {
+        justify-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .lead-text-content h1 {
+        font-size: 28px;
+    }
+
+    .badge-pill {
+   
+    font-size: 10px;
+  
+}
 }

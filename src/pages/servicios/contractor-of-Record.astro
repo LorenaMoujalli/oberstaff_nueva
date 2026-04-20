@@ -74,11 +74,11 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
                 quoteText="El contractor of record meaning en su definición más práctica: es la empresa que actúa como intermediaria legal para contratar profesionales independientes en otro país. Tú defines el proyecto, los entregables y la relación de trabajo; <span style='color: #1B1B1B; font-weight: 700;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> estructura el contrato, coordina los pagos y sostiene la administración del servicio."
                 infoItems={[
                     {
-                        icon: "🚀", 
+                        icon: "🚀",
                         title: "",
                         description:
                             "Para las organizaciones españolas, el COR es la vía más ágil cuando necesita incorporar talento por proyecto, por sprint o por especialidad, pero <span style=' font-weight: 700;'>no necesita crear una relación laboral de empleado</span><span style='color: #FF66CC; font-weight: 900;'>.</span> No es un modelo de nómina; es un modelo pensado para independientes.",
-                    }
+                    },
                 ]}
                 diffIcon="❌"
                 diffTitle="COR NO es el modelo adecuado si..."
@@ -226,12 +226,16 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
                         icon: "💻",
                         title: "Tecnología por proyecto",
                         quote: "",
-                        description: "Talento autónomo para auditorías o desarrollo de módulos aislados, facturando honorarios por proyecto.",
+                        description:
+                            "Talento autónomo para auditorías o desarrollo de módulos aislados, facturando honorarios por proyecto.",
                         roles: [
                             { label: "Desarrollador freelance", href: "#" },
                             { label: "QA por release", href: "#" },
                             { label: "DevOps por migración", href: "#" },
-                            { label: "Especialista en IA/Data por implementación", href: "#" }
+                            {
+                                label: "Especialista en IA/Data por implementación",
+                                href: "#",
+                            },
                         ],
                         iconColorClass: "blue-text",
                     },
@@ -239,12 +243,19 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
                         icon: "🎨",
                         title: "Creativos y Especialistas de Marketing por Proyecto",
                         quote: "",
-                        description: "Para entregables por volumen. Relación estrictamente mercantil y sin riesgos laborales.",
+                        description:
+                            "Para entregables por volumen. Relación estrictamente mercantil y sin riesgos laborales.",
                         roles: [
                             { label: "Experto SEO externo", href: "#" },
-                            { label: "Especialista Google Ads por campaña", href: "#" },
-                            { label: "Especialista Meta Ads por lanzamiento", href: "#" },
-                            { label: "Email marketer por proyecto", href: "#" }
+                            {
+                                label: "Especialista Google Ads por campaña",
+                                href: "#",
+                            },
+                            {
+                                label: "Especialista Meta Ads por lanzamiento",
+                                href: "#",
+                            },
+                            { label: "Email marketer por proyecto", href: "#" },
                         ],
                         iconColorClass: "pink-text",
                     },
@@ -252,17 +263,24 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
                         icon: "📊",
                         title: "Diseño y producto",
                         quote: "",
-                        description: "Especialistas independientes para diseño e interfaces. Pagos por hitos y entregables bajo contrato mercantil.",
+                        description:
+                            "Especialistas independientes para diseño e interfaces. Pagos por hitos y entregables bajo contrato mercantil.",
                         roles: [
                             { label: "Diseñador UI/UX por sprint", href: "#" },
-                            { label: "Diseñador gráfico por campañas", href: "#" },
-                            { label: "Editor de vídeo para picos de producción", href: "#" }
+                            {
+                                label: "Diseñador gráfico por campañas",
+                                href: "#",
+                            },
+                            {
+                                label: "Editor de vídeo para picos de producción",
+                                href: "#",
+                            },
                         ],
                         iconColorClass: "purple-text",
-                    }
+                    },
                 ]}
             >
-            <!-- 
+                <!-- 
                 <div slot="bottom-alert" class="profiles-bottom-alert">
                     <span class="alert-icon">🚨</span>
                     <div class="alert-content">
@@ -318,7 +336,7 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
                 title="¿Tienes un proyecto concreto y necesitas el especialista correcto?"
                 text="Cuéntanos qué perfil necesitas y te diremos si encaja como contractor, qué estructura conviene y cómo activar la colaboración con menos fricción."
                 buttonText="Solicitar propuesta gratuita →"
-                buttonHref="#contacto" 
+                buttonHref="#contacto"
             />
         </div>
 
@@ -554,23 +572,23 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
     }
 
     :global(.que-es-difference-box .diff-text h3) {
-        color: #FF4D4D !important;
+        color: #ff4d4d !important;
     }
 
     :global(.que-es-difference-box .diff-text p a) {
-        color: #FF4D4D !important;
+        color: #ff4d4d !important;
         text-decoration: none !important;
         font-weight: 700 !important;
     }
 
     /* --- Perfiles Section (Solo esta página) --- */
     :global(.variant-grid .profile-card .card-description) {
-        font-family: 'Poppins', sans-serif;
+        font-family: "Poppins", sans-serif;
         font-size: 13px;
-        color: #5A5A5A;
+        color: #5a5a5a;
         line-height: 1.6;
         margin-bottom: 15px;
-       
+
         border-top: none !important;
     }
 
@@ -664,18 +682,13 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
             max-width: 500px !important;
         }
 
-           :global(.process-employer .process-cta-btn) {
-       
-        font-size:12px !important;
- 
-    }
+        :global(.process-employer .process-cta-btn) {
+            font-size: 12px !important;
+        }
 
-      :global(.btn-pricing-link) {
-   
-        font-size: 12px !important;
-       
-    }
-
+        :global(.btn-pricing-link) {
+            font-size: 12px !important;
+        }
     }
 
     /* --- Botón FAQ en Staff Augmentation --- */
@@ -786,14 +799,11 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
             padding: 20px;
         }
 
-         :global(
-        .service-detail-container .faq-section .faq-cta-card .faq-cta-button
-    ) {
-    
-      
-        font-size: 12px !important;
-     
-    }
+        :global(
+            .service-detail-container .faq-section .faq-cta-card .faq-cta-button
+        ) {
+            font-size: 12px !important;
+        }
     }
 
     /* --- Ajuste del quote en ¿Qué es Staff Augmentation? para que parezca un párrafo normal --- */

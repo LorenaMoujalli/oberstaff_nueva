@@ -2,16 +2,25 @@
 import HeaderPerfiles from "../components/HeaderPerfiles.astro";
 import FooterPerfiles from "../components/FooterPerfiles.astro";
 
+interface FooterLink {
+    text: string;
+    href: string;
+}
+
 interface Props {
 	title?: string;
 	description?: string;
 	keywords?: string;
+    footerTitle?: string;
+    footerLinks?: FooterLink[];
 } 
 
 const { 
 	title = "Contratar talento en LATAM y ahorra hasta 70%",
 	description = "Tu próximo gran profesional está en LATAM. Oberstaff te ayuda a contratar talento remoto validado, integrado y listo para trabajar contigo.",
-	keywords = "Contratar talento"
+	keywords = "Contratar talento",
+    footerTitle,
+    footerLinks
 } = Astro.props;
 
 
@@ -28,7 +37,7 @@ const {
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
-			href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+			href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
 			rel="stylesheet"
 		/>
 		<script
@@ -43,7 +52,7 @@ const {
 			<main class="main-content">
 				<slot />
 			</main>
-			<FooterPerfiles />
+			<FooterPerfiles title={footerTitle} links={footerLinks} />
 		</div>
 	</body>
 </html>
@@ -66,8 +75,8 @@ const {
 	}
 
 	html {
-		font-family: "Inter", sans-serif;
-		background-color: white; /* Light pinkish background for the whole app */
+		font-family: "Poppins", sans-serif;
+		background-color: white;
 		color: var(--text-color);
 		scroll-behavior: smooth;
 	}
@@ -78,11 +87,11 @@ const {
 	h4,
 	h5,
 	h6 {
-		font-family: "Poppins", sans-serif;
+		font-family: "Montserrat", sans-serif;
 	}
 
 	p {
-		font-family: "Inter", sans-serif;
+		font-family: "Poppins", sans-serif;
 	}
 
 	body {

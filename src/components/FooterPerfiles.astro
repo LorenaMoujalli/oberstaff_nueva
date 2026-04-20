@@ -1,27 +1,89 @@
 ---
+interface FooterLink {
+    text: string;
+    href: string;
+}
 
+interface Props {
+    title?: string;
+    links?: FooterLink[];
+}
+
+const { 
+    title = "Roles Relacionados", 
+    links = [
+        { text: "🎨 Contratar diseñador web", href: "#" },
+        { text: "🗂️ Contratar community manager", href: "#" },
+        { text: "📹 Editor de video remoto", href: "#" }
+    ] 
+} = Astro.props;
 ---
 
 <footer class="oberstaff-footer-perfiles">
-    <p>&copy; 2026 Oberstaff. Todos los derechos reservados.</p>
-</footer>
+    <p class="copyright">{title}</p>
+    
+    <div class="footer-links-row">
+        {links.map((link) => (
+            <a href={link.href} class="footer-link-item">{link.text}</a>
+        ))}
+    </div>
+</footer> 
 
 <style>
     .oberstaff-footer-perfiles {
-        background-color: rgb(18 43 93 / var(--tw-bg-opacity, 1));
+        background-color: #1B1B1B;
         color: #ffffff;
-        padding: 30px 20px;
+        padding: 40px 20px;
         width: 100%;
         text-align: center;
-        font-family:
-            "Inter",
-            -apple-system,
-            sans-serif;
+        font-family: 'Montserrat', sans-serif;
         font-size: 14px;
         box-sizing: border-box;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
     }
 
-    .oberstaff-footer p {
+    .copyright {
+        text-align: center;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 12px;
         margin: 0;
+        font-weight: 600;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        color: #888;
+        letter-spacing: 2px;
+    }
+
+    .footer-links-row {
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+        flex-wrap: wrap;
+        width: 100%;
+        max-width: 1000px;
+        margin: 20px auto 0;
+    }
+
+    .footer-link-item {
+        font-family: 'Poppins', sans-serif;
+        color: #ffffff;
+        text-decoration: none;
+        margin: 0;
+        font-weight: 500;
+        white-space: nowrap;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        opacity: 0.9;
+    }
+
+  
+
+    @media (max-width: 600px) {
+        .footer-links-row {
+            gap: 15px;
+            font-size: 12px;
+        }
     }
 </style>

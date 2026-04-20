@@ -1,26 +1,232 @@
 .pricing-card-section {
-    padding: 10px 20px 40px 20px;
-    background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1));
-    display: flex;
-    justify-content: center;
-    font-family: 'Inter', sans-serif;
+    padding: 80px 20px 80px;
+    background-color: #FAFAFC;
+        border-top: 1px solid #e5e7eb;
+    border-bottom: 1px solid #e5e7eb; 
+   
 }
-.pricing-card {
-    background-color: #ffffff;
-    max-width: 600px;
-    width: 100%;
-    padding: 25px 30px;
-    border-radius: 20px;
-    text-align: center;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
-}
-.pricing-disclaimer {
-    font-size: 12px;
-    color: #9da8b7;
-    line-height: 1.5;
-    max-width: 600px;
+
+.pricing-card-wrapper {
+    max-width: 1000px;
     margin: 0 auto;
 }
-@media (max-width: 768px) {
-    .pricing-card { padding: 20px; }
+
+/* ── Section header ── */
+.pricing-section-header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.pricing-section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #1B1B1B;
+    margin: 0 0 14px;
+    line-height: 1.2;
+}
+
+.pricing-section-subtitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    color: #5A5A5A;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* ── Card ── */
+.pricing-card-new {
+    display: grid;
+    grid-template-columns: 0.85fr auto 1.15fr;
+    background: #ffffff;
+    border-radius: 24px;
+    border: 1.5px solid rgba(255, 102, 204, 0.3);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.06);
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-card-new:hover {
+    transform: translateY(-8px);
+    border-color: #FF66CC;
+    box-shadow: 0 15px 50px rgba(255, 102, 204, 0.18);
+}
+
+/* ── Left column ── */
+.pricing-left {
+    padding: 44px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.pricing-card-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #1B1B1B;
+    margin: 0;
+}
+
+.pricing-card-subtitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #5A5A5A;
+    font-weight: 400;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* ── Price block ── */
+.pricing-price-block {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin: 4px 0;
+}
+
+.pricing-label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: #5A5A5A;
+    text-transform: uppercase;
+    flex-shrink: 0;
+}
+
+.pricing-amount {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 62px;
+    font-weight: 800;
+    color: #FF66CC;
+    line-height: 1;
+}
+
+.pricing-period {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: #5A5A5A;
+    align-self: flex-end;
+    padding-bottom: 6px;
+}
+
+/* ── CTA button ── */
+.pricing-cta-btn {
+    display: block;
+    text-align: center;
+    padding: 15px 24px;
+    background: #FF66CC;
+    color: #ffffff;
+    border: 2px solid #FF66CC;
+    border-radius: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.25s ease, color 0.25s ease;
+    margin-top: 4px;
+}
+
+.pricing-cta-btn:hover {
+    background: #ffffff;
+    color: #FF66CC;
+}
+
+/* ── Disclaimer ── */
+.pricing-disclaimer {
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    color: #5A5A5A;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* ── Vertical divider ── */
+.pricing-divider-v {
+    width: 1px;
+    border-left: 1px solid rgba(0, 0, 0, 0.06);
+
+    margin: 28px 0;
+}
+
+/* ── Right column ── */
+.pricing-right {
+    padding: 44px 40px;
+    display: flex;
+    align-items: center;
+}
+
+.pricing-features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: 100%;
+}
+
+.pricing-feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: #1B1B1B;
+    line-height: 1.5;
+}
+
+.pricing-check {
+    background: rgba(255, 102, 204, 0.1);
+    color: #FF66CC;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 13px;
+    flex-shrink: 0;
+    margin-top: -1px;
+    padding: 8px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 860px) {
+    .pricing-card-new {
+        grid-template-columns: 1fr;
+    }
+    .pricing-divider-v {
+        display: none;
+    }
+    .pricing-left,
+    .pricing-right {
+        padding: 32px 28px;
+    }
+    .pricing-right {
+        border-top: 1px solid rgba(255,102,204,0.15);
+    }
+
+    .pricing-section-subtitle {
+        font-size: 16px;
+    }
+
+    .pricing-cta-btn {
+        font-size: 12px;
+        padding: 14px 16px;
+    }
+
+    .pricing-section-title {
+        padding-top: 0px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pricing-section-title { font-size: 24px; }
+    .pricing-amount { font-size: 40px; }
+    .pricing-left, .pricing-right { padding: 28px 20px; }
 }

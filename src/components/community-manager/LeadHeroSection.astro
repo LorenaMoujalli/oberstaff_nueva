@@ -3,34 +3,62 @@ import "../../styles/community-manager/lead-hero-section.css";
 import LeadHeroContent from "./LeadHeroContent.astro";
 import LeadHeroForm from "./LeadHeroForm.astro";
 
+interface Feature {
+    icon: string;
+    iconColor?: string;
+    text: string;
+}
+
+interface Badge {
+    text: string;
+    icon?: string;
+    iconColor?: string;
+}
+
 interface Props {
     topLabel?: string;
     title?: string;
     cardTitle?: string;
+    cardSubtitle?: string;
     buttonText?: string;
+    buttonIcon?: string;
+    buttonSubtext?: string;
     footerLinkText?: string;
     footerLinkHref?: string;
+    features?: Feature[];
+    badges?: Badge[];
 }
 
 const {
     topLabel = "CONTRATAR TALENTO REMOTO DESDE LATINOAMÉRICA",
     title = "Delega el crecimiento de tu empresa en talento experto",
     cardTitle = "Comienza ahora",
+    cardSubtitle = "",
     buttonText = "Ver perfiles pre-evaluados",
+    buttonIcon = "⚡",
+    buttonSubtext = "↳ Tardarás menos de 1 minuto · Sin compromiso",
     footerLinkText = "Ver cómo funciona el modelo EOR →",
     footerLinkHref = "#",
+    features = [],
+    badges = [],
 } = Astro.props;
 ---
 
 <section class="lead-hero-section">
+    <!-- Aurora background elements -->
+    <div class="blur-glow pink-glow"></div>
+    <div class="blur-glow purple-glow"></div>
     <div class="lead-container">
-        <LeadHeroContent topLabel={topLabel} title={title}>
+        <LeadHeroContent topLabel={topLabel} title={title} features={features} badges={badges}>
             <slot name="description" />
         </LeadHeroContent>
 
         <LeadHeroForm 
             cardTitle={cardTitle}
+            cardSubtitle={cardSubtitle}
             buttonText={buttonText}
+            buttonIcon={buttonIcon}
+            buttonSubtext={buttonSubtext}
             footerLinkText={footerLinkText}
             footerLinkHref={footerLinkHref}
         />

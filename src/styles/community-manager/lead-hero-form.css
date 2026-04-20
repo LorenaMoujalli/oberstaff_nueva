@@ -1,79 +1,171 @@
+/* ──────────────────────────────────────────
+   LEAD HERO FORM — Right column (white card)
+────────────────────────────────────────── */
 .lead-form-wrapper {
-    flex: 0.8;
+    flex: 0 0 auto;
+    width: 420px;
     display: flex;
     justify-content: flex-end;
 }
 
+/* Card — white with soft shadow */
 .lead-form {
-    background-color: #0d2149;
-    padding: 38px 30px;
-    border-radius: 15px;
+    background: #ffffff;
+    padding: 40px 35px;
+    border-radius: 20px;
     width: 100%;
-    max-width: 435px;
-    box-shadow: 0 20px 40px rgba(13, 33, 73, 0.2);
-    text-align: center;
+    max-width: 450px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Card header */
+.lead-form-header {
+    margin-bottom: 22px;
 }
 
 .lead-form h3 {
-    color: white;
+    font-family: 'Montserrat', sans-serif;
+    color: #1B1B1B;
     font-size: 22px;
     font-weight: 700;
-    margin-bottom: 25px;
+    margin-bottom: 7px;
+   text-align: center;
 }
 
+.card-subtitle {
+    font-family: 'Poppins', sans-serif;
+    color: #5A5A5A;
+    font-size: 14px;
+    
+    text-align: center;
+    margin: 0;
+}
+
+/* Inputs */
 .input-group {
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .input-group input {
+    font-family: 'Poppins', sans-serif;
     width: 100%;
-    padding: 14px;
-    border-radius: 6px;
-    border: none;
-    font-size: 15px;
+    padding: 14px 18px;
+    border-radius: 8px;
+        border: 1px solid #E0E0E0;
+    font-size: 14px;
     box-sizing: border-box;
-    color: #333;
+    color: #1B1B1B;
+    background-color: #FAFAFC;
+    transition: all 0.3s ease;
+    width: 100%;
+    outline: none;
+ 
+}
+
+.input-group input:focus {
+    border-color: #e91e8c;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(233, 30, 140, 0.10);
 }
 
 .input-group input::placeholder {
-    color: #999;
+    color: #94a3b8;
 }
 
+/* CTA Button — solid pink, outline on hover */
 .btn-submit {
     width: 100%;
-    background-color: #3b76f6;
-    color: white;
-    border: none;
-    padding: 16px;
-    border-radius: 8px;
-    font-size: 16px;
+    background: #FF66CC;
+    color: #ffffff;
+    border: 2px solid #FF66CC;
+    padding: 16px 20px;
+    border-radius: 50px;
+    font-size: 15px;
     font-weight: 700;
     cursor: pointer;
-    margin-top: 12px;
-    transition: background 0.3s ease;
-    line-height: 1.2;
+    margin-top: 14px;
+    transition: background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    line-height: 1.3;
+    text-align: center;
+   
 }
 
 .btn-submit:hover {
-    background-color: #2a61d8;
+    background: #ffffff;
+    color: #FF66CC;
+    
 }
 
-.form-link {
-    display: block;
-    margin-top: 20px;
-    color: #cbd5e0;
-    text-decoration: none;
-    font-size: 14px;
+.btn-submit:active {
+    transform: scale(0.98);
+}
+
+.btn-icon {
+    font-size: 17px;
+    flex-shrink: 0;
+}
+
+/* Subtext below button */
+.btn-subtext {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    color: #5A5A5A;
+    font-size: 12px;
     font-weight: 500;
+    margin-top: 12px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.subtext-icon {
+    font-size: 13px;
+}
+
+/* Footer link */
+.form-link {
+    font-family: 'Poppins', sans-serif;
+    display: block;
+    margin-top: 16px;
+    color: #5A5A5A;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+    transition: color 0.2s ease;
 }
 
 .form-link:hover {
-    color: white;
-    text-decoration: underline;
+    color: #6663FD;
+    
 }
 
+/* ──────────────────────────────────────────
+   RESPONSIVE
+────────────────────────────────────────── */
 @media (max-width: 1024px) {
     .lead-form-wrapper {
+        width: 100%;
+        max-width: 460px;
         justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .lead-form {
+        padding: 28px 20px 22px;
+    }
+
+    .btn-submit {
+        font-size: 12px;
+        padding: 14px 16px;
     }
 }

@@ -1,15 +1,34 @@
 ---
 import "../../styles/community-manager/lead-hero-content.css";
 
+interface Feature {
+    icon: string;
+    iconColor?: string;
+    text: string;
+}
+
+interface Badge {
+    text: string;
+    icon?: string;
+    iconColor?: string;
+}
+
 interface Props {
     topLabel?: string;
     title?: string;
+    features?: Feature[];
+    badges?: Badge[];
 }
 
 const {
     topLabel = "",
     title = "",
+    features = [],
+    badges = [],
 } = Astro.props;
+
+// Un emoji no contiene ":", un iconify sí (e.g. "solar:check-circle-bold")
+const isEmoji = (icon: string) => !icon.includes(":");
 ---
 
 <div class="lead-text-content">
@@ -18,4 +37,34 @@ const {
     <p class="lead-description">
         <slot />
     </p>
+    {badges.length > 0 && (
+        <div class="badges-grid">
+            {badges.map((badge) => (
+                <div class="badge-pill">
+                    {badge.icon && isEmoji(badge.icon) ? (
+                        <span class="badge-emoji">{badge.icon}</span>
+                    ) : badge.icon ? (
+                        <iconify-icon
+                            icon={badge.icon}
+                            class="badge-icon"
+                            style={badge.iconColor ? `color: ${badge.iconColor}` : ""}
+                        ></iconify-icon>
+                    ) : (
+                        <iconify-icon icon="solar:check-circle-bold" class="badge-icon"></iconify-icon>
+                    )}
+                    <span>{badge.text}</span>
+                </div>
+            ))}
+        </div>
+    )}
+    {features.length > 0 && (
+        <div class="lead-features">
+            {features.map((feature) => (
+                <div class="lead-feature-pill">
+                    <iconify-icon icon={feature.icon} style={`color: ${feature.iconColor || '#ffffff'}`}></iconify-icon>
+                    <span>{feature.text}</span>
+                </div>
+            ))}
+        </div>
+    )}
 </div>

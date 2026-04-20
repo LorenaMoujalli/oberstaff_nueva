@@ -10,10 +10,14 @@ interface Props {
     imageAlt: string;
     badgeText: string;
     quoteText: string;
-    infoItems: InfoItem[];
+    infoItems?: InfoItem[];
+    checklistTitle?: string;
+    checklistItems?: string[];
+    ctaText?: string;
+    ctaHref?: string;
 }
 
-const { imageSrc, imageAlt, badgeText, quoteText, infoItems } = Astro.props;
+const { imageSrc, imageAlt, badgeText, quoteText, infoItems = [], checklistTitle, checklistItems, ctaText, ctaHref } = Astro.props;
 import "../../styles/QueEsServicio/QueEsContent.css";
 ---
 
@@ -32,20 +36,41 @@ import "../../styles/QueEsServicio/QueEsContent.css";
         <div class="quote-blue-border" set:html={quoteText}>
         </div>
 
-        {infoItems.map((item) => (
-            <div class="info-item">
-                <div class="icon-box">
-                    {item.icon.includes(':') ? (
-                        <iconify-icon icon={item.icon}></iconify-icon>
-                    ) : (
-                        <span class="emoji-icon">{item.icon}</span>
-                    )}
+        {checklistTitle && checklistItems && checklistItems.length > 0 ? (
+            <>
+                <div class="ques-checklist-block">
+                    <h3 class="ques-checklist-title">{checklistTitle}</h3>
+                    <ul class="ques-checklist">
+                        {checklistItems.map((item) => (
+                            <li class="ques-checklist-item">
+                                <span class="ques-check-icon">✓</span>
+                                <span>{item}</span>
+                            </li>
+                        ))}
+                    </ul>
                 </div>
-                <div class="text-box">
-                    <h3>{item.title}</h3>
-                    <p set:html={item.description}></p>
+                {ctaText && (
+                    <a href={ctaHref || "#"} class="ques-cta-btn">
+                        {ctaText}
+                    </a>
+                )}
+            </>
+        ) : (
+            infoItems.map((item) => (
+                <div class="info-item">
+                    <div class="icon-box">
+                        {item.icon.includes(':') ? (
+                            <iconify-icon icon={item.icon}></iconify-icon>
+                        ) : (
+                            <span class="emoji-icon">{item.icon}</span>
+                        )}
+                    </div>
+                    <div class="text-box">
+                        <h3>{item.title}</h3>
+                        <p set:html={item.description}></p>
+                    </div>
                 </div>
-            </div>
-        ))}
+            ))
+        )}
     </div>
 </div>

@@ -10,6 +10,9 @@ export interface RoleProfileData {
   iconColor: string;
   borderColorClass: string;
   techStack?: string[];
+  subtitle?: string;
+  buttonText?: string;
+  buttonHref?: string;
 }
 
 interface Props {
@@ -17,13 +20,21 @@ interface Props {
   subtitle?: string;
   roles?: RoleProfileData[];
   customClass?: string;
+  layout?: "classic" | "modern";
+  footerText?: string;
+  footerLinkText?: string;
+  footerLinkHref?: string;
 }
 
 const { 
   title = "Perfiles de profesionales remotos disponibles", 
   subtitle = "Encuentra el perfil que mejor se adapta a las necesidades de tu negocio.",
   roles = [],
-  customClass = ""
+  customClass = "",
+  layout = "classic",
+  footerText,
+  footerLinkText,
+  footerLinkHref = "#",
 } = Astro.props;
 ---
 <section class="perfiles-disponibles">
@@ -31,10 +42,21 @@ const {
         <RolesHeader title={title} subtitle={subtitle} />
         
         {roles.length > 0 && (
-            <div class={`perfiles-grid ${customClass}`}>
+            <div class={`perfiles-grid ${customClass} ${layout === "modern" ? "grid-modern" : ""}`}>
                 {roles.map((role) => (
-                    <RolCard {...role} />
+                    <RolCard {...role} layout={layout} />
                 ))}
+            </div>
+        )}
+
+        {(footerText || footerLinkText) && (
+            <div class="roles-footer-note-container">
+                <div class="roles-footer-note">
+                    {footerText && <span set:html={footerText}></span>}
+                    {footerLinkText && (
+                        <a href={footerLinkHref} class="roles-footer-link">{footerLinkText}</a>
+                    )}
+                </div>
             </div>
         )}
     </div>

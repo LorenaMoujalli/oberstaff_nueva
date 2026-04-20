@@ -1,0 +1,282 @@
+---
+interface Feature {
+    icon: string;
+    title: string;
+    description: string;
+}
+
+interface InfoItem {
+    title: string;
+    description: string;
+}
+
+interface Props {
+    title?: string;
+    subtitle?: string;
+    features?: Feature[];
+    image?: string;
+    imageAlt?: string;
+    infoTitle?: string;
+    infoItems?: InfoItem[];
+}
+
+const {
+    title = "¿Por qué contratar diseñadores gráficos con <span class='bp-brand'>Oberstaff<span class='bp-dot'>.</span></span>?",
+    subtitle = "Combinamos integración real en equipo con una operativa más ligera para tu negocio, así te centras en resultados y no en fricción administrativa.",
+    features = [
+        {
+            icon: "🎯",
+            title: "Foco visual exclusivo",
+            description: "Tu diseñador trabaja inmerso en tu negocio, protegiendo la coherencia de tu marca en cada pixel.",
+        },
+        {
+            icon: "⚡",
+            title: "Integración rápida",
+            description: "Se incorpora a tus videollamadas, utiliza tus librerías de recursos y asimila tu sistema de feedback visual.",
+        },
+        {
+            icon: "🛡️",
+            title: "Operativa resuelta",
+            description: "Tú no asumes nada. Contratos, nóminas y seguridad social: todo bajo nuestra responsabilidad. Gestionamos todos los pagos con una sola factura mensual en euros.",
+        },
+    ],
+    image = "/img2-disenador.webp",
+    imageAlt = "Diseñador gráfico remoto trabajando",
+    infoTitle = "Claves para contratar diseñador gráfico",
+    infoItems = [
+        {
+            title: "Remoto dedicado vs diseñador local",
+            description: "Un diseñador presencial supera los 2.500€/mes; un freelance compromete la agilidad. Un In-House remoto fusiona lo mejor: jornada completa, exclusividad y coste desde 850€/mes.",
+        },
+        {
+            title: "¿Qué buscar al contratar?",
+            description: "Valora su portfolio y define la especialidad (branding, RRSS, motion) y herramientas antes de buscar. En Oberstaff, te ayudamos a definirlo en una llamada de 15 minutos.",
+        },
+        {
+            title: "Páginas para contratar: Ventajas Oberstaff",
+            description: "Frente a marketplaces, ofrecemos talento dedicado en exclusiva, con contrato estable y gestión laboral cubierta sin riesgos legales.",
+        },
+    ],
+} = Astro.props;
+---
+
+<style>
+    .bp-section {
+        background: #ffffff;
+        padding: 100px 20px;
+    }
+
+    .bp-container {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 70px;
+        max-width: 1150px;
+        margin: 0 auto;
+        align-items: start;
+    }
+
+    /* ── Left column ── */
+    .bp-title {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 32px;
+        font-weight: 800;
+        line-height: 1.2;
+        color: #1B1B1B;
+        margin: 0 0 18px 0;
+        letter-spacing: -0.5px;
+    }
+
+    .bp-title :global(.bp-brand) {
+        color: #6663FD;
+    }
+
+    .bp-title :global(.bp-dot) {
+        color: #FF66CC;
+    }
+
+    .bp-subtitle {
+        font-family: 'Poppins', sans-serif;
+        font-size: 15px;
+        font-weight: 400;
+        color: #5A5A5A;
+        line-height: 1.7;
+        margin: 0 0 40px 0;
+    }
+
+    /* Feature items */
+    .bp-features {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+    }
+
+    .bp-feature {
+        display: flex;
+        align-items: flex-start;
+        gap: 18px;
+    }
+
+    .bp-feature-icon {
+        flex-shrink: 0;
+        width: 50px;
+        height: 50px;
+        background: #FAFAFC;
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.02);
+    }
+
+    .bp-feature-text h3 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        color: #1B1B1B;
+        margin: 0 0 6px 0;
+    }
+
+    .bp-feature-text p {
+        font-family: 'Poppins', sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        color: #5A5A5A;
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    /* ── Right column ── */
+    .bp-right {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .bp-image {
+        width: 100%;
+        height: auto;
+        border-radius: 24px;
+        object-fit: cover;
+        display: block;
+        filter: grayscale(100%) contrast(130%) brightness(90%);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    
+    }
+
+    /* Info card */
+    .bp-info-card {
+        background: #F7F8FC;
+        border: 1px solid rgba(0, 0, 0, 0.06);
+        border-radius: 16px;
+        padding: 28px 30px;
+    }
+
+    .bp-info-title {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+        color: #1B1B1B;
+        margin: 0 0 20px 0;
+    }
+
+    .bp-info-items {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .bp-info-item h4 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+        color: #1B1B1B;
+        margin: 0 0 5px 0;
+    }
+
+    .bp-info-item p {
+        font-family: 'Poppins', sans-serif;
+        font-size: 13px;
+        font-weight: 400;
+        color: #5A5A5A;
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 960px) {
+        .bp-container {
+            grid-template-columns: 1fr;
+            gap: 48px;
+        }
+
+        .bp-title {
+            font-size: 28px;
+            text-align: center;
+        }
+
+        .bp-subtitle {
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .bp-info-title {
+         
+            text-align: center;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .bp-section {
+            padding: 60px 20px;
+        }
+
+        .bp-title {
+            font-size: 24px;
+        }
+    }
+</style>
+
+<section class="bp-section">
+    <div class="bp-container">
+
+        <!-- Columna izquierda -->
+        <div class="bp-left">
+            <h2 class="bp-title" set:html={title} />
+            <p class="bp-subtitle">{subtitle}</p>
+
+            <div class="bp-features">
+                {features.map((f) => (
+                    <div class="bp-feature">
+                        <div class="bp-feature-icon">{f.icon}</div>
+                        <div class="bp-feature-text">
+                            <h3>{f.title}</h3>
+                            <p>{f.description}</p>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+
+        <!-- Columna derecha -->
+        <div class="bp-right">
+            <img src={image} alt={imageAlt} class="bp-image" />
+
+            <div class="bp-info-card">
+                <h3 class="bp-info-title">{infoTitle}</h3>
+                <div class="bp-info-items">
+                    {infoItems.map((item) => (
+                        <div class="bp-info-item">
+                            <h4>{item.title}</h4>
+                            <p>{item.description}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>

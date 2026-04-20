@@ -9,9 +9,16 @@
     margin: 0 auto;
 }
 .cases-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
+}
+
+/* For grid-like behavior but centered when fewer items */
+.cases-grid > * {
+    flex: 0 1 calc(33.333% - 20px);
+    min-width: 300px;
 }
 @media (max-width: 992px) {
     .cases-grid {

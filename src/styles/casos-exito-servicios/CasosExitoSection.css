@@ -29,21 +29,33 @@
 
 .casos-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
-    max-width: 1200px;
     margin: 0 auto;
+    align-items: stretch;
+}
+
+/* 2 columnas — páginas con 2 cards */
+.casos-grid-2col {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 900px;
+}
+
+/* 3 columnas — employer of record */
+.casos-grid-3col {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1080px;
 }
 
 @media (max-width: 1024px) {
-    .casos-grid {
+    .casos-grid-3col {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 768px) {
     .casos-header h2 { font-size: 24px; }
-    .casos-grid {
+    .casos-grid-2col,
+    .casos-grid-3col {
         grid-template-columns: 1fr;
     }
 }

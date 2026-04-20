@@ -11,6 +11,7 @@ interface Props {
   rows?: ComparisonRowProps[];
   criterioLabel?: string;
   oberstaffLabel?: string;
+  footerNote?: string;
 }
 
 const {
@@ -19,7 +20,8 @@ const {
   competitors = ["CM local España", "Contratar community manager freelance", "Agencia Social Media"],
   rows = [],
   criterioLabel = "Criterio",
-  oberstaffLabel = "Oberstaff (LATAM)"
+  oberstaffLabel = "Oberstaff (LATAM)",
+  footerNote = ""
 } = Astro.props;
 ---
 
@@ -32,7 +34,7 @@ const {
                 <thead>
                     <tr>
                         <th class="col-criterio">{criterioLabel}</th>
-                        <th class="col-highlight">{oberstaffLabel}</th>
+                        <th class="col-highlight" set:html={oberstaffLabel}></th>
                         {competitors.map((comp) => (
                             <th set:html={comp}></th>
                         ))}
@@ -51,5 +53,7 @@ const {
                 </tbody>
             </table>
         </div>
+
+        {footerNote && <p class="comparison-footer-note" set:html={footerNote}></p>}
     </div>
 </section>

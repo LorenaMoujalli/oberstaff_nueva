@@ -161,3 +161,56 @@
         font-size: 14px;
     }
 }
+
+/* ============================================
+   Custom layout: diseñador gráfico page
+   ============================================ */
+
+.faq-disenador-custom .faq-columns {
+    display: block;
+}
+
+.faq-disenador-custom .faq-left-column {
+    position: static;
+    max-width: 700px;
+}
+
+.faq-disenador-custom .faq-right-column {
+    display: none;
+}
+
+.faq-disenador-custom .faq-main-title {
+    margin-bottom: 24px;
+    text-align: left;
+}
+
+.faq-disenador-custom .faq-cta-card {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    max-width: none;
+    text-align: left;
+}
+
+.faq-disenador-custom .faq-cta-card p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: #5A5A5A;
+    font-size: 16px;
+    margin-bottom: 28px;
+}
+
+.faq-disenador-custom .faq-cta-button {
+    background-color: #6663FD;
+    border-color: #6663FD;
+    color: #ffffff;
+    width: auto;
+    display: inline-block;
+}
+
+.faq-disenador-custom .faq-cta-button:hover {
+    background-color: #5552eb;
+    border-color: #5552eb;
+    color: #ffffff;
+}

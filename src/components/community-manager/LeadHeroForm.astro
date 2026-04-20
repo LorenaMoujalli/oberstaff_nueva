@@ -3,14 +3,20 @@ import "../../styles/community-manager/lead-hero-form.css";
 
 interface Props {
     cardTitle?: string;
+    cardSubtitle?: string;
     buttonText?: string;
+    buttonIcon?: string;
+    buttonSubtext?: string;
     footerLinkText?: string;
     footerLinkHref?: string;
 }
 
 const {
     cardTitle = "Comienza ahora",
+    cardSubtitle = "",
     buttonText = "Enviar",
+    buttonIcon = "⚡",
+    buttonSubtext = "↳ Tardarás menos de 1 minuto · Sin compromiso",
     footerLinkText = "",
     footerLinkHref = "#",
 } = Astro.props;
@@ -18,27 +24,33 @@ const {
 
 <div class="lead-form-wrapper">
     <form class="lead-form">
-        <h3>{cardTitle}</h3>
+        <div class="lead-form-header">
+            <h3>{cardTitle}</h3>
+            {cardSubtitle && <p class="card-subtitle">{cardSubtitle}</p>}
+        </div>
         
         <div class="input-group">
             <input type="text" placeholder="Nombre completo *" required>
         </div>
-        
+
         <div class="input-group">
             <input type="email" placeholder="Email corporativo *" required>
         </div>
-        
+
         <div class="input-group">
             <input type="text" placeholder="Empresa *" required>
         </div>
-        
+
         <div class="input-group">
             <input type="tel" placeholder="Teléfono *" required>
         </div>
 
         <button type="submit" class="btn-submit">
             {buttonText}
+            {buttonIcon && <span class="btn-icon">{buttonIcon}</span>}
         </button>
+
+        {buttonSubtext && <p class="btn-subtext">{buttonSubtext}</p>}
 
         {footerLinkText && (
             <a href={footerLinkHref} class="form-link">{footerLinkText}</a>

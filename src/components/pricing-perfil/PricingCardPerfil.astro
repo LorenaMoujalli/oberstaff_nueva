@@ -1,44 +1,77 @@
 ---
 import "../../styles/pricing-perfil/pricing-card.css";
-import PricingHeader from "./PricingHeader.astro";
-import PricingPriceInfo from "./PricingPriceInfo.astro";
-import PricingFeatures from "./PricingFeatures.astro";
 
 interface Props {
-  title?: string;
-  subtitle?: string;
-  priceLabel?: string;
-  priceAmount?: string;
-  pricePeriod?: string;
-  badgeText?: string;
-  features?: string[];
-  disclaimer?: string;
+    sectionTitle?: string;
+    sectionSubtitle?: string;
+    cardTitle?: string;
+    cardSubtitle?: string;
+    priceLabel?: string;
+    priceAmount?: string;
+    pricePeriod?: string;
+    features?: string[];
+    ctaText?: string;
+    ctaHref?: string;
+    disclaimer?: string;
 }
 
 const {
-  title = "Precio community manager con Oberstaff",
-  subtitle = "Tarifas claras y sin sorpresas, el precio varía según la experiencia del perfil. Todo incluido: gestión, nómina y compliance.",
-  priceLabel = "DESDE",
-  priceAmount = "750€",
-  pricePeriod = "/mes",
-  badgeText = "Todo incluido · Jornada completa",
-  features = ["Estrategia multicanal", "Analítica avanzada", "Campañas y paid social", "Coordinación de equipo"],
-  disclaimer = "Precios orientativos. El coste final depende del perfil, país y nivel de experiencia. Sin costes ocultos ni comisiones adicionales."
+    sectionTitle = "",
+    sectionSubtitle = "",
+    cardTitle = "Fee integral",
+    cardSubtitle = "Jornada completa dedicada a tu línea gráfica",
+    priceLabel = "DESDE",
+    priceAmount = "850€",
+    pricePeriod = "/ mes",
+    features = [],
+    ctaText = "Solicitar propuesta",
+    ctaHref = "#",
+    disclaimer = "",
 } = Astro.props;
 ---
+
 <section class="pricing-card-section">
-    <div class="pricing-card">
-        <PricingHeader title={title} subtitle={subtitle} />
-        
-        <PricingPriceInfo 
-            priceLabel={priceLabel} 
-            priceAmount={priceAmount} 
-            pricePeriod={pricePeriod} 
-            badgeText={badgeText} 
-        />
+    <div class="pricing-card-wrapper">
+        {(sectionTitle || sectionSubtitle) && (
+            <div class="pricing-section-header">
+                {sectionTitle && <h2 class="pricing-section-title" set:html={sectionTitle}></h2>}
+                {sectionSubtitle && <p class="pricing-section-subtitle" set:html={sectionSubtitle}></p>}
+            </div>
+        )}
 
-        <PricingFeatures features={features} />
+        <div class="pricing-card-new">
+            <!-- Left column -->
+            <div class="pricing-left">
+                <h3 class="pricing-card-title">{cardTitle}</h3>
+                <p class="pricing-card-subtitle">{cardSubtitle}</p>
 
-        <p class="pricing-disclaimer" set:html={disclaimer}></p>
+                <div class="pricing-price-block">
+                    <span class="pricing-label">{priceLabel}</span>
+                    <span class="pricing-amount">{priceAmount}</span>
+                    <span class="pricing-period">{pricePeriod}</span>
+                </div>
+
+                <a href={ctaHref} class="pricing-cta-btn">{ctaText}</a>
+
+                {disclaimer && <p class="pricing-disclaimer" set:html={disclaimer}></p>}
+            </div>
+
+            <!-- Divider -->
+            <div class="pricing-divider-v"></div>
+
+            <!-- Right column: features -->
+            <div class="pricing-right">
+                {features.length > 0 && (
+                    <ul class="pricing-features-list">
+                        {features.map((f) => (
+                            <li class="pricing-feature-item">
+                                <span class="pricing-check">✓</span>
+                                <span set:html={f}></span>
+                            </li>
+                        ))}
+                    </ul>
+                )}
+            </div>
+        </div>
     </div>
 </section>

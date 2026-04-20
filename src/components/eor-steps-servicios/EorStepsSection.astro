@@ -5,6 +5,8 @@ interface Step {
     title: string;
     description: string;
     lineColorClass: string;
+    badge?: string;
+    badgeIcon?: string;
 }
 
 interface Props {
@@ -53,7 +55,13 @@ const colorMap: Record<string, { circle: string; text?: string }> = {
 
                         <div class="step-content">
                             <h3 class="step-title" set:html={step.title}></h3>
-                            <p class="step-description">{step.description}</p>
+                            <p class="step-description" set:html={step.description}></p>
+                            {step.badge && (
+                                <div class="step-badge">
+                                    {step.badgeIcon && <span class="step-badge-icon">{step.badgeIcon}</span>}
+                                    <span>{step.badge}</span>
+                                </div>
+                            )}
                         </div>
                     </div>
                 );

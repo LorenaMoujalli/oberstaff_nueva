@@ -15,9 +15,10 @@ interface Props {
     title: string;
     subtitle?: string;
     testimonials: Testimonial[];
+    columns?: 2 | 3;
 }
 
-const { label, title, subtitle, testimonials } = Astro.props;
+const { label, title, subtitle, testimonials, columns = 2 } = Astro.props;
 ---
 
 <section class="casos-exito">
@@ -27,7 +28,7 @@ const { label, title, subtitle, testimonials } = Astro.props;
         {subtitle && <p set:html={subtitle}></p>}
     </div>
 
-    <div class="casos-grid">
+    <div class={`casos-grid casos-grid-${columns}col`}>
         {testimonials.map((testimonial) => (
             <TestimonialCard {...testimonial} />
         ))}

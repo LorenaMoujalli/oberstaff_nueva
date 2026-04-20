@@ -50,11 +50,13 @@
 
 .faq-item.active .faq-toggle-icon {
     transform: rotate(45deg); /* Turns the + into an x? Or just rotate? Image shows + */
+    color: #FF66CC;
 }
 
 /* If we want to rotate + to x */
 .faq-item.active .faq-toggle-icon {
     transform: rotate(45deg);
+    color: #FF66CC;
 }
 
 .faq-answer {

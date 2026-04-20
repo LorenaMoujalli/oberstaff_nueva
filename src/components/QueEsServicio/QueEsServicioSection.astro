@@ -17,10 +17,14 @@ interface Props {
     imageAlt: string;
     badgeText: string;
     quoteText: string;
-    infoItems: InfoItem[];
+    infoItems?: InfoItem[];
     diffIcon?: string;
     diffTitle?: string;
     diffDescription?: string;
+    checklistTitle?: string;
+    checklistItems?: string[];
+    ctaText?: string;
+    ctaHref?: string;
 }
 
 const { 
@@ -31,10 +35,14 @@ const {
     imageAlt, 
     badgeText, 
     quoteText, 
-    infoItems,
+    infoItems = [],
     diffIcon,
     diffTitle,
-    diffDescription
+    diffDescription,
+    checklistTitle,
+    checklistItems,
+    ctaText,
+    ctaHref,
 } = Astro.props;
 
 import "../../styles/QueEsServicio/QueEsServicio.css";
@@ -53,7 +61,11 @@ import "../../styles/QueEsServicio/QueEsServicio.css";
             imageAlt={imageAlt} 
             badgeText={badgeText} 
             quoteText={quoteText} 
-            infoItems={infoItems} 
+            infoItems={infoItems}
+            checklistTitle={checklistTitle}
+            checklistItems={checklistItems}
+            ctaText={ctaText}
+            ctaHref={ctaHref}
         />
 
         {diffTitle && (

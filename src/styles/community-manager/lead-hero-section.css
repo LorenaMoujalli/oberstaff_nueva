@@ -1,9 +1,64 @@
+/* ──────────────────────────────────────────
+   LEAD HERO SECTION — Wrapper & Layout
+────────────────────────────────────────── */
 .lead-hero-section {
-    padding: 65px 20px;
-    background-color: #ffffff;
-    font-family: 'Inter', sans-serif;
+    padding: 65px 20px 90px;
+ 
     display: flex;
     justify-content: center;
+    position: relative;
+    overflow: hidden;
+
+    /* #1B1B1B base con glow purple/pink desde borde izquierdo */
+    /* background:
+        radial-gradient(ellipse at -5% 30%, rgba(102, 99, 253, 0.45) 0%, rgba(102, 99, 253, 0.15) 35%, transparent 60%),
+        radial-gradient(ellipse at 10% 70%, rgba(255, 102, 204, 0.25) 0%, transparent 45%),
+        #1B1B1B;*/
+    background: #1B1B1B;
+}
+
+/* ──────────────────────────────────────────
+   AURORA EFFECTS
+────────────────────────────────────────── */
+.blur-glow {
+    position: absolute;
+    filter: blur(120px);
+    opacity: 0.35;
+    z-index: 0;
+    border-radius: 50%;
+    animation: auroraFluid 12s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+
+.pink-glow {
+    top: -20%;
+    left: -10%;
+    width: 600px;
+    height: 600px;
+    background: linear-gradient(135deg, rgba(255, 102, 204, 0.6) 0%, rgba(255, 102, 204, 0.2) 100%);
+}
+
+.purple-glow {
+    top: 10%;
+    left: -15%;
+    width: 500px;
+    height: 700px;
+    background: linear-gradient(135deg, rgba(102, 99, 253, 0.6) 0%, rgba(102, 99, 253, 0.2) 100%);
+    animation-delay: -5s;
+}
+
+@keyframes auroraFluid {
+    0% {
+        border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+        transform: rotate(0deg) scale(1) translate(0, 0);
+    }
+    50% {
+        transform: rotate(10deg) scale(1.05) translate(5%, 5%);
+    }
+    100% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        transform: rotate(-10deg) scale(1.1) translate(-5%, 10%);
+    }
 }
 
 .lead-container {
@@ -11,13 +66,29 @@
     width: 100%;
     display: flex;
     align-items: center;
-    gap: 50px;
+    gap: 56px;
+    position: relative;
+    z-index: 1;
 }
 
 @media (max-width: 1024px) {
+    .lead-hero-section {
+        padding: 60px 20px 70px;
+    }
+
     .lead-container {
         flex-direction: column;
         text-align: center;
-        gap: 50px;
+        gap: 44px;
+    }
+
+    .pink-glow {
+        width: 350px;
+        height: 350px;
+    }
+
+    .purple-glow {
+        width: 300px;
+        height: 400px;
     }
 }

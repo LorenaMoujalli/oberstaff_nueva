@@ -15,6 +15,7 @@
     background-color: #ffffff;
     color: #1a1a1a;
     text-align: center;
+     border-top: 1px solid #e5e7eb;
 }
 
 /* Header */
@@ -39,7 +40,7 @@
     font-style: normal;
     margin-bottom: 12px;
     letter-spacing: -0.5px;
-    color: #1a1a1a;
+    color: #1B1B1B;
 }
 
 .steps-header h2 strong {
@@ -139,6 +140,28 @@
     color: #5A5A5A;
     line-height: 1.6;
     font-weight: 400;
+}
+
+/* ---- Step badge ---- */
+.step-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 12px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background: #F0F0F5;
+  
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: #6663FD;
+    white-space: nowrap;
+}
+
+.step-badge-icon {
+    font-size: 13px;
+    line-height: 1;
 }
 
 /* ---- Responsive ---- */

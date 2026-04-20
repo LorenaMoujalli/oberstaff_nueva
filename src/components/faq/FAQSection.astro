@@ -48,24 +48,30 @@ const homeFaqs: FAQ[] = [
 interface Props {
     title?: string;
     faqs?: FAQ[];
+    ctaText?: string;
+    ctaButtonText?: string;
+    customClass?: string;
 }
 
 const { 
     title = "Todo lo que necesitas saber antes de <strong>contratar talento</strong> en LATAM", 
-    faqs = homeFaqs 
+    faqs = homeFaqs,
+    ctaText = "¿No sabes qué modelo de contratación necesitas para tu empresa?",
+    ctaButtonText = "Agenda una llamada gratuita",
+    customClass = ""
 } = Astro.props;
 ---
 
-<section class="faq-section">
+<section class={`faq-section ${customClass}`}>
     <div class="faq-container">
         <div class="faq-columns">
             <div class="faq-left-column">
                 <h2 class="faq-main-title" set:html={title} />
                 
                 <div class="faq-cta-card">
-                    <p>¿No sabes qué modelo de contratación necesitas para tu empresa?</p>
+                    <p set:html={ctaText} />
                     <a href="#contacto" class="faq-cta-button">
-                        Agenda una llamada gratuita
+                        {ctaButtonText}
                     </a>
                 </div>
             </div>
