@@ -33,8 +33,10 @@ import "../../styles/QueEsServicio/QueEsContent.css";
     </div>
 
     <div class="que-es-info-list">
-        <div class="quote-blue-border" set:html={quoteText}>
-        </div>
+        {quoteText && (
+            <div class="quote-blue-border" set:html={quoteText}>
+            </div>
+        )}
 
         {checklistTitle && checklistItems && checklistItems.length > 0 ? (
             <>
