@@ -18,6 +18,7 @@ interface Props {
     title?: string;
     features?: Feature[];
     badges?: Badge[];
+    badgesClass?: string;
 }
 
 const {
@@ -25,6 +26,7 @@ const {
     title = "",
     features = [],
     badges = [],
+    badgesClass = "",
 } = Astro.props;
 
 // Un emoji no contiene ":", un iconify sí (e.g. "solar:check-circle-bold")
@@ -38,7 +40,7 @@ const isEmoji = (icon: string) => !icon.includes(":");
         <slot />
     </p>
     {badges.length > 0 && (
-        <div class="badges-grid">
+        <div class={`badges-grid ${badgesClass}`}>
             {badges.map((badge) => (
                 <div class="badge-pill">
                     {badge.icon && isEmoji(badge.icon) ? (

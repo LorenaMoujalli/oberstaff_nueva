@@ -9,34 +9,38 @@ interface Props {
     links?: FooterLink[];
 }
 
-const { 
-    title = "Roles Relacionados", 
+const {
+    title = "Roles Relacionados",
     links = [
         { text: "🎨 Contratar diseñador web", href: "#" },
         { text: "🗂️ Contratar community manager", href: "#" },
-        { text: "📹 Editor de video remoto", href: "#" }
-    ] 
+        { text: "📹 Editor de video remoto", href: "#" },
+    ],
 } = Astro.props;
 ---
 
 <footer class="oberstaff-footer-perfiles">
     <p class="copyright">{title}</p>
-    
+
     <div class="footer-links-row">
-        {links.map((link) => (
-            <a href={link.href} class="footer-link-item">{link.text}</a>
-        ))}
+        {
+            links.map((link) => (
+                <a href={link.href} class="footer-link-item">
+                    {link.text}
+                </a>
+            ))
+        }
     </div>
-</footer> 
+</footer>
 
 <style>
     .oberstaff-footer-perfiles {
-        background-color: #1B1B1B;
+        background-color: #1b1b1b;
         color: #ffffff;
         padding: 40px 20px;
         width: 100%;
         text-align: center;
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-size: 14px;
         box-sizing: border-box;
         border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -44,7 +48,7 @@ const {
 
     .copyright {
         text-align: center;
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-size: 12px;
         margin: 0;
         font-weight: 600;
@@ -67,7 +71,7 @@ const {
     }
 
     .footer-link-item {
-        font-family: 'Poppins', sans-serif;
+        font-family: "Poppins", sans-serif;
         color: #ffffff;
         text-decoration: none;
         margin: 0;
@@ -77,8 +81,6 @@ const {
         transition: all 0.3s ease;
         opacity: 0.9;
     }
-
-  
 
     @media (max-width: 600px) {
         .footer-links-row {

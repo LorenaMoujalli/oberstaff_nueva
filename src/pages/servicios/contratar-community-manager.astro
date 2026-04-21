@@ -1,37 +1,597 @@
 ---
 import DashboardLayoutPerfiles from "../../layouts/DashboardLayoutPerfiles.astro";
 import LeadHeroSection from "../../components/community-manager/LeadHeroSection.astro";
-import TrustBarPerfiles from "../../components/trust-bar-perfiles/TrustBarPerfiles.astro";
-import InfoServicePerfil from "../../components/info-services-perfil/InfoServicePerfil.astro";
-import AreasPerfiles from "../../components/areas-perfiles/AreasPerfiles.astro";
-import TimelinePerfiles from "../../components/timeline-perfiles/TimelinePerfiles.astro";
-import CTAIntermedioPerfil from "../../components/cta-intermedio-perfil/CTAIntermedioPerfil.astro";
 import ComparisonPerfiles from "../../components/comparison-perfiles/ComparisonPerfiles.astro";
 import PricingCardPerfil from "../../components/pricing-perfil/PricingCardPerfil.astro";
-import BeneficiosPerfil from "../../components/beneficios-perfil/BeneficiosPerfil.astro";
-import GuiaPerfiles from "../../components/guia-perfiles/GuiaPerfiles.astro";
-import CasosExitoPerfiles from "../../components/casos-exito-perfiles/CasosExitoPerfiles.astro";
-import FAQSectionCommunity from "../../components/faq-servicios/FAQSection-community.astro";
+import BeneficiosPerfilDisenador from "../../components/beneficios-perfil/BeneficiosPerfilDisenador.astro";
 import PressSection from "../../components/press/PressSection.astro";
-import ConversionPerfil from "../../components/conversion-perfil/ConversionPerfil.astro";
+import ConversionPerfilDisenador from "../../components/conversion-perfil/ConversionPerfilDisenador.astro";
 import RolesPerfil from "../../components/roles-del-perfil/RolesPerfil.astro";
+import QueEsServicioSection from "../../components/QueEsServicio/QueEsServicioSection.astro";
+import ServicesSection from "../../components/services-oberstaff/ServicesSection.astro";
+import EorStepsSection from "../../components/eor-steps-servicios/EorStepsSection.astro";
+import EorCta from "../../components/eor-cta-servicios/EorCta.astro";
+import CasosExitoSection from "../../components/casos-exito-servicios/CasosExitoSection.astro";
+import FAQSection from "../../components/faq-servicios/FAQSection-community.astro";
 ---
 
+ 
 <DashboardLayoutPerfiles
   title="Contratar Community Manager para Empresas Españolas"
   description="¿Buscas contratar community manager sin saber por dónde empezar? Perfiles evaluados de LATAM, zona horaria España y hasta un 70% de ahorro."
+  footerTitle="Roles Relacionados"
+  footerLinks={[
+    { text: "🎨 Contratar diseñador gráfico", href: "#" },
+    { text: "🗂️ Asistente administrativo virtual", href: "#" },
+    { text: "📹 Editor de video remoto", href: "#" }
+  ]}
   keywords="Contratar community manager"
->
-  <div class="service-detail-container" id="inicio">
-    
-     
-  hola
+> 
 
+
+
+  <div class="service-detail-container" id="inicio">
+    <LeadHeroSection
+      topLabel="Contratar Community Manager Remoto desde Latinoamérica"
+      title="Delega el crecimiento de tu comunidad digital en talento experto, sin el riesgo ni la burocracia laboral local."
+      cardTitle="Encuentra a tu CM ideal hoy"
+      cardSubtitle="Accede a perfiles pre-evaluados listos para integrarse."
+      buttonText="👉 Ver perfiles pre-evaluados y solicitar propuesta"
+      buttonIcon=""
+      buttonSubtext="↳ Tardarás menos de 1 minuto · Sin compromiso"
+      footerLinkText="Ver cómo funciona el modelo EOR →"
+      footerLinkHref="#como-contratar"
+      badges={[
+        { text: "Dedicación exclusiva", icon: "🎯" },
+        { text: "Perfiles evaluados", icon: "📋" },
+        { text: "Integración rápida", icon: "⚡" },
+        { text: "Horario compatible CET", icon: "🕒" },
+      ]}
+      badgesClass="community-badges"
+    >
+      <Fragment slot="description">
+    Con <span style='color: white; font-weight: 700;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 700;'>.</span> puedes contratar Community Manager especializado en social media, con dominio de los algoritmos actuales y la capacidad de disparar tu engagement.
+
+      </Fragment>
+    </LeadHeroSection>
+
+
+  
+
+     <div class="fade-in-section">
+			<QueEsServicioSection
+				title="Dinamiza tu comunidad digital de la manera más ágil y segura"
+				highlightWord="ágil y segura"
+				description="Te conectamos con gestores de redes sociales especializados en nutrir comunidades. Profesionales que no solo programan posts, sino que entienden las métricas (CTR, alcance, retención), dominan el social listening y saben convertir interacciones vacías en un ecosistema rentable para tu negocio"
+				imageSrc="/img1-community.webp"
+				imageAlt="Profesional trabajando"
+				badgeText="Crecimiento Digital"
+				quoteText="Tú marcas los objetivos comerciales y el tono de comunicación. Tu CM ejecuta el calendario editorial y modera tu comunidad. Nosotros blindamos los contratos de confidencialidad para proteger tus accesos digitales."
+				checklistTitle="Checklist de ventajas:"
+				checklistItems={[
+					"Community Managers evaluados con prueba técnicas de social media y test psicométricos",
+					"Tus contraseñas y activos digitales protegidos: Oberstaff firma los acuerdos de confidencialidad",
+					"Ahorro estructural masivo: un profesional social In-House consolidado en una única factura mensual",
+					"Sin ataduras: si el CM no logra captar la esencia de tu marca, cancela o pide un reemplazo sin pagar indemnizaciones"
+				]}
+				ctaText="Solicitar candidatos →"
+				ctaHref="#"
+				diffIcon=""
+				diffTitle=""
+				diffDescription=""
+			/>
+		</div>
+
+
+
+    	<div class="fade-in-section">
+			<ServicesSection
+				title="¿Qué hace un community manager <strong>para empresas?</strong>"
+				description="Es la voz digital de tu marca: gestiona la reputación online, crea contenido de valor, responde a tu comunidad y convierte seguidores en clientes. Cuando una empresa busca contratar community manager, no solo necesita alguien que publique en redes: necesita una persona que entienda la marca, mantenga la consistencia del mensaje y convierta la actividad social en una herramienta real de crecimiento."
+				customClass="employer-use-cases"
+				services={[
+					{
+						icon: "📱",
+						title: "Gestión táctica de perfiles sociales",
+						description:
+							"Programación de calendarios editoriales en Instagram, LinkedIn, TikTok, Facebook y X. Adaptación de la estrategia a los algoritmos de cada plataforma.",
+						linkText: "",
+						href: "",
+						customIconBg: "transparent",
+						cardClass: "card-green",
+					},
+					{
+						icon: "✍️ ",
+						title: "Curación y adaptación de formatos",
+						description:
+							"Estructuración de publicaciones diarias, curación de tendencias y adaptación de mensajes para cada red social, tu voz de tu marca se mantenga activa.",
+						linkText: "",
+						href: "",
+						customIconBg: "transparent",
+						cardClass: "card-pink",
+					},
+					{
+						icon: "💬",
+						title: "Moderación de Comunidad (Community Building)",
+						description:
+							"Respuesta ágil a mensajes directos (DMs) y comentarios y moderación de crisis de reputación online. Tu marca siempre conectada con su audiencia.",
+						linkText: "",
+						href: "",
+						customIconBg: "transparent",
+						cardClass: "card-lime",
+					},
+					{
+						icon: "📊 ",
+						title: "Analítica y Social Listening",
+						description:
+							"Seguimiento mensual de KPIs clave: crecimiento de comunidad, alcance real, CTR y análisis cualitativo del sentimiento de los usuarios.",
+						linkText: "",
+						href: "",
+						customIconBg: "transparent",
+						cardClass: "card-purple",
+					},
+					{
+						icon: "🎯",
+						title: "Estrategia de Social Media",
+						description:
+							"Estudio de audiencias digitales, análisis de competidores, selección estratégica de hashtags y detección de tendencias nativas para maximizar el alcance orgánico.",
+						linkText: "",
+						href: "",
+						customIconBg: "transparent",
+						cardClass: "card-green",
+					},
+					{
+						icon: "📣",
+						title: "Soporte en distribución Paid Social",
+						description:
+							"Gestión de la comunidad que interactúa con tus anuncios en Meta Ads y LinkedIn Ads, apoyando al equipo de performance marketing.",
+						linkText: "",
+						href: "",
+						customIconBg: "transparent",
+						cardClass: "card-pink",
+					},
+				]}
+			/>
+		</div>
+
+
+    <div class="fade-in-section">
+			<EorStepsSection
+				title="Cómo contratar un community manager con <span style='color: #6663FD; font-weight: 800;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 800;'>.</span>"
+				subtitle="Un proceso sencillo, rápido y sin riesgo, desde que nos contactas hasta que tienes a tu CM dinamizando tus perfiles sociales. Si estabas en modo 'buscar community manager' sin saber por dónde empezar, aquí simplificamos el proceso para que tomes una decisión más rápida y con menos riesgo."
+				steps={[
+					{
+						title: "Cuéntanos tu situación digital actual",
+						lineColorClass: "line-black",
+						description:
+							"Indicanos las plataformas prioritarias para tu sector y el tono de voz (corporativo, disruptivo, educativo) que debe tener tu futuro CM.",
+						badge: "15 min · Sin compromiso",
+					},
+					{
+						title: "Recibe ternas de estrategas validados",
+						lineColorClass: "line-pink",
+						description:
+							"Te presentamos entre 3–5 Community Managers, verás sus analíticas de crecimiento en proyectos anteriores y los resultados de sus test de social media.",
+						badgeIcon: "📋",
+						badge: "con KPIs demostrables",
+					},
+					{
+						title: "Entrevistas de 'Brand Fit'",
+						lineColorClass: "line-orange",
+						description:
+							"Habla directamente con ellos. Evalúa su fluidez, su creatividad ante escenarios hipotéticos de crisis en LinkedIn o Instagram y decide quién será la voz oficial de tu negocio.",
+						badge: "Tú tienes la decisión final",
+					},
+					{
+						title: "Toma el control del feed",
+						lineColorClass: "line-blue",
+						description:
+							"<span style='color: #1B1B1B; font-weight: 700;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 700;'>.</span> asume el compliance legal. Tú le das acceso de   'Editor' o 'Administrador' en tu Business Manager y tu nuevo Community Manager comienza a publicar, interactuar y medir",
+						badge: "",
+					},
+				]}
+			/>
+		</div>
+
+
+
+     	<div class="fade-in-section">
+			<EorCta
+				title="¿Ya sabes cuáles son las redes sociales donde necesitas mayor impacto?"
+				text="Indícanos si buscas un perfil más corporativo (LinkedIn) o más dinámico (TikTok/Instagram) y recibe una propuesta en menos de 24 horas. Sin compromiso."
+				buttonText="👉 Solicitar propuesta personalizada"
+				buttonHref="#"
+			/>
+		</div>
+
+
+    
+    <div class="fade-in-section">
+      <RolesPerfil
+        title="Tipos de community manager <strong>disponibles</strong>"
+        subtitle="Encuentra al profesional de comunicación digital que mejor conecte con el tono de tu audiencia"
+        layout="modern"
+        footerText=""
+        footerLinkText=""
+        footerLinkHref="#"
+        roles={[
+          {
+            title: "📱 Gestor de Redes multiplataforma",
+            description: "",
+            icon: "",
+            iconColor: "#FF66CC",
+            borderColorClass: "border-pink",
+            subtitle: "Dominio integral de Instagram, TikTok, Facebook y X. Foco en crecimiento orgánico sostenido y dinamización de comunidades visuales.",
+            techStack: ["Meta Business", "Creator Studio", "Metricool", "Canva"],
+            buttonText: "Solicitar más información →",
+            buttonHref: "#",
+          },
+          {
+            title: "💼 CM LinkedIn & B2B",
+            description: "",
+            icon: "",
+            iconColor: "#3b76f6",
+            borderColorClass: "border-blue",
+            subtitle: "Construcción de autoridad corporativa, social selling y generación de leads cualificados en entornos profesionales y directivos.",
+            techStack: ["LinkedIn", "Sales Navigator", "Taplio", "Notion"],
+            buttonText: "Solicitar más información →",
+            buttonHref: "#",
+          },
+          {
+            title: "🛒 CM para eCommerce/social Commerce",
+            description: "",
+            icon: "",
+            iconColor: "#66FF99",
+            borderColorClass: "border-green",
+            subtitle: "Perfil orientado a la venta por catálogo social. Gestiona atención al cliente por DM, reseñas públicas y expectación ante lanzamientos (hype)",
+            techStack: ["Shopify", "Meta Ads", "Klaviyo", "Trustpilot"],
+            buttonText: "Solicitar más información →",
+            buttonHref: "#",
+          },
+          {
+            title: "⭐ Community Manager para Marca Personal",
+            description: "",
+            icon: "",
+            iconColor: "#CCFF66",
+            borderColorClass: "border-yellow",
+            subtitle: "Ghostwriting y gestión de presencia digital para CEOs, divulgadores, coaches y fundadores. Captura de la voz íntima y personal del líder.",
+            techStack: ["LinkedIn", "Instagram", "TikTok", "Linktree"],
+            buttonText: "Solicitar más información → ",
+            buttonHref: "#",
+          },
+        ]}
+      />
+    </div>
+     
+
+    <div class="fade-in-section">
+      <ComparisonPerfiles
+        title="Comparativa: Precio community manager <span style='color: #6663FD; font-weight: 900;'>Oberstaff<span style='color: #ff66cc; font-weight: 900;'>.</span></span> <br>vs. otras opciones"
+        subtitle="Compara el coste real de contratar community manager para empresas en España, como freelance o a través de agencia frente a nuestro modelo EOR de talento remoto desde LATAM."
+        footerNote=""
+        oberstaffLabel="<span style='font-weight:800; color:#1B1B1B;'>Oberstaff<span style='color:#FF66CC;'>.</span></span> <span style='color:#FF66CC; font-weight:700;'>(LATAM)</span>"
+        competitors={[
+          "CM local España",
+          "Plataformas freelance",
+          "Agencia Social Media externa",
+        ]}
+        rows={[
+          {
+            label: "Coste operativo mensual",
+            oberstaffValue: "<strong><span class='icon-check'>✓</span> Desde 750€</strong>",
+            competitorValues: [
+              "<span class='icon-cross'>✕</span> 2.000–2.800€",
+              "<span class='icon-cross'>✕</span> 800–2.000€ (o pago por post)",
+              "<span class='icon-cross'>✕</span> 1.500–4.000€",
+            ],
+          },
+          {
+            label: "Dedicación exclusiva a tus redes",
+            oberstaffValue: "<span class='icon-check'>✓</span> Sí jornada completa",
+            competitorValues: [
+              "<span class='icon-check'>✓</span> Sí",
+              "<span class='icon-warning'>⚠</span> Gestiona múltiples cuentas de clientes",
+              "<span class='icon-cross'>✕</span> No, cuentas compartidas",
+            ],
+          },
+          {
+            label: "Propiedad legal y contraseñas",
+            oberstaffValue: "<span class='icon-check'>✓</span> Blindada por Oberstaff (EOR/NDA)",
+            competitorValues: [
+              "<span class='icon-cross'>✕</span> Gestionado internamente",
+              "<span class='icon-cross'>✕</span> Riesgo al compartirlas sin soporte legal ",
+              "<span class='icon-check'>✓</span> Contratos corporativos",
+            ],
+          },
+          {
+            label: "Moderación en tiempo real",
+            oberstaffValue: "<span class='icon-check'>✓</span> Inmediata (Horario de España)",
+            competitorValues: [
+              "<span class='icon-check'>✓</span> Inmediata",
+              "<span class='icon-warning'>⚠</span> Sin horario de respuesta fijo",
+              "<span class='icon-warning'>⚠</span> Sujeto a horarios de oficina de la agencia",
+            ],
+          },
+          {
+            label: "Agilidad ante cambios/tendencias",
+            oberstaffValue: "<span class='icon-check'>✓</span> Alta pídele un cambio y lo hará al instante",
+            competitorValues: [
+              "<span class='icon-check'>✓</span> Alta",
+              "<span class='icon-warning'>⚠</span> Respuestas lentas",
+              "<span class='icon-cross'>✕</span> Burocracia para aprobar posts urgentes",
+            ],
+          },
+          {
+            label: "Validación de habilidades",
+            oberstaffValue: "<span class='icon-check'>✓</span> Examen técnico de RRSS + psico",
+            competitorValues: [
+              "<span class='icon-cross'>✕</span> Riesgo en tu selección",
+              "<span class='icon-cross'>✕</span> Solo CV/portfolio",
+              "<span class='icon-check'>✓</span> Equipos capacitados",
+            ],
+          },
+          {
+            label: "Riesgo de indemnización",
+            oberstaffValue: "<span class='icon-check'>✓</span> Nulo",
+            competitorValues: [
+              "<span class='icon-cross'>✕</span> Alto (Legislación española)",
+              "<span class='icon-check'>✓</span> Nulo",
+              "<span class='icon-cross'>✕</span> Penalizaciones por cancelación temprana",
+            ],
+          },
+        ]}
+      />
+    </div>
+
+    <div class="fade-in-section">
+      <PricingCardPerfil
+        sectionTitle="¿Cuál es el precio de internalizar tus Redes Sociales con <span style='color:#6663FD; font-weight: 900;'>Oberstaff?</span>"
+        sectionSubtitle="Una nómina local puede asfixiar tu presupuesto de marketing. Pero con <span style='color:#1B1B1B; font-weight: 700;'>Oberstaff</span><span style='color:#FF66CC; font-weight: 700;'>.</span>  puedes acceder al mismo nivel de talento a una fracción del coste, sin sacrificar engagement."
+        cardTitle="Fee mensual único"
+        cardSubtitle="Jornada completa."
+        priceLabel="DESDE"
+        priceAmount="750€"
+        pricePeriod="/ mes"
+        features={[
+          "Estrategia multicanal",
+          "Moderación y protección de reputación de marca",
+          "Analítica mensual con informes de resultados",
+          "Coordinación con tu equipo de marketing"
+        ]}
+        ctaText="Solicitar propuesta"
+        ctaHref="#"
+        disclaimer="*Precios orientativos según seniority."
+      />
+    </div>
+
+    
+   <BeneficiosPerfilDisenador
+    title="Contratar community manager con <span style='color:#6663FD; font-weight: 900;'>Oberstaff<span style='color:#FF66CC; font-weight: 700;'>.</span></span> ¿Por qué confiar tu comunidad a talento de LATAM"
+    subtitle="Combinamos la inmersión profunda de un perfil In-House que entiende la esencia de tu feed, con la agilidad de un servicio externo para que te centres en los likes, leads y resultados, no en los contratos."
+    image="/img2-community.webp"
+    imageAlt=""
+    infoTitle="¿Cómo buscar community manager estratégico para tu negocio?"
+    features={[
+        {
+            icon: "🎯",
+            title: "Mimetización con la marca:",
+            description: "Tu CM no reparte su atención. Trabaja enfocado en tu calendario editorial, tus tendencias y tu comunidad diaria."
+        },
+        {
+            icon: "⚡",
+            title: "Ecosistema sincronizado:",
+            description: "Se conecta a tus canales de Slack, debate ideas en tiempo real y programa en tu Metricool."
+        },
+        {
+            icon: "🛡️",
+            title: "Blindaje corporativo:",
+            description: "Las contraseñas de tus redes son activos críticos. Con contratos en el país de origen del talento, protegemos tus datos y gestionamos la nómina."
+        }
+    ]}
+    infoItems={[
+        {
+            title: "¿Es mejor una Agencia de Social Media o un CM dedicado?",
+            description: "Las agencias son útiles para estrategias puntuales, pero para el trabajo diario, suelen asignar tu cuenta a perfiles saturados. Con Oberstaff., tienes a un profesional senior In house, reteniendo el know-how y reaccionando al instante."
+        },
+        {
+            title: "¿Dónde busco Community Manager?: ventajas de Oberstaff",
+            description: "Existen varias plataformas para incorporar CM, como marketplaces de freelancers o agencias. Sin embargo, Oberstaff ofrece un modelo diferente: talento dedicado exclusivo para ti, con contrato estable y toda la gestión laboral cubierta. Mayor compromiso, mejor integración y ausencia de riesgos legales para tu negocio."
+        },
+         {
+            title: "¿Qué herramientas debería dominar un CM moderno?",
+            description: "Exige que el candidato demuestre soltura en Business Manager, Creator Studio, herramientas de programación masiva (Metricool, Buffer, Later), plataformas de escucha social (Social Listening) y nociones sólidas de diseño ágil (Canva, CapCut) para maquetar el contenido diario."
+        }
+    ]}
+/>
+
+
+ <div class="fade-in-section">
+            <CasosExitoSection
+                title="Empresas Españolas que ya confían en <span style='font-weight: 900; color: #6663FD;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span>"
+                subtitle=""
+                testimonials={[
+                    {
+                        stars: 5,
+                        avatar: "/fernando.webp",
+                        text: "Estaba en busca de talento remoto especializado para mi empresa y después de varias búsquedas sin éxito, encontré a <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong> en Instagram. Desde nuestra primera llamada, su profesionalismo y calidad de trabajo me dejaron impresionado. Ahora, gracias a su excelente servicio, he expandido mi contrato con ellos para incluir más personal.",
+                        author: "Fernando Calderón",
+                        role: "CEO · BeautyPro",
+                    },
+                    {
+                        stars: 5,
+                        avatar: "/sha.webp",
+                        text: "Con <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong> pude dar trabajo a dos personas a tiempo completo, ahorrando costes de reclutamiento, espacios de oficina y salario que tendría al hacerlo en España. Lo mejor de todo es que todo está incluido en una misma factura. Con <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong>, encontré la solución perfecta para mis necesidades de contratación remota y optimización de costes.",
+                        author: "Shadai Iborra",
+                        role: "CEO · @amediastory",
+                    },
+                ]}
+            />
+        </div>
+
+   
+  <div class="fade-in-section">
+   <PressSection 
+   title="Prensa y menciones" />
 
   </div>
 
-  <style>
-    .service-detail-container {
-    }
-  </style>
+    <FAQSection
+            title="Quieres contratar un <strong>community manager</strong> con nosotros esto es lo que tienes que saber"
+            ctaText="Respondemos las dudas más frecuentes sobre el proceso y funcionamiento del servicio a negocios que deseen incorporar talento de LATAM"
+            ctaButtonText="Hablar con asesor →"
+         
+        />
+
+
+
+  <div class="fade-in-section">
+    <ConversionPerfilDisenador
+      title="Encuentra al Community Manager ideal para <br> <strong>dinamizar tu marca</strong>"
+      subtitle="Rellena el formulario (te tomará menos de 1 minuto) y en menos de 24 horas recibirás una propuesta de talento social media personalizada, sin ningún compromiso. Primera sesión de consultoría gratuita"
+      buttonText="Solicitar propuesta gratuita →"
+      noteText="Nota: Rellenarlo te lleva menos de 1 minuto"
+    />
+  </div>
+  
+
+
+
+
+
 </DashboardLayoutPerfiles>
+
+<style>
+  .service-detail-container {
+  }
+
+  :global(.community-badges) {
+    grid-template-columns: repeat(3, auto) !important;
+  }
+
+  :global(.employer-use-cases-grid) {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  @media (max-width: 900px) {
+    :global(.employer-use-cases-grid) {
+      grid-template-columns: 1fr !important;
+    }
+  }
+
+  :global(.employer-use-cases-grid .icon-box) {
+    background-color: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    margin-bottom: 25px !important;
+    justify-content: flex-start !important;
+  }
+
+  :global(.employer-use-cases-grid .icon-emoji-servicios-home) {
+    font-size: 35px !important;
+    padding: 0 !important;
+  }
+
+  @media (max-width: 768px) {
+    :global(.community-badges) {
+      grid-template-columns: auto auto !important;
+    }
+
+    :global(.employer-use-cases-grid .icon-emoji-servicios-home) {
+    font-size: 30px !important;
+    padding: 0 !important;
+  }
+  }
+
+  /* Estilos específicos para QueEsServicioSection en esta página */
+  :global(.que-es-servicio-section .quote-blue-border) {
+    border-left: 4px solid #FF66CC !important;
+    color: #FF66CC !important;
+    font-size: 16px !important;
+    margin-top: 0 !important; /* Para alinear con el inicio de la imagen */
+    font-weight: 600 !important;
+  }
+
+  :global(.que-es-servicio-section .que-es-main-content) {
+    align-items: flex-start !important;
+  }
+
+  /* Fondo exclusivo para la sección de áreas del diseñador */
+  :global(section.employer-use-cases) {
+    background-color: #FAFAFC !important;
+ 
+  }
+
+  /* Fondo exclusivo para la sección de casos de éxito en esta página */
+  :global(.casos-exito) {
+    background-color: #FAFAFC !important;
+  
+    padding-bottom: 80px !important;
+  }
+
+  /* Estilos específicos para la sección FAQ en esta página */
+  :global(.faq-disenador-custom .faq-columns) {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  :global(.faq-disenador-custom .faq-left-column) {
+    position: static !important;
+    width: 100% !important;
+    max-width: 800px !important;
+    margin-bottom: 40px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+  }
+
+  :global(.faq-disenador-custom .faq-main-title) {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    text-align: left !important;
+  }
+
+  :global(.faq-disenador-custom .faq-right-column) {
+    display: none !important;
+  }
+
+  :global(.faq-disenador-custom .faq-cta-card) {
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: 600px !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    text-align: left !important;
+  }
+
+  :global(.faq-disenador-custom .faq-cta-card p) {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 18px !important;
+    font-weight: 400 !important;
+    color: #5A5A5A !important;
+    line-height: 1.6 !important;
+    margin-bottom: 30px !important;
+  }
+
+  :global(.faq-disenador-custom .faq-cta-button) {
+    background-color: #6663FD !important;
+    border: 2px solid #6663FD !important;
+    color: #ffffff !important;
+    width: auto !important;
+    min-width: 220px !important;
+    padding: 14px 32px !important;
+    font-size: 15px !important;
+    display: inline-block !important;
+  }
+
+  :global(.faq-disenador-custom .faq-cta-button:hover) {
+    background-color: transparent !important;
+    border: 2px solid #6663FD !important;
+    color: #6663FD !important;
+  }
+</style>

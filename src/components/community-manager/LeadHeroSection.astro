@@ -27,6 +27,7 @@ interface Props {
     footerLinkHref?: string;
     features?: Feature[];
     badges?: Badge[];
+    badgesClass?: string;
 }
 
 const {
@@ -41,6 +42,7 @@ const {
     footerLinkHref = "#",
     features = [],
     badges = [],
+    badgesClass = "",
 } = Astro.props;
 ---
 
@@ -49,7 +51,7 @@ const {
     <div class="blur-glow pink-glow"></div>
     <div class="blur-glow purple-glow"></div>
     <div class="lead-container">
-        <LeadHeroContent topLabel={topLabel} title={title} features={features} badges={badges}>
+        <LeadHeroContent topLabel={topLabel} title={title} features={features} badges={badges} badgesClass={badgesClass}>
             <slot name="description" />
         </LeadHeroContent>
 

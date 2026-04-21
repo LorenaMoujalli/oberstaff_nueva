@@ -1,80 +1,176 @@
 ---
-import FAQHeader from "../faq/FAQHeader.astro";
 import FAQItem from "../faq/FAQItem.astro";
-import "../../styles/faq-servicios/faq-section.css";
+import "../../styles/faq/faq-section.css";
 
 const faqs = [
     {
-        question:
-            "¿Cuánto cuesta contratar community manager con Oberstaff?",
-        answers: [
-            "Desde 750€/mes, todo incluido. Hasta un 70% de ahorro frente a un CM local en España.",
-        ],
-    },
-    {
-        question: "¿El CM trabajará solo para mi empresa?",
-        answers: [
-            "Sí, 100% en exclusiva a jornada completa. Se integra con tus herramientas, voz de marca y cultura corporativa.",
-        ],
+        question: "¿El CM trabajará con cuentas de otras empresas al mismo tiempo?",
+        answers: ["No, tu profesional está asignado 100% en exclusiva a tu marca, pensando solo en tu calendario editorial y analizando a tus competidores."]
     },
     {
         question: "¿Cuándo conviene contratar un community manager?",
-        answers: [
-            "Cuando tu empresa necesita constancia en redes y seguimiento diario de la comunidad, pero no quiere saturar a perfiles internos con esa tarea.",
-        ],
+        answers: ["Cuando tu empresa necesita constancia en redes y seguimiento diario de la comunidad, pero no quiere saturar a perfiles internos con esa tarea."]
     },
     {
-        question:
-            "¿Es mejor contratar community manager freelance o uno integrado en remoto?", 
-        answers: [
-            "Si buscas apoyo puntual, un freelance puede servir. Si necesitas seguimiento diario y coordinación con tu equipo, un perfil remoto estable funciona mejor.",
-        ],
+        question: "¿Qué flexibilidad tengo si el CM no logra captar nuestra voz corporativa?",
+        answers: ["Encontrar el tono exacto (Brand Voice) es vital. Si notas que no encaja con tus valores en los primeros días, puedes cancelar el servicio con solo 30 días de preaviso, sin pleitos laborales ni indemnizaciones por despido o solicitarnos un reemplazo inmediato."]
     },
     {
-        question: "¿Puedo prescindir del CM cuando quiera?",
-        answers: [
-            "Sí, solo 30 días de preaviso. Sin penalizaciones ni indemnizaciones.",
-        ],
+        question: "¿Cómo garantizan que el candidato sabe gestionar redes?",
+        answers: ["Prueba técnica de social media + evaluación psicométrica + entrevista con nuestro equipo de selección."]
     },
     {
-        question: "¿En qué países de LATAM están?",
-        answers: [
-            "Colombia, Argentina, México, Venezuela, Chile, Perú y Uruguay — zonas horarias compatibles con España.",
-        ],
-    },
-     {
-        question: "¿Cómo se evalúa a los candidatos?",
-        answers: [
-            "Prueba técnica de social media + evaluación psicométrica + entrevista con nuestro equipo de selección.",
-        ],
-    },
-     {
         question: "¿Contratar community manager? Precio y tarifas en España",
-        answers: [
-            "Contratar un community manager local en España cuesta entre 2.000€ y 2.800€ brutos al mes, sin contar Seguridad Social ni otros gastos. ",
-        ],
-    },
-];
+        answers: ["Contratar un community manager local en España cuesta entre 2.000€ y 2.800€ brutos al mes, sin contar Seguridad Social ni otros gastos. Con Oberstaff accedes al mismo talento desde LATAM desde 750€/mes todo incluido, en tu zona horaria y sin gestión administrativa."]
+    }
+]; 
 
 interface Props {
     title?: string;
-    subtitle?: string;
+    ctaText?: string;
+    ctaButtonText?: string;
+    ctaButtonHref?: string;
 }
 
 const {
-    title = "FAQ",
-    subtitle = "Todo lo que necesitas saber antes de empezar"
+    title = "Todo lo que necesitas saber antes de su <strong>expansión en LATAM</strong>",
+    ctaText = "¿No estás seguro de qué modelo necesitas? El staff augmentation es ideal para perfiles tech integrados en tu equipo. Pero dependiendo de tu operación, puede que necesites un servicio diferente o combinar varios.",
+    ctaButtonText = "Agenda una llamada gratuita",
+    ctaButtonHref = "#"
 } = Astro.props;
 ---
 
-<section class="faq-section">
-    <div class="faq-container">
-        <FAQHeader
-            title={title}
-            subtitle={subtitle}
-        />
+<style>
+    .faq-d-section {
+        background-color: #FAFAFC;
+        padding: 100px 20px;
+    }
 
-        <div class="faq-list">
+    .faq-d-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: start;
+    }
+
+    /* Left column: sticky, title + paragraph + button */
+    .faq-d-left {
+        position: sticky;
+        top: 120px;
+        align-self: start;
+        z-index: 10;
+    }
+
+    .faq-d-title {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 32px;
+        font-weight: 700;
+        font-style: normal;
+        color: #1a1a1a;
+        line-height: 1.3;
+        margin-bottom: 24px;
+        letter-spacing: -1px;
+    }
+
+    .faq-d-title :global(strong) {
+        font-weight: 900;
+        color: #6663FD;
+    }
+
+    .faq-d-text {
+        font-family: 'Poppins', sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        color: #5A5A5A;
+        line-height: 1.6;
+        margin-bottom: 28px;
+    }
+
+    .faq-d-btn {
+        display: inline-block;
+        background-color: #6663FD;
+        color: #ffffff;
+        padding: 14px 32px;
+        border: 2px solid #6663FD;
+        border-radius: 50px;
+        text-decoration: none;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        font-size: 15px;
+        transition: all 0.3s ease;
+    }
+
+    .faq-d-btn:hover {
+        background-color: transparent;
+        color: #6663FD;
+    }
+
+    /* Right column: FAQ accordion — sin scroll interno, altura libre */
+    .faq-d-right {
+        padding-right: 0;
+    }
+
+    @media (max-width: 1024px) {
+        .faq-d-container {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        .faq-d-left {
+            position: static;
+        }
+
+        .faq-d-right {
+            padding-right: 5px;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .faq-d-section {
+            padding: 60px 20px;
+        }
+
+        .faq-d-left {
+            text-align: center;
+        }
+
+        .faq-d-title {
+            font-size: 24px;
+        }
+
+        .faq-d-text {
+           text-align: center;
+           margin-left: auto;
+           margin-right: auto;
+           max-width: 400px;
+        }
+
+        .faq-d-text :global(br) {
+            display: none;
+        }
+
+        .faq-d-btn {
+            display: table; /* To allow margin: 0 auto with width: max-content behavior */
+            margin: 0 auto;
+            font-size: 13px;
+            padding: 12px 24px;
+        }
+    }
+</style>
+
+<section class="faq-d-section">
+    <div class="faq-d-container">
+        <div class="faq-d-left">
+            <h2 class="faq-d-title" set:html={title} />
+            <p class="faq-d-text" set:html={ctaText} />
+            <a href={ctaButtonHref} class="faq-d-btn">
+                {ctaButtonText}
+            </a>
+        </div>
+
+        <div class="faq-d-right">
             {
                 faqs.map((faq) => (
                     <FAQItem question={faq.question}>

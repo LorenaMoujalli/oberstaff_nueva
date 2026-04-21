@@ -82,18 +82,7 @@
 
 /* Right Column */
 .faq-right-column {
-    max-height: 480px; /* Reduced to show approximately 4 items */
-    overflow-y: auto;
-    padding-right: 15px;
-    scroll-behavior: smooth;
-    /* Ocultar scrollbar para navegadores modernos */
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE y Edge */
-}
-
-/* Ocultar scrollbar para Chrome, Safari y Opera */
-.faq-right-column::-webkit-scrollbar {
-    display: none;
+    padding-right: 0;
 }
 
 /* Subtle bold utility */
@@ -140,9 +129,7 @@
     }
     
     .faq-right-column {
-        max-height: 480px; /* Mantener scroll de 4 items en móvil */
-        overflow-y: auto;
-        padding-right: 5px;
+        padding-right: 0;
     }
 }
 
