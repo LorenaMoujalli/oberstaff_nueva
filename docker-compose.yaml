@@ -1,0 +1,16 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: oberstaff-astro:latest
+    ports:
+      - "80:80"
+    restart: always
+    # Coolify labels (optional but helpful if using standard Traefik setup)
+    # The actual network and domain mapping is usually handled by Coolify UI
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
