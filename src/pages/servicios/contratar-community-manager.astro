@@ -459,7 +459,9 @@ import FAQSection from "../../components/faq-servicios/FAQSection-community.astr
     }
 
     :global(.community-badges) {
-      grid-template-columns: repeat(3, auto) !important;
+      display: flex !important;
+      flex-wrap: wrap !important;
+      gap: 10px !important;
     }
 
     :global(.employer-use-cases-grid) {
@@ -488,9 +490,7 @@ import FAQSection from "../../components/faq-servicios/FAQSection-community.astr
     }
 
     @media (max-width: 768px) {
-      :global(.community-badges) {
-        grid-template-columns: auto auto !important;
-      }
+
 
       :global(.employer-use-cases-grid .icon-emoji-servicios-home) {
         font-size: 30px !important;

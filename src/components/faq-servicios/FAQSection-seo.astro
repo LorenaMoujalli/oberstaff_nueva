@@ -1,79 +1,176 @@
 ---
-import FAQHeader from "../faq/FAQHeader.astro";
 import FAQItem from "../faq/FAQItem.astro";
-import "../../styles/faq-servicios/faq-section.css";
+import "../../styles/faq/faq-section.css";
 
 const faqs = [
     {
-        question: "¿Cuánto cuesta contratar experto SEO con Oberstaff?",
-        answers: [
-            "Para este perfil las suscripciones inician desde 900€/mes todo incluido (contrato, nómina, gestión laboral). El precio exacto varía según el nivel de experiencia, especialidad y país del candidato. No hay costes ocultos ni cargos adicionales.",
-        ],
+        question: "¿Quién paga las licencias de herramientas como Ahrefs o Semrush?",
+        answers: ["Lo ideal es tu empresa provea el acceso a la cuenta corporativa de Ahrefs, Semrush, Screaming Frog o Sistrix. Esto asegura que el histórico de auditorías pertenezca a tu negocio."]
     },
     {
-        question: "¿El profesional trabajará solo para mi empresa?",
-        answers: [
-            "Sí, 100% en exclusiva a jornada completa. Tu especialista en SEO remoto se integra en tu equipo, asiste a reuniones, usa tus herramientas y trabaja solo para ti. No es un freelance compartido entre varios clientes.",
-        ],
+        question: "¿En cuánto tiempo veré el retorno de inversión (ROI) orgánico al contratar experto SEO?",
+        answers: ["El SEO no es magia, es arquitectura. Mientras que los errores técnicos graves (como desbloquear rastreadores) pueden generar rebotes positivos en semanas, una estrategia integral de contenido y backlinks madura entre los 3 y 6 meses posteriores a la implementación. La ventaja de un perfil in-house es que implementa la base fundacional trabajando de la mano directamente contigo."]
     },
     {
-        question:
-            "¿En qué herramientas están especializados los expertos SEO de Oberstaff?",
-        answers: [
-            "Nuestros especialistas dominan: Semrush, Ahrefs, Moz, Screaming Frog, Google Search Console, Google Analytics 4, Looker Studio, Surfer, WordPress y otras. Al hacer el briefing, nos indicas qué herramientas necesitas.",
-        ],
+        question: "¿El especialista implementa el código o necesita a mis desarrolladores?",
+        answers: ["Depende del CMS, si usas WordPress, Shopify o Webflow, un consultor SEO técnico puede aplicar cambios de On-Page directamente. Para modificaciones profundas de servidor, tiempos de carga del servidor o renderizado JS en arquitecturas Headless, tu experto redactará un briefing técnico exacto para guiar a tu equipo de desarrollo."]
     },
     {
-        question: "¿Cuánto tiempo tarda el proceso de contratación?",
-        answers: [
-            "Normalmente presentamos perfiles en pocos días y el proceso completo puede resolverse en menos de 30 días, según seniority y complejidad del perfil.",
-        ],
+        question: "¿Qué tipo de acceso le doy a mis perfiles de Google?",
+        answers: ["Solo los necesarios para trabajar: acceso 'Restringido' o 'Total' (nunca propietario absoluto, para protegerte) en Google Search Console, Google Analytics 4 y Google Tag Manager. Todos sus movimientos están blindados por nuestros contratos de confidencialidad."]
     },
     {
-        question:
-            "¿Tengo que pagar la Seguridad Social de los profesionales SEO?",
-        answers: [
-            "No. Oberstaff actúa como empleador legal del colaborador en su país. Tú pagas una única factura de servicio mensual en euros, sin asumir ninguna obligación laboral directa.",
-        ],
-    },
-    {
-        question: "¿Puedo prescindir de la persona si no funciona?",
-        answers: [
-            "Sí. Solo necesitamos 30 días de preaviso, sin penalizaciones ni indemnizaciones. Si el perfil no encaja durante los primeros días, gestionamos el reemplazo sin coste adicional.",
-        ],
-    },
-    {
-        question:
-            "¿De qué países de Latinoamérica son los expertos en posicionamiento web?",
-        answers: [
-            "Operamos principalmente en Colombia, Argentina, México, Venezuela, Chile y Perú. Todos con zona horaria compatible y alta concentración de talento.",
-        ],
-    },
-    {
-        question:
-            "¿Qué diferencia hay entre contratar consultor SEO freelance y con Oberstaff?",
-        answers: [
-            "Con un freelance obtienes disponibilidad parcial y variable, sin compromiso de dedicación exclusiva. Con Oberstaff tienes un experto SEO a jornada completa, exclusivo para tu empresa, con contrato estable y toda la gestión laboral resuelta.",
-        ],
-    },
-];
+        question: "¿Qué pasa si el perfil propuesto no tiene la visión técnica adecuada?",
+        answers: ["El éxito orgánico requiere alineación técnica. Si descubres que el perfil se queda corto en sus auditorías, puedes pausar el servicio notificándonos con 30 días de antelación sin asumir finiquitos, o podemos gestionar un cambio inmediato por un analista más Senior."]
+    }
+]; 
 
 interface Props {
     title?: string;
-    subtitle?: string;
+    ctaText?: string;
+    ctaButtonText?: string;
+    ctaButtonHref?: string;
 }
 
 const {
-    title = "FAQ",
-    subtitle = "Todo lo que necesitas saber antes de empezar",
+    title = "Todo lo que necesitas saber antes de su <strong>expansión en LATAM</strong>",
+    ctaText = "¿No estás seguro de qué modelo necesitas? El staff augmentation es ideal para perfiles tech integrados en tu equipo. Pero dependiendo de tu operación, puede que necesites un servicio diferente o combinar varios.",
+    ctaButtonText = "Agenda una llamada gratuita",
+    ctaButtonHref = "#"
 } = Astro.props;
 ---
 
-<section class="faq-section">
-    <div class="faq-container">
-        <FAQHeader title={title} subtitle={subtitle} />
+<style>
+    .faq-d-section {
+        background-color: #FAFAFC;
+        padding: 100px 20px;
+    }
 
-        <div class="faq-list">
+    .faq-d-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: start;
+    }
+
+    /* Left column: sticky, title + paragraph + button */
+    .faq-d-left {
+        position: sticky;
+        top: 120px;
+        align-self: start;
+        z-index: 10;
+    }
+
+    .faq-d-title {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 32px;
+        font-weight: 700;
+        font-style: normal;
+        color: #1a1a1a;
+        line-height: 1.3;
+        margin-bottom: 24px;
+        letter-spacing: -1px;
+    }
+
+    .faq-d-title :global(strong) {
+        font-weight: 900;
+        color: #6663FD;
+    }
+
+    .faq-d-text {
+        font-family: 'Poppins', sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        color: #5A5A5A;
+        line-height: 1.6;
+        margin-bottom: 28px;
+    }
+
+    .faq-d-btn {
+        display: inline-block;
+        background-color: #6663FD;
+        color: #ffffff;
+        padding: 14px 32px;
+        border: 2px solid #6663FD;
+        border-radius: 50px;
+        text-decoration: none;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        font-size: 15px;
+        transition: all 0.3s ease;
+    }
+
+    .faq-d-btn:hover {
+        background-color: transparent;
+        color: #6663FD;
+    }
+
+    /* Right column: FAQ accordion — sin scroll interno, altura libre */
+    .faq-d-right {
+        padding-right: 0;
+    }
+
+    @media (max-width: 1024px) {
+        .faq-d-container {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        .faq-d-left {
+            position: static;
+        }
+
+        .faq-d-right {
+            padding-right: 5px;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .faq-d-section {
+            padding: 60px 20px;
+        }
+
+        .faq-d-left {
+            text-align: center;
+        }
+
+        .faq-d-title {
+            font-size: 24px;
+        }
+
+        .faq-d-text {
+           text-align: center;
+           margin-left: auto;
+           margin-right: auto;
+           max-width: 400px;
+        }
+
+        .faq-d-text :global(br) {
+            display: none;
+        }
+
+        .faq-d-btn {
+            display: table; /* To allow margin: 0 auto with width: max-content behavior */
+            margin: 0 auto;
+            font-size: 13px;
+            padding: 12px 24px;
+        }
+    }
+</style>
+
+<section class="faq-d-section">
+    <div class="faq-d-container">
+        <div class="faq-d-left">
+            <h2 class="faq-d-title" set:html={title} />
+            <p class="faq-d-text" set:html={ctaText} />
+            <a href={ctaButtonHref} class="faq-d-btn">
+                {ctaButtonText}
+            </a>
+        </div>
+
+        <div class="faq-d-right">
             {
                 faqs.map((faq) => (
                     <FAQItem question={faq.question}>

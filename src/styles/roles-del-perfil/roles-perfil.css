@@ -23,6 +23,7 @@
 /* Custom grid for SEO page */
 .perfiles-grid.grid-seo {
     grid-template-columns: repeat(3, 1fr);
+    margin-top: 60px;
 }
 
 @media (max-width: 992px) {

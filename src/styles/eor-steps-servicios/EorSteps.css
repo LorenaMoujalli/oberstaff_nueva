@@ -15,7 +15,7 @@
     background-color: #ffffff;
     color: #1a1a1a;
     text-align: center;
-     border-top: 1px solid #e5e7eb;
+    border-top: 1px solid #e5e7eb;
 }
 
 /* Header */
@@ -41,6 +41,9 @@
     margin-bottom: 12px;
     letter-spacing: -0.5px;
     color: #1B1B1B;
+    max-width: 950px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .steps-header h2 strong {
@@ -52,6 +55,10 @@
     color: #5A5A5A;
     font-size: 18px;
     font-family: 'Poppins', sans-serif;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
 }
 
 .steps-header p strong {
@@ -69,7 +76,8 @@
 /* ---- Timeline row ---- */
 .timeline-track {
     position: absolute;
-    top: 30px; /* Center of 60px circle */
+    top: 30px;
+    /* Center of 60px circle */
     left: 5%;
     width: 90%;
     height: 4px;
@@ -117,7 +125,8 @@
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
     border: 6px solid #FAFAFC;
     transition: transform 0.3s ease;
-    background-color: #fff; /* Fallback */
+    background-color: #fff;
+    /* Fallback */
 }
 
 .step-item:hover .step-circle {
@@ -151,7 +160,7 @@
     padding: 4px 12px;
     border-radius: 20px;
     background: #F0F0F5;
-  
+
     font-family: 'Poppins', sans-serif;
     font-size: 11px;
     font-weight: 600;
@@ -169,7 +178,7 @@
     .timeline-track {
         display: none;
     }
-    
+
     .steps-container {
         grid-template-columns: repeat(2, 1fr);
         row-gap: 40px;
@@ -189,21 +198,24 @@
     .eor-steps {
         padding: 60px 20px;
     }
-    
+
     .steps-header h2 {
         font-size: 24px;
     }
 
     .steps-wrapper {
-        padding-left: 20px; /* Space for the vertical line */
+        padding-left: 20px;
+        /* Space for the vertical line */
     }
 
     .timeline-track {
         display: block;
         width: 4px;
         top: 30px;
-        bottom: 120px; /* Ends near the center of the last circle */
-        left: 48px; /* Centered with 60px circle + wrapper padding */
+        bottom: 120px;
+        /* Ends near the center of the last circle */
+        left: 48px;
+        /* Centered with 60px circle + wrapper padding */
         background: linear-gradient(180deg, var(--brand-pink), var(--brand-purple), var(--brand-green), var(--brand-yellow));
         transform: translate(-50%, 0);
         height: auto;
@@ -243,5 +255,7 @@
         font-size: 13px;
     }
 
-    .steps-header p { font-size: 16px; }
+    .steps-header p {
+        font-size: 16px;
+    }
 }
