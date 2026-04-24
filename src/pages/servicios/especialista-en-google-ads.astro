@@ -1,0 +1,599 @@
+---
+import DashboardLayoutPerfiles from "../../layouts/DashboardLayoutPerfiles.astro";
+import LeadHeroSection from "../../components/community-manager/LeadHeroSection.astro";
+import ComparisonPerfiles from "../../components/comparison-perfiles/ComparisonPerfiles.astro";
+import PricingCardPerfil from "../../components/pricing-perfil/PricingCardPerfil.astro";
+import BeneficiosPerfilDisenador from "../../components/beneficios-perfil/BeneficiosPerfilDisenador.astro";
+import PressSection from "../../components/press/PressSection.astro";
+import ConversionPerfilDisenador from "../../components/conversion-perfil/ConversionPerfilDisenador.astro";
+import RolesPerfil from "../../components/roles-del-perfil/RolesPerfil.astro";
+import QueEsServicioSection from "../../components/QueEsServicio/QueEsServicioSection.astro";
+import ServicesSection from "../../components/services-oberstaff/ServicesSection.astro";
+import EorStepsSection from "../../components/eor-steps-servicios/EorStepsSection.astro";
+import EorCta from "../../components/eor-cta-servicios/EorCta.astro";
+import CasosExitoSection from "../../components/casos-exito-servicios/CasosExitoSection.astro";
+import FAQSection from "../../components/faq-servicios/FAQSection-google-ads.astro";
+---
+
+<DashboardLayoutPerfiles
+    title="Especialista en Google Ads | Remoto para España"
+    description="Contrata un especialista en Google Ads para tu empresa Española. Talento de LATAM, dedicación exclusiva, horario compatible y sin riesgos legales"
+    footerTitle="Roles Relacionados"
+    footerLinks={[
+        { text: "🔍 Experto SEO", href: "#" },
+        { text: "📈 Especialista Meta Ads", href: "#" },
+        { text: "💻 Diseñador web", href: "#" },
+        { text: "🎨 Diseñador web", href: "#" }, 
+        { text: "💻 Desarrollador web", href: "#" }, 
+    ]}
+    keywords="especialista en google ads"
+>
+    <div class="service-detail-container" id="inicio">
+        <LeadHeroSection
+            topLabel="Publicidad y Performance (SEM)"
+            title="Especialista en Google Ads: Internaliza tu inversión y escala tu ROAS"
+            cardTitle="Encuentra a tu experto SEM hoy"
+            cardSubtitle="Accede a perfiles pre-evaluados listos para tu empresa."
+            buttonText="👉 Ver perfiles pre-evaluados y solicitar propuesta"
+            buttonIcon=""
+            buttonSubtext="↳ Tardarás menos de 1 minuto · Sin compromiso"
+            footerLinkText="Ver cómo funciona el modelo EOR →"
+            footerLinkHref="#como-contratar"
+            badges={[
+                { text: "Dedicación exclusiva", icon: "🎯" },
+                { text: "Perfiles evaluados", icon: "📋" },
+                { text: "Integración rápida", icon: "⚡" },
+                { text: "Horario compatible con España", icon: "🕒" },
+            ]}
+            badgesClass="community-badges"
+        >
+            <Fragment slot="description">
+                Contrata a un especialista en Google Ads y PPC de Latinoamérica. Accede a perfiles auditados en la gestión de todo el ecosistema —Search, Shopping, Display, YouTube Ads y Performance Max— dedicados exclusivamente a optimizar tu ROAS.
+            </Fragment>
+        </LeadHeroSection>
+
+      <div class="fade-in-section">
+			<QueEsServicioSection
+				title="Pasa de acumular clics a captar leads cualificados apoyándote en expertos en Google Ads"
+				highlightWord="expertos en Google Ads"
+				description="Incorporar especialistas en Google Ads en nómina local dispara tus costes operativos antes de encender la primera campaña. Por eso, te facilitamos la incorporación de estrategas senior de LATAM habituados a exprimir presupuestos bajo un control estricto del Coste por Adquisición (CPA)."
+				imageSrc="/img1-asistente.webp"
+				imageAlt="Profesional trabajando"
+				badgeText="Optimización de ROAS"
+				quoteText="Mientras tu especialista in-house está enfocado en tu panel de pujas de Google, nosotros gestionamos la burocracia internacional mediante una sola factura mensual B2B. "
+				checklistTitle="Checklist de ventajas operativas:"
+				checklistItems={[
+					"Optimización en tiempo real durante tu jornada comercial, apagando o encendiendo campañas al instante.",
+					"Tarifa plana B2B: aumenta tu inversión en Google sin que te cobremos un porcentaje adicional por gestión.",
+					"Sin ataduras: si el especialista Google Ads no alcanza el CPA objetivo, cancela sin indemnizaciones o gestiona un cambio del profesional."
+				]}
+				ctaText="Solicita perfiles de especialistas de Google Ads →"
+				ctaHref="#"
+				diffIcon=""
+				diffTitle=""
+				diffDescription="" 
+			/>
+		</div>
+
+        <div class="fade-in-section">
+            <ServicesSection
+                title="De la auditoría inicial al ajuste de ROAS: el despliegue de <strong>tu especialista en Google Ads</strong>"
+                description="Nuestros expertos en Google Ads se ocupan de la captación de pago: estructura de campañas, anuncios, segmentación, pujas, audiencias, feeds, medición y optimización del presupuesto."
+                customClass="employer-use-cases"
+                services={[
+                    {
+                        icon: "🎯",
+                        title: "Captacion de leads B2B y B2C con Google Ads",
+                        description:
+                            "Configuración, lanzamiento y optimización de campañas orientadas a generación de oportunidades comerciales. Ideal para negocios B2B que necesiten reuniones, formularios o llamadas cualificadas.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-green",
+                    },
+                    {
+                        icon: "🛒 ",
+                        title: "Google Ads para eCommerce",
+                        description:
+                            "Gestión de campañas de Shopping, Search, Performance Max y remarketing para aumentar ventas, mejorar ROAS y escalar cuentas sin disparar el coste por adquisición.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-pink",
+                    },
+                    {
+                        icon: "📈",
+                        title: "Optimizacion de rendimiento y escalado",
+                        description:
+                            "Análisis profundo de términos de búsqueda, smart bidding, segmentación de audiencias y extensiones para eliminar la inversión ineficaz y maximizar las conversiones mes a mes.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-lime",
+                    },
+                    {
+                        icon: "📊 ",
+                        title: "Tracking, medicion y atribucion",
+                        description:
+                            "Configuración precisa de píxeles de conversión, Google Tag Manager (GTM), GA4 y eventos para asegurar que la toma de decisiones publicitarias esté basada en datos reales.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-purple",
+                    },
+                    {
+                        icon: "🚀",
+                        title: "Estrategia SEM y PPC para pymes",
+                        description:
+                            "Nuestros especialistas PPC y expertos SEM adaptan la estrategia al presupuesto y madurez de tu negocio, priorizando campanas con impacto comercial real.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-green",
+                    },
+                    {
+                        icon: "💡",
+                        title: "Campañas de alta intención de compra",
+                        description:
+                            "Arquitectura de campañas, investigación de keywords transaccionales (Search Intent) y redacción de copys persuasivos para interceptar demanda activa.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-pink",
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <EorStepsSection
+                title="Auditoría de cuentas y setup técnico: el despliegue de <span style='color: #6663FD; font-weight: 800;'>Tu especialista Google Ads In-house</span>"
+                subtitle="Un filtro analítico riguroso para que solo entregues el control de tu cuenta publicitaria a profesionales que entiendan la diferencia entre un clic curioso y un comprador real."
+                steps={[
+                    {
+                        title: "Evaluación de tus necesidades SEM",
+                        lineColorClass: "line-black",
+                        description:
+                            "Agenda una sesión gratuita y detallanos cuál es tu inversión mensual actual, tu ROAS objetivo y si tu modelo es de captación de leads (B2B) o venta directa (eCommerce).",
+                        badge: "15 min · Sin compromiso",
+                    },
+                    {
+                        title: "Filtrado de especialistas PPC",
+                        lineColorClass: "line-pink",
+                        description:
+                            "Te enviamos una terna de especialistas. Revisarás su experiencia gestionando presupuestos similares al tuyo y cómo resuelven lógicas de puja automatizada (CPA objetivo, Maximizar conversiones).",
+                        badgeIcon: "",
+                        badge: "En menos de 7 días",
+                    },
+                    {
+                        title: "Entrevista de rentabilidad comercial",
+                        lineColorClass: "line-orange",
+                        description:
+                            "Pregúntales directamente cómo frenarían una escalada repentina en el coste por clic (CPC) o cómo estructuran una campaña PMax sin canibalizar búsquedas de marca.",
+                        badge: "Tú decides siempre",
+                    },
+                    {
+                        title: "Acceso al MCC y lanzamiento",
+                        lineColorClass: "line-blue",
+                        description:
+                            "Oberstaff blinda legalmente el acceso a tus datos. Otorgas permisos al consultor Google Ads en tu administrador de cuentas y el profesional comienza con la estrategia de manera inmediata.",
+                        badge: "Integración en días",
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <EorCta
+                title="¿Tu Coste por Adquisición (CPA) está fuera de control? Recupera el margen con un especialista en Google Ads"
+                text="Cuéntanos cuál es tu inversión publicitaria actual y el objetivo de rentabilidad de tu negocio. Te presentaremos perfiles analíticos habituados a auditar el histórico de tu cuenta, limpiar el tráfico de búsquedas basura y estabilizar tus pujas para maximizar tu presupuesto."
+                buttonText="👉 Quiero Solicitar propuesta y perfiles SEM"
+                buttonHref="#"
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <RolesPerfil
+                title="Dominio de Performance Max, Shopping y Search: el despliegue técnico de un <strong>especialista en Google Ads</strong>"
+                subtitle="Encuentra al profesional que mejor encaje con el modelo de adquisición y los objetivos de campaña de tu empresa."
+                layout="modern"
+                customClass="grid-seo"
+                footerText="💡 Para posicionamiento orgánico accede a nuestro perfil:"
+                footerLinkText=" contratar experto SEO →"
+                footerLinkHref="#"
+                roles={[
+                    {
+                        title: "🔍 Especialista Google Ads Search",
+                        description: "",
+                        icon: "",
+                        iconColor: "#FF66CC",
+                        borderColorClass: "border-pink",
+                        subtitle:
+                            "Perfil centrado en dominar la red de búsqueda, optimización del nivel de calidad (Quality Score), estrategias de pujas automatizadas y captación de leads con intención de compra.",
+                        techStack: ["Google Ads", "Search", "Keywords", "Smart Bidding"],
+                        buttonText: "Solicitar más información →",
+                        buttonHref: "#",
+                    },
+                    {
+                        title: "🛍️ Experto en Google Shopping y Performance Max",
+                        description: "",
+                        icon: "",
+                        iconColor: "#3b76f6",
+                        borderColorClass: "border-blue",
+                        subtitle:
+                            "Optimización de feeds de producto, Performance Max y campañas de Shopping para tiendas online. Especializado en mejorar ROAS y reducir CPA en cuentas de eCommerce.",
+                        techStack: ["Shopping", "P.Max", "Merchant Center", "ROAS"],
+                        buttonText: "Solicitar más información →",
+                        buttonHref: "#",
+                    },
+                    {
+                        title: "🖼️ Especialista en Display y Remarketing",
+                        description: "",
+                        icon: "",
+                        iconColor: "#66FF99",
+                        borderColorClass: "border-green",
+                        subtitle:
+                            "Creación de audiencias personalizadas, retargeting de carritos abandonados y dominio de la Display Network para impactar al usuario a lo largo de todo el customer journey.",
+                        techStack: ["Display", "Remarketing", "Audiencias"],
+                        buttonText: "Solicitar más información →",
+                        buttonHref: "#",
+                    },
+                    {
+                        title: "🎬 Especialista en YouTube Ads",
+                        description: "",
+                        icon: "",
+                        iconColor: "#CCFF66",
+                        borderColorClass: "border-yellow",
+                        subtitle:
+                            "Campañas de vídeo publicitario: TrueView, Bumper Ads y YouTube Discovery para generar demanda, reconocimiento de marca y captar audiencias en el mayor motor de vídeo del mundo.",
+                        techStack: [
+                            "YouTube",
+                            "Vídeo Ads",
+                            "Branding",
+                        ],
+                        buttonText: "Solicitar más información → ",
+                        buttonHref: "#",
+                    },
+                    {
+                        title: "⚙️ Especialista en Tracking y Medición",
+                        description: "",
+                        icon: "",
+                        iconColor: "#FF66CC",
+                        borderColorClass: "border-pink",
+                        subtitle:
+                            "Implementación y validación de conversiones para decisiones basadas en datos. Configuración de GTM, GA4, eventos y modelos de atribución para medir el retorno real de cada campaña.",
+                        techStack: [
+                            "GTM",
+                            "GA4",
+                            "Atribución",
+                            "Eventos",
+                        ],
+                        buttonText: "Solicitar más información →",
+                        buttonHref: "#",
+                    },
+                    {
+                        title: "🌐 Consultor Google Ads SEM 360°",
+                        description: "",
+                        icon: "",
+                        iconColor: "#3b76f6",
+                        borderColorClass: "border-blue",
+                        subtitle:
+                            "Estrategia integral de paid media en Google: auditorías de cuentas, gestión de presupuesto, coordinación con el equipo de marketing y reporting orientado a negocio.",
+                        techStack: ["Semrush", "GA4", "Looker Studio", "PPC"],
+                        buttonText: "Solicitar más información →",
+                        buttonHref: "#",
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <ComparisonPerfiles
+                title="Cuentas compartidas frente a optimización continua: la ventaja técnica de <span style='color: #6663FD; font-weight: 900;'>tu especialista en Google Ads"
+                subtitle="Tu analista dedicado invierte toda su jornada en ajustar subastas, negativizar tráfico basura y escalar tu ROAS. Compara las diferencias."
+                footerNote="Nota: Las tarifas fluctúan en base al nivel técnico (junior/senior), especialidad de red y procedencia."
+                oberstaffLabel="<span style='font-weight:800; color:#1B1B1B;'>Oberstaff<span style='color:#FF66CC;'>.</span></span> <span style='color:#FF66CC; font-weight:700;'>(Especialista In-House LATAM)</span>"
+                competitors={[
+                    "Especialista en España",
+                    "Freelance SEM",
+                    "Agencia de Performance",
+                ]}
+                rows={[
+                    {
+                        label: "Estructura de honorarios",
+                        oberstaffValue: "<strong>Desde 900€/mes</strong>",
+                        competitorValues: [
+                            "2.500-4.000 EUR/mes + costes de Seguridad Social",
+                            "1.200-2.500 EUR/mes+ posible % de inversión",
+                            "Fee base + % sobre inversión publicitaria (10-15%)",
+                        ],
+                    },
+                    {
+                        label: "Alineación de rentabilidad",
+                        oberstaffValue:
+                            "<span class='icon-check'>✓</span> Alta. Su objetivo es optimizar tu CPA",
+                        competitorValues: [
+                            "<span class='icon-check'>✓</span> Alta",
+                            "Media", 
+                            "Multicuentas",
+                        ],
+                    },
+                    {
+                        label: "Propiedad del histórico publicitario",
+                        oberstaffValue: "<span class='icon-check'>✓</span> 00% tuyo (Protegido por contrato)",
+                        competitorValues: [
+                            "100% tuyo",
+                            "Generalmente tuyo",
+                            "Suelen crear campañas en su propio MCC)",
+                        ],
+                    },
+                    {
+                        label: "Velocidad de optimización",
+                        oberstaffValue: "<span class='icon-check'>✓</span> Ajustes en tiempo real",
+                        competitorValues: [
+                            "<span class='icon-check'>✓</span> En tiempo real",
+                            "Según su disponibilidad",
+                            "Depende de la apertura de tickets de soporte",
+                        ],
+                    },
+                    {
+                        label: "Integración en equipo de marketing",
+                        oberstaffValue: "Alta",
+                        competitorValues: ["Alta", "Media", "Media"],
+                    },
+                    {
+                        label: "Foco de atención",
+                        oberstaffValue: "<span class='icon-check'>✓</span> Dedicación exclusiva a tus campañas",
+                        competitorValues: [
+                            "Exclusiva",
+                            "Cuenta dividida con otros clientes",
+                            "Cuenta dividida con otros clientes",
+                        ],
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <PricingCardPerfil
+                sectionTitle="Presupuesto 100% para clics: <span style='color:#6663FD; font-weight: 900;'>tarifa plana</span> sin comisiones por inversión publicitaria "
+                sectionSubtitle=""
+                cardTitle="Fee único"
+                cardSubtitle="Jornada completa en tus campañas"
+                priceLabel="DESDE"
+                priceAmount="850€"
+                pricePeriod="/ mes"
+                features={[
+                    "Creación, reestructuración y testeo A/B diario de anuncios.",
+                    "Gestión proactiva de pujas, concordancias y listas negativas.",
+                    "Gestión proactiva de pujas, concordancias y listas negativas.",
+                    "Analítica GA4 y reporting mensual.",
+                    "Blindaje contractual de tus accesos y cuentas."
+                ]}
+                ctaText="Solicitar propuesta"
+                ctaHref="#"
+                disclaimer="*Precios orientativos. El coste final depende del perfil, país y nivel de experiencia. Sin costes ocultos ni comisiones adicionales."
+            />
+        </div>
+
+        <BeneficiosPerfilDisenador
+            title="Propiedad absoluta de tu MCC y audiencias: el escudo legal al operar con <span style='color:#6663FD; font-weight: 900;'>especialistas Google ads</span>"
+            subtitle="Unimos la potencia analítica de un perfil interno integrado en tus métricas con la agilidad estructural de nuestro modelo, tú solo pones el foco en maximizar el retorno (ROAS), olvidando la carga administrativa."
+            image="/img2-contable.webp"
+            imageAlt=""
+            infoTitle="Banderas rojas y fugas de presupuesto: qué auditar antes de contratar a un especialista en Google Ads"
+            features={[
+                {
+                    icon: "🎯",
+                    title: "Inmersión total en tus embudos:",
+                    description:
+                        "Tu especialista de Google Ads analiza tus métricas, vigila tu CPA diario y cuida de tu presupuesto.",
+                },
+                {
+                    icon: "⚡",
+                    title: "Integración rápida:",
+                    description:
+                        "El perfil se incorpora a tus reuniones, cuenta de Google Ads, herramientas de analytics y dinámica de trabajo para aportar desde el primer día.",
+                },
+                {
+                    icon: "🕐",
+                    title: "El activo comercial más valioso es tu data:",
+                    description:
+                        "<span style='color:#1b1b1b; font-weight: 700;'>Oberstaff</span><span style='color:#FF66CC; font-weight: 700;'>.</span> simplifica la parte contractual y administrativa. La incorporación del especialista SEM es más ágil y sin riesgos para tu empresa.",
+                },
+            ]} 
+            infoItems={[
+                {
+                    title: "Impacto en tu ROAS y costes de estructura: Especialista Google Ads remoto vs. consultor SEM local",
+                    description:
+                        "Un experto presencial en España puede superar los 3.000€/mes en coste total, incluyendo Seguridad Social y beneficios. Mientras un especialista SEM remoto de Colombia, Argentina o Venezuela con Oberstaff combina lo mejor de ambos: jornada completa, exclusividad y desde 850€/mes, sin que asumas ninguna relación laboral directa.",
+                },
+                {
+                    title: "¿Qué métricas y permisos técnicos debes auditar antes de externalizar tus campañas con un experto en Google Ads?",
+                    description:
+                        "Exige siempre conservar el nivel de Administrador en tu MCC y la propiedad total de GA4 para no perder tu histórico de conversiones. En la operativa diaria, rechaza los reportes basados en simples clics y evalúa al especialista exclusivamente por su capacidad para reducir el Coste por Adquisición (CPA), optimizar el ROAS y limpiar el tráfico irrelevante que drena tus campañas de Smart Bidding.",
+                },
+                {
+                    title: "El ecosistema técnico del performance marketing en LATAM",
+                    description:
+                        "Colombia, México y Argentina concentran clústeres enormes de talento especializado en la compra de medios (Media Buying) para startups internacionales. Al importar esta capacidad analítica a España, obtienes una gestión de pujas agresiva y basada en datos, con una eficiencia de costes que te permite reinvertir el ahorro directamente en más presupuesto publicitario.",
+                }
+            ]}
+        />
+
+        <div class="fade-in-section">
+            <CasosExitoSection
+                title="Empresas españolas que ya escalan sus ventas con <span style='font-weight: 900; color: #6663FD;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span>"
+                subtitle=""
+                testimonials={[
+                    {
+                        stars: 5,
+                        avatar: "/fernando.webp",
+                        text: "Estaba en busca de talento remoto especializado para mi empresa y después de varias búsquedas sin éxito, encontré a <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong> en Instagram. Desde nuestra primera llamada, su profesionalismo y calidad de trabajo me dejaron impresionado. Ahora, gracias a su excelente servicio, he expandido mi contrato con ellos para incluir más personal.",
+                        author: "Fernando Calderón",
+                        role: "CEO · BeautyPro",
+                    },
+                    {
+                        stars: 5,
+                        avatar: "/sha.webp",
+                        text: "Con <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong> pude dar trabajo a dos personas a tiempo completo, ahorrando costes de reclutamiento, espacios de oficina y salario que tendría al hacerlo en España. Lo mejor de todo es que todo está incluido en una misma factura. Con <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong>, encontré la solución perfecta para mis necesidades de contratación remota y optimización de costes.",
+                        author: "Shadai Iborra",
+                        role: "CEO · @amediastory",
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <PressSection title="Prensa y menciones" />
+        </div>
+
+        <FAQSection
+            title="Dudas clave sobre la integración de permisos y tu <strong>Especialista en Google Ads</strong>"
+            ctaText="Resolvemos las dudas más frecuentes sobre el proceso y funcionamiento del servicio a negocios que deseen mejorar el rendimiento de sus campañas de publicidad de pago a través de la incorporación de especialistas en Google Ads."
+            ctaButtonText="Hablar con asesor →"
+        />
+
+        <div class="fade-in-section">
+            <ConversionPerfilDisenador
+                title="¿Preparado para multiplicar el rendimiento de tus campañas con un  <strong>Especialista en Google Ads?</strong>"
+                subtitle="Completa el formulario (tardarás menos de 1 minuto) evaluaremos tu situación publicitaria actual y te enviaremos una propuesta personalizada para que puedas incorporar perfiles analíticos preparados para auditar tus campañas y optimizar tu rentabilidad."
+                buttonText="Solicitar propuesta gratuita →"
+                noteText="Nota: Rellenarlo te lleva menos de 1 minuto" 
+            />
+        </div>
+    </div>
+
+    <style>
+        .service-detail-container {
+        }
+
+        :global(.community-badges) {
+            display: flex !important;
+            flex-wrap: wrap !important;
+            gap: 10px !important;
+        }
+
+        :global(.employer-use-cases-grid) {
+            grid-template-columns: repeat(3, 1fr) !important;
+        }
+
+        @media (max-width: 900px) {
+            :global(.employer-use-cases-grid) {
+                grid-template-columns: 1fr !important;
+            }
+        }
+
+        :global(.employer-use-cases-grid .icon-box) {
+            background-color: transparent !important;
+            border: none !important;
+            padding: 0 !important;
+            width: 100% !important;
+            height: auto !important;
+            margin-bottom: 25px !important;
+            justify-content: flex-start !important;
+        }
+
+        :global(.employer-use-cases-grid .icon-emoji-servicios-home) {
+            font-size: 35px !important;
+            padding: 0 !important;
+        }
+
+        @media (max-width: 768px) {
+            :global(.employer-use-cases-grid .icon-emoji-servicios-home) {
+                font-size: 30px !important;
+                padding: 0 !important;
+            }
+        }
+
+        /* Estilos específicos para QueEsServicioSection en esta página */
+        :global(.que-es-servicio-section .quote-blue-border) {
+            border-left: 4px solid #ff66cc !important;
+            color: #ff66cc !important;
+            font-size: 16px !important;
+            margin-top: 0 !important; /* Para alinear con el inicio de la imagen */
+            font-weight: 600 !important;
+        }
+
+        :global(.que-es-servicio-section .que-es-main-content) {
+            align-items: flex-start !important;
+        }
+
+        /* Fondo exclusivo para la sección de áreas del diseñador */
+        :global(section.employer-use-cases) {
+            background-color: #fafafc !important;
+        }
+
+        /* Fondo exclusivo para la sección de casos de éxito en esta página */
+        :global(.casos-exito) {
+            background-color: #fafafc !important;
+
+            padding-bottom: 80px !important;
+        }
+
+        /* Estilos específicos para la sección FAQ en esta página */
+        :global(.faq-disenador-custom .faq-columns) {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            text-align: center !important;
+        }
+
+        :global(.faq-disenador-custom .faq-left-column) {
+            position: static !important;
+            width: 100% !important;
+            max-width: 800px !important;
+            margin-bottom: 40px !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            text-align: left !important;
+        }
+
+        :global(.faq-disenador-custom .faq-main-title) {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            text-align: left !important;
+        }
+
+        :global(.faq-disenador-custom .faq-right-column) {
+            display: none !important;
+        }
+
+        :global(.faq-disenador-custom .faq-cta-card) {
+            margin: 0 !important;
+            padding: 0 !important;
+            max-width: 600px !important;
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+            text-align: left !important;
+        }
+
+        :global(.faq-disenador-custom .faq-cta-card p) {
+            font-family: "Poppins", sans-serif !important;
+            font-size: 18px !important;
+            font-weight: 400 !important;
+            color: #5a5a5a !important;
+            line-height: 1.6 !important;
+            margin-bottom: 30px !important;
+        }
+
+        :global(.faq-disenador-custom .faq-cta-button) {
+            background-color: #6663fd !important;
+            border: 2px solid #6663fd !important;
+            color: #ffffff !important;
+            width: auto !important;
+            min-width: 220px !important;
+            padding: 14px 32px !important;
+            font-size: 15px !important;
+            display: inline-block !important;
+        }
+
+        :global(.faq-disenador-custom .faq-cta-button:hover) {
+            background-color: transparent !important;
+            border: 2px solid #6663fd !important;
+            color: #6663fd !important;
+        }
+    </style>
+</DashboardLayoutPerfiles>

@@ -246,7 +246,7 @@ const {
         <!-- Columna izquierda -->
         <div class="bp-left">
             <h2 class="bp-title" set:html={title} />
-            <p class="bp-subtitle">{subtitle}</p>
+            <p class="bp-subtitle" set:html={subtitle}></p>
 
             <div class="bp-features">
                 {features.map((f) => (
@@ -254,7 +254,7 @@ const {
                         <div class="bp-feature-icon">{f.icon}</div>
                         <div class="bp-feature-text">
                             <h3>{f.title}</h3>
-                            <p>{f.description}</p>
+                            <p set:html={f.description}></p>
                         </div>
                     </div>
                 ))}
@@ -271,7 +271,7 @@ const {
                     {infoItems.map((item) => (
                         <div class="bp-info-item">
                             <h4>{item.title}</h4>
-                            <p>{item.description}</p>
+                            <p set:html={item.description}></p>
                         </div>
                     ))}
                 </div>

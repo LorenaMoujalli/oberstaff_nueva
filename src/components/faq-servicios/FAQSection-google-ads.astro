@@ -1,0 +1,187 @@
+---
+import FAQItem from "../faq/FAQItem.astro";
+import "../../styles/faq/faq-section.css";
+
+const faqs = [
+    {
+        question: "¿Qué nivel de permisos necesitan los expertos Google Ads en mi cuenta?",
+        answers: ["Necesitarán acceso 'Estándar' o 'Administrador' a Google Ads, además de permisos en GA4 y Google Tag Manager para configurar conversiones. Nuestra infraestructura legal (NDA) garantiza que esta cesión de accesos sea completamente segura."]
+    },
+    {
+        question: "¿Cómo superviso qué cambios están haciendo en mi inversión?",
+        answers: ["El profesional trabaja conectado a tus herramientas. Además, Google Ads posee un 'Historial de Cambios' donde puedes ver en tiempo real cada palabra clave añadida, cada ajuste de presupuesto y cada optimización realizada durante su jornada."]
+    },
+    {
+        question: "¿Qué ocurre si las campañas no son rentables en los primeros meses?",
+        answers: ["El algoritmo requiere una fase de aprendizaje. Sin embargo, si consideras que la estrategia técnica no es la adecuada, puedes cancelar la suscripción con 30 días de preaviso o solicitar un cambio de professional."]
+    },
+    {
+        question: "¿A quién le pago el presupuesto de los anuncios, a Google o a Oberstaff?",
+        answers: ["La inversión publicitaria siempre se factura directamente a tu empresa por parte de Google Ads (mediante tu tarjeta o cuenta bancaria). A Oberstaff únicamente le abonas la cuota mensual fija por los honorarios del especialista SEM y la gestión laboral."]
+    },
+    {
+        question: "¿Existe riesgo de pagar impuestos o contingencias laborales por el experto Google Ads?",
+        answers: ["Ninguno, nosotros contratamos al talento bajo la legislación de su país natal. Tu departamento financiero solo registra una factura B2B internacional por externalización de servicios."]
+    },
+    
+]; 
+
+interface Props {
+    title?: string;
+    ctaText?: string;
+    ctaButtonText?: string;
+    ctaButtonHref?: string;
+}
+
+const {
+    title = "Todo lo que necesitas saber antes de su <strong>expansión en LATAM</strong>",
+    ctaText = "¿No estás seguro de qué modelo necesitas? El staff augmentation es ideal para perfiles tech integrados en tu equipo. Pero dependiendo de tu operación, puede que necesites un servicio diferente o combinar varios.",
+    ctaButtonText = "Agenda una llamada gratuita",
+    ctaButtonHref = "#"
+} = Astro.props;
+---
+
+<style>
+    .faq-d-section {
+        background-color: #FAFAFC;
+        padding: 100px 20px;
+    }
+
+    .faq-d-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: start;
+    }
+
+    /* Left column: sticky, title + paragraph + button */
+    .faq-d-left {
+        position: sticky;
+        top: 120px;
+        align-self: start;
+        z-index: 10;
+    }
+
+    .faq-d-title {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 32px;
+        font-weight: 700;
+        font-style: normal;
+        color: #1a1a1a;
+        line-height: 1.3;
+        margin-bottom: 24px;
+        letter-spacing: -1px;
+    }
+
+    .faq-d-title :global(strong) {
+        font-weight: 900;
+        color: #6663FD;
+    }
+
+    .faq-d-text {
+        font-family: 'Poppins', sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        color: #5A5A5A;
+        line-height: 1.6;
+        margin-bottom: 28px;
+    }
+
+    .faq-d-btn {
+        display: inline-block;
+        background-color: #6663FD;
+        color: #ffffff;
+        padding: 14px 32px;
+        border: 2px solid #6663FD;
+        border-radius: 50px;
+        text-decoration: none;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        font-size: 15px;
+        transition: all 0.3s ease;
+    }
+
+    .faq-d-btn:hover {
+        background-color: transparent;
+        color: #6663FD;
+    }
+
+    /* Right column: FAQ accordion — sin scroll interno, altura libre */
+    .faq-d-right {
+        padding-right: 0;
+    }
+
+    @media (max-width: 1024px) {
+        .faq-d-container {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        .faq-d-left {
+            position: static;
+        }
+
+        .faq-d-right {
+            padding-right: 5px;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .faq-d-section {
+            padding: 60px 20px;
+        }
+
+        .faq-d-left {
+            text-align: center;
+        }
+
+        .faq-d-title {
+            font-size: 24px;
+        }
+
+        .faq-d-text {
+           text-align: center;
+           margin-left: auto;
+           margin-right: auto;
+           max-width: 400px;
+        }
+
+        .faq-d-text :global(br) {
+            display: none;
+        }
+
+        .faq-d-btn {
+            display: table; /* To allow margin: 0 auto with width: max-content behavior */
+            margin: 0 auto;
+            font-size: 13px;
+            padding: 12px 24px;
+        }
+    }
+</style>
+
+<section class="faq-d-section">
+    <div class="faq-d-container">
+        <div class="faq-d-left">
+            <h2 class="faq-d-title" set:html={title} />
+            <p class="faq-d-text" set:html={ctaText} />
+            <a href={ctaButtonHref} class="faq-d-btn">
+                {ctaButtonText}
+            </a>
+        </div>
+
+        <div class="faq-d-right">
+            {
+                faqs.map((faq) => (
+                    <FAQItem question={faq.question}>
+                        {faq.answers &&
+                            faq.answers.map((answer) => <p>{answer}</p>)}
+                    </FAQItem>
+                ))
+            }
+        </div>
+    </div>
+
+    <script src="../../scripts/faq.js"></script>
+</section>
