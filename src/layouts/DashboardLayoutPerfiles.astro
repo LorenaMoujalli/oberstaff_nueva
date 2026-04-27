@@ -1,6 +1,7 @@
 ---
 import HeaderPerfiles from "../components/HeaderPerfiles.astro";
 import FooterPerfiles from "../components/FooterPerfiles.astro";
+import VideoTestimonialModal from "../components/video/VideoTestimonialModal.astro";
 
 interface FooterLink {
     text: string;
@@ -54,6 +55,7 @@ const {
 			</main>
 			<FooterPerfiles title={footerTitle} links={footerLinks} />
 		</div>
+		<VideoTestimonialModal />
 	</body>
 </html>
 

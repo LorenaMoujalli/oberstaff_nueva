@@ -1,0 +1,26 @@
+---
+interface Props {
+    title: string;
+    description?: string;
+    description2?: string;
+    items?: string[];
+    type?: "default" | "negative" | "warning";
+}
+
+const { title, description, description2, items = [], type = "default" } = Astro.props;
+import "../../styles/guia-contratacion-perfiles/GuiaCard.css";
+---
+
+<div class={`guia-card ${type}`}>
+    <h3>{title}</h3>
+    {description && <p>{description}</p>}
+    {description2 && <p>{description2}</p>}
+    
+    {items.length > 0 && (
+        <ul class={type === "negative" ? "list-x" : type === "warning" ? "list-warning" : ""}>
+            {items.map((item) => (
+                <li>{item}</li>
+            ))}
+        </ul>
+    )}
+</div>

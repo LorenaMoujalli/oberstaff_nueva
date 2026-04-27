@@ -58,6 +58,14 @@
     margin-top: 28px;
 }
 
+/* Variante columna: badges apilados verticalmente (uno debajo del otro) */
+.badges-grid.badges-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
 .badge-pill {
     font-family: 'Poppins', sans-serif;
     display: inline-flex;

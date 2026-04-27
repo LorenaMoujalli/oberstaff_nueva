@@ -1,0 +1,18 @@
+---
+import "../../styles/guia-contratacion-perfiles/GuiaContratacionSection.css";
+
+interface Props {
+    customClass?: string;
+}
+
+const { customClass = "" } = Astro.props;
+---
+
+<section class={`guia-contratacion-section ${customClass}`}>
+    <div class="guia-container">
+        <slot name="header" />
+        <div class="guia-cards-grid">
+            <slot />
+        </div>
+    </div>
+</section>

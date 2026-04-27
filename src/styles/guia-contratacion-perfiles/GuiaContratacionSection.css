@@ -1,0 +1,30 @@
+.guia-contratacion-section {
+    --bg-light: #FAFAFC;
+   
+    
+    background-color: var(--bg-light);
+    padding: 80px 20px;
+    color: var(--text-dark);
+    border-top: 1px solid #E5E7EB;
+}
+
+.guia-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.guia-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+}
+
+@media (max-width: 768px) {
+    .guia-cards-grid { 
+        grid-template-columns: 1fr; 
+    }
+    
+    .guia-contratacion-section {
+        padding: 40px 20px;
+    }
+}

@@ -92,3 +92,15 @@
         height: 50px;
     }
 }
+
+.video-link {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #6663FD;
+    text-decoration: none;
+    margin-top: 25px;
+    display: inline-block;
+    transition: color 0.2s ease;
+}
+

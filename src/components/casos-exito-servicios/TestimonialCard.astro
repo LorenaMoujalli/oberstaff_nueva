@@ -7,9 +7,10 @@ interface Props {
     author: string;
     role: string;
     avatar?: string;
+    videoId?: string;
 }
 
-const { stars, text, author, role, avatar } = Astro.props;
+const { stars, text, author, role, avatar, videoId } = Astro.props;
 ---
 
 <div class="testimonial-card">
@@ -37,4 +38,9 @@ const { stars, text, author, role, avatar } = Astro.props;
     <!-- Cita -->
     <p class="testimonial-text" set:html={`"${text}"`}></p>
 
+    {videoId && (
+        <a href="javascript:void(0)" class="video-link open-testimonial-video" data-video-id={videoId}>
+            Ver testimonio en vídeo →
+        </a>
+    )}
 </div>

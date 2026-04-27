@@ -1,0 +1,59 @@
+.guia-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 40px;
+   border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+    height: 100%;
+}
+
+.guia-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #6663FD;
+    margin-bottom: 15px;
+   
+}
+
+.guia-card p {
+    font-family: 'Poppins', sans-serif;
+    color: #5A5A5A;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+/* Variants */
+.guia-card.negative h3 { color: #FF4D4D; }
+.guia-card.warning h3 { color: #FFA500; }
+
+.guia-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+
+.guia-card li {
+     font-family: 'Poppins', sans-serif;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 12px;
+    color: #5a5a5a;
+    font-size: 14px;
+}
+
+.guia-card.negative li::before {
+    content: "✕";
+    position: absolute;
+    left: 0;
+    color: #ef4444;
+    font-weight: bold;
+}
+
+.guia-card.warning li::before {
+    content: "⚠";
+    position: absolute;
+    left: 0;
+    color: #f59e0b;
+    font-size: 1.1rem;
+}

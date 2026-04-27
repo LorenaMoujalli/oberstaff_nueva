@@ -19,10 +19,10 @@ if (highlightWord && title.includes(highlightWord)) {
     <h2 id="que-es-title">
         {highlightWord && parts.length > 1 ? (
             <>
-                {parts[0]} <span class="blue-text">{highlightWord}</span> {parts[1]}
+                <span set:html={parts[0]} /> <span class="blue-text" set:html={highlightWord}></span> <span set:html={parts[1]} />
             </>
         ) : (
-            title
+            <span set:html={title} />
         )}
     </h2>
     <p set:html={description}></p>

@@ -46,7 +46,7 @@ import "../../styles/QueEsServicio/QueEsContent.css";
                         {checklistItems.map((item) => (
                             <li class="ques-checklist-item">
                                 <span class="ques-check-icon">✓</span>
-                                <span>{item}</span>
+                                <span set:html={item}></span>
                             </li>
                         ))}
                     </ul>

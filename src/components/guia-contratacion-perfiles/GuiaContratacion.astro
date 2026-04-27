@@ -1,0 +1,39 @@
+---
+import GuiaContratacionSection from "./GuiaContratacionSection.astro";
+import GuiaHeader from "./GuiaHeader.astro";
+import GuiaCard from "./GuiaCard.astro";
+
+interface CardData {
+    title: string;
+    description?: string;
+    description2?: string;
+    items?: string[];
+    type?: "default" | "negative" | "warning";
+}
+
+interface Props {
+    headerTitle: string;
+    headerDescription: string;
+    cards: CardData[];
+}
+
+const { headerTitle, headerDescription, cards = [] } = Astro.props;
+---
+
+<GuiaContratacionSection>
+    <GuiaHeader 
+        slot="header"
+        title={headerTitle}
+        description={headerDescription}
+    />
+
+    {cards.map((card) => (
+        <GuiaCard 
+            title={card.title}
+            description={card.description}
+            description2={card.description2}
+            items={card.items}
+            type={card.type}
+        />
+    ))}
+</GuiaContratacionSection>
