@@ -1,0 +1,698 @@
+---
+import DashboardLayoutPerfiles from "../../layouts/DashboardLayoutPerfiles.astro";
+import LeadHeroSection from "../../components/community-manager/LeadHeroSection.astro";
+import ComparisonPerfiles from "../../components/comparison-perfiles/ComparisonPerfiles.astro";
+import PricingCardPerfil from "../../components/pricing-perfil/PricingCardPerfil.astro";
+import BeneficiosPerfilDisenador from "../../components/beneficios-perfil/BeneficiosPerfilDisenador.astro";
+import PressSection from "../../components/press/PressSection.astro";
+import ConversionPerfilDisenador from "../../components/conversion-perfil/ConversionPerfilDisenador.astro";
+import RolesPerfil from "../../components/roles-del-perfil/RolesPerfil.astro";
+import QueEsServicioSection from "../../components/QueEsServicio/QueEsServicioSection.astro";
+import ServicesSection from "../../components/services-oberstaff/ServicesSection.astro";
+import EorStepsSection from "../../components/eor-steps-servicios/EorStepsSection.astro";
+import EorCta from "../../components/eor-cta-servicios/EorCta.astro";
+import CasosExitoSection from "../../components/casos-exito-servicios/CasosExitoSection.astro";
+import FAQSection from "../../components/faq-servicios/FAQSection-copywriter.astro";
+import GuiaContratacion from "../../components/guia-contratacion-perfiles/GuiaContratacion.astro";
+---
+
+<DashboardLayoutPerfiles
+    title="Contratar copywriter para tu negocio | Oberstaff  "
+    description="Contrata copywriter profesional para empresas: perfiles remotos de LATAM enfocados en conversión, captación y rendimiento comercial. "
+    footerTitle="Roles Relacionados"
+    footerLinks={[
+        {
+            text: "📊 Especialista en Google Ads",
+            href: "#",
+        },
+        {
+            text: "🔍 Especialista SEO",
+            href: "#",
+        },
+        {
+            text: "🎨  Diseñador gráfico",
+            href: "#",
+        },
+        {
+            text: "📱 Especialista en Meta Ads",
+            href: "#",
+        },
+    ]}
+    keywords="contratar copywriter" 
+>
+    <div class="service-detail-container" id="inicio">
+        <LeadHeroSection
+            topLabel="Redacción Persuasiva y CRO"
+            title="Contratar copywriter: convierte tu propuesta de valor en ventas con talento remoto de LATAM"
+            cardTitle="Impulsa tus conversiones"
+            cardSubtitle="Completa tus datos para recibir perfiles evaluados."
+            buttonText="Ver perfiles pre-evaluados y solicitar propuesta"
+            buttonIcon=""
+            buttonSubtext="↳ Tardarás menos de 1 minuto"
+            footerLinkText="Ver cómo funciona el modelo EOR →"
+            footerLinkHref="#como-contratar"
+            badges={[
+                {
+                    text: "Copywriting orientado a conversiones España",
+                    icon: "✍️",
+                },
+                { text: "Redacción persuasiva centrada en tu buyer persona", icon: "🎯" },
+                {
+                    text: "Inmersión total en tu identidad y tono de voz",
+                    icon: "🔍",
+                },
+                {
+                    text: "Entregas ágiles en horario compatible con España",
+                    icon: "⚡",
+                },
+            ]}
+            badgesClass="meta-ads-badges"
+        >
+            <Fragment slot="description">
+               Cuando una empresa invierte en tráfico, diseño o prospección pero el mensaje no termina de vender, el problema suele estar en el copy. Con <strong>Oberstaff<strong style="color: #ff66cc;">.</strong></strong> puedes contratar copywriter dedicado: un perfil remoto de LATAM que se integra en tu operativa y crea mensajes claros para web, landings, anuncios, emails y materiales comerciales dirigidos al mercado español.
+            </Fragment>
+        </LeadHeroSection>
+
+        <div class="fade-in-section">
+            <QueEsServicioSection
+                title="El impacto real del copywriting para empresas: <br>el texto que no convierte es dinero que se evapora"
+                highlightWord="el texto que no convierte es dinero que se evapora"
+                description="Muchas marcas tienen visitas, reuniones y campañas activas, pero siguen perdiendo oportunidades porque su propuesta de valor no está bien articulada. El problema no siempre es la captación; a menudo es que la web, los anuncios o los emails no responden con precisión a las dudas, objeciones y motivaciones reales del comprador."
+                imageSrc="/img1-copy.webp"
+                imageAlt="Profesional trabajando"
+                badgeText="Textos Orientados a Conversión"
+                quoteText="Al apostar por un copywriter profesional, no solo mejoras el tono: alineas promesa, oferta, diferenciación y llamada a la acción en cada punto del recorrido. Eso reduce fricción, mejora la calidad del lead y evita depender de servicios de copywriting dispersos que conocen tu negocio a medias."
+                checklistTitle="Checklist de ventajas operativas y ténicas:"
+                checklistItems={[
+                    "<span style='color: #1b1b1b; font-weight: 600;'>Textos originales y cedidos en exclusiva: </span> cada entregable pasa a ser propiedad intelectual de tu empresa desde el primer día, amparado por contrato.",
+                    "<span style='color: #1b1b1b; font-weight: 600;'>Coherencia editorial multicanal:</span> un único redactor que conoce tu voz de marca para landing pages, secuencias de email, fichas de producto y anuncios.",
+                    "<span style='color: #1b1b1b; font-weight: 600;'>Sin permanencia obligatoria:</span> si el tono de los textos no captura la esencia de tu marca, puedes cancelar o pedir un reemplazo sin indemnizaciones.",
+
+                ]}
+                ctaText=""
+                ctaHref="#"
+                diffIcon=""
+                diffTitle=""
+                diffDescription=""
+            />
+        </div>
+
+      <div class="fade-in-section">
+      <ServicesSection
+        title="¿Qué puede asumir un copywriter <strong>dentro de tu funnel comercial?</strong>"
+        description="Un copywriter profesional va mucho más allá de 'escribir bien'. Es el estratega que traduce los beneficios de tu producto o servicio en argumentos irresistibles. Domina la arquitectura del texto persuasivo, sabe dónde colocar el gancho, cómo gestionar la fricción del lector y cómo construir una llamada a la acción que active la decisión de compra. <br><br>Cuando una empresa decide contratar un copywriter, no solo gana capacidad de producción de contenidos: gana un perfil capaz de auditar los textos actuales, detectar fugas de conversión y elevar el rendimiento de cada página de su embudo."
+        customClass="employer-use-cases"
+        services={[
+          {
+            icon: "🏷️",
+            title: "Arquitectura de mensajes y propuesta de valor",
+            description:
+              "Define promesa principal, diferenciadores, tono de marca, objeciones y ángulos de comunicación para que toda tu empresa hable con una sola voz.",
+            linkText: "",
+            href: "",
+            customIconBg: "transparent",
+            cardClass: "card-green",
+          },
+          {
+            icon: "📱",
+            title: "Landings, home y páginas de servicio",
+            description:
+              "Redacción de copywriter web para home, páginas de servicio, landings de captación, páginas de venta y bloques críticos como héroe, beneficios, prueba social, FAQs y CTAs",
+            linkText: "",
+            href: "",
+            customIconBg: "transparent",
+            cardClass: "card-pink",
+          },
+          {
+            icon: "🎬",
+            title: "Emails de captación, nurturing y ventas",
+            description:
+              "Secuencias de bienvenida, recuperación, follow-up comercial, activación de leads y campañas de email con foco en respuesta, reunión o conversión.",
+            linkText: "",
+            href: "",
+            customIconBg: "transparent",
+            cardClass: "card-lime",
+          },
+          {
+            icon: "📊",
+            title: "Anuncios, hooks y test de promesas",
+            description:
+              "Apoyo al equipo de performance con anuncios, variaciones de hooks, claims, titulares, guiones cortos y copy para creatividades orientado a CTR, CPL y calidad del lead.",
+            linkText: "",
+            href: "",
+            customIconBg: "transparent",
+            cardClass: "card-purple",
+          },
+          {
+            icon: "🛒",
+            title: "Fichas de producto, checkout y microcopy",
+            description:
+              "Optimización de fichas, mensajes de checkout, microcopys de formularios, mensajes de error y textos de UX para reducir abandono y mejorar claridad.",
+            linkText: "",
+            href: "",
+            customIconBg: "transparent",
+            cardClass: "card-green",
+          },
+          {
+            icon: "💼",
+            title: "Sales enablement y materiales de cierre",
+            description:
+              "Argumentarios de ventas, one-pagers, presentaciones, propuestas y documentos comerciales que ayudan a tu equipo a defender mejor la oferta.",
+            linkText: "",
+            href: "",
+            customIconBg: "transparent",
+            cardClass: "card-lime",
+          },
+        ]}
+      />
+    </div>
+
+
+        <div class="fade-in-section">
+            <EorStepsSection
+                title="Cómo integrar servicios de copywriting <span style='color: #6663FD; font-weight: 800;'>sin frenar marketing, ventas ni producto</span>"
+                subtitle="El reto no es solo contratar un copywriter, sino elegir a alguien que entienda la economía real de tu oferta: quién compra, qué objeciones bloquean, qué activos hay que rehacer primero y cómo priorizar producción. Por eso filtramos con criterio tanto editorial como comercial."
+                steps={[
+                    {
+                        title: "Mapa de oferta, audiencia y objetivo",
+                        lineColorClass: "line-black",
+                        description:
+                            "En una llamada breve analizamos tu modelo de negocio, tu funnel, la etapa del proyecto, el volumen de piezas que necesitas y si buscas copywriting orientado a conversiones España, soporte B2B, eCommerce o campañas.",
+                        badge: "15 min · Sin compromiso",
+                    },
+                    {
+                        title: "Curación de perfiles de copywriting profesional para España",
+                        lineColorClass: "line-pink",
+                        description:
+                            "Preseleccionamos entre 3 y 5 perfiles con experiencia real según el canal y el contexto: web, email, paid media, producto, lifecycle o materiales para ventas.",
+                        badgeIcon: "",
+                        badge: "📋 Con ejemplos de copy verificados",
+                    },
+                    {
+                        title: "Entrevista y validación de criterio persuasivo",
+                        lineColorClass: "line-orange",
+                        description:
+                            "Hablas con los candidatos y validas cómo investigan, cómo estructuran el texto de una landing, cómo manejan objeciones y cómo adaptan la voz al mercado español. Tú decides quién entra.",
+                        badge: "Tú tienes la decisión final",
+                    },
+                    {
+                        title: "El copywriter empieza a producir",
+                        lineColorClass: "line-blue",
+                        description:
+                            "El profesional se integra en tus herramientas, recibe acceso a documentación, revisa activos existentes y arranca con un sprint inicial enfocado en los puntos donde hoy se pierde más conversión.",
+                        badge: "Producción activa desde el primer día",
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <EorCta
+                title="Encuentra el copywriter remoto que necesita tu empresa"
+                text="Indícanos si necesitas un copywriter para empresas especializado en paid media, email o en contenido web y recibe una propuesta personalizada en menos de 24 horas. Sin compromiso."
+                buttonText="👉 Incorporar un copywriter remoto a mi operativa "
+                buttonHref="#"
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <RolesPerfil
+                title="Qué tipo de copywriter necesitas <strong>según tu modelo <br> de negocio</strong>"
+                subtitle="El rol cambia si tu empresa vende servicios complejos, software, generación de demanda o eCommerce. Filtramos perfiles por canal, profundidad estratégica y ritmo de producción."
+                layout="modern"
+                customClass="grid-modern roles-copy-grid"
+                footerText=""
+                footerLinkText=""
+                footerLinkHref="#"
+                roles={[
+                    {
+                        title: "🎬 Contratar copywriter web para landing y CRO",
+                        description: "",
+                        icon: "",
+                        iconColor: "#FF66CC",
+                        borderColorClass: "border-pink",
+                        subtitle:
+                            "Perfil centrado en páginas de captación, estructura de landings, jerarquía de argumentos, prueba social, CTAs y mejora de conversión en activos web.",
+                        techStack: ["Hotjar", "Unbounce", "Webflow", "WordPress"],
+                        buttonText: "Solicitar más información →",
+                        buttonHref: "#",
+                    },
+                    {
+                        title: "✨ Copywriter de eCommerce y catálogo",
+                        description: "",
+                        icon: "",
+                        iconColor: "#3b76f6",
+                        borderColorClass: "border-blue",
+                        subtitle:
+                            "Redacción de fichas de producto, bundles, páginas de categoría, promociones y mensajes que mejoran la tasa de conversión y el ticket medio.",
+                        techStack: ["Shopify", "Klaviyo", "WooCommerce"],
+                        buttonText: "Solicitar más información →",
+                        buttonHref: "#",
+                    },
+                    {
+                        title: "🏢 Email copywriter para lifecycle y CRM",
+                        description: "",
+                        icon: "",
+                        iconColor: "#66FF99",
+                        borderColorClass: "border-green",
+                        subtitle:
+                            "Perfil enfocado en secuencias automatizadas, newsletters comerciales, lead nurturing, recuperación de carrito y campañas de activación o retención.",
+                        techStack: ["Klaviyo", "ActiveCampaign", "Mailchimp", "HubSpot"],
+                        buttonText: "Solicitar más información →",
+                        buttonHref: "#",
+                    },
+                    {
+                        title: "📱 Copywriter de lanzamientos y paid media",
+                        description: "",
+                        icon: "",
+                        iconColor: "#CCFF66",
+                        borderColorClass: "border-yellow",
+                        subtitle:
+                            "Especialista en variantes de anuncio para Google Ads y Meta Ads. Dominio del gancho (hook), headline y descripción con enfoque en el coste por adquisición.",
+                        techStack: ["Meta Ads", "VSL", "Google Ads", "Hooks", "Creatividades"],
+                        buttonText: "Solicitar más información →",
+                        buttonHref: "#",
+                    }
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <ComparisonPerfiles
+                title="Comparativa real: <span style='font-weight: 800; color: #6663FD;'> copywriter dedicado, freelance, <br> agencia o contratación local</span> "
+                subtitle="Si estás valorando servicios de copywriting, conviene comparar no solo el coste, sino también el nivel de contexto, la velocidad de iteración y cuánto conocimiento comercial se queda dentro de tu empresa."
+                footerNote="Precios orientativos. El coste final varía según especialidad, experiencia y país del profesional."
+                oberstaffLabel="<span style='color:#1B1B1B; font-weight: 800;'>Oberstaff<span style='color:#FF66CC; font-weight: 800;'>.</span></span><span style='color:#FF66CC; font-weight:700;'> (LATAM)</span>"
+                competitors={[
+                    "Copywriter local España",
+                    "Freelance / Marketplace",
+                    "Agencia de contenidos",
+                ]}
+                rows={[
+                    {
+                        label: "Coste mensual orientativo",
+                        oberstaffValue:
+                            "<strong><span class='icon-check'>✓</span>Desde 750€/mes</strong>",
+                        competitorValues: [
+                            "<span class='icon-cross'>✕</span>1.900–3.200€ + SS",
+                            "<span class='icon-cross'>✕</span>Variable por entregable (800–2.500€)",
+                            "<span class='icon-cross'>✕</span>Fee base + coste por pieza",
+                        ],
+                    },
+                    {
+                        label: "Dedicación a tu marca",
+                        oberstaffValue:
+                            "<span class='icon-check'>✓</span> 100% exclusivo. Conoce tu voz y tus productos a fondo",
+                        competitorValues: [
+                            "<span class='icon-check'>✓</span> Total",
+                            "<span class='icon-warning'>⚠</span> Multicliente. La calidad varía con su carga",
+                            "<span class='icon-cross'>✕</span> Tu cuenta se reparte entre varios redactores",
+                        ],
+                    },
+                    {
+                        label: "Propiedad intelectual del copy",
+                        oberstaffValue:
+                            "<span class='icon-check'>✓</span>  Blindada por contrato desde el primer entregable",
+                        competitorValues: [
+                            "<span class='icon-check'>✓</span> Total",
+                            "<span class='icon-warning'>⚠</span> Hay que negociarla expresamente",
+                            "<span class='icon-warning'>⚠</span> Suele incluir cláusulas de uso limitado",
+                        ],
+                    },
+                    {
+                        label: "Tiempo de respuesta a revisiones",
+                        oberstaffValue:
+                            "<span class='icon-check'>✓</span>  Inmediato (horario compatible con España)",
+                        competitorValues: [
+                            "<span class='icon-check'>✓</span> Inmediato",
+                            "<span class='icon-warning'>⚠</span> Depende de su disponibilidad y cartera",
+                            "<span class='icon-cross'>✕</span> Sujeto a tiempos de gestión interna",
+                        ],
+                    },
+                    {
+                        label: "Coherencia de tono entre canales",
+                        oberstaffValue:
+                            "<span class='icon-check'>✓</span> Máxima. Un único redactor para todos tus textos",
+                        competitorValues: [
+                            "<span class='icon-check'>✓</span> Alta",
+                            "<span class='icon-warning'>⚠</span> Baja si cambias de profesional por proyecto",
+                            "<span class='icon-cross'>✕</span> Varios redactores = estilos distintos",
+                        ],
+                    },
+                    {
+                        label: "Validación de habilidades",
+                        oberstaffValue:
+                            "<span class='icon-check'>✓</span> Nulo",
+                        competitorValues: [
+                            "<span class='icon-cross'>✕</span> Solo CV/portfolio",
+                            "<span class='icon-cross'>✕</span> Solo portfolio o reseñas",
+                            "<span class='icon-check'>✓</span> Equipos formados internamente",
+                        ],
+                    },
+                    {
+                        label: "Riesgo de indemnización",
+                        oberstaffValue:
+                            "<span class='icon-check'>✓</span> Nulo",
+                        competitorValues: [
+                            "<span class='icon-cross'>✕</span> Alto (legislación española)",
+                            "<span class='icon-check'>✓</span> Nulo",
+                            "<span class='icon-warning'>⚠</span> Penalizaciones por cancelación anticipada",
+                        ],
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <PricingCardPerfil
+                sectionTitle="Una estructura mensual para producir copy cada día, <br> <span style='color:#6663FD; font-weight: 900;'>no por entregas sueltas</span> "
+                sectionSubtitle=""
+                cardTitle="Fee mensual único"
+                cardSubtitle="Jornada completa dedicada a tu estrategia de contenidos."
+                priceLabel="DESDE"
+                priceAmount="750€"
+                pricePeriod="/ mes"
+                features={[
+                    "Copy web y landing pages con arquitectura de conversión (PAS, AIDA, StoryBrand).",
+                    "Textos para paid media",
+                    "Secuencias de email marketing y automatizaciones de nurturing.",
+                    "Fichas de producto, textos de categoría.",
+                    "Guiones de vídeo, explainers y contenido para podcast.",
+                    "Cesión total de derechos de autoría sobre cada entregable.",
+                ]}
+                ctaText="Solicitar propuesta"
+                ctaHref="#"
+                disclaimer="*Precios orientativos según seniority, especialidad y país del profesional. Sin costes ocultos ni comisiones adicionales."
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <BeneficiosPerfilDisenador
+                title="Contratar copywriter con <br> <span style='color:#6663FD; font-weight: 900;'> Oberstaff<span style='color:#FF66CC; font-weight: 900;'>.</span></span> ¿por qué confiar tu mensaje a talento de LATAM?"
+                subtitle="El impacto no se limita a tener textos “mejores”. Un copywriter para empresas dedicado ordena la comunicación, reduce contradicciones entre canales y convierte el mensaje en una infraestructura que marketing, ventas y producto pueden reutilizar y optimizar."
+                image="/img2-copy.webp"
+                imageAlt=""
+                infoTitle="Banderas rojas: qué revisar antes de contratar servicios de copywriting externos"
+                features={[
+                    {
+                        icon: "🎯",
+                        title: "Coherencia en todo el recorrido del cliente",
+                        description:
+                            "La misma promesa se sostiene desde el anuncio hasta la reunión, la página de servicio, el email de seguimiento y el onboarding inicial.",
+                    },
+                    {
+                        icon: "⚡",
+                        title: "Más velocidad para lanzar y optimizar",
+                        description:
+                            "En lugar de pedir piezas sueltas, tienes a una persona que conoce tu negocio y puede iterar copy con rapidez cuando hay que mover una campaña o rehacer una página.",
+                    },
+                    {
+                        icon: "🛡️",
+                        title: "Conocimiento comercial que se queda dentro de la empresa",
+                        description:
+                            "Los aprendizajes del funnel y las bibliotecas de claims no se pierden al final de un proyecto aislado: se acumulan dentro de tu operación.",
+                    },
+                    
+                ]}
+                infoItems={[
+                    {
+                        title: "",
+                        description: "",
+                    },
+                    {
+                        title: "",
+                        description: "",
+                    },
+                    {
+                        title: "",
+                        description: "",
+                    },
+                ]}
+            >
+                <div class="meta-custom-notice">
+                    Recibes una sola factura mensual en euros y mantienes la propiedad del trabajo y las piezas finales.
+                </div>
+            </BeneficiosPerfilDisenador>
+        </div>
+
+        <div class="fade-in-section">
+            <GuiaContratacion
+                headerTitle="Manual para contratar un copywriter profesional: <br> <span style='color:#6663FD; font-weight: 900;'>criterios que separan al redactor del conversor</span>"
+                headerDescription="Si una empresa decide contratar copywriter, debería revisar mucho más que un portfolio. El verdadero criterio está en cómo piensa la conversión, cómo investiga el mercado y cómo traduce complejidad comercial en mensajes accionables."
+                cards={[
+                    {
+                        title: "📋 Qué entregables debes definir antes de empezar",
+                        description:
+                            "No es lo mismo necesitar una web corporativa, una landing de captación, emails de nurturing o un sistema completo de mensajes. Cuanto más claro sea el alcance, más fácil será elegir el perfil correcto.",
+                        description2:
+                            "",
+                    },
+                    {
+                        title: "🧭 Cuándo elegir generalista o especialista por canal",
+                        description:
+                            "Si necesitas ordenar la comunicación global de la empresa, puede funcionar un generalista sólido. Si el cuello de bottleneck está en emails, eCommerce, paid media o conversión web, conviene un especialista con experiencia concreta.",
+                        description2:
+                             "",
+                    }, 
+                    {
+                        title: "🧠 ¿Qué frameworks de copy debe dominar un perfil senior?",
+                        description:
+                            "Un buen perfil debe manejar estructuras como AIDA, PAS, BAB, StoryBrand y Jobs To Be Done. Más importante aún: debe justificar cada decisión editorial según la intención del usuario, la objeción y el punto del funnel.",
+                        description2:
+                             "",
+                    }, 
+                    {
+                        title: "⚙️ ¿Cuándo conviene contratar un copywriter en lugar de servicios de copywriting puntuales?",
+                        description:
+                            "Muchas empresas empiezan comparando servicios de copywriting por proyecto, pero descubren que la mayor mejora aparece cuando una persona entiende el negocio, documenta aprendizajes, coordina con el equipo y produce el mensaje como sistema continuo.",
+                        description2:
+                             "", 
+                    }, 
+                     {
+                        title: "🌎 ¿Tiene sentido contratar copywriting desde LATAM para España?",
+                        description:
+                            "Sí, especialmente cuando buscas dedicación estable, afinidad cultural y una franja horaria que permita iterar durante la jornada española. Nuestro filtro prioriza perfiles capaces de adaptar tono, referencias y claridad comercial al mercado local.",
+                        description2:
+                             "", 
+                    }, 
+                
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <CasosExitoSection
+                title="El modelo <span style='font-weight: 900; color: #6663FD;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span> ya está validado por empresas españolas que amplían equipo remoto"
+                subtitle=""
+                testimonials={[
+                    {
+                        stars: 5,
+                        avatar: "/fernando.webp",
+                        text: "Estaba en busca de talento remoto especializado para mi empresa y después de varias búsquedas sin éxito, encontré a Oberstaff en Instagram. Desde nuestra primera llamada, su profesionalismo y calidad de trabajo me dejaron impresionado. Ahora, gracias a su excelente servicio, he expandido mi contrato con ellos para incluir más personal.",
+                        author: "Fernando Calderón",
+                        role: "CEO · BeautyPro",
+                        videoId: "24KxCAFGrDs",
+                    },
+                    {
+                        stars: 5,
+                        avatar: "/sha.webp",
+                        text: "Con Oberstaff pude dar trabajo a dos personas a tiempo completo, ahorrando costes de reclutamiento, espacios de oficina y salario que tendría al hacerlo en España. Lo mejor de todo es que todo está incluido en una misma factura. Con Oberstaff, encontré la solución perfecta para mis necesidades de contratación remota y optimización de costes.",
+                        author: "Shadai Iborra",
+                        role: "CEO · @amediastory",
+                        videoId: "_CxlPfluS7M",
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <FAQSection
+                title="Dudas clave antes de <br> <strong>contratar copywriting <br> para empresas</strong>"
+                ctaText="Respondemos las dudas más habituales de las compañías españolas que quieren incorporar un redactor remoto de forma estable."
+                ctaButtonText="Hablar con asesor →"
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <PressSection title="Prensa y menciones" />
+        </div>
+
+        <div class="fade-in-section">
+            <ConversionPerfilDisenador
+                title="Encuentra al copywriter ideal para transformar tus textos en <strong>tu mejor vendedor</strong>"
+                subtitle="Rellena el formulario y cuéntanos qué necesitas mejorar: páginas de servicio, landings, emails, anuncios o materiales de ventas. Evaluaremos tu caso y te enviaremos una propuesta personalizada para incorporar al perfil adecuado."
+                buttonText="Solicitar propuesta gratuita →"
+                noteText=""
+            />
+        </div>
+    </div>
+
+    <style>
+        .service-detail-container {
+        }
+
+        :global(.meta-ads-badges) {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 10px !important;
+        }
+
+        .service-detail-container .roles-copy-grid {
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .service-detail-container :global(.guia-cards-grid .guia-card:nth-child(5)) {
+            grid-column: 1 / -1;
+        }
+
+        .service-detail-container :global(.employer-use-cases-grid) {
+            grid-template-columns: repeat(3, 1fr) !important;
+        }
+
+        @media (max-width: 900px) {
+            .service-detail-container :global(.employer-use-cases-grid) {
+                grid-template-columns: 1fr !important;
+            }
+        }
+
+        .service-detail-container :global(.employer-use-cases-grid .icon-box) {
+            background-color: transparent !important;
+            border: none !important;
+            padding: 0 !important;
+            width: 100% !important;
+            height: auto !important;
+            margin-bottom: 25px !important;
+            justify-content: flex-start !important;
+        }
+
+        .service-detail-container :global(.employer-use-cases-grid .icon-emoji-servicios-home) {
+            font-size: 35px !important;
+            padding: 0 !important;
+        }
+
+        @media (max-width: 768px) {
+            .service-detail-container :global(.employer-use-cases-grid .icon-emoji-servicios-home) {
+                font-size: 30px !important;
+                padding: 0 !important;
+            }
+        }
+
+        /* Estilos específicos para QueEsServicioSection en esta página */
+        :global(.que-es-servicio-section .quote-blue-border) {
+            border-left: 4px solid #ff66cc !important;
+            color: #ff66cc !important;
+            font-size: 16px !important;
+            margin-top: 0 !important; /* Para alinear con el inicio de la imagen */
+            font-weight: 600 !important;
+        }
+
+        :global(.que-es-servicio-section .que-es-main-content) {
+            align-items: flex-start !important;
+        }
+
+        /* Fondo exclusivo para la sección de áreas del diseñador */
+        .service-detail-container :global(section.employer-use-cases) {
+            background-color: #fafafc !important;
+        }
+
+        /* Fondo exclusivo para la sección de casos de éxito en esta página */
+        :global(.casos-exito) {
+            background-color: #fafafc !important;
+
+            padding-bottom: 80px !important;
+        }
+
+        /* Estilos específicos para la sección FAQ en esta página */
+        :global(.faq-disenador-custom .faq-columns) {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            text-align: center !important;
+        }
+
+        :global(.faq-disenador-custom .faq-left-column) {
+            position: static !important;
+            width: 100% !important;
+            max-width: 800px !important;
+            margin-bottom: 40px !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            text-align: left !important;
+        }
+
+        :global(.faq-disenador-custom .faq-main-title) {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            text-align: left !important;
+        }
+
+        :global(.faq-disenador-custom .faq-right-column) {
+            display: none !important;
+        }
+
+        :global(.faq-disenador-custom .faq-cta-card) {
+            margin: 0 !important;
+            padding: 0 !important;
+            max-width: 600px !important;
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+            text-align: left !important;
+        }
+
+        :global(.faq-disenador-custom .faq-cta-card p) {
+            font-family: "Poppins", sans-serif !important;
+            font-size: 18px !important;
+            font-weight: 400 !important;
+            color: #5a5a5a !important;
+            line-height: 1.6 !important;
+            margin-bottom: 30px !important;
+        }
+
+        :global(.faq-disenador-custom .faq-cta-button) {
+            background-color: #6663fd !important;
+            border: 2px solid #6663fd !important;
+            color: #ffffff !important;
+            width: auto !important;
+            min-width: 220px !important;
+            padding: 14px 32px !important;
+            font-size: 15px !important;
+            display: inline-block !important;
+        }
+
+        :global(.faq-disenador-custom .faq-cta-button:hover) {
+            background-color: transparent !important;
+            border: 2px solid #6663fd !important;
+            color: #6663fd !important;
+        }
+
+        /* Ocultar la tarjeta de información en BeneficiosPerfilDisenador */
+        :global(.bp-info-card) {
+            display: none !important;
+        }
+
+        .meta-custom-notice {
+            font-family: "Poppins", sans-serif;
+            margin-top: 40px;
+            padding: 24px 30px;
+            background-color: #f7f8fc;
+            border-left: 4px solid #ff66cc;
+            color: #ff66cc;
+            font-family: "Montserrat", sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        :global(.faq-d-section) {
+            border-top: 1px solid #e5e7eb;
+        }
+
+        :global(.casos-exito) {
+            background-color: #ffffff !important;
+        }
+    </style>
+</DashboardLayoutPerfiles>
