@@ -3,274 +3,621 @@
 ---
 
 <header class="main-header">
-    <div class="header-container">
+    <div class="header-pill">
+
+        <!-- Logo -->
         <div class="logo-section">
-            <a href="/home">
-                <img
-                    src="/logo-oberstaff.webp"
-                    alt="Oberstaff Logo"
-                    class="logo"
-                />
+            <a href="/home" class="logo-link">
+                <span class="logo-text">Oberstaff<span class="logo-dot">.</span></span>
             </a>
         </div>
 
-        <button
-            class="mobile-menu-toggle"
-            aria-label="Abrir menú"
-            id="menu-toggle"
-        >
-            <iconify-icon
-                icon="solar:hamburger-menu-linear"
-                class="hamburger-icon"></iconify-icon>
+        <!-- Mobile toggle -->
+        <button class="mobile-menu-toggle" aria-label="Abrir menú" id="menu-toggle">
+            <iconify-icon icon="solar:hamburger-menu-linear" class="hamburger-icon"></iconify-icon>
         </button>
 
+        <!-- Nav + right section -->
         <div class="header-nav-wrapper" id="nav-wrapper">
             <nav class="nav-links">
                 <ul>
-                    <li><a href="#servicios">Servicios</a></li>
-                    <li><a href="#como-funciona">Cómo Funciona</a></li>
-                    <li><a href="#perfiles">Perfiles</a></li>
-                    <li><a href="#precios">Precios</a></li>
+                    <li><a href="/home">Inicio</a></li>
+
+                    <!-- Servicios dropdown -->
+                    <li class="has-dropdown">
+                        <button class="nav-dropdown-btn" aria-expanded="false">
+                            Servicios <iconify-icon icon="solar:alt-arrow-down-linear" class="chevron"></iconify-icon>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="/servicios/employer-of-record">Employer of Record (EOR)</a>
+                            <a href="/servicios/outsourcing-de-personal">Outsourcing de Personal</a>
+                            <a href="/servicios/staff-augmentation">Staff Augmentation</a>
+                            <a href="/servicios/contractor-of-Record">Contractor of Record (CoR)</a>
+                        </div>
+                    </li>
+
+                    <!-- Contratar dropdown -->
+                    <li class="has-dropdown">
+                        <button class="nav-dropdown-btn" aria-expanded="false">
+                            Contratar <iconify-icon icon="solar:alt-arrow-down-linear" class="chevron"></iconify-icon>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="/servicios/contratar-experto-seo">Experto SEO</a>
+                            <a href="/servicios/contratar-copywriter">Copywriter</a>
+                            <a href="/servicios/experto-en-meta-ads">Experto Meta Ads</a>
+                            <a href="/servicios/especialista-en-google-ads">Especialista Google Ads</a>
+                            <a href="/servicios/contratar-community-manager">Community Manager</a>
+                            <a href="/servicios/contratar-editor-de-videos">Editor de Videos</a>
+                            <a href="/servicios/contratar-un-asistente-virtual">Asistente Virtual</a>
+                            <a href="/servicios/contratar-contable">Contable</a>
+                        </div>
+                    </li>
+
+                    <!-- Recursos dropdown -->
+                    <li class="has-dropdown">
+                        <button class="nav-dropdown-btn" aria-expanded="false">
+                            Recursos <iconify-icon icon="solar:alt-arrow-down-linear" class="chevron"></iconify-icon>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="#">Blog</a>
+                            <a href="#">Guías</a>
+                        </div>
+                    </li>
+
+                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="#">Contacto</a></li>
+
+                    <!-- Phone number inline -->
+                    <li class="nav-phone">
+                        <span class="phone-number">
+                            📞 +34 930 289 966
+                        </span>
+                    </li>
                 </ul>
             </nav>
 
-            <div class="auth-section">
-                <span class="phone-number">
-                    <iconify-icon icon="solar:phone-bold" class="phone-icon"
-                    ></iconify-icon>
-                    +34 930 289 966
-                </span>
-                <!-- 
-                <a href="/home" class="login-link">Log in</a>
-                <a href="/home" class="signup-button">Sign Up</a>
-                -->
+            <!-- Right: phone + language -->
+            <div class="header-right">
+                <div class="lang-switcher">
+                    <button class="lang-btn active" id="lang-es">ES</button>
+                    <button class="lang-btn" id="lang-fr">PR</button>
+                    <button class="lang-btn" id="lang-en">EN</button>
+                </div>
             </div>
         </div>
     </div>
 </header>
 
 <script>
+    // Mobile menu toggle
     const menuToggle = document.getElementById("menu-toggle");
     const navWrapper = document.getElementById("nav-wrapper");
-    const navLinksList = document.querySelectorAll(".nav-links a");
 
-    // Función para alternar el menú y el icono
-    function toggleMenu() {
+    function toggleMobileMenu() {
         if (!navWrapper) return;
         navWrapper.classList.toggle("is-open");
-
         const icon = menuToggle?.querySelector("iconify-icon");
         if (icon) {
-            if (navWrapper.classList.contains("is-open")) {
-                icon.setAttribute("icon", "solar:close-square-linear");
-            } else {
-                icon.setAttribute("icon", "solar:hamburger-menu-linear");
-            }
+            icon.setAttribute(
+                "icon",
+                navWrapper.classList.contains("is-open")
+                    ? "solar:close-square-linear"
+                    : "solar:hamburger-menu-linear"
+            );
         }
     }
 
-    if (menuToggle && navWrapper) {
-        menuToggle.addEventListener("click", toggleMenu);
+    menuToggle?.addEventListener("click", toggleMobileMenu);
 
-        // Cerrar el menú al hacer clic en un enlace
-        navLinksList.forEach(link => {
-            link.addEventListener("click", () => {
-                // Solo ejecutar si el menú está abierto
-                if (navWrapper.classList.contains("is-open")) {
-                    toggleMenu();
-                }
+    // Dropdowns: click on mobile, hover handled by CSS on desktop
+    const dropdownItems = document.querySelectorAll(".has-dropdown");
+    dropdownItems.forEach((item) => {
+        const btn = item.querySelector(".nav-dropdown-btn");
+
+        // Mobile: toggle on click
+        btn?.addEventListener("click", (e) => {
+            const isMobile = window.innerWidth <= 1024;
+            if (!isMobile) return;
+
+            e.stopPropagation();
+            const isOpen = item.classList.contains("open");
+
+            dropdownItems.forEach((d) => {
+                d.classList.remove("open");
+                d.querySelector(".nav-dropdown-btn")?.setAttribute("aria-expanded", "false");
             });
+
+            if (!isOpen) {
+                item.classList.add("open");
+                btn.setAttribute("aria-expanded", "true");
+            }
         });
-    }
+    });
+
+    // Close mobile dropdowns on outside click
+    document.addEventListener("click", () => {
+        if (window.innerWidth <= 1024) {
+            dropdownItems.forEach((d) => {
+                d.classList.remove("open");
+                d.querySelector(".nav-dropdown-btn")?.setAttribute("aria-expanded", "false");
+            });
+        }
+    });
+
+    // Language switcher
+    document.querySelectorAll(".lang-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+            document.querySelectorAll(".lang-btn").forEach((b) => b.classList.remove("active"));
+            btn.classList.add("active");
+        });
+    });
 </script>
 
 <style>
+    /* ===== HEADER WRAPPER ===== */
     .main-header {
         width: 100%;
-        background: white;
-        border-bottom: 1px solid #f0f0f0;
+        display: flex;
+        justify-content: center;
+        padding: 12px 20px;
         position: sticky;
         top: 0;
         z-index: 1000;
-        padding: 0.75rem 0;
+        background: transparent;
+        pointer-events: none;
     }
 
-    .header-container {
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 0 2rem;
-        display: grid;
-        grid-template-columns: 1fr auto 1fr;
+    /* ===== PILL ===== */
+    .header-pill {
+        pointer-events: all;
+        background: #1B1B1B;
+        border-radius: 60px;
+        padding: 10px 25px;
+        height: 52px;
+        max-width: 1200px;
+        width: 100%;
+        display: flex;
         align-items: center;
+        gap: 24px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
+    /* ===== LOGO ===== */
     .logo-section {
+        flex-shrink: 0;
+    }
+
+    .logo-link {
+        text-decoration: none;
+    }
+
+    .logo-text {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 800;
+        font-size: 18px;
+        color: #ffffff;
+        letter-spacing: -0.5px;
+    }
+
+    .logo-text:hover {
+        opacity: 0.8;
+    }
+
+    .logo-dot {
+        color: #ff66cc;
+    }
+
+    /* ===== MOBILE TOGGLE ===== */
+    .mobile-menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: #ffffff;
+        margin-left: auto;
+        -webkit-tap-highlight-color: transparent;
+        outline: none;
+    }
+
+    .mobile-menu-toggle:focus,
+    .mobile-menu-toggle:active {
+        outline: none;
+        background: none;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .hamburger-icon {
+        font-size: 1.6rem;
+        color: #ffffff;
+    }
+
+    /* ===== NAV WRAPPER ===== */
+    .header-nav-wrapper {
+        display: contents;
+    }
+
+    /* ===== NAV LINKS ===== */
+    .nav-links {
+        flex: 1;
         display: flex;
         justify-content: flex-start;
-    }
-
-    .auth-section {
-        display: flex;
-        justify-content: flex-end;
-    }
-
-    .logo {
-        height: 40px;
-        display: block;
-        transition: height 0.3s ease;
-        object-fit: contain;
-    }
-    @media (max-width: 1024px) {
-        .logo {
-            height: 32px;
-        }
-    }
-
-    .mobile-menu-toggle {
-        display: none; /* Hidden on desktop */
-    }
-
-    .header-nav-wrapper {
-        display: contents; /* Allows children to participate in the container grid */
-    }
-
-    .nav-links {
-        display: flex;
-        justify-content: center;
     }
 
     .nav-links ul {
         list-style: none;
         display: flex;
-        gap: 2.5rem;
+        align-items: center;
+        gap: 4px;
         margin: 0;
         padding: 0;
     }
 
-    .nav-links a {
-        font-family: "Poppins", sans-serif;
+    .nav-links ul li {
+        position: relative;
+    }
+
+    .nav-links ul li > a,
+    .nav-dropdown-btn {
+        font-family: 'Poppins', sans-serif;
+        font-size: 14px;
+        font-weight: 300;
+        color: #E0E0E0;
         text-decoration: none;
-        color: #444; /* Light black */
-        font-weight: 500;
-        font-size: 0.95rem;
-        transition: color 0.2s ease;
-    }
-
-    .nav-links a:hover {
-        color: #ff66cc; /* Pink hover */
-    }
-
-    .auth-section {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 6px 10px;
+        border-radius: 6px;
         display: flex;
         align-items: center;
-        gap: 1.5rem;
-        justify-content: flex-end;
+        gap: 4px;
+        transition: color 0.2s ease, background 0.2s ease;
+        white-space: nowrap;
+        -webkit-tap-highlight-color: transparent;
+        outline: none;
+    }
+
+    .nav-links ul li > a:focus,
+    .nav-links ul li > a:active,
+    .nav-dropdown-btn:focus,
+    .nav-dropdown-btn:active {
+        background: none;
+        outline: none;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .nav-links ul li > a:hover,
+    .nav-dropdown-btn:hover {
+        color: #ffffff;
+       
+    }
+
+    .chevron {
+        font-size: 0.75rem;
+        transition: transform 0.2s ease;
+    }
+
+    .has-dropdown.open .chevron {
+        transform: rotate(180deg);
+    }
+
+    /* ===== DROPDOWN MENU — desktop hover ===== */
+    .dropdown-menu {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        position: absolute;
+        top: calc(100% + 8px);
+        left: 0;
+        transform: translateY(-6px);
+        opacity: 0;
+        pointer-events: none;
+        visibility: hidden;
+        transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+
+        background: #ffffff;
+        border-radius: 14px;
+        padding: 8px;
+        min-width: 230px;
+        box-shadow:
+            0 4px 6px rgba(0,0,0,0.04),
+            0 12px 40px rgba(0,0,0,0.14);
+        z-index: 2000;
+    }
+
+    /* Small caret pointing up — left aligned */
+    .dropdown-menu::before {
+        content: "";
+        position: absolute;
+        top: -7px;
+        left: 22px;
+        transform: none;
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        border-bottom: 7px solid #ffffff;
+        filter: drop-shadow(0 -2px 2px rgba(0,0,0,0.06));
+    }
+
+    /* Show on hover (desktop only) */
+    @media (min-width: 1025px) {
+        /* Invisible bridge to prevent hover gap from closing the dropdown */
+        .has-dropdown::after {
+            content: "";
+            position: absolute;
+            bottom: -12px;     /* matches the gap between button and dropdown */
+            left: 0;
+            width: 100%;
+            height: 14px;     /* slightly taller than the gap */
+            background: transparent;
+        }
+
+        .has-dropdown:hover .dropdown-menu {
+            opacity: 1;
+            pointer-events: all;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .has-dropdown:hover .chevron {
+            transform: rotate(180deg);
+        }
+
+        /* Small close delay so the dropdown doesn’t snap shut instantly */
+        .dropdown-menu {
+            transition:
+                opacity 0.2s ease 0.1s,
+                transform 0.2s ease 0.1s,
+                visibility 0s ease 0.3s;
+        }
+
+        .has-dropdown:hover .dropdown-menu {
+            transition:
+                opacity 0.2s ease,
+                transform 0.2s ease,
+                visibility 0s ease;
+        }
+    }
+
+    /* Mobile: show on .open class (JS-toggled) */
+    @media (max-width: 1024px) {
+        .dropdown-menu {
+            position: static;
+            display: none;
+            opacity: 1;
+            pointer-events: all;
+            visibility: visible;
+            transform: none;
+            box-shadow: none;
+            background: rgba(255,255,255,0.06);
+            border-radius: 8px;
+            margin-top: 4px;
+            padding: 4px;
+        }
+        .has-dropdown.open .dropdown-menu {
+            display: flex;
+        }
+    }
+
+    .dropdown-menu a {
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 0.85rem;
+        font-weight: 400;
+        color: #444444;
+        text-decoration: none;
+        padding: 10px 14px;
+        border-radius: 8px;
+        transition: color 0.15s ease, background 0.15s ease, transform 0.15s ease;
+        white-space: nowrap;
+    }
+
+    .dropdown-menu a:hover {
+        color: #6663FD;
+        background-color: #FAFAFC;
+        transform: translateX(5px);
+    }
+
+    /* Mobile dropdown links stay light */
+    @media (max-width: 1024px) {
+        .dropdown-menu a {
+            color: #cccccc;
+        }
+        .dropdown-menu a:hover {
+            color: #ffffff;
+            background: rgba(255,255,255,0.08);
+        }
+    }
+
+    /* ===== RIGHT SECTION ===== */
+    .header-right {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        flex-shrink: 0;
+        margin-left: auto;
     }
 
     .phone-number {
-        font-weight: 500;
-        color: #333;
-        font-size: 0.95rem;
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.82rem;
+        font-weight: 600;
+        color: #cccccc;
         display: flex;
         align-items: center;
-        gap: 0.5rem;
+        gap: 6px;
+        white-space: nowrap;
     }
 
-    .phone-icon {
-        color: #444;
-        font-size: 0.85rem;
+    .phone-flag {
+        font-size: 0.9rem;
     }
 
-    .login-link {
-        font-family: "Poppins", sans-serif;
-        text-decoration: none;
-        color: #1b1b1b;
-        font-weight: 700;
-        font-size: 0.95rem;
-        transition: color 0.2s ease;
+    /* Inline nav phone item */
+    .nav-phone {
+        margin-left: 4px;
     }
 
-    .login-link:hover {
-        color: #ff66cc; /* Pink hover */
+    .nav-phone .phone-number {
+        font-family: 'Times New Roman', Times, serif;
+       color: #FFFFFF;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+    padding: 5px 12px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
     }
 
-    .signup-button {
-        font-family: "Poppins", sans-serif;
-        text-decoration: none;
-        background-color: #ff66cc;
-        color: #1b1b1b;
-        padding: 0.6rem 1.5rem;
+    .nav-phone .phone-number:hover {
+   opacity: 1;
+  background: rgba(255,255,255,0.1);
+  border-color: #FFFFFF;
+  cursor: pointer;
+}
+
+    /* ===== LANGUAGE SWITCHER ===== */
+    .lang-switcher {
+        display: flex;
+        align-items: center;
+        background: #000000;
         border-radius: 50px;
+        padding: 4px;
+           border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .lang-btn {
+     font-family: 'Times New Roman', Times, serif;
+        font-size: 12px;
         font-weight: 600;
-        font-size: 0.95rem;
-        transition: transform 0.2s ease;
-        display: inline-block;
+        color: #888888;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 4px 14px;
+        border-radius: 100px;
+        transition: all 0.2s ease;
+   border-radius: 50px;
     }
 
-    .signup-button:hover {
-        transform: scale(1.05); /* Grows a bit on hover */
+    .lang-btn:hover {
+        color: #ffffff;
     }
 
+    .lang-btn.active {
+        font-family: 'Times New Roman', Times, serif;
+        background: #ffffff;
+        color: #1a1a1a;
+    }
+
+    /* ===== MOBILE ===== */
     @media (max-width: 1024px) {
-        .header-container {
-            display: flex;
-            justify-content: space-between;
+        .main-header {
+            padding: 10px 16px;
+        }
+
+        .header-pill {
+            border-radius: 25px;
+            padding: 0 16px;
         }
 
         .mobile-menu-toggle {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            background: none;
-            border: none;
-            cursor: pointer;
-            z-index: 1001;
-        }
-
-        .hamburger-icon {
-            font-size: 2rem;
-            color: #1b1b1b;
         }
 
         .header-nav-wrapper {
+            display: none;
             position: fixed;
-            top: 56px; /* Ajustado para coincidir exactamente con la altura del header (40px logo + 16px padding) */
-            left: 0;
-            width: 100%;
-            height: calc(100vh - 56px);
-            background: white;
+            top: 74px;
+            left: 16px;
+            right: 16px;
+            background: #1a1a1a;
+            border-radius: 16px;
+            padding: 20px;
             flex-direction: column;
-            padding: 1.5rem 2rem;
-            gap: 1.5rem;
-            display: none; /* Hidden by default */
-            z-index: 1000;
-            overflow-y: auto;
+            gap: 12px;
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+            z-index: 999;
         }
 
         .header-nav-wrapper.is-open {
             display: flex;
         }
 
+        .nav-links {
+            width: 100%;
+        }
+
         .nav-links ul {
             flex-direction: column;
-            gap: 1.5rem;
-            align-items: center;
+            align-items: flex-start;
+            gap: 4px;
+            width: 100%;
         }
 
-        .nav-links a {
-            font-size: 1.2rem;
+        .nav-links ul li {
+            width: 100%;
         }
 
-        .auth-section {
+        .nav-links ul li > a,
+        .nav-dropdown-btn {
+            width: 100%;
+            font-size: 1rem;
+            padding: 10px 12px;
+        }
+
+        .dropdown-menu {
+            position: static;
+            box-shadow: none;
+            border: none;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            margin-top: 4px;
+            padding: 4px;
+        }
+
+        .dropdown-menu::before {
+            display: none;
+        }
+
+        .dropdown-menu a {
+            font-size: 0.9rem;
+        }
+
+       
+
+        .header-right {
+            margin-left: 0;
             flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             width: 100%;
-            padding-top: 2rem;
-            border-top: 1px solid #f0f0f0;
         }
 
-        .signup-button {
+        .nav-phone {
             width: 100%;
-            text-align: center;
+            margin-left: 0;
+            padding-left: 0;
+        }
+
+        .nav-phone .phone-number {
+            width: 100%;
+            justify-content: center;
+            padding: 10px 14px;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .lang-switcher {
+            justify-content: center;
+        }
+
+        .phone-number {
+            font-size: 0.9rem;
         }
     }
 </style>
