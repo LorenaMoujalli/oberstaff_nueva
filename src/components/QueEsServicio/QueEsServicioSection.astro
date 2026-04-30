@@ -23,6 +23,8 @@ interface Props {
     diffDescription?: string;
     checklistTitle?: string;
     checklistItems?: string[];
+    checklistIcon?: string;
+    checklistIconClass?: string;
     ctaText?: string;
     ctaHref?: string;
 }
@@ -41,6 +43,8 @@ const {
     diffDescription,
     checklistTitle,
     checklistItems,
+    checklistIcon,
+    checklistIconClass,
     ctaText,
     ctaHref,
 } = Astro.props;
@@ -64,6 +68,8 @@ import "../../styles/QueEsServicio/QueEsServicio.css";
             infoItems={infoItems}
             checklistTitle={checklistTitle}
             checklistItems={checklistItems}
+            checklistIcon={checklistIcon}
+            checklistIconClass={checklistIconClass}
             ctaText={ctaText}
             ctaHref={ctaHref}
         />

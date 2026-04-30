@@ -15,9 +15,11 @@ interface Props {
     checklistItems?: string[];
     ctaText?: string;
     ctaHref?: string;
+    checklistIcon?: string;
+    checklistIconClass?: string;
 }
 
-const { imageSrc, imageAlt, badgeText, quoteText, infoItems = [], checklistTitle, checklistItems, ctaText, ctaHref } = Astro.props;
+const { imageSrc, imageAlt, badgeText, quoteText, infoItems = [], checklistTitle, checklistItems, ctaText, ctaHref, checklistIcon, checklistIconClass } = Astro.props;
 import "../../styles/QueEsServicio/QueEsContent.css";
 ---
 
@@ -45,7 +47,7 @@ import "../../styles/QueEsServicio/QueEsContent.css";
                     <ul class="ques-checklist">
                         {checklistItems.map((item) => (
                             <li class="ques-checklist-item">
-                                <span class="ques-check-icon">✓</span>
+                                <span class={`ques-check-icon ${checklistIconClass || ""}`}>{checklistIcon || "✓"}</span>
                                 <span set:html={item}></span>
                             </li>
                         ))}
@@ -76,3 +78,14 @@ import "../../styles/QueEsServicio/QueEsContent.css";
         )}
     </div>
 </div>
+
+<style>
+    .orange-bullet-icon {
+        color: #FFA500 !important;
+        font-weight: 900 !important;
+        font-size: 16px !important;
+        line-height: 1 !important;
+        margin-top: 5px;
+        display: inline-block;
+    }
+</style>
