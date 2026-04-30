@@ -1,0 +1,31 @@
+.blur-glow {
+    position: absolute;
+    filter: blur(80px);
+    opacity: 0.3;
+    z-index: 1;
+    border-radius: 50%;
+    animation: auroraFluid 12s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+
+.pink-glow {
+    width: 600px;
+    height: 600px;
+    top: -10%;
+    left: 10%;
+    background: linear-gradient(135deg, #FF66CC 0%, rgba(255, 102, 204, 0.4) 100%);
+}
+
+.purple-glow {
+    width: 500px;
+    height: 700px;
+    top: 10%;
+    right: 10%;
+    background: linear-gradient(135deg, #6663FD 0%, rgba(102, 99, 253, 0.4) 100%);
+    animation-delay: -5s;
+}
+
+@keyframes auroraFluid {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(5%, 10%) scale(1.1); }
+}

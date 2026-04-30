@@ -1,0 +1,32 @@
+---
+import "../../styles/canales-contacto/ChannelCard.css";
+
+interface Props {
+    icon: string;
+    bgClass: string;
+    hoverClass: string;
+    title: string;
+    description: string;
+    buttonText: string;
+    href: string;
+    target?: string;
+}
+
+const {
+    icon,
+    bgClass,
+    hoverClass,
+    title,
+    description,
+    buttonText,
+    href,
+    target = "_self"
+} = Astro.props;
+---
+
+<div class={`channel-card ${hoverClass}`}>
+    <div class={`icon-wrapper ${bgClass}`}>{icon}</div>
+    <h3 set:html={title} />
+    <p set:html={description} />
+    <a href={href} target={target} class="btn-outline-small">{buttonText}</a>
+</div>

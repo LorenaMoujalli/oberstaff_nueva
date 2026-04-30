@@ -1,0 +1,31 @@
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 60px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 40px;
+}
+
+.stat-item { text-align: center; }
+.stat-number {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 5px;
+}
+.stat-desc { font-size: 13px; color: #D0D0D0; margin: 0; font-family: 'Poppins', sans-serif; }
+
+.brand-oberstaff { font-weight: 900; font-family: 'Montserrat', sans-serif; }
+.brand-dot { color: #FF66CC; }
+.text-white { color: #FFFFFF !important; }
+
+.color-pink { color: #FF66CC; }
+.color-purple { color: #6663FD; }
+.color-green { color: #66FF99; }
+
+@media (max-width: 768px) {
+    .hero-stats { flex-direction: column; gap: 25px; }
+}

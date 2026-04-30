@@ -1,0 +1,38 @@
+---
+interface Props {
+    title?: string;
+}
+
+const {
+    title = "Oberstaff",
+} = Astro.props;
+---
+
+<footer class="oberstaff-footer-perfiles">
+    <p class="copyright">{title}</p>
+</footer>
+
+<style>
+    .oberstaff-footer-perfiles {
+        background-color: #1b1b1b;
+        color: #ffffff;
+        padding: 40px 20px;
+        width: 100%;
+        text-align: center;
+        font-family: "Montserrat", sans-serif;
+        font-size: 14px;
+        box-sizing: border-box;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .copyright {
+        text-align: center;
+        font-family: "Montserrat", sans-serif;
+        font-size: 12px;
+        margin: 0;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: #888;
+        letter-spacing: 2px;
+    }
+</style>

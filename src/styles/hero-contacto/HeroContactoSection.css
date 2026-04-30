@@ -1,0 +1,20 @@
+.hero-cro-section {
+    background-color: #1B1B1B;
+    position: relative;
+    padding: 50px 0 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+}
+
+.hero-container {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}

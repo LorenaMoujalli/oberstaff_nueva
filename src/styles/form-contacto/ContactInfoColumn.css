@@ -1,0 +1,77 @@
+.info-column {
+    flex: 0.8;
+    padding-top: 20px;
+}
+
+.info-column h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    margin-bottom: 25px;
+    color: #1B1B1B;
+}
+
+.step-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 40px;
+}
+
+.step-list li {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #1B1B1B;
+    font-family: 'Poppins', sans-serif;
+}
+
+.step-number {
+    font-size: 16px;
+    color: #6663FD;
+    font-weight: 900;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* CAJA ROSA DE REVISIÓN */
+.review-box {
+    background-color: rgba(255, 102, 204, 0.05);
+    border-left: 4px solid #FF66CC;
+    padding: 30px;
+    border-radius: 0 12px 12px 0;
+}
+
+.review-box h4 {
+    color: #FF66CC;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.review-list {
+    list-style: none;
+    padding: 0;
+}
+
+.review-list li {
+    font-size: 14px;
+    margin-bottom: 12px;
+    display: flex;
+    gap: 10px;
+    color: #1B1B1B;
+    font-family: 'Poppins', sans-serif;
+}
+
+.review-list li::before {
+    content: "•";
+    color: #FF66CC;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .info-column {
+        padding-top: 20px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}

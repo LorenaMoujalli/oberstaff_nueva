@@ -1,0 +1,39 @@
+---
+import "../../styles/form-contacto/ContactFormCard.css";
+
+interface Props {
+    title?: string;
+    description?: string;
+    buttonText?: string;
+    microcopy?: string;
+}
+
+const {
+    title = "Cuéntanos qué necesita tu empresa",
+    description = "Completa el formulario y un especialista de <strong style=\"font-weight: 800;\"><span style=\"color: #1B1B1B;\">Oberstaff</span><span style=\"color: #FF66CC;\">.</span></strong> te orientará sobre la estructura más conveniente. No necesitas tener todo definido: podemos ayudarte a aclarar el perfil, el nivel de seniority, el modelo y los próximos pasos.",
+    buttonText = "Solicitar llamada gratuita →",
+    microcopy = "↳ Sin compromiso - Te contactaremos en menos de 24 horas para entender tu necesidad y explicarte los siguientes pasos."
+} = Astro.props;
+---
+
+<div class="form-card">
+    <h2 set:html={title} />
+    <p class="intro-text" set:html={description} />
+
+    <form class="modern-form">
+        <input type="text" placeholder="Nombre completo *" required />
+        <input type="text" placeholder="Nombre de la empresa *" required />
+        
+        <div class="form-row">
+            <input type="email" placeholder="Email corporativo *" required />
+            <input type="tel" placeholder="Teléfono *" required />
+        </div>
+
+        <input type="text" placeholder="¿Cuántos profesionales o qué roles buscas contratar? *" required />
+        <textarea rows="4" placeholder="Comentarios adicionales (opcional)"></textarea>
+
+        <button type="submit" class="btn-submit">{buttonText}</button>
+    </form>
+
+    <p class="microcopy-footer" set:html={microcopy} />
+</div>

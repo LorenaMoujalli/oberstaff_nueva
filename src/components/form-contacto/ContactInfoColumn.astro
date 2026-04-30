@@ -1,0 +1,58 @@
+---
+import "../../styles/form-contacto/ContactInfoColumn.css";
+
+interface Step {
+    number: string;
+    text: string;
+}
+
+interface ReviewItem {
+    text: string;
+}
+
+interface Props {
+    stepsTitle?: string;
+    steps?: Step[];
+    reviewTitle?: string;
+    reviewItems?: ReviewItem[];
+}
+
+const {
+    stepsTitle = "Qué ocurre después de enviar el formulario",
+    steps = [
+        { number: "1.", text: "Revisamos la información para entender tu necesidad real." },
+        { number: "2.", text: "Te contactamos para coordinar una llamada o pedir datos adicionales si hace falta." },
+        { number: "3.", text: "Te orientamos sobre perfil, coste estimado, modelo de colaboración y tiempos de incorporación." },
+        { number: "4.", text: "Si hay encaje, avanzamos con una propuesta o con la búsqueda del perfil." }
+    ],
+    reviewTitle = "En la llamada podremos revisar:",
+    reviewItems = [
+        { text: "Qué perfil necesita tu empresa y qué funciones tendría." },
+        { text: "Qué nivel de experiencia conviene para el puesto." },
+        { text: "Qué modelo puede encajar mejor: EOR, Outsourcing o Staff Augmentation." },
+        { text: "Qué rango de costes podrías esperar frente a una contratación local." },
+        { text: "Qué pasos habría que seguir para iniciar el proceso con menos fricción." }
+    ]
+} = Astro.props;
+---
+
+<div class="info-column">
+    <h3 set:html={stepsTitle} />
+    <ul class="step-list">
+        {steps.map((step) => (
+            <li>
+                <span class="step-number">{step.number}</span> 
+                <span set:html={step.text} />
+            </li>
+        ))}
+    </ul>
+
+    <div class="review-box">
+        <h4 set:html={reviewTitle} />
+        <ul class="review-list">
+            {reviewItems.map((item) => (
+                <li set:html={item.text} />
+            ))}
+        </ul>
+    </div>
+</div>

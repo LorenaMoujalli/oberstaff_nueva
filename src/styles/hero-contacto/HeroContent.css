@@ -1,0 +1,47 @@
+.seo-kicker {
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+    display: block;
+    background: linear-gradient(90deg, #FF66CC, #FA3AB5);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 25px;
+    color: #fff;
+}
+
+.brand-oberstaff { font-weight: 900; font-family: 'Montserrat', sans-serif; }
+.brand-dot { color: #FF66CC; }
+.text-white { color: #FFFFFF !important; }
+
+.hero-subtitle {
+    font-size: 18px;
+    color: #D0D0D0;
+    max-width: 750px;
+    margin: 0 auto 30px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.hero-features {
+    color: #A0A0A0;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    font-family: 'Poppins', sans-serif;
+}
+
+@media (max-width: 768px) {
+    .hero-title { font-size: 26px;}
+    .hero-subtitle { font-size: 16px;}
+}

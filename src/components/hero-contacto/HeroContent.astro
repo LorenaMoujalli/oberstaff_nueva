@@ -1,0 +1,25 @@
+---
+import "../../styles/hero-contacto/HeroContent.css";
+
+interface Props {
+    kicker?: string;
+    title?: string;
+    subtitle?: string;
+    features?: string;
+}
+
+const {
+    kicker = "Hablemos de tu equipo",
+    title = 'Solicita una llamada gratuita con <strong class="brand-oberstaff text-white">Oberstaff<span class="brand-dot">.</span></strong>',
+    subtitle = 'Cuéntanos qué necesita cubrir tu empresa y un especialista de <strong class="brand-oberstaff text-white">Oberstaff<span class="brand-dot">.</span></strong> te orientará sobre el perfil, el modelo de colaboración y los próximos pasos para incorporar talento remoto con menos carga administrativa.',
+    features = "⚡ Llamada inicial sin compromiso · Atención en español · Horario compatible con España"
+} = Astro.props;
+---
+
+<span class="seo-kicker">{kicker}</span>
+
+<h1 class="hero-title" set:html={title} />
+
+<p class="hero-subtitle" set:html={subtitle} />
+
+<p class="hero-features" set:html={features} />

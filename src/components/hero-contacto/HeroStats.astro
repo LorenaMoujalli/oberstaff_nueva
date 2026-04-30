@@ -1,0 +1,42 @@
+---
+import "../../styles/hero-contacto/HeroStats.css";
+
+interface Stat {
+    number: string;
+    description: string;
+    colorClass: string;
+}
+
+interface Props {
+    stats?: Stat[];
+}
+
+const {
+    stats = [
+        {
+            number: "+500",
+            description: 'Empresas han confiado en <strong class="brand-oberstaff text-white">Oberstaff<span class="brand-dot">.</span></strong>',
+            colorClass: "color-pink"
+        },
+        {
+            number: "Hasta 70%",
+            description: "De ahorro frente a contratación local.",
+            colorClass: "color-purple"
+        },
+        {
+            number: "<30 días",
+            description: "Para incorporar perfiles disponibles.",
+            colorClass: "color-green"
+        }
+    ]
+} = Astro.props;
+---
+
+<div class="hero-stats">
+    {stats.map((stat) => (
+        <div class="stat-item">
+            <p class={`stat-number ${stat.colorClass}`}>{stat.number}</p>
+            <p class="stat-desc" set:html={stat.description}></p>
+        </div>
+    ))}
+</div>

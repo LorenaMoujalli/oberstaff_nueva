@@ -1,0 +1,49 @@
+.channels-section {
+    background-color: #FFFFFF;
+    padding: 80px 20px;
+    font-family: 'Poppins', sans-serif;
+    color: #1B1B1B;
+    text-align: center;
+}
+
+.channels-header {
+    max-width: 850px;
+    margin: 0 auto 50px;
+}
+
+.channels-header h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.channels-header p {
+    font-size: 18px;
+    color: #5A5A5A;
+    line-height: 1.6;
+}
+
+.channels-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+@media (max-width: 992px) {
+    .channels-grid {
+        grid-template-columns: 1fr;
+        max-width: 450px;
+    }
+    .channels-section {
+        padding: 50px 20px;
+    }
+    .channels-header h2 {
+        font-size: 26px;
+    }
+    .channels-header p {
+        font-size: 16px;
+    }
+}

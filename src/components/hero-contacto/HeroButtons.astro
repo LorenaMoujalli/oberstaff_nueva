@@ -1,0 +1,25 @@
+---
+import "../../styles/hero-contacto/HeroButtons.css";
+
+interface Props {
+    primaryText?: string;
+    primaryHref?: string;
+    secondaryText?: string;
+    secondaryHref?: string;
+}
+
+const {
+    primaryText = "Solicitar llamada gratuita →",
+    primaryHref = "#formulario",
+    secondaryText = "📱 Escribir por WhatsApp",
+    secondaryHref = "#",
+} = Astro.props;
+---
+
+<!--https://wa.me/your-number -->
+<div class="hero-buttons">
+    <a href={primaryHref} class="btn-hero btn-pink">{primaryText}</a>
+    <a href={secondaryHref} target="_blank" class="btn-hero btn-outline"
+        >{secondaryText}</a
+    >
+</div>

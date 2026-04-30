@@ -1,0 +1,24 @@
+.form-section {
+    background-color: #FAFAFC;
+    padding: 100px 20px;
+    font-family: 'Poppins', sans-serif;
+    color: #1B1B1B;
+}
+
+.form-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+@media (max-width: 992px) {
+    .form-container {
+        flex-direction: column;
+    }
+
+    .form-section {
+        padding: 50px 20px;
+    }
+}

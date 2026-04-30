@@ -1,0 +1,73 @@
+---
+import "../../styles/canales-contacto/ChannelsSection.css";
+import ChannelCard from "./ChannelCard.astro";
+
+interface Channel {
+    icon: string;
+    bgClass: string;
+    hoverClass: string;
+    title: string;
+    description: string;
+    buttonText: string;
+    href: string;
+    target?: string;
+}
+
+interface Props {
+    title?: string;
+    subtitle?: string;
+    channels?: Channel[];
+}
+
+const {
+    title = "Elige el canal adecuado",
+    subtitle = "Selecciona la opción que mejor describa tu caso para que podamos orientarte de forma más precisa.",
+    channels = [
+        {
+            icon: "🏢",
+            bgClass: "bg-soft-purple",
+            hoverClass: "hover-purple",
+            title: "Empresas",
+            description: "Quiero incorporar talento remoto o comparar modelos de colaboración.",
+            buttonText: "Usar formulario principal",
+            href: "#formulario-contacto"
+        },
+        {
+            icon: "🚀",
+            bgClass: "bg-soft-pink",
+            hoverClass: "hover-pink",
+            title: "Candidatos",
+            description: 'Quiero formar parte de la red de talento de <strong>Oberstaff.</strong>',
+            buttonText: "Ir a la página de candidato",
+            href: "#",
+            target: "_blank"
+        },
+        {
+            icon: "🤝",
+            bgClass: "bg-soft-green",
+            hoverClass: "hover-green",
+            title: "Clientes actuales",
+            description: "Necesito soporte sobre una contratación, factura, perfil o proceso activo.",
+            buttonText: "Contactar soporte",
+            href: "#"
+        }
+    ]
+} = Astro.props;
+---
+<!-- https://oberstaff.zohorecruit.com/jobs/careers
+ mailto:soporte@oberstaff.com
+-->
+
+
+<section class="channels-section">
+    <div class="channels-header">
+        <h2 set:html={title} />
+        <p set:html={subtitle} />
+    </div>
+
+    <div class="channels-grid">
+        {channels.map((channel) => (
+            <ChannelCard {...channel} />
+        ))}
+    </div>
+</section>

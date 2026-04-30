@@ -1,0 +1,47 @@
+---
+import "../../styles/form-contacto/FormContactoSection.css";
+import ContactFormCard from "./ContactFormCard.astro";
+import ContactInfoColumn from "./ContactInfoColumn.astro";
+
+interface Props {
+    id?: string;
+    formTitle?: string;
+    formDescription?: string;
+    formButtonText?: string;
+    formMicrocopy?: string;
+    stepsTitle?: string;
+    steps?: any[];
+    reviewTitle?: string;
+    reviewItems?: any[];
+}
+
+const {
+    id = "formulario-contacto",
+    formTitle,
+    formDescription,
+    formButtonText,
+    formMicrocopy,
+    stepsTitle,
+    steps,
+    reviewTitle,
+    reviewItems
+} = Astro.props;
+---
+
+<section class="form-section" id={id}>
+    <div class="form-container">
+        <ContactFormCard 
+            title={formTitle}
+            description={formDescription}
+            buttonText={formButtonText}
+            microcopy={formMicrocopy}
+        />
+
+        <ContactInfoColumn 
+            stepsTitle={stepsTitle}
+            steps={steps}
+            reviewTitle={reviewTitle}
+            reviewItems={reviewItems}
+        />
+    </div>
+</section>

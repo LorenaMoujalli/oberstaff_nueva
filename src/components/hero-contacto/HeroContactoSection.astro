@@ -1,0 +1,53 @@
+---
+import "../../styles/hero-contacto/HeroContactoSection.css";
+import HeroBackground from "./HeroBackground.astro";
+import HeroContent from "./HeroContent.astro";
+import HeroButtons from "./HeroButtons.astro";
+import HeroStats from "./HeroStats.astro";
+
+interface Props {
+    kicker?: string;
+    title?: string;
+    subtitle?: string;
+    features?: string;
+    primaryText?: string;
+    primaryHref?: string;
+    secondaryText?: string;
+    secondaryHref?: string;
+    stats?: any[];
+}
+
+const {
+    kicker,
+    title,
+    subtitle,
+    features,
+    primaryText,
+    primaryHref,
+    secondaryText,
+    secondaryHref,
+    stats
+} = Astro.props;
+---
+
+<section class="hero-cro-section">
+    <HeroBackground />
+
+    <div class="hero-container">
+        <HeroContent 
+            kicker={kicker}
+            title={title}
+            subtitle={subtitle}
+            features={features}
+        />
+
+        <HeroButtons 
+            primaryText={primaryText}
+            primaryHref={primaryHref}
+            secondaryText={secondaryText}
+            secondaryHref={secondaryHref}
+        />
+        
+        <HeroStats stats={stats} />
+    </div>
+</section>

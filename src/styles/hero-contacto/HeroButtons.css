@@ -1,0 +1,43 @@
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.btn-hero {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 18px 40px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn-pink {
+    background-color: #FF66CC;
+    color: #FFFFFF;
+    border: 2px solid #FF66CC;
+}
+
+.btn-pink:hover {
+    background-color: transparent;
+    color: #FF66CC;
+}
+
+.btn-outline {
+    background: rgba(255,255,255,0.05);
+    color: #FFF;
+    border: 2px solid rgba(255,255,255,0.2);
+}
+
+
+
+@media (max-width: 768px) {
+    .hero-buttons .btn-hero { width: 100%;  font-size: 14px;}
+}
