@@ -8,18 +8,28 @@ interface Props {
 const { title, description, highlightWord = "" } = Astro.props;
 import "../../styles/QueEsServicio/QueEsHeader.css";
 
-// Split title by highlightWord if provided
+// Split title by highlightWord if provided, allowing for flexible matching with <br> tags
 let parts = [title];
-if (highlightWord && title.includes(highlightWord)) {
-    parts = title.split(highlightWord);
+let match = "";
+
+if (highlightWord) {
+    const cleanHighlight = highlightWord.replace(/<br\s*\/?>/g, ' ').replace(/\s+/g, ' ').trim();
+    const escapedHighlight = cleanHighlight.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/\s+/g, '(?:\\s+|<br\\s*\\/?>)*');
+    const regex = new RegExp(`(${escapedHighlight})`, 'i');
+    const splitParts = title.split(regex);
+    
+    if (splitParts.length > 1) {
+        parts = splitParts;
+        match = splitParts[1];
+    }
 }
 ---
 
 <header class="que-es-header">
     <h2 id="que-es-title">
-        {highlightWord && parts.length > 1 ? (
+        {match ? (
             <>
-                <span set:html={parts[0]} /> <span class="blue-text" set:html={highlightWord}></span> <span set:html={parts[1]} />
+                <span set:html={parts[0]} /> <span class="blue-text" set:html={match}></span> <span set:html={parts[2]} />
             </>
         ) : (
             <span set:html={title} />

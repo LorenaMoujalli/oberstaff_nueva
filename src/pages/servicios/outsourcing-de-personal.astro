@@ -65,8 +65,8 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
 
 		<div class="fade-in-section hide-quote-border diff-custom-layout">
 			<QueEsServicioSection
-				title="Qué es el outsourcing de personal con talento de LATAM"
-				highlightWord="con talento de LATAM"
+				title="Qué es el outsourcing de personal con talento de <br>  LATAM"
+				highlightWord="con talento de <br> LATAM"
 				description="<span style='color: #1B1B1B; font-weight: 700;'>Externaliza las funciones operativas de tu negocio sin ampliar tu estructura interna.</span> El outsourcing de personal, te permite delegar a <span style='color: #1B1B1B; font-weight: 800;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> la selección, contratación y administración mensual de profesionales de áreas funcionales y de negocio: comercial, administración, marketing y soporte al cliente."
 				imageSrc="/img-outsourcing.webp"
 				imageAlt="Profesional trabajando"
@@ -244,11 +244,11 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
                         title: "Marketing y comunicación",
                         quote: "",
                         roles: [
-                            { label: "Especialista Google Ads", href: "#" },
-                            { label: "Especialista Meta Ads", href: "#" },
+                            { label: "Especialista Google Ads", href: "/servicios/especialista-en-google-ads" },
+                            { label: "Especialista Meta Ads", href: "/servicios/experto-en-meta-ads" },
                             { label: "Email marketing", href: "#" },
-                            { label: "Community Manager", href: "#" },
-							{ label: "Experto SEO", href: "#" },
+                            { label: "Community Manager", href: "/servicios/contratar-community-manager" },
+							{ label: "Experto SEO", href: "/servicios/contratar-experto-seo" },
                         ],
                         iconColorClass: "pink-text",
                     },
@@ -257,8 +257,8 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
                         title: "Data & Analytics",
                         quote: "",
                         roles: [
-                            { label: "Asistente virtual", href: "#" },
-                            { label: "Contable", href: "#" }
+                            { label: "Asistente virtual", href: "/servicios/contratar-un-asistente-virtual/" },
+                            { label: "Contable", href: "/servicios/contratar-contable/" }
                         ],
                         iconColorClass: "purple-text",
                     },
@@ -267,9 +267,9 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
                         title: "Creatividad y contenido",
                         quote: "",
                         roles: [
-                            { label: "Diseñador Gráfico", href: "#" },
-                            { label: "Editor de Video", href: "#" },
-                            { label: "Copywriter", href: "#" },
+                            { label: "Diseñador Gráfico", href: "/servicios/contratar-disenador-grafico/" },
+                            { label: "Editor de Video", href: "/servicios/contratar-editor-de-videos/" },
+                            { label: "Copywriter", href: "/servicios/contratar-copywriter/" },
                         ],
                         iconColorClass: "orange-text",
                     },
@@ -300,7 +300,7 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
                     <div class="alert-content">
                         <h4> ¿Necesitas perfiles tecnológicos?</h4>
                         <p>
-                            Desarrolladores, QA, DevOps, data engineers y otros perfiles IT se gestionan a través de nuestro servicio de  <strong>Staff Augmentation</strong>, donde se integran directamente en tu equipo técnico, tus herramientas y tus sprints. <a href="#">Ver Staff Augmentation →</a>
+                            Desarrolladores, QA, DevOps, data engineers y otros perfiles IT se gestionan a través de nuestro servicio de  <strong>Staff Augmentation</strong>, donde se integran directamente en tu equipo técnico, tus herramientas y tus sprints. <a href="/servicios/staff-augmentation/">Ver Staff Augmentation →</a>
                         </p>
                     </div>
                 </div>
@@ -351,6 +351,7 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
 
 		<div class="fade-in-section">
 			<FeaturesSection
+				customClass="outsourcing-features"
 				eyebrow=""
 				title="Por qué elegir a <span style='font-weight: 900; color: #6663FD;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span> como empresa de outsourcing de personal en LATAM"
 				subtitle="Diseñado para organizaciones españolas que necesitan descargar trabajo operativo recurrente, ordenar su gestión interna y sostener funciones clave del negocio con una estructura más ligera."
@@ -491,7 +492,7 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
 						title: "Staff Augmentation",
 						description:
 							"Refuerza tu equipo de tecnología integrando desarrolladores y perfiles IT directamente a tus sprints.",
-						href: "#",
+						href: "/servicios/staff-augmentation/",
 						colorClass: "icon-pink",
 						hoverClass: "hover-pink",
 						linkText: "Ver servicio",
@@ -501,7 +502,7 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
 						title: "Employer of Record",
 						description:
 							"Cuando necesitas contratar empleados en LATAM con relación laboral formal, payroll y cumplimiento local.",
-						href: "#",
+						href: "/servicios/employer-of-record/",
 						colorClass: "icon-green",
 						hoverClass: "hover-green",
 						linkText: "Ver servicio",
@@ -511,7 +512,7 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
 						title: "Contractor of Record",
 						description:
 							"Gestión integral de contratos para freelancers y trabajadores por proyecto.",
-						href: "#",
+						href: "/servicios/contractor-of-Record/",
 						colorClass: "icon-purple",
 						hoverClass: "hover-purple",
 						linkText: "Ver servicio",
@@ -995,5 +996,11 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
 		.alert-content p {
 			font-size: 15px;
 		}
+	}
+
+	/* --- Iconos de Features más grandes --- */
+	:global(.outsourcing-features .emoji-icon),
+	:global(.outsourcing-features iconify-icon) {
+		font-size: 30px !important;
 	}
 </style>

@@ -10,7 +10,7 @@ const { question } = Astro.props;
 
 <div class="faq-item">
     <button class="faq-question" aria-expanded="false">
-        <span>{question}</span>
+        <span set:html={question}></span>
         <span class="faq-toggle-icon">+</span>
     </button>
     <div class="faq-answer">

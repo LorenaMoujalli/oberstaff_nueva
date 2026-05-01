@@ -342,6 +342,7 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
 
         <div class="fade-in-section">
             <FeaturesSection
+                customClass="cor-features"
                 eyebrow=""
                 title="Beneficios de <span style='font-weight: 900; color: #6663FD;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span> como tu contractor of record"
                 subtitle=""
@@ -459,7 +460,7 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
         </div>
 
         <FAQSection
-            title="Todo lo que necesitas saber <strong>antes de empezar</strong>"
+            title="Todo lo que necesitas  <br> saber <strong>antes de empezar</strong>"
             ctaText="¿Aún tienes dudas sobre cómo sumar talento freelance?"
             ctaButtonText="Agenda una llamada gratuita"
         />
@@ -475,7 +476,7 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
                         title: "Employer of Record",
                         description:
                             "Ideal cuando necesitas contratar empleados en LATAM con relación laboral formal, nómina y cumplimiento local.",
-                        href: "#",
+                        href: "/servicios/employer-of-record/",
                         colorClass: "icon-pink",
                         hoverClass: "hover-pink",
                         linkText: "Ver servicio",
@@ -485,7 +486,7 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
                         title: "Outsourcing de Personal",
                         description:
                             "Para externalizar selección, contratación y administración.",
-                        href: "#",
+                        href: "/servicios/outsourcing-de-personal/",
                         colorClass: "icon-green",
                         hoverClass: "hover-green",
                         linkText: "Ver servicio",
@@ -495,7 +496,7 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
                         title: "Staff Augmentation",
                         description:
                             "Ideal cuando quieres ampliar tu equipo tech y dirigir su trabajo día a día.",
-                        href: "#",
+                        href: "/servicios/staff-augmentation/",
                         colorClass: "icon-purple",
                         hoverClass: "hover-purple",
                         linkText: "Ver servicio",
@@ -838,5 +839,11 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
         50% {
             transform: translateY(-10px);
         }
+    }
+
+    /* --- Iconos de Features más grandes --- */
+    :global(.cor-features .emoji-icon),
+    :global(.cor-features iconify-icon) {
+        font-size: 30px !important;
     }
 </style>

@@ -35,9 +35,10 @@ const testimonials = [
         videoId: "9RLgpEF-GVA",
     },
 ];
+const { id } = Astro.props;
 ---
 
-<section class="testimonials-section">
+<section class="testimonials-section" id={id}>
     <div class="testimonials-container">
         <TestimonialsHeader
             title="Empresas que ya <strong>contratan talento remoto</strong> en Latinoamérica"

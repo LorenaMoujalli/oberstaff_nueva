@@ -234,8 +234,8 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
 						title: "Finanzas y administración",
 						quote: "Para perfiles con acceso a datos críticos. Este modelo asegura subordinación legal, exclusividad y cumplimiento normativo local.",
 						roles: [
-							{ label: "Auxiliar contable", href: "#" },
-							{ label: "Asistente virtual", href: "#" },
+							{ label: "Auxiliar contable", href: "/servicios/contratar-auxiliar-contable" },
+							{ label: "Asistente virtual", href: "/servicios/contratar-un-asistente-virtual" },
 						],
 						iconColorClass: "blue-text",
 					},
@@ -244,10 +244,10 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
 						title: "Marketing In-House",
 						quote: "Si tu marketing exige exclusividad, usar acuerdos externos es un riesgo legal. El EOR los formaliza como empleados de tu plantilla global.",
 						roles: [
-							{ label: "Experto SEO", href: "#" },
-							{ label: "Especialista Google Ads", href: "#" },
-							{ label: "Especialista Meta Ads", href: "#" },
-							{ label: "Community Manager", href: "#" },
+							{ label: "Experto SEO", href: "/servicios/contratar-experto-seo" },
+							{ label: "Especialista Google Ads", href: "/servicios/especialista-en-google-ads" },
+							{ label: "Especialista Meta Ads", href: "/servicios/experto-en-meta-ads" },
+							{ label: "Community Manager", href: "/servicios/contratar-community-manager" },
 						],
 						iconColorClass: "pink-text",
 					},
@@ -310,6 +310,7 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
 
 		<div class="fade-in-section">
 			<FeaturesSection
+				customClass="eor-features"
 				eyebrow=""
 				title="Por qué elegir a <span style='font-weight: 900; color: #6663FD;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span> como tu partner de Compliance"
 				subtitle="Todo lo que necesitas sobre nuestro employer of record services. Diseñado para negocios españoles que quieran expandirse rápido en Latinoamérica, sin asumir riesgos innecesarios."
@@ -439,7 +440,7 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
 		</div>
 
 		<FAQSection
-			title="Preguntas frecuentes sobre el EOR services de <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong>"
+			title="Preguntas frecuentes <br> sobre el EOR services de <br><strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong>"
 			ctaText="¿Aún tienes dudas sobre cómo funciona el modelo EOR en tu país?"
 			ctaButtonText="Agenda una llamada gratuita"
 		/>
@@ -455,7 +456,7 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
 						title: "Staff Augmentation",
 						description:
 							"Refuerza tu equipo de tecnología integrando desarrolladores y perfiles IT directamente a tus sprints.",
-						href: "#",
+						href: "/servicios/staff-augmentation",
 						colorClass: "icon-pink",
 						hoverClass: "hover-pink",
 						linkText: "Ver servicio",
@@ -465,7 +466,7 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
 						title: "Outsourcing de Personal",
 						description:
 							"Externaliza funciones completas con equipos gestionados por <span style='font-weight: 700; color: #1B1B1B;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span>",
-						href: "#",
+						href: "/servicios/outsourcing-de-personal",
 						colorClass: "icon-green",
 						hoverClass: "hover-green",
 						linkText: "Ver servicio",
@@ -475,7 +476,7 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
 						title: "Contractor of Record",
 						description:
 							"Gestión integral de contratos para freelancers y trabajadores por proyecto.",
-						href: "#",
+						href: "/servicios/contractor-of-Record",
 						colorClass: "icon-purple",
 						hoverClass: "hover-purple",
 						linkText: "Ver servicio",
@@ -549,5 +550,11 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
 
 	:global(.process-employer .process-tab.active) {
 		background-color: #ffffff;
+	}
+
+	/* --- Iconos de Features más grandes --- */
+	:global(.eor-features .emoji-icon),
+	:global(.eor-features iconify-icon) {
+		font-size: 30px !important;
 	}
 </style>

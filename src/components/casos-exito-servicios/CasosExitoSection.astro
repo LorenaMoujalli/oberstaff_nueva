@@ -17,12 +17,13 @@ interface Props {
     subtitle?: string;
     testimonials: Testimonial[];
     columns?: 2 | 3;
+    id?: string;
 }
 
-const { label, title, subtitle, testimonials, columns = 2 } = Astro.props;
+const { label, title, subtitle, testimonials, columns = 2, id = "casos-de-exito-servicios" } = Astro.props;
 ---
 
-<section class="casos-exito">
+<section class="casos-exito" id={id}>
     <div class="casos-header">
         {label && <span class="section-label" style="display: block; color: #ff66cc; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 15px;">{label}</span>}
         <h2 set:html={title}></h2>

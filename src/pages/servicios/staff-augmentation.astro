@@ -358,6 +358,7 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
 
         <div class="fade-in-section">
             <FeaturesSection
+                customClass="staff-aug-features"
                 eyebrow=""
                 title="Por qué elegir <span style='font-weight: 900; color: #6663FD;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span> como tu staff augmentation company"
                 subtitle="Diseñado para negocios que quieren escalar con agilidad y acceder al mejor talento IT remoto."
@@ -483,7 +484,7 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
         </div>
 
         <FAQSection
-            title="Todo lo que necesitas saber <strong>antes de empezar</strong>"
+            title="Todo lo que necesitas  <br> saber <strong>antes de empezar</strong>"
             ctaText="¿Aún tienes dudas sobre cómo sumar talento IT?"
             ctaButtonText="Agenda una llamada gratuita"
         />
@@ -499,7 +500,7 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
                         title: "Employer of Record",
                         description:
                             "Incorpora empleados con contrato laboral pleno en LATAM, sin abrir entidad local.",
-                        href: "#",
+                        href: "/servicios/employer-of-record/",
                         colorClass: "icon-pink",
                         hoverClass: "hover-pink",
                         linkText: "Ver servicio",
@@ -509,7 +510,7 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
                         title: "Outsourcing de Personal",
                         description:
                             "Delega la selección, contratación y administración completa. Ideal para perfiles no tech o cuando prefieres gestión delegada",
-                        href: "#",
+                        href: "/servicios/outsourcing-de-personal/",
                         colorClass: "icon-green",
                         hoverClass: "hover-green",
                         linkText: "Ver servicio",
@@ -519,7 +520,7 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
                         title: "Contractor of Record",
                         description:
                             "Gestión integral de contratos para freelancers y trabajadores por proyecto.",
-                        href: "#",
+                        href: "/servicios/contractor-of-Record/",
                         colorClass: "icon-purple",
                         hoverClass: "hover-purple",
                         linkText: "Ver servicio",
@@ -816,5 +817,11 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
         50% {
             transform: translateY(-10px);
         }
+    }
+
+    /* --- Iconos de Features más grandes --- */
+    :global(.staff-aug-features .emoji-icon),
+    :global(.staff-aug-features iconify-icon) {
+        font-size: 30px !important;
     }
 </style>

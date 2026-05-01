@@ -24,19 +24,19 @@
 
 .floating-badge-bottom {
     position: absolute;
-    bottom: -30px;
-    right: -30px;
-    width: fit-content;
+    bottom: -35px;
+    left: -20px;
+    right: -20px;
     white-space: nowrap;
     background: white;
     padding: 16px 28px;
-    border-radius: 60px;
+    border-radius: 100px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
     gap: 15px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
-    border: 1px solid rgba(0, 0, 0, 0.02);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.03);
     z-index: 10;
     /* Animación sutil de flotado */
     animation: floatBadge 4s ease-in-out infinite;
@@ -118,10 +118,11 @@
 @media (max-width: 900px) {
     .que-es-main-content { grid-template-columns: 1fr; gap: 90px; }
     .floating-badge-bottom { 
-        right: 0;
-        width: fit-content; 
+        left: 15px;
+        right: 15px;
+        width: auto; 
         padding: 15px 25px; 
-        bottom: -20px;
+        bottom: -25px;
         justify-content: center;
     }
 }
@@ -195,4 +196,4 @@
         padding: 14px 16px;
     }
 }
-
+

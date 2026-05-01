@@ -15,12 +15,13 @@ interface Props {
     title: string;
     subtitle: string;
     features: Feature[];
+    customClass?: string;
 }
 
-const { eyebrow, title, subtitle, features } = Astro.props;
+const { eyebrow, title, subtitle, features, customClass = "" } = Astro.props;
 ---
 
-<section class="oberstaff-features">
+<section class={`oberstaff-features ${customClass}`}>
     <div class="features-header">
         <span class="features-eyebrow" set:html={eyebrow}></span>
         <h2 class="features-title" set:html={title}></h2>
