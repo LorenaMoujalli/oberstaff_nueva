@@ -1,0 +1,22 @@
+---
+import "../../styles/vision-mision-contacto/purpose-card.css";
+
+interface Props {
+  icon: string;
+  iconBgClass: string;
+  title: string;
+  customClass?: string;
+}
+
+const { icon, iconBgClass, title, customClass = "" } = Astro.props;
+---
+
+<div class={`use-card ${customClass}`}>
+  <div class={`use-icon-wrapper ${iconBgClass}`}>
+    <span class="use-emoji">{icon}</span>
+  </div>
+  <h3 class="use-card-title">{title}</h3>
+  <div class="use-card-text">
+    <slot />
+  </div>
+</div>

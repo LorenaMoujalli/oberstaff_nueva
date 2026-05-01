@@ -1,0 +1,13 @@
+---
+import "../../styles/vision-mision-contacto/purpose-header.css";
+
+interface Props {
+  title?: string;
+}
+
+const { title = "El propósito detrás de <strong>nuestro modelo</strong>" } = Astro.props;
+---
+
+<div class="uses-header">
+  <h2 class="visual-section-title" set:html={title}></h2>
+</div>

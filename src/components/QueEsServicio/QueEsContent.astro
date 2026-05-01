@@ -53,11 +53,6 @@ import "../../styles/QueEsServicio/QueEsContent.css";
                         ))}
                     </ul>
                 </div>
-                {ctaText && (
-                    <a href={ctaHref || "#"} class="ques-cta-btn">
-                        {ctaText}
-                    </a>
-                )}
             </>
         ) : (
             infoItems.map((item) => (
@@ -70,11 +65,17 @@ import "../../styles/QueEsServicio/QueEsContent.css";
                         )}
                     </div>
                     <div class="text-box">
-                        <h3>{item.title}</h3>
+                        <h3 set:html={item.title}></h3>
                         <p set:html={item.description}></p>
                     </div>
                 </div>
             ))
+        )}
+
+        {ctaText && (
+            <a href={ctaHref || "#"} class="ques-cta-btn">
+                {ctaText}
+            </a>
         )}
     </div>
 </div>

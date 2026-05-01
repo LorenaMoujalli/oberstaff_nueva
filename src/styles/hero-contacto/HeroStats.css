@@ -1,14 +1,17 @@
 .hero-stats {
     display: flex;
     justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
+    gap: 50px;
+    flex-wrap: nowrap;
     margin-top: 60px;
     border-top: 1px solid rgba(255,255,255,0.1);
     padding-top: 40px;
 }
 
-.stat-item { text-align: center; }
+.stat-item { 
+    text-align: center; 
+    flex: 1;
+}
 .stat-number {
     font-family: 'Montserrat', sans-serif;
     font-size: 32px;

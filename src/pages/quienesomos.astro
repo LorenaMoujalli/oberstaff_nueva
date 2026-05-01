@@ -1,0 +1,195 @@
+---
+import DashboardLayoutContacto from "../layouts/DashboardLayoutContacto.astro";
+//import HeroContactoSection from "../components/hero-contacto/HeroContactoSection.astro";
+//import FormContactoSection from "../components/form-contacto/FormContactoSection.astro";
+//import ChannelsSection from "../components/canales-contacto/ChannelsSection.astro";
+import LeadHeroSection from "../components/community-manager/LeadHeroSection.astro";
+import QueEsServicioSection from "../components/QueEsServicio/QueEsServicioSection.astro";
+import VisionMisionSection from "../components/vision-mision-contacto/VisionMisionSection.astro";
+import VisionMisionCard from "../components/vision-mision-contacto/VisionMisionCard.astro";
+import FAQSection from "../components/faq-servicios/FAQSection-quienes-somos.astro";
+---
+
+<DashboardLayoutContacto
+    title="Conoce Oberstaff | Un puente de talento"
+    description="Descubre el propósito de Oberstaff y la visión que nos mueve: conectar empresas españolas con profesionales de LATAM mediante trabajo remoto estructurado."
+    footerTitle="© 2026 Oberstaff. Todos los derechos reservados"
+    keywords="Qué es Oberstaff"
+>
+    <LeadHeroSection
+      topLabel="Nuestra Identidad"
+      title="Somos Oberstaff<span style='color: #FF66CC;'>.</span> un puente<br> entre empresas  y talento <br> con propósito"
+      cardTitle="Conoce cómo trabajamos"
+      cardSubtitle="Completa tus datos para recibir asesoría sobre nuestro modelo."
+      buttonText="Agendar llamada gratuita →"
+      buttonIcon=""
+      buttonSubtext=""
+      footerLinkText=""
+      footerLinkHref="#"
+      badges={[
+        { text: "Talento de LATAM para España", icon: "🌍" },
+        { text: "Estructura y confianza", icon: "🛡️" },
+        { text: "Relaciones a largo plazo", icon: "📈" }
+      ]}
+      badgesClass="community-badges"
+    >
+      <Fragment slot="description">
+      Nacimos para construir una forma de trabajo remoto más clara, organizada y sostenible. En Oberstaff ayudamos a que empresas españolas y profesionales de LATAM puedan colaborar con estructura, confianza y objetivos compartidos.
+      </Fragment>
+    </LeadHeroSection>
+
+   
+<div class="fade-in-section">
+
+
+ <div class="fade-in-section quienesomos-que-es">
+            <QueEsServicioSection
+                title="No somos solo una forma de ahorrar. <br> Somos una forma más inteligente de crecer."
+                highlightWord="Somos una forma más inteligente de crecer."
+                description=""
+                imageSrc="/img-quienes.webp"
+                imageAlt="Profesional trabajando"
+                badgeText="Conexión Estratégica"
+                quoteText="<span style='color: #ff66cc; font-weight: 800; display: block; margin-bottom: 5px;'>¿Qué es <span style='color: #1B1B1B;'>Oberstaff</span><span style='color: #ff66cc;'>.</span>?</span> Una empresa que conecta compañías españolas con profesionales preparados de LATAM mediante modelos de trabajo remoto claros, estructurados y eficientes."
+                infoItems={[
+                    {
+                        icon: "",
+                        title: "Por qué nació <span style='color: #1B1B1B; font-weight: 900;'>Oberstaff</span><span style='color: #ff66cc; font-weight: 900;'>.</span>",
+                        description: "<strong style='color: #1B1B1B; font-weight: 800;'>Oberstaff<span style='color: #ff66cc; font-weight: 800;'>.</span></strong> surge al observar una brecha evidente: empresas que necesitan crecer con agilidad sin aumentar su carga operativa, y profesionales altamente capaces que pueden aportar valor desde nuevas geografías de trabajo."
+                    },
+                    {
+                        icon: "",
+                        title: "Quiénes Somos",
+                        description: "Fundada en 2024 por Edgardo Vázquez, nuestra labor es conectar necesidades empresariales cuidando lo que suele quedar fuera: la claridad del modelo, la responsabilidad operativa, la continuidad de la relación y la experiencia de ambas partes."
+                    }
+                ]}
+                ctaText="Agendar llamada gratuita →"
+                ctaHref="#" 
+            />
+        </div>
+
+    
+</div>
+        
+
+<div class="fade-in-section">
+
+<VisionMisionSection>
+    <VisionMisionCard icon="🎯" iconBgClass="bg-soft-pink" title="Nuestra misión" customClass="card-mision">
+        Hacer que el trabajo remoto entre empresas y profesionales funcione mejor: con más claridad, más confianza y más sentido humano.
+        <br /><br />
+        Queremos que las compañías puedan crecer sin depender de estructuras tradicionales, y que el talento de LATAM tenga acceso a oportunidades donde su experiencia sea reconocida.
+    </VisionMisionCard>
+
+    <VisionMisionCard icon="👁️" iconBgClass="bg-soft-purple" title="Nuestra visión" customClass="card-vision">
+        Vemos un futuro donde las empresas construyen equipos con menos barreras y más inteligencia operativa. Un futuro donde la ubicación no limite la oportunidad y la flexibilidad no signifique desorden.
+        <br /><br />
+        Para nosotros, el trabajo remoto necesita procesos claros, comunicación responsable y acompañamiento real. Esa es la visión que guía a <span class="brand-oberstaff-small">Oberstaff<span class="dot-pink">.</span></span>
+    </VisionMisionCard>
+</VisionMisionSection>
+
+</div>
+
+
+<div class="fade-in-section faq-quienesomos-wrapper">
+<FAQSection
+            title="Preguntas frecuentes <br> sobre <span style='color: #6663FD; font-weight: 900;'>Oberstaff</span><span style='color: #ff66cc; font-weight: 900;'>.</span>"
+            ctaText="Resolvemos tus dudas sobre cómo conectamos a las <br> empresas españolas con el talento de LATAM de forma <br> segura."
+            ctaButtonText="Hablar con asesor →"
+         
+        />
+
+</div>
+
+ 
+</DashboardLayoutContacto>
+
+
+ <style is:global>
+    /* Estilos para el Título Principal */
+    .quienesomos-que-es .que-es-header h2 {
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+    .quienesomos-que-es .que-es-header .blue-text {
+        color: #6663FD;
+        display: block;
+        font-size: 32px;
+        margin-top: 5px;
+            font-weight: 800;
+    }
+
+    /* Estilos para la Cita Rosa */
+    .quienesomos-que-es .quote-blue-border {
+        border-left: 4px solid #ff66cc !important;
+       background: linear-gradient(90deg, rgba(102, 99, 253, 0.08), transparent) !important;
+        color: #ff66cc !important;
+        font-size: 15px !important;
+        font-weight: 400 !important;
+        padding: 20px 25px !important;
+        border-radius: 0 12px 12px 0 !important;
+        margin-bottom: 35px !important;
+    }
+
+    /* Ocultar iconos y ajustar info-items */
+    .quienesomos-que-es .icon-box {
+        display: none !important;
+    }
+    .quienesomos-que-es .info-item {
+        margin-bottom: 30px !important;
+    }
+    .quienesomos-que-es .text-box h3 {
+        font-size: 20px !important;
+        font-weight: 700 !important;
+        color: #1B1B1B !important;
+        margin-bottom: 12px !important;
+    }
+    .quienesomos-que-es .text-box p {
+        font-size: 15px !important;
+        color: #5A5A5A !important;
+        line-height: 1.6 !important;
+    }
+
+    /* Botón CTA Outlined */
+    .quienesomos-que-es .ques-cta-btn {
+        background: transparent !important;
+        border: 1.5px solid #E5E5E5 !important;
+        color: #1B1B1B !important;
+        padding: 14px 35px !important;
+        border-radius: 50px !important;
+        font-weight: 600 !important;
+        transition: all 0.3s ease !important;
+        box-shadow: none !important;
+        margin-top: 20px !important;
+    }
+    .quienesomos-que-es .ques-cta-btn:hover {
+        border-color: #1B1B1B !important;
+      
+    }
+
+    /* Imagen en Blanco y Negro */
+    .quienesomos-que-es .image-card {
+        filter: grayscale(100%) !important;
+        border-radius: 30px !important;
+    }
+
+    .faq-quienesomos-wrapper {
+        border-top: 1px solid #E0E0E0;
+    }
+
+
+
+    @media screen and (max-width: 768px) {
+    .quienesomos-que-es .que-es-header h2 {
+        font-size: 28px !important;
+    }
+    .quienesomos-que-es .que-es-header .blue-text {
+        font-size: 28px !important;
+    }
+
+    .quienesomos-que-es .quote-blue-border {
+        margin-top: 1px !important;
+    }
+    }
+</style>
