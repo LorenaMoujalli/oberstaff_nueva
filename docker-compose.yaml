@@ -11,7 +11,7 @@ services:
     # Coolify labels (optional but helpful if using standard Traefik setup)
     # The actual network and domain mapping is usually handled by Coolify UI
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost/"]
+      test: ["CMD-SHELL", "wget -q --spider http://localhost/ || exit 1"]
       interval: 30s
       timeout: 10s
       retries: 3
