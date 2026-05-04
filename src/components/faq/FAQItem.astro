@@ -9,10 +9,12 @@ const { question } = Astro.props;
 ---
 
 <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">
-        <span set:html={question}></span>
-        <span class="faq-toggle-icon">+</span>
-    </button>
+    <h3>
+        <button class="faq-question" aria-expanded="false">
+            <span set:html={question}></span>
+            <span class="faq-toggle-icon" aria-hidden="true">+</span>
+        </button>
+    </h3>
     <div class="faq-answer">
         <div class="faq-answer-content">
             <slot />

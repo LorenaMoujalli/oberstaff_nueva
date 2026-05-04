@@ -12,7 +12,7 @@ const { icon, iconBgClass, title, customClass = "" } = Astro.props;
 ---
 
 <div class={`use-card ${customClass}`}>
-  <div class={`use-icon-wrapper ${iconBgClass}`}>
+  <div class={`use-icon-wrapper ${iconBgClass}`} aria-hidden="true">
     <span class="use-emoji">{icon}</span>
   </div>
   <h3 class="use-card-title">{title}</h3>

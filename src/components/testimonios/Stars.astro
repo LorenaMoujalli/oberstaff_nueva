@@ -8,6 +8,6 @@ interface Props {
 const { count = 5 } = Astro.props;
 ---
 
-<div class="stars">
+<div class="stars" aria-hidden="true">
     {Array.from({ length: count }).map(() => <span class="star">★</span>)}
 </div>

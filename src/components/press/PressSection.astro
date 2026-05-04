@@ -15,27 +15,42 @@ const { title = "Nos han mencionado en:" } = Astro.props;
         <PressHeader title={title} />
 
         <div class="mentions-wrapper">
-            <PressItem name="Madridiario" className="mdo-madridiario">
+            <PressItem 
+                name="Madridiario" 
+                className="mdo-madridiario"
+                href="https://www.madridiario.es/actualidad-empresarial/fuga-de-capital-la-friccion-operativa-y-el-sobrecosto-del-talento-estan-frenando-las-pymes-espanolas-7128?target=external"
+            >
                 <img
                     src="/logo-madridiario.webp"
-                    alt="Madridiario Logo"
+                    alt="Logo de Madridiario, medio que mencionó a Oberstaff"
                     class="press-logo"
+                    aria-hidden="true"
                 />
             </PressItem>
 
-            <PressItem name="El Mundo Financiero" className="em-financiero">
+            <PressItem 
+                name="El Mundo Financiero" 
+                className="em-financiero"
+                href="https://www.elmundofinanciero.com/seccion/40/actividad-empresarial/fuga-de-capital-la-friccion-operativa-y-el-sobrecosto-del-talento-estan-frenando-las-pymes-espanolas-7606?target=external"
+            >
                 <img
                     src="/logo-mundo-financiero.webp"
-                    alt="El Mundo Financiero Logo"
+                    alt="Logo de El Mundo Financiero, medio que mencionó a Oberstaff"
                     class="press-logo"
+                    aria-hidden="true"
                 />
             </PressItem>
 
-            <PressItem name="Region Digital" className="region-digital">
+            <PressItem 
+                name="Region Digital" 
+                className="region-digital"
+                href="https://www.regiondigital.com/empresas/fuga-de-capital-la-friccion-operativa-y-el-sobrecosto-del-talento-estan-frenando-las-pymes-espanolas-9827?target=external"
+            >
                 <img
                     src="/logo-region-digital.webp"
-                    alt="Región Digital Logo"
+                    alt="Logo de Región Digital, medio que mencionó a Oberstaff"
                     class="press-logo"
+                    aria-hidden="true"
                 />
             </PressItem>
         </div>

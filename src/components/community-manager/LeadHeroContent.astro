@@ -44,15 +44,16 @@ const isEmoji = (icon: string) => !icon.includes(":");
             {badges.map((badge) => (
                 <div class="badge-pill">
                     {badge.icon && isEmoji(badge.icon) ? (
-                        <span class="badge-emoji">{badge.icon}</span>
+                        <span class="badge-emoji" aria-hidden="true">{badge.icon}</span>
                     ) : badge.icon ? (
                         <iconify-icon
                             icon={badge.icon}
                             class="badge-icon"
                             style={badge.iconColor ? `color: ${badge.iconColor}` : ""}
+                            aria-hidden="true"
                         ></iconify-icon>
                     ) : (
-                        <iconify-icon icon="solar:check-circle-bold" class="badge-icon"></iconify-icon>
+                        <iconify-icon icon="solar:check-circle-bold" class="badge-icon" aria-hidden="true"></iconify-icon>
                     )}
                     <span>{badge.text}</span>
                 </div>
@@ -63,7 +64,7 @@ const isEmoji = (icon: string) => !icon.includes(":");
         <div class="lead-features">
             {features.map((feature) => (
                 <div class="lead-feature-pill">
-                    <iconify-icon icon={feature.icon} style={`color: ${feature.iconColor || '#ffffff'}`}></iconify-icon>
+                    <iconify-icon icon={feature.icon} style={`color: ${feature.iconColor || '#ffffff'}`} aria-hidden="true"></iconify-icon>
                     <span>{feature.text}</span>
                 </div>
             ))}

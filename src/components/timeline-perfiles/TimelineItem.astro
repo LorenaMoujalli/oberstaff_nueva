@@ -20,7 +20,7 @@ const tagClass = timeTagGray ? "time-tag gray" : "time-tag";
 ---
 
 <div class={`timeline-item ${alignment}`}>
-    <div class="step-number">{index + 1}</div>
+    <div class="step-number" aria-hidden="true">{index + 1}</div>
     <div class="content-card">
         {timeTag ? (
             <div class="card-header">

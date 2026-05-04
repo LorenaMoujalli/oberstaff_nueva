@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Loop through all testimonial buttons to attach click events
     btns.forEach(btn => {
-        btn.addEventListener("click", function(this: HTMLAnchorElement, e) {
+        btn.addEventListener("click", function(this: HTMLElement, e) {
             e.preventDefault();
             
             const videoId = this.getAttribute("data-video-id");

@@ -4,11 +4,18 @@ import "../../styles/press/press-item.css";
 interface Props {
     name: string;
     className?: string;
+    href?: string;
 }
 
-const { name, className = "" } = Astro.props;
+const { name, className = "", href } = Astro.props;
 ---
 
 <div class={`mention-item ${className}`}>
-    <slot />
+    {href ? (
+        <a href={href} target="_blank" rel="noopener noreferrer" title={name}>
+            <slot />
+        </a>
+    ) : (
+        <slot />
+    )}
 </div>

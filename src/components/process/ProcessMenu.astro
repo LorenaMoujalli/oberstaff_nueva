@@ -14,7 +14,7 @@ const { tabs } = Astro.props;
             class={`process-tab${i === 0 ? " active" : ""}`}
             data-tab={tab.id}
         >
-            <div class="process-tab-number">
+            <div class="process-tab-number" aria-hidden="true">
                 {tab.icon ? (
                     tab.icon.includes(":") ? (
                         <iconify-icon icon={tab.icon} width="14"></iconify-icon>

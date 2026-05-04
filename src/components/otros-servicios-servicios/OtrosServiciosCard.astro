@@ -23,7 +23,7 @@ const {
 ---
 
 <div class={`servicio-card ${hoverClass}`}>
-    <div class={`servicio-icon ${colorClass}`}>
+    <div class={`servicio-icon ${colorClass}`} aria-hidden="true">
         {icon.length <= 2 ? (
             <span class="emoji-icon">{icon}</span>
         ) : (
@@ -34,6 +34,6 @@ const {
     <p set:html={description} />
     <a href={href} class="link-mas">
         {linkText}
-        <span class="arrow"> →</span>
+        <span class="arrow" aria-hidden="true"> →</span>
     </a>
 </div>

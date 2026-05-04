@@ -29,7 +29,7 @@ import "../../styles/QueEsServicio/QueEsContent.css";
             <img src={imageSrc} alt={imageAlt}>
         </div>
         <div class="floating-badge-bottom">
-            <span class="check-pink">✓</span>
+            <span class="check-pink" aria-hidden="true">✓</span>
             <strong>{badgeText}</strong>
         </div>
     </div>
@@ -47,7 +47,7 @@ import "../../styles/QueEsServicio/QueEsContent.css";
                     <ul class="ques-checklist">
                         {checklistItems.map((item) => (
                             <li class="ques-checklist-item">
-                                <span class={`ques-check-icon ${checklistIconClass || ""}`}>{checklistIcon || "✓"}</span>
+                                <span class={`ques-check-icon ${checklistIconClass || ""}`} aria-hidden="true">{checklistIcon || "✓"}</span>
                                 <span set:html={item}></span>
                             </li>
                         ))}
@@ -57,11 +57,11 @@ import "../../styles/QueEsServicio/QueEsContent.css";
         ) : (
             infoItems.map((item) => (
                 <div class="info-item">
-                    <div class="icon-box">
+                    <div class="icon-box" aria-hidden="true">
                         {item.icon.includes(':') ? (
-                            <iconify-icon icon={item.icon}></iconify-icon>
+                            <iconify-icon icon={item.icon} aria-hidden="true"></iconify-icon>
                         ) : (
-                            <span class="emoji-icon">{item.icon}</span>
+                            <span class="emoji-icon" aria-hidden="true">{item.icon}</span>
                         )}
                     </div>
                     <div class="text-box">

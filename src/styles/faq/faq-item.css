@@ -16,6 +16,12 @@
     box-shadow: 0 10px 40px rgba(102, 99, 253, 0.08);
 }
 
+.faq-item h3 {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
 .faq-question {
     width: 100%;
     padding: 24px 30px;

@@ -36,11 +36,11 @@ const { stars, text, author, role, avatar, videoId } = Astro.props;
     </div>
 
     <!-- Cita -->
-    <p class="testimonial-text" set:html={`"${text}"`}></p>
+    <blockquote class="testimonial-text" set:html={`"${text}"`}></blockquote>
 
     {videoId && (
-        <a href="javascript:void(0)" class="video-link open-testimonial-video" data-video-id={videoId}>
+        <button type="button" class="video-link open-testimonial-video" data-video-id={videoId}>
             Ver testimonio en vídeo →
-        </a>
+        </button>
     )}
 </div>

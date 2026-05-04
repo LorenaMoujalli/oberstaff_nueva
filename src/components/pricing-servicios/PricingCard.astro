@@ -58,7 +58,7 @@ const {
             <ul class="pricing-features">
                 {features.map((feature) => (
                     <li>
-                        <span class="check-icon">✓</span>
+                        <span class="check-icon" aria-hidden="true">✓</span>
                         <span set:html={feature}></span>
                     </li>
                 ))}

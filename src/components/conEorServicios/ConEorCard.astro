@@ -21,13 +21,14 @@ const listClass = iconStyle === "positive" ? "eor-list list-positive" : "eor-lis
         <iconify-icon
             icon={headerIcon}
             style={iconStyle === "positive" ? "color: #ff66cc;" : ""}
+            aria-hidden="true"
         ></iconify-icon>
         <span set:html={title}></span>
     </div>
     <ul class={listClass}>
         {items.map((item) => (
             <li>
-                <span class={iconStyle === "positive" ? "icon-check" : "icon-x"}>
+                <span class={iconStyle === "positive" ? "icon-check" : "icon-x"} aria-hidden="true">
                     {iconStyle === "positive" ? "✓" : "✕"}
                 </span>
                 <span set:html={item}></span>

@@ -30,14 +30,14 @@ const {
         class={`icon-box ${colorClass}`} 
         style={customIconBg ? `background-color: ${customIconBg};` : ""}
     >
-        <span class="icon-emoji-servicios-home">{icon}</span>
+        <span class="icon-emoji-servicios-home" aria-hidden="true">{icon}</span>
     </div>
     <h3>{title}</h3>
     <p>{description}</p>
     {linkText && (
         <a href={href} class="service-link">
             {linkText}
-            <iconify-icon icon="mdi:arrow-right" class="arrow-icon"></iconify-icon>
+            <iconify-icon icon="mdi:arrow-right" class="arrow-icon" aria-hidden="true"></iconify-icon>
         </a>
     )}
 </article>

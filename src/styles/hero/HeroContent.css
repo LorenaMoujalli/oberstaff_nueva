@@ -110,6 +110,7 @@
     font-size: 13px;
     transition: all 0.3s ease;
     font-family: "Poppins", sans-serif;
+    cursor: pointer;
 }
 
 .hero-text-content .btn-secondary:hover {

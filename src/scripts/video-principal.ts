@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const modal = document.getElementById("videoModal") as HTMLElement | null;
-    const btn = document.getElementById("openVideoModal") as HTMLAnchorElement | null;
+    const btn = document.getElementById("openVideoModal") as HTMLElement | null;
     const closeBtn = document.querySelector(".close-modal") as HTMLSpanElement | null;
     const playerContainer = document.getElementById("player") as HTMLDivElement | null;
 

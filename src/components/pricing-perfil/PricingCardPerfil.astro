@@ -65,7 +65,7 @@ const {
                     <ul class="pricing-features-list">
                         {features.map((f) => (
                             <li class="pricing-feature-item">
-                                <span class="pricing-check">✓</span>
+                                <span class="pricing-check" aria-hidden="true">✓</span>
                                 <span set:html={f}></span>
                             </li>
                         ))}

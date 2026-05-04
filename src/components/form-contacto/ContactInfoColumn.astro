@@ -41,7 +41,7 @@ const {
     <ul class="step-list">
         {steps.map((step) => (
             <li>
-                <span class="step-number">{step.number}</span> 
+                <span class="step-number" aria-hidden="true">{step.number}</span> 
                 <span set:html={step.text} />
             </li>
         ))}
