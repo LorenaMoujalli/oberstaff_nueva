@@ -73,7 +73,12 @@
     font-weight: 700;
     color: #1B1B1B;
     margin-bottom: 15px;
+    margin-top: 0;
     text-align: left;
+}
+
+.card-title strong {
+    font-weight: 700;
 }
 
 .price-block {

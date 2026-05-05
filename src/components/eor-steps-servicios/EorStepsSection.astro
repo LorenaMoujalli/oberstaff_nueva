@@ -54,7 +54,7 @@ const colorMap: Record<string, { circle: string; text?: string }> = {
                         </div>
 
                         <div class="step-content">
-                            <h3 class="step-title" set:html={step.title}></h3>
+                            <p class="step-title"><strong set:html={step.title}></strong></p>
                             <p class="step-description" set:html={step.description}></p>
                             {step.badge && (
                                 <div class="step-badge">

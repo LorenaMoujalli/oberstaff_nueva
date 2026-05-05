@@ -23,9 +23,248 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
 
 <DashboardLayoutServicios
 	title="Outsourcing de personal para empresas | Oberstaff"
-	description="Externaliza perfiles comerciales y administrativos en LATAM. Outsourcing de personal con selección, gestión y hasta un 70% de ahorro."
+	description="Externaliza tu equipo comercial o administrativo en LATAM. Selección, contratación y gestión desde 690€/mes. Propuesta en 24h."
 	keywords="outsourcing de personal"
 >
+	<script slot="head" type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.oberstaff.com/servicios/outsourcing-de-personal#webpage",
+      "url": "https://www.oberstaff.com/servicios/outsourcing-de-personal",
+      "name": "Outsourcing de personal para empresas | Oberstaff",
+      "description": "Externaliza perfiles comerciales y administrativos en LATAM. Outsourcing de personal con selección, gestión y hasta un 70% de ahorro.",
+      "inLanguage": "es-ES",
+      "isPartOf": { "@id": "https://www.oberstaff.com/#website" },
+      "publisher": { "@id": "https://www.oberstaff.com/#organization" },
+      "about": { "@id": "https://www.oberstaff.com/servicios/outsourcing-de-personal#service" },
+      "mainEntity": { "@id": "https://www.oberstaff.com/servicios/outsourcing-de-personal#service" },
+      "breadcrumb": { "@id": "https://www.oberstaff.com/servicios/outsourcing-de-personal#breadcrumb" }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.oberstaff.com/servicios/outsourcing-de-personal#service",
+      "name": "Outsourcing de Personal en LATAM para empresas españolas",
+      "alternateName": [
+        "Outsourcing de personal",
+        "Outsourcing de personal para empresas españolas",
+        "Outsourcing de selección de personal",
+        "Outsourcing de contratación de personal",
+        "Outsourcing de administración de personal",
+        "Outsourcing de personal especializado"
+      ],
+      "serviceType": "Outsourcing de Personal",
+      "category": "Servicios de externalización de personal y gestión operativa",
+      "url": "https://www.oberstaff.com/servicios/outsourcing-de-personal",
+      "provider": { "@id": "https://www.oberstaff.com/#organization" },
+      "description": "Servicio de outsourcing de personal para empresas españolas que quieren externalizar la selección, contratación y administración de perfiles comerciales, administrativos, de marketing, soporte, creatividad, operaciones y atención al cliente en Latinoamérica.",
+      "slogan": "Externaliza las funciones operativas de tu negocio sin ampliar tu estructura interna.",
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Empresas españolas que necesitan externalizar funciones operativas y administrativas con talento de LATAM",
+        "geographicArea": { "@type": "Country", "name": "España" }
+      },
+      "serviceAudience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Pymes, startups y empresas españolas que buscan reducir carga operativa, centralizar gestión de personal y acceder a talento funcional en Latinoamérica",
+        "geographicArea": { "@type": "Country", "name": "España" }
+      },
+      "areaServed": [
+        { "@type": "Country", "name": "España" },
+        { "@type": "Country", "name": "Colombia" },
+        { "@type": "Country", "name": "México" },
+        { "@type": "Country", "name": "Argentina" },
+        { "@type": "Country", "name": "Chile" },
+        { "@type": "Country", "name": "Perú" },
+        { "@type": "Country", "name": "Ecuador" },
+        { "@type": "Country", "name": "Uruguay" },
+        { "@type": "Country", "name": "Venezuela" },
+        { "@type": "Country", "name": "Panamá" },
+        { "@type": "Country", "name": "Paraguay" }
+      ],
+      "offers": {
+        "@type": "Offer",
+        "@id": "https://www.oberstaff.com/servicios/outsourcing-de-personal#offer",
+        "name": "Outsourcing de Personal Completo",
+        "url": "https://www.oberstaff.com/servicios/outsourcing-de-personal#contacto",
+        "price": "690",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock",
+        "eligibleCustomerType": "http://purl.org/goodrelations/v1#Business",
+        "eligibleRegion": { "@type": "Country", "name": "España" },
+        "description": "Servicio de outsourcing de personal desde 690€ por profesional al mes, dirigido a empresas españolas que necesitan búsqueda, entrevistas por competencias, coordinación, administración mensual del servicio y una única factura mensual en euros.",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "690",
+          "priceCurrency": "EUR",
+          "unitText": "profesional por mes"
+        }
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "@id": "https://www.oberstaff.com/servicios/outsourcing-de-personal#included-services",
+        "name": "Qué incluye el outsourcing de personal de Oberstaff",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "name": "Outsourcing de selección de personal",
+            "itemOffered": { "@type": "Service", "name": "Outsourcing de selección de personal", "description": "Identificación, evaluación y preselección de candidatos en LATAM para áreas comerciales, administrativas, marketing y soporte según perfil, experiencia y presupuesto." }
+          },
+          {
+            "@type": "Offer",
+            "name": "Outsourcing de contratación de personal",
+            "itemOffered": { "@type": "Service", "name": "Outsourcing de contratación de personal", "description": "Redacción de contratos conforme a la normativa aplicable, coordinación de documentación e incorporación del profesional." }
+          },
+          {
+            "@type": "Offer",
+            "name": "Outsourcing de administración de personal",
+            "itemOffered": { "@type": "Service", "name": "Outsourcing de administración de personal", "description": "Gestión de nóminas, seguridad social, bajas, liquidaciones y operativa mensual del personal externalizado." }
+          },
+          {
+            "@type": "Offer",
+            "name": "Outsourcing de personal especializado",
+            "itemOffered": { "@type": "Service", "name": "Outsourcing de personal especializado", "description": "Externalización de perfiles comerciales, marketing, financieros, creativos y soporte al cliente con talento funcional de LATAM." }
+          }
+        ]
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Shadai Iborra" },
+          "publisher": { "@type": "Organization", "name": "@amediastory" },
+          "reviewBody": "Con Oberstaff pude dar trabajo a dos personas a tiempo completo, ahorrando costes de reclutamiento, espacios de oficina y salario que tendría al hacerlo en España. Lo mejor de todo es que todo está incluido en una misma factura.",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" }
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Fernando Calderón" },
+          "publisher": { "@type": "Organization", "name": "BeautyPro" },
+          "reviewBody": "Estaba en busca de talento remoto especializado para mi empresa y después de varias búsquedas sin éxito, encontré a Oberstaff en Instagram. Desde nuestra primera llamada, su profesionalismo y calidad de trabajo me dejaron impresionado.",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" }
+        }
+      ],
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "bestRating": "5", "worstRating": "1", "ratingCount": "2", "reviewCount": "2" },
+      "isRelatedTo": [
+        { "@id": "https://www.oberstaff.com/servicios/employer-of-record#service" },
+        { "@id": "https://www.oberstaff.com/servicios/staff-augmentation#service" },
+        { "@id": "https://www.oberstaff.com/servicios/contractor-of-record#service" }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.oberstaff.com/servicios/outsourcing-de-personal#use-cases",
+      "name": "Cuándo usar el servicio de outsourcing de personal",
+      "description": "Casos en los que una empresa española puede utilizar outsourcing de personal con talento de LATAM.",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Crecimiento sin ampliar la carga interna", "description": "Para incorporar volumen de trabajo sin asumir internamente búsqueda, filtro, coordinación e incidencias administrativas." },
+        { "@type": "ListItem", "position": 2, "name": "Varias funciones bajo una sola gestión", "description": "Para centralizar selección, incorporación y gestión administrativa de distintas áreas del negocio en un único proveedor." },
+        { "@type": "ListItem", "position": 3, "name": "Escalado operativo con estructura más ligera", "description": "Para aumentar capacidad en funciones recurrentes sin añadir complejidad operativa ni más seguimiento interno." },
+        { "@type": "ListItem", "position": 4, "name": "Procesos repetibles y delegables", "description": "Para ejecutar funciones continuas sin convertir cada incorporación en una gestión interna adicional." }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.oberstaff.com/servicios/outsourcing-de-personal#process",
+      "name": "Cómo funciona el outsourcing de personal",
+      "description": "Proceso de Oberstaff para externalizar perfiles funcionales y de negocio en LATAM para empresas españolas.",
+      "numberOfItems": 4,
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Análisis del proceso a externalizar", "description": "Definición de funciones a delegar, volumen de trabajo, horarios requeridos y expectativas operativas." },
+        { "@type": "ListItem", "position": 2, "name": "Presentación de la operativa", "description": "Presentación de candidatos preseleccionados, normalmente entre 3 y 5 opciones por rol, para que la empresa tome la decisión final." },
+        { "@type": "ListItem", "position": 3, "name": "Activación de la operación", "description": "Gestión del papeleo y puesta en marcha para que la externalización arranque sin fricciones." },
+        { "@type": "ListItem", "position": 4, "name": "Administración del servicio", "description": "El profesional ejecuta los procesos y Oberstaff se encarga de la gestión administrativa y los pagos mensuales." }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.oberstaff.com/servicios/outsourcing-de-personal#profiles",
+      "name": "Perfiles de negocio que puedes externalizar",
+      "description": "Perfiles funcionales y de negocio que empresas españolas pueden externalizar en LATAM mediante el servicio de outsourcing de personal de Oberstaff.",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Closer de ventas" },
+        { "@type": "ListItem", "position": 2, "name": "Especialista Google Ads" },
+        { "@type": "ListItem", "position": 3, "name": "Especialista Meta Ads" },
+        { "@type": "ListItem", "position": 4, "name": "Experto SEO" },
+        { "@type": "ListItem", "position": 5, "name": "Community Manager" },
+        { "@type": "ListItem", "position": 6, "name": "Asistente virtual" },
+        { "@type": "ListItem", "position": 7, "name": "Contable" },
+        { "@type": "ListItem", "position": 8, "name": "Diseñador gráfico" },
+        { "@type": "ListItem", "position": 9, "name": "Editor de vídeo" },
+        { "@type": "ListItem", "position": 10, "name": "Copywriter" },
+        { "@type": "ListItem", "position": 11, "name": "Teleoperador" },
+        { "@type": "ListItem", "position": 12, "name": "Customer Success" },
+        { "@type": "ListItem", "position": 13, "name": "Coordinador de operaciones" },
+        { "@type": "ListItem", "position": 14, "name": "Project Manager" }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.oberstaff.com/servicios/outsourcing-de-personal#countries",
+      "name": "Países de LATAM con cobertura para outsourcing de personal",
+      "description": "Países de Latinoamérica donde Oberstaff permite a empresas españolas externalizar procesos y perfiles de negocio.",
+      "numberOfItems": 10,
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Colombia" },
+        { "@type": "ListItem", "position": 2, "name": "México" },
+        { "@type": "ListItem", "position": 3, "name": "Argentina" },
+        { "@type": "ListItem", "position": 4, "name": "Chile" },
+        { "@type": "ListItem", "position": 5, "name": "Perú" },
+        { "@type": "ListItem", "position": 6, "name": "Ecuador" },
+        { "@type": "ListItem", "position": 7, "name": "Uruguay" },
+        { "@type": "ListItem", "position": 8, "name": "Venezuela" },
+        { "@type": "ListItem", "position": 9, "name": "Panamá" },
+        { "@type": "ListItem", "position": 10, "name": "Paraguay" }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.oberstaff.com/servicios/outsourcing-de-personal#benefits",
+      "name": "Beneficios del outsourcing de personal con Oberstaff",
+      "description": "Beneficios para empresas españolas que externalizan perfiles funcionales y de negocio en LATAM con Oberstaff.",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Menos carga para managers y RR. HH.", "description": "El equipo interno reduce horas dedicadas a filtrado de CVs, contratos, pagos internacionales e incidencias." },
+        { "@type": "ListItem", "position": 2, "name": "Continuidad del servicio", "description": "Evita gestionar cada incorporación o sustitución como una tarea interna adicional." },
+        { "@type": "ListItem", "position": 3, "name": "Una sola contraparte operativa", "description": "Centralización del equipo externalizado en un único proveedor con contabilidad simple." },
+        { "@type": "ListItem", "position": 4, "name": "Español nativo y alineación cultural", "description": "Husos horarios compatibles y transición natural de procesos a LATAM." },
+        { "@type": "ListItem", "position": 5, "name": "Máxima eficiencia de costes", "description": "Acceso a profesionales cualificados de áreas funcionales con costes más competitivos que España." },
+        { "@type": "ListItem", "position": 6, "name": "Flexibilidad real", "description": "Posibilidad de ajustar, ampliar o cancelar el servicio según la evolución del negocio." }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.oberstaff.com/servicios/outsourcing-de-personal#other-services",
+      "name": "Otros modelos de contratación de Oberstaff",
+      "description": "Otros servicios relacionados dentro de la arquitectura de Oberstaff para empresas españolas.",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Staff Augmentation", "url": "https://www.oberstaff.com/servicios/staff-augmentation", "description": "Para ampliar equipos tecnológicos con perfiles IT integrados en herramientas, sprints y dirección diaria." },
+        { "@type": "ListItem", "position": 2, "name": "Employer of Record", "url": "https://www.oberstaff.com/servicios/employer-of-record", "description": "Para contratar empleados en LATAM con relación laboral formal, payroll y cumplimiento local." },
+        { "@type": "ListItem", "position": 3, "name": "Contractor of Record", "url": "https://www.oberstaff.com/servicios/contractor-of-record", "description": "Para trabajar con freelancers o especialistas independientes por proyecto o campaña." }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.oberstaff.com/servicios/outsourcing-de-personal#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "¿Qué es el outsourcing de personal con talento de LATAM?", "acceptedAnswer": { "@type": "Answer", "text": "Es el servicio mediante el cual Oberstaff centraliza la selección, incorporación y gestión administrativa de perfiles comerciales, administrativos, de marketing y soporte en Latinoamérica para empresas españolas. Tu organización define la necesidad; Oberstaff ordena la operación para reducir la carga interna asociada a funciones recurrentes." } },
+        { "@type": "Question", "name": "¿Qué tipo de perfiles cubre este servicio?", "acceptedAnswer": { "@type": "Answer", "text": "Este modelo está diseñado para perfiles comerciales, administrativos, de marketing y soporte, como SDR, customer success, contabilidad, asistencia virtual, soporte al cliente y funciones de back office. Si necesitas perfiles tecnológicos como desarrolladores, QA, DevOps o data, el modelo adecuado es Staff Augmentation." } },
+        { "@type": "Question", "name": "¿Qué incluye el outsourcing de selección de personal?", "acceptedAnswer": { "@type": "Answer", "text": "Incluye publicación de la vacante en Latinoamérica, entrevistas por competencias, evaluación de candidatos y presentación de una terna finalista. Tu empresa toma la decisión final." } },
+        { "@type": "Question", "name": "¿Cuánto tarda la incorporación?", "acceptedAnswer": { "@type": "Answer", "text": "Depende del perfil y de la disponibilidad, pero en funciones comerciales, administrativas, de marketing y soporte el proceso suele avanzar con agilidad una vez validado el candidato y completada la documentación necesaria." } },
+        { "@type": "Question", "name": "¿Qué pasa si el volumen de mi operativa baja?", "acceptedAnswer": { "@type": "Answer", "text": "El modelo de outsourcing de personal es flexible. Puedes ajustar el tamaño del equipo externalizado según las temporadas de alta o baja demanda de tu negocio sin lidiar directamente con despidos o finiquitos en España." } }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.oberstaff.com/servicios/outsourcing-de-personal#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.oberstaff.com/home" },
+        { "@type": "ListItem", "position": 2, "name": "Outsourcing de Personal", "item": "https://www.oberstaff.com/servicios/outsourcing-de-personal" }
+      ]
+    }
+  ]
+}
+</script>
 	<div class="service-detail-container">
 		<div class="fade-in-section hero-outsourcing-custom">
 			<HeroService
@@ -49,6 +288,7 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
 				modalTitle="¿Listo para externalizar tu equipo en LATAM?"
 				modalDescription="Un especialista te explicará cómo delegar tu carga administrativa."
 				modalBtnText="Agendar asesoría gratuita"
+				videoAlt="Outsourcing de personal con Oberstaff"
 			/>
 		</div>
 
@@ -275,7 +515,7 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
                     },
                     {
                         icon: "🗣️",
-                        title: "Soporte y atención al cliente (BPO",
+                        title: "Soporte y atención al cliente (BPO)",
                         quote: "",
                         roles: [
                             { label: "Teleoperador", href: "#" },

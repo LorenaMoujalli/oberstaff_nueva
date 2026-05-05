@@ -11,6 +11,7 @@ interface Props {
     modalTitle?: string;
     modalDescription?: string;
     modalBtnText?: string;
+    videoAlt?: string;
 }
 
 const { 
@@ -23,7 +24,8 @@ const {
     badgeRightIcon = "🔹",
     modalTitle,
     modalDescription,
-    modalBtnText
+    modalBtnText,
+    videoAlt = "Visual Service"
 } = Astro.props;
 import "../../styles/hero-servicios/HeroVisual.css";
 ---
@@ -31,15 +33,15 @@ import "../../styles/hero-servicios/HeroVisual.css";
 <div class="hero-visual-wrapper">
     <!-- Elemento flotante Izquierdo -->
     <div class="floating-badge badge-left">
-        <span class="icon-emoji-hero">{floatingIcon}</span>
+        <span class="icon-emoji-hero" aria-hidden="true">{floatingIcon}</span>
         <span>{floatingText}</span>
     </div>
 
     <!-- Video Central -->
     <div class="video-preview">
-        <img src={videoImg} alt="Visual Service">
+        <img src={videoImg} alt={videoAlt}>
         <button type="button" id="openVideoModal" class="play-button" aria-label="Reproducir video principal">
-            <iconify-icon icon="solar:play-bold"></iconify-icon>
+            <iconify-icon icon="solar:play-bold" aria-hidden="true"></iconify-icon>
         </button>
     </div>
 

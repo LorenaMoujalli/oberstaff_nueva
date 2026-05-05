@@ -24,6 +24,7 @@ interface Props {
     modalTitle?: string;
     modalDescription?: string;
     modalBtnText?: string;
+    videoAlt?: string;
 }
 
 const props = Astro.props;
@@ -48,6 +49,7 @@ const props = Astro.props;
             modalTitle={props.modalTitle}
             modalDescription={props.modalDescription}
             modalBtnText={props.modalBtnText}
+            videoAlt={props.videoAlt}
         />
         
         <HeroContent 

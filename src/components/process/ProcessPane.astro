@@ -16,6 +16,6 @@ const { id, badge, title, description, active = false, badgeColor, badgeBg } = A
 
 <div id={`process-pane-${id}`} class={`process-pane${active ? " active" : ""}`}>
     <span class="process-badge" style={{ color: badgeColor, backgroundColor: badgeBg }}>{badge}</span>
-    <h3>{title}</h3>
+    <p class="process-pane-title"><strong>{title}</strong></p>
     <p>{description}</p>
 </div>

@@ -99,12 +99,18 @@
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.02);
 }
 
-.text-box h3 {
+.text-box h3,
+.text-box p.text-box-title {
     font-family: 'Montserrat', sans-serif;
     font-size: 18px;
     
     color: #1B1B1B;
     margin-bottom: 13px;
+    margin-top: 0;
+}
+
+.text-box p.text-box-title strong {
+    font-weight: 700;
 }
 
 .text-box p {
@@ -138,6 +144,11 @@
     font-weight: 700;
     color: #1B1B1B;
     margin-bottom: 18px;
+    margin-top: 0;
+}
+
+.ques-checklist-title strong {
+    font-weight: 700;
 }
 
 .ques-checklist {

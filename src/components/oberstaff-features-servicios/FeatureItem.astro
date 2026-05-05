@@ -17,7 +17,7 @@ const { title, description, icon, colorClass, cardClass = "" } = Astro.props;
         <div class="feature-icon">
             {icon.includes(':') ? <iconify-icon icon={icon}></iconify-icon> : <span class="emoji-icon">{icon}</span>}
         </div>
-        <h3 set:html={title}></h3>
+        <p class="feature-item-title"><strong set:html={title}></strong></p>
     </div>
     <p set:html={description}></p>
 </div>

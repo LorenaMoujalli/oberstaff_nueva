@@ -43,7 +43,7 @@ import "../../styles/QueEsServicio/QueEsContent.css";
         {checklistTitle && checklistItems && checklistItems.length > 0 ? (
             <>
                 <div class="ques-checklist-block">
-                    <h3 class="ques-checklist-title">{checklistTitle}</h3>
+                    <p class="ques-checklist-title"><strong>{checklistTitle}</strong></p>
                     <ul class="ques-checklist">
                         {checklistItems.map((item) => (
                             <li class="ques-checklist-item">
@@ -65,7 +65,7 @@ import "../../styles/QueEsServicio/QueEsContent.css";
                         )}
                     </div>
                     <div class="text-box">
-                        <h3 set:html={item.title}></h3>
+                        <p class="text-box-title"><strong set:html={item.title}></strong></p>
                         <p set:html={item.description}></p>
                     </div>
                 </div>

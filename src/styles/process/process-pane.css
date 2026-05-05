@@ -32,13 +32,19 @@
     color: #1F9E4B;
 }
 
-.process-pane h3 {
+.process-pane h3,
+.process-pane p.process-pane-title {
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
     font-weight: 700;
     color: #1b1b1b;
     margin-bottom: 18px;
+    margin-top: 0;
     letter-spacing: -0.5px;
+}
+
+.process-pane p.process-pane-title strong {
+    font-weight: 700;
 }
 
 .process-pane p {

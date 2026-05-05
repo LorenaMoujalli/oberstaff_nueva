@@ -49,13 +49,20 @@
     font-size: 24px;
 }
 
-.servicio-card h4 {
+.servicio-card h4,
+.servicio-card h3.servicio-card-title,
+.servicio-card p.servicio-card-title {
     font-family: 'Montserrat', sans-serif;
     font-size: 18px;
     font-weight: 700;
     margin-bottom: 12px;
+    margin-top: 0;
     color: #1B1B1B;
     text-align: left;
+}
+
+.servicio-card p.servicio-card-title strong {
+    font-weight: 700;
 }
 
 .servicio-card p {

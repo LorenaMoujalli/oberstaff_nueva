@@ -42,14 +42,14 @@
     font-weight: 700;
     text-decoration: none;
     transition: all 0.3s ease;
-    border: 2px solid var(--brand-pink);
-
+    border: 2px solid #FF66CC;
 }
 
 .cta-button:hover {
     color: #FF66CC;
     background-color: transparent;
-    box-shadow: 0 5px 15px rgba(225, 102, 204, 0.3);
+    box-shadow: 0 0 20px rgba(255, 102, 204, 0.5), inset 0 0 10px rgba(255, 102, 204, 0.2);
+    border: 2px solid #FF66CC;
 }
 
 @media (max-width: 600px) {

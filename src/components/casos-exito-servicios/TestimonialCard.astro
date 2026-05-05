@@ -30,13 +30,16 @@ const { stars, text, author, role, avatar, videoId } = Astro.props;
                     <span>★</span>
                 ))}
             </div>
-            <h4 class="testimonial-author">{author}</h4>
+            <p class="testimonial-author"><strong>{author}</strong></p>
             <p class="testimonial-role">{role}</p>
         </div>
     </div>
 
     <!-- Cita -->
-    <blockquote class="testimonial-text" set:html={`"${text}"`}></blockquote>
+    <blockquote class="testimonial-text">
+        <span set:html={`"${text}"`}></span>
+        <cite style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;">{author}, {role}</cite>
+    </blockquote>
 
     {videoId && (
         <button type="button" class="video-link open-testimonial-video" data-video-id={videoId}>

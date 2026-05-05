@@ -32,7 +32,7 @@ const {
     >
         <span class="icon-emoji-servicios-home" aria-hidden="true">{icon}</span>
     </div>
-    <h3>{title}</h3>
+    <p class="service-card-title"><strong set:html={title} /></p>
     <p>{description}</p>
     {linkText && (
         <a href={href} class="service-link">

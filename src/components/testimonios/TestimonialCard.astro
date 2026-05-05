@@ -27,13 +27,16 @@ const { clientName, clientMeta, clientImage, quote, videoUrl = "/home", videoId,
                 <Stars />
             </div>
             <div class="name-container">
-                <h3 class="client-name">{clientName}</h3>
+                <p class="client-name"><strong>{clientName}</strong></p>
                 <p class="client-meta">{clientMeta}</p>
             </div>
         </div>
     </div>
 
-    <blockquote class="testimonial-quote" set:html={quote}></blockquote>
+    <blockquote class="testimonial-quote">
+        <span set:html={quote}></span>
+        <cite style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;">{clientName}, {clientMeta}</cite>
+    </blockquote>
 
     <button type="button" class="video-link open-testimonial-video" data-video-id={videoId}>
         <iconify-icon icon="mdi:play-circle-outline" class="play-icon"
