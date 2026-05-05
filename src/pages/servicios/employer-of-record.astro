@@ -23,9 +23,606 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
 
 <DashboardLayoutServicios
 	title="Employer of Record | Contrata en LATAM · Oberstaff"
-	description="Expande tu equipo en LATAM sin abrir filial. Como tu Employer of Record, gestionamos contratos, nóminas, beneficios y cumplimiento legal en más de 10 países. Expandete en Latinoamérica sin riesgos gracias a un Employer of Record que se encarga de contratos, nómina y cumplimiento local."
-	keywords="Employer of record"
+	description="Expande tu equipo en LATAM sin abrir filial. Como tu Employer of Record, gestionamos contratos, nóminas, beneficios y cumplimiento legal en más de 10 países."
 >
+	<script slot="head" type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.oberstaff.com/servicios/employer-of-record#webpage",
+      "url": "https://www.oberstaff.com/servicios/employer-of-record",
+      "name": "Employer of Record | Contrata en LATAM · Oberstaff",
+      "description": "Expande tu equipo en LATAM sin abrir filial. Como tu Employer of Record, Oberstaff gestiona contratos, nóminas, beneficios y cumplimiento legal en más de 10 países.",
+      "inLanguage": "es-ES",
+      "isPartOf": {
+        "@id": "https://www.oberstaff.com/#website"
+      },
+      "publisher": {
+        "@id": "https://www.oberstaff.com/#organization"
+      },
+      "about": {
+        "@id": "https://www.oberstaff.com/servicios/employer-of-record#service"
+      },
+      "mainEntity": {
+        "@id": "https://www.oberstaff.com/servicios/employer-of-record#service"
+      },
+      "breadcrumb": {
+        "@id": "https://www.oberstaff.com/servicios/employer-of-record#breadcrumb"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.oberstaff.com/servicios/employer-of-record#service",
+      "name": "Employer of Record en LATAM para empresas españolas",
+      "alternateName": [
+        "EOR",
+        "Employer of Record",
+        "Employer of Record para empresas españolas",
+        "EOR España",
+        "Employer of Record services",
+        "EOR Employer of Record en Latinoamérica"
+      ],
+      "serviceType": "Employer of Record",
+      "category": "Servicios de contratación internacional y gestión laboral",
+      "url": "https://www.oberstaff.com/servicios/employer-of-record",
+      "provider": {
+        "@id": "https://www.oberstaff.com/#organization"
+      },
+      "description": "Servicio de Employer of Record para empresas españolas que quieren contratar empleados en Latinoamérica sin abrir filial. Oberstaff actúa como empleador legal y gestiona contratos, nómina, seguridad social, impuestos laborales, beneficios obligatorios y cumplimiento normativo local.",
+      "slogan": "Tú diriges, nosotros somos el empleador legal.",
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Empresas españolas que necesitan contratar empleados en LATAM sin crear una entidad legal propia",
+        "geographicArea": {
+          "@type": "Country",
+          "name": "España"
+        }
+      },
+      "serviceAudience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Pymes, startups y empresas españolas que buscan contratar talento en Latinoamérica con relación laboral formal, payroll y cumplimiento local",
+        "geographicArea": {
+          "@type": "Country",
+          "name": "España"
+        }
+      },
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "España"
+        },
+        {
+          "@type": "Country",
+          "name": "Colombia"
+        },
+        {
+          "@type": "Country",
+          "name": "Argentina"
+        },
+        {
+          "@type": "Country",
+          "name": "México"
+        },
+        {
+          "@type": "Country",
+          "name": "Venezuela"
+        },
+        {
+          "@type": "Country",
+          "name": "Perú"
+        },
+        {
+          "@type": "Country",
+          "name": "Ecuador"
+        },
+        {
+          "@type": "Country",
+          "name": "Paraguay"
+        },
+        {
+          "@type": "Country",
+          "name": "Uruguay"
+        },
+        {
+          "@type": "Country",
+          "name": "Panamá"
+        },
+        {
+          "@type": "Country",
+          "name": "Chile"
+        }
+      ],
+      "offers": {
+        "@type": "Offer",
+        "@id": "https://www.oberstaff.com/servicios/employer-of-record#offer",
+        "name": "EOR Completo",
+        "url": "https://www.oberstaff.com/servicios/employer-of-record#contacto",
+        "price": "690",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock",
+        "eligibleCustomerType": "http://purl.org/goodrelations/v1#Business",
+        "eligibleRegion": {
+          "@type": "Country",
+          "name": "España"
+        },
+        "description": "Servicio EOR completo desde 690€ por empleado al mes, dirigido a empresas españolas que necesitan contratar talento en LATAM con contrato laboral local, gestión de nómina, pagos, altas, documentación y cumplimiento.",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "690",
+          "priceCurrency": "EUR",
+          "unitText": "empleado por mes"
+        }
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "@id": "https://www.oberstaff.com/servicios/employer-of-record#included-services",
+        "name": "Qué incluye la gestión como Employer of Record",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "name": "Estructuración contractual",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Estructuración contractual",
+              "description": "Redacción y firma del contrato conforme a la legislación del país donde se incorpora el profesional."
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Payroll y administración",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Payroll y administración",
+              "description": "Gestión de payroll, recibos, calendario de pago y administración mensual del profesional."
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Nómina, impuestos y beneficios obligatorios",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Nómina, impuestos y beneficios obligatorios",
+              "description": "Gestión de salarios, impuestos, seguridad social, vacaciones y demás obligaciones laborales aplicables."
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Cumplimiento y soporte continuo",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Cumplimiento y soporte continuo",
+              "description": "Administración de incidencias, cambios contractuales, bajas y acompañamiento operativo mes a mes."
+            }
+          }
+        ]
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Fernando Calderón"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "BeautyPro"
+          },
+          "reviewBody": "Gracias a Oberstaff pudimos incorporar talento de primer nivel a nuestro equipo a un costo muy competitivo. El proceso fue rápido y sin complicaciones. En menos de una semana ya teníamos a nuestra persona trabajando.",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5",
+            "worstRating": "1"
+          }
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Shadai Iborra"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "@amediastory"
+          },
+          "reviewBody": "Con Oberstaff pude dar trabajo a dos personas a tiempo completo ahorrando costes significativos. Lo que más valoro es que ellos se encargan de todo lo legal: yo me dedico solo a hacer crecer mi negocio.",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5",
+            "worstRating": "1"
+          }
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Kate McCafferty"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "KM Real Estate"
+          },
+          "reviewBody": "I've been working with Oberstaff for about 2 years. They handle everything: contracts, payments and HR admin. My team in Latin America is fantastic and the cost savings have been game-changing for our business.",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5",
+            "worstRating": "1"
+          }
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1",
+        "ratingCount": "3",
+        "reviewCount": "3"
+      },
+      "isRelatedTo": [
+        {
+          "@id": "https://www.oberstaff.com/servicios/outsourcing-de-personal#service"
+        },
+        {
+          "@id": "https://www.oberstaff.com/servicios/staff-augmentation#service"
+        },
+        {
+          "@id": "https://www.oberstaff.com/servicios/contractor-of-record#service"
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.oberstaff.com/servicios/employer-of-record#use-cases",
+      "name": "Cuándo usar el servicio Employer of Record",
+      "description": "Casos en los que una empresa española puede utilizar Employer of Record para contratar talento en LATAM sin abrir filial.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Expansión en LATAM sin filial",
+          "description": "Para incorporar empleados en mercados de Latinoamérica sin esperar meses a constituir una compañía local."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Equipos estables y contratación recurrente",
+          "description": "Para roles estables, recurrentes y parte estructural de la operación diaria."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Relación laboral formal",
+          "description": "Para puestos que requieren horario, supervisión, integración en el equipo y continuidad."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Reducción de carga legal y administrativa",
+          "description": "Para gestionar correctamente contratos, nómina, impuestos, vacaciones, bajas y desvinculaciones."
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.oberstaff.com/servicios/employer-of-record#process",
+      "name": "Proceso Employer of Record",
+      "description": "Proceso de Oberstaff para activar una relación laboral EOR en Latinoamérica para empresas españolas.",
+      "numberOfItems": 4,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Definición legal",
+          "description": "La empresa comparte el rol, rango salarial, país de contratación y fecha objetivo de inicio."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Estructuración del alta laboral",
+          "description": "Oberstaff revisa el encaje legal, genera el contrato y deja lista la incorporación."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Activación de la relación laboral",
+          "description": "El talento ingresa bajo el modelo EOR y se integra a la operación desde el primer día."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Administración de payroll y cumplimiento",
+          "description": "Oberstaff gestiona nómina, cumplimiento e incidencias laborales con una sola factura consolidada."
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.oberstaff.com/servicios/employer-of-record#profiles",
+      "name": "Perfiles que puedes contratar con EOR",
+      "description": "Perfiles profesionales que empresas españolas pueden contratar en LATAM mediante el servicio Employer of Record de Oberstaff.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Ejecutivo de Ventas"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "SDR"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Auxiliar contable",
+          "url": "https://www.oberstaff.com/servicios/contratar-auxiliar-contable"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Asistente virtual",
+          "url": "https://www.oberstaff.com/servicios/contratar-un-asistente-virtual"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Experto SEO",
+          "url": "https://www.oberstaff.com/servicios/contratar-experto-seo"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Especialista Google Ads",
+          "url": "https://www.oberstaff.com/servicios/especialista-en-google-ads"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "Especialista Meta Ads",
+          "url": "https://www.oberstaff.com/servicios/experto-en-meta-ads"
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "Community Manager",
+          "url": "https://www.oberstaff.com/servicios/contratar-community-manager"
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "name": "Desarrollador WordPress"
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "name": "Desarrollador Web"
+        },
+        {
+          "@type": "ListItem",
+          "position": 11,
+          "name": "Desarrollador Mobile"
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.oberstaff.com/servicios/employer-of-record#countries",
+      "name": "Países de LATAM con cobertura para Employer of Record",
+      "description": "Países de Latinoamérica donde Oberstaff permite a empresas españolas contratar talento mediante Employer of Record.",
+      "numberOfItems": 10,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Colombia"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Argentina"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "México"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Venezuela"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Perú"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Ecuador"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "Paraguay"
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "Uruguay"
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "name": "Panamá"
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "name": "Chile"
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.oberstaff.com/servicios/employer-of-record#benefits",
+      "name": "Beneficios del Employer of Record con Oberstaff",
+      "description": "Beneficios para empresas españolas que contratan empleados en LATAM mediante Employer of Record con Oberstaff.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Blindaje jurídico",
+          "description": "Oberstaff asume la responsabilidad como empleador legal y ayuda a reducir la exposición laboral de la empresa en España."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Relación laboral formal",
+          "description": "Contratación de especialistas de forma correcta sin improvisar estructuras legales en cada país."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Payroll y administración centralizados",
+          "description": "Una sola contraparte para la operativa mensual aunque el equipo esté distribuido en varios países."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Compatibilidad horaria",
+          "description": "Los profesionales de LATAM trabajan en horario compatible con España."
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Soporte humano",
+          "description": "Equipo de soporte disponible para acompañamiento operativo."
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Sin permanencia mínima",
+          "description": "Posibilidad de usar el servicio EOR sin compromisos de permanencia a largo plazo."
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.oberstaff.com/servicios/employer-of-record#other-services",
+      "name": "Otros servicios de Oberstaff",
+      "description": "Otros servicios relacionados dentro de la arquitectura de Oberstaff para empresas españolas.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Staff Augmentation",
+          "url": "https://www.oberstaff.com/servicios/staff-augmentation",
+          "description": "Para ampliar equipos tecnológicos con perfiles IT integrados en herramientas, sprints y dirección diaria."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Outsourcing de Personal",
+          "url": "https://www.oberstaff.com/servicios/outsourcing-de-personal",
+          "description": "Para externalizar selección, contratación y administración de perfiles funcionales y de negocio."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Contractor of Record",
+          "url": "https://www.oberstaff.com/servicios/contractor-of-record",
+          "description": "Para trabajar con freelancers o especialistas independientes por proyecto o campaña."
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.oberstaff.com/servicios/employer-of-record#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Qué hace exactamente un Employer of Record?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Es la entidad que asume el riesgo legal y laboral. Oberstaff firma el contrato local, liquida impuestos y paga la nómina, mientras que tu empresa define las tareas, horarios y métricas de evaluación del talento."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuándo conviene usar EOR?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Conviene usar EOR cuando el puesto sea estable, tenga continuidad, horario definido y relación laboral formal."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Puedo contratar en varios países a la vez?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Oberstaff opera en más de 10 países de Latinoamérica. Puedes tener profesionales en países como Colombia, Argentina y Venezuela al mismo tiempo con un único interlocutor."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto tarda la puesta en marcha?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depende del país y del perfil, pero el modelo EOR suele ser mucho más rápido que abrir una empresa local."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Tengo que abrir una filial?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. El propósito del modelo EOR es que utilices entidades legales ya constituidas para contratar de forma inmediata y legal."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué pasa si necesito terminar la relación laboral?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oberstaff acompaña el proceso de desvinculación conforme a la legislación local y reduce la exposición operativa y jurídica de tu empresa."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Hay permanencia mínima?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No exigimos contratos de permanencia. Puedes ajustar o cancelar el servicio cuando lo necesites sin penalizaciones."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.oberstaff.com/servicios/employer-of-record#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://www.oberstaff.com/home"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Employer of Record",
+          "item": "https://www.oberstaff.com/servicios/employer-of-record"
+        }
+      ]
+    }
+  ]
+}
+</script>
 	<div class="service-detail-container">
 		<div class="fade-in-section">
 			<HeroService
@@ -41,20 +638,23 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
 				primaryBtnHref="#contacto"
 				secondaryBtnText="Hablar con un especialista EOR"
 				secondaryBtnHref="#contacto"
+				underBtnText="↳ Tardarás menos de 1 minuto · Sin compromiso"
 				modalTitle="¿Listo para expandir tu equipo en LATAM?"
 				modalDescription="Un especialista te explicará exactamente cuánto puedes ahorrar con nuestro modelo EOR."
 				modalBtnText="Agendar asesoría gratuita"
-				videoAlt="Employer of record con Oberstaff"
+				videoAlt="Employer of Record para contratar talento en LATAM"
 			/>
 		</div>
 
 		<div class="fade-in-section">
 			<FranjaEmpresasHome
-				stat1Number="70%"
-				stat1Label="AHORRO EN COSTOS"
-				stat2Number="+500"
-				stat2Label="EMPRESAS CONFÍAN EN NOSOTROS"
-			/> 
+				stat1Number="100%"
+				stat1Label="Compliance con la legislación laboral local"
+				stat2Number="0"
+				stat2Label="Necesidad de abrir entidades legales en LATAM"
+				stat3Number="100%"
+				stat3Label="Gestión de beneficios y seguridad social"
+			/>   
 		</div>
 
 		<div class="fade-in-section">
@@ -81,7 +681,7 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
 					},
 				]}
 				diffIcon="💡"
-				diffTitle="Diferencia clave frente a CoR"
+				diffTitle="Diferencia clave frente a COR"
 				diffDescription="Con EOR el profesional entra como empleado y existe relación laboral formal. Con CoR el profesional opera como independiente. Si necesitas payroll, seguridad social y cumplimiento laboral continuo, el modelo correcto es EOR."
 			/>
 		</div>
@@ -219,23 +819,22 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
 			<ProfilesSection
 				title="Perfiles que puedes <strong>contratar con EOR</strong>"
 				description="El servicio Employer of Record profesionaliza tu <br/> expansión en LATAM mediante una relación <br/> laboral formal. Protege la integridad de tu <br/> empresa integrando talento legalmente en <br/> departamentos clave:"
-				profiles={[
+				profiles={[  
 					{
 						icon: "🤝",
 						title: "Operaciones comerciales",
-						quote: "Representar a tu empresa con dedicación exclusiva exige un contrato laboral formal para evitar riesgos jurídicos.",
+						quote: "Representar a tu empresa con dedicación exclusiva exige un contrato laboral para evitar riesgos jurídicos.",
 						roles: [
-							{ label: "Ejecutivo de Ventas", href: "#" },
-							{ label: "SDR", href: "#" },
+							{ label: "Closer de Ventas", href: "/servicios/contratar-closer-de-ventas" }
 						],
-						iconColorClass: "purple-text",
+						iconColorClass: "purple-text", 
 					},
 					{
 						icon: "📊",
 						title: "Finanzas y administración",
-						quote: "Para perfiles con acceso a datos críticos. Este modelo asegura subordinación legal, exclusividad y cumplimiento normativo local.",
+						quote: "Para perfiles con acceso a datos críticos. Este modelo asegura exclusividad y cumplimiento normativo local.",
 						roles: [
-							{ label: "Auxiliar contable", href: "/servicios/contratar-auxiliar-contable" },
+							{ label: "Contable", href: "/servicios/contratar-contable" },
 							{ label: "Asistente virtual", href: "/servicios/contratar-un-asistente-virtual" },
 						],
 						iconColorClass: "blue-text",
@@ -257,9 +856,8 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
 						title: "Tecnología",
 						quote: "Para quienes desarrollan tu código o sistemas, necesitas un contrato laboral formal que garantice la cesión de Propiedad Intelectual (IP) y NDAs blindados.",
 						roles: [
-							{ label: "Desarrollador WordPress", href: "#" },
-							{ label: "Desarrollador Web", href: "#" },
-							{ label: "Desarrollador Mobile", href: "#" },
+							{ label: "Desarrollador Fullstack", href: "#" },
+							{ label: "Desarrollador Mobile", href: "#" }
 						],
 						iconColorClass: "orange-text",
 					},
@@ -380,6 +978,9 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
 					{ code: "PE", name: "Perú" },
 					{ code: "PY", name: "Paraguay" },
 					{ code: "AR", name: "EOR Argentina" },
+					{ code: "UY", name: "Uruguay" },
+					{ code: "CL", name: "Chile" },
+					{ code: "PA", name: "Panama" }
 				]}
 			/>
 		</div>
@@ -413,28 +1014,23 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
 			<CasosExitoSection
 				title="Empresas Españolas que ya confían en <span style='font-weight: 900; color: #6663FD;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span> EOR."
 				subtitle=""
-				columns={3}
+				columns={2}
 				testimonials={[
 					{
 						stars: 5,
 						avatar: "/fernando.webp",
-						text: "Gracias a <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong> pudimos incorporar talento de primer nivel a nuestro equipo a un costo muy competitivo. El proceso fue rápido y sin complicaciones. En menos de una semana ya teníamos a nuestra persona trabajando.",
+						imageAlt: "Fernando Calderón, cliente de Oberstaff EOR",
+						text: "Estaba en busca de talento remoto especializado para mi empresa y después de varias búsquedas sin éxito, encontré a <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong> en Instagram. Desde nuestra primera llamada, su profesionalismo y calidad de trabajo me dejaron impresionado. Ahora, gracias a su excelente servicio, he expandido mi contrato con ellos para incluir más personal.",
 						author: "Fernando Calderón",
 						role: "CEO · BeautyPro",
 					},
 					{
 						stars: 5,
 						avatar: "/sha.webp",
-						text: "Con <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong> pude dar trabajo a dos personas a tiempo completo ahorrando costes significativos. Lo que más valoro es que ellos se encargan de todo lo legal: yo me dedico solo a hace crecer mi negocio.",
+						imageAlt: "Shadai Iborra, cliente de Oberstaff EOR",
+						text: "Con <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong> pude dar trabajo a dos personas a tiempo completo, ahorrando costes de reclutamiento, espacios de oficina y salario que tendría al hacerlo en España. Lo mejor de todo es que todo está incluido en una misma factura. Con <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong>, encontré la solución perfecta para mis necesidades de contratación remota y optimización de costes.",
 						author: "Shadai Iborra",
 						role: "CEO · @amediastory",
-					},
-					{
-						stars: 5,
-						avatar: "/Kate.webp",
-						text: "I've been working with <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong> for about 2 years. They handle everything: contracts, payments and HR admin. My team in Latin America is fantastic and the cost savings have been game-changing for our business.",
-						author: "Kate McCafferty",
-						role: "KM Real Estate",
 					},
 				]}
 			/>
@@ -450,7 +1046,7 @@ import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
 			<OtrosServiciosSection
 				title="Otros servicios de <span style='font-weight: 900; color: #6663FD;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span>"
 				subtitle=""
-				description="¿No sabes qué modelo necesitas? El EOR services es uno de los cuatro modelos de contratación que ofrece Oberstaff. Dependiendo de tu operación,puedes necesitar un enfoque diferente:"
+				description="¿No sabes qué modelo necesitas? El EOR services es uno de los cuatro modelos de contratación que ofrece Oberstaff. Dependiendo de tu operación, puedes necesitar un enfoque diferente:"
 				servicios={[
 					{
 						icon: "🔗",

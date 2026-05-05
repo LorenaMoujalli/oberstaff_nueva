@@ -3,7 +3,21 @@ import TestimonialCard from "./TestimonialCard.astro";
 import TestimonialsHeader from "./TestimonialsHeader.astro";
 import "../../styles/testimonios/testimonials-section.css";
 
-const testimonials = [
+interface Testimonial {
+    clientName: string;
+    clientMeta: string;
+    clientImage: string;
+    quote: string;
+    videoId: string;
+    altText: string;
+}
+
+interface Props {
+    id?: string;
+    testimonials?: Testimonial[];
+}
+
+const defaultTestimonials = [
     {
         clientName: "Shadai Iborra",
         clientMeta: "CEO · @amediastory - Barcelona, España.",
@@ -21,7 +35,8 @@ const testimonials = [
         altText: "Fernando Calderón, cliente de Oberstaff en Madrid",
     },
 ];
-const { id } = Astro.props;
+
+const { id, testimonials = defaultTestimonials } = Astro.props;
 ---
 
 <section class="testimonials-section" id={id}>

@@ -8,9 +8,10 @@ interface Props {
     role: string;
     avatar?: string;
     videoId?: string;
+    imageAlt?: string;
 }
 
-const { stars, text, author, role, avatar, videoId } = Astro.props;
+const { stars, text, author, role, avatar, videoId, imageAlt } = Astro.props;
 ---
 
 <div class="testimonial-card">
@@ -20,7 +21,7 @@ const { stars, text, author, role, avatar, videoId } = Astro.props;
         {avatar && (
             <img
                 src={avatar}
-                alt={`Foto de ${author}`}
+                alt={imageAlt || `Foto de ${author}`}
                 class="testimonial-avatar"
             />
         )}

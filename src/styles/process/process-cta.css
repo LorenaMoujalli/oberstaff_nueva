@@ -11,7 +11,7 @@
     text-align: center;
 }
 
-.process-cta h4 {
+.process-cta-title {
     font-size: 18px;
     font-weight: 700;
     color: #1b1b1b;
@@ -20,7 +20,7 @@
     font-style: normal;
 }
 
-.process-cta p {
+.process-cta-description {
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
     color: #5A5A5A;
