@@ -10,9 +10,10 @@ interface Props {
     title: string;
     description: string;
     countries: Country[];
+    mapAlt?: string;
 }
 
-const { title, description, countries } = Astro.props;
+const { title, description, countries, mapAlt } = Astro.props;
 
 // Positions calibrated for the actual Latin America map image.
 // The image is portrait (~0.79:1 ratio), displayed with object-fit:contain inside a ~570x550px wrapper.
@@ -44,7 +45,7 @@ const countryData: Record<string, { img: string; top: string; left: string; bord
     <div class="cobertura-map-wrapper">
         <img
             src="/mapa-de-Latinoamérica.webp"
-            alt="Mapa de cobertura de outsourcing de personal de Oberstaff"
+            alt={mapAlt || "Mapa de cobertura de Oberstaff en Latinoamérica"}
             class="cobertura-map-img"
         />
         {countries.map((country) => {

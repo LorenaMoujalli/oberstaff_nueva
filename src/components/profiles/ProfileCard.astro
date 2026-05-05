@@ -29,9 +29,15 @@ const { icon, title, quote, description, roles, iconColorClass, url } = Astro.pr
     <ul class="roles-list">
         {roles.map((role) => (
             <li>
-                <a href={role.href} class="role-link">
-                    {role.label} <span class="arrow">→</span>
-                </a>
+                {role.href && role.href !== "#" ? (
+                    <a href={role.href} class="role-link">
+                        {role.label} <span class="arrow">→</span>
+                    </a>
+                ) : (
+                    <span class="role-link role-text">
+                        {role.label}
+                    </span>
+                )}
             </li>
         ))}
     </ul>

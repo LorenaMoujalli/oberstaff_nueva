@@ -101,6 +101,15 @@
     color: #6663FD;
 }
 
+.role-text {
+    cursor: default;
+}
+
+.role-text:hover {
+    color: #1B1B1B;
+    transform: none;
+}
+
 /* Solo para la página de Employer */
 .profiles-employer-page .role-link {
     justify-content: space-between;

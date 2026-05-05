@@ -65,8 +65,8 @@ import "../../styles/QueEsServicio/QueEsContent.css";
                         )}
                     </div>
                     <div class="text-box">
-                        <p class="text-box-title"><strong set:html={item.title}></strong></p>
-                        <p set:html={item.description}></p>
+                        {item.title && <p class="text-box-title"><strong set:html={item.title}></strong></p>}
+                        {item.description && <p set:html={item.description}></p>}
                     </div>
                 </div>
             ))

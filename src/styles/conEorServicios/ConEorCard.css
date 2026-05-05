@@ -58,6 +58,12 @@
 .negative-header { color: #5A5A5A; }
 .positive-header { color: #1B1B1B; }
 
+.card-header-title {
+    margin: 0;
+    font: inherit;
+    color: inherit;
+}
+
 .eor-list {
     list-style: none;
     padding: 0;

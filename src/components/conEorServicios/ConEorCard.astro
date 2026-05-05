@@ -23,7 +23,7 @@ const listClass = iconStyle === "positive" ? "eor-list list-positive" : "eor-lis
             style={iconStyle === "positive" ? "color: #ff66cc;" : ""}
             aria-hidden="true"
         ></iconify-icon>
-        <span set:html={title}></span>
+        <p class="card-header-title" set:html={title}></p>
     </div>
     <ul class={listClass}>
         {items.map((item) => (

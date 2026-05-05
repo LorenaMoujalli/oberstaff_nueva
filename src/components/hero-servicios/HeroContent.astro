@@ -26,12 +26,20 @@ import "../../styles/hero-servicios/HeroContent.css";
 ---
 
 
-{preTitle && <h1 class="pre-title">{preTitle}</h1>}
-
-<p class="main-title">
-    {title} <br>
-    <span class="pink-highlight">{highlight}</span>
-</p>
+{preTitle ? (
+    <>
+        <h1 class="pre-title">{preTitle}</h1>
+        <p class="main-title">
+            <span set:html={title}></span>
+            {highlight && <><br /><span class="pink-highlight">{highlight}</span></>}
+        </p>
+    </>
+) : (
+    <h1 class="main-title">
+        <span set:html={title}></span>
+        {highlight && <><br /><span class="pink-highlight">{highlight}</span></>}
+    </h1>
+)}
 
 <p class="hero-description" set:html={description}></p>
 
