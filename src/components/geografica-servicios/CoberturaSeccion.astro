@@ -57,7 +57,7 @@ const countryData: Record<string, { img: string; top: string; left: string; bord
                     style={`top: ${data.top}; left: ${data.left}; border-left-color: ${data.borderColor};`}
                 >
                     <div class="map-badge-img-wrapper">
-                        <img src={data.img} alt={`Bandera de ${country.name}`} class="map-badge-flag-img" />
+                        <img src={data.img} alt="" aria-hidden="true" class="map-badge-flag-img" />
                     </div>
                     <span class="map-badge-name">{country.name}</span>
                 </div>

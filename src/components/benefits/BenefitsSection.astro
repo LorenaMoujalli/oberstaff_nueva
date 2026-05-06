@@ -73,7 +73,7 @@ const benefits = [
                         class={`tab-btn ${index === 0 ? 'active' : ''}`} 
                         data-tab={benefit.id}
                     >
-                        <span class="tab-icon-emoji">{benefit.icon}</span>
+                        <span class="tab-icon-emoji" aria-hidden="true">{benefit.icon}</span>
                         <span>{benefit.shortTitle}</span>
                     </button>
                 ))}
@@ -87,10 +87,10 @@ const benefits = [
                     >
                         <div class="pane-inner">
                             <div class="pane-header">
-                                <span class="pane-icon-emoji">{benefit.icon}</span>
+                                <span class="pane-icon-emoji" aria-hidden="true">{benefit.icon}</span>
                                 <h3 class="pane-title">{benefit.title}</h3>
                             </div>
-                            <h4 class="pane-subtitle">{benefit.subtitle}</h4>
+                            <p class="pane-subtitle">{benefit.subtitle}</p>
                             <p class="pane-text">{benefit.text}</p>
                         </div>
                     </div>
@@ -99,7 +99,7 @@ const benefits = [
         </div>
 
         <div class="benefits-info-box">
-            <span class="info-icon">💡</span>
+            <span class="info-icon" aria-hidden="true">💡</span>
             <p>
                 <strong>Oberstaff<span class="dot">.</span> factura en euros</strong>, todas las gestiones se hacen en tu idioma, en tu zona horaria y cumpliendo la normativa vigente para empresas españolas.
             </p>

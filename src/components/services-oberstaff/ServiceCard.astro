@@ -10,6 +10,7 @@ interface Props {
     colorClass?: string;
     cardClass: string;
     customIconBg?: string;
+    titleTag?: "h3" | "p";
 }
 
 const {
@@ -21,7 +22,10 @@ const {
     colorClass = "",
     cardClass,
     customIconBg,
+    titleTag = "p",
 } = Astro.props;
+
+const TitleTag = titleTag;
 ---
 
 <article class={`service-card ${cardClass}`}>
@@ -32,7 +36,7 @@ const {
     >
         <span class="icon-emoji-servicios-home" aria-hidden="true">{icon}</span>
     </div>
-    <p class="service-card-title"><strong set:html={title} /></p>
+    <TitleTag class="service-card-title" set:html={title} />
     <p>{description}</p>
     {linkText && (
         <a href={href} class="service-link">

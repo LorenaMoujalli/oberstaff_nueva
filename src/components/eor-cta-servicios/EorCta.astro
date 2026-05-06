@@ -13,7 +13,7 @@ const { title, text, buttonText, buttonHref } = Astro.props;
 
 <section class="eor-cta">
     <div class="cta-content">
-        <h2 class="cta-title" set:html={title}></h2>
+        <p class="cta-title" set:html={title}></p>
         <p class="cta-text" set:html={text}></p>
         <a href={buttonHref} class="cta-button">{buttonText}</a>
     </div>

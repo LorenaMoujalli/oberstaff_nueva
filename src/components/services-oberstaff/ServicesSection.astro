@@ -15,10 +15,11 @@ interface Props {
     description?: string;
     services?: Service[];
     customClass?: string;
+    cardTitleTag?: "h3" | "p";
 }
 
 const {
-    title = "Servicios para <strong>incorporar profesionales de Latinoamérica</strong>",
+    title = "Servicios para <strong>incorporar profesionales remotos de Latinoamérica</strong>",
     description = "No todas las empresas necesitan la misma estructura. Por eso Oberstaff te orienta hacia el modelo más eficiente según el tipo de perfil, la relación de trabajo y el nivel de control que buscas.",
     services = [
         {
@@ -45,7 +46,7 @@ const {
             icon: "💻",
             title: "Staff Augmentation",
             description:
-                "Refuerza tu equipo de tecnología con desarrolladores, QA, DevOps y más perfiles IT de primer nivel. Integrados en tu stack desde el primer día.",
+                "Amplía tu equipo tech integrando desarrolladores remotos de LATAM a tus flujos y sprints diarios.",
             linkText: "Conoce nuestro servicio de Staff Augmentation",
             href: "/es/servicios/staff-augmentation",
             colorClass: "orange-bg",
@@ -55,14 +56,15 @@ const {
             icon: "📋",
             title: "Contractor of Record (CoR)",
             description:
-                "Formaliza la relación con freelancers e independientes sin crear un vínculo laboral de empleado.",
-            linkText: "Conoce nuestro servicio de Contractor of Record",
+                "Gestionamos los contratos, pagos y cumplimiento de tus freelancers y contratistas en Latinoamérica.",
+            linkText: "Conoce nuestro servicio de Contractor of Record (CoR)",
             href: "/es/servicios/contractor-of-record",
             colorClass: "gray-bg",
             cardClass: "card-lime",
         },
     ],
     customClass = "",
+    cardTitleTag = "p",
 } = Astro.props;
 
 import ServiceCard from "./ServiceCard.astro";
@@ -90,6 +92,7 @@ import "../../styles/services-oberstaff/services-section.css";
                         colorClass={service.colorClass}
                         cardClass={service.cardClass}
                         customIconBg={service.customIconBg}
+                        titleTag={cardTitleTag}
                     />
                 ))
             }

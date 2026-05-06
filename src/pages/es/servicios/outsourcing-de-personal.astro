@@ -26,6 +26,7 @@ import ProfilesSection from "../../../components/profiles/ProfilesSection.astro"
 	description="Externaliza tu equipo comercial o administrativo en LATAM. Selección, contratación y gestión desde 690€/mes. Propuesta en 24h."
 	keywords="outsourcing de personal"
 >
+	<link rel="canonical" href="https://www.oberstaff.com/es/servicios/outsourcing-de-personal" slot="head" />
 	<script slot="head" type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -538,7 +539,7 @@ import ProfilesSection from "../../../components/profiles/ProfilesSection.astro"
                 <div slot="bottom-alert" class="profiles-bottom-alert">
                     <span class="alert-icon">🚨</span>
                     <div class="alert-content">
-                        <h4> ¿Necesitas perfiles tecnológicos?</h4>
+                        <p class="alert-title"> ¿Necesitas perfiles tecnológicos?</p>
                         <p>
                             Desarrolladores, QA, DevOps, data engineers y otros perfiles IT se gestionan a través de nuestro servicio de  <strong>Staff Augmentation</strong>, donde se integran directamente en tu equipo técnico, tus herramientas y tus sprints. <a href="/es/servicios/staff-augmentation/">Ver Staff Augmentation →</a>
                         </p>
@@ -651,6 +652,7 @@ import ProfilesSection from "../../../components/profiles/ProfilesSection.astro"
             <CoberturaSeccion
                 title="Tu outsourcing de personal<br/> <span style='color: #6663FD; font-weight: 900;'>en 10 países de</span><br/><span style='color: #6663FD; font-weight: 900;'> Latinoamérica</span>"
                 description="Un único contrato con <span style='font-weight: 700; color: #1B1B1B;'>Oberstaff</span><span style='font-weight: 700; color: #FF66CC;'>.</span> te permite externalizar procesos apoyándote en profesionales de Colombia, Argentina, Venezuela y 7 países más. Tu compañía se expande operativamente con una sola estructura de gestión."
+                mapAlt="Mapa de cobertura de outsourcing de personal en México, Colombia, Argentina, Chile, Perú y otros hubs de LATAM"
                 countries={[
                     { code: "MX", name: "México" },
                     { code: "VE", name: "Venezuela" },
@@ -1182,13 +1184,15 @@ import ProfilesSection from "../../../components/profiles/ProfilesSection.astro"
 		z-index: 1;
 	}
 
-	.alert-content h4 {
-		font-family: "Montserrat", sans-serif;
-		font-size: 18px;
-		font-weight: 700;
-		color: #6663fd;
-		margin: 0 0 12px 0;
-		letter-spacing: -0.5px;
+	.profiles-bottom-alert .alert-content .alert-title {
+		font-family: "Montserrat", sans-serif !important;
+		font-size: 18px !important;
+		font-weight: 700 !important;
+		color: #6663fd !important;
+		margin: 0 0 12px 0 !important;
+		letter-spacing: -0.5px !important;
+		display: block !important;
+		line-height: 1.3 !important;
 	}
 
 	.alert-content p {
@@ -1229,8 +1233,8 @@ import ProfilesSection from "../../../components/profiles/ProfilesSection.astro"
 			font-size: 28px;
 		}
 
-		.alert-content h4 {
-			font-size: 19px;
+		.profiles-bottom-alert .alert-content .alert-title {
+			font-size: 19px !important;
 		}
 
 		.alert-content p {

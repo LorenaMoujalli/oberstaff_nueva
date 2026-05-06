@@ -28,7 +28,7 @@
 
             <!-- Columna Servicios -->
             <div class="footer-col-links">
-                <h3>Servicios</h3>
+                <p class="footer-col-title">Servicios</p>
                 <ul>
                     <li><a href="/es/servicios/employer-of-record">Employer of Record</a></li>
                     <li><a href="/es/servicios/outsourcing-de-personal">Outsourcing de Personal</a></li>
@@ -39,7 +39,7 @@
 
             <!-- Columna Empresa --> 
             <div class="footer-col-links">
-                <h3>Empresa</h3>
+                <p class="footer-col-title">Empresa</p>
                 <ul>
                     <li><a href="/es/quienesomos">Quiénes Somos</a></li>
                    
@@ -123,13 +123,15 @@
         }
 
         /* Columnas de Enlaces */
-        .footer-col-links h3 {
-            font-family: "Montserrat", sans-serif;
-            font-size: 16px;
-            font-weight: 700;
-            font-style: normal;
-            margin-bottom: 25px;
-            color: #ffffff;
+        .footer-col-links h3,
+        .footer-col-links .footer-col-title {
+            font-family: "Montserrat", sans-serif !important;
+            font-size: 16px !important;
+            font-weight: 700 !important;
+            font-style: normal !important;
+            margin: 0 0 25px 0 !important;
+            color: #ffffff !important;
+            display: block !important;
         }
 
         .footer-col-links ul {

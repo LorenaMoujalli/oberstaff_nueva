@@ -54,8 +54,8 @@ const {
 <section class="otros-servicios">
     <div class="servicios-header">
         <h2 set:html={title} />
-        <h3>{subtitle}</h3>
-        <p>{description}</p>
+        {subtitle && <h3>{subtitle}</h3>}
+        {description && <p>{description}</p>}
     </div>
 
     <div class="servicios-grid">

@@ -84,8 +84,8 @@ const {
 <section class="roles-eor" id="roles">
     <div class="roles-header">
         <h2>{title}</h2>
-        <h3>{subtitle}</h3>
-        <p>{description}</p>
+        {subtitle && <h3>{subtitle}</h3>}
+        {description && <p>{description}</p>}
     </div>
 
     <div class="roles-grid">

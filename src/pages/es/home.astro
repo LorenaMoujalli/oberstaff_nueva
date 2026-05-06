@@ -18,6 +18,7 @@ import EorCta from "../../components/eor-cta-servicios/EorCta.astro";
 --- 
 
 <DashboardLayout>
+	<link rel="canonical" href="https://www.oberstaff.com/es/home" slot="head" />
 	<script slot="head" type="application/ld+json">
 	{
 	  "@context": "https://schema.org",
@@ -387,7 +388,7 @@ import EorCta from "../../components/eor-cta-servicios/EorCta.astro";
 			<StatsSection />
 		</div>
 		<div class="fade-in-section">
-			<ServicesSection />
+			<ServicesSection cardTitleTag="h3" />
 		</div>
 
 		<div class="fade-in-section">

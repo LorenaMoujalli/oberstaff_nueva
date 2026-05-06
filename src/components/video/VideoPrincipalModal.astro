@@ -21,7 +21,7 @@ const {
             <div id="player"></div>
         </div>
         <div class="modal-info">
-            <h2 set:html={modalTitle}></h2>
+            <p class="modal-heading" aria-hidden="true" set:html={modalTitle}></p>
             <p set:html={modalDescription}></p>
             <a href="#contacto" id="modalCtaBtn" class="modal-btn"
                 >{modalBtnText}</a
@@ -112,7 +112,7 @@ const {
         border-radius: 0 0 16px 16px;
     }
 
-    .modal-info h2 {
+    .modal-info .modal-heading {
         font-family: "Montserrat", sans-serif;
         font-size: 24px;
         color: #1b1b1b;
@@ -165,7 +165,7 @@ const {
             padding: 24px 20px;
         }
 
-        .modal-info h2 {
+        .modal-info .modal-heading {
             font-size: 20px;
         }
 

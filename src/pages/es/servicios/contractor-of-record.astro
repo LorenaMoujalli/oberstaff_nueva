@@ -22,841 +22,841 @@ import ProfilesSection from "../../../components/profiles/ProfilesSection.astro"
 ---
 
 <DashboardLayoutServicios
-    title="Contractor of Record para empresas españolas | Oberstaff"
-    description="Contrata freelancers en LATAM ágilmente. Como tu Contractor of Record, gestionamos pagos, contratos y compliance internacional sin nexo laboral."
-    
+  title="Contractor of Record para empresas españolas | Oberstaff"
+  description="Contrata freelancers en LATAM ágilmente. Como tu Contractor of Record, gestionamos pagos, contratos y compliance internacional sin nexo laboral."
 >
-	<script slot="head" type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
+  <link rel="canonical" href="https://www.oberstaff.com/es/servicios/contractor-of-record" slot="head" />
+  <script slot="head" type="application/ld+json">
     {
-      "@type": "WebPage",
-      "@id": "https://www.oberstaff.com/es/servicios/contractor-of-record#webpage",
-      "url": "https://www.oberstaff.com/es/servicios/contractor-of-record",
-      "name": "Contractor of Record para empresas españolas | Oberstaff",
-      "description": "Contrata freelancers en LATAM ágilmente. Como tu Contractor of Record, Oberstaff gestiona pagos, contratos y compliance internacional sin nexo laboral.",
-      "inLanguage": "es-ES",
-      "isPartOf": {
-        "@id": "https://www.oberstaff.com/#website"
-      },
-      "publisher": {
-        "@id": "https://www.oberstaff.com/#organization"
-      },
-      "about": {
-        "@id": "https://www.oberstaff.com/es/servicios/contractor-of-record#service"
-      },
-      "mainEntity": {
-        "@id": "https://www.oberstaff.com/es/servicios/contractor-of-record#service"
-      },
-      "breadcrumb": {
-        "@id": "https://www.oberstaff.com/es/servicios/contractor-of-record#breadcrumb"
-      }
-    },
-    {
-      "@type": "Service",
-      "@id": "https://www.oberstaff.com/es/servicios/contractor-of-record#service",
-      "name": "Contractor of Record en LATAM para empresas españolas",
-      "alternateName": [
-        "Contractor of Record",
-        "COR",
-        "Contractor of Record para empresas españolas",
-        "Remote Contractor of Record",
-        "Contractor of Record remote",
-        "Contratación de freelancers internacionales",
-        "Contratación de profesionales independientes en LATAM"
-      ],
-      "serviceType": "Contractor of Record",
-      "category": "Servicios de contratación internacional de freelancers y profesionales independientes",
-      "url": "https://www.oberstaff.com/es/servicios/contractor-of-record",
-      "provider": {
-        "@id": "https://www.oberstaff.com/#organization"
-      },
-      "description": "Servicio de Contractor of Record para empresas españolas que necesitan colaborar con freelancers y profesionales independientes en Latinoamérica. Oberstaff estructura contratos mercantiles, centraliza pagos internacionales, coordina la administración mensual y ayuda a reducir riesgos asociados a falsos autónomos.",
-      "slogan": "Contratación ágil de talento independiente sin fricción internacional.",
-      "audience": {
-        "@type": "BusinessAudience",
-        "audienceType": "Empresas españolas que necesitan contratar freelancers e independientes en LATAM sin crear una relación laboral de empleado",
-        "geographicArea": {
-          "@type": "Country",
-          "name": "España"
-        }
-      },
-      "serviceAudience": {
-        "@type": "BusinessAudience",
-        "audienceType": "Pymes, startups y empresas españolas que buscan contratar talento independiente en Latinoamérica por proyecto, sprint, campaña o especialidad, con contratos mercantiles, pagos centralizados y compliance internacional",
-        "geographicArea": {
-          "@type": "Country",
-          "name": "España"
-        }
-      },
-      "areaServed": [
+      "@context": "https://schema.org",
+      "@graph": [
         {
-          "@type": "Country",
-          "name": "España"
-        },
-        {
-          "@type": "Country",
-          "name": "Colombia"
-        },
-        {
-          "@type": "Country",
-          "name": "México"
-        },
-        {
-          "@type": "Country",
-          "name": "Argentina"
-        },
-        {
-          "@type": "Country",
-          "name": "Chile"
-        },
-        {
-          "@type": "Country",
-          "name": "Perú"
-        },
-        {
-          "@type": "Country",
-          "name": "Venezuela"
-        },
-        {
-          "@type": "Country",
-          "name": "Ecuador"
-        },
-        {
-          "@type": "Country",
-          "name": "Uruguay"
-        },
-        {
-          "@type": "Country",
-          "name": "Panamá"
-        },
-        {
-          "@type": "Country",
-          "name": "Paraguay"
-        }
-      ],
-      "offers": {
-        "@type": "Offer",
-        "@id": "https://www.oberstaff.com/es/servicios/contractor-of-record#offer",
-        "name": "Contractor of Record Completo",
-        "url": "https://www.oberstaff.com/es/servicios/contractor-of-record#contacto",
-        "price": "690",
-        "priceCurrency": "EUR",
-        "availability": "https://schema.org/InStock",
-        "eligibleCustomerType": "http://purl.org/goodrelations/v1#Business",
-        "eligibleRegion": {
-          "@type": "Country",
-          "name": "España"
-        },
-        "description": "Servicio Contractor of Record desde 690€ por profesional al mes, dirigido a empresas españolas que necesitan contratar freelancers e independientes en LATAM con contrato mercantil, gestión de pagos, administración mensual, soporte humano y una única factura mensual en euros.",
-        "priceSpecification": {
-          "@type": "UnitPriceSpecification",
-          "price": "690",
-          "priceCurrency": "EUR",
-          "unitText": "profesional por mes"
-        }
-      },
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "@id": "https://www.oberstaff.com/es/servicios/contractor-of-record#included-services",
-        "name": "Qué incluye el servicio de Contractor of Record de Oberstaff",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "name": "Definición del modelo y validación de encaje",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Definición del modelo y validación de encaje",
-              "description": "Validación de si el perfil debe entrar como contractor independiente o si, por su dedicación y naturaleza, conviene otro modelo de contratación."
-            }
-          },
-          {
-            "@type": "Offer",
-            "name": "Contrato y alta documental",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Contrato y alta documental",
-              "description": "Estructuración de la documentación contractual y ordenamiento del marco de colaboración desde el primer día."
-            }
-          },
-          {
-            "@type": "Offer",
-            "name": "Gestión mensual y pagos",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Gestión mensual y pagos",
-              "description": "Centralización de pagos, seguimiento y coordinación administrativa para evitar procesos manuales dispersos entre varios países."
-            }
-          },
-          {
-            "@type": "Offer",
-            "name": "Soporte continuo",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Soporte continuo",
-              "description": "Acompañamiento en cambios de alcance, renovaciones, sustituciones y dudas operativas durante la relación con el especialista independiente."
-            }
-          }
-        ]
-      },
-      "review": [
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Shadai Iborra"
+          "@type": "WebPage",
+          "@id": "https://www.oberstaff.com/es/servicios/contractor-of-record#webpage",
+          "url": "https://www.oberstaff.com/es/servicios/contractor-of-record",
+          "name": "Contractor of Record para empresas españolas | Oberstaff",
+          "description": "Contrata freelancers en LATAM ágilmente. Como tu Contractor of Record, Oberstaff gestiona pagos, contratos y compliance internacional sin nexo laboral.",
+          "inLanguage": "es-ES",
+          "isPartOf": {
+            "@id": "https://www.oberstaff.com/#website"
           },
           "publisher": {
-            "@type": "Organization",
-            "name": "@amediastory"
+            "@id": "https://www.oberstaff.com/#organization"
           },
-          "reviewBody": "Con Oberstaff pude dar trabajo a dos personas a tiempo completo, ahorrando costes de reclutamiento, espacios de oficina y salario que tendría al hacerlo en España. Lo mejor de todo es que todo está incluido en una misma factura.",
-          "reviewRating": {
-            "@type": "Rating",
+          "about": {
+            "@id": "https://www.oberstaff.com/es/servicios/contractor-of-record#service"
+          },
+          "mainEntity": {
+            "@id": "https://www.oberstaff.com/es/servicios/contractor-of-record#service"
+          },
+          "breadcrumb": {
+            "@id": "https://www.oberstaff.com/es/servicios/contractor-of-record#breadcrumb"
+          }
+        },
+        {
+          "@type": "Service",
+          "@id": "https://www.oberstaff.com/es/servicios/contractor-of-record#service",
+          "name": "Contractor of Record en LATAM para empresas españolas",
+          "alternateName": [
+            "Contractor of Record",
+            "COR",
+            "Contractor of Record para empresas españolas",
+            "Remote Contractor of Record",
+            "Contractor of Record remote",
+            "Contratación de freelancers internacionales",
+            "Contratación de profesionales independientes en LATAM"
+          ],
+          "serviceType": "Contractor of Record",
+          "category": "Servicios de contratación internacional de freelancers y profesionales independientes",
+          "url": "https://www.oberstaff.com/es/servicios/contractor-of-record",
+          "provider": {
+            "@id": "https://www.oberstaff.com/#organization"
+          },
+          "description": "Servicio de Contractor of Record para empresas españolas que necesitan colaborar con freelancers y profesionales independientes en Latinoamérica. Oberstaff estructura contratos mercantiles, centraliza pagos internacionales, coordina la administración mensual y ayuda a reducir riesgos asociados a falsos autónomos.",
+          "slogan": "Contratación ágil de talento independiente sin fricción internacional.",
+          "audience": {
+            "@type": "BusinessAudience",
+            "audienceType": "Empresas españolas que necesitan contratar freelancers e independientes en LATAM sin crear una relación laboral de empleado",
+            "geographicArea": {
+              "@type": "Country",
+              "name": "España"
+            }
+          },
+          "serviceAudience": {
+            "@type": "BusinessAudience",
+            "audienceType": "Pymes, startups y empresas españolas que buscan contratar talento independiente en Latinoamérica por proyecto, sprint, campaña o especialidad, con contratos mercantiles, pagos centralizados y compliance internacional",
+            "geographicArea": {
+              "@type": "Country",
+              "name": "España"
+            }
+          },
+          "areaServed": [
+            {
+              "@type": "Country",
+              "name": "España"
+            },
+            {
+              "@type": "Country",
+              "name": "Colombia"
+            },
+            {
+              "@type": "Country",
+              "name": "México"
+            },
+            {
+              "@type": "Country",
+              "name": "Argentina"
+            },
+            {
+              "@type": "Country",
+              "name": "Chile"
+            },
+            {
+              "@type": "Country",
+              "name": "Perú"
+            },
+            {
+              "@type": "Country",
+              "name": "Venezuela"
+            },
+            {
+              "@type": "Country",
+              "name": "Ecuador"
+            },
+            {
+              "@type": "Country",
+              "name": "Uruguay"
+            },
+            {
+              "@type": "Country",
+              "name": "Panamá"
+            },
+            {
+              "@type": "Country",
+              "name": "Paraguay"
+            }
+          ],
+          "offers": {
+            "@type": "Offer",
+            "@id": "https://www.oberstaff.com/es/servicios/contractor-of-record#offer",
+            "name": "Contractor of Record Completo",
+            "url": "https://www.oberstaff.com/es/servicios/contractor-of-record#contacto",
+            "price": "690",
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/InStock",
+            "eligibleCustomerType": "http://purl.org/goodrelations/v1#Business",
+            "eligibleRegion": {
+              "@type": "Country",
+              "name": "España"
+            },
+            "description": "Servicio Contractor of Record desde 690€ por profesional al mes, dirigido a empresas españolas que necesitan contratar freelancers e independientes en LATAM con contrato mercantil, gestión de pagos, administración mensual, soporte humano y una única factura mensual en euros.",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "690",
+              "priceCurrency": "EUR",
+              "unitText": "profesional por mes"
+            }
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "@id": "https://www.oberstaff.com/es/servicios/contractor-of-record#included-services",
+            "name": "Qué incluye el servicio de Contractor of Record de Oberstaff",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "name": "Definición del modelo y validación de encaje",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Definición del modelo y validación de encaje",
+                  "description": "Validación de si el perfil debe entrar como contractor independiente o si, por su dedicación y naturaleza, conviene otro modelo de contratación."
+                }
+              },
+              {
+                "@type": "Offer",
+                "name": "Contrato y alta documental",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Contrato y alta documental",
+                  "description": "Estructuración de la documentación contractual y ordenamiento del marco de colaboración desde el primer día."
+                }
+              },
+              {
+                "@type": "Offer",
+                "name": "Gestión mensual y pagos",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Gestión mensual y pagos",
+                  "description": "Centralización de pagos, seguimiento y coordinación administrativa para evitar procesos manuales dispersos entre varios países."
+                }
+              },
+              {
+                "@type": "Offer",
+                "name": "Soporte continuo",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Soporte continuo",
+                  "description": "Acompañamiento en cambios de alcance, renovaciones, sustituciones y dudas operativas durante la relación con el especialista independiente."
+                }
+              }
+            ]
+          },
+          "review": [
+            {
+              "@type": "Review",
+              "author": {
+                "@type": "Person",
+                "name": "Shadai Iborra"
+              },
+              "publisher": {
+                "@type": "Organization",
+                "name": "@amediastory"
+              },
+              "reviewBody": "Con Oberstaff pude dar trabajo a dos personas a tiempo completo, ahorrando costes de reclutamiento, espacios de oficina y salario que tendría al hacerlo en España. Lo mejor de todo es que todo está incluido en una misma factura.",
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5",
+                "worstRating": "1"
+              }
+            },
+            {
+              "@type": "Review",
+              "author": {
+                "@type": "Person",
+                "name": "Fernando Calderón"
+              },
+              "publisher": {
+                "@type": "Organization",
+                "name": "BeautyPro"
+              },
+              "reviewBody": "Estaba en busca de talento remoto especializado para mi empresa y después de varias búsquedas sin éxito, encontré a Oberstaff en Instagram. Desde nuestra primera llamada, su profesionalismo y calidad de trabajo me dejaron impresionado.",
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5",
+                "worstRating": "1"
+              }
+            }
+          ],
+          "aggregateRating": {
+            "@type": "AggregateRating",
             "ratingValue": "5",
             "bestRating": "5",
-            "worstRating": "1"
-          }
-        },
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Fernando Calderón"
+            "worstRating": "1",
+            "ratingCount": "2",
+            "reviewCount": "2"
           },
-          "publisher": {
-            "@type": "Organization",
-            "name": "BeautyPro"
-          },
-          "reviewBody": "Estaba en busca de talento remoto especializado para mi empresa y después de varias búsquedas sin éxito, encontré a Oberstaff en Instagram. Desde nuestra primera llamada, su profesionalismo y calidad de trabajo me dejaron impresionado.",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5",
-            "worstRating": "1"
-          }
-        }
-      ],
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5",
-        "bestRating": "5",
-        "worstRating": "1",
-        "ratingCount": "2",
-        "reviewCount": "2"
-      },
-      "isRelatedTo": [
-        {
-          "@id": "https://www.oberstaff.com/es/servicios/employer-of-record#service"
+          "isRelatedTo": [
+            {
+              "@id": "https://www.oberstaff.com/es/servicios/employer-of-record#service"
+            },
+            {
+              "@id": "https://www.oberstaff.com/es/servicios/staff-augmentation#service"
+            },
+            {
+              "@id": "https://www.oberstaff.com/es/servicios/outsourcing-de-personal#service"
+            }
+          ]
         },
         {
-          "@id": "https://www.oberstaff.com/es/servicios/staff-augmentation#service"
+          "@type": "ItemList",
+          "@id": "https://www.oberstaff.com/es/servicios/contractor-of-record#use-cases",
+          "name": "Cuándo usar un Contractor of Record",
+          "description": "Casos en los que una empresa española puede usar Contractor of Record para colaborar con freelancers e independientes en LATAM.",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Proyectos puntuales y de duración definida",
+              "description": "Para incorporar un desarrollador, diseñador u otro especialista independiente en un proyecto de duración limitada sin comprometer una contratación indefinida."
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Colaboraciones con freelancers internacionales",
+              "description": "Para trabajar con expertos independientes en modalidad contractor antes de convertirlos en empleados fijos o sin crear una relación laboral."
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Expansión flexible en varios países",
+              "description": "Para operar con especialistas independientes en distintos mercados sin abrir una estructura legal en cada país."
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Talento especializado y escaso",
+              "description": "Para acceder a perfiles técnicos difíciles de encontrar en España, como IA, data o cloud, con disponibilidad en Latinoamérica."
+            }
+          ]
         },
         {
-          "@id": "https://www.oberstaff.com/es/servicios/outsourcing-de-personal#service"
-        }
-      ]
-    },
-    {
-      "@type": "ItemList",
-      "@id": "https://www.oberstaff.com/es/servicios/contractor-of-record#use-cases",
-      "name": "Cuándo usar un Contractor of Record",
-      "description": "Casos en los que una empresa española puede usar Contractor of Record para colaborar con freelancers e independientes en LATAM.",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Proyectos puntuales y de duración definida",
-          "description": "Para incorporar un desarrollador, diseñador u otro especialista independiente en un proyecto de duración limitada sin comprometer una contratación indefinida."
+          "@type": "ItemList",
+          "@id": "https://www.oberstaff.com/es/servicios/contractor-of-record#process",
+          "name": "Proceso de Contractor of Record",
+          "description": "Proceso de Oberstaff para activar una colaboración con un contractor independiente en Latinoamérica para empresas españolas.",
+          "numberOfItems": 4,
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Definición del rol",
+              "description": "La empresa comparte alcance, tipo de perfil, duración, presupuesto y país o países de interés."
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Validación del modelo",
+              "description": "Oberstaff confirma si la figura correcta es un especialista independiente y define la estructura operativa adecuada."
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Contrato y alta COR",
+              "description": "Oberstaff organiza el marco contractual y deja lista la operativa de colaboración."
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Contractor operativo",
+              "description": "La empresa dirige el trabajo y los entregables, mientras Oberstaff sostiene la administración y los pagos."
+            }
+          ]
         },
         {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Colaboraciones con freelancers internacionales",
-          "description": "Para trabajar con expertos independientes en modalidad contractor antes de convertirlos en empleados fijos o sin crear una relación laboral."
+          "@type": "ItemList",
+          "@id": "https://www.oberstaff.com/es/servicios/contractor-of-record#profiles",
+          "name": "Especialistas independientes que puedes incorporar con Contractor of Record",
+          "description": "Perfiles independientes de Latinoamérica que empresas españolas pueden incorporar por proyecto, campaña o sprint mediante Contractor of Record.",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Desarrollador freelance"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "QA por release"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "DevOps por migración"
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Especialista en IA/Data por implementación"
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "name": "Experto SEO externo"
+            },
+            {
+              "@type": "ListItem",
+              "position": 6,
+              "name": "Especialista Google Ads por campaña"
+            },
+            {
+              "@type": "ListItem",
+              "position": 7,
+              "name": "Especialista Meta Ads por lanzamiento"
+            },
+            {
+              "@type": "ListItem",
+              "position": 8,
+              "name": "Email marketer por proyecto"
+            },
+            {
+              "@type": "ListItem",
+              "position": 9,
+              "name": "Diseñador UI/UX por sprint"
+            },
+            {
+              "@type": "ListItem",
+              "position": 10,
+              "name": "Diseñador gráfico por campañas"
+            },
+            {
+              "@type": "ListItem",
+              "position": 11,
+              "name": "Editor de vídeo para picos de producción"
+            }
+          ]
         },
         {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Expansión flexible en varios países",
-          "description": "Para operar con especialistas independientes en distintos mercados sin abrir una estructura legal en cada país."
+          "@type": "ItemList",
+          "@id": "https://www.oberstaff.com/es/servicios/contractor-of-record#countries",
+          "name": "Países de LATAM con cobertura para Contractor of Record",
+          "description": "Países de Latinoamérica donde Oberstaff permite a empresas españolas contratar profesionales independientes mediante Contractor of Record.",
+          "numberOfItems": 10,
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Colombia"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "México"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Argentina"
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Chile"
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "name": "Perú"
+            },
+            {
+              "@type": "ListItem",
+              "position": 6,
+              "name": "Venezuela"
+            },
+            {
+              "@type": "ListItem",
+              "position": 7,
+              "name": "Ecuador"
+            },
+            {
+              "@type": "ListItem",
+              "position": 8,
+              "name": "Uruguay"
+            },
+            {
+              "@type": "ListItem",
+              "position": 9,
+              "name": "Panamá"
+            },
+            {
+              "@type": "ListItem",
+              "position": 10,
+              "name": "Paraguay"
+            }
+          ]
         },
         {
-          "@type": "ListItem",
-          "position": 4,
-          "name": "Talento especializado y escaso",
-          "description": "Para acceder a perfiles técnicos difíciles de encontrar en España, como IA, data o cloud, con disponibilidad en Latinoamérica."
-        }
-      ]
-    },
-    {
-      "@type": "ItemList",
-      "@id": "https://www.oberstaff.com/es/servicios/contractor-of-record#process",
-      "name": "Proceso de Contractor of Record",
-      "description": "Proceso de Oberstaff para activar una colaboración con un contractor independiente en Latinoamérica para empresas españolas.",
-      "numberOfItems": 4,
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Definición del rol",
-          "description": "La empresa comparte alcance, tipo de perfil, duración, presupuesto y país o países de interés."
+          "@type": "ItemList",
+          "@id": "https://www.oberstaff.com/es/servicios/contractor-of-record#benefits",
+          "name": "Beneficios del Contractor of Record con Oberstaff",
+          "description": "Beneficios para empresas españolas que contratan freelancers y profesionales independientes en LATAM mediante Contractor of Record.",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Flexibilidad real",
+              "description": "Modelo pensado para independientes, sin forzar una relación laboral cuando no es necesaria."
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Menos fricción operativa",
+              "description": "Evita contratos dispersos, pagos desordenados y seguimiento manual entre varios países."
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Mitigación de riesgos",
+              "description": "Ayuda a reducir riesgos laborales mediante contratos de servicios estructurados para profesionales independientes."
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Rapidez de activación",
+              "description": "Permite poner en marcha colaboraciones internacionales con más agilidad que una estructura tradicional."
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "name": "Modelo diseñado para independientes",
+              "description": "Servicio pensado para freelancers y especialistas externos, no para simular una relación laboral."
+            },
+            {
+              "@type": "ListItem",
+              "position": 6,
+              "name": "Control financiero centralizado",
+              "description": "Centralización de pagos, administración y facturación de contractors desde una sola estructura."
+            }
+          ]
         },
         {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Validación del modelo",
-          "description": "Oberstaff confirma si la figura correcta es un especialista independiente y define la estructura operativa adecuada."
+          "@type": "ItemList",
+          "@id": "https://www.oberstaff.com/es/servicios/contractor-of-record#other-services",
+          "name": "Otros modelos de contratación de Oberstaff",
+          "description": "Otros servicios relacionados dentro de la arquitectura de Oberstaff para empresas españolas.",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Employer of Record",
+              "url": "https://www.oberstaff.com/es/servicios/employer-of-record",
+              "description": "Para contratar empleados en LATAM con relación laboral formal, nómina y cumplimiento local."
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Staff Augmentation",
+              "url": "https://www.oberstaff.com/es/servicios/staff-augmentation",
+              "description": "Para ampliar equipos tecnológicos con perfiles IT integrados en herramientas, sprints y dirección diaria."
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Outsourcing de Personal",
+              "url": "https://www.oberstaff.com/es/servicios/outsourcing-de-personal",
+              "description": "Para externalizar selección, contratación y administración de perfiles funcionales y de negocio."
+            }
+          ]
         },
         {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Contrato y alta COR",
-          "description": "Oberstaff organiza el marco contractual y deja lista la operativa de colaboración."
+          "@type": "FAQPage",
+          "@id": "https://www.oberstaff.com/es/servicios/contractor-of-record#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "¿Qué significa contractor of record?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Contractor of Record es un servicio que formaliza la relación con un experto independiente de otro país. La empresa dirige el trabajo, mientras el proveedor gestiona contrato, pagos y cumplimiento operativo."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Qué permite un contractor of record remote?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Permite contratar profesionales remotos independientes sin que la empresa tenga que gestionar directamente contratos internacionales, pagos dispersos o administración operativa en cada país."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Es lo mismo contract of record que contractor of record?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Contract of record es una variante o búsqueda imprecisa. La expresión correcta para este servicio es Contractor of Record."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Qué diferencia hay entre Contractor of Record y contratar por mi cuenta?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "La diferencia está en la fricción operativa y el orden contractual. Con Contractor of Record se centralizan contratos, administración y pagos en una sola estructura."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Un agent of record es lo mismo que un Contractor of Record?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No siempre. Agent of record se usa en otros contextos como seguros o representación comercial. Para contratación de profesionales remotos internacionales, el término correcto es Contractor of Record."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Qué pasa si el proyecto cambia de alcance o se alarga?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Oberstaff gestiona renovaciones, ampliaciones y cambios de alcance como parte del servicio. La empresa comunica el cambio a su gestor de cuenta y Oberstaff actualiza el contrato con el contractor."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Cuánto tarda la activación?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Depende del perfil y del caso, pero la puesta en marcha suele ser mucho más rápida que montar una estructura propia en cada país."
+              }
+            }
+          ]
         },
         {
-          "@type": "ListItem",
-          "position": 4,
-          "name": "Contractor operativo",
-          "description": "La empresa dirige el trabajo y los entregables, mientras Oberstaff sostiene la administración y los pagos."
-        }
-      ]
-    },
-    {
-      "@type": "ItemList",
-      "@id": "https://www.oberstaff.com/es/servicios/contractor-of-record#profiles",
-      "name": "Especialistas independientes que puedes incorporar con Contractor of Record",
-      "description": "Perfiles independientes de Latinoamérica que empresas españolas pueden incorporar por proyecto, campaña o sprint mediante Contractor of Record.",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Desarrollador freelance"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "QA por release"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "DevOps por migración"
-        },
-        {
-          "@type": "ListItem",
-          "position": 4,
-          "name": "Especialista en IA/Data por implementación"
-        },
-        {
-          "@type": "ListItem",
-          "position": 5,
-          "name": "Experto SEO externo"
-        },
-        {
-          "@type": "ListItem",
-          "position": 6,
-          "name": "Especialista Google Ads por campaña"
-        },
-        {
-          "@type": "ListItem",
-          "position": 7,
-          "name": "Especialista Meta Ads por lanzamiento"
-        },
-        {
-          "@type": "ListItem",
-          "position": 8,
-          "name": "Email marketer por proyecto"
-        },
-        {
-          "@type": "ListItem",
-          "position": 9,
-          "name": "Diseñador UI/UX por sprint"
-        },
-        {
-          "@type": "ListItem",
-          "position": 10,
-          "name": "Diseñador gráfico por campañas"
-        },
-        {
-          "@type": "ListItem",
-          "position": 11,
-          "name": "Editor de vídeo para picos de producción"
-        }
-      ]
-    },
-    {
-      "@type": "ItemList",
-      "@id": "https://www.oberstaff.com/es/servicios/contractor-of-record#countries",
-      "name": "Países de LATAM con cobertura para Contractor of Record",
-      "description": "Países de Latinoamérica donde Oberstaff permite a empresas españolas contratar profesionales independientes mediante Contractor of Record.",
-      "numberOfItems": 10,
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Colombia"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "México"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Argentina"
-        },
-        {
-          "@type": "ListItem",
-          "position": 4,
-          "name": "Chile"
-        },
-        {
-          "@type": "ListItem",
-          "position": 5,
-          "name": "Perú"
-        },
-        {
-          "@type": "ListItem",
-          "position": 6,
-          "name": "Venezuela"
-        },
-        {
-          "@type": "ListItem",
-          "position": 7,
-          "name": "Ecuador"
-        },
-        {
-          "@type": "ListItem",
-          "position": 8,
-          "name": "Uruguay"
-        },
-        {
-          "@type": "ListItem",
-          "position": 9,
-          "name": "Panamá"
-        },
-        {
-          "@type": "ListItem",
-          "position": 10,
-          "name": "Paraguay"
-        }
-      ]
-    },
-    {
-      "@type": "ItemList",
-      "@id": "https://www.oberstaff.com/es/servicios/contractor-of-record#benefits",
-      "name": "Beneficios del Contractor of Record con Oberstaff",
-      "description": "Beneficios para empresas españolas que contratan freelancers y profesionales independientes en LATAM mediante Contractor of Record.",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Flexibilidad real",
-          "description": "Modelo pensado para independientes, sin forzar una relación laboral cuando no es necesaria."
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Menos fricción operativa",
-          "description": "Evita contratos dispersos, pagos desordenados y seguimiento manual entre varios países."
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Mitigación de riesgos",
-          "description": "Ayuda a reducir riesgos laborales mediante contratos de servicios estructurados para profesionales independientes."
-        },
-        {
-          "@type": "ListItem",
-          "position": 4,
-          "name": "Rapidez de activación",
-          "description": "Permite poner en marcha colaboraciones internacionales con más agilidad que una estructura tradicional."
-        },
-        {
-          "@type": "ListItem",
-          "position": 5,
-          "name": "Modelo diseñado para independientes",
-          "description": "Servicio pensado para freelancers y especialistas externos, no para simular una relación laboral."
-        },
-        {
-          "@type": "ListItem",
-          "position": 6,
-          "name": "Control financiero centralizado",
-          "description": "Centralización de pagos, administración y facturación de contractors desde una sola estructura."
-        }
-      ]
-    },
-    {
-      "@type": "ItemList",
-      "@id": "https://www.oberstaff.com/es/servicios/contractor-of-record#other-services",
-      "name": "Otros modelos de contratación de Oberstaff",
-      "description": "Otros servicios relacionados dentro de la arquitectura de Oberstaff para empresas españolas.",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Employer of Record",
-          "url": "https://www.oberstaff.com/es/servicios/employer-of-record",
-          "description": "Para contratar empleados en LATAM con relación laboral formal, nómina y cumplimiento local."
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Staff Augmentation",
-          "url": "https://www.oberstaff.com/es/servicios/staff-augmentation",
-          "description": "Para ampliar equipos tecnológicos con perfiles IT integrados en herramientas, sprints y dirección diaria."
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Outsourcing de Personal",
-          "url": "https://www.oberstaff.com/es/servicios/outsourcing-de-personal",
-          "description": "Para externalizar selección, contratación y administración de perfiles funcionales y de negocio."
-        }
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.oberstaff.com/es/servicios/contractor-of-record#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "¿Qué significa contractor of record?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Contractor of Record es un servicio que formaliza la relación con un experto independiente de otro país. La empresa dirige el trabajo, mientras el proveedor gestiona contrato, pagos y cumplimiento operativo."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Qué permite un contractor of record remote?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Permite contratar profesionales remotos independientes sin que la empresa tenga que gestionar directamente contratos internacionales, pagos dispersos o administración operativa en cada país."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Es lo mismo contract of record que contractor of record?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Contract of record es una variante o búsqueda imprecisa. La expresión correcta para este servicio es Contractor of Record."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Qué diferencia hay entre Contractor of Record y contratar por mi cuenta?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "La diferencia está en la fricción operativa y el orden contractual. Con Contractor of Record se centralizan contratos, administración y pagos en una sola estructura."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Un agent of record es lo mismo que un Contractor of Record?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "No siempre. Agent of record se usa en otros contextos como seguros o representación comercial. Para contratación de profesionales remotos internacionales, el término correcto es Contractor of Record."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Qué pasa si el proyecto cambia de alcance o se alarga?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Oberstaff gestiona renovaciones, ampliaciones y cambios de alcance como parte del servicio. La empresa comunica el cambio a su gestor de cuenta y Oberstaff actualiza el contrato con el contractor."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Cuánto tarda la activación?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Depende del perfil y del caso, pero la puesta en marcha suele ser mucho más rápida que montar una estructura propia en cada país."
-          }
-        }
-      ]
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://www.oberstaff.com/es/servicios/contractor-of-record#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Inicio",
-          "item": "https://www.oberstaff.com/es/home"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Contractor of Record",
-          "item": "https://www.oberstaff.com/es/servicios/contractor-of-record"
+          "@type": "BreadcrumbList",
+          "@id": "https://www.oberstaff.com/es/servicios/contractor-of-record#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Inicio",
+              "item": "https://www.oberstaff.com/es/home"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Contractor of Record",
+              "item": "https://www.oberstaff.com/es/servicios/contractor-of-record"
+            }
+          ]
         }
       ]
     }
-  ]
-}
-</script>
-    <div class="service-detail-container">
-        <div class="fade-in-section">
-            <HeroService
-                label="CONTRACTOR OF RECORD • COR"
-                preTitle=""
-                title="<span style='font-size: 22px; display: block; margin-bottom: 5px; color:#1b1b1b; -webkit-text-fill-color: #1b1b1b; background: none; font-weight: 600;'>Contractor of Record en LATAM:</span> Contrata freelancers e independientes con respaldo legal"
-                highlight=""
-                description="Colabora con freelancers y profesionales independientes en LATAM de forma ágil. Como tu Contractor of Record, centralizamos tus pagos internacionales y blindamos tus contratos mercantiles contra riesgos de 'falsos autónomos'. Todo en una única factura."
-                videoImg="/fondo-video.webp"
-                remoteCountry="CO" 
-                floatingText="Talento Tech Validado"
-                floatingIcon="💻"
-                badgeRightTitle=""
-                badgeRightText="Integración Ágil"
-                badgeRightIcon="⚡"
-                primaryBtnText="Recibir propuesta en <24h"
-                primaryBtnHref="#contacto"
-                secondaryBtnText="Hablar con un especialista COR"
-                secondaryBtnHref="#contacto"
-                underBtnText="↳ Tardarás menos de 1 minuto · Sin compromiso"
-                modalTitle="¿Listo para colaborar con talento independiente?"
-                modalDescription="Un especialista te explicará cómo centralizar tus pagos internacionales sin riesgos."
-                modalBtnText="Agendar asesoría gratuita"
-                videoAlt="Video explicativo sobre Contractor of Record"
-            />
-        </div>
+  </script>
+  <div class="service-detail-container">
+    <div class="fade-in-section">
+      <HeroService
+        label="CONTRACTOR OF RECORD • COR"
+        preTitle=""
+        title="<span style='font-size: 22px; display: block; margin-bottom: 5px; color:#1b1b1b; -webkit-text-fill-color: #1b1b1b; background: none; font-weight: 600;'>Contractor of Record en LATAM:</span> Contrata freelancers e independientes con respaldo legal"
+        highlight=""
+        description="Colabora con freelancers y profesionales independientes en LATAM de forma ágil. Como tu Contractor of Record, centralizamos tus pagos internacionales y blindamos tus contratos mercantiles contra riesgos de 'falsos autónomos'. Todo en una única factura."
+        videoImg="/fondo-video.webp"
+        remoteCountry="CO"
+        floatingText="Talento Tech Validado"
+        floatingIcon="💻"
+        badgeRightTitle=""
+        badgeRightText="Integración Ágil"
+        badgeRightIcon="⚡"
+        primaryBtnText="Recibir propuesta en <24h"
+        primaryBtnHref="#contacto"
+        secondaryBtnText="Hablar con un especialista COR"
+        secondaryBtnHref="#contacto"
+        underBtnText="↳ Tardarás menos de 1 minuto · Sin compromiso"
+        modalTitle="¿Listo para colaborar con talento independiente?"
+        modalDescription="Un especialista te explicará cómo centralizar tus pagos internacionales sin riesgos."
+        modalBtnText="Agendar asesoría gratuita"
+        videoAlt="Video explicativo sobre Contractor of Record"
+      />
+    </div>
 
-        <div class="fade-in-section">
-            <FranjaEmpresasHome
-                stat1Number="100%"
-                stat1Label="Compliance para trabajadores independientes"
-                stat2Number="10"
-                stat2Label="Países en LATAM con red de pagos centralizada"
-                stat3Number="0"
-                stat3Label="Riesgo de contingencia por falsos autónomos"
-            />
-        </div>
+    <div class="fade-in-section">
+      <FranjaEmpresasHome
+        stat1Number="100%"
+        stat1Label="Compliance para trabajadores independientes"
+        stat2Number="10"
+        stat2Label="Países en LATAM con red de pagos centralizada"
+        stat3Number="0"
+        stat3Label="Riesgo de contingencia por falsos autónomos"
+      />
+    </div>
 
-        <div class="fade-in-section">
-            <QueEsServicioSection
-                title="¿Qué es un Contractor of Record?"
-                highlightWord="Contractor of Record?"
-                description="<span style='color: #1B1B1B; font-weight: 700;'>Contratación ágil de talento independiente sin fricción internacional.</span>"
-                imageSrc="/img-contractor.webp"
-                imageAlt="Profesional trabajando"
-                badgeText="Pago centralizado"
-                quoteText="El contractor of record meaning en su definición más práctica: es la empresa que actúa como intermediaria legal para contratar profesionales independientes en otro país. Tú defines el proyecto, los entregables y la relación de trabajo; <span style='color: #1B1B1B; font-weight: 700;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> estructura el contrato, coordina los pagos y sostiene la administración del servicio."
-                infoItems={[
-                    {
-                        icon: "🚀",
-                        title: "",
-                        description:
-                            "Para las organizaciones españolas, el COR es la vía más ágil cuando necesita incorporar talento por proyecto, por sprint o por especialidad, pero <span style=' font-weight: 700;'>no necesita crear una relación laboral de empleado</span><span style='color: #FF66CC; font-weight: 900;'>.</span> No es un modelo de nómina; es un modelo pensado para independientes.",
-                    },
-                ]}
-                diffIcon="❌"
-                diffTitle="COR NO es el modelo adecuado si..."
-                diffDescription="Si necesitas horario fijo, subordinación continua, nómina, entonces no necesitas un COR; <a styles='color: #FF4D4D !important; text-decoration: none !important; font-weight: 700 !important;' href='/es/servicios/employer-of-record'>necesitas el modelo employer of record →</a>"
-            />
-        </div>
+    <div class="fade-in-section">
+      <QueEsServicioSection
+        title="¿Qué es un Contractor of Record?"
+        highlightWord="Contractor of Record?"
+        description="<span style='color: #1B1B1B; font-weight: 700;'>Contratación ágil de talento independiente sin fricción internacional.</span>"
+        imageSrc="/img-contractor.webp"
+        imageAlt="Profesional trabajando"
+        badgeText="Pago centralizado"
+        quoteText="El contractor of record meaning en su definición más práctica: es la empresa que actúa como intermediaria legal para contratar profesionales independientes en otro país. Tú defines el proyecto, los entregables y la relación de trabajo; <span style='color: #1B1B1B; font-weight: 700;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> estructura el contrato, coordina los pagos y sostiene la administración del servicio."
+        infoItems={[
+          {
+            icon: "🚀",
+            title: "",
+            description:
+              "Para las organizaciones españolas, el COR es la vía más ágil cuando necesita incorporar talento por proyecto, por sprint o por especialidad, pero <span style=' font-weight: 700;'>no necesita crear una relación laboral de empleado</span><span style='color: #FF66CC; font-weight: 900;'>.</span> No es un modelo de nómina; es un modelo pensado para independientes.",
+          },
+        ]}
+        diffIcon="❌"
+        diffTitle="COR NO es el modelo adecuado si..."
+        diffDescription="Si necesitas horario fijo, subordinación continua, nómina, entonces no necesitas un COR; <a styles='color: #FF4D4D !important; text-decoration: none !important; font-weight: 700 !important;' href='/es/servicios/employer-of-record'>necesitas el modelo employer of record →</a>"
+      />
+    </div>
 
-        <div class="fade-in-section">
-            <ServicesSection
-                title="Cuándo usar un <strong>Contractor of Record</strong>"
-                description="El COR es la opción ideal cuando necesitas flexibilidad y velocidad sin estructura fija."
-                customClass="employer-use-cases"
-                services={[
-                    {
-                        icon: "🚀",
-                        title: "Proyectos puntuales y de duración definida",
-                        description:
-                            "Necesitas un desarrollador o diseñador para un proyecto de 3-6 meses sin comprometer una contratación indefinida.",
-                        linkText: "",
-                        href: "",
-                        customIconBg: "rgba(255, 102, 204, 0.1)",
-                        cardClass: "card-green",
-                    },
-                    {
-                        icon: "🔍",
-                        title: "Colaboraciones con freelancers internacionales",
-                        description:
-                            "Trabaja con el experto en modalidad contractor antes de convertirlo en empleado fijo.",
-                        linkText: "",
-                        href: "",
-                        customIconBg: "rgba(102, 255, 153, 0.1)",
-                        cardClass: "card-pink",
-                    },
-                    {
-                        icon: "🌐",
-                        title: "Expansión flexible en varios países",
-                        description:
-                            "Cuando quieres operar con especialistas independientes en distintos mercados sin abrir una estructura legal en cada uno.",
-                        linkText: "",
-                        href: "",
-                        customIconBg: "rgba(102, 99, 253, 0.1)",
-                        cardClass: "card-lime",
-                    },
-                    {
-                        icon: "💡",
-                        title: "Talento especializado y escaso",
-                        description:
-                            "Perfiles técnicos difíciles de encontrar en España (IA, Data, Cloud) con disponibilidad inmediata en Latinoamérica.",
-                        linkText: "",
-                        href: "",
-                        customIconBg: "rgba(204, 255, 102, 0.2)",
-                        cardClass: "card-lime",
-                    },
-                ]}
-            />
-        </div>
+    <div class="fade-in-section">
+      <ServicesSection
+        title="Cuándo usar un <strong>Contractor of Record</strong>"
+        description="El COR es la opción ideal cuando necesitas flexibilidad y velocidad sin estructura fija."
+        customClass="employer-use-cases"
+        services={[
+          {
+            icon: "🚀",
+            title: "Proyectos puntuales y de duración definida",
+            description:
+              "Necesitas un desarrollador o diseñador para un proyecto de 3-6 meses sin comprometer una contratación indefinida.",
+            linkText: "",
+            href: "",
+            customIconBg: "rgba(255, 102, 204, 0.1)",
+            cardClass: "card-green",
+          },
+          {
+            icon: "🔍",
+            title: "Colaboraciones con freelancers internacionales",
+            description:
+              "Trabaja con el experto en modalidad contractor antes de convertirlo en empleado fijo.",
+            linkText: "",
+            href: "",
+            customIconBg: "rgba(102, 255, 153, 0.1)",
+            cardClass: "card-pink",
+          },
+          {
+            icon: "🌐",
+            title: "Expansión flexible en varios países",
+            description:
+              "Cuando quieres operar con especialistas independientes en distintos mercados sin abrir una estructura legal en cada uno.",
+            linkText: "",
+            href: "",
+            customIconBg: "rgba(102, 99, 253, 0.1)",
+            cardClass: "card-lime",
+          },
+          {
+            icon: "💡",
+            title: "Talento especializado y escaso",
+            description:
+              "Perfiles técnicos difíciles de encontrar en España (IA, Data, Cloud) con disponibilidad inmediata en Latinoamérica.",
+            linkText: "",
+            href: "",
+            customIconBg: "rgba(204, 255, 102, 0.2)",
+            cardClass: "card-lime",
+          },
+        ]}
+      />
+    </div>
 
-        <div class="fade-in-section">
-            <ConEorService
-                eyebrow=""
-                title="Gestionarlo internamente vs. hacerlo con <span style='color: #6663FD; font-weight: 900;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span>"
-                description=""
-                negativeTitle="Sin contractor of record"
-                positiveTitle="Con <span style='font-weight: 900;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span>"
-                badge="La opción inteligente"
-                negativeIcon=""
-                positiveIcon=""
-                negativeItems={[
-                    "Buscas al freelancer en múltiples plataformas",
-                    "Pagos manuales a múltiples países",
-                    "Contratos sin validez local",
-                    "Dificultad para escalar cuando trabajas con varios especialistas externos",
-                    "Caos administrativo persiguiendo facturas (invoices) de múltiples proveedores",
-                ]}
-                positiveItems={[
-                    "Acceso a nuestra red de especialistas pre-vetting",
-                    "Pagos y seguimiento simplificados",
-                    "Contrato local válido desde el primer día",
-                    "Modelo pensado para operar con independientes en distintos países de LATAM",
-                    "Centralización de toda tu red de talento externo en una sola factura.",
-                ]}
-            />
-        </div>
+    <div class="fade-in-section">
+      <ConEorService
+        eyebrow=""
+        title="Gestionarlo internamente vs. hacerlo con <span style='color: #6663FD; font-weight: 900;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span>"
+        description=""
+        negativeTitle="Sin contractor of record"
+        positiveTitle="Con <span style='font-weight: 900;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span>"
+        badge="La opción inteligente"
+        negativeIcon=""
+        positiveIcon=""
+        negativeItems={[
+          "Buscas al freelancer en múltiples plataformas",
+          "Pagos manuales a múltiples países",
+          "Contratos sin validez local",
+          "Dificultad para escalar cuando trabajas con varios especialistas externos",
+          "Caos administrativo persiguiendo facturas (invoices) de múltiples proveedores",
+        ]}
+        positiveItems={[
+          "Acceso a nuestra red de especialistas pre-vetting",
+          "Pagos y seguimiento simplificados",
+          "Contrato local válido desde el primer día",
+          "Modelo pensado para operar con independientes en distintos países de LATAM",
+          "Centralización de toda tu red de talento externo en una sola factura.",
+        ]}
+      />
+    </div>
 
-        <div class="fade-in-section">
-            <ProcessOberstaff
-                className="process-employer"
-                title="¿Qué incluye nuestro servicio de <strong>Contractor of Record</strong>"
-                description="Desde la firma del contrato hasta la gestión mensual de pagos. <span style='color: #1B1B1B; font-weight: 700;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> cubre cada fase para que solo tengas que dirigir el trabajo."
-                items={[
-                    {
-                        label: "Validación",
-                        badge: "Paso 1",
-                        title: "Definición del modelo y validación de encaje",
-                        description:
-                            "Te ayudamos a confirmar si el perfil debe entrar como contractor independiente o si, por su dedicación y naturaleza, conviene otro modelo.",
-                        icon: "🔍",
-                        badgeColor: "#6663FD",
-                        badgeBg: "rgba(102, 99, 253, 0.1)",
-                    },
-                    {
-                        label: "Contrato",
-                        badge: "Paso 2",
-                        title: "Contrato y alta documental",
-                        description:
-                            "Estructuramos la documentación contractual y dejamos ordenado el marco de colaboración desde el primer día.",
-                        icon: "📝",
-                        badgeColor: "#6aca8a",
-                        badgeBg: "rgba(102, 255, 153, 0.15)",
-                    },
-                    {
-                        label: "Pagos",
-                        badge: "Paso 3",
-                        title: "Gestión mensual y pagos",
-                        description:
-                            "Centralizamos pagos, seguimiento y coordinación administrativa para que no gestiones múltiples países ni procesos manuales dispersos.",
-                        icon: "🗂️",
-                        badgeColor: "#FF66CC",
-                        badgeBg: "rgba(255, 102, 204, 0.1)",
-                    },
-                    {
-                        label: "Soporte",
-                        badge: "Continuidad",
-                        title: "Soporte continuo",
-                        description:
-                            "Te acompañamos en cambios de alcance, renovaciones, sustituciones y dudas operativas durante toda la relación con el especialista.",
-                        icon: "⚡",
-                        badgeColor: "#1B1B1B",
-                        badgeBg: "rgba(204, 255, 102, 0.3)",
-                    },
-                ]}
-                ctaTitle="Incorpora a tu freelance hoy"
-                ctaDescription="Un equipo dedicado gestionará todo el proceso legal y de pagos por ti."
-                ctaBtnText="Agendar llamada"
-            />
-        </div>
+    <div class="fade-in-section">
+      <ProcessOberstaff
+        className="process-employer"
+        title="¿Qué incluye nuestro servicio de <strong>Contractor of Record</strong>"
+        description="Desde la firma del contrato hasta la gestión mensual de pagos. <span style='color: #1B1B1B; font-weight: 700;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> cubre cada fase para que solo tengas que dirigir el trabajo."
+        items={[
+          {
+            label: "Validación",
+            badge: "Paso 1",
+            title: "Definición del modelo y validación de encaje",
+            description:
+              "Te ayudamos a confirmar si el perfil debe entrar como contractor independiente o si, por su dedicación y naturaleza, conviene otro modelo.",
+            icon: "🔍",
+            badgeColor: "#6663FD",
+            badgeBg: "rgba(102, 99, 253, 0.1)",
+          },
+          {
+            label: "Contrato",
+            badge: "Paso 2",
+            title: "Contrato y alta documental",
+            description:
+              "Estructuramos la documentación contractual y dejamos ordenado el marco de colaboración desde el primer día.",
+            icon: "📝",
+            badgeColor: "#6aca8a",
+            badgeBg: "rgba(102, 255, 153, 0.15)",
+          },
+          {
+            label: "Pagos",
+            badge: "Paso 3",
+            title: "Gestión mensual y pagos",
+            description:
+              "Centralizamos pagos, seguimiento y coordinación administrativa para que no gestiones múltiples países ni procesos manuales dispersos.",
+            icon: "🗂️",
+            badgeColor: "#FF66CC",
+            badgeBg: "rgba(255, 102, 204, 0.1)",
+          },
+          {
+            label: "Soporte",
+            badge: "Continuidad",
+            title: "Soporte continuo",
+            description:
+              "Te acompañamos en cambios de alcance, renovaciones, sustituciones y dudas operativas durante toda la relación con el especialista.",
+            icon: "⚡",
+            badgeColor: "#1B1B1B",
+            badgeBg: "rgba(204, 255, 102, 0.3)",
+          },
+        ]}
+        ctaTitle="Incorpora a tu freelance hoy"
+        ctaDescription="Un equipo dedicado gestionará todo el proceso legal y de pagos por ti."
+        ctaBtnText="Agendar llamada"
+      />
+    </div>
 
-        <div class="fade-in-section">
-            <ProfilesSection
-                variant="grid"
-                title="Especialistas independientes que <span style='color: #6663FD; font-weight: 900;'>puedes incorporar con COR</span>"
-                description="Perfiles de alta especialización con disponibilidad para trabajar por proyecto. Español nativo y listos para integrarse a tu negocio."
-                profiles={[
-                    {
-                        icon: "💻",
-                        title: "Tecnología por proyecto",
-                        quote: "",
-                        description:
-                            "Talento autónomo para auditorías o desarrollo de módulos aislados, facturando honorarios por proyecto.",
-                        roles: [
-                            { label: "Desarrollador freelance", href: "#" },
-                            { label: "QA por release", href: "#" },
-                            { label: "DevOps por migración", href: "#" },
-                            {
-                                label: "Especialista en IA/Data por implementación",
-                                href: "#",
-                            },
-                        ],
-                        iconColorClass: "blue-text",
-                    },
-                    {
-                        icon: "🎨",
-                        title: "Creativos y Especialistas de Marketing por Proyecto",
-                        quote: "",
-                        description:
-                            "Para entregables por volumen. Relación estrictamente mercantil y sin riesgos laborales.",
-                        roles: [
-                            { label: "Experto SEO externo", href: "#" },
-                            {
-                                label: "Especialista Google Ads por campaña",
-                                href: "#",
-                            },
-                            {
-                                label: "Especialista Meta Ads por lanzamiento",
-                                href: "#",
-                            },
-                            { label: "Email marketer por proyecto", href: "#" },
-                        ],
-                        iconColorClass: "pink-text",
-                    },
-                    {
-                        icon: "📊",
-                        title: "Diseño y producto",
-                        quote: "",
-                        description:
-                            "Especialistas independientes para diseño e interfaces. Pagos por hitos y entregables bajo contrato mercantil.",
-                        roles: [
-                            { label: "Diseñador UI/UX por sprint", href: "#" },
-                            {
-                                label: "Diseñador gráfico por campañas",
-                                href: "#",
-                            },
-                            {
-                                label: "Editor de vídeo para picos de producción",
-                                href: "#",
-                            },
-                        ],
-                        iconColorClass: "purple-text",
-                    },
-                ]}
-            >
-                <!-- 
+    <div class="fade-in-section">
+      <ProfilesSection
+        variant="grid"
+        title="Especialistas independientes que <span style='color: #6663FD; font-weight: 900;'>puedes incorporar con COR</span>"
+        description="Perfiles de alta especialización con disponibilidad para trabajar por proyecto. Español nativo y listos para integrarse a tu negocio."
+        profiles={[
+          {
+            icon: "💻",
+            title: "Tecnología por proyecto",
+            quote: "",
+            description:
+              "Talento autónomo para auditorías o desarrollo de módulos aislados, facturando honorarios por proyecto.",
+            roles: [
+              { label: "Desarrollador freelance", href: "#" },
+              { label: "QA por release", href: "#" },
+              { label: "DevOps por migración", href: "#" },
+              {
+                label: "Especialista en IA/Data por implementación",
+                href: "#",
+              },
+            ],
+            iconColorClass: "blue-text",
+          },
+          {
+            icon: "🎨",
+            title: "Creativos y Especialistas de Marketing por Proyecto",
+            quote: "",
+            description:
+              "Para entregables por volumen. Relación estrictamente mercantil y sin riesgos laborales.",
+            roles: [
+              { label: "Experto SEO externo", href: "#" },
+              {
+                label: "Especialista Google Ads por campaña",
+                href: "#",
+              },
+              {
+                label: "Especialista Meta Ads por lanzamiento",
+                href: "#",
+              },
+              { label: "Email marketer por proyecto", href: "#" },
+            ],
+            iconColorClass: "pink-text",
+          },
+          {
+            icon: "📊",
+            title: "Diseño y producto",
+            quote: "",
+            description:
+              "Especialistas independientes para diseño e interfaces. Pagos por hitos y entregables bajo contrato mercantil.",
+            roles: [
+              { label: "Diseñador UI/UX por sprint", href: "#" },
+              {
+                label: "Diseñador gráfico por campañas",
+                href: "#",
+              },
+              {
+                label: "Editor de vídeo para picos de producción",
+                href: "#",
+              },
+            ],
+            iconColorClass: "purple-text",
+          },
+        ]}
+      >
+        <!-- 
                 <div slot="bottom-alert" class="profiles-bottom-alert">
                     <span class="alert-icon">🚨</span>
                     <div class="alert-content">
@@ -871,564 +871,561 @@ import ProfilesSection from "../../../components/profiles/ProfilesSection.astro"
                     </div>
                 </div>
                 -->
-            </ProfilesSection>
-        </div>
+      </ProfilesSection>
+    </div>
 
-        <div class="fade-in-section">
-            <EorStepsSection
-                title="De necesidad a contractor operativo en <strong>4 pasos</strong>"
-                subtitle="Nuestro servicio de remote contractor of record está diseñado para que tú solo te preocupes de dirigir el trabajo — nosotros gestionamos el resto."
-                steps={[
-                    {
-                        title: "Nos explicas el rol.",
-                        lineColorClass: "line-black",
-                        description:
-                            "Alcance, tipo de perfil, duración, presupuesto y país o países de interés.",
-                    },
-                    {
-                        title: "Validamos el modelo",
-                        lineColorClass: "line-pink",
-                        description:
-                            "Confirmamos si la figura correcta es un especialista independiente y definimos la estructura operativa adecuada.",
-                    },
-                    {
-                        title: "Contrato y alta COR",
-                        lineColorClass: "line-orange",
-                        description:
-                            "Oberstaff organiza el marco contractual y deja lista la operativa de colaboración.",
-                    },
-                    {
-                        title: "Contractor operativo",
-                        lineColorClass: "line-blue",
-                        description:
-                            "Tú diriges el trabajo y los entregables; nosotros sostenemos la administración y los pagos.",
-                    },
-                ]}
-            />
-        </div>
+    <div class="fade-in-section">
+      <EorStepsSection
+        title="De necesidad a contractor operativo en <strong>4 pasos</strong>"
+        subtitle="Nuestro servicio de remote contractor of record está diseñado para que tú solo te preocupes de dirigir el trabajo — nosotros gestionamos el resto."
+        steps={[
+          {
+            title: "Nos explicas el rol.",
+            lineColorClass: "line-black",
+            description:
+              "Alcance, tipo de perfil, duración, presupuesto y país o países de interés.",
+          },
+          {
+            title: "Validamos el modelo",
+            lineColorClass: "line-pink",
+            description:
+              "Confirmamos si la figura correcta es un especialista independiente y definimos la estructura operativa adecuada.",
+          },
+          {
+            title: "Contrato y alta COR",
+            lineColorClass: "line-orange",
+            description:
+              "Oberstaff organiza el marco contractual y deja lista la operativa de colaboración.",
+          },
+          {
+            title: "Contractor operativo",
+            lineColorClass: "line-blue",
+            description:
+              "Tú diriges el trabajo y los entregables; nosotros sostenemos la administración y los pagos.",
+          },
+        ]}
+      />
+    </div>
 
-        <div class="fade-in-section">
-            <EorCta
-                title="¿Tienes un proyecto concreto y necesitas el especialista correcto?"
-                text="Cuéntanos qué perfil necesitas y te diremos si encaja como contractor, qué estructura conviene y cómo activar la colaboración con menos fricción."
-                buttonText="Solicitar propuesta gratuita →"
-                buttonHref="#contacto"
-            />
-        </div>
+    <div class="fade-in-section">
+      <EorCta
+        title="¿Tienes un proyecto concreto y necesitas el especialista correcto?"
+        text="Cuéntanos qué perfil necesitas y te diremos si encaja como contractor, qué estructura conviene y cómo activar la colaboración con menos fricción."
+        buttonText="Solicitar propuesta gratuita →"
+        buttonHref="#contacto"
+      />
+    </div>
 
-        <div class="fade-in-section">
-            <FeaturesSection
-                customClass="cor-features"
-                eyebrow=""
-                title="Beneficios de <span style='font-weight: 900; color: #6663FD;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span> como tu contractor of record"
-                subtitle=""
-                features={[
-                    {
-                        title: "Flexibilidad real",
-                        description:
-                            "Modelo pensado para independientes, no fuerza una relación laboral cuando no la necesitas.",
-                        icon: "🛡️",
-                        colorClass: "icon-blue",
-                        cardClass: "hover-purple",
-                    },
-                    {
-                        title: "Menos fricción operativa",
-                        description:
-                            "Evitas contratos dispersos, pagos desordenados y seguimiento manual entre varios países.",
-                        icon: "🌎",
-                        colorClass: "icon-green",
-                        cardClass: "hover-green",
-                    },
-                    {
-                        title: "Mitigación de riesgos",
-                        description:
-                            "Bloquea el riesgo de que un contratista independiente reclame beneficios laborales en el futuro mediante contratos de servicios blindados.",
-                        icon: "🗣️",
-                        colorClass: "icon-yellow",
-                        cardClass: "hover-pink",
-                    },
-                    {
-                        title: "Rapidez de activación",
-                        description:
-                            "Puedes poner en marcha colaboraciones internacionales con más agilidad que una estructura tradicional.",
-                        icon: "💶",
-                        colorClass: "icon-red",
-                        cardClass: "hover-yellow",
-                    },
-                    {
-                        title: "Modelo diseñado para independientes",
-                        description:
-                            "El servicio está pensado para freelancers y especialistas externos, no para simular una relación laboral.",
-                        icon: "🤝",
-                        colorClass: "icon-pink",
-                        cardClass: "hover-green",
-                    },
-                      {
-                        title: "Control financiero centralizado",
-                        description:
-                            "Centraliza pagos, administración y facturación de tus contractors desde una sola estructura.",
-                        icon: "🧾",
-                        colorClass: "icon-pink",
-                        cardClass: "hover-green",
-                    },
-                ]}
-            />
-        </div>
+    <div class="fade-in-section">
+      <FeaturesSection
+        customClass="cor-features"
+        eyebrow=""
+        title="Beneficios de <span style='font-weight: 900; color: #6663FD;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span> como tu contractor of record"
+        subtitle=""
+        features={[
+          {
+            title: "Flexibilidad real",
+            description:
+              "Modelo pensado para independientes, no fuerza una relación laboral cuando no la necesitas.",
+            icon: "🛡️",
+            colorClass: "icon-blue",
+            cardClass: "hover-purple",
+          },
+          {
+            title: "Menos fricción operativa",
+            description:
+              "Evitas contratos dispersos, pagos desordenados y seguimiento manual entre varios países.",
+            icon: "🌎",
+            colorClass: "icon-green",
+            cardClass: "hover-green",
+          },
+          {
+            title: "Mitigación de riesgos",
+            description:
+              "Bloquea el riesgo de que un contratista independiente reclame beneficios laborales en el futuro mediante contratos de servicios blindados.",
+            icon: "🗣️",
+            colorClass: "icon-yellow",
+            cardClass: "hover-pink",
+          },
+          {
+            title: "Rapidez de activación",
+            description:
+              "Puedes poner en marcha colaboraciones internacionales con más agilidad que una estructura tradicional.",
+            icon: "💶",
+            colorClass: "icon-red",
+            cardClass: "hover-yellow",
+          },
+          {
+            title: "Modelo diseñado para independientes",
+            description:
+              "El servicio está pensado para freelancers y especialistas externos, no para simular una relación laboral.",
+            icon: "🤝",
+            colorClass: "icon-pink",
+            cardClass: "hover-green",
+          },
+          {
+            title: "Control financiero centralizado",
+            description:
+              "Centraliza pagos, administración y facturación de tus contractors desde una sola estructura.",
+            icon: "🧾",
+            colorClass: "icon-pink",
+            cardClass: "hover-green",
+          },
+        ]}
+      />
+    </div>
 
-        <div class="fade-in-section">
-            <CoberturaSeccion
-                title="Contratación internacional<br/> de profesionales<br/> independientes en  <span style='color: #6663FD; font-weight: 900;'>10</span> <br>  <span style='color: #6663FD; font-weight: 900;'>países</span>"
-                description="Gestiona la contratación internacional en 10 mercados de Latinoamérica, sin preocuparte por las regulaciones financieras internacionales."
-                countries={[
-                    { code: "MX", name: "México" },
-                    { code: "VE", name: "Venezuela" },
-                    { code: "CO", name: "Colombia" },
-                    { code: "EC", name: "Ecuador" },
-                    { code: "PE", name: "Perú" },
-                    { code: "PY", name: "Paraguay" },
-                    { code: "AR", name: "Argentina" },
-                    { code: "CL", name: "Chile" },
-                    { code: "PA", name: "Panamá" },
-                    { code: "UY", name: "Uruguay" },
-                ]}
-                mapAlt="Mapa de Latinoamérica con cobertura de Contractor of Record en 10 países"
-            />
-        </div>
+    <div class="fade-in-section">
+      <CoberturaSeccion
+        title="Contratación internacional<br/> de profesionales<br/> independientes en  <span style='color: #6663FD; font-weight: 900;'>10</span> <br>  <span style='color: #6663FD; font-weight: 900;'>países</span>"
+        description="Gestiona la contratación internacional en 10 mercados de Latinoamérica, sin preocuparte por las regulaciones financieras internacionales."
+        countries={[
+          { code: "MX", name: "México" },
+          { code: "VE", name: "Venezuela" },
+          { code: "CO", name: "Colombia" },
+          { code: "EC", name: "Ecuador" },
+          { code: "PE", name: "Perú" },
+          { code: "PY", name: "Paraguay" },
+          { code: "AR", name: "Argentina" },
+          { code: "CL", name: "Chile" },
+          { code: "PA", name: "Panamá" },
+          { code: "UY", name: "Uruguay" },
+        ]}
+        mapAlt="Mapa de Latinoamérica con cobertura de Contractor of Record en 10 países"
+      />
+    </div>
 
-        <div class="fade-in-section">
-            <PricingSection
-                eyebrow=""
-                title="Precios simples y <span style='font-weight: 900; color: #6663FD;'>sin sorpresas</span>"
-                subtitle=""
-                plans={[
-                    {
-                        badge: "MÁS POPULAR",
-                        title: "Contractor of Record Completo",
-                        price: "690",
-                        currency: "€",
-                        period: "/ profesional / mes",
-                        teamSize: "Para equipos de 4-20 empleados",
-                        features: [
-                            "Contrato para profesional independiente",
-                            "Gestión de pagos y administración mensual",
-                            "Soporte humano en cada etapa del proceso",
-                            "Una única factura mensual en euros",
-                        ],
-                        ctaText: "Solicitar propuesta",
-                        ctaHref: "#contacto",
-                    },
-                ]}
-            />
-        </div>
+    <div class="fade-in-section">
+      <PricingSection
+        eyebrow=""
+        title="Precios simples y <span style='font-weight: 900; color: #6663FD;'>sin sorpresas</span>"
+        subtitle=""
+        plans={[
+          {
+            badge: "MÁS POPULAR",
+            title: "Contractor of Record Completo",
+            price: "690",
+            currency: "€",
+            period: "/ profesional / mes",
+            teamSize: "Para equipos de 4-20 empleados",
+            features: [
+              "Contrato para profesional independiente",
+              "Gestión de pagos y administración mensual",
+              "Soporte humano en cada etapa del proceso",
+              "Una única factura mensual en euros",
+            ],
+            ctaText: "Solicitar propuesta",
+            ctaHref: "#contacto",
+          },
+        ]}
+      />
+    </div>
 
-        <div class="fade-in-section">
-            <CasosExitoSection
-                title="Empresas españolas que ya contratan con <span style='font-weight: 900; color: #6663FD;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span>"
-                subtitle=""
-                testimonials={[
-                    {
-                        stars: 5,
-                        avatar: "/fernando.webp",
-                        text: "Estaba en busca de talento remoto especializado para mi empresa y después de varias búsquedas sin éxito, encontré a <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong> en Instagram. Desde nuestra primera llamada, su profesionalismo y calidad de trabajo me dejaron impresionado. Ahora, gracias a su excelente servicio, he expandido mi contrato con ellos para incluir más personal.",
-                        author: "Fernando Calderón",
-                        role: "CEO · BeautyPro",
-                    },
-                    {
-                        stars: 5,
-                        avatar: "/sha.webp",
-                        text: "Con <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong> pude dar trabajo a dos personas a tiempo completo, ahorrando costes de reclutamiento, espacios de oficina y salario que tendría al hacerlo en España. <br> Lo mejor de todo es que todo está incluido en una misma factura. Con <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong> encontré la solución perfecta para mis necesidades de contratación remota y optimización de costes",
-                        author: "Shadai Iborra",
-                        role: "CEO · @amediastory",
-                    },
-                ]}
-            />
-        </div>
+    <div class="fade-in-section">
+      <CasosExitoSection
+        title="Empresas españolas que ya contratan con <span style='font-weight: 900; color: #6663FD;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span>"
+        subtitle=""
+        testimonials={[
+          {
+            stars: 5,
+            avatar: "/fernando.webp",
+            text: "Estaba en busca de talento remoto especializado para mi empresa y después de varias búsquedas sin éxito, encontré a <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong> en Instagram. Desde nuestra primera llamada, su profesionalismo y calidad de trabajo me dejaron impresionado. Ahora, gracias a su excelente servicio, he expandido mi contrato con ellos para incluir más personal.",
+            author: "Fernando Calderón",
+            role: "CEO · BeautyPro",
+          },
+          {
+            stars: 5,
+            avatar: "/sha.webp",
+            text: "Con <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong> pude dar trabajo a dos personas a tiempo completo, ahorrando costes de reclutamiento, espacios de oficina y salario que tendría al hacerlo en España. <br> Lo mejor de todo es que todo está incluido en una misma factura. Con <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong> encontré la solución perfecta para mis necesidades de contratación remota y optimización de costes",
+            author: "Shadai Iborra",
+            role: "CEO · @amediastory",
+          },
+        ]}
+      />
+    </div>
 
-        <FAQSection
-            title="Todo lo que necesitas  <br> saber <strong>antes de empezar</strong>"
-            ctaText="¿Aún tienes dudas sobre cómo sumar talento freelance?"
-            ctaButtonText="Agenda una llamada gratuita"
-        />
+    <FAQSection
+      title="Todo lo que necesitas  <br> saber <strong>antes de empezar</strong>"
+      ctaText="¿Aún tienes dudas sobre cómo sumar talento freelance?"
+      ctaButtonText="Agenda una llamada gratuita"
+    />
 
-        <div class="fade-in-section">
-            <OtrosServiciosSection
-                title="Otros modelos de <span style='font-weight: 900; color: #6663FD;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span>"
-                subtitle=""
-                description="El COR es el modelo adecuado para proyectos con freelancers. Pero si tu necesidad es diferente, Oberstaff tiene tres modelos más:"
-                servicios={[
-                    {
-                        icon: "🔗",
-                        title: "Employer of Record",
-                        description:
-                            "Ideal cuando necesitas contratar empleados en LATAM con relación laboral formal, nómina y cumplimiento local.",
-                        href: "/es/servicios/employer-of-record",
-                        colorClass: "icon-pink",
-                        hoverClass: "hover-pink",
-                        linkText: "Ver servicio",
-                    },
-                    {
-                        icon: "📄",
-                        title: "Outsourcing de Personal",
-                        description:
-                            "Para externalizar selección, contratación y administración.",
-                        href: "/es/servicios/outsourcing-de-personal",
-                        colorClass: "icon-green",
-                        hoverClass: "hover-green",
-                        linkText: "Ver servicio",
-                    },
-                    {
-                        icon: "🏢",
-                        title: "Staff Augmentation",
-                        description:
-                            "Ideal cuando quieres ampliar tu equipo tech y dirigir su trabajo día a día.",
-                        href: "/es/servicios/staff-augmentation",
-                        colorClass: "icon-purple",
-                        hoverClass: "hover-purple",
-                        linkText: "Ver servicio",
-                    },
-                ]}
-            />
-        </div>
+    <div class="fade-in-section">
+      <OtrosServiciosSection
+        title="Otros modelos de <span style='font-weight: 900; color: #6663FD;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span>"
+        subtitle=""
+        description="El COR es el modelo adecuado para proyectos con freelancers. Pero si tu necesidad es diferente, Oberstaff tiene tres modelos más:"
+        servicios={[
+          {
+            icon: "🔗",
+            title: "Employer of Record",
+            description:
+              "Ideal cuando necesitas contratar empleados en LATAM con relación laboral formal, nómina y cumplimiento local.",
+            href: "/es/servicios/employer-of-record",
+            colorClass: "icon-pink",
+            hoverClass: "hover-pink",
+            linkText: "Ver servicio",
+          },
+          {
+            icon: "📄",
+            title: "Outsourcing de Personal",
+            description:
+              "Para externalizar selección, contratación y administración.",
+            href: "/es/servicios/outsourcing-de-personal",
+            colorClass: "icon-green",
+            hoverClass: "hover-green",
+            linkText: "Ver servicio",
+          },
+          {
+            icon: "🏢",
+            title: "Staff Augmentation",
+            description:
+              "Ideal cuando quieres ampliar tu equipo tech y dirigir su trabajo día a día.",
+            href: "/es/servicios/staff-augmentation",
+            colorClass: "icon-purple",
+            hoverClass: "hover-purple",
+            linkText: "Ver servicio",
+          },
+        ]}
+      />
+    </div>
 
-        <!-- 
+    <!-- 
 		<div class="fade-in-section">
 			<RolesSection />
 		</div>
 		-->
 
-        <div class="fade-in-section">
-            <ContactFormSection
-                title="¿Listo para incorporar a tu próximo <span style='font-weight: 900; color: #6663FD;'>especialista independiente?</span>"
-                subtitle="Cuéntanos qué perfil necesitas, el tipo de proyecto y el plazo estimado. Te diremos si encaja con este modelo. En menos de 24 horas recibirás una propuesta personalizada sin compromiso. Primera consulta gratuita con nuestros especialistas en contratación internacional."
-                formTitle="Solicita tu propuesta gratis"
-                buttonText="Solicitar propuesta gratuita →"
-                directLabel="Rellenarlo te lleva"
-                phoneNumber="Menos de 60 segundos"
-                phoneHref=""
-                directEmoji="⏱️"
-                formLabels={{
-                    name: "Nombre *",
-                    lastName: "Apellido *",
-                    company: "Nombre de la empresa",
-                    email: "Email corporativo *",
-                    phone: "Teléfono *",
-                    comments: "¿Qué perfil técnico? *",
-                }}
-                formPlaceholders={{
-                    name: "Tu nombre",
-                    lastName: "Tu apellido",
-                    company: "Nombre de tu organización",
-                    email: "nombre@tuempresa.com",
-                    phone: "+34 XXX XXX XXX",
-                    comments:
-                        "Cuéntanos brevemente sobre el proyecto y especialista que buscas...",
-                }}
-                customClass="employer-variant"
-            />
-        </div>
+    <div class="fade-in-section">
+      <ContactFormSection
+        title="¿Listo para incorporar a tu próximo <span style='font-weight: 900; color: #6663FD;'>especialista independiente?</span>"
+        subtitle="Cuéntanos qué perfil necesitas, el tipo de proyecto y el plazo estimado. Te diremos si encaja con este modelo. En menos de 24 horas recibirás una propuesta personalizada sin compromiso. Primera consulta gratuita con nuestros especialistas en contratación internacional."
+        formTitle="Solicita tu propuesta gratis"
+        buttonText="Solicitar propuesta gratuita →"
+        directLabel="Rellenarlo te lleva"
+        phoneNumber="Menos de 60 segundos"
+        phoneHref=""
+        directEmoji="⏱️"
+        formLabels={{
+          name: "Nombre *",
+          lastName: "Apellido *",
+          company: "Nombre de la empresa",
+          email: "Email corporativo *",
+          phone: "Teléfono *",
+          comments: "¿Qué perfil técnico necesitas? *",
+        }}
+        formPlaceholders={{
+          name: "Tu nombre",
+          lastName: "Tu apellido",
+          company: "Nombre de tu organización",
+          email: "nombre@tuempresa.com",
+          phone: "+34 XXX XXX XXX",
+          comments:
+            "Cuéntanos brevemente sobre el proyecto y especialista que buscas...",
+        }}
+        customClass="employer-variant"
+      />
+    </div>
 
-        <!-- 
+    <!-- 
 		<div class="fade-in-section">
 			<ArticulosSection />
 		</div>
 -->
-    </div>
+  </div>
 </DashboardLayoutServicios>
 
 <style>
-    .service-detail-container {
-    }
+  .service-detail-container {
+  }
 
-    /* --- Ajuste de tamaño de título para Hero (Solo esta página) --- */
-    /*
+  /* --- Ajuste de tamaño de título para Hero (Solo esta página) --- */
+  /*
     :global(.hero-section .main-title) {
         font-size: 45px !important;
     }*/
 
-    @media (max-width: 768px) {
-        :global(.hero-section .main-title) {
-            font-size: 32px !important;
-        }
+  @media (max-width: 768px) {
+    :global(.hero-section .main-title) {
+      font-size: 32px !important;
     }
+  }
 
-    /* --- Personalización de QueEsDifferenceSection (Solo esta página) --- */
-    :global(.que-es-difference-box) {
-        background: rgba(255, 77, 77, 0.05) !important;
-        border-color: rgba(255, 77, 77, 0.2) !important;
-    }
+  /* --- Personalización de QueEsDifferenceSection (Solo esta página) --- */
+  :global(.que-es-difference-box) {
+    background: rgba(255, 77, 77, 0.05) !important;
+    border-color: rgba(255, 77, 77, 0.2) !important;
+  }
 
-    :global(.que-es-difference-box .diff-text h3) {
-        color: #ff4d4d !important;
-    }
+  :global(.que-es-difference-box .diff-text h3) {
+    color: #ff4d4d !important;
+  }
 
-    :global(.que-es-difference-box .diff-text p a) {
-        color: #ff4d4d !important;
-        text-decoration: none !important;
-        font-weight: 700 !important;
-    }
+  :global(.que-es-difference-box .diff-text p a) {
+    color: #ff4d4d !important;
+    text-decoration: none !important;
+    font-weight: 700 !important;
+  }
 
-    /* --- Perfiles Section (Solo esta página) --- */
-    :global(.variant-grid .profile-card .card-description) {
-        font-family: "Poppins", sans-serif;
-        font-size: 13px;
-        color: #5a5a5a;
-        line-height: 1.6;
-        margin-bottom: 15px;
+  /* --- Perfiles Section (Solo esta página) --- */
+  :global(.variant-grid .profile-card .card-description) {
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    color: #5a5a5a;
+    line-height: 1.6;
+    margin-bottom: 15px;
 
-        border-top: none !important;
-    }
+    border-top: none !important;
+  }
 
-    :global(.variant-grid .profile-card .card-header) {
-        border-bottom: none !important;
-        margin-bottom: 15px !important;
-        padding-bottom: 0 !important;
-    }
+  :global(.variant-grid .profile-card .card-header) {
+    border-bottom: none !important;
+    margin-bottom: 15px !important;
+    padding-bottom: 0 !important;
+  }
 
-    :global(.variant-grid .profile-card .roles-list) {
-        border-top: 1px solid rgba(0, 0, 0, 0.06) !important;
-        padding-top: 15px !important;
-        margin-top: 10px;
-    }
+  :global(.variant-grid .profile-card .roles-list) {
+    border-top: 1px solid rgba(0, 0, 0, 0.06) !important;
+    padding-top: 15px !important;
+    margin-top: 10px;
+  }
 
-    /* --- Estilos específicos para el componente de proceso en Employer --- */
-    :global(.process-employer .process-menu) {
-        background-color: #fafafc;
-    }
+  /* --- Estilos específicos para el componente de proceso en Employer --- */
+  :global(.process-employer .process-menu) {
+    background-color: #fafafc;
+  }
 
-    :global(.process-employer .process-tab-label) {
-        color: #5a5a5a;
-        font-weight: 600;
-    }
+  :global(.process-employer .process-tab-label) {
+    color: #5a5a5a;
+    font-weight: 600;
+  }
 
-    :global(.process-employer .process-tab:hover) {
-        background-color: #f0f0f5;
-        color: #1b1b1b;
-    }
+  :global(.process-employer .process-tab:hover) {
+    background-color: #f0f0f5;
+    color: #1b1b1b;
+  }
 
-    :global(.process-employer .process-tab.active) {
-        background-color: #ffffff;
-    }
+  :global(.process-employer .process-tab.active) {
+    background-color: #ffffff;
+  }
 
-    /* --- Estilos específicos para el botón CTA en Staff Augmentation --- */
-    :global(.process-employer .process-cta-btn) {
-        background-color: #6663fd;
-        color: #ffffff !important;
-        padding: 15px 35px !important;
-        border-radius: 50px !important;
-        font-weight: 700 !important;
-        font-family: "Montserrat", sans-serif !important;
-        font-style: normal !important;
-        font-size: 15px !important;
-        border: 2px solid #6663fd !important;
-        display: inline-block !important;
-        transition: all 0.3s ease !important;
-        text-decoration: none !important;
-    }
+  /* --- Estilos específicos para el botón CTA en Staff Augmentation --- */
+  :global(.process-employer .process-cta-btn) {
+    background-color: #6663fd;
+    color: #ffffff !important;
+    padding: 15px 35px !important;
+    border-radius: 50px !important;
+    font-weight: 700 !important;
+    font-family: "Montserrat", sans-serif !important;
+    font-style: normal !important;
+    font-size: 15px !important;
+    border: 2px solid #6663fd !important;
+    display: inline-block !important;
+    transition: all 0.3s ease !important;
+    text-decoration: none !important;
+  }
 
-    :global(.process-employer .process-cta-btn:hover) {
-        background-color: transparent !important;
-        color: #6663fd !important;
-        border: 2px solid #6663fd !important;
-        box-shadow: 0 8px 20px rgba(102, 99, 253, 0.15) !important;
-    }
+  :global(.process-employer .process-cta-btn:hover) {
+    background-color: transparent !important;
+    color: #6663fd !important;
+    border: 2px solid #6663fd !important;
+    box-shadow: 0 8px 20px rgba(102, 99, 253, 0.15) !important;
+  }
 
-    /* --- Estilos específicos para el botón CTA en Pricing (Staff Augmentation) --- */
-    :global(.btn-pricing-link) {
-        background-color: #6663fd !important;
-        color: #ffffff !important;
-        padding: 13px 24px !important;
-        border-radius: 50px !important;
-        font-weight: 700 !important;
-        font-family: "Montserrat", sans-serif !important;
-        font-style: normal !important;
-        font-size: 15px !important;
-        border: 2px solid #6663fd !important;
-        display: inline-block !important;
-        transition: all 0.3s ease !important;
-        text-decoration: none !important;
-        max-width: 250px;
-    }
+  /* --- Estilos específicos para el botón CTA en Pricing (Staff Augmentation) --- */
+  :global(.btn-pricing-link) {
+    background-color: #6663fd !important;
+    color: #ffffff !important;
+    padding: 13px 24px !important;
+    border-radius: 50px !important;
+    font-weight: 700 !important;
+    font-family: "Montserrat", sans-serif !important;
+    font-style: normal !important;
+    font-size: 15px !important;
+    border: 2px solid #6663fd !important;
+    display: inline-block !important;
+    transition: all 0.3s ease !important;
+    text-decoration: none !important;
+    max-width: 250px;
+  }
 
-    :global(.btn-pricing-link:hover) {
-        background-color: transparent !important;
-        color: #6663fd !important;
-        border: 2px solid #6663fd !important;
-        box-shadow: 0 8px 20px rgba(102, 99, 253, 0.15) !important;
-    }
+  :global(.btn-pricing-link:hover) {
+    background-color: transparent !important;
+    color: #6663fd !important;
+    border: 2px solid #6663fd !important;
+    box-shadow: 0 8px 20px rgba(102, 99, 253, 0.15) !important;
+  }
 
-    /* --- Centrar testimonios (2 cards) en Staff Augmentation --- */
+  /* --- Centrar testimonios (2 cards) en Staff Augmentation --- */
+  :global(.casos-grid) {
+    grid-template-columns: repeat(2, 1fr) !important;
+    max-width: 850px !important;
+  }
+
+  @media (max-width: 640px) {
     :global(.casos-grid) {
-        grid-template-columns: repeat(2, 1fr) !important;
-        max-width: 850px !important;
+      grid-template-columns: 1fr !important;
+      max-width: 500px !important;
     }
 
-    @media (max-width: 640px) {
-        :global(.casos-grid) {
-            grid-template-columns: 1fr !important;
-            max-width: 500px !important;
-        }
-
-        :global(.process-employer .process-cta-btn) {
-            font-size: 12px !important;
-        }
-
-        :global(.btn-pricing-link) {
-            font-size: 12px !important;
-        }
+    :global(.process-employer .process-cta-btn) {
+      font-size: 12px !important;
     }
 
-    /* --- Botón FAQ en Staff Augmentation --- */
-    :global(
-        .service-detail-container .faq-section .faq-cta-card .faq-cta-button
-    ) {
-        background: #6663fd !important;
-        background-color: #6663fd !important;
-        color: #ffffff !important;
-        padding: 15px 30px !important;
-        border-radius: 50px !important;
-        font-weight: 700 !important;
-        font-family: "Montserrat", sans-serif !important;
-        font-size: 15px !important;
-        border: 2px solid #6663fd !important;
-        display: inline-block !important;
-        transition: all 0.3s ease !important;
-        text-decoration: none !important;
-        width: auto !important;
+    :global(.btn-pricing-link) {
+      font-size: 12px !important;
     }
+  }
 
-    :global(
-        .service-detail-container
-            .faq-section
-            .faq-cta-card
-            .faq-cta-button:hover
-    ) {
-        background: transparent !important;
-        background-color: transparent !important;
-        color: #6663fd !important;
-        border: 2px solid #6663fd !important;
-        box-shadow: 0 8px 20px rgba(102, 99, 253, 0.15) !important;
-    }
+  /* --- Botón FAQ en Staff Augmentation --- */
+  :global(
+    .service-detail-container .faq-section .faq-cta-card .faq-cta-button
+  ) {
+    background: #6663fd !important;
+    background-color: #6663fd !important;
+    color: #ffffff !important;
+    padding: 15px 30px !important;
+    border-radius: 50px !important;
+    font-weight: 700 !important;
+    font-family: "Montserrat", sans-serif !important;
+    font-size: 15px !important;
+    border: 2px solid #6663fd !important;
+    display: inline-block !important;
+    transition: all 0.3s ease !important;
+    text-decoration: none !important;
+    width: auto !important;
+  }
 
-    /* --- Botón del formulario en Staff Augmentation --- */
-    :global(.employer-variant .btn-submit) {
-        background-color: #6663fd !important;
-        background: #6663fd !important;
-        border: 2px solid #6663fd !important;
-        color: #ffffff !important;
-    }
+  :global(
+    .service-detail-container .faq-section .faq-cta-card .faq-cta-button:hover
+  ) {
+    background: transparent !important;
+    background-color: transparent !important;
+    color: #6663fd !important;
+    border: 2px solid #6663fd !important;
+    box-shadow: 0 8px 20px rgba(102, 99, 253, 0.15) !important;
+  }
 
-    :global(.employer-variant .btn-submit:hover) {
-        background-color: transparent !important;
-        background: transparent !important;
-        color: #6663fd !important;
-        border: 2px solid #6663fd !important;
-        box-shadow: 0 8px 20px rgba(102, 99, 253, 0.15) !important;
-    }
+  /* --- Botón del formulario en Staff Augmentation --- */
+  :global(.employer-variant .btn-submit) {
+    background-color: #6663fd !important;
+    background: #6663fd !important;
+    border: 2px solid #6663fd !important;
+    color: #ffffff !important;
+  }
 
-    :global(.employer-variant .form-title) {
-        font-family: "Montserrat", sans-serif;
-        font-size: 20px;
-        font-weight: 700;
-        color: #1b1b1b;
-        margin-bottom: 25px;
-        text-align: left;
-    }
+  :global(.employer-variant .btn-submit:hover) {
+    background-color: transparent !important;
+    background: transparent !important;
+    color: #6663fd !important;
+    border: 2px solid #6663fd !important;
+    box-shadow: 0 8px 20px rgba(102, 99, 253, 0.15) !important;
+  }
 
-    /* --- Alerta inferior (Perfiles no tecnológicos) --- */
+  :global(.employer-variant .form-title) {
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #1b1b1b;
+    margin-bottom: 25px;
+    text-align: left;
+  }
+
+  /* --- Alerta inferior (Perfiles no tecnológicos) --- */
+  .profiles-bottom-alert {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: rgba(255, 102, 204, 0.03);
+    border: 1px solid rgba(255, 102, 204, 0.15);
+    border-radius: 12px;
+    padding: 25px 30px;
+    margin-top: 70px;
+    text-align: left;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .profiles-bottom-alert .alert-icon {
+    font-size: 32px;
+    flex-shrink: 0;
+  }
+
+  .profiles-bottom-alert .alert-content h4 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #ff66cc;
+    margin: 0 0 8px 0;
+  }
+
+  .profiles-bottom-alert .alert-content p {
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    color: #5a5a5a;
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  .profiles-bottom-alert .alert-content a {
+    font-weight: 700;
+    color: #ff66cc;
+    text-decoration: none;
+  }
+
+  @media (max-width: 768px) {
     .profiles-bottom-alert {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        background-color: rgba(255, 102, 204, 0.03);
-        border: 1px solid rgba(255, 102, 204, 0.15);
-        border-radius: 12px;
-        padding: 25px 30px;
-        margin-top: 70px;
-        text-align: left;
-        max-width: 1000px;
-        margin-left: auto;
-        margin-right: auto;
+      flex-direction: column;
+      text-align: center;
+      gap: 15px;
+      padding: 20px;
     }
 
-    .profiles-bottom-alert .alert-icon {
-        font-size: 32px;
-        flex-shrink: 0;
+    :global(
+      .service-detail-container .faq-section .faq-cta-card .faq-cta-button
+    ) {
+      font-size: 12px !important;
     }
+  }
 
-    .profiles-bottom-alert .alert-content h4 {
-        font-family: "Montserrat", sans-serif;
-        font-size: 18px;
-        font-weight: 700;
-        color: #ff66cc;
-        margin: 0 0 8px 0;
+  /* --- Ajuste del quote en ¿Qué es Staff Augmentation? para que parezca un párrafo normal --- */
+  :global(.que-es-servicio-section .quote-blue-border) {
+    border-left: none !important;
+    padding: 0 !important;
+    background: none !important;
+    color: #5a5a5a !important;
+    font-weight: 400 !important;
+    font-size: 14.5px !important;
+    line-height: 1.6 !important;
+    margin-bottom: 35px !important;
+    margin-top: 0 !important;
+  }
+
+  /* --- Floating badge inferior en ¿Qué es Staff Aug? — esquina derecha, más estrecho --- */
+  :global(.que-es-servicio-section .floating-badge-bottom) {
+    left: auto !important;
+    right: -10px !important;
+    width: auto !important;
+    max-width: 240px !important;
+    padding: 14px 22px 14px 18px !important;
+    justify-content: flex-start !important;
+    animation: floatBadgeRight 4s ease-in-out infinite !important;
+  }
+
+  @keyframes floatBadgeRight {
+    0%,
+    100% {
+      transform: translateY(0);
     }
-
-    .profiles-bottom-alert .alert-content p {
-        font-family: "Poppins", sans-serif;
-        font-size: 15px;
-        color: #5a5a5a;
-        margin: 0;
-        line-height: 1.6;
+    50% {
+      transform: translateY(-10px);
     }
+  }
 
-    .profiles-bottom-alert .alert-content a {
-        font-weight: 700;
-        color: #ff66cc;
-        text-decoration: none;
-    }
-
-    @media (max-width: 768px) {
-        .profiles-bottom-alert {
-            flex-direction: column;
-            text-align: center;
-            gap: 15px;
-            padding: 20px;
-        }
-
-        :global(
-            .service-detail-container .faq-section .faq-cta-card .faq-cta-button
-        ) {
-            font-size: 12px !important;
-        }
-    }
-
-    /* --- Ajuste del quote en ¿Qué es Staff Augmentation? para que parezca un párrafo normal --- */
-    :global(.que-es-servicio-section .quote-blue-border) {
-        border-left: none !important;
-        padding: 0 !important;
-        background: none !important;
-        color: #5a5a5a !important;
-        font-weight: 400 !important;
-        font-size: 14.5px !important;
-        line-height: 1.6 !important;
-        margin-bottom: 35px !important;
-        margin-top: 0 !important;
-    }
-
-    /* --- Floating badge inferior en ¿Qué es Staff Aug? — esquina derecha, más estrecho --- */
-    :global(.que-es-servicio-section .floating-badge-bottom) {
-        left: auto !important;
-        right: -10px !important;
-        width: auto !important;
-        max-width: 240px !important;
-        padding: 14px 22px 14px 18px !important;
-        justify-content: flex-start !important;
-        animation: floatBadgeRight 4s ease-in-out infinite !important;
-    }
-
-    @keyframes floatBadgeRight {
-        0%,
-        100% {
-            transform: translateY(0);
-        }
-        50% {
-            transform: translateY(-10px);
-        }
-    }
-
-    /* --- Iconos de Features más grandes --- */
-    :global(.cor-features .emoji-icon),
-    :global(.cor-features iconify-icon) {
-        font-size: 30px !important;
-    }
+  /* --- Iconos de Features más grandes --- */
+  :global(.cor-features .emoji-icon),
+  :global(.cor-features iconify-icon) {
+    font-size: 30px !important;
+  }
 </style>

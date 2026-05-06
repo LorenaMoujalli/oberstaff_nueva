@@ -16,7 +16,7 @@ const { image, alt, title, link = "#" } = Astro.props;
         <img src={image} alt={alt}>
     </div>
     <div class="card-body">
-        <h3>{title}</h3>
+        <p class="blog-card-title">{title}</p>
         <a href={link} class="read-more">Leer artículo</a>
     </div>
 </article>

@@ -48,6 +48,7 @@ const colorMap: Record<string, { circle: string; text?: string }> = {
                             <div
                                 class="step-circle"
                                 style={`background-color: ${colors.circle}; color: ${colors.text ?? "#ffffff"};`}
+                                aria-hidden="true"
                             >
                                 {String(i + 1).padStart(2, "0")}
                             </div>
@@ -58,7 +59,7 @@ const colorMap: Record<string, { circle: string; text?: string }> = {
                             <p class="step-description" set:html={step.description}></p>
                             {step.badge && (
                                 <div class="step-badge">
-                                    {step.badgeIcon && <span class="step-badge-icon">{step.badgeIcon}</span>}
+                                    {step.badgeIcon && <span class="step-badge-icon" aria-hidden="true">{step.badgeIcon}</span>}
                                     <span>{step.badge}</span>
                                 </div>
                             )}
