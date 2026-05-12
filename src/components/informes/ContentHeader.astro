@@ -1,0 +1,17 @@
+---
+import "../../styles/informes/ContentHeader.css";
+
+interface Props {
+  kicker: string;
+  title: string;
+  description: string;
+}
+
+const { kicker, title, description } = Astro.props;
+---
+
+<div class="content-header-pdf">
+  <span class="kicker-text">{kicker}</span>
+  <h2 class="modal-title" set:html={title} />
+  <p class="modal-description">{description}</p>
+</div>

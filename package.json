@@ -9,7 +9,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.17.1"
+    "astro": "^5.17.1",
+    "html2pdf.js": "^0.9.1"
   },
   "devDependencies": {
     "@astrojs/language-server": "^2.16.6"

@@ -1,0 +1,116 @@
+---
+import "../../styles/informes/ContentForm.css";
+import InformePdf from "./informe-pdf.astro";
+---
+
+<!-- Contenedor para la generación del PDF (se mantiene en el DOM pero no ocupa espacio visual) -->
+<div
+  style="height: 0; overflow: hidden; position: absolute; top: 0; width: 210mm; z-index: -1;"
+>
+  <InformePdf />
+</div>
+
+<form class="modern-form" id="report-download-form">
+  <div class="form-group">
+    <input
+      type="text"
+      name="name"
+      id="userName"
+      placeholder="Nombre completo *"
+      required
+    />
+  </div>
+
+  <div class="form-group">
+    <input
+      type="email"
+      name="email"
+      id="userEmail"
+      placeholder="Email corporativo *"
+      required
+    />
+  </div>
+
+  <div class="form-group">
+    <select name="role" required>
+      <option value="" disabled selected hidden>Selecciona tu cargo *</option>
+      <option value="CEO">CEO / Fundador</option>
+      <option value="CFO">CFO / Dirección Financiera</option>
+      <option value="HR">HR / Recursos Humanos</option>
+      <option value="Otro">Otro</option>
+    </select>
+  </div>
+
+  <button type="submit" class="btn-download-main" id="submitBtn">
+    <span class="btn-icon">🔓</span>
+    <span class="btn-text">
+      DESCARGAR <span class="text-accent">INFORME ESTRATÉGICO</span> AHORA
+    </span>
+  </button>
+</form>
+
+<p class="footer-microcopy">
+  PDF gratuito. Lectura de 5 minutos diseñada para Dirección Financiera.
+</p>
+
+<script>
+  // @ts-ignore
+  import html2pdf from "html2pdf.js/dist/html2pdf.js";
+
+  const form = document.getElementById(
+    "report-download-form",
+  ) as HTMLFormElement;
+  const btn = document.getElementById("submitBtn") as HTMLButtonElement;
+
+  console.log("PDF Generator Initialized");
+
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    // Feedback visual en el botón
+    const originalContent = btn.innerHTML;
+    btn.disabled = true;
+    btn.innerHTML = '<span class="btn-text">GENERANDO INFORME...</span>';
+
+    const element = document.getElementById("report-pdf-template");
+
+    if (!element) {
+      console.error("No se encontró la plantilla del PDF");
+      return;
+    }
+
+    const opt = {
+      margin: 0,
+      filename: "Informe-Oberstaff-Talento-Internacional.pdf",
+      image: { type: "jpeg", quality: 0.98 },
+      html2canvas: {
+        scale: 2,
+        useCORS: true,
+        letterRendering: true,
+        backgroundColor: "#ffffff",
+        scrollX: 0,
+        scrollY: 0,
+      },
+      jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+      pagebreak: { mode: ["avoid-all", "css", "legacy"] },
+    };
+
+    try {
+      // @ts-ignore
+      await html2pdf().set(opt).from(element).save();
+
+      btn.innerHTML = '<span class="btn-text">¡DESCARGA EXITOSA!</span>';
+
+      // Resetear formulario y botón después de 3 segundos
+      setTimeout(() => {
+        form.reset();
+        btn.disabled = false;
+        btn.innerHTML = originalContent;
+      }, 3000);
+    } catch (error) {
+      console.error("Error al generar PDF:", error);
+      btn.disabled = false;
+      btn.innerHTML = '<span class="btn-text">ERROR AL DESCARGAR</span>';
+    }
+  });
+</script>

@@ -1,0 +1,93 @@
+.modern-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group input, 
+.form-group select {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: #ffffff !important;
+  padding: 0 16px !important; 
+  height: 44px !important; 
+  border-radius: 10px !important;
+  font-size: 12px !important;
+  font-family: 'Poppins', sans-serif !important;
+  width: 100%;
+  outline: none; 
+  cursor: pointer;
+  box-sizing: border-box !important;
+  display: flex;
+  align-items: center;
+}
+
+.form-group select {
+  padding-right: 40px !important;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='white'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 16px;
+}
+
+.form-group select option {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.form-group input:focus, 
+.form-group select:focus {
+  border-color: #FF66CC !important;
+}
+
+.form-group input::placeholder {
+  color: #888;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Evitar fondo azul/blanco en autocompletado */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+  -webkit-box-shadow: 0 0 0 30px #222222 inset !important;
+  -webkit-text-fill-color: #ffffff !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.btn-download-main {
+  background-color: #FF66CC;
+  color: #ffffff;
+  border: 2px solid #FF66CC;
+  padding: 14px; 
+  border-radius: 50px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-download-main:hover {
+  background-color: transparent !important;
+  color: #FF66CC !important;
+  border: 2px solid #FF66CC !important;
+}
+
+.footer-microcopy {
+  font-family: 'Poppins', sans-serif;
+  color: #A0A0A0;
+  font-size: 12px;
+  margin-top: 20px;
+  text-align: left;
+}
