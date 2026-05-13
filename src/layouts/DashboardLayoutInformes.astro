@@ -64,6 +64,21 @@ const { title = "Informe Estratégico | Oberstaff" } = Astro.props;
     position: relative;
   }
 
+  /* Estado desbloqueado: fondo blanco, layout en bloque */
+  body.report-unlocked {
+    background: #ffffff !important;
+    background-image: none !important;
+    background-color: #ffffff !important;
+  }
+
+  body.report-unlocked .report-layout-container {
+    display: block;
+    align-items: unset;
+    justify-content: unset;
+    padding: 0;
+    min-height: unset;
+  }
+
   /* El modal con el glow rosado sutil de la captura */
   .gate-modal-card {
     background-color: #1b1b1b;

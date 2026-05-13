@@ -3,34 +3,38 @@ import DashboardLayoutInformes from "../../../layouts/DashboardLayoutInformes.as
 import ContentSection from "../../../components/informes/ContentSection.astro";
 import ContentHeader from "../../../components/informes/ContentHeader.astro";
 import ContentForm from "../../../components/informes/ContentForm.astro";
+import ReportWebView from "../../../components/informes/ReportWebView.astro";
+---
 
-//es/home
---- 
-
-<DashboardLayoutInformes title="El Error de 40.000€ al Contratar Talento Internacional | Oberstaff">
-  <meta slot="head" name="description" content="Análisis estratégico para CEOs y CFOs: Cómo escalar tu equipo técnico fuera de España con un 70% de ahorro estructural y cero pasivo laboral." />
+<DashboardLayoutInformes
+  title="El Error de 40.000€ al Contratar Talento Internacional | Oberstaff"
+>
+  <meta
+    slot="head"
+    name="description"
+    content="Análisis estratégico para CEOs y CFOs: Cómo escalar tu equipo técnico fuera de España con un 70% de ahorro estructural y cero pasivo laboral."
+  />
   <meta slot="head" name="keywords" content="Contratar talento internacional" />
-	
 
-	<div class="welcome-section">
-		
-
+  <!-- GATE: Formulario de acceso — se oculta tras el submit -->
+  <div id="contentGateOverlay" class="welcome-section">
     <ContentSection>
-      <ContentHeader 
+      <ContentHeader
         kicker="Informe Estratégico Exclusivo"
         title="El Error de 40.000€ al Contratar Talento Internacional"
         description="Descubre cómo las empresas madrileñas están escalando sus equipos técnicos y esquivando las multas millonarias por 'Falsos Autónomos'."
       />
-      
       <ContentForm />
     </ContentSection>
+  </div>
 
+  <!-- CONTENIDO WEB: Se revela tras el submit -->
+  <ReportWebView />
 
-	</div>
 </DashboardLayoutInformes>
 
 <style>
-	.welcome-section {
-		/* Add any page-specific container styles here if needed */
-	}
+  .welcome-section {
+    width: 100%;
+  }
 </style>

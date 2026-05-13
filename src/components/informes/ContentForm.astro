@@ -64,13 +64,52 @@ import InformePdf from "./informe-pdf.astro";
 
   console.log("PDF Generator Initialized");
 
+  // === FUNCIÓN: Desbloquear contenido web ===
+  function unlockReportContent() {
+    const gateOverlay = document.getElementById('contentGateOverlay');
+    const mainContent = document.getElementById('mainReportContent');
+    const body = document.body;
+
+    // 1. Desvanecer y ocultar el formulario
+    if (gateOverlay) {
+      gateOverlay.style.transition = 'opacity 0.3s ease';
+      gateOverlay.style.opacity = '0';
+      setTimeout(() => {
+        gateOverlay.style.display = 'none';
+      }, 300);
+    }
+
+    // 2. Revelar el contenido del informe web
+    if (mainContent) {
+      mainContent.classList.remove('locked-content');
+      mainContent.classList.add('unlocked-content');
+    }
+
+    // 3. Restaurar scroll y cambiar fondo de body
+    body.classList.remove('locked-scroll');
+    body.classList.add('report-unlocked');
+    body.style.background = '#ffffff';
+    body.style.backgroundImage = 'none';
+
+    // 4. Animar el gráfico TCO
+    setTimeout(() => {
+      const chartContainer = document.querySelector('.chart-container');
+      if (chartContainer) chartContainer.classList.add('animate-chart');
+    }, 400);
+
+    // 5. Scroll suave al inicio del contenido
+    setTimeout(() => {
+      if (mainContent) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }, 400);
+  }
+
   form?.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    // Feedback visual en el botón
-    const originalContent = btn.innerHTML;
+    // Feedback visual en el botón (solo deshabilitar)
     btn.disabled = true;
-    btn.innerHTML = '<span class="btn-text">GENERANDO INFORME...</span>';
 
     const element = document.getElementById("report-pdf-template");
 
@@ -99,18 +138,28 @@ import InformePdf from "./informe-pdf.astro";
       // @ts-ignore
       await html2pdf().set(opt).from(element).save();
 
-      btn.innerHTML = '<span class="btn-text">¡DESCARGA EXITOSA!</span>';
+      // Desbloquear el contenido web
+      unlockReportContent();
 
-      // Resetear formulario y botón después de 3 segundos
-      setTimeout(() => {
-        form.reset();
-        btn.disabled = false;
-        btn.innerHTML = originalContent;
-      }, 3000);
     } catch (error) {
       console.error("Error al generar PDF:", error);
       btn.disabled = false;
-      btn.innerHTML = '<span class="btn-text">ERROR AL DESCARGAR</span>';
+    }
+  });
+
+  // === SMOOTH SCROLL para enlaces internos del informe ===
+  document.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement;
+    const link = target.closest('a[href^="#"]') as HTMLAnchorElement | null;
+    if (link) {
+      e.preventDefault();
+      const dest = document.querySelector(link.getAttribute('href') || '');
+      if (dest) {
+        window.scrollTo({
+          top: (dest as HTMLElement).offsetTop - 50,
+          behavior: 'smooth'
+        });
+      }
     }
   });
 </script>
