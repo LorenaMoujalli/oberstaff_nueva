@@ -9,6 +9,7 @@ interface Props {
     buttonSubtext?: string;
     footerLinkText?: string;
     footerLinkHref?: string;
+    cardTitleTag?: string;
 }
 
 const {
@@ -19,41 +20,54 @@ const {
     buttonSubtext = "↳ Tardarás menos de 1 minuto · Sin compromiso",
     footerLinkText = "",
     footerLinkHref = "#",
+    cardTitleTag = "h3",
 } = Astro.props;
+
+const CardTitleTag = cardTitleTag as any;
 ---
 
 <div class="lead-form-wrapper">
     <form class="lead-form">
         <div class="lead-form-header">
-            <h3>{cardTitle}</h3>
+            <CardTitleTag class="lead-form-title">{cardTitle}</CardTitleTag>
             {cardSubtitle && <p class="card-subtitle">{cardSubtitle}</p>}
         </div>
-        
+
         <div class="input-group">
-            <input type="text" placeholder="Nombre completo *" required>
+            <input type="text" placeholder="Nombre completo *" required />
         </div>
 
         <div class="input-group">
-            <input type="email" placeholder="Email corporativo *" required>
+            <input type="email" placeholder="Email corporativo *" required />
         </div>
 
         <div class="input-group">
-            <input type="text" placeholder="Empresa *" required>
+            <input type="text" placeholder="Empresa *" required />
         </div>
 
         <div class="input-group">
-            <input type="tel" placeholder="Teléfono *" required>
+            <input type="tel" placeholder="Teléfono *" required />
         </div>
 
         <button type="submit" class="btn-submit">
             {buttonText}
-            {buttonIcon && <span class="btn-icon" aria-hidden="true">{buttonIcon}</span>}
+            {
+                buttonIcon && (
+                    <span class="btn-icon" aria-hidden="true">
+                        {buttonIcon}
+                    </span>
+                )
+            }
         </button>
 
         {buttonSubtext && <p class="btn-subtext">{buttonSubtext}</p>}
 
-        {footerLinkText && (
-            <a href={footerLinkHref} class="form-link">{footerLinkText}</a>
-        )}
+        {
+            footerLinkText && (
+                <a href={footerLinkHref} class="form-link">
+                    {footerLinkText}
+                </a>
+            )
+        }
     </form>
 </div>

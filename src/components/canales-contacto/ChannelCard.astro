@@ -28,5 +28,5 @@ const {
     <div class={`icon-wrapper ${bgClass}`}>{icon}</div>
     <h3 set:html={title} />
     <p set:html={description} />
-    <a href={href} target={target} class="btn-outline-small">{buttonText}</a>
+    <a href={href} target={target} rel={target === "_blank" ? "noopener noreferrer" : undefined} class="btn-outline-small">{buttonText}</a>
 </div>

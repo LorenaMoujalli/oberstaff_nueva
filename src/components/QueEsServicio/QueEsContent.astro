@@ -17,16 +17,31 @@ interface Props {
     ctaHref?: string;
     checklistIcon?: string;
     checklistIconClass?: string;
+    itemTitleTag?: string;
 }
 
-const { imageSrc, imageAlt, badgeText, quoteText, infoItems = [], checklistTitle, checklistItems, ctaText, ctaHref, checklistIcon, checklistIconClass } = Astro.props;
+const {
+    imageSrc,
+    imageAlt,
+    badgeText,
+    quoteText,
+    infoItems = [],
+    checklistTitle,
+    checklistItems,
+    ctaText,
+    ctaHref,
+    checklistIcon,
+    checklistIconClass,
+    itemTitleTag = "p",
+} = Astro.props;
+const TitleTag = itemTitleTag as any;
 import "../../styles/QueEsServicio/QueEsContent.css";
 ---
 
 <div class="que-es-main-content">
     <div class="que-es-image-wrapper">
         <div class="image-card">
-            <img src={imageSrc} alt={imageAlt}>
+            <img src={imageSrc} alt={imageAlt} />
         </div>
         <div class="floating-badge-bottom">
             <span class="check-pink" aria-hidden="true">✓</span>
@@ -35,54 +50,77 @@ import "../../styles/QueEsServicio/QueEsContent.css";
     </div>
 
     <div class="que-es-info-list">
-        {quoteText && (
-            <div class="quote-blue-border" set:html={quoteText}>
-            </div>
-        )}
+        {
+            quoteText && (
+                <div class="quote-blue-border" set:html={quoteText}></div>
+            )
+        }
 
-        {checklistTitle && checklistItems && checklistItems.length > 0 ? (
-            <>
-                <div class="ques-checklist-block">
-                    <p class="ques-checklist-title"><strong>{checklistTitle}</strong></p>
-                    <ul class="ques-checklist">
-                        {checklistItems.map((item) => (
-                            <li class="ques-checklist-item">
-                                <span class={`ques-check-icon ${checklistIconClass || ""}`} aria-hidden="true">{checklistIcon || "✓"}</span>
-                                <span set:html={item}></span>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            </>
-        ) : (
-            infoItems.map((item) => (
-                <div class="info-item">
-                    <div class="icon-box" aria-hidden="true">
-                        {item.icon.includes(':') ? (
-                            <iconify-icon icon={item.icon} aria-hidden="true"></iconify-icon>
-                        ) : (
-                            <span class="emoji-icon" aria-hidden="true">{item.icon}</span>
-                        )}
+        {
+            checklistTitle && checklistItems && checklistItems.length > 0 ? (
+                <>
+                    <div class="ques-checklist-block">
+                        <p class="ques-checklist-title">
+                            <strong>{checklistTitle}</strong>
+                        </p>
+                        <ul class="ques-checklist">
+                            {checklistItems.map((item) => (
+                                <li class="ques-checklist-item">
+                                    <span
+                                        class={`ques-check-icon ${checklistIconClass || ""}`}
+                                        aria-hidden="true"
+                                    >
+                                        {checklistIcon || "✓"}
+                                    </span>
+                                    <span set:html={item} />
+                                </li>
+                            ))}
+                        </ul>
                     </div>
-                    <div class="text-box">
-                        {item.title && <p class="text-box-title"><strong set:html={item.title}></strong></p>}
-                        {item.description && <p set:html={item.description}></p>}
+                </>
+            ) : (
+                infoItems.map((item) => (
+                    <div class="info-item">
+                        <div class="icon-box" aria-hidden="true">
+                            {item.icon.includes(":") ? (
+                                <iconify-icon
+                                    icon={item.icon}
+                                    aria-hidden="true"
+                                />
+                            ) : (
+                                <span class="emoji-icon" aria-hidden="true">
+                                    {item.icon}
+                                </span>
+                            )}
+                        </div>
+                        <div class="text-box">
+                            {item.title && (
+                                <TitleTag class="text-box-title">
+                                    <strong set:html={item.title} />
+                                </TitleTag>
+                            )}
+                            {item.description && (
+                                <p set:html={item.description} />
+                            )}
+                        </div>
                     </div>
-                </div>
-            ))
-        )}
+                ))
+            )
+        }
 
-        {ctaText && (
-            <a href={ctaHref || "#"} class="ques-cta-btn">
-                {ctaText}
-            </a>
-        )}
+        {
+            ctaText && (
+                <a href={ctaHref || "#"} class="ques-cta-btn">
+                    {ctaText}
+                </a>
+            )
+        }
     </div>
 </div>
 
 <style>
     .orange-bullet-icon {
-        color: #FFA500 !important;
+        color: #ffa500 !important;
         font-weight: 900 !important;
         font-size: 16px !important;
         line-height: 1 !important;

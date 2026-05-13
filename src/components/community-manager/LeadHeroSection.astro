@@ -28,6 +28,7 @@ interface Props {
     features?: Feature[];
     badges?: Badge[];
     badgesClass?: string;
+    cardTitleTag?: string;
 }
 
 const {
@@ -43,6 +44,7 @@ const {
     features = [],
     badges = [],
     badgesClass = "",
+    cardTitleTag,
 } = Astro.props;
 ---
 
@@ -63,6 +65,7 @@ const {
             buttonSubtext={buttonSubtext}
             footerLinkText={footerLinkText}
             footerLinkHref={footerLinkHref}
+            cardTitleTag={cardTitleTag}
         />
     </div>
 </section>

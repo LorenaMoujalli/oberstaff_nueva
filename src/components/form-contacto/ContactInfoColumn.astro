@@ -48,7 +48,7 @@ const {
     </ul>
 
     <div class="review-box">
-        <h4 set:html={reviewTitle} />
+        <h3 set:html={reviewTitle} />
         <ul class="review-list">
             {reviewItems.map((item) => (
                 <li set:html={item.text} />

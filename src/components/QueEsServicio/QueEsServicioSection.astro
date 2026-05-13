@@ -27,6 +27,7 @@ interface Props {
     checklistIconClass?: string;
     ctaText?: string;
     ctaHref?: string;
+    itemTitleTag?: string;
 }
 
 const { 
@@ -47,6 +48,7 @@ const {
     checklistIconClass,
     ctaText,
     ctaHref,
+    itemTitleTag,
 } = Astro.props;
 
 import "../../styles/QueEsServicio/QueEsServicio.css";
@@ -72,6 +74,7 @@ import "../../styles/QueEsServicio/QueEsServicio.css";
             checklistIconClass={checklistIconClass}
             ctaText={ctaText}
             ctaHref={ctaHref}
+            itemTitleTag={itemTitleTag}
         />
 
         {diffTitle && (
