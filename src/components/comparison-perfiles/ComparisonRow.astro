@@ -18,13 +18,17 @@ const {
   oberstaffBlueText,
   competitorValues
 } = Astro.props;
+
+const injectAriaHidden = (html: string) => {
+    return html.replace(/class=['"](icon-check|icon-cross|icon-warning)['"]/g, '$& aria-hidden="true"');
+};
 ---
 <tr>
     <td class="row-label" set:html={label}></td>
     <td class={`col-highlight ${oberstaffBlueText ? 'blue-text' : ''} ${oberstaffNoPadding ? 'no-padding' : ''}`}>
-        <Fragment set:html={oberstaffValue} />
+        <Fragment set:html={injectAriaHidden(oberstaffValue)} />
     </td>
     {competitorValues.map((val) => (
-        <td set:html={val}></td>
+        <td set:html={injectAriaHidden(val)}></td>
     ))}
 </tr>

@@ -3,7 +3,8 @@
     margin-bottom: 60px;
 }
 
-.section-header h1 {
+.section-header h1,
+.section-header h2 {
     font-family: 'Montserrat', sans-serif;
     font-size: 32px;
     font-weight: 700;
@@ -11,7 +12,8 @@
     color: #1b1b1b;
 }
 
-.section-header h1 :global(span) {
+.section-header h1 :global(span),
+.section-header h2 :global(span) {
     color: #6366f1;
 }
 
@@ -24,6 +26,7 @@
 }
 
 @media (max-width: 768px) {
-    .section-header h1 { font-size: 24px; }
+    .section-header h1,
+    .section-header h2 { font-size: 24px; }
     .section-header p { font-size: 16px; }
 }

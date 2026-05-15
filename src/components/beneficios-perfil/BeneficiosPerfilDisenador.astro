@@ -18,6 +18,7 @@ interface Props {
     imageAlt?: string;
     infoTitle?: string;
     infoItems?: InfoItem[];
+    showInfoCard?: boolean;
 }
 
 const {
@@ -50,13 +51,14 @@ const {
         },
         {
             title: "¿Qué buscar al contratar?",
-            description: "Valora su portfolio y define la especialidad (branding, RRSS, motion) y herramientas antes de buscar. En Oberstaff, te ayudamos a definirlo en una llamada de 15 minutos.",
+            description: "Valora su portfolio y define la especialidad (branding, RRSS, motion) and herramientas antes de buscar. En Oberstaff, te ayudamos a definirlo en una llamada de 15 minutos.",
         },
         {
             title: "Páginas para contratar: Ventajas Oberstaff",
             description: "Frente a marketplaces, ofrecemos talento dedicado en exclusiva, con contrato estable y gestión laboral cubierta sin riesgos legales.",
         },
     ],
+    showInfoCard = true,
 } = Astro.props;
 ---
 
@@ -256,7 +258,7 @@ const {
             <div class="bp-features">
                 {features.map((f) => (
                     <div class="bp-feature">
-                        <div class="bp-feature-icon">{f.icon}</div>
+                        <div class="bp-feature-icon" aria-hidden="true">{f.icon}</div>
                         <div class="bp-feature-text">
                             <p class="bp-feature-title">{f.title}</p>
                             <p class="bp-feature-desc" set:html={f.description}></p>
@@ -271,17 +273,21 @@ const {
         <div class="bp-right">
             <img src={image} alt={imageAlt} class="bp-image" />
 
-            <div class="bp-info-card">
-                <h2 class="bp-info-title">{infoTitle}</h2>
-                <div class="bp-info-items">
-                    {infoItems.map((item) => (
-                        <div class="bp-info-item">
-                            <h3>{item.title}</h3>
-                            <p class="bp-info-desc" set:html={item.description}></p>
-                        </div>
-                    ))}
+            {showInfoCard && infoItems && infoItems.length > 0 && (
+                <div class="bp-info-card">
+                    {infoTitle && <h2 class="bp-info-title">{infoTitle}</h2>}
+                    <div class="bp-info-items">
+                        {infoItems.map((item) => (
+                            (item.title || item.description) && (
+                                <div class="bp-info-item">
+                                    {item.title && <h3>{item.title}</h3>}
+                                    {item.description && <p class="bp-info-desc" set:html={item.description}></p>}
+                                </div>
+                            )
+                        ))}
+                    </div>
                 </div>
-            </div>
+            )}
         </div>
 
     </div>

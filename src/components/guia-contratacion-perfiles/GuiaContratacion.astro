@@ -15,9 +15,10 @@ interface Props {
     headerTitle: string;
     headerDescription: string;
     cards: CardData[];
+    titleTag?: string;
 }
 
-const { headerTitle, headerDescription, cards = [] } = Astro.props;
+const { headerTitle, headerDescription, cards = [], titleTag } = Astro.props;
 ---
 
 <GuiaContratacionSection>
@@ -25,6 +26,7 @@ const { headerTitle, headerDescription, cards = [] } = Astro.props;
         slot="header"
         title={headerTitle}
         description={headerDescription}
+        titleTag={titleTag}
     />
 
     {cards.map((card) => (

@@ -34,8 +34,8 @@ const isEmoji = (str: string) => !str.includes(":");
   <div class={`perfil-card layout-modern ${borderColorClass}`}>
     <div class="card-top">
       <div class="card-title-row">
-        <span class="profile-icon-modern">
-          {isEmoji(icon) ? icon : <iconify-icon icon={icon} style={`color: ${iconColor};`}></iconify-icon>}
+        <span class="profile-icon-modern" aria-hidden="true">
+          {isEmoji(icon) ? icon : <iconify-icon icon={icon} style={`color: ${iconColor};`} aria-hidden="true"></iconify-icon>}
         </span>
         <h3 set:html={title}></h3>
       </div>
@@ -57,11 +57,11 @@ const isEmoji = (str: string) => !str.includes(":");
 ) : (
   <div class={`perfil-card ${borderColorClass}`}>
     <div class="card-content">
-      <span class="profile-icon">
+      <span class="profile-icon" aria-hidden="true">
         {isEmoji(icon) ? (
           <span>{icon}</span>
         ) : (
-          <iconify-icon icon={icon} style={`color: ${iconColor};`}></iconify-icon>
+          <iconify-icon icon={icon} style={`color: ${iconColor};`} aria-hidden="true"></iconify-icon>
         )}
       </span>
       <h3 set:html={title}></h3>

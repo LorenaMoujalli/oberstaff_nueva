@@ -2,13 +2,16 @@
 interface Props {
     title: string;
     description: string;
+    titleTag?: string;
 }
 
-const { title, description } = Astro.props;
+const { title, description, titleTag = "h1" } = Astro.props;
 import "../../styles/guia-contratacion-perfiles/GuiaHeader.css";
+
+const TitleTag = titleTag as any;
 ---
 
 <div class="section-header">
-    <h1 set:html={title}></h1>
+    <TitleTag set:html={title} />
     <p>{description}</p>
 </div>

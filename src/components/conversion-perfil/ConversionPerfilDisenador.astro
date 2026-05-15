@@ -57,7 +57,7 @@ const {
         margin: 0;
     }
 
-    .conv-d-extra-title {
+    .conv-d-left .conv-d-extra-title {
         font-family: 'Poppins', sans-serif;
         font-size: 18px;
         font-weight: 700;
@@ -176,7 +176,7 @@ const {
             text-align: center;
         }
 
-        .conv-d-extra-title {
+        .conv-d-left .conv-d-extra-title {
             text-align: center;
             font-size: 18px;
         }
@@ -190,7 +190,7 @@ const {
         <div class="conv-d-left">
             <h2 set:html={title} />
             <p>{subtitle}</p>
-            {extraTitle && <h3 class="conv-d-extra-title">{extraTitle}</h3>}
+            {extraTitle && <p class="conv-d-extra-title">{extraTitle}</p>}
         </div>
 
         <!-- Columna derecha: formulario -->
