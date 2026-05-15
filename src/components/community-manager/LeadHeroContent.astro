@@ -20,6 +20,8 @@ interface Props {
     badges?: Badge[];
     badgesClass?: string;
     topLabelInsideH1?: boolean;
+    titleTag?: string;
+    topLabelTag?: string;
 }
 
 const {
@@ -29,22 +31,27 @@ const {
     badges = [],
     badgesClass = "",
     topLabelInsideH1 = false,
+    titleTag = "h1",
+    topLabelTag = "span",
 } = Astro.props;
 
 // Un emoji no contiene ":", un iconify sí (e.g. "solar:check-circle-bold")
 const isEmoji = (icon: string) => !icon.includes(":");
+
+const TitleTag = titleTag as any;
+const TopLabelTag = topLabelTag as any;
 ---
 
 <div class="lead-text-content">
     {topLabelInsideH1 ? (
-        <h1>
-            {topLabel && <span class="top-label">{topLabel}</span>}
+        <TitleTag class="title-as-h1">
+            {topLabel && <TopLabelTag class="top-label">{topLabel}</TopLabelTag>}
             <span set:html={title} />
-        </h1>
+        </TitleTag>
     ) : (
         <>
-            {topLabel && <span class="top-label">{topLabel}</span>}
-            <h1 set:html={title} />
+            {topLabel && <TopLabelTag class="top-label">{topLabel}</TopLabelTag>}
+            <TitleTag class="title-as-h1" set:html={title} />
         </>
     )}
     <p class="lead-description">
