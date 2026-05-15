@@ -20,19 +20,21 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-community.a
   description="¿Buscas contratar community manager sin saber por dónde empezar? Perfiles evaluados de LATAM, zona horaria España y hasta un 70% de ahorro."
   footerTitle="Roles Relacionados"
   footerLinks={[
-    { text: "🎨 Contratar diseñador gráfico", href: "/es/servicios/contratar-disenador-grafico/" },
-    { text: "🗂️ Asistente administrativo virtual", href: "/es/servicios/contratar-un-asistente-virtual/" },
-    { text: "📹 Editor de video remoto", href: "/es/servicios/contratar-editor-de-videos/" },
+    { text: "🎨 Contratar diseñador gráfico", href: "/es/perfiles/contratar-disenador-grafico/" },
+    { text: "🗂️ Asistente administrativo virtual", href: "/es/perfiles/contratar-un-asistente-virtual/" },
+    { text: "📹 Editor de video remoto", href: "/es/perfiles/contratar-editor-de-videos/" },
   ]}
-  keywords="Contratar community manager"
+ 
 >
   <div class="service-detail-container" id="inicio">
     <LeadHeroSection
       topLabel="Contratar Community Manager Remoto desde Latinoamérica"
+      topLabelInsideH1={true}
       title="Delega el crecimiento de tu comunidad digital en talento experto, sin el riesgo ni la burocracia laboral local."
       cardTitle="Encuentra a tu CM ideal hoy"
       cardSubtitle="Accede a perfiles pre-evaluados listos para integrarse."
       buttonText="👉 Ver perfiles pre-evaluados y solicitar propuesta"
+
       buttonIcon=""
       buttonSubtext="↳ Tardarás menos de 1 minuto · Sin compromiso"
       footerLinkText="Ver cómo funciona el modelo EOR →"
@@ -70,7 +72,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-community.a
           "Sin ataduras: si el CM no logra captar la esencia de tu marca, cancela o pide un reemplazo sin pagar indemnizaciones",
         ]}
         ctaText="Solicitar candidatos →"
-        ctaHref="#"
+        ctaHref="#formulario-perfil"
         diffIcon=""
         diffTitle=""
         diffDescription=""
@@ -80,6 +82,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-community.a
     <div class="fade-in-section">
       <ServicesSection
         title="¿Qué hace un community manager <strong>para empresas?</strong>"
+        cardTitleTag="h3"
         description="Es la voz digital de tu marca: gestiona la reputación online, crea contenido de valor, responde a tu comunidad y convierte seguidores en clientes. Cuando una empresa busca contratar community manager, no solo necesita alguien que publique en redes: necesita una persona que entienda la marca, mantenga la consistencia del mensaje y convierta la actividad social en una herramienta real de crecimiento."
         customClass="employer-use-cases"
         services={[
@@ -188,9 +191,10 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-community.a
     <div class="fade-in-section">
       <EorCta
         title="¿Ya sabes cuáles son las redes sociales donde necesitas mayor impacto?"
+        titleTag="h2"
         text="Indícanos si buscas un perfil más corporativo (LinkedIn) o más dinámico (TikTok/Instagram) y recibe una propuesta en menos de 24 horas. Sin compromiso."
         buttonText="👉 Solicitar propuesta personalizada"
-        buttonHref="#"
+        buttonHref="#formulario-perfil"
       />
     </div>
 
@@ -201,7 +205,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-community.a
         layout="modern"
         footerText=""
         footerLinkText=""
-        footerLinkHref="#"
+        footerLinkHref="#formulario-perfil"
         roles={[
           {
             title: "📱 Gestor de Redes multiplataforma",
@@ -218,7 +222,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-community.a
               "Canva",
             ],
             buttonText: "Solicitar más información →",
-            buttonHref: "#",
+            buttonHref: "#formulario-perfil",
           },
           {
             title: "💼 CM LinkedIn & B2B",
@@ -230,7 +234,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-community.a
               "Construcción de autoridad corporativa, social selling y generación de leads cualificados en entornos profesionales y directivos.",
             techStack: ["LinkedIn", "Sales Navigator", "Taplio", "Notion"],
             buttonText: "Solicitar más información →",
-            buttonHref: "#",
+            buttonHref: "#formulario-perfil",
           },
           {
             title: "🛒 CM para eCommerce/social Commerce",
@@ -242,7 +246,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-community.a
               "Perfil orientado a la venta por catálogo social. Gestiona atención al cliente por DM, reseñas públicas y expectación ante lanzamientos (hype)",
             techStack: ["Shopify", "Meta Ads", "Klaviyo", "Trustpilot"],
             buttonText: "Solicitar más información →",
-            buttonHref: "#",
+            buttonHref: "#formulario-perfil",
           },
           {
             title: "⭐ Community Manager para Marca Personal",
@@ -254,7 +258,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-community.a
               "Ghostwriting y gestión de presencia digital para CEOs, divulgadores, coaches y fundadores. Captura de la voz íntima y personal del líder.",
             techStack: ["LinkedIn", "Instagram", "TikTok", "Linktree"],
             buttonText: "Solicitar más información → ",
-            buttonHref: "#",
+            buttonHref: "#formulario-perfil",
           },
         ]}
       />
@@ -350,6 +354,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-community.a
         sectionTitle="¿Cuál es el precio de internalizar tus Redes Sociales con <span style='color:#6663FD; font-weight: 900;'>Oberstaff?</span>"
         sectionSubtitle="Una nómina local puede asfixiar tu presupuesto de marketing. Pero con <span style='color:#1B1B1B; font-weight: 700;'>Oberstaff</span><span style='color:#FF66CC; font-weight: 700;'>.</span>  puedes acceder al mismo nivel de talento a una fracción del coste, sin sacrificar engagement."
         cardTitle="Fee mensual único"
+        titleTag="p"
         cardSubtitle="Jornada completa."
         priceLabel="DESDE"
         priceAmount="750€"
@@ -361,7 +366,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-community.a
           "Coordinación con tu equipo de marketing",
         ]}
         ctaText="Solicitar propuesta"
-        ctaHref="#"
+        ctaHref="#formulario-perfil"
         disclaimer="*Precios orientativos según seniority."
       />
     </div>
@@ -442,6 +447,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-community.a
       title="Quieres contratar un <strong>community manager</strong> con nosotros esto es lo que tienes que saber"
       ctaText="Respondemos las dudas más frecuentes sobre el proceso y funcionamiento del servicio a negocios que deseen incorporar talento de LATAM"
       ctaButtonText="Hablar con asesor →"
+      ctaButtonHref="#formulario-perfil"
     />
 
     <div class="fade-in-section">

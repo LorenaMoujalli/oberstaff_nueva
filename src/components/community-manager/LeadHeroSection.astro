@@ -29,6 +29,7 @@ interface Props {
     badges?: Badge[];
     badgesClass?: string;
     cardTitleTag?: string;
+    topLabelInsideH1?: boolean;
 }
 
 const {
@@ -45,6 +46,7 @@ const {
     badges = [],
     badgesClass = "",
     cardTitleTag,
+    topLabelInsideH1 = false,
 } = Astro.props;
 ---
 
@@ -53,7 +55,14 @@ const {
     <div class="blur-glow pink-glow"></div>
     <div class="blur-glow purple-glow"></div>
     <div class="lead-container">
-        <LeadHeroContent topLabel={topLabel} title={title} features={features} badges={badges} badgesClass={badgesClass}>
+        <LeadHeroContent 
+            topLabel={topLabel} 
+            title={title} 
+            features={features} 
+            badges={badges} 
+            badgesClass={badgesClass}
+            topLabelInsideH1={topLabelInsideH1}
+        >
             <slot name="description" />
         </LeadHeroContent>
 

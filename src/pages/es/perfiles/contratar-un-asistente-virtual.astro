@@ -20,19 +20,21 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-asistente.a
     description="Talento remoto de LATAM, español nativo y hasta un 70% de ahorro para empresas en España que buscan contratar un asistente virtual. Consulta gratuita."
     footerTitle="Roles Relacionados"
     footerLinks={[
-        { text: "💰 Contratar contable remoto", href: "/es/servicios/contratar-contable" },
-        { text: "📱 Community Manager", href: "/es/servicios/contratar-community-manager" },
-        { text: "🔍 Experto SEO", href: "/es/servicios/contratar-experto-seo" },
+        { text: "💰 Contratar contable remoto", href: "/es/perfiles/contratar-contable" },
+        { text: "📱 Community Manager", href: "/es/perfiles/contratar-community-manager" },
+        { text: "🔍 Experto SEO", href: "/es/perfiles/contratar-experto-seo" },
     ]}
     keywords="contratar un asistente virtual "
 >
     <div class="service-detail-container" id="inicio">
         <LeadHeroSection
             topLabel="Contratar un Asistente Virtual para tu empresa"
+            topLabelInsideH1={true}
             title="Contratar un asistente virtual: Externaliza tu Back-Office y escala tu operativa sin pasivo laboral"
             cardTitle="Encuentra a tu asistente hoy"
             cardSubtitle="Accede a perfiles pre-evaluados listos para tu empresa."
             buttonText="👉 Ver perfiles pre-evaluados y solicitar propuesta"
+     
             buttonIcon=""
             buttonSubtext="↳ Tardarás menos de 1 minuto · Sin compromiso"
             footerLinkText="Ver cómo funciona el modelo EOR →"
@@ -71,7 +73,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-asistente.a
                     "Escalabilidad inmediata: ajusta tu capacidad de soporte administrativo sin procesos de despido ni indemnizaciones.",
                 ]}
                 ctaText="Solicitar asistente virtual →"
-                ctaHref="#"
+                ctaHref="#formulario-perfil"
                 diffIcon=""
                 diffTitle=""
                 diffDescription=""
@@ -81,6 +83,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-asistente.a
         <div class="fade-in-section">
             <ServicesSection
                 title="De la gestión de agendas al control del CRM: funciones técnicas de un <strong>asistente virtual para empresas?</strong>"
+                cardTitleTag="h3"
                 description="Un asistente virtual administrativo ayuda a tu organización a descargar tareas operativas que frenan al equipo: manejo de agenda, filtrado de correo, seguimiento, reportes y coordinación interna. No es solo apoyo puntual; es una persona trabajando en remoto que aporta orden documental, velocidad de respuesta y continuidad."
                 customClass="employer-use-cases"
                 services={[
@@ -189,9 +192,10 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-asistente.a
         <div class="fade-in-section">
             <EorCta
                 title="¿Tu equipo directivo está asfixiado por microtareas? Recupera su tiempo al contratar a un asistente virtual"
+                titleTag="h2"
                 text="Cuéntanos cuál es el cuello de botella documental de tu empresa. Define el perfil exacto que necesitas y recibe una propuesta adaptada a tu modelo de negocio en menos de 24 horas."
                 buttonText="👉 Solicitar propuesta personalizada"
-                buttonHref="#"
+                buttonHref="#formulario-perfil"
             />
         </div>
 
@@ -202,7 +206,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-asistente.a
                 layout="modern"
                 footerText="💡 ¿Necesitas también un perfil que lleve la contabilidad formal y las obligaciones fiscales?"
                 footerLinkText="Ver perfil de Contable Remoto →"
-                footerLinkHref="#"
+                footerLinkHref="#formulario-perfil"
                 roles={[
                     {
                         title: "🗂️ Asistente Administrativo virtual",
@@ -219,7 +223,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-asistente.a
                             "Slack",
                         ],
                         buttonText: "Solicitar más información →",
-                        buttonHref: "#",
+                        buttonHref: "#formulario-perfil",
                     },
                     {
                         title: "🗣️ Soporte y Atención al Cliente",
@@ -236,7 +240,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-asistente.a
                             "WhatsApp Business",
                         ],
                         buttonText: "Solicitar más información →",
-                        buttonHref: "#",
+                        buttonHref: "#formulario-perfil",
                     },
                     {
                         title: "🛒 Asistente Virtual remoto para eCommerce",
@@ -248,7 +252,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-asistente.a
                             "Actualización masiva de SKUs, control de inventario base y seguimiento de logística posventa.",
                         techStack: ["Shopify", "Amazon Seller", "Klaviyo"],
                         buttonText: "Solicitar más información →",
-                        buttonHref: "#",
+                        buttonHref: "#formulario-perfil",
                     },
                     {
                         title: "💼 Asistente Personal Ejecutivo",
@@ -260,7 +264,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-asistente.a
                             "Gestión de agendas directivas complejas (C-Level), filtro de comunicaciones críticas y preparación de juntas.",
                         techStack: ["Calendly", "Notion", "Zoom", "Asana"],
                         buttonText: "Solicitar más información → ",
-                        buttonHref: "#",
+                        buttonHref: "#formulario-perfil",
                     },
                 ]}
             />
@@ -341,6 +345,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-asistente.a
                 sectionTitle="Fin a los sobrecostes: tarifa plana al contratar a un <span style='color:#6663FD; font-weight: 900;'>asistente virtual</span>"
                 sectionSubtitle="Estructura tus costes fijos con previsibilidad. Nuestra tarifa incluye todo: headhunting, compliance legal internacional y nómina. El coste escala únicamente según la especialización del talento."
                 cardTitle="Todo incluido"
+                titleTag="p"
                 cardSubtitle="Jornada completa · sin costes ocultos"
                 priceLabel="DESDE"
                 priceAmount="690€"
@@ -353,7 +358,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-asistente.a
                     "Facturación B2B internacional en euros.",
                 ]}
                 ctaText="Solicitar propuesta"
-                ctaHref="#"
+                ctaHref="#formulario-perfil"
                 disclaimer="*Precios orientativos. El coste final depende del perfil, país y nivel de experiencia"
             />
         </div>
@@ -445,6 +450,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-asistente.a
             title="Blindaje legal y contingencia laboral de tu <strong>asistente virtual</strong>"
             ctaText="Protege tu balance frente a la rigidez del marco laboral español. Al integrar tu asistente virtual bajo nuestra arquitectura legal, desplazas la carga administrativa y el pasivo laboral hacia nuestra infraestructura global."
             ctaButtonText="Hablar con asesor →"
+            ctaButtonHref="#formulario-perfil"
         />
 
         <div class="fade-in-section">

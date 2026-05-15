@@ -23,19 +23,19 @@ import GuiaContratacion from "../../../components/guia-contratacion-perfiles/Gui
     footerLinks={[
         {
             text: "📊 Especialista en Google Ads",
-            href: "/es/servicios/especialista-en-google-ads/",
+            href: "/es/perfiles/especialista-en-google-ads/",
         },
         {
             text: "🔍 Especialista SEO",
-            href: "/es/servicios/contratar-experto-seo/",
+            href: "/es/perfiles/contratar-experto-seo/",
         },
         {
             text: "🎨  Diseñador gráfico",
-            href: "/es/servicios/contratar-disenador-grafico/",
+            href: "/es/perfiles/contratar-disenador-grafico/",
         },
         {
             text: "📱 Especialista en Meta Ads",
-            href: "/es/servicios/experto-en-meta-ads/",
+            href: "/es/perfiles/experto-en-meta-ads/",
         },
     ]}
     keywords="contratar copywriter" 
@@ -43,10 +43,12 @@ import GuiaContratacion from "../../../components/guia-contratacion-perfiles/Gui
     <div class="service-detail-container" id="inicio">
         <LeadHeroSection
             topLabel="Redacción Persuasiva y CRO"
+            topLabelInsideH1={true}
             title="Contratar copywriter: convierte tu propuesta de valor en ventas con talento remoto de LATAM"
             cardTitle="Impulsa tus conversiones"
             cardSubtitle="Completa tus datos para recibir perfiles evaluados."
             buttonText="Ver perfiles pre-evaluados y solicitar propuesta"
+      
             buttonIcon=""
             buttonSubtext="↳ Tardarás menos de 1 minuto"
             footerLinkText="Ver cómo funciona el modelo EOR →"
@@ -89,8 +91,8 @@ import GuiaContratacion from "../../../components/guia-contratacion-perfiles/Gui
                     "<span style='color: #1b1b1b; font-weight: 600;'>Sin permanencia obligatoria:</span> si el tono de los textos no captura la esencia de tu marca, puedes cancelar o pedir un reemplazo sin indemnizaciones.",
 
                 ]}
-                ctaText=""
-                ctaHref="#"
+                ctaText="Solicitar propuesta personalizada →"
+                ctaHref="#formulario-perfil"
                 diffIcon=""
                 diffTitle=""
                 diffDescription=""
@@ -100,6 +102,7 @@ import GuiaContratacion from "../../../components/guia-contratacion-perfiles/Gui
       <div class="fade-in-section">
       <ServicesSection
         title="¿Qué puede asumir un copywriter <strong>dentro de tu funnel comercial?</strong>"
+        cardTitleTag="h3"
         description="Un copywriter profesional va mucho más allá de 'escribir bien'. Es el estratega que traduce los beneficios de tu producto o servicio en argumentos irresistibles. Domina la arquitectura del texto persuasivo, sabe dónde colocar el gancho, cómo gestionar la fricción del lector y cómo construir una llamada a la acción que active la decisión de compra. <br><br>Cuando una empresa decide contratar un copywriter, no solo gana capacidad de producción de contenidos: gana un perfil capaz de auditar los textos actuales, detectar fugas de conversión y elevar el rendimiento de cada página de su embudo."
         customClass="employer-use-cases"
         services={[
@@ -209,9 +212,10 @@ import GuiaContratacion from "../../../components/guia-contratacion-perfiles/Gui
         <div class="fade-in-section">
             <EorCta
                 title="Encuentra el copywriter remoto que necesita tu empresa"
+                titleTag="h2"
                 text="Indícanos si necesitas un copywriter para empresas especializado en paid media, email o en contenido web y recibe una propuesta personalizada en menos de 24 horas. Sin compromiso."
                 buttonText="👉 Incorporar un copywriter remoto a mi operativa "
-                buttonHref="#"
+                buttonHref="#formulario-perfil"
             />
         </div>
 
@@ -223,7 +227,7 @@ import GuiaContratacion from "../../../components/guia-contratacion-perfiles/Gui
                 customClass="grid-modern roles-copy-grid"
                 footerText=""
                 footerLinkText=""
-                footerLinkHref="#"
+                footerLinkHref="#formulario-perfil"
                 roles={[
                     {
                         title: "🎬 Contratar copywriter web para landing y CRO",
@@ -235,7 +239,7 @@ import GuiaContratacion from "../../../components/guia-contratacion-perfiles/Gui
                             "Perfil centrado en páginas de captación, estructura de landings, jerarquía de argumentos, prueba social, CTAs y mejora de conversión en activos web.",
                         techStack: ["Hotjar", "Unbounce", "Webflow", "WordPress"],
                         buttonText: "Solicitar más información →",
-                        buttonHref: "#",
+                        buttonHref: "#formulario-perfil",
                     },
                     {
                         title: "✨ Copywriter de eCommerce y catálogo",
@@ -247,7 +251,7 @@ import GuiaContratacion from "../../../components/guia-contratacion-perfiles/Gui
                             "Redacción de fichas de producto, bundles, páginas de categoría, promociones y mensajes que mejoran la tasa de conversión y el ticket medio.",
                         techStack: ["Shopify", "Klaviyo", "WooCommerce"],
                         buttonText: "Solicitar más información →",
-                        buttonHref: "#",
+                        buttonHref: "#formulario-perfil",
                     },
                     {
                         title: "🏢 Email copywriter para lifecycle y CRM",
@@ -259,7 +263,7 @@ import GuiaContratacion from "../../../components/guia-contratacion-perfiles/Gui
                             "Perfil enfocado en secuencias automatizadas, newsletters comerciales, lead nurturing, recuperación de carrito y campañas de activación o retención.",
                         techStack: ["Klaviyo", "ActiveCampaign", "Mailchimp", "HubSpot"],
                         buttonText: "Solicitar más información →",
-                        buttonHref: "#",
+                        buttonHref: "#formulario-perfil",
                     },
                     {
                         title: "📱 Copywriter de lanzamientos y paid media",
@@ -271,7 +275,7 @@ import GuiaContratacion from "../../../components/guia-contratacion-perfiles/Gui
                             "Especialista en variantes de anuncio para Google Ads y Meta Ads. Dominio del gancho (hook), headline y descripción con enfoque en el coste por adquisición.",
                         techStack: ["Meta Ads", "VSL", "Google Ads", "Hooks", "Creatividades"],
                         buttonText: "Solicitar más información →",
-                        buttonHref: "#",
+                        buttonHref: "#formulario-perfil",
                     }
                 ]}
             />
@@ -368,6 +372,7 @@ import GuiaContratacion from "../../../components/guia-contratacion-perfiles/Gui
                 sectionTitle="Una estructura mensual para producir copy cada día, <br> <span style='color:#6663FD; font-weight: 900;'>no por entregas sueltas</span> "
                 sectionSubtitle=""
                 cardTitle="Fee mensual único"
+                titleTag="p"
                 cardSubtitle="Jornada completa dedicada a tu estrategia de contenidos."
                 priceLabel="DESDE"
                 priceAmount="750€"
@@ -381,7 +386,7 @@ import GuiaContratacion from "../../../components/guia-contratacion-perfiles/Gui
                     "Cesión total de derechos de autoría sobre cada entregable.",
                 ]}
                 ctaText="Solicitar propuesta"
-                ctaHref="#"
+                ctaHref="#formulario-perfil"
                 disclaimer="*Precios orientativos según seniority, especialidad y país del profesional. Sin costes ocultos ni comisiones adicionales."
             />
         </div>
@@ -510,6 +515,7 @@ import GuiaContratacion from "../../../components/guia-contratacion-perfiles/Gui
                 title="Dudas clave antes de <br> <strong>contratar copywriting <br> para empresas</strong>"
                 ctaText="Respondemos las dudas más habituales de las compañías españolas que quieren incorporar un redactor remoto de forma estable."
                 ctaButtonText="Hablar con asesor →"
+                ctaButtonHref="#formulario-perfil"
             />
         </div>
 

@@ -22,17 +22,19 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-seo.astro";
   footerLinks={[
     { text: "🎨 Diseñador web", href: "#" },
     { text: "💻 Desarrollador web", href: "#" }, 
-    { text: "📱 Diseñador gráfico", href: "/es/servicios/contratar-disenador-grafico/" },
+    { text: "📱 Diseñador gráfico", href: "/es/perfiles/contratar-disenador-grafico/" },
   ]}
   keywords="contratar experto seo"
 >
   <div class="service-detail-container" id="inicio">
     <LeadHeroSection
       topLabel="Posicionamiento Web y Tráfico Orgánico"
+      topLabelInsideH1={true}
       title="Contratar experto SEO: Internaliza tu estrategia orgánica y domina las SERPs con talento dedicado"
       cardTitle="Encuentra a tu experto SEO hoy"
       cardSubtitle="Accede a perfiles pre-evaluados listos para tu empresa."
       buttonText="👉 Ver perfiles pre-evaluados y solicitar propuesta"
+      
       buttonIcon=""
       buttonSubtext="↳ Tardarás menos de 1 minuto · Sin compromiso"
       footerLinkText="Ver cómo funciona el modelo EOR →"
@@ -68,7 +70,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-seo.astro";
                     "Flexibilidad estructural: si la estrategia del consultor no mueve la aguja del tráfico Non-Brand, cancela con 30 días de preaviso, sin indemnizaciones complejas."
                 ]}
                 ctaText="Solicitar propuesta de talento SEO →"
-                ctaHref="#"
+                ctaHref="#formulario-perfil"
                 diffIcon=""
                 diffTitle=""
                 diffDescription=""
@@ -79,6 +81,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-seo.astro";
     <div class="fade-in-section">
       <ServicesSection
         title="¿Qué ejecuta un experto SEO dedicado <strong>por tu dominio?</strong>"
+        cardTitleTag="h3"
         description="Nuestros especialistas dominan la arquitectura web, el SEO de contenidos y la optimización de autoridad para que tu negocio escale en las SERPs de Google y sea mencionado en herramientas de IA generativa (SGE, ChatGPT, Gemini), capturando tráfico cualificado de forma recurrente."
         customClass="employer-use-cases"
         services={[
@@ -187,9 +190,10 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-seo.astro";
     <div class="fade-in-section">
       <EorCta
         title="¿Quieres mayor visibilidad de tu marca en los buscadores?"
+        titleTag="h2"
         text="Coméntanos cómo se encuentra actualmente tu dominio que problemas deseas mejorar: técnicos, contenido obsoleto o falta de autoridad y te enviaremos una terna de especialistas SEO habituados a recuperar visibilidad."
         buttonText="👉 Quiero Solicitar propuesta y perfiles SEO "
-        buttonHref="#"
+        buttonHref="#formulario-perfil"
       />
     </div>
 
@@ -201,7 +205,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-seo.astro";
         customClass="grid-seo" 
         footerText="💡 <span style='color: #6663FD; font-weight: 600;'>¿Buscas resultados inmediatos con publicidad de pago?</span> El SEO orgánico construye a largo plazo. Para campañas SEM/PPC "
         footerLinkText="Ver perfil de Especialista en Google Ads →"
-        footerLinkHref="/es/servicios/especialista-en-google-ads/"
+        footerLinkHref="/es/perfiles/especialista-en-google-ads/"
         roles={[
           {
             title: "🔍 Especialista en SEO Técnico (Crawl & Index)",
@@ -212,7 +216,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-seo.astro";
             subtitle: "Ideal para proyectos con problemas de rastreo, indexación, rendimiento, arquitectura o migraciones que requieren criterio técnico.",
             techStack: ["Screaming Frog", "GSC", "Core Web Vitals", "Semrush"],
             buttonText: "Solicitar perfil →",
-            buttonHref: "#",
+            buttonHref: "#formulario-perfil",
           },
           {
             title: "✍️ Arquitecto de Contenidos y EEAT",
@@ -223,7 +227,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-seo.astro";
             subtitle: "Pensado para marcas que necesitan alinear su blog con la intención de búsqueda y estructurar un marcado semántico impecable.",
             techStack: ["Surfer SEO", "Ahrefs", "WordPress", "Schema Markup"],
             buttonText: "Solicitar perfil →",
-            buttonHref: "#",
+            buttonHref: "#formulario-perfil",
           },
           {
             title: "🔗 Especialista en Link Building (Off-Page)",
@@ -234,7 +238,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-seo.astro";
             subtitle: "Enfocado en la captación de enlaces entrantes, auditoría de Anchor Texts y recuperación de PageRank perdido.",
             techStack: ["Moz", "Ahrefs", "Outreach", "Digital PR", "Disavow Tool"],
             buttonText: "Solicitar perfil →",
-            buttonHref: "#",
+            buttonHref: "#formulario-perfil",
           },
           {
             title: "📊 Consultor SEO 360º (Generalista)",
@@ -245,7 +249,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-seo.astro";
             subtitle: "Un perfil Senior que orquesta el balance perfecto entre estado técnico, volumen de publicación editorial y crecimiento de autoridad de dominio.",
             techStack: ["Semrush", "GA4", "Search Console", "Looker Studio"],
             buttonText: "Solicitar perfil → ",
-            buttonHref: "#",
+            buttonHref: "#formulario-perfil",
           },
           {
             title: "🛒 Contratar experto SEO para eCommerce",
@@ -256,7 +260,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-seo.astro";
             subtitle: "Resuelve paginaciones tóxicas, categorías, faceted navigation y optimización de fichas de producto orientadas a la venta transaccional.",
             techStack: ["eCommerce", "taxonomías", "CRO", "tracking"],
             buttonText: "Solicitar perfil →",
-            buttonHref: "#",
+            buttonHref: "#formulario-perfil",
           },
           {
             title: "📍 Especialista SEO local",
@@ -267,7 +271,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-seo.astro";
             subtitle: "Para negocios con presencia en ciudades o provincias españolas: Google Business Profile, reseñas y búsquedas geolocalizadas.",
             techStack: ["GBP", "resenas", "landings geolocalizadas"],
             buttonText: "Solicitar perfil →",
-            buttonHref: "#",
+            buttonHref: "#formulario-perfil",
           },
         ]}
       />
@@ -345,6 +349,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-seo.astro";
         sectionTitle="Precio profesionales SEO <span style='color:#6663FD; font-weight: 900;'>con Oberstaff</span>"
         sectionSubtitle="Tarifas transparentes para escalar tu visibilidad y tráfico orgánico."
         cardTitle="Fee integral"
+        titleTag="p"
         cardSubtitle="Jornada completa dedicada a tus SERPs · sin costes ocultos."
         priceLabel="DESDE"
         priceAmount="900€"
@@ -357,7 +362,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-seo.astro";
           "Analítica y reporting · GA4, Search Console y Semrush",
         ]}
         ctaText="Solicitar presupuesto gratuito"
-        ctaHref="#"
+        ctaHref="#formulario-perfil"
         disclaimer="*La suscripción final fluctúa según la profundidad técnica y nivel del analista"
       />
     </div>
@@ -443,6 +448,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-seo.astro";
       title="Resolviendo tus <strong>fricciones técnicas</strong> antes de escalar tu estrategia en buscadores"
       ctaText="Antes de tocar tu arquitectura web, te aclaramos: propiedad de los datos, gestión de accesos en Search Console y cómo con nuestro modelo absorbes toda la contingencia legal al integrar talento orgánico."
       ctaButtonText="Hablar con asesor →"
+      ctaButtonHref="#formulario-perfil"
     />
 
     <div class="fade-in-section">

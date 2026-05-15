@@ -23,19 +23,19 @@ import GuiaContratacion from "../../../components/guia-contratacion-perfiles/Gui
     footerLinks={[
         {
             text: "✍️ Copywriter (argumentarios y landings)",
-            href: "/es/servicios/contratar-copywriter/",
+            href: "/es/perfiles/contratar-copywriter/",
         },
         {
             text: "🔍 Especialista en Google Ads",
-            href: "/es/servicios/especialista-en-google-ads/",
+            href: "/es/perfiles/especialista-en-google-ads/",
         },
         {
             text: "🗂️ Asistente Virtual",
-            href: "/es/servicios/contratar-un-asistente-virtual/",
+            href: "/es/perfiles/contratar-un-asistente-virtual/",
         },
         {
             text: "📱 Especialista en Meta Ads",
-            href: "/es/servicios/experto-en-meta-ads/", 
+            href: "/es/perfiles/experto-en-meta-ads/", 
         },
     ]}
     keywords="contratar closer de ventas "
@@ -43,11 +43,12 @@ import GuiaContratacion from "../../../components/guia-contratacion-perfiles/Gui
     <div class="service-detail-container" id="inicio">
         <LeadHeroSection
             topLabel="Ventas y Conversión B2B"
+            topLabelInsideH1={true}
             title="Contratar closer de ventas para recuperar oportunidades que hoy se están enfriando en tu pipeline"
             cardTitle="Impulsa tu tasa de cierre"
             cardSubtitle="Completa tus datos para recibir perfiles evaluados."
             buttonText="Solicitar perfiles de closers de ventas →"
-            buttonIcon=""
+
             buttonSubtext=""
             footerLinkText="Ver cómo funciona el modelo EOR →"
             footerLinkHref="/es/servicios/employer-of-record/"
@@ -101,7 +102,7 @@ import GuiaContratacion from "../../../components/guia-contratacion-perfiles/Gui
                 checklistIcon="•"
                 checklistIconClass="orange-bullet-icon"
                 ctaText="Solicitar perfiles de closer de ventas →"
-                ctaHref="#"
+                ctaHref="#formulario-perfil"
                 diffIcon=""
                 diffTitle=""
                 diffDescription=""
@@ -111,6 +112,7 @@ import GuiaContratacion from "../../../components/guia-contratacion-perfiles/Gui
         <div class="fade-in-section">
             <ServicesSection
                 title="¿Qué ejecuta un closer de ventas dedicado <strong>dentro de tu proceso comercial?</strong>"
+                cardTitleTag="h3"
                 description="Es el profesional que toma el relevo cuando el lead ya está caliente: su trabajo es convertir el interés en decisión mediante conversaciones estructuradas, detección de necesidades reales y cierre de acuerdos en el menor número de interacciones posible."
                 customClass="employer-use-cases"
                 services={[
@@ -219,9 +221,10 @@ import GuiaContratacion from "../../../components/guia-contratacion-perfiles/Gui
         <div class="fade-in-section">
             <EorCta
                 title="¿Conoces cuántas oportunidades pierde tu equipo en la fase de decisión?"
+                titleTag="h2"
                 text="Cuéntanos tu ticket medio y el volumen de reuniones mensuales. Recibirás una propuesta de closers de ventas adaptada a tu proceso comercial."
                 buttonText="👉 Solicitar propuesta personalizada"
-                buttonHref="#"
+                buttonHref="#formulario-perfil"
             />
         </div>
 
@@ -245,7 +248,7 @@ import GuiaContratacion from "../../../components/guia-contratacion-perfiles/Gui
                             "Especializado en ciclos de venta de alto valor (productos o servicios desde 2.000€ hasta 50.000€+ por contrato). Dominio del cierre consultivo, gestión de múltiples decisores y habilidad para defender el precio frente a alternativas más baratas.",
                         techStack: ["HubSpot", "Pipedrive", "Calendly", "Loom"],
                         buttonText: "Solicitar más información →",
-                        buttonHref: "#",
+                        buttonHref: "#formulario-perfil",
                     },
                     {
                         title: "📱 Closer de ventas online para Infoproductos y Formación",
@@ -262,7 +265,7 @@ import GuiaContratacion from "../../../components/guia-contratacion-perfiles/Gui
                             "Stripe",
                         ],
                         buttonText: "Solicitar más información →",
-                        buttonHref: "#",
+                        buttonHref: "#formulario-perfil",
                     },
                     {
                         title: "🏢 Closer B2B para Servicios Profesionales",
@@ -279,7 +282,7 @@ import GuiaContratacion from "../../../components/guia-contratacion-perfiles/Gui
                             "Notion",
                         ],
                         buttonText: "Solicitar más información →",
-                        buttonHref: "#",
+                        buttonHref: "#formulario-perfil",
                     },
                     {
                         title: "🔁 Closer Ventas para SaaS",
@@ -296,7 +299,7 @@ import GuiaContratacion from "../../../components/guia-contratacion-perfiles/Gui
                             "Pipedrive",
                         ],
                         buttonText: "Solicitar más información →",
-                        buttonHref: "#",
+                        buttonHref: "#formulario-perfil",
                     },
                 ]}
             />
@@ -386,6 +389,7 @@ import GuiaContratacion from "../../../components/guia-contratacion-perfiles/Gui
                 sectionTitle="¿Cuánto cuesta contratar un closer de ventas <span style='color:#6663FD; font-weight: 900;'>con Oberstaff?</span> "
                 sectionSubtitle="Una estructura de costes predecible para que tu inversión en cierre sea escalable. Sin comisiones sobre ventas cerradas, sin variables ocultas."
                 cardTitle="Fee mensual único"
+                titleTag="p"
                 cardSubtitle="Jornada completa · Sin comisiones sobre ventas"
                 priceLabel="DESDE"
                 priceAmount="900€"
@@ -399,7 +403,7 @@ import GuiaContratacion from "../../../components/guia-contratacion-perfiles/Gui
                     "Blindaje contractual: NDA y cesión de derechos sobre grabaciones y scripts",
                 ]}
                 ctaText="Solicitar propuesta"
-                ctaHref="#"
+                ctaHref="#formulario-perfil"
                 disclaimer="*Precios orientativos según seniority, sector y país del profesional. Sin costes ocultos ni comisiones adicionales."
             />
         </div>
@@ -521,6 +525,7 @@ import GuiaContratacion from "../../../components/guia-contratacion-perfiles/Gui
                 title="Resolviendo tus dudas <br> <strong>sobre el servicio</strong>"
                 ctaText="Respondemos las dudas más frecuentes de las empresas españolas que quieren incorporar capacidad de cierre remota de forma estable y sin riesgos."
                 ctaButtonText="Hablar con asesor →"
+                ctaButtonHref="#formulario-perfil"
             />
         </div>
 

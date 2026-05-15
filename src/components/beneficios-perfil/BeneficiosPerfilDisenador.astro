@@ -88,6 +88,8 @@ const {
 
     .bp-title :global(.bp-brand) {
         color: #6663FD;
+            font-weight: 800;
+      
     }
 
     .bp-title :global(.bp-dot) {
@@ -130,21 +132,23 @@ const {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.02);
     }
 
-    .bp-feature-text h3 {
+    .bp-feature-text .bp-feature-title {
         font-family: 'Montserrat', sans-serif;
         font-size: 18px;
         font-weight: 700;
         color: #1B1B1B;
         margin: 0 0 6px 0;
+        display: block;
     }
 
-    .bp-feature-text p {
+    .bp-feature-text .bp-feature-desc {
         font-family: 'Poppins', sans-serif;
         font-size: 14px;
         font-weight: 400;
         color: #5A5A5A;
         line-height: 1.6;
         margin: 0;
+        display: block;
     }
 
     /* ── Right column ── */
@@ -189,7 +193,7 @@ const {
         gap: 18px;
     }
 
-    .bp-info-item h4 {
+    .bp-info-item h3 {
         font-family: 'Poppins', sans-serif;
         font-size: 14px;
         font-weight: 700;
@@ -197,13 +201,14 @@ const {
         margin: 0 0 5px 0;
     }
 
-    .bp-info-item p {
+    .bp-info-item .bp-info-desc {
         font-family: 'Poppins', sans-serif;
         font-size: 13px;
         font-weight: 400;
         color: #5A5A5A;
         line-height: 1.6;
         margin: 0;
+        display: block;
     }
 
     /* ── Responsive ── */
@@ -253,8 +258,8 @@ const {
                     <div class="bp-feature">
                         <div class="bp-feature-icon">{f.icon}</div>
                         <div class="bp-feature-text">
-                            <h3>{f.title}</h3>
-                            <p set:html={f.description}></p>
+                            <p class="bp-feature-title">{f.title}</p>
+                            <p class="bp-feature-desc" set:html={f.description}></p>
                         </div>
                     </div>
                 ))}
@@ -267,12 +272,12 @@ const {
             <img src={image} alt={imageAlt} class="bp-image" />
 
             <div class="bp-info-card">
-                <h3 class="bp-info-title">{infoTitle}</h3>
+                <h2 class="bp-info-title">{infoTitle}</h2>
                 <div class="bp-info-items">
                     {infoItems.map((item) => (
                         <div class="bp-info-item">
-                            <h4>{item.title}</h4>
-                            <p set:html={item.description}></p>
+                            <h3>{item.title}</h3>
+                            <p class="bp-info-desc" set:html={item.description}></p>
                         </div>
                     ))}
                 </div>

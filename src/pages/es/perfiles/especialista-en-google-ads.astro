@@ -20,8 +20,8 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-google-ads.
     description="Contrata un especialista en Google Ads para tu empresa Española. Talento de LATAM, dedicación exclusiva, horario compatible y sin riesgos legales"
     footerTitle="Roles Relacionados"
     footerLinks={[
-        { text: "🔍 Experto SEO", href: "/es/servicios/contratar-experto-seo/" },
-        { text: "📈 Especialista Meta Ads", href: "/es/servicios/experto-en-meta-ads/" },
+        { text: "🔍 Experto SEO", href: "/es/perfiles/contratar-experto-seo/" },
+        { text: "📈 Especialista Meta Ads", href: "/es/perfiles/experto-en-meta-ads/" },
         { text: "💻 Diseñador web", href: "#" },
         { text: "🎨 Diseñador web", href: "#" },
         { text: "💻 Desarrollador web", href: "#" },
@@ -31,10 +31,12 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-google-ads.
     <div class="service-detail-container" id="inicio">
         <LeadHeroSection
             topLabel="Publicidad y Performance (SEM)"
+            topLabelInsideH1={true}
             title="Especialista en Google Ads: Internaliza tu inversión y escala tu ROAS"
             cardTitle="Encuentra a tu experto SEM hoy"
             cardSubtitle="Accede a perfiles pre-evaluados listos para tu empresa."
             buttonText="👉 Ver perfiles pre-evaluados y solicitar propuesta"
+         
             buttonIcon=""
             buttonSubtext="↳ Tardarás menos de 1 minuto · Sin compromiso"
             footerLinkText="Ver cómo funciona el modelo EOR →"
@@ -71,7 +73,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-google-ads.
                     "Sin ataduras: si el especialista Google Ads no alcanza el CPA objetivo, cancela sin indemnizaciones o gestiona un cambio del profesional.",
                 ]}
                 ctaText="Solicita perfiles de especialistas de Google Ads →"
-                ctaHref="#"
+                ctaHref="#formulario-perfil"
                 diffIcon=""
                 diffTitle=""
                 diffDescription=""
@@ -81,6 +83,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-google-ads.
         <div class="fade-in-section">
             <ServicesSection
                 title="De la auditoría inicial al ajuste de ROAS: el despliegue de <strong>tu especialista en Google Ads</strong>"
+                cardTitleTag="h3"
                 description="Nuestros expertos en Google Ads se ocupan de la captación de pago: estructura de campañas, anuncios, segmentación, pujas, audiencias, feeds, medición y optimización del presupuesto."
                 customClass="employer-use-cases"
                 services={[
@@ -189,9 +192,10 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-google-ads.
         <div class="fade-in-section">
             <EorCta
                 title="¿Tu Coste por Adquisición (CPA) está fuera de control? Recupera el margen con un especialista en Google Ads"
+                titleTag="h2"
                 text="Cuéntanos cuál es tu inversión publicitaria actual y el objetivo de rentabilidad de tu negocio. Te presentaremos perfiles analíticos habituados a auditar el histórico de tu cuenta, limpiar el tráfico de búsquedas basura y estabilizar tus pujas para maximizar tu presupuesto."
                 buttonText="👉 Quiero Solicitar propuesta y perfiles SEM"
-                buttonHref="#"
+                buttonHref="#formulario-perfil"
             />
         </div>
 
@@ -203,7 +207,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-google-ads.
                 customClass="grid-seo"
                 footerText="💡 Para posicionamiento orgánico accede a nuestro perfil:"
                 footerLinkText=" contratar experto SEO →"
-                footerLinkHref="#"
+                footerLinkHref="#formulario-perfil"
                 roles={[
                     {
                         title: "🔍 Especialista Google Ads Search",
@@ -220,7 +224,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-google-ads.
                             "Smart Bidding",
                         ],
                         buttonText: "Solicitar más información →",
-                        buttonHref: "#",
+                        buttonHref: "#formulario-perfil",
                     },
                     {
                         title: "🛍️ Experto en Google Shopping y Performance Max",
@@ -237,7 +241,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-google-ads.
                             "ROAS",
                         ],
                         buttonText: "Solicitar más información →",
-                        buttonHref: "#",
+                        buttonHref: "#formulario-perfil",
                     },
                     {
                         title: "🖼️ Especialista en Display y Remarketing",
@@ -249,7 +253,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-google-ads.
                             "Creación de audiencias personalizadas, retargeting de carritos abandonados y dominio de la Display Network para impactar al usuario a lo largo de todo el customer journey.",
                         techStack: ["Display", "Remarketing", "Audiencias"],
                         buttonText: "Solicitar más información →",
-                        buttonHref: "#",
+                        buttonHref: "#formulario-perfil",
                     },
                     {
                         title: "🎬 Especialista en YouTube Ads",
@@ -261,7 +265,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-google-ads.
                             "Campañas de vídeo publicitario: TrueView, Bumper Ads y YouTube Discovery para generar demanda, reconocimiento de marca y captar audiencias en el mayor motor de vídeo del mundo.",
                         techStack: ["YouTube", "Vídeo Ads", "Branding"],
                         buttonText: "Solicitar más información → ",
-                        buttonHref: "#",
+                        buttonHref: "#formulario-perfil",
                     },
                     {
                         title: "⚙️ Especialista en Tracking y Medición",
@@ -273,7 +277,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-google-ads.
                             "Implementación y validación de conversiones para decisiones basadas en datos. Configuración de GTM, GA4, eventos y modelos de atribución para medir el retorno real de cada campaña.",
                         techStack: ["GTM", "GA4", "Atribución", "Eventos"],
                         buttonText: "Solicitar más información →",
-                        buttonHref: "#",
+                        buttonHref: "#formulario-perfil",
                     },
                     {
                         title: "🌐 Consultor Google Ads SEM 360°",
@@ -285,7 +289,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-google-ads.
                             "Estrategia integral de paid media en Google: auditorías de cuentas, gestión de presupuesto, coordinación con el equipo de marketing y reporting orientado a negocio.",
                         techStack: ["Semrush", "GA4", "Looker Studio", "PPC"],
                         buttonText: "Solicitar más información →",
-                        buttonHref: "#",
+                        buttonHref: "#formulario-perfil",
                     },
                 ]}
             />
@@ -366,6 +370,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-google-ads.
                 sectionTitle="Presupuesto 100% para clics: <span style='color:#6663FD; font-weight: 900;'>tarifa plana</span> sin comisiones por inversión publicitaria "
                 sectionSubtitle=""
                 cardTitle="Fee único"
+                titleTag="p"
                 cardSubtitle="Jornada completa en tus campañas"
                 priceLabel="DESDE"
                 priceAmount="850€"
@@ -378,7 +383,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-google-ads.
                     "Blindaje contractual de tus accesos y cuentas.",
                 ]}
                 ctaText="Solicitar propuesta"
-                ctaHref="#"
+                ctaHref="#formulario-perfil"
                 disclaimer="*Precios orientativos. El coste final depende del perfil, país y nivel de experiencia. Sin costes ocultos ni comisiones adicionales."
             />
         </div>
@@ -459,6 +464,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-google-ads.
             title="Dudas clave sobre la integración de permisos y tu <strong>Especialista en Google Ads</strong>"
             ctaText="Resolvemos las dudas más frecuentes sobre el proceso y funcionamiento del servicio a negocios que deseen mejorar el rendimiento de sus campañas de publicidad de pago a través de la incorporación de especialistas en Google Ads."
             ctaButtonText="Hablar con asesor →"
+            ctaButtonHref="#formulario-perfil"
         />
 
         <div class="fade-in-section">

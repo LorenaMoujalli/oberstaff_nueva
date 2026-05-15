@@ -20,19 +20,21 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-contable.as
   description="Reduce costes y suma un perfil exclusivo a jornada completa al contratar contable de Latinoamérica sin asumir cargas laborales."
   footerTitle="Roles Relacionados"
   footerLinks={[
-    { text: "🗂️ Contratar Asistente virtual", href: "/es/servicios/contratar-un-asistente-virtual/" },
-    { text: "📱 Community Manager", href: "/es/servicios/contratar-community-manager/" },
-    { text: "🎨 Diseñador gráfico", href: "/es/servicios/contratar-disenador-grafico/" },
+    { text: "🗂️ Contratar Asistente virtual", href: "/es/perfiles/contratar-un-asistente-virtual/" },
+    { text: "📱 Community Manager", href: "/es/perfiles/contratar-community-manager/" },
+    { text: "🎨 Diseñador gráfico", href: "/es/perfiles/contratar-disenador-grafico/" },
   ]}
   keywords="Contratar contable"
 >
   <div class="service-detail-container" id="inicio">
     <LeadHeroSection
       topLabel="Finanzas y Administración"
+      topLabelInsideH1={true}
       title="Contratar contable remoto: toma el control de tu flujo de caja y blinda el departamento financiero de tu empresa"
       cardTitle="Encuentra a tu contable hoy"
       cardSubtitle="Accede a perfiles pre-evaluados listos para tu empresa."
       buttonText="👉 Ver perfiles pre-evaluados y solicitar propuesta"
+   
       buttonIcon=""
       buttonSubtext="↳ Tardarás menos de 1 minuto · Sin compromiso"
       footerLinkText="Ver cómo funciona el modelo EOR →"
@@ -68,7 +70,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-contable.as
           "Escala tu equipo de finanzas sin contratos de permanencia ni riesgos de indemnización.",
         ]}
         ctaText="Solicitar propuesta personalizada  →"
-        ctaHref="#"
+        ctaHref="#formulario-perfil"
         diffIcon=""
         diffTitle=""
         diffDescription=""
@@ -78,6 +80,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-contable.as
     <div class="fade-in-section">
       <ServicesSection
         title="De la conciliación bancaria al reporte de márgenes: <strong>funciones técnicas </strong>de tu contable remoto"
+        cardTitleTag="h3"
         description="Nuestros profesionales dominan las disciplinas que necesita el contable de una empresa para operar con seguridad y eficiencia.Desde el registro diario de operaciones hasta la preparación de cuentas anuales y el apoyo fiscal con los modelos españoles."
         customClass="employer-use-cases"
         services={[
@@ -186,9 +189,10 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-contable.as
     <div class="fade-in-section">
       <EorCta
         title="¿Ya sabes qué perfil financiero necesitas?"
+        titleTag="h2"
         text="Si tu equipo directivo tiene que esperar al cierre de la gestoría para saber si un proyecto fue rentable, estás perdiendo competitividad. Internaliza tu operativa contable. Define el perfil financiero que necesitas y recibe una propuesta adaptada a tu volumen de transacciones en menos de 24 horas."
         buttonText="👉 Quiero Solicitar propuesta personalizada"
-        buttonHref="#"
+        buttonHref="#formulario-perfil"
       />
     </div>
 
@@ -199,7 +203,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-contable.as
         layout="modern"
         footerText=""
         footerLinkText=""
-        footerLinkHref="#"
+        footerLinkHref="#formulario-perfil"
         roles={[
           {
             title: "📋 Auxiliar Contable Remoto",
@@ -211,7 +215,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-contable.as
               "Soporte operativo diario, registro contable y control documental para pymes. Gestiona asientos, facturas, conciliaciones básicas y archivo de documentación contable bajo tu supervisión directa.",
             techStack: ["Holded", "Factusol", "Asientos"],
             buttonText: "Solicitar más información →",
-            buttonHref: "#",
+            buttonHref: "#formulario-perfil",
           },
           {
             title: "🧾 Asistente Contable Remoto",
@@ -223,7 +227,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-contable.as
               "Apoyo transversal, conciliaciones y seguimiento de procesos contables. Da soporte en cuentas por cobrar y por pagar, cuadre de extractos, seguimiento de vencimientos y control de flujo de caja.",
             techStack: ["Sage 50", "Conciliaciones", "A3"],
             buttonText: "Solicitar más información →",
-            buttonHref: "#",
+            buttonHref: "#formulario-perfil",
           },
           {
             title: "💹 Asesores contables especializados",
@@ -235,7 +239,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-contable.as
               "Profesionales especializados en control financiero, presupuestos y herramientas como excel y Power BI. Perfil de mayor seniority. Orientado a reporting financiero, análisis de márgenes, cierres mensuales y cuadros de mando.",
             techStack: ["Excel avanzado", "Power BI", "Reporting"],
             buttonText: "Solicitar más información →",
-            buttonHref: "#",
+            buttonHref: "#formulario-perfil",
           },
           {
             title: "🌐 Contable de una empresa Generalista",
@@ -247,7 +251,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-contable.as
               "Mayor autonomía para cierres, revisión y reporting. Gestiona el ciclo contable completo: desde el registro de operaciones hasta la preparación de cuentas anuales, apoyo en los modelos fiscales 303, 200 y 390, y libros oficiales.",
             techStack: ["Modelos fiscales", "Xero", "QuickBooks"],
             buttonText: "Solicitar más información → ",
-            buttonHref: "#",
+            buttonHref: "#formulario-perfil",
           },
         ]}
       />
@@ -306,6 +310,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-contable.as
         sectionTitle="Previsibilidad financiera: estructura tus costes contables con una <span style='color:#6663FD; font-weight: 800;'>tarifa plana B2B</span>"
         sectionSubtitle="Estructura tus costes fijos con previsibilidad absoluta. Nuestra tarifa cubre todo el ciclo: headhunting, compliance legal internacional y nómina. El coste escala únicamente en función del seniority técnico (Bookkeeper vs. Controller)."
         cardTitle="Tarifa mensual unificada"
+        titleTag="p"
         cardSubtitle="Todo incluido · Jornada completa · Sin comisiones ocultas"
         priceLabel="DESDE"
         priceAmount="875€"
@@ -316,7 +321,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-contable.as
           "Herramientas · Sage, Holded, A3, QuickBooks y Xero",
         ]}
         ctaText="Solicitar propuesta"
-        ctaHref="#"
+        ctaHref="#formulario-perfil"
         disclaimer="*Precios orientativos. El coste final depende del perfil, país y nivel de experiencia. Sin costes ocultos ni comisiones adicionales."
       />
     </div>
@@ -409,6 +414,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-contable.as
       title="Compliance, contingencia laboral y facturación: <strong>dudas clave sobre contratar contable virtual</strong>"
       ctaText="Integrar talento financiero internacional exige garantías jurídicas absolutas. Bajo nuestra infraestructura externalizas el bookkeeping diario sin asumir riesgos de falsa autonomía ni contingencias patronales en España. Aclaramos cómo blindamos tu operativa legal y fiscal."
       ctaButtonText="Hablar con asesor →"
+      ctaButtonHref="#formulario-perfil"
     />
 
     <div class="fade-in-section">

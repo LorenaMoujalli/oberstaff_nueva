@@ -13,6 +13,7 @@ interface Props {
     ctaText?: string;
     ctaHref?: string;
     disclaimer?: string;
+    titleTag?: string;
 }
 
 const {
@@ -27,7 +28,10 @@ const {
     ctaText = "Solicitar propuesta",
     ctaHref = "#",
     disclaimer = "",
+    titleTag = "h3",
 } = Astro.props;
+
+const TitleTag = titleTag as any;
 ---
 
 <section class="pricing-card-section">
@@ -42,7 +46,7 @@ const {
         <div class="pricing-card-new">
             <!-- Left column -->
             <div class="pricing-left">
-                <h3 class="pricing-card-title">{cardTitle}</h3>
+                <TitleTag class="pricing-card-title">{cardTitle}</TitleTag>
                 <p class="pricing-card-subtitle">{cardSubtitle}</p>
 
                 <div class="pricing-price-block">

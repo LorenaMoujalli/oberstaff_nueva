@@ -6,14 +6,16 @@ interface Props {
     text: string;
     buttonText: string;
     buttonHref: string;
+    titleTag?: string;
 }
 
-const { title, text, buttonText, buttonHref } = Astro.props;
+const { title, text, buttonText, buttonHref, titleTag = "p" } = Astro.props;
+const TitleTag = titleTag as any;
 ---
 
 <section class="eor-cta">
     <div class="cta-content">
-        <p class="cta-title" set:html={title}></p>
+        <TitleTag class="cta-title" set:html={title}></TitleTag>
         <p class="cta-text" set:html={text}></p>
         <a href={buttonHref} class="cta-button">{buttonText}</a>
     </div>

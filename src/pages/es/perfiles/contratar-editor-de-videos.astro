@@ -20,21 +20,23 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-editor-vide
     description="Oberstaff te ayuda a contratar editor de videos de LATAM: perfiles evaluados, jornada completa, zona horaria española y factura en euros."
     footerTitle="Roles Relacionados"
     footerLinks={[
-        { text: "🔍 Experto SEO", href: "/es/servicios/contratar-experto-seo/" },
-        { text: "🎨 Diseñador gráfico", href: "/es/servicios/contratar-disenador-grafico/" },
+        { text: "🔍 Experto SEO", href: "/es/perfiles/contratar-experto-seo/" },
+        { text: "🎨 Diseñador gráfico", href: "/es/perfiles/contratar-disenador-grafico/" },
         { text: "💻 Diseñador web", href: "#" },
-        { text: "📱 Community Manager", href: "/es/servicios/contratar-community-manager/" },
-        { text: "✍️ Copywriter", href: "/es/servicios/contratar-copywriter/" },
+        { text: "📱 Community Manager", href: "/es/perfiles/contratar-community-manager/" },
+        { text: "✍️ Copywriter", href: "/es/perfiles/contratar-copywriter/" },
     ]}
     keywords="contratar editor de videos"
 >
     <div class="service-detail-container" id="inicio">
         <LeadHeroSection
             topLabel="Producción Audiovisual"
+            topLabelInsideH1={true}
             title="Contratar editor de videos: internaliza tu postproducción y escala tu maquinaria de contenidos In-House"
             cardTitle="Encuentra a tu editor de video hoy"
             cardSubtitle="Accede a portfolios evaluados listos para producir."
             buttonText="👉 Ver perfiles pre-evaluados y solicitar propuesta"
+    
             buttonIcon=""
             buttonSubtext="↳ Tardarás menos de 1 minuto · Sin compromiso"
             footerLinkText="Ver cómo funciona el modelo EOR →"
@@ -73,7 +75,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-editor-vide
                     "Cero fricción laboral: si el estilo de montaje no encaja con tu marca, solicita un reemplazo o cancela",
                 ]}
                 ctaText="Solicitar perfiles de editor de video →"
-                ctaHref="#"
+                ctaHref="#formulario-perfil"
                 diffIcon=""
                 diffTitle=""
                 diffDescription=""
@@ -83,6 +85,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-editor-vide
         <div class="fade-in-section">
             <ServicesSection
                 title="¿Qué asume un editor de video dedicado <strong>en tu operativa?</strong>"
+                cardTitleTag="h3"
                 description="Transforma tus gigabytes de material en bruto en activos digitales de alta retención listos para circular"
                 customClass="employer-use-cases"
                 services={[
@@ -191,9 +194,10 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-editor-vide
         <div class="fade-in-section">
             <EorCta
                 title="Multiplica tu ritmo de exportación semanal sin disparar tus costes estructurales"
+                titleTag="h2"
                 text="Cuéntanos el perfil de profesional audiovisual requieres y recibe una propuesta personalizada en menos de 24 horas. Sin compromiso."
                 buttonText="👉 Quiero Solicitar propuesta personalizada"
-                buttonHref="#"
+                buttonHref="#formulario-perfil"
             />
         </div>
 
@@ -205,7 +209,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-editor-vide
                 customClass="grid-seo"
                 footerText=""
                 footerLinkText=""
-                footerLinkHref="#"
+                footerLinkHref="#formulario-perfil"
                 roles={[
                     {
                         title: "🎬 Contratar editor de video para YouTube y creadores",
@@ -217,7 +221,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-editor-vide
                             "Especialista en ritmo de retención, storytelling visual, cortes en J/L y diseño sonoro envolvente.",
                         techStack: ["Premiere Pro", "Thumbnails", "Final Cut"],
                         buttonText: "Solicitar más información →",
-                        buttonHref: "#",
+                        buttonHref: "#formulario-perfil",
                     },
                     {
                         title: "✨ Editor con postproducción visual",
@@ -229,7 +233,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-editor-vide
                             "Montaje enriquecido con animación 2D, trackeo de cámaras, rotoscopia y títulos dinámicos sobre vídeo real.",
                         techStack: ["After Effects", "Cinema 4D", "Lottie"],
                         buttonText: "Solicitar más información →",
-                        buttonHref: "#",
+                        buttonHref: "#formulario-perfil",
                     },
                     {
                         title: "🎨 Editor y Colorista",
@@ -241,7 +245,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-editor-vide
                             "Especialista en lectura de scopes, balance de blancos, color matching multicámara y look cinematográfico.",
                         techStack: ["DaVinci Resolve", "Lumetri", "LUTs"],
                         buttonText: "Solicitar más información →",
-                        buttonHref: "#",
+                        buttonHref: "#formulario-perfil",
                     },
                     {
                         title: "🏢 Editor de video corporativo",
@@ -257,7 +261,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-editor-vide
                             "Brand video",
                         ],
                         buttonText: "Solicitar más información → ",
-                        buttonHref: "#",
+                        buttonHref: "#formulario-perfil",
                     },
                     {
                         title: "📱 Editor de video social y formato corto",
@@ -274,7 +278,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-editor-vide
                             "Premiere",
                         ],
                         buttonText: "Solicitar más información →",
-                        buttonHref: "#",
+                        buttonHref: "#formulario-perfil",
                     },
                     {
                         title: "📢 Editor de video publicitario",
@@ -364,6 +368,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-editor-vide
                 sectionTitle="Un profesional audiovisual in-house por una fracción del <span style='color:#6663FD; font-weight: 900;'>coste tradicional</span>"
                 sectionSubtitle="Pagar por cada vídeo suelto o por cada pequeña corrección ahoga tu presupuesto. Con <span style='color:#1B1B1B; font-weight: 700;'>Oberstaff</span><span style='color:#FF66CC; font-weight: 700;'>.</span> accedes a una tarifa plana para escalar tu volumen de publicación."
                 cardTitle="Fee mensual único"
+                titleTag="p"
                 cardSubtitle="Jornada completa de edición · sin costes ocultos"
                 priceLabel="DESDE"
                 priceAmount="920€"
@@ -377,7 +382,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-editor-vide
                     "Protección total de Propiedad Intelectual sobre el material bruto y editado",
                 ]}
                 ctaText="Solicitar propuesta"
-                ctaHref="#"
+                ctaHref="#formulario-perfil"
                 disclaimer="*Precios orientativos según experiencia y dominio técnico"
             />
         </div>
@@ -463,6 +468,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-editor-vide
             title="<strong>Dudas sobre la integración</strong> de un editor de video remoto en tu equipo"
             ctaText="Resolvemos las dudas más frecuentes de empresas españolas que quieren incorporar postproducción audiovisual remota de forma estable."
             ctaButtonText="Hablar con asesor →"
+            ctaButtonHref="#formulario-perfil"
         />
 
         <div class="fade-in-section">
