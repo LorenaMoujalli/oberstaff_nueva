@@ -1,11 +1,18 @@
 # Etapa de construcción
-FROM node:20-alpine AS build
+FROM node:20-slim AS build
 WORKDIR /app
 
 # Establecer límite de memoria para Node.js
 ENV NODE_OPTIONS="--max-old-space-size=1024"
 
 COPY package*.json ./
+
+# Configurar npm para ser más robusto ante fallos de red
+RUN npm config set fetch-retries 5 && \
+    npm config set fetch-retry-mintimeout 20000 && \
+    npm config set fetch-retry-maxtimeout 120000 && \
+    npm config set maxsockets 10
+
 RUN npm ci
 
 COPY . .
