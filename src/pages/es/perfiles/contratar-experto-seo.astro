@@ -13,6 +13,7 @@ import EorStepsSection from "../../../components/eor-steps-servicios/EorStepsSec
 import EorCta from "../../../components/eor-cta-servicios/EorCta.astro";
 import CasosExitoSection from "../../../components/casos-exito-servicios/CasosExitoSection.astro";
 import FAQSection from "../../../components/faq-servicios/FAQSection-seo.astro";
+import GuiaContratacion from "../../../components/guia-contratacion-perfiles/GuiaContratacion.astro";
 --- 
  
 <DashboardLayoutPerfiles
@@ -43,7 +44,7 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-seo.astro";
       "publisher": {
         "@id": "https://www.oberstaff.com/#organization"
       },
-      "about": {
+      "about": { 
         "@id": "https://www.oberstaff.com/perfiles/contratar-experto-seo#service"
       },
       "mainEntity": {
@@ -923,55 +924,71 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-seo.astro";
       />
     </div>
 
-    <BeneficiosPerfilDisenador
-      title="Sanea tu arquitectura web y domina las SERPs apoyándote en <span style='color:#6663FD; font-weight: 900;'>consultores SEO dedicados</span>"
-      subtitle="Combinamos el análisis milimétrico de un perfil In-House en tu web con la flexibilidad estructural, permitiéndote priorizar el aumento de tráfico sin la fricción del reclutamiento tradicional."
-      image="/img2-seo.webp"
-      imageAlt="Consultor SEO revisando arquitectura web"
-      infoTitle="El checklist técnico para auditar el criterio de tus futuros especialistas en posicionamiento web"
-      features={[
-        {
-          icon: "🎯",
-          title: "Ejecución continua",
-          description:
-            "Tu experto SEO audita tus URLs, monitoriza tus caídas de tráfico y detecta oportunidades de negocio diarias.",
-        },
-        {
-          icon: "⚡",
-          title: "Independencia del coste por clic (CPC)",
-          description:
-            "Tu experto SEO estructura un dominio con autoridad que capta leads a coste marginal cero sostenido en el tiempo.",
-        },
-        {
-          icon: "🛡️",
-          title: "Retención absoluta del conocimiento orgánico:",
-          description:
-            "El Keyword Research, el etiquetado y el Digital PR son 100% tuyos. Blindamos legalmente por contrato la propiedad intelectual de cada estrategia.",
-        },
-      ]}
-      infoItems={[
-        {
-          title: "Especialista en SEO in-house vs consultor seo local",
-          description:
-            "Antes de decidir, compara bien las opciones, un experto en SEO presencial en España puede superar los 3.000€/mes en coste total; los profesionales SEO independientes te dan flexibilidad pero sin dedicación exclusiva. Un especialista remoto de Colombia, Argentina o Venezuela con Oberstaff combina lo mejor de ambos: jornada completa, exclusividad y desde 900€/mes, sin que asumas ninguna relación laboral directa.",
-        },
-        {
-          title: "Más allá del semáforo verde: qué evaluar técnicamente antes de contratar consultor SEO",
-          description:
-            "Antes de contratar especialista en posicionamiento web, es importante definir bien tus objetivos: ¿quieres aumentar tráfico orgánico, mejorar rankings para palabras clave concretas, hacer una auditoría o lanzar una estrategia de contenidos? Cuanto más concreto sea el briefing, más rápido adaptará el profesional la estrategia a los cambios del algoritmo de Google. En Oberstaff te ayudamos a definirlo en una llamada de 15 minutos.",
-        },
-        {
-          title: "¿Cómo la IA generativa (SGE) exige talento dedicado, no tareas aisladas?",
-          description:
-            "Con la irrupción de las respuestas generadas por Inteligencia Artificial en los resultados (AI Overviews), el SEO de rellenar palabras clave ha muerto. El ecosistema latinoamericano aporta estrategas altamente actualizados que saben estructurar datos complejos (Schema Markup) y demostrar el EEAT (Experiencia, Autoridad y Confianza) necesario para que los nuevos algoritmos citen a tu empresa española como fuente de verdad en tu industria.",
-        },
-        {
-          title: "¿Dónde puedo contratar SEO de confianza?",
-          description:
-            "Existen varias plataformas para incorporar expertos en posicionamiento web, como marketplaces de freelancers o agencias. Sin embargo, Oberstaff ofrece un modelo diferente: talento dedicado en exclusiva a tu empresa, con contrato estable y toda la gestión laboral cubierta. Mayor compromiso, mejor integración y ausencia de riesgos legales para tu negocio.",
-        },
-      ]}
-    />
+       <div class="fade-in-section">
+            <BeneficiosPerfilDisenador
+                showInfoCard={false}
+                title="Sanea tu arquitectura web y domina las SERPs apoyándote en <span style='color:#6663FD; font-weight: 900;'>consultores SEO dedicados</span>"
+                subtitle="Combinamos el análisis milimétrico de un perfil In-House en tu web con la flexibilidad estructural, permitiéndote priorizar el aumento de tráfico sin la fricción del reclutamiento tradicional."
+                image="/img2-seo.webp"
+                imageAlt="Consultor SEO revisando arquitectura web"
+                features={[
+                    {
+                        icon: "🎯",
+                        title: "Ejecución continua ",
+                        description:
+                            "Tu experto SEO audita tus URLs, monitoriza tus caídas de tráfico y detecta oportunidades de negocio diarias.",
+                    },
+                    {
+                        icon: "⚡",
+                        title: "Independencia del coste por clic (CPC)",
+                        description:
+                            "Tu experto SEO estructura un dominio con autoridad que capta leads a coste marginal cero sostenido en el tiempo.",
+                    },
+                    {
+                        icon: "🛡️",
+                        title: "Retención absoluta del conocimiento orgánico:",
+                        description:
+                            "El Keyword Research, el etiquetado y el Digital PR son 100% tuyos. Blindamos legalmente por contrato la propiedad intelectual de cada estrategia.",
+                    },
+                ]}
+            >
+              <div class="meta-custom-notice">
+                   Una sola factura mensual en euros. Ni altas en la Seguridad Social española, ni retenciones complicadas. Escala en visitas, no en burocracia.
+                </div>
+             
+            </BeneficiosPerfilDisenador>
+        </div>
+
+           <div class="fade-in-section">
+            <GuiaContratacion
+                titleTag="h2"
+                headerTitle="El checklist técnico para auditar el criterio de tus futuros <span style='color:#6663FD; font-weight: 900;'>especialistas en posicionamiento web</span>"
+                headerDescription="Factores determinantes antes de incorporar un especialista en posicionamiento web a tu estrategia."
+                cards={[
+                    {
+                        title: "Especialista en SEO in-house vs consultor seo local",
+                        description:
+                            "Antes de decidir, compara bien las opciones, un experto en SEO presencial en España puede superar los 3.000€/mes en coste total; los profesionales SEO independientes te dan flexibilidad pero sin dedicación exclusiva. Un especialista remoto de Colombia, Argentina o Venezuela con Oberstaff combina lo mejor de ambos: jornada completa, exclusividad y desde 900€/mes, sin que asumas ninguna relación laboral directa."
+                    },
+                    {
+                        title: "Más allá del semáforo verde: qué evaluar técnicamente antes de contratar consultor SEO",
+                        description:
+                            "Antes de contratar especialista en posicionamiento web, es importante definir bien tus objetivos: ¿quieres aumentar tráfico orgánico, mejorar rankings para palabras clave concretas, hacer una auditoría o lanzar una estrategia de contenidos? Cuanto más concreto sea el briefing, más rápido adaptará el profesional la estrategia a los cambios del algoritmo de Google. En Oberstaff te ayudamos a definirlo en una llamada de 15 minutos."
+                    },
+                    { 
+                       
+                        title: "¿Cómo la IA generativa (SGE) exige talento dedicado, no tareas aisladas?",
+                     description:
+                        "Con la irrupción de las respuestas generadas por Inteligencia Artificial en los resultados (AI Overviews), el SEO de rellenar palabras clave ha muerto. El ecosistema latinoamericano aporta estrategas altamente actualizados que saben estructurar datos complejos (Schema Markup) y demostrar el EEAT (Experiencia, Autoridad y Confianza) necesario para que los nuevos algoritmos citen a tu empresa española como fuente de verdad en tu industria."
+                    },
+                    {
+                     
+                        title: "¿Dónde puedo contratar SEO de confianza?",
+                     description:"Existen varias plataformas para incorporar expertos en posicionamiento web, como marketplaces de freelancers o agencias. Sin embargo, Oberstaff ofrece un modelo diferente: talento dedicado en exclusiva a tu empresa, con contrato estable y toda la gestión laboral cubierta. Mayor compromiso, mejor integración y ausencia de riesgos legales para tu negocio."
+                    },
+                ]}
+            />
+        </div>
 
     <div class="fade-in-section">
       <CasosExitoSection
@@ -1151,6 +1168,19 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-seo.astro";
       background-color: transparent !important;
       border: 2px solid #6663fd !important;
       color: #6663fd !important;
+    }
+
+    .meta-custom-notice {
+      font-family: "Poppins", sans-serif;
+      margin-top: 40px;
+      padding: 24px 30px;
+      background-color: #f7f8fc;
+      border-left: 4px solid #ff66cc;
+      color: #ff66cc;
+      font-family: "Montserrat", sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.4;
     }
   </style>
 </DashboardLayoutPerfiles>
