@@ -26,7 +26,10 @@ const {
         
         <div class="form-row">
             <input type="email" placeholder="Email corporativo *" required />
-            <input type="tel" placeholder="Teléfono *" required />
+            <div style="position: relative; display: flex; align-items: center; width: 100%;">
+                <span style="position: absolute; left: 16px; color: #5A5A5A; font-family: inherit; font-size: 14px; pointer-events: none;">+34</span>
+                <input type="tel" placeholder="Teléfono *" required style="padding-left: 50px; width: 100%; box-sizing: border-box;" oninput="this.value = this.value.replace(/[^0-9 ]/g, '')" />
+            </div>
         </div>
 
         <input type="text" placeholder="¿Cuántos profesionales o qué roles buscas contratar? *" required />

@@ -21,7 +21,7 @@ const { icon, title, quote, description, roles, iconColorClass, url } = Astro.pr
 
 <article class={`profile-card${url ? " clickable-card" : ""}`} data-url={url}>
     <div class="card-header">
-        <span class={`profile-icon ${iconColorClass}`}>{icon}</span>
+        <span class={`profile-icon ${iconColorClass}`} aria-hidden="true">{icon}</span>
         <h3>{title}</h3>
     </div>
     {description && <p class="card-description" set:html={description}></p>}

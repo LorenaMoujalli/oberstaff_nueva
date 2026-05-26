@@ -13,7 +13,7 @@ const { icon, iconColor, htmlContent, isPink = false } = Astro.props;
 
 <div class={`comp-card ${isPink ? 'pink-border' : ''}`}>
     <div class="comp-icon" style={iconColor ? `color: ${iconColor};` : ""}>
-        <iconify-icon icon={icon}></iconify-icon>
+        <iconify-icon icon={icon} aria-hidden="true"></iconify-icon>
     </div>
     <p set:html={htmlContent}></p>
 </div>

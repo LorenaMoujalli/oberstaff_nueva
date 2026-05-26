@@ -24,6 +24,7 @@ interface Props {
     ctaBtnHref?: string;
     id?: string;
     className?: string;
+    useH3ForTitle?: boolean;
 }
 
 const {
@@ -58,6 +59,7 @@ const {
     ctaBtnHref,
     id = `process-${Math.random().toString(36).substr(2, 9)}`,
     className = "",
+    useH3ForTitle = true,
 } = Astro.props;
 
 // Prepare tabs and panes from items with consistent IDs
@@ -95,6 +97,7 @@ const panes = items.map((item, index) => ({
                         active={pane.active}
                         badgeColor={pane.badgeColor}
                         badgeBg={pane.badgeBg}
+                        useH3ForTitle={useH3ForTitle}
                     />
                 ))}
             </div>

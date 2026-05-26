@@ -9,13 +9,18 @@ interface Props {
     active?: boolean;
     badgeColor?: string;
     badgeBg?: string;
+    useH3ForTitle?: boolean;
 }
 
-const { id, badge, title, description, active = false, badgeColor, badgeBg } = Astro.props;
+const { id, badge, title, description, active = false, badgeColor, badgeBg, useH3ForTitle = true } = Astro.props;
 ---
 
 <div id={`process-pane-${id}`} class={`process-pane${active ? " active" : ""}`}>
     <span class="process-badge" style={{ color: badgeColor, backgroundColor: badgeBg }}>{badge}</span>
-    <p class="process-pane-title"><strong>{title}</strong></p>
+    {useH3ForTitle ? (
+        <h3 class="process-pane-title"><strong>{title}</strong></h3>
+    ) : (
+        <p class="process-pane-title"><strong>{title}</strong></p>
+    )}
     <p>{description}</p>
 </div>

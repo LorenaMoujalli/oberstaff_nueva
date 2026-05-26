@@ -24,10 +24,10 @@ const {
 
 <div class={`servicio-card ${hoverClass}`}>
     <div class={`servicio-icon ${colorClass}`} aria-hidden="true">
-        {icon.length <= 2 ? (
-            <span class="emoji-icon">{icon}</span>
+        {icon.includes(':') ? (
+            <iconify-icon icon={icon} aria-hidden="true"></iconify-icon>
         ) : (
-            <iconify-icon icon={icon}></iconify-icon>
+            <span class="emoji-icon" aria-hidden="true">{icon}</span>
         )}
     </div>
     <h3 class="servicio-card-title" set:html={title}></h3>

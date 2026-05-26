@@ -43,6 +43,7 @@
     letter-spacing: -0.5px;
 }
 
+.process-pane h3 strong,
 .process-pane p.process-pane-title strong {
     font-weight: 700;
 }

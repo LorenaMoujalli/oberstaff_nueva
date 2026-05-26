@@ -13,7 +13,7 @@ const { icon, title, description, colorClass = "icon-default" } = Astro.props;
 
 <div class="role-card">
     <div class={`role-icon ${colorClass}`}>
-        <iconify-icon icon={icon}></iconify-icon>
+        <iconify-icon icon={icon} aria-hidden="true"></iconify-icon>
     </div>
     <div class="role-info">
         <h4>{title}</h4>
