@@ -35,3 +35,55 @@
 .region-digital .press-logo {
     max-height: 30px; /* Balanced height */
 }
+
+.camara-comercio .press-logo { 
+    max-height: 90px; /* Larger logo for Cámara de Comercio */
+}
+
+/* Trust badge below logos */
+.press-trust-badge {
+ 
+    font-family: 'Poppins', sans-serif;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 40px;
+   
+    background: #ffffff;
+       border: 1px solid rgba(102, 99, 253, 0.2);
+    padding: 20px 20px;
+    border-radius: 8px;
+   
+    background-color: transparent;
+  
+    font-size: 16px;
+    color: #4a4a4a; 
+    line-height: 1.4;
+}
+
+.press-trust-badge .badge-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+   
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+
+
+
+.press-trust-badge strong {
+    font-weight: 700;
+    color: #111827;
+}
+
+@media (max-width: 768px) {
+    .press-trust-badge {
+        font-size: 13px;
+        padding: 12px 20px;
+        text-align: center;
+        border-radius: 16px;
+    }
+}

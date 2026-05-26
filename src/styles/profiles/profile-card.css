@@ -128,7 +128,7 @@
 }
 
 .variant-grid .profile-card .quote {
-    display: none;
+    display: block;
 }
 
 .variant-grid .profile-card .roles-list {

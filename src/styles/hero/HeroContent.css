@@ -27,7 +27,13 @@
 .hero-text-content .brand-text {
     font-family: 'Montserrat', sans-serif;
     font-weight: 900;
-    color: #5A5A5A;
+    
+}
+
+.hero-text-content .brand-text2 {
+  
+    font-weight: bold;
+    
 }
 
 .hero-text-content .brand-dot {

@@ -818,8 +818,9 @@ import ProfilesSection from "../../../components/profiles/ProfilesSection.astro"
 
 		<div class="fade-in-section profiles-employer-page">
 			<ProfilesSection
+				variant="grid"
 				title="Perfiles que puedes <strong>contratar con EOR</strong>"
-				description="El servicio Employer of Record profesionaliza tu <br/> expansión en LATAM mediante una relación <br/> laboral formal. Protege la integridad de tu <br/> empresa integrando talento legalmente en <br/> departamentos clave:"
+				description="El servicio Employer of Record profesionaliza tu expansión en LATAM mediante una relación laboral formal. Protege la integridad de tu empresa integrando talento legalmente en departamentos clave:"
 				profiles={[  
 					{
 						icon: "🤝",
@@ -996,7 +997,7 @@ import ProfilesSection from "../../../components/profiles/ProfilesSection.astro"
 					{
 						badge: "MÁS POPULAR",
 						title: "EOR Completo",
-						price: "690",
+						price: "790",
 						currency: "€",
 						period: "/ empleado / mes",
 						teamSize: "Para equipos de 4-20 empleados",
@@ -1155,5 +1156,17 @@ import ProfilesSection from "../../../components/profiles/ProfilesSection.astro"
 	:global(.eor-features .emoji-icon),
 	:global(.eor-features iconify-icon) {
 		font-size: 30px !important;
+	}
+
+	/* Grid de 4 columnas en desktop para Employer of Record */
+	@media (min-width: 1025px) {
+		:global(.profiles-employer-page .variant-grid .profiles-grid) {
+			grid-template-columns: repeat(4, 1fr) !important;
+		}
+	}
+
+	/* Ajustar ancho máximo del párrafo para que se vea más ancho y legible */
+	:global(.profiles-employer-page .variant-grid .header-centered p) {
+		max-width: 950px !important;
 	}
 </style>
