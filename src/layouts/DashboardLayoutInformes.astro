@@ -1,16 +1,36 @@
 ---
 interface Props {
   title?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  ogUrl?: string;
+  ogImage?: string;
 }
 
-const { title = "Informe Estratégico | Oberstaff" } = Astro.props;
+const { 
+  title = "Informe Estratégico | Oberstaff",
+  ogTitle = title,
+  ogDescription = "Informe Estratégico de Oberstaff",
+  ogUrl = Astro.url.href,
+  ogImage = "https://oberstaff.com/public/og-home.webp"
+} = Astro.props;
 ---
 
 <!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content={ogTitle} />
+    <meta property="og:description" content={ogDescription} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={ogUrl} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={ogTitle} />
+    <meta name="twitter:description" content={ogDescription} />
+    <meta name="twitter:image" content={ogImage} />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Poppins:wght@300;400;600;700&display=swap"
       rel="stylesheet"
