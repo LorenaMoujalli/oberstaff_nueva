@@ -13,6 +13,7 @@ import EorStepsSection from "../../../components/eor-steps-servicios/EorStepsSec
 import EorCta from "../../../components/eor-cta-servicios/EorCta.astro";
 import CasosExitoSection from "../../../components/casos-exito-servicios/CasosExitoSection.astro";
 import FAQSection from "../../../components/faq-servicios/FAQSection-community.astro";
+import GuiaContratacion from "../../../components/guia-contratacion-perfiles/GuiaContratacion.astro";
 ---
 
 <DashboardLayoutPerfiles
@@ -912,50 +913,85 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-community.a
       />
     </div>
 
-    <BeneficiosPerfilDisenador
-      title="Contratar community manager con <span style='color:#6663FD; font-weight: 900;'>Oberstaff<span style='color:#FF66CC; font-weight: 700;'>.</span></span> ¿Por qué confiar tu comunidad a talento de LATAM?"
-      subtitle="Combinamos la inmersión profunda de un perfil In-House que entiende la esencia de tu feed, con la agilidad de un servicio externo para que te centres en los likes, leads y resultados, no en los contratos."
-      image="/img2-community.webp"
+<div class="fade-in-section">
+      <BeneficiosPerfilDisenador
+        showInfoCard={false}
+        title="Contratar community manager con <span style='color:#6663FD; font-weight: 900;'>Oberstaff<span style='color:#FF66CC; font-weight: 700;'>.</span></span> ¿Por qué confiar tu comunidad a talento de LATAM?"
+        subtitle="Combinamos la inmersión profunda de un perfil In-House que entiende la esencia de tu feed, con la agilidad de un servicio externo para que te centres en los likes, leads y resultados, no en los contratos."
+   image="/img2-community.webp"
       imageAlt="Community manager estratégico analizando métricas y comunidad digital para una empresa"
-      infoTitle="¿Cómo buscar community manager estratégico para tu negocio?"
-      features={[
-        {
-          icon: "🎯",
-          title: "Mimetización con la marca:",
-          description:
-            "Tu CM no reparte su atención. Trabaja enfocado en tu calendario editorial, tus tendencias y tu comunidad diaria.",
-        },
-        {
-          icon: "⚡",
-          title: "Ecosistema sincronizado:",
-          description:
-            "Se conecta a tus canales de Slack, debate ideas en tiempo real y programa en tu Metricool.",
-        },
-        {
-          icon: "🛡️",
-          title: "Blindaje corporativo:",
-          description:
-            "Las contraseñas de tus redes son activos críticos. Con contratos en el país de origen del talento, protegemos tus datos y gestionamos la nómina.",
-        },
-      ]}
-      infoItems={[
-        {
-          title: "¿Es mejor una Agencia de Social Media o un CM dedicado?",
-          description:
-            "Las agencias son útiles para estrategias puntuales, pero para el trabajo diario, suelen asignar tu cuenta a perfiles saturados. Con Oberstaff., tienes a un profesional senior in-house, reteniendo el know-how y reaccionando al instante.",
-        },
-        {
-          title: "¿Dónde busco Community Manager?: ventajas de Oberstaff",
-          description:
-            "Existen varias plataformas para incorporar CM, como marketplaces de freelancers o agencias. Sin embargo, Oberstaff ofrece un modelo diferente: talento dedicado exclusivo para ti, con contrato estable y toda la gestión laboral cubierta. Mayor compromiso, mejor integración y ausencia de riesgos legales para tu negocio.",
-        },
-        {
-          title: "¿Qué herramientas debería dominar un CM moderno?",
-          description:
-            "Exige que el candidato demuestre soltura en Business Manager, Creator Studio, herramientas de programación masiva (Metricool, Buffer, Later), plataformas de escucha social (Social Listening) y nociones sólidas de diseño ágil (Canva, CapCut) para maquetar el contenido diario.",
-        },
-      ]}
-    />
+        infoTitle=""
+        features={[
+          {
+            icon: "🎯",
+            title: "Mimetización con la marca:",
+            description:
+              "Tu CM no reparte su atención. Trabaja enfocado en tu calendario editorial, tus tendencias y tu comunidad diaria.",
+          },
+          {
+            icon: "📊",
+            title: "Ecosistema sincronizado",
+            description:
+              "Se conecta a tus canales de Slack, debate ideas en tiempo real y programa en tu Metricool.",
+          },
+          {
+            icon: "🛡️",
+            title: "Blindaje corporativo:",
+            description:
+              "Las contraseñas de tus redes son activos críticos. Con contratos en el país de origen del talento, protegemos tus datos y gestionamos la nómina.",
+          },
+        ]}
+        infoItems={[
+          {
+            title: "",
+            description: "",
+          },
+          {
+            title: "",
+            description: "",
+          },
+          {
+            title: "",
+            description: "",
+          },
+        ]}
+      >
+        <div class="meta-custom-notice">
+        Recibes una sola factura internacional en euros. Crece en seguidores, no en papeleo. 
+        </div>
+      </BeneficiosPerfilDisenador>
+    </div>
+
+    <div class="fade-in-section">
+      <GuiaContratacion
+        titleTag="h2"
+        headerTitle="¿Cómo buscar community manager estratégico <span style='color:#6663FD; font-weight: 900;'>para tu negocio?</span>"
+        headerDescription="Criterios indispensables para acertar antes de entregar la reputación de tu marca a un gestor de redes sociales remoto"
+        cards={[
+          {
+            title:
+              "¿Es mejor una Agencia de Social Media o un CM dedicado?",
+            description:
+              "Las agencias son útiles para estrategias puntuales, pero para el trabajo diario, suelen asignar tu cuenta a perfiles saturados. Con Oberstaff, tienes a un profesional senior In-house, reteniendo el know-how y reaccionando al instante.",
+            description2: "",
+          },
+          {
+            title:
+              "¿Dónde busco Community Manager?: ventajas de Oberstaff",
+            description:
+              "Existen varias plataformas para incorporar CM, como marketplaces de freelancers o agencias. Sin embargo, Oberstaff ofrece un modelo diferente: talento dedicado exclusivo para ti, con contrato estable y toda la gestión laboral cubierta. Mayor compromiso, mejor integración y ausencia de riesgos legales para tu negocio.",
+            description2: "",
+          },
+          {
+            title: "¿Qué herramientas debería dominar un CM moderno?",
+            description:
+              "Exige que el candidato demuestre soltura en Business Manager, Creator Studio, herramientas de programación masiva (Metricool, Buffer, Later), plataformas de escucha social (Social Listening) y nociones sólidas de diseño ágil (Canva, CapCut) para maquetar el contenido diario.",
+            description2: "",
+          },
+        ]}
+      />
+    </div>
+
 
     <div class="fade-in-section">
       <CasosExitoSection
@@ -1135,4 +1171,22 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-community.a
     border: 2px solid #6663fd !important;
     color: #6663fd !important;
   }
+
+      .meta-custom-notice {
+      font-family: "Poppins", sans-serif;
+      margin-top: 40px;
+      padding: 24px 30px;
+      background-color: #f7f8fc;
+      border-left: 4px solid #ff66cc;
+      color: #ff66cc;
+      font-family: "Montserrat", sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .service-detail-container
+      :global(.guia-cards-grid .guia-card:nth-child(3)) {
+      grid-column: 1 / -1;
+    }
 </style>

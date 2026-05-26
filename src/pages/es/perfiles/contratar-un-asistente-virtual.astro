@@ -13,6 +13,7 @@ import EorStepsSection from "../../../components/eor-steps-servicios/EorStepsSec
 import EorCta from "../../../components/eor-cta-servicios/EorCta.astro";
 import CasosExitoSection from "../../../components/casos-exito-servicios/CasosExitoSection.astro";
 import FAQSection from "../../../components/faq-servicios/FAQSection-asistente.astro";
+import GuiaContratacion from "../../../components/guia-contratacion-perfiles/GuiaContratacion.astro";
 ---
  
 <DashboardLayoutPerfiles
@@ -895,61 +896,95 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-asistente.a
             />
         </div>
 
-        <BeneficiosPerfilDisenador
-            title="Exclusividad y latencia cero: el ROI operativo de tu <span style='color:#6663FD; font-weight: 900;'>asistente virtual</span>"
-            subtitle="El retorno operativo de un perfil dedicado reside en la profundidad de su conocimiento sobre tus procesos. Esta dedicación total garantiza que la información corporativa sea precisa y esté siempre disponible, eliminando el coste oculto que suponen los errores humanos por falta de contexto en la gestión de datos."
-            image="/img2-asistente.webp"
+         <div class="fade-in-section">
+            <BeneficiosPerfilDisenador
+                showInfoCard={false}
+                title="Exclusividad y latencia cero: el ROI operativo de tu <span style='color:#6663FD; font-weight: 900;'>asistente virtual</span>"
+                subtitle="El retorno operativo de un perfil dedicado reside en la profundidad de su conocimiento sobre tus procesos.Esta dedicación total garantiza que la información corporativa sea precisa y esté siempre disponible, eliminando el coste oculto que suponen los errores humanos por falta de contexto en la gestión de datos."
+                  image="/img2-asistente.webp"
             imageAlt="Asistente virtual revisando procesos administrativos"
-            infoTitle="Manual de validación operativa: Cómo filtrar y contratar a un asistente virtual con dominio de SOPs"
-            features={[
-                {
-                    icon: "🎯",
-                    title: "Eliminación del pasivo laboral y cargas sociales:",
-                    description:
-                        "Al operar bajo nuestro modelo, tu empresa se libera de la rigidez del marco laboral español. No asumes costes de indemnización, seguros sociales ni impuestos de contratación local.",
-                },
-                {
-                    icon: "⚡",
-                    title: "Blindaje de información mediante NDAs corporativos:",
-                    description:
-                        "La confidencialidad es innegociable. Cada asistente opera bajo estrictos acuerdos de confidencialidad garantizando que tu base de datos de clientes permanezca protegida.",
-                },
-                {
-                    icon: "🛡️",
-                    title: "Recuperación del tiempo estratégico (Deep Work):",
-                    description:
-                        "Al delegar atención de correos y coordinación de agendas, liberas a tu equipo C-Level para tareas de alto impacto. Pasas de 'apagar fuegos' a liderar la estrategia de expansión de tu negocio.",
-                },
-            ]}
-            infoItems={[
-                {
-                    title: "¿Es mejor contratar asistente virtual freelance o uno integrado en remoto?",
-                    description:
-                        "Si necesitas seguimiento diario, coordinación con tu equipo y una persona que forme parte de tu organización, un perfil remoto estable funciona mejor y a menor coste total.",
-                },
-                {
-                    title: "¿Qué soft skills y competencias técnicas se deben exigir al contratar un asistente virtual administrativo?",
-                    description:
-                        "Descarta perfiles reactivos, audita su capacidad para mantener CRMs limpios, redactar procedimientos (SOPs) y estructurar bases de datos. Una llamada de 15 minutos con nuestros asesores te ayudará a trazar el perfil técnico exacto que tu operativa demanda.",
-                },
-                {
-                    title: "¿Qué stack tecnológico deben dominar los asistentes virtuales para negocios?",
-                    description:
-                        "La ofimática básica ya no es suficiente. El perfil debe operar con fluidez en ecosistemas empresariales: Google Workspace, Microsoft 365, gestores de proyectos (Asana, Jira, Notion) y plataformas de comunicación síncrona (Slack, Teams).",
-                },
-                {
-                    title: "¿Secretaria virtual clásica o asistente administrativo remoto? ",
-                    description:
-                        "Muchas búsquedas empiezan con el término secretaria virtual para empresas, pero hoy el rol suele ir mucho más allá de contestar correos o agendar reuniones. En la práctica, lo que mejor funciona es un asistente administrativo virtual capaz de seguir procesos, coordinar tareas y dar soporte operativo constante al negocio.",
-                },
-                 {
-                    title: "¿Cuál es la ventaja de un asistente virtual remoto ante un asistente administrativo tradicional?",
-                    description:
-                        "Las funciones centrales son idénticas, pero contratar un asistente virtual en España a través del modelo de Oberstaff aporta una enorme agilidad, suprime los gastos fijos de oficina y te conecta con talento internacional perfectamente alineado con tu franja horaria.",
-                }
+                infoTitle=""
+                features={[
+                    {
+                        icon: "🎯",
+                        title: "Eliminación del pasivo laboral y cargas sociales:",
+                        description:
+                            "Al operar bajo nuestro modelo, tu empresa se libera de la rigidez del marco laboral español. No asumes costes de indemnización, seguros sociales ni impuestos de contratación local.",
+                    },
+                    {
+                        icon: "📊",
+                        title: "Blindaje de información mediante NDAs corporativos:",
+                        description:
+                            "La confidencialidad es innegociable. Cada asistente opera bajo estrictos acuerdos de confidencialidad garantizando que tu base de datos de clientes permanezcan protegidas.",
+                    },
+                    {
+                        icon: "⚡",
+                        title: "Recuperación del tiempo estratégico (Deep Work):",
+                        description:
+                            "Al delegar atención de correos y coordinación de agendas, liberas a tu equipo C-Level para tareas de alto impacto. Pasas de 'apagar fuegos' a liderar la estrategia de expansión de tu negocio.",
+                    },
+                ]}
+                infoItems={[
+                    {
+                        title: "",
+                        description: "",
+                    },
+                    {
+                        title: "",
+                        description: "",
+                    },
+                    {
+                        title: "",
+                        description: "",
+                    },
+                ]} 
+            >
+                <div class="meta-custom-notice">
+                  Recibes una factura B2B en tu idioma y zona horaria.
+                </div>
+            </BeneficiosPerfilDisenador>
+        </div>
 
-            ]}
-        />
+        <div class="fade-in-section">
+            <GuiaContratacion
+                titleTag="h2"
+                headerTitle="Manual de validación operativa: Cómo filtrar y contratar a un <span style='color:#6663FD; font-weight: 900;'>asistente virtual</span> con dominio de SOPs"
+                headerDescription="La diferencia entre un asistente que genera orden y uno que genera más trabajo para el CEO radica en su capacidad para operar bajo procesos estandarizados. Un perfil de alto nivel no espera instrucciones improvisadas; busca ejecutar y mejorar la documentación existente."
+                cards={[
+                    {
+                        title: "¿Es mejor contratar asistente virtual freelance o uno integrado en remoto?",
+                        description:
+                            "Si necesitas seguimiento diario, coordinación con tu equipo y una persona que forme parte de tu organización, un perfil remoto estable funciona mejor y a menor coste total.",
+                        description2: "",
+                    },
+                    {
+                        title: "¿Qué soft skills y competencias técnicas se deben exigir al contratar un asistente virtual administrativo?",
+                        description:
+                            "Descarta perfiles reactivos, audita su capacidad para mantener CRMs limpios, redactar procedimientos (SOPs) y estructurar bases de datos. Una llamada de 15 minutos con nuestros asesores te ayudará a trazar el perfil técnico exacto que tu operativa demanda.",
+                        description2: "",
+                    },
+                    {
+                        title: "¿Qué stack tecnológico deben dominar los asistentes virtuales para negocios?",
+                        description:
+                            "La ofimática básica ya no es suficiente. El perfil debe operar con fluidez en ecosistemas empresariales: Google Workspace, Microsoft 365, gestores de proyectos (Asana, Jira, Notion) y plataformas de comunicación síncrona (Slack, Teams).",
+                        description2: "",
+                    },
+                    {
+                        title: "¿Secretaria virtual clásica o asistente administrativo remoto?",
+                        description:
+                            "Muchas búsquedas empiezan con el término secretaria virtual para empresas, pero hoy el rol suele ir mucho más allá de contestar correos o agendar reuniones. En la práctica, lo que mejor funciona es un asistente administrativo virtual capaz de seguir procesos, coordinar tareas y dar soporte operativo constante al negocio.",
+                        description2: "",
+                    },
+                    {
+                        title: "¿Cuál es la ventaja de un asistente virtual remoto ante un asistente administrativo tradicional?",
+                        description:
+                            "Las funciones centrales son idénticas, pero contratar un asistente virtual en España a través del modelo de Oberstaff aporta una enorme agilidad, suprime los gastos fijos de oficina y te conecta con talento internacional perfectamente alineado con tu franja horaria.",
+                        description2: "",
+                    },
+                ]}
+            />
+        </div>
+
 
         <div class="fade-in-section">
             <CasosExitoSection
@@ -1104,5 +1139,22 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-asistente.a
             border: 2px solid #6663fd !important;
             color: #6663fd !important;
         }
+         .meta-custom-notice {
+            font-family: "Poppins", sans-serif;
+            margin-top: 40px;
+            padding: 24px 30px;
+            background-color: #f7f8fc;
+            border-left: 4px solid #ff66cc;
+            color: #ff66cc;
+            font-family: "Montserrat", sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        .service-detail-container :global(.guia-cards-grid .guia-card:nth-child(5)) {
+    grid-column: 1 / -1;
+}
+
     </style>
 </DashboardLayoutPerfiles>

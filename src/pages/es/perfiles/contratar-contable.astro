@@ -13,6 +13,7 @@ import EorStepsSection from "../../../components/eor-steps-servicios/EorStepsSec
 import EorCta from "../../../components/eor-cta-servicios/EorCta.astro";
 import CasosExitoSection from "../../../components/casos-exito-servicios/CasosExitoSection.astro";
 import FAQSection from "../../../components/faq-servicios/FAQSection-contable.astro";
+import GuiaContratacion from "../../../components/guia-contratacion-perfiles/GuiaContratacion.astro";
 ---
 
 <DashboardLayoutPerfiles
@@ -848,62 +849,94 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-contable.as
       />
     </div>
 
-    <BeneficiosPerfilDisenador
-      title="El ROI de un contable in-house: por qué blindar tus finanzas con <span class='bp-brand'>Oberstaff<span class='bp-dot'>.</span></span>"
-      subtitle="Más control que con una gestoría externa y menos fricción que una contratación local."
-      image="/img2-contable.webp"
-      imageAlt="Contratar Contable"
-      infoTitle="Manual de validación financiera: cómo filtrar y contratar al contable ideal para tu negocio"
-      features={[
-        {
-          icon: "🎯",
-          title: "Eficiencia de Capital:",
-          description:
-            "Escala tu equipo de control financiero sin el lastre de los Seguros Sociales o IRPF del marco laboral español. Una cuota plana que protege tu Cash Flow.",
-        },
-        {
-          icon: "⚡",
-          title: "Integridad de Datos Garantizada:",
-          description:
-            "Tu contable se integra directamente en tu software, con acceso a la contabilidad real de tu empresa y continuidad en los procesos",
-        },
-        {
-          icon: "🛡️",
-          title: "Tú controlas la estrategia financiera:",
-          description:
-            "Tu profesional gestiona el ciclo contable y te reporta la situación financiera. Sin que tu empresa asuma ningún riesgo laboral.",
-        },
-      ]}
-      infoItems={[
-        {
-          title:
-            "¿Por qué las empresas españolas contratan contables remotos en LATAM?",
-          description:
-            "Los profesionales en finanzas y contabilidad en países como Colombia, Argentina o Venezuela tienen una formación académica equivalente, están habituados a trabajar con las Normas Internacionales de Información Financiera (NIIF), normativa fiscal internacional y pueden especializarse en los estándares españoles IVA, IRPF, Impuesto de Sociedades, modelos 303, 200 y 390 en un tiempo de adaptación muy corto. Oberstaff selecciona y evalúa ese talento por ti.",
-        },
-        {
-          title: "¿Qué definir antes de contratar un contador remoto?",
-          description:
-            "Define bien tus necesidades: ¿Buscas contabilidad general, apoyo fiscal, control financiero o un auxiliar contable? Cuanto más concreto sea el briefing, más rápido encontrarás al perfil ideal. En Oberstaff te ayudamos a definirlo en una llamada de 15 minutos sin compromiso.",
-        },
-        {
-          title:
-            "¿Qué diferencia hay entre contratar contable por horas o a jornada completa?",
-          description:
-            "Si tu empresa tiene un volumen contable bajo o estacional, un contable por horas puede ser suficiente. Si necesitas registro diario de operaciones, cierres mensuales, conciliación bancaria continua y apoyo fiscal regular, contratar contable a jornada completa y en exclusiva ofrece mayor continuidad y profundidad de conocimiento de tu negocio. Oberstaff también ofrece opciones de media jornada para empresas con volumen contable moderado — consúltalo en el briefing.",
-        },
-        {
-          title: "¿Este perfil sustituye a mi asesoría fiscal en España?",
-          description:
-            "La complementa perfectamente. Tu asesoría local es experta en tributación española y presentación de impuestos ante Hacienda. Tu contador remoto dedicado actúa como tu Bookkeeper interno: prepara los números al milímetro diariamente para que la gestoría solo tenga que pulsar el botón de presentar los impuestos, evitando sobrecostes por desorden documental.",
-        },
-        {
-          title: "¿Qué nivel de fluidez técnica se exige en los ERPs?",
-          description:
-            "La ofimática básica no sirve en finanzas corporativas. Filtramos perfiles con experiencia real en ecosistemas financieros modernos. Ya sea que tu empresa utilice Holded, A3, QuickBooks, Xero, Odoo o SAP, validamos que el candidato posea una curva de aprendizaje mínima y entienda la arquitectura de las cuentas de tu negocio.",
-        },
-      ]}
-    />
+     <div class="fade-in-section">
+            <BeneficiosPerfilDisenador
+                showInfoCard={false}
+                title="El ROI de un contable In-House: Por qué blindar tus finanzas con <span style='color:#6663FD; font-weight: 900;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span>"
+                subtitle="Más control que con una gestoría externa y menos fricción que una contratación local."
+                 image="/img2-contable.webp"
+      imageAlt="Contratar Contable" 
+                infoTitle=""
+                features={[
+                    {
+                        icon: "🎯",
+                        title: "Eficiencia de Capital",
+                        description:
+                            "Escala tu equipo de control financiero sin el lastre de los Seguros Sociales o IRPF del marco laboral español. Una cuota plana que protege tu Cash Flow.",
+                    },
+                    {
+                        icon: "📊",
+                        title: "Integridad de Datos Garantizada:",
+                        description:
+                            "Tu contable se integra directamente en tu software, con acceso a la contabilidad real de tu empresa y continuidad en los procesos",
+                    },
+                    {
+                        icon: "⚡",
+                        title: "Tú controlas la estrategia financiera",
+                        description:
+                            "Tu profesional gestiona el ciclo contable y te reporta la situación financiera. Sin que tu empresa asuma ningún riesgo laboral.",
+                    },
+                ]}
+                infoItems={[
+                    {
+                        title: "",
+                        description: "",
+                    },
+                    {
+                        title: "",
+                        description: "",
+                    },
+                    {
+                        title: "",
+                        description: "",
+                    },
+                ]} 
+            >
+                <div class="meta-custom-notice">
+                Una sola factura mensual en euros. Todas las gestiones se hacen en tu idioma y en tu zona horaria.
+                </div>
+            </BeneficiosPerfilDisenador>
+        </div>
+
+        <div class="fade-in-section">
+            <GuiaContratacion
+                titleTag="h2"
+                headerTitle="Manual de validación financiera: cómo filtrar y contratar al <span style='color:#6663FD; font-weight: 900;'>contable</span> ideal para tu negocio"
+                headerDescription="Claves técnicas y estructurales para proteger la tesorería de tu organización antes de integrar talento contable externo."
+                cards={[
+                    {
+                        title: "¿Por qué las empresas españolas contratan contables remotos en LATAM?",
+                        description:
+                            "Los profesionales en finanzas y contabilidad en países como Colombia, Argentina o Venezuela tienen una formación académica equivalente, están habituados a trabajar con las Normas Internacionales de Información Financiera (NIIF), normativa fiscal internacional y pueden especializarse en los estándares españoles IVA, IRPF, Impuesto de Sociedades, modelos 303, 200 y 390 en un tiempo de adaptación muy corto. Oberstaff selecciona y evalúa ese talento por ti.",
+                        description2: "",
+                    },
+                    {
+                        title: "¿Qué definir antes de contratar un contador remoto?",
+                        description:
+                            "Define bien tus necesidades: ¿Buscas contabilidad general, apoyo fiscal, control financiero o un auxiliar contable? Cuanto más concreto sea el briefing, más rápido encontrarás al perfil ideal. En Oberstaff te ayudamos a definirlo en una llamada de 15 minutos sin compromiso.",
+                        description2: "",
+                    },
+                    {
+                        title: "¿Qué diferencia hay entre contratar contable por horas o a jornada completa?",
+                        description:
+                            "Si tu empresa tiene un volumen contable bajo o estacional, un contable por horas puede ser suficiente. Si necesitas registro diario de operaciones, cierres mensuales, conciliación bancaria continua y apoyo fiscal regular, contratar contable a jornada completa y en exclusiva ofrece mayor continuidad y profundidad de conocimiento de tu negocio. Oberstaff también ofrece opciones de media jornada para empresas con volumen contable moderado — consúltalo en el briefing.",
+                        description2: "",
+                    },
+                    {
+                        title: "¿Este perfil sustituye a mi asesoría fiscal en España?",
+                        description:
+                            "La complementa perfectamente. Tu asesoría local es experta en tributación española y presentación de impuestos ante Hacienda. Tu contador remoto dedicado actúa como tu Bookkeeper interno: prepara los números al milímetro diariamente para que la gestoría solo tenga que pulsar el botón de presentar los impuestos, evitando sobrecostes por desorden documental.",
+                        description2: "",
+                    },
+                    {
+                        title: "¿Qué nivel de fluidez técnica se exige en los ERPs?",
+                        description:
+                            "La ofimática básica no sirve en finanzas corporativas. Filtramos perfiles con experiencia real en ecosistemas financieros modernos. Ya sea que tu empresa utilice Holded, A3, QuickBooks, Xero, Odoo o SAP, validamos que el candidato posea una curva de aprendizaje mínima y entienda la arquitectura de las cuentas de tu negocio.",
+                        description2: "",
+                    },
+                ]}
+            />
+        </div>
 
     <div class="fade-in-section">
       <CasosExitoSection
@@ -1069,5 +1102,22 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-contable.as
       border: 2px solid #6663fd !important;
       color: #6663fd !important;
     }
+
+             .meta-custom-notice {
+            font-family: "Poppins", sans-serif;
+            margin-top: 40px;
+            padding: 24px 30px;
+            background-color: #f7f8fc;
+            border-left: 4px solid #ff66cc;
+            color: #ff66cc;
+            font-family: "Montserrat", sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        .service-detail-container :global(.guia-cards-grid .guia-card:nth-child(5)) {
+    grid-column: 1 / -1;
+}
   </style>
 </DashboardLayoutPerfiles>

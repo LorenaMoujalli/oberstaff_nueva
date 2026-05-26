@@ -21,6 +21,7 @@ import EorStepsSection from "../../../components/eor-steps-servicios/EorStepsSec
 import EorCta from "../../../components/eor-cta-servicios/EorCta.astro";
 import CasosExitoSection from "../../../components/casos-exito-servicios/CasosExitoSection.astro";
 import FAQSection from "../../../components/faq-servicios/FAQSection-disenador.astro";
+import GuiaContratacion from "../../../components/guia-contratacion-perfiles/GuiaContratacion.astro";
 ---
 
   
@@ -975,45 +976,84 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-disenador.a
       />
     </div>
 
-    
-   <BeneficiosPerfilDisenador
-    title="¿Por qué contratar diseñadores gráficos con <span class='bp-brand'>Oberstaff<span class='bp-dot'>.</span></span>?"
-    subtitle="Eliminamos el ruido legal para que tu única preocupación sea aprobar creatividades de alta conversión."
-    image="/img2-disenador.webp"
-    imageAlt=""
-    infoTitle="Claves para contratar diseñador gráfico en tu empresa española"
-    features={[
-        {
+   <div class="fade-in-section">
+      <BeneficiosPerfilDisenador
+        showInfoCard={false}
+        title="¿Por qué contratar diseñadores gráficos con <span style='color:#6663FD; font-weight: 900;'>Oberstaff<span style='color:#FF66CC; font-weight: 700;'>.</span></span>?"
+        subtitle="Eliminamos el ruido legal para que tu única preocupación sea aprobar creatividades de alta conversión."
+   image="/img2-disenador.webp"
+      imageAlt="Diseñador gráfico creando contenido creativo para marca online"
+        infoTitle=""
+        features={[
+          {
             icon: "🎯",
             title: "Foco visual exclusivo:",
-            description: "Tu diseñador trabaja inmerso en tu negocio, protegiendo la coherencia de tu marca en cada pixel."
-        },
-        {
-            icon: "⚡",
-            title: "Ecosistema sincronizado:",
-            description: "Tu creativo se conecta a tu Slack y guarda los PSDs en la carpeta compartida de tu empresa al finalizar su jornada."
-        },
-        {
+            description:
+              "Tu diseñador trabaja inmerso en tu negocio, protegiendo la coherencia de tu marca en cada pixel.",
+          },
+          {
+            icon: "📊",
+            title: "Ecosistema sincronizado",
+            description:
+              "Tu creativo se conecta a tu Slack y guarda los PSDs en la carpeta compartida de tu empresa al finalizar su jornada.",
+          },
+          {
             icon: "🛡️",
             title: "Operativa resuelta:",
-            description: "Redactamos y firmamos los contratos en el país de origen para garantizar que cada píxel creado pertenezca legalmente a tu empresa."
-        }
-    ]}
-    infoItems={[
-        {
-            title: "Diseñador gráfico remoto dedicado vs diseñador local",
-            description: "Antes de tomar una decisión, mide el impacto estructural. Un diseñador presencial en España implica un coste total que supera los 2.500€ mensuales. Un diseñador remoto de LATAM a través de Oberstaff te da la agilidad de un empleado in-house (modificaciones en tiempo real, comunicación por chat) por una fracción del coste (desde 850€/mes) "
-        },
-        {
-            title: "¿Qué auditar al revisar los portfolios antes de contratar diseñadores gráficos?",
-            description: "Un buen diseño debe ser funcional, no solo estético. Durante nuestras evaluaciones (y las que harás tú en la entrevista), verificamos si el candidato trabaja de forma no destructiva en Photoshop (uso de máscaras y objetos inteligentes), si sus vectores en Illustrator tienen nodos limpios, y si entiende conceptos vitales como resolución (PPI), perfiles de color (RGB vs CMYK) y peso de archivos para web."
-        },
-         {
+            description:
+              "Redactamos y firmamos los contratos en el país de origen para garantizar que cada píxel creado pertenezca legalmente a tu empresa.",
+          },
+        ]}
+        infoItems={[
+          {
+            title: "",
+            description: "",
+          },
+          {
+            title: "",
+            description: "",
+          },
+          {
+            title: "",
+            description: "",
+          },
+        ]}
+      >
+        <div class="meta-custom-notice">
+        Recibes una sola factura mensual deducible por servicios los servicios del diseñador gráfico remoto. Ni altas en la Seguridad Social, ni gestiones tributarias internacionales. Todo resuelto. 
+        </div>
+      </BeneficiosPerfilDisenador>
+    </div>
+
+    <div class="fade-in-section">
+      <GuiaContratacion
+        titleTag="h2"
+        headerTitle="Claves para contratar diseñador gráfico en tu <span style='color:#6663FD; font-weight: 900;'>empresa española</span>"
+        headerDescription="Ampliar la capacidad visual de tu negocio con talento remoto requiere evaluar más allá de un portfolio bonito. Aquí te explicamos cómo asegurar un fichaje técnico impecable."
+        cards={[
+          {
+            title:
+              "Diseñador gráfico remoto dedicado vs diseñador local",
+            description:
+              "Antes de tomar una decisión, mide el impacto estructural. Un diseñador presencial en España implica un coste total que supera los 2.500€ mensuales. Un diseñador remoto de LATAM a través de Oberstaff te da la agilidad de un empleado in-house (modificaciones en tiempo real, comunicación por chat) por una fracción del coste (desde 850€/mes)",
+            description2: "",
+          },
+          {
+            title:
+              "¿Qué auditar al revisar los portfolios antes de contratar diseñadores gráficos?",
+            description:
+              "Un buen diseño debe ser funcional, no solo estético. Durante nuestras evaluaciones (y las que harás tú en la entrevista), verificamos si el candidato trabaja de forma no destructiva en Photoshop (uso de máscaras y objetos inteligentes), si sus vectores en Illustrator tienen nodos limpios, y si entiende conceptos vitales como resolución (PPI), perfiles de color (RGB vs CMYK) y peso de archivos para web.",
+            description2: "",
+          },
+          {
             title: "Páginas para contratar diseñadores gráficos: ventajas de Oberstaff",
-            description: "Existen varias plataformas para contratar diseñadores gráficos, como marketplaces de freelancers o agencias de diseño. Sin embargo, Oberstaff ofrece un modelo diferente: talento dedicado en exclusiva a tu empresa, con contrato estable y toda la gestión laboral cubierta. Esto significa mayor compromiso, mejor integración en tu equipo y ausencia de riesgos legales para tu negocio."
-        }
-    ]}
-/>
+            description:
+              "Existen varias plataformas para contratar diseñadores gráficos, como marketplaces de freelancers o agencias de diseño. Sin embargo, Oberstaff ofrece un modelo diferente: talento dedicado en exclusiva a tu empresa, con contrato estable y toda la gestión laboral cubierta. Esto significa mayor compromiso, mejor integración en tu equipo y ausencia de riesgos legales para tu negocio.",
+            description2: "",
+          },
+        ]}
+      />
+    </div>
 
     <!-- 
     <div class="fade-in-section">
@@ -1246,4 +1286,22 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-disenador.a
     border: 2px solid #6663FD !important;
     color: #6663FD !important;
   }
+
+        .meta-custom-notice {
+      font-family: "Poppins", sans-serif;
+      margin-top: 40px;
+      padding: 24px 30px;
+      background-color: #f7f8fc;
+      border-left: 4px solid #ff66cc;
+      color: #ff66cc;
+      font-family: "Montserrat", sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .service-detail-container
+      :global(.guia-cards-grid .guia-card:nth-child(3)) {
+      grid-column: 1 / -1;
+    }
 </style>

@@ -13,6 +13,7 @@ import EorStepsSection from "../../../components/eor-steps-servicios/EorStepsSec
 import EorCta from "../../../components/eor-cta-servicios/EorCta.astro";
 import CasosExitoSection from "../../../components/casos-exito-servicios/CasosExitoSection.astro";
 import FAQSection from "../../../components/faq-servicios/FAQSection-editor-videos.astro";
+import GuiaContratacion from "../../../components/guia-contratacion-perfiles/GuiaContratacion.astro";
 ---
 
 <DashboardLayoutPerfiles
@@ -707,55 +708,71 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-editor-vide
             />
         </div>
 
-        <BeneficiosPerfilDisenador
-            title="<span style='color:#6663FD; font-weight: 900;'>Las ventajas operativas</span> de contratar editor de videos con nosotros para escalar tus publicaciones"
-            subtitle="Más control creativo que con un agencia audiovisual externa, menos fricción legal que una contratación In-House local."
-            image="/img2-videos.webp"
+       <div class="fade-in-section">
+            <BeneficiosPerfilDisenador
+                showInfoCard={false}
+                title="Las ventajas operativas de contratar editor de videos con nosotros <span style='color:#6663FD; font-weight: 900;'> para escalar tus publicaciones</span>"
+                subtitle="Más control creativo que con un agencia audiovisual externa, menos fricción legal que una contratación In-House local."
+              image="/img2-videos.webp" 
             imageAlt="Contratar editor de videos"
-            infoTitle="Cómo elegir al profesional de postproducción audiovisual adecuado"
-            features={[
-                {
-                    icon: "🎯",
-                    title: "Foco audiovisual exclusivo:",
-                    description:
-                        "Tu editor mantiene la atención enfocada en tus proxies, tus campañas y las prioridades de tu canal. ",
-                },
-                {
-                    icon: "⚡",
-                    title: "Iteraciones sin fricción económica:",
-                    description:
-                        "¿Necesitas quitar un plano? Al tener un editor in-house, pides el cambio y recibes el nuevo renderizado en minutos.",
-                },
-                {
-                    icon: "🛡️",
-                    title: "Blindaje y Propiedad intelectual:",
-                    description:
-                        "Somos tu departamento legal, el talento firma contratos donde cede los derechos de edición a tu empresa, además asumimos su nómina.",
-                },
-            ]}
-            infoItems={[
-                {
-                    title: "Qué definir antes de contratar editor de videos",
-                    description:
-                        "Antes de contratar, define bien el tipo de contenido que necesitas: YouTube, redes sociales, anuncios, video corporativo o podcast. También conviene concretar volumen de piezas, estilo visual, tiempos de entrega y herramientas.",
-                },
-                {
-                    title: "Expertos en edición de video: herramientas claves",
-                    description:
-                        "Valora la fluidez del candidato en el ecosistema Adobe (Premiere Pro, After Effects, Audition), o su destreza técnica en DaVinci Resolve para nodos de color. Para creadores de contenido rápido, el dominio avanzado de CapCut Pro y plugins de subtitulado animado marca la diferencia en los tiempos de entrega.",
-                },
-                {
-                    title: "Editores de video España - Latinoamérica: ¿funciona realmente ese modelo?",
-                    description:
-                        "LATAM es una región geográfica con talento audiovisual de gran nivel, por lo que podrías contar con profesionales con alta fluidez técnica en las herramientas de Adobe, DaVinci y flujos de trabajo con proxies, beneficiándote de un huso horario que permite tener los vídeos renderizados en total sincronía con tu equipo en España.",
-                },
-                {
-                    title: "Curvas de retención: la métrica a evaluar al contratar editor de video",
-                    description:
-                        "Un montador tradicional busca estética; un estratega audiovisual busca retención. Al auditar a tu candidato, evalúa cómo estructura los primeros 30 segundos (el hook o gancho) para evitar la fuga inicial de espectadores. Debe dominar el uso de B-roll, saltos de escala (punch-ins) y diseño sonoro para mantener alta la Duración Media de Visualización (AVD).",
-                },
-            ]}
-        />
+                features={[
+                    {
+                        icon: "🎯",
+                        title: "Foco audiovisual exclusivo ",
+                        description:
+                            "Tu editor mantiene la atención enfocada en tus proxies, tus campañas y las prioridades de tu canal.",
+                    },
+                    {
+                        icon: "⚡",
+                        title: "Iteraciones sin fricción económica:",
+                        description:
+                            "¿Necesitas quitar un plano? Al tener un editor in-house, pides el cambio y recibes el nuevo renderizado en minutos.",
+                    },
+                    {
+                        icon: "🛡️",
+                        title: "Blindaje y Propiedad",
+                        description:
+                            "Somos tu departamento legal, el talento firma contratos donde cede los derechos de edición a tu empresa, además asumimos su nómina.",
+                    },
+                ]}
+            >
+              <div class="meta-custom-notice">
+                   Una sola factura mensual en euros, escala tu posproducción audiovisual sin preocupaciones.
+                </div>
+             
+            </BeneficiosPerfilDisenador>
+        </div>
+
+           <div class="fade-in-section">
+            <GuiaContratacion
+                titleTag="h2"
+                headerTitle="Cómo elegir al profesional de <span style='color:#6663FD; font-weight: 900;'>postproducción audiovisual adecuado</span>"
+                headerDescription="Dar acceso a tus archivos en bruto (RAW) requiere un filtrado estricto. Así te aseguras de integrar a talento técnico de alto nivel."
+                cards={[
+                    {
+                        title: "Qué definir antes de contratar editor de videos",
+                        description:
+                            "Antes de contratar, define bien el tipo de contenido que necesitas: YouTube, redes sociales, anuncios, video corporativo o podcast. También conviene concretar volumen de piezas, estilo visual, tiempos de entrega y herramientas."
+                    },
+                    {
+                        title: "Expertos en edición de video: herramientas claves",
+                        description:
+                            "Valora la fluidez del candidato en el ecosistema Adobe (Premiere Pro, After Effects, Audition), o su destreza técnica en DaVinci Resolve para nodos de color. Para creadores de contenido rápido, el dominio avanzado de CapCut Pro y plugins de subtitulado animado marca la diferencia en los tiempos de entrega."
+                    },
+                    { 
+                       
+                        title: "Editores de video España - Latinoamérica: ¿funciona realmente ese modelo?",
+                     description:
+                        "LATAM es una región geográfica con talento audiovisual de gran nivel, por lo que podrías contar con profesionales con alta fluidez técnica en las herramientas de Adobe, DaVinci y flujos de trabajo con proxies, beneficiándote de un huso horario que permite tener los vídeos renderizados en total sincronía con tu equipo en España."
+                    },
+                    {
+                     
+                        title: "Curvas de retención: la métrica a evaluar al contratar editor de video YouTube",
+                     description:"Un montador tradicional busca estética; un estratega audiovisual busca retención. Al auditar a tu candidato, evalúa cómo estructura los primeros 30 segundos (el hook o gancho) para evitar la fuga inicial de espectadores. Debe dominar el uso de B-roll, saltos de escala (punch-ins) y diseño sonoro para mantener alta la Duración Media de Visualización (AVD)."
+                    },
+                ]}
+            />
+        </div>
 
         <div class="fade-in-section">
             <CasosExitoSection
@@ -932,5 +949,19 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-editor-vide
             border: 2px solid #6663fd !important;
             color: #6663fd !important;
         }
+
+        .meta-custom-notice {
+      font-family: "Poppins", sans-serif;
+      margin-top: 40px;
+      padding: 24px 30px;
+      background-color: #f7f8fc;
+      border-left: 4px solid #ff66cc;
+      color: #ff66cc;
+      font-family: "Montserrat", sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
     </style>
 </DashboardLayoutPerfiles>
