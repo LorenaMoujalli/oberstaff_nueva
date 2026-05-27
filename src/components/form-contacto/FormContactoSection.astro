@@ -13,6 +13,7 @@ interface Props {
     steps?: any[];
     reviewTitle?: string;
     reviewItems?: any[];
+    webhookUrl?: string;
 }
 
 const {
@@ -24,7 +25,8 @@ const {
     stepsTitle,
     steps,
     reviewTitle,
-    reviewItems
+    reviewItems,
+    webhookUrl = ""
 } = Astro.props;
 ---
 
@@ -35,6 +37,7 @@ const {
             description={formDescription}
             buttonText={formButtonText}
             microcopy={formMicrocopy}
+            webhookUrl={webhookUrl}
         />
 
         <ContactInfoColumn 

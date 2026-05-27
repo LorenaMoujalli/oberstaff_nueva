@@ -4,6 +4,7 @@ import "../../styles/form/form-elements.css";
 interface Props {
     formTitle?: string;
     buttonText?: string;
+    webhookUrl?: string;
     labels?: {
         name?: string;
         lastName?: string;
@@ -26,6 +27,7 @@ interface Props {
 const {
     formTitle,
     buttonText = "Solicitar Presupuesto Gratuito",
+    webhookUrl = "",
     labels = {
         name: "Nombre *",
         lastName: "Apellido *",
@@ -48,7 +50,7 @@ const {
 
 <div class={`form-card ${customClass}`}>
     {formTitle && <p class="form-title">{formTitle}</p>}
-    <form action="#" method="POST" class="form-grid">
+    <form action="#" method="POST" class="form-grid" data-webhook-url={webhookUrl}>
         <div class="form-group half-width">
             <label>{labels.name}</label>
             <input
@@ -85,6 +87,7 @@ const {
                     type="tel"
                     placeholder="XXX XXX XXX"
                     required
+                    data-phone="true"
                     style="padding-left: 50px; width: 100%; box-sizing: border-box;"
                     oninput="this.value = this.value.replace(/[^0-9 ]/g, '')"
                 />
@@ -102,5 +105,72 @@ const {
                 >{buttonText}</button
             >
         </div>
+        <p class="form-feedback" aria-live="polite"></p>
     </form>
 </div>
+
+<style>
+    .form-feedback {
+        text-align: center;
+        margin-top: 0.75rem;
+        font-size: 0.9rem;
+        font-weight: 500;
+        min-height: 1.2em;
+    }
+    .form-feedback.success {
+        color: #22c55e;
+    }
+    .form-feedback.error {
+        color: #ef4444;
+    }
+</style>
+
+<script>
+    document.querySelectorAll('form[data-webhook-url]').forEach((form) => {
+        const webhookUrl = (form as HTMLFormElement).dataset.webhookUrl;
+        if (!webhookUrl) return;
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const f = e.target as HTMLFormElement;
+            const feedback = f.querySelector('.form-feedback') as HTMLElement;
+            const btn = f.querySelector('button[type="submit"]') as HTMLButtonElement;
+
+            const inputs = f.querySelectorAll('input, textarea');
+            const data: Record<string, string> = {};
+            inputs.forEach((el) => {
+                const input = el as HTMLInputElement | HTMLTextAreaElement;
+                const label = input.closest('.form-group')?.querySelector('label')?.textContent?.replace(' *', '').trim() ?? input.type;
+                const isPhone = (input as HTMLInputElement).dataset?.phone === 'true';
+                if (label) data[label] = isPhone ? `+34 ${input.value}` : input.value;
+            });
+
+            btn.disabled = true;
+            btn.textContent = 'Enviando...';
+            feedback.className = 'form-feedback';
+            feedback.textContent = '';
+
+            try {
+                await fetch(webhookUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data),
+                    mode: 'no-cors'
+                });
+                feedback.className = 'form-feedback success';
+                feedback.textContent = '✅ ¡Mensaje enviado! Nos pondremos en contacto contigo pronto.';
+                f.reset();
+            } catch {
+                feedback.className = 'form-feedback error';
+                feedback.textContent = '❌ Error al enviar. Por favor inténtalo de nuevo.';
+            } finally {
+                btn.disabled = false;
+                btn.textContent = btn.dataset.originalText ?? 'Solicitar Presupuesto Gratuito';
+            }
+        });
+
+        // Guardar texto original del botón
+        const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+        if (btn) btn.dataset.originalText = btn.textContent ?? '';
+    });
+</script>

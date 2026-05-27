@@ -10,6 +10,7 @@ interface Props {
     footerLinkText?: string;
     footerLinkHref?: string;
     cardTitleTag?: string;
+    webhookUrl?: string;
 }
 
 const {
@@ -21,13 +22,14 @@ const {
     footerLinkText = "",
     footerLinkHref = "#",
     cardTitleTag = "p",
+    webhookUrl = ""
 } = Astro.props;
 
 const CardTitleTag = cardTitleTag as any;
 ---
 
 <div class="lead-form-wrapper">
-    <form class="lead-form">
+    <form class="lead-form" data-webhook-url={webhookUrl}>
         <div class="lead-form-header">
             <CardTitleTag class="lead-form-title">{cardTitle}</CardTitleTag>
             {cardSubtitle && <p class="card-subtitle">{cardSubtitle}</p>}
@@ -63,6 +65,8 @@ const CardTitleTag = cardTitleTag as any;
             }
         </button>
 
+        <p class="form-feedback" aria-live="polite"></p>
+
         {buttonSubtext && <p class="btn-subtext">{buttonSubtext}</p>}
 
         {
@@ -74,3 +78,81 @@ const CardTitleTag = cardTitleTag as any;
         }
     </form>
 </div>
+
+<style>
+    .form-feedback {
+        text-align: center;
+        margin-top: 0.75rem;
+        font-size: 0.9rem;
+        font-weight: 500;
+        min-height: 1.2em;
+    }
+    .form-feedback.success {
+        color: #22c55e;
+    }
+    .form-feedback.error {
+        color: #ef4444;
+    }
+</style>
+
+<script>
+    document.querySelectorAll('form[data-webhook-url]').forEach((form) => {
+        const f = form as HTMLFormElement;
+        const webhookUrl = f.dataset.webhookUrl;
+        if (!webhookUrl) return;
+
+        if (f.dataset.listenerAdded) return;
+        f.dataset.listenerAdded = 'true';
+
+        f.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const feedback = f.querySelector('.form-feedback') as HTMLElement;
+            const btn = f.querySelector('button[type="submit"]') as HTMLButtonElement;
+
+            const inputs = f.querySelectorAll('input, textarea');
+            const data: Record<string, string> = {};
+            inputs.forEach((el) => {
+                const input = el as HTMLInputElement | HTMLTextAreaElement;
+                const placeholder = input.getAttribute('placeholder') || '';
+                const key = placeholder.replace(' *', '').trim() || input.type;
+                const isPhone = input.type === 'tel';
+                if (key) {
+                    data[key] = isPhone ? `+34 ${input.value}` : input.value;
+                }
+            });
+
+            btn.disabled = true;
+            btn.innerHTML = 'Enviando...';
+            if (feedback) {
+                feedback.className = 'form-feedback';
+                feedback.textContent = '';
+            }
+
+            try {
+                await fetch(webhookUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data),
+                    mode: 'no-cors'
+                });
+                if (feedback) {
+                    feedback.className = 'form-feedback success';
+                    feedback.textContent = '✅ ¡Mensaje enviado! Nos pondremos en contacto contigo pronto.';
+                }
+                f.reset();
+            } catch {
+                if (feedback) {
+                    feedback.className = 'form-feedback error';
+                    feedback.textContent = '❌ Error al enviar. Por favor inténtalo de nuevo.';
+                }
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = btn.dataset.originalHtml ?? 'Enviar';
+            }
+        });
+
+        // Guardar texto original del botón
+        const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+        if (btn) btn.dataset.originalHtml = btn.innerHTML ?? '';
+    });
+</script>

@@ -11,26 +11,30 @@ interface Props {
     hoverClass?: string;
 }
 
-const { 
-    icon, 
-    title, 
-    description, 
-    href, 
+const {
+    icon,
+    title,
+    description,
+    href,
     linkText = "Ver más",
     colorClass = "icon-blue",
-    hoverClass = "" 
+    hoverClass = "",
 } = Astro.props;
 ---
 
 <div class={`servicio-card ${hoverClass}`}>
     <div class={`servicio-icon ${colorClass}`} aria-hidden="true">
-        {icon.includes(':') ? (
-            <iconify-icon icon={icon} aria-hidden="true"></iconify-icon>
-        ) : (
-            <span class="emoji-icon" aria-hidden="true">{icon}</span>
-        )}
+        {
+            icon.includes(":") ? (
+                <iconify-icon icon={icon} aria-hidden="true" />
+            ) : (
+                <span class="emoji-icon" aria-hidden="true">
+                    {icon}
+                </span>
+            )
+        }
     </div>
-    <h3 class="servicio-card-title" set:html={title}></h3>
+    <h3 class="servicio-card-title" set:html={title} />
     <p set:html={description} />
     <a href={href} class="link-mas">
         {linkText}

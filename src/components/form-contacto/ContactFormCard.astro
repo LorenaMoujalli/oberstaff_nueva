@@ -6,13 +6,15 @@ interface Props {
     description?: string;
     buttonText?: string;
     microcopy?: string;
+    webhookUrl?: string;
 }
 
 const {
     title = "Cuéntanos qué necesita tu empresa",
     description = "Completa el formulario y un especialista de <strong style=\"font-weight: 800;\"><span style=\"color: #1B1B1B;\">Oberstaff</span><span style=\"color: #FF66CC;\">.</span></strong> te orientará sobre la estructura más conveniente. No necesitas tener todo definido: podemos ayudarte a aclarar el perfil, el nivel de seniority, el modelo y los próximos pasos.",
     buttonText = "Solicitar llamada gratuita →",
-    microcopy = "↳ Sin compromiso - Te contactaremos en menos de 24 horas para entender tu necesidad y explicarte los siguientes pasos."
+    microcopy = "↳ Sin compromiso - Te contactaremos en menos de 24 horas para entender tu necesidad y explicarte los siguientes pasos.",
+    webhookUrl = ""
 } = Astro.props;
 ---
 
@@ -20,7 +22,7 @@ const {
     <h2 set:html={title} />
     <p class="intro-text" set:html={description} />
 
-    <form class="modern-form">
+    <form class="modern-form" data-webhook-url={webhookUrl}>
         <input type="text" placeholder="Nombre completo *" required />
         <input type="text" placeholder="Nombre de la empresa *" required />
         
@@ -36,7 +38,86 @@ const {
         <textarea rows="4" placeholder="Comentarios adicionales (opcional)"></textarea>
 
         <button type="submit" class="btn-submit">{buttonText}</button>
+        <p class="form-feedback" aria-live="polite"></p>
     </form>
 
     <p class="microcopy-footer" set:html={microcopy} />
 </div>
+
+<style>
+    .form-feedback {
+        text-align: center;
+        margin-top: 0.75rem;
+        font-size: 0.9rem;
+        font-weight: 500;
+        min-height: 1.2em;
+    }
+    .form-feedback.success {
+        color: #22c55e;
+    }
+    .form-feedback.error {
+        color: #ef4444;
+    }
+</style>
+
+<script>
+    document.querySelectorAll('form[data-webhook-url]').forEach((form) => {
+        const f = form as HTMLFormElement;
+        const webhookUrl = f.dataset.webhookUrl;
+        if (!webhookUrl) return;
+
+        if (f.dataset.listenerAdded) return;
+        f.dataset.listenerAdded = 'true';
+
+        f.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const feedback = f.querySelector('.form-feedback') as HTMLElement;
+            const btn = f.querySelector('button[type="submit"]') as HTMLButtonElement;
+
+            const inputs = f.querySelectorAll('input, textarea');
+            const data: Record<string, string> = {};
+            inputs.forEach((el) => {
+                const input = el as HTMLInputElement | HTMLTextAreaElement;
+                const placeholder = input.getAttribute('placeholder') || '';
+                const key = placeholder.replace(' *', '').trim() || input.type;
+                const isPhone = input.type === 'tel';
+                if (key) {
+                    data[key] = isPhone ? `+34 ${input.value}` : input.value;
+                }
+            });
+
+            btn.disabled = true;
+            btn.innerHTML = 'Enviando...';
+            if (feedback) {
+                feedback.className = 'form-feedback';
+                feedback.textContent = '';
+            }
+
+            try {
+                await fetch(webhookUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data),
+                    mode: 'no-cors'
+                });
+                if (feedback) {
+                    feedback.className = 'form-feedback success';
+                    feedback.textContent = '✅ ¡Mensaje enviado! Nos pondremos en contacto contigo pronto.';
+                }
+                f.reset();
+            } catch {
+                if (feedback) {
+                    feedback.className = 'form-feedback error';
+                    feedback.textContent = '❌ Error al enviar. Por favor inténtalo de nuevo.';
+                }
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = btn.dataset.originalHtml ?? 'Solicitar llamada gratuita →';
+            }
+        });
+
+        // Guardar texto original del botón
+        const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+        if (btn) btn.dataset.originalHtml = btn.innerHTML ?? '';
+    });
+</script>
