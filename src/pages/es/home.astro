@@ -14,10 +14,10 @@ import PressSection from "../../components/press/PressSection.astro";
 import BlogSection from "../../components/blog-home/BlogSection.astro";
 import EorCta from "../../components/eor-cta-servicios/EorCta.astro";
 
-//es/home
---- 
+const ogImage = "Contratar-Talento.webp";
+---  
 
-<DashboardLayout>
+<DashboardLayout ogImage={ogImage}> 
 	<link rel="canonical" href="https://www.oberstaff.com/es/home" slot="head" />
 	<script slot="head" type="application/ld+json">
 	{

@@ -12,8 +12,12 @@ const {
   ogTitle = title,
   ogDescription = "Informe Estratégico de Oberstaff",
   ogUrl = Astro.url.href,
-  ogImage = "https://oberstaff.com/public/og-home.webp"
+  ogImage = "Contratar-Talento.webp"
 } = Astro.props;
+
+const canonicalOgImage = ogImage 
+  ? (ogImage.startsWith('http') ? ogImage : new URL(ogImage.startsWith('/') ? ogImage : `/${ogImage}`, Astro.url.origin).href)
+  : new URL('/Contratar-Talento.webp', Astro.url.origin).href;
 ---
 
 <!doctype html>
@@ -26,11 +30,11 @@ const {
     <meta property="og:description" content={ogDescription} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={ogUrl} />
-    <meta property="og:image" content={ogImage} />
+    <meta property="og:image" content={canonicalOgImage} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={ogTitle} />
     <meta name="twitter:description" content={ogDescription} />
-    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image" content={canonicalOgImage} />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Poppins:wght@300;400;600;700&display=swap"
       rel="stylesheet"
