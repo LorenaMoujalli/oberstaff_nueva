@@ -5,6 +5,7 @@ interface Props {
     buttonText?: string;
     noteText?: string;
     extraTitle?: string;
+    webhookUrl?: string;
 }
 
 const {
@@ -13,6 +14,7 @@ const {
     buttonText = "Solicitar propuesta gratuita →",
     noteText = "Nota: Rellenarlo te lleva menos de 1 minuto",
     extraTitle = "",
+    webhookUrl = "",
 } = Astro.props;
 ---
 
@@ -181,6 +183,21 @@ const {
             font-size: 18px;
         }
     }
+
+    .form-feedback {
+        text-align: center;
+        margin-top: 0.75rem;
+        font-size: 0.9rem;
+        font-weight: 500;
+        min-height: 1.2em;
+        font-family: 'Poppins', sans-serif;
+    }
+    .form-feedback.success {
+        color: #22c55e;
+    }
+    .form-feedback.error {
+        color: #ef4444;
+    }
 </style>
 
 <section class="conv-d-section" id="formulario-perfil">
@@ -195,7 +212,7 @@ const {
 
         <!-- Columna derecha: formulario -->
         <div class="conv-d-card">
-            <form class="conv-d-form">
+            <form class="conv-d-form" data-webhook-url={webhookUrl}>
                 <input type="text" placeholder="Nombre completo *" required />
                 <input type="text" placeholder="Nombre de la empresa *" required />
                 <div class="conv-d-row">
@@ -206,9 +223,72 @@ const {
                     </div>
                 </div>
                 <button type="submit" class="conv-d-btn">{buttonText}</button>
+                <p class="form-feedback" aria-live="polite"></p>
                 <p class="conv-d-note">{noteText}</p>
             </form>
         </div>
 
     </div>
 </section>
+
+<script>
+    document.querySelectorAll('form[data-webhook-url].conv-d-form').forEach((form) => {
+        const f = form as HTMLFormElement;
+        const webhookUrl = f.dataset.webhookUrl;
+        if (!webhookUrl) return;
+
+        if (f.dataset.listenerAdded) return;
+        f.dataset.listenerAdded = 'true';
+
+        f.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const feedback = f.querySelector('.form-feedback') as HTMLElement;
+            const btn = f.querySelector('button[type="submit"]') as HTMLButtonElement;
+
+            const inputs = f.querySelectorAll('input');
+            const data: Record<string, string> = {};
+            inputs.forEach((el) => {
+                const input = el as HTMLInputElement;
+                const placeholder = input.getAttribute('placeholder') || '';
+                const key = placeholder.replace(' *', '').trim() || input.type;
+                const isPhone = input.type === 'tel';
+                if (key) {
+                    data[key] = isPhone ? `+34 ${input.value}` : input.value;
+                }
+            });
+
+            btn.disabled = true;
+            btn.innerHTML = 'Enviando...';
+            if (feedback) {
+                feedback.className = 'form-feedback';
+                feedback.textContent = '';
+            }
+
+            try {
+                await fetch(webhookUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data),
+                    mode: 'no-cors'
+                });
+                if (feedback) {
+                    feedback.className = 'form-feedback success';
+                    feedback.textContent = '✅ ¡Mensaje enviado! Nos pondremos en contacto contigo pronto.';
+                }
+                f.reset();
+            } catch {
+                if (feedback) {
+                    feedback.className = 'form-feedback error';
+                    feedback.textContent = '❌ Error al enviar. Por favor inténtalo de nuevo.';
+                }
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = btn.dataset.originalHtml ?? 'Solicitar propuesta gratuita →';
+            }
+        });
+
+        // Guardar texto original del botón
+        const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+        if (btn) btn.dataset.originalHtml = btn.innerHTML ?? '';
+    });
+</script>
