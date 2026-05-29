@@ -219,9 +219,54 @@ const {
                     <input type="email" placeholder="Email *" required />
                     <div style="position: relative; display: flex; align-items: center; width: 100%;">
                         <span style="position: absolute; left: 16px; color: #5A5A5A; font-family: inherit; font-size: 14px; pointer-events: none;">+34</span>
-                        <input type="tel" placeholder="Teléfono *" required style="padding-left: 50px; width: 100%; box-sizing: border-box;" oninput="this.value = this.value.replace(/[^0-9 ]/g, '')" />
+                        <input type="tel" placeholder="Teléfono *" required style="padding-left: 50px; width: 100%; box-sizing: border-box;" oninput="this.value = this.value.replace(/[^0-9 ]/g, '')" data-phone="true" />
                     </div>
                 </div>
+
+                <!-- SMS Consent Checkbox -->
+                <div class="form-group full-width consent-group" style="margin-bottom: 15px;">
+                    <label class="consent-label" style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer; text-align: left;">
+                        <input
+                            type="checkbox"
+                            id="sms-consent"
+                            class="consent-checkbox"
+                            required
+                            style="flex-shrink: 0; width: 18px; height: 18px; margin-top: 3px; accent-color: #6663FD; cursor: pointer;"
+                        />
+                        <span class="consent-text" style="font-family: 'Poppins', sans-serif; font-size: 13px; line-height: 1.6; color: #4a4a4a;">
+                            <strong>Al facilitar su número de teléfono</strong>, aceptas recibir mensajes SMS
+                            "Mensajes relacionados con atención al cliente" de Oberstaff.
+                            La frecuencia de los mensajes puede variar. Pueden aplicarse tarifas estándar de mensajes y datos.
+                            Responde STOP para cancelar la suscripción. Responde Help para obtener ayuda.
+                            <a href="https://oberstaff.com/politica-de-privacidad-y-cookies-de-oberstaff-com/" target="_blank" class="consent-link" style="color: #6663FD; text-decoration: underline;">Política de privacidad y uso de cookies.</a>
+                           
+                        </span>
+                    </label>
+                    <p class="consent-error" id="consent-error" aria-live="polite" style="font-size: 12px; color: #ef4444; margin-top: 4px; min-height: 1em; text-align: left;"></p>
+                </div>
+
+                <!-- CAPTCHA Verification -->
+                <div class="form-group full-width captcha-group" style="margin-bottom: 20px; text-align: left;">
+                    <label class="captcha-label" style="font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 600; color: #1B1B1B; display: block; margin-bottom: 4px;">Código de verificación <span class="required-star" style="color: #ef4444; font-weight: 700; margin-left: 2px;">*</span></label>
+                    <p class="captcha-hint" style="font-family: 'Poppins', sans-serif; font-size: 12px; color: #888; margin: 0 0 8px 0;">Ingresa el texto que ves en la imagen</p>
+                    <div class="captcha-input-row" style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
+                        <input
+                            type="text"
+                            id="captcha-input"
+                            class="captcha-input"
+                            placeholder="Escribe el código"
+                            autocomplete="off"
+                            maxlength="8"
+                            style="font-family: 'Poppins', sans-serif; background-color: #FAFAFC; border: 1px solid #E0E0E0; padding: 10px 14px; border-radius: 8px; font-size: 15px; outline: none; transition: border-color 0.3s ease, box-shadow 0.3s ease; width: 200px; color: #1B1B1B; letter-spacing: 2px;"
+                        />
+                        <button type="button" id="captcha-refresh" class="captcha-refresh-btn" title="Nuevo código" aria-label="Generar nuevo código" style="background: none; border: 1.5px solid #6663FD; border-radius: 6px; color: #6663FD; font-size: 18px; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s, color 0.2s; padding: 0; flex-shrink: 0;">
+                            &#x21bb;
+                        </button>
+                    </div>
+                    <canvas id="captcha-canvas" class="captcha-canvas" width="200" height="60" aria-label="Código de verificación visual" style="display: block; border-radius: 8px; border: 1px solid #ddd; background: #f4f4f8; user-select: none; pointer-events: none;"></canvas>
+                    <p class="captcha-error" id="captcha-error" aria-live="polite" style="font-size: 12px; color: #ef4444; margin-top: 4px; min-height: 1em;"></p>
+                </div>
+
                 <button type="submit" class="conv-d-btn">{buttonText}</button>
                 <p class="form-feedback" aria-live="polite"></p>
                 <p class="conv-d-note">{noteText}</p>
@@ -231,7 +276,171 @@ const {
     </div>
 </section>
 
+<style>
+    .captcha-input.invalid {
+        border-color: #ef4444 !important;
+        box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.12) !important;
+    }
+    .captcha-refresh-btn:hover {
+        background: #6663FD !important;
+        color: #fff !important;
+    }
+</style>
+
+<style is:global>
+    /* ── Toast Notification ── */
+    .form-toast {
+        position: fixed;
+        bottom: 32px;
+        right: 32px;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 16px 20px;
+        border-radius: 14px;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+        font-family: 'Poppins', sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        max-width: 420px;
+        min-width: 280px;
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 0.35s ease, transform 0.35s ease;
+        pointer-events: auto;
+    }
+    .form-toast--visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .form-toast--success {
+        background: #ffffff;
+        border-left: 5px solid #22c55e;
+        color: #1b1b1b;
+    }
+    .form-toast--error {
+        background: #ffffff;
+        border-left: 5px solid #ef4444;
+        color: #1b1b1b;
+    }
+    .toast-icon {
+        font-size: 20px;
+        flex-shrink: 0;
+    }
+    .toast-msg {
+        flex: 1;
+        line-height: 1.5;
+    }
+    .toast-close {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 14px;
+        color: #999;
+        padding: 0 2px;
+        line-height: 1;
+        flex-shrink: 0;
+        transition: color 0.2s;
+    }
+    .toast-close:hover {
+        color: #333;
+    }
+    @media (max-width: 480px) {
+        .form-toast {
+            bottom: 16px;
+            right: 12px;
+            left: 12px;
+            max-width: 100%;
+            min-width: unset;
+        }
+    }
+</style>
+
 <script>
+    // ── Toast Notification ─────────────────────────────────────────
+    function showToast(message: string, type: 'success' | 'error' = 'success') {
+        const existing = document.getElementById('form-toast');
+        if (existing) existing.remove();
+
+        const toast = document.createElement('div');
+        toast.id = 'form-toast';
+        toast.setAttribute('role', 'alert');
+        toast.setAttribute('aria-live', 'assertive');
+        toast.innerHTML = `<span class="toast-icon">${type === 'success' ? '✅' : '❌'}</span><span class="toast-msg">${message}</span><button class="toast-close" aria-label="Cerrar">✕</button>`;
+        toast.className = `form-toast form-toast--${type}`;
+        document.body.appendChild(toast);
+
+        // Force reflow for animation
+        void toast.offsetHeight;
+        toast.classList.add('form-toast--visible');
+
+        const dismiss = () => {
+            toast.classList.remove('form-toast--visible');
+            setTimeout(() => toast.remove(), 400);
+        };
+        toast.querySelector('.toast-close')?.addEventListener('click', dismiss);
+        setTimeout(dismiss, 6000);
+    }
+
+    // ── CAPTCHA Generator ──────────────────────────────────────────
+    const CAPTCHA_CHARS = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+
+    function generateCaptchaCode(length = 6): string {
+        let code = '';
+        for (let i = 0; i < length; i++) {
+            code += CAPTCHA_CHARS[Math.floor(Math.random() * CAPTCHA_CHARS.length)];
+        }
+        return code;
+    }
+
+    function drawCaptcha(canvas: HTMLCanvasElement, code: string) {
+        const ctx = canvas.getContext('2d')!;
+        const w = canvas.width;
+        const h = canvas.height;
+
+        // Background
+        ctx.clearRect(0, 0, w, h);
+        ctx.fillStyle = '#f0f0f6';
+        ctx.fillRect(0, 0, w, h);
+
+        // Noise lines
+        for (let i = 0; i < 6; i++) {
+            ctx.strokeStyle = `hsl(${Math.random() * 360}, 40%, 70%)`;
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(Math.random() * w, Math.random() * h);
+            ctx.lineTo(Math.random() * w, Math.random() * h);
+            ctx.stroke();
+        }
+
+        // Noise dots
+        for (let i = 0; i < 40; i++) {
+            ctx.fillStyle = `hsl(${Math.random() * 360}, 40%, 65%)`;
+            ctx.beginPath();
+            ctx.arc(Math.random() * w, Math.random() * h, 1, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        // Draw characters
+        const charW = w / (code.length + 1);
+        for (let i = 0; i < code.length; i++) {
+            ctx.save();
+            const x = charW * (i + 0.9);
+            const y = h / 2 + 8;
+            const angle = (Math.random() - 0.5) * 0.4;
+            ctx.translate(x, y);
+            ctx.rotate(angle);
+            ctx.font = `bold ${20 + Math.random() * 6}px monospace`;
+            ctx.fillStyle = `hsl(${240 + Math.random() * 60}, 55%, 35%)`;
+            ctx.strokeStyle = `hsl(${240 + Math.random() * 60}, 40%, 60%)`;
+            ctx.lineWidth = 0.5;
+            ctx.strokeText(code[i], 0, 0);
+            ctx.fillText(code[i], 0, 0);
+            ctx.restore();
+        }
+    }
+
     document.querySelectorAll('form[data-webhook-url].conv-d-form').forEach((form) => {
         const f = form as HTMLFormElement;
         const webhookUrl = f.dataset.webhookUrl;
@@ -240,22 +449,76 @@ const {
         if (f.dataset.listenerAdded) return;
         f.dataset.listenerAdded = 'true';
 
+        // CAPTCHA state
+        let currentCode = '';
+        const canvas = f.querySelector('#captcha-canvas') as HTMLCanvasElement;
+        const captchaInput = f.querySelector('#captcha-input') as HTMLInputElement;
+        const captchaRefresh = f.querySelector('#captcha-refresh') as HTMLButtonElement;
+        const captchaError = f.querySelector('#captcha-error') as HTMLElement;
+
+        function refreshCaptcha() {
+            currentCode = generateCaptchaCode();
+            drawCaptcha(canvas, currentCode);
+            captchaInput.value = '';
+            captchaInput.classList.remove('invalid');
+            if (captchaError) captchaError.textContent = '';
+        }
+
+        refreshCaptcha();
+        captchaRefresh?.addEventListener('click', refreshCaptcha);
+
+        // Consent elements
+        const consentCheckbox = f.querySelector('#sms-consent') as HTMLInputElement;
+        const consentError = f.querySelector('#consent-error') as HTMLElement;
+
+        // Save original button text
+        const btn = f.querySelector('button[type="submit"]') as HTMLButtonElement;
+        if (btn) btn.dataset.originalHtml = btn.innerHTML ?? '';
+
         f.addEventListener('submit', async (e) => {
             e.preventDefault();
             const feedback = f.querySelector('.form-feedback') as HTMLElement;
-            const btn = f.querySelector('button[type="submit"]') as HTMLButtonElement;
 
-            const inputs = f.querySelectorAll('input');
+            // ── Validate consent ──
+            let hasError = false;
+            if (!consentCheckbox?.checked) {
+                if (consentError) consentError.textContent = '⚠ Debes aceptar el consentimiento para continuar.';
+                hasError = true;
+            } else {
+                if (consentError) consentError.textContent = '';
+            }
+
+            // ── Validate CAPTCHA ──
+            const userCode = captchaInput?.value.trim().toUpperCase();
+            if (!userCode) {
+                if (captchaError) captchaError.textContent = '⚠ Este campo es obligatorio. Ingresa el código de la imagen.';
+                captchaInput?.classList.add('invalid');
+                hasError = true;
+            } else if (userCode !== currentCode) {
+                refreshCaptcha();
+                if (captchaError) captchaError.textContent = '❌ El código ingresado es incorrecto. Se generó un nuevo código, inténtalo de nuevo.';
+                captchaInput?.classList.add('invalid');
+                hasError = true;
+            } else {
+                if (captchaError) captchaError.textContent = '';
+                captchaInput?.classList.remove('invalid');
+            }
+
+            if (hasError) return;
+
+            // ── Collect data ──
+            const inputs = f.querySelectorAll('input:not([type="checkbox"]):not(#captcha-input)');
             const data: Record<string, string> = {};
             inputs.forEach((el) => {
                 const input = el as HTMLInputElement;
                 const placeholder = input.getAttribute('placeholder') || '';
                 const key = placeholder.replace(' *', '').trim() || input.type;
-                const isPhone = input.type === 'tel';
+                const isPhone = input.type === 'tel' || input.dataset.phone === 'true';
                 if (key) {
                     data[key] = isPhone ? `+34 ${input.value}` : input.value;
                 }
             });
+            data['Consentimiento SMS'] = 'Aceptado';
 
             btn.disabled = true;
             btn.innerHTML = 'Enviando...';
@@ -271,11 +534,9 @@ const {
                     body: JSON.stringify(data),
                     mode: 'no-cors'
                 });
-                if (feedback) {
-                    feedback.className = 'form-feedback success';
-                    feedback.textContent = '✅ ¡Mensaje enviado! Nos pondremos en contacto contigo pronto.';
-                }
                 f.reset();
+                refreshCaptcha();
+                showToast('¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.', 'success');
             } catch {
                 if (feedback) {
                     feedback.className = 'form-feedback error';
@@ -287,8 +548,15 @@ const {
             }
         });
 
-        // Guardar texto original del botón
-        const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
-        if (btn) btn.dataset.originalHtml = btn.innerHTML ?? '';
+        // Clear captcha error on input
+        captchaInput?.addEventListener('input', () => {
+            captchaInput.classList.remove('invalid');
+            if (captchaError) captchaError.textContent = '';
+        });
+
+        // Clear consent error on check
+        consentCheckbox?.addEventListener('change', () => {
+            if (consentCheckbox.checked && consentError) consentError.textContent = '';
+        });
     });
 </script>
