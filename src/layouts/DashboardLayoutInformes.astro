@@ -7,17 +7,22 @@ interface Props {
   ogImage?: string;
 }
 
-const { 
+const {
   title = "Informe Estratégico | Oberstaff",
   ogTitle = title,
   ogDescription = "Informe Estratégico de Oberstaff",
   ogUrl = Astro.url.href,
-  ogImage = "Contratar-Talento.webp"
+  ogImage = "",
 } = Astro.props;
 
-const canonicalOgImage = ogImage 
-  ? (ogImage.startsWith('http') ? ogImage : new URL(ogImage.startsWith('/') ? ogImage : `/${ogImage}`, Astro.url.origin).href)
-  : new URL('/Contratar-Talento.webp', Astro.url.origin).href;
+const canonicalOgImage = ogImage
+  ? ogImage.startsWith("http")
+    ? ogImage
+    : new URL(
+        ogImage.startsWith("/") ? ogImage : `/${ogImage}`,
+        Astro.url.origin,
+      ).href
+  : new URL("", Astro.url.origin).href;
 ---
 
 <!doctype html>
@@ -51,9 +56,9 @@ const canonicalOgImage = ogImage
 
 <style is:global>
   :root {
-    --brand-pink: #FF66CC;
+    --brand-pink: #ff66cc;
     /* Colores para el degradado de fondo profundo */
-    --bg-dark-void: #0a0a0a;  /* Negro casi total para la parte superior */
+    --bg-dark-void: #0a0a0a; /* Negro casi total para la parte superior */
     --bg-light-glow: #2a2a2a; /* Gris con luz para la base */
   }
 
@@ -63,19 +68,20 @@ const canonicalOgImage = ogImage
     padding: 0;
   }
 
-  html, body {
+  html,
+  body {
     height: 100%;
     margin: 0;
     /* Gradiente Radial elíptico posicionado en la parte inferior central */
     background: radial-gradient(
-      ellipse at 50% 100%, 
-      var(--bg-light-glow) 0%, 
+      ellipse at 50% 100%,
+      var(--bg-light-glow) 0%,
       var(--bg-dark-void) 70%
     );
     background-color: var(--bg-dark-void);
     background-attachment: fixed;
     color: #ffffff;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
   }
 
   .report-layout-container {
@@ -112,7 +118,7 @@ const canonicalOgImage = ogImage
     max-width: 580px;
     width: 100%;
     position: relative;
-    box-shadow: 
+    box-shadow:
       0 30px 60px rgba(0, 0, 0, 0.8),
       0 0 40px rgba(255, 102, 204, 0.05); /* Glow exterior muy suave */
     z-index: 2;

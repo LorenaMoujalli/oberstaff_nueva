@@ -21,12 +21,17 @@ const {
 	ogTitle = title,
 	ogDescription = description,
 	ogUrl = Astro.url.href,
-	ogImage = "Contratar-Talento.webp"
+	ogImage = "Contratar-Talento.webp",
 } = Astro.props;
 
-const canonicalOgImage = ogImage 
-  ? (ogImage.startsWith('http') ? ogImage : new URL(ogImage.startsWith('/') ? ogImage : `/${ogImage}`, Astro.url.origin).href)
-  : new URL('/Contratar-Talento.webp', Astro.url.origin).href;
+const canonicalOgImage = ogImage
+	? ogImage.startsWith("http")
+		? ogImage
+		: new URL(
+				ogImage.startsWith("/") ? ogImage : `/${ogImage}`,
+				Astro.url.origin,
+			).href
+	: new URL("/Contratar-Talento.webp", Astro.url.origin).href;
 ---
 
 <!doctype html>

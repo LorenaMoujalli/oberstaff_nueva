@@ -100,6 +100,48 @@ const {
                 placeholder={placeholders.comments}
             ></textarea>
         </div>
+        <!-- SMS Consent Checkbox -->
+        <div class="form-group full-width consent-group">
+            <label class="consent-label">
+                <input
+                    type="checkbox"
+                    id="sms-consent"
+                    class="consent-checkbox"
+                    required
+                />
+                <span class="consent-text">
+                    <strong>Al facilitar su número de teléfono</strong>, aceptas recibir mensajes SMS
+                    "Mensajes relacionados con atención al cliente" de Oberstaff.
+                    La frecuencia de los mensajes puede variar. Pueden aplicarse tarifas estándar de mensajes y datos.
+                    Responde STOP para cancelar la suscripción. Responde Help para obtener ayuda.
+                    <a href="/es/politica-de-privacidad" target="_blank" class="consent-link">Política de privacidad y Términos y condiciones.</a>
+                    <span class="required-star">*</span>
+                </span>
+            </label>
+            <p class="consent-error" id="consent-error" aria-live="polite"></p>
+        </div>
+
+        <!-- CAPTCHA Verification -->
+        <div class="form-group full-width captcha-group">
+            <label class="captcha-label">Código de verificación <span class="required-star">*</span></label>
+            <p class="captcha-hint">Ingresa el texto que ves en la imagen</p>
+            <div class="captcha-input-row">
+                <input
+                    type="text"
+                    id="captcha-input"
+                    class="captcha-input"
+                    placeholder="Escribe el código"
+                    autocomplete="off"
+                    maxlength="8"
+                />
+                <button type="button" id="captcha-refresh" class="captcha-refresh-btn" title="Nuevo código" aria-label="Generar nuevo código">
+                    &#x21bb;
+                </button>
+            </div>
+            <canvas id="captcha-canvas" class="captcha-canvas" width="200" height="60" aria-label="Código de verificación visual"></canvas>
+            <p class="captcha-error" id="captcha-error" aria-live="polite"></p>
+        </div>
+
         <div class="button-container-centered">
             <button type="submit" class="btn-submit"
                 >{buttonText}</button
@@ -123,27 +165,353 @@ const {
     .form-feedback.error {
         color: #ef4444;
     }
+
+    /* ── Consent Checkbox ── */
+    .consent-group {
+        margin-top: 8px;
+    }
+    .consent-label {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        cursor: pointer;
+    }
+    .consent-checkbox {
+        flex-shrink: 0;
+        width: 18px;
+        height: 18px;
+        margin-top: 3px;
+        accent-color: #6663FD;
+        cursor: pointer;
+    }
+    .consent-text {
+        font-family: 'Poppins', sans-serif;
+        font-size: 13px;
+        line-height: 1.6;
+        color: #4a4a4a;
+    }
+    .consent-link {
+        color: #6663FD;
+        text-decoration: underline;
+    }
+    .required-star {
+        color: #ef4444;
+        font-weight: 700;
+        margin-left: 2px;
+    }
+    .consent-error,
+    .captcha-error {
+        font-size: 12px;
+        color: #ef4444;
+        margin-top: 4px;
+        min-height: 1em;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    /* ── CAPTCHA ── */
+    .captcha-group {
+        margin-top: 8px;
+    }
+    .captcha-label {
+        font-family: 'Poppins', sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        color: #1B1B1B;
+        margin-bottom: 4px;
+    }
+    .captcha-hint {
+        font-family: 'Poppins', sans-serif;
+        font-size: 12px;
+        color: #888;
+        margin: 0 0 8px 0;
+    }
+    .captcha-input-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 10px;
+    }
+    .captcha-input {
+        font-family: 'Poppins', sans-serif;
+        background-color: #FAFAFC;
+        border: 1px solid #E0E0E0;
+        padding: 10px 14px;
+        border-radius: 8px;
+        font-size: 15px;
+        outline: none;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        width: 200px;
+        color: #1B1B1B;
+        letter-spacing: 2px;
+    }
+    .captcha-input:focus {
+        border-color: #6663FD;
+        background: #ffffff;
+        box-shadow: 0 0 0 4px rgba(102, 99, 253, 0.05);
+    }
+    .captcha-input.invalid {
+        border-color: #ef4444;
+        box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.12);
+    }
+    .captcha-refresh-btn {
+        background: none;
+        border: 1.5px solid #6663FD;
+        border-radius: 6px;
+        color: #6663FD;
+        font-size: 18px;
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background 0.2s, color 0.2s;
+        padding: 0;
+        flex-shrink: 0;
+    }
+    .captcha-refresh-btn:hover {
+        background: #6663FD;
+        color: #fff;
+    }
+    .captcha-canvas {
+        display: block;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        background: #f4f4f8;
+        user-select: none;
+        pointer-events: none;
+    }
+</style>
+
+<style is:global>
+    /* ── Toast Notification ── */
+    .form-toast {
+        position: fixed;
+        bottom: 32px;
+        right: 32px;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 16px 20px;
+        border-radius: 14px;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+        font-family: 'Poppins', sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        max-width: 420px;
+        min-width: 280px;
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 0.35s ease, transform 0.35s ease;
+        pointer-events: auto;
+    }
+    .form-toast--visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .form-toast--success {
+        background: #ffffff;
+        border-left: 5px solid #22c55e;
+        color: #1b1b1b;
+    }
+    .form-toast--error {
+        background: #ffffff;
+        border-left: 5px solid #ef4444;
+        color: #1b1b1b;
+    }
+    .toast-icon {
+        font-size: 20px;
+        flex-shrink: 0;
+    }
+    .toast-msg {
+        flex: 1;
+        line-height: 1.5;
+    }
+    .toast-close {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 14px;
+        color: #999;
+        padding: 0 2px;
+        line-height: 1;
+        flex-shrink: 0;
+        transition: color 0.2s;
+    }
+    .toast-close:hover {
+        color: #333;
+    }
+    @media (max-width: 480px) {
+        .form-toast {
+            bottom: 16px;
+            right: 12px;
+            left: 12px;
+            max-width: 100%;
+            min-width: unset;
+        }
+    }
 </style>
 
 <script>
+    // ── Toast Notification ─────────────────────────────────────────
+    function showToast(message: string, type: 'success' | 'error' = 'success') {
+        const existing = document.getElementById('form-toast');
+        if (existing) existing.remove();
+
+        const toast = document.createElement('div');
+        toast.id = 'form-toast';
+        toast.setAttribute('role', 'alert');
+        toast.setAttribute('aria-live', 'assertive');
+        toast.innerHTML = `<span class="toast-icon">${type === 'success' ? '✅' : '❌'}</span><span class="toast-msg">${message}</span><button class="toast-close" aria-label="Cerrar">✕</button>`;
+        toast.className = `form-toast form-toast--${type}`;
+        document.body.appendChild(toast);
+
+        // Force reflow for animation
+        void toast.offsetHeight;
+        toast.classList.add('form-toast--visible');
+
+        const dismiss = () => {
+            toast.classList.remove('form-toast--visible');
+            setTimeout(() => toast.remove(), 400);
+        };
+        toast.querySelector('.toast-close')?.addEventListener('click', dismiss);
+        setTimeout(dismiss, 6000);
+    }
+
+    // ── CAPTCHA Generator ──────────────────────────────────────────
+    const CAPTCHA_CHARS = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+
+    function generateCaptchaCode(length = 6): string {
+        let code = '';
+        for (let i = 0; i < length; i++) {
+            code += CAPTCHA_CHARS[Math.floor(Math.random() * CAPTCHA_CHARS.length)];
+        }
+        return code;
+    }
+
+    function drawCaptcha(canvas: HTMLCanvasElement, code: string) {
+        const ctx = canvas.getContext('2d')!;
+        const w = canvas.width;
+        const h = canvas.height;
+
+        // Background
+        ctx.clearRect(0, 0, w, h);
+        ctx.fillStyle = '#f0f0f6';
+        ctx.fillRect(0, 0, w, h);
+
+        // Noise lines
+        for (let i = 0; i < 6; i++) {
+            ctx.strokeStyle = `hsl(${Math.random() * 360}, 40%, 70%)`;
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(Math.random() * w, Math.random() * h);
+            ctx.lineTo(Math.random() * w, Math.random() * h);
+            ctx.stroke();
+        }
+
+        // Noise dots
+        for (let i = 0; i < 40; i++) {
+            ctx.fillStyle = `hsl(${Math.random() * 360}, 40%, 65%)`;
+            ctx.beginPath();
+            ctx.arc(Math.random() * w, Math.random() * h, 1, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        // Draw characters
+        const charW = w / (code.length + 1);
+        for (let i = 0; i < code.length; i++) {
+            ctx.save();
+            const x = charW * (i + 0.9);
+            const y = h / 2 + 8;
+            const angle = (Math.random() - 0.5) * 0.4;
+            ctx.translate(x, y);
+            ctx.rotate(angle);
+            ctx.font = `bold ${20 + Math.random() * 6}px monospace`;
+            ctx.fillStyle = `hsl(${240 + Math.random() * 60}, 55%, 35%)`;
+            ctx.strokeStyle = `hsl(${240 + Math.random() * 60}, 40%, 60%)`;
+            ctx.lineWidth = 0.5;
+            ctx.strokeText(code[i], 0, 0);
+            ctx.fillText(code[i], 0, 0);
+            ctx.restore();
+        }
+    }
+
+    // ── Per-form initialization ────────────────────────────────────
     document.querySelectorAll('form[data-webhook-url]').forEach((form) => {
         const webhookUrl = (form as HTMLFormElement).dataset.webhookUrl;
         if (!webhookUrl) return;
+
+        // CAPTCHA state
+        let currentCode = '';
+        const canvas = form.querySelector('#captcha-canvas') as HTMLCanvasElement;
+        const captchaInput = form.querySelector('#captcha-input') as HTMLInputElement;
+        const captchaRefresh = form.querySelector('#captcha-refresh') as HTMLButtonElement;
+        const captchaError = form.querySelector('#captcha-error') as HTMLElement;
+
+        function refreshCaptcha() {
+            currentCode = generateCaptchaCode();
+            drawCaptcha(canvas, currentCode);
+            captchaInput.value = '';
+            captchaInput.classList.remove('invalid');
+            if (captchaError) captchaError.textContent = '';
+        }
+
+        refreshCaptcha();
+        captchaRefresh?.addEventListener('click', refreshCaptcha);
+
+        // Consent elements
+        const consentCheckbox = form.querySelector('#sms-consent') as HTMLInputElement;
+        const consentError = form.querySelector('#consent-error') as HTMLElement;
+
+        // Save original button text
+        const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+        if (btn) btn.dataset.originalText = btn.textContent ?? '';
 
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
             const f = e.target as HTMLFormElement;
             const feedback = f.querySelector('.form-feedback') as HTMLElement;
-            const btn = f.querySelector('button[type="submit"]') as HTMLButtonElement;
 
-            const inputs = f.querySelectorAll('input, textarea');
+            // ── Validate consent ──
+            let hasError = false;
+            if (!consentCheckbox?.checked) {
+                if (consentError) consentError.textContent = '⚠ Debes aceptar el consentimiento para continuar.';
+                hasError = true;
+            } else {
+                if (consentError) consentError.textContent = '';
+            }
+
+            // ── Validate CAPTCHA ──
+            const userCode = captchaInput?.value.trim().toUpperCase();
+            if (!userCode) {
+                // Campo vacío
+                if (captchaError) captchaError.textContent = '⚠ Este campo es obligatorio. Ingresa el código de la imagen.';
+                captchaInput?.classList.add('invalid');
+                hasError = true;
+            } else if (userCode !== currentCode) {
+                // Código incorrecto: refresh primero, luego mostrar error (refreshCaptcha limpia el mensaje)
+                refreshCaptcha();
+                if (captchaError) captchaError.textContent = '❌ El código ingresado es incorrecto. Se generó un nuevo código, inténtalo de nuevo.';
+                captchaInput?.classList.add('invalid');
+                hasError = true;
+            } else {
+                if (captchaError) captchaError.textContent = '';
+                captchaInput?.classList.remove('invalid');
+            }
+
+            if (hasError) return;
+
+            // ── Collect data ──
+            const inputs = f.querySelectorAll('input:not([type="checkbox"]):not(#captcha-input), textarea');
             const data: Record<string, string> = {};
             inputs.forEach((el) => {
                 const input = el as HTMLInputElement | HTMLTextAreaElement;
-                const label = input.closest('.form-group')?.querySelector('label')?.textContent?.replace(' *', '').trim() ?? input.type;
+                const label = input.closest('.form-group')?.querySelector('label')?.textContent?.replace(/ \*/g, '').trim() ?? input.type;
                 const isPhone = (input as HTMLInputElement).dataset?.phone === 'true';
                 if (label) data[label] = isPhone ? `+34 ${input.value}` : input.value;
             });
+            data['Consentimiento SMS'] = 'Aceptado';
 
             btn.disabled = true;
             btn.textContent = 'Enviando...';
@@ -157,9 +525,9 @@ const {
                     body: JSON.stringify(data),
                     mode: 'no-cors'
                 });
-                feedback.className = 'form-feedback success';
-                feedback.textContent = '✅ ¡Mensaje enviado! Nos pondremos en contacto contigo pronto.';
                 f.reset();
+                refreshCaptcha();
+                showToast('✅ ¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.', 'success');
             } catch {
                 feedback.className = 'form-feedback error';
                 feedback.textContent = '❌ Error al enviar. Por favor inténtalo de nuevo.';
@@ -169,8 +537,15 @@ const {
             }
         });
 
-        // Guardar texto original del botón
-        const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
-        if (btn) btn.dataset.originalText = btn.textContent ?? '';
+        // Clear captcha error on input
+        captchaInput?.addEventListener('input', () => {
+            captchaInput.classList.remove('invalid');
+            if (captchaError) captchaError.textContent = '';
+        });
+
+        // Clear consent error on check
+        consentCheckbox?.addEventListener('change', () => {
+            if (consentCheckbox.checked && consentError) consentError.textContent = '';
+        });
     });
 </script>
