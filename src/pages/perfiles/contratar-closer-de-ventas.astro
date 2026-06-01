@@ -1,19 +1,19 @@
 ---
-import DashboardLayoutPerfiles from "../../../layouts/DashboardLayoutPerfiles.astro";
-import LeadHeroSection from "../../../components/community-manager/LeadHeroSection.astro";
-import ComparisonPerfiles from "../../../components/comparison-perfiles/ComparisonPerfiles.astro";
-import PricingCardPerfil from "../../../components/pricing-perfil/PricingCardPerfil.astro";
-import BeneficiosPerfilDisenador from "../../../components/beneficios-perfil/BeneficiosPerfilDisenador.astro";
-import PressSection from "../../../components/press/PressSection.astro";
-import ConversionPerfilDisenador from "../../../components/conversion-perfil/ConversionPerfilDisenador.astro";
-import RolesPerfil from "../../../components/roles-del-perfil/RolesPerfil.astro";
-import QueEsServicioSection from "../../../components/QueEsServicio/QueEsServicioSection.astro";
-import ServicesSection from "../../../components/services-oberstaff/ServicesSection.astro";
-import EorStepsSection from "../../../components/eor-steps-servicios/EorStepsSection.astro";
-import EorCta from "../../../components/eor-cta-servicios/EorCta.astro";
-import CasosExitoSection from "../../../components/casos-exito-servicios/CasosExitoSection.astro";
-import FAQSection from "../../../components/faq-servicios/FAQSection-closer-ventas.astro";
-import GuiaContratacion from "../../../components/guia-contratacion-perfiles/GuiaContratacion.astro";
+import DashboardLayoutPerfiles from "../../layouts/DashboardLayoutPerfiles.astro";
+import LeadHeroSection from "../../components/community-manager/LeadHeroSection.astro";
+import ComparisonPerfiles from "../../components/comparison-perfiles/ComparisonPerfiles.astro";
+import PricingCardPerfil from "../../components/pricing-perfil/PricingCardPerfil.astro";
+import BeneficiosPerfilDisenador from "../../components/beneficios-perfil/BeneficiosPerfilDisenador.astro";
+import PressSection from "../../components/press/PressSection.astro";
+import ConversionPerfilDisenador from "../../components/conversion-perfil/ConversionPerfilDisenador.astro";
+import RolesPerfil from "../../components/roles-del-perfil/RolesPerfil.astro";
+import QueEsServicioSection from "../../components/QueEsServicio/QueEsServicioSection.astro";
+import ServicesSection from "../../components/services-oberstaff/ServicesSection.astro";
+import EorStepsSection from "../../components/eor-steps-servicios/EorStepsSection.astro";
+import EorCta from "../../components/eor-cta-servicios/EorCta.astro";
+import CasosExitoSection from "../../components/casos-exito-servicios/CasosExitoSection.astro";
+import FAQSection from "../../components/faq-servicios/FAQSection-closer-ventas.astro";
+import GuiaContratacion from "../../components/guia-contratacion-perfiles/GuiaContratacion.astro";
 
 const ogImage = "Contratar closer de ventas.webp";
 ---
@@ -26,22 +26,27 @@ const ogImage = "Contratar closer de ventas.webp";
     footerLinks={[
         {
             text: "✍️ Copywriter (argumentarios y landings)",
-            href: "/es/perfiles/contratar-copywriter/",
+            href: "/perfiles/contratar-copywriter",
         },
         {
             text: "🔍 Especialista en Google Ads",
-            href: "/es/perfiles/especialista-en-google-ads/",
+            href: "/perfiles/especialista-en-google-ads",
         },
         {
             text: "🗂️ Asistente Virtual",
-            href: "/es/perfiles/contratar-un-asistente-virtual/",
+            href: "/perfiles/contratar-un-asistente-virtual",
         },
         {
             text: "📱 Especialista en Meta Ads",
-            href: "/es/perfiles/experto-en-meta-ads/",
+            href: "/perfiles/experto-en-meta-ads",
         },
     ]}
 >
+    <link
+        rel="canonical"
+        href="https://www.oberstaff.com/perfiles/contratar-closer-de-ventas"
+        slot="head"
+    />
     <script type="application/ld+json" slot="head">
         {
             "@context": "https://schema.org",
@@ -608,7 +613,7 @@ const ogImage = "Contratar closer de ventas.webp";
             buttonIcon=""
             buttonSubtext=""
             footerLinkText="Ver cómo funciona el modelo EOR →"
-            footerLinkHref="/es/servicios/employer-of-record/"
+            footerLinkHref="/servicios/employer-of-record/"
             badges={[
                 {
                     text: "Venta consultiva y seguimiento comercial con criterio",

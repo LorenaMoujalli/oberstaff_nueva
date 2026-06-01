@@ -1,13 +1,13 @@
 ---
-import DashboardLayoutContacto from "../../layouts/DashboardLayoutContacto.astro";
+import DashboardLayoutContacto from "../layouts/DashboardLayoutContacto.astro";
 //import HeroContactoSection from "../../components/hero-contacto/HeroContactoSection.astro";
 //import FormContactoSection from "../../components/form-contacto/FormContactoSection.astro";
 //import ChannelsSection from "../../components/canales-contacto/ChannelsSection.astro";
-import LeadHeroSection from "../../components/community-manager/LeadHeroSection.astro";
-import QueEsServicioSection from "../../components/QueEsServicio/QueEsServicioSection.astro";
-import VisionMisionSection from "../../components/vision-mision-contacto/VisionMisionSection.astro";
-import VisionMisionCard from "../../components/vision-mision-contacto/VisionMisionCard.astro";
-import FAQSection from "../../components/faq-servicios/FAQSection-quienes-somos.astro";
+import LeadHeroSection from "../components/community-manager/LeadHeroSection.astro";
+import QueEsServicioSection from "../components/QueEsServicio/QueEsServicioSection.astro";
+import VisionMisionSection from "../components/vision-mision-contacto/VisionMisionSection.astro";
+import VisionMisionCard from "../components/vision-mision-contacto/VisionMisionCard.astro";
+import FAQSection from "../components/faq-servicios/FAQSection-quienes-somos.astro";
 const ogImage = "Quienes somos Oberstaff.webp";
 ---
 
@@ -16,17 +16,17 @@ const ogImage = "Quienes somos Oberstaff.webp";
     title="Conoce Oberstaff | Un puente de talento"
     description="Descubre el propósito de Oberstaff y la visión que nos mueve: conectar empresas españolas con profesionales de LATAM mediante trabajo remoto estructurado."
 >
-    <link rel="canonical" href="https://www.oberstaff.com/quienes-somos" slot="head" />
+    <link rel="canonical" href="https://www.oberstaff.com/quienesomos" slot="head" />
     <script slot="head" type="application/ld+json">
         {
             "@context": "https://schema.org",
             "@graph": [
                 {
                     "@type": "AboutPage",
-                    "@id": "https://www.oberstaff.com/quienes-somos#webpage",
-                    "url": "https://www.oberstaff.com/quienes-somos",
+                    "@id": "https://www.oberstaff.com/quienesomos#webpage",
+                    "url": "https://www.oberstaff.com/quienesomos",
                     "name": "Conoce Oberstaff | Un puente de talento",
-                    "description": "Descubre el propósito de Oberstaff y la visión que nos mueve: conectar empresas españolas con profesionales de LATAM mediante trabajo remoto estructurado.",
+                    "description": "Descubre el propósito de Oberstaff and la visión que nos mueve: conectar empresas españolas con profesionales de LATAM mediante trabajo remoto estructurado.",
                     "inLanguage": "es-ES",
                     "isPartOf": {
                         "@id": "https://www.oberstaff.com/#website"
@@ -49,20 +49,20 @@ const ogImage = "Quienes somos Oberstaff.webp";
                         }
                     },
                     "breadcrumb": {
-                        "@id": "https://www.oberstaff.com/quienes-somos#breadcrumb"
+                        "@id": "https://www.oberstaff.com/quienesomos#breadcrumb"
                     },
                     "mentions": [
                         {
-                            "@id": "https://www.oberstaff.com/quienes-somos#identity"
+                            "@id": "https://www.oberstaff.com/quienesomos#identity"
                         },
                         {
-                            "@id": "https://www.oberstaff.com/quienes-somos#purpose"
+                            "@id": "https://www.oberstaff.com/quienesomos#purpose"
                         },
                         {
-                            "@id": "https://www.oberstaff.com/quienes-somos#trust"
+                            "@id": "https://www.oberstaff.com/quienesomos#trust"
                         },
                         {
-                            "@id": "https://www.oberstaff.com/quienes-somos#faq"
+                            "@id": "https://www.oberstaff.com/quienesomos#faq"
                         }
                     ]
                 },
@@ -144,7 +144,7 @@ const ogImage = "Quienes somos Oberstaff.webp";
                 },
                 {
                     "@type": "ItemList",
-                    "@id": "https://www.oberstaff.com/quienes-somos#identity",
+                    "@id": "https://www.oberstaff.com/quienesomos#identity",
                     "name": "Identidad de Oberstaff",
                     "description": "Elementos principales que explican qué es Oberstaff, por qué nació y cómo conecta empresas españolas con talento de LATAM.",
                     "itemListElement": [
@@ -170,7 +170,7 @@ const ogImage = "Quienes somos Oberstaff.webp";
                 },
                 {
                     "@type": "ItemList",
-                    "@id": "https://www.oberstaff.com/quienes-somos#purpose",
+                    "@id": "https://www.oberstaff.com/quienesomos#purpose",
                     "name": "Propósito, misión y visión de Oberstaff",
                     "description": "Principios que explican el propósito institucional de Oberstaff y su visión sobre el trabajo remoto entre España y LATAM.",
                     "itemListElement": [
@@ -202,7 +202,7 @@ const ogImage = "Quienes somos Oberstaff.webp";
                 },
                 {
                     "@type": "ItemList",
-                    "@id": "https://www.oberstaff.com/quienes-somos#trust",
+                    "@id": "https://www.oberstaff.com/quienesomos#trust",
                     "name": "Principios de confianza de Oberstaff",
                     "description": "Pilares que resumen el enfoque institucional de Oberstaff.",
                     "itemListElement": [
@@ -225,7 +225,7 @@ const ogImage = "Quienes somos Oberstaff.webp";
                 },
                 {
                     "@type": "FAQPage",
-                    "@id": "https://www.oberstaff.com/quienes-somos#faq",
+                    "@id": "https://www.oberstaff.com/quienesomos#faq",
                     "mainEntity": [
                         {
                             "@type": "Question",
@@ -247,7 +247,7 @@ const ogImage = "Quienes somos Oberstaff.webp";
                 },
                 {
                     "@type": "BreadcrumbList",
-                    "@id": "https://www.oberstaff.com/quienes-somos#breadcrumb",
+                    "@id": "https://www.oberstaff.com/quienesomos#breadcrumb",
                     "itemListElement": [
                         {
                             "@type": "ListItem",
@@ -259,7 +259,7 @@ const ogImage = "Quienes somos Oberstaff.webp";
                             "@type": "ListItem",
                             "position": 2,
                             "name": "Quiénes somos",
-                            "item": "https://www.oberstaff.com/quienes-somos"
+                            "item": "https://www.oberstaff.com/quienesomos"
                         }
                     ]
                 }

@@ -1,24 +1,24 @@
----
-import DashboardLayout from "../../layouts/DashboardLayout.astro";
-import Hero from "../../components/hero/Hero.astro";
-import TrustSection from "../../components/banner-patrocinadores/TrustSection.astro";
-import StatsSection from "../../components/stats-oberstaff/StatsSection.astro";
-import ServicesSection from "../../components/services-oberstaff/ServicesSection.astro";
-import ProcessOberstaff from "../../components/process/ProcessOberstaff.astro";
-import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
-import BenefitsSection from "../../components/benefits/BenefitsSection.astro";
-import TestimonialsSection from "../../components/testimonios/TestimonialsSection.astro";
-import FAQSection from "../../components/faq/FAQSection.astro";
-import ContactFormSection from "../../components/form/ContactFormSection.astro";
-import PressSection from "../../components/press/PressSection.astro";
-import BlogSection from "../../components/blog-home/BlogSection.astro";
-import EorCta from "../../components/eor-cta-servicios/EorCta.astro";
+﻿---
+import DashboardLayout from "../layouts/DashboardLayout.astro";
+import Hero from "../components/hero/Hero.astro";
+import TrustSection from "../components/banner-patrocinadores/TrustSection.astro";
+import StatsSection from "../components/stats-oberstaff/StatsSection.astro";
+import ServicesSection from "../components/services-oberstaff/ServicesSection.astro";
+import ProcessOberstaff from "../components/process/ProcessOberstaff.astro";
+import ProfilesSection from "../components/profiles/ProfilesSection.astro";
+import BenefitsSection from "../components/benefits/BenefitsSection.astro";
+import TestimonialsSection from "../components/testimonios/TestimonialsSection.astro";
+import FAQSection from "../components/faq/FAQSection.astro";
+import ContactFormSection from "../components/form/ContactFormSection.astro";
+import PressSection from "../components/press/PressSection.astro";
+import BlogSection from "../components/blog-home/BlogSection.astro";
+import EorCta from "../components/eor-cta-servicios/EorCta.astro";
 
-const ogImage = "Contratar-Talento.webp";
+const ogImage = "Contratar Talento.webp";
 ---  
 
 <DashboardLayout ogImage={ogImage}> 
-	<link rel="canonical" href="https://www.oberstaff.com/es/home" slot="head" />
+	<link rel="canonical" href="https://www.oberstaff.com/home" slot="head" />
 	<script slot="head" type="application/ld+json">
 	{
 	  "@context": "https://schema.org",
@@ -226,8 +226,8 @@ const ogImage = "Contratar-Talento.webp";
 	    },
 	    {
 	      "@type": "WebPage",
-	      "@id": "https://www.oberstaff.com/es/home#webpage",
-	      "url": "https://www.oberstaff.com/es/home",
+	      "@id": "https://www.oberstaff.com/home#webpage",
+	      "url": "https://www.oberstaff.com/home",
 	      "name": "Contratar talento en LATAM desde España | Oberstaff",
 	      "description": "¿Buscas contratar talento en LATAM? Oberstaff te ayuda a acceder a perfiles validados, reducir costes y ampliar tu equipo con agilidad.",
 	      "inLanguage": "es-ES",
@@ -253,12 +253,12 @@ const ogImage = "Contratar-Talento.webp";
 	      },
 	      "dateModified": "2026-05-03",
 	      "breadcrumb": {
-	        "@id": "https://www.oberstaff.com/es/home#breadcrumb"
+	        "@id": "https://www.oberstaff.com/home#breadcrumb"
 	      }
 	    },
 	    {
 	      "@type": "ItemList",
-	      "@id": "https://www.oberstaff.com/es/home#servicios",
+	      "@id": "https://www.oberstaff.com/home#servicios",
 	      "name": "Servicios de contratación de talento remoto en LATAM para empresas españolas",
 	      "description": "Modelos principales de Oberstaff para contratar, externalizar o incorporar talento remoto en LATAM desde España.",
 	      "numberOfItems": 4,
@@ -267,9 +267,9 @@ const ogImage = "Contratar-Talento.webp";
 	          "@type": "ListItem",
 	          "position": 1,
 	          "item": {
-	            "@id": "https://www.oberstaff.com/es/servicios/employer-of-record#service",
+	            "@id": "https://www.oberstaff.com/servicios/employer-of-record#service",
 	            "name": "Employer of Record (EOR)",
-	            "url": "https://www.oberstaff.com/es/servicios/employer-of-record",
+	            "url": "https://www.oberstaff.com/servicios/employer-of-record",
 	            "description": "Servicio para contratar empleados en LATAM con relación laboral formal, payroll y cumplimiento local, sin abrir filial."
 	          }
 	        },
@@ -277,9 +277,9 @@ const ogImage = "Contratar-Talento.webp";
 	          "@type": "ListItem",
 	          "position": 2,
 	          "item": {
-	            "@id": "https://www.oberstaff.com/es/servicios/outsourcing-de-personal#service",
+	            "@id": "https://www.oberstaff.com/servicios/outsourcing-de-personal#service",
 	            "name": "Outsourcing de Personal",
-	            "url": "https://www.oberstaff.com/es/servicios/outsourcing-de-personal",
+	            "url": "https://www.oberstaff.com/servicios/outsourcing-de-personal",
 	            "description": "Servicio para externalizar selección, contratación y administración de perfiles comerciales, administrativos, marketing y soporte en LATAM."
 	          }
 	        },
@@ -287,9 +287,9 @@ const ogImage = "Contratar-Talento.webp";
 	          "@type": "ListItem",
 	          "position": 3,
 	          "item": {
-	            "@id": "https://www.oberstaff.com/es/servicios/staff-augmentation#service",
+	            "@id": "https://www.oberstaff.com/servicios/staff-augmentation#service",
 	            "name": "Staff Augmentation",
-	            "url": "https://www.oberstaff.com/es/servicios/staff-augmentation",
+	            "url": "https://www.oberstaff.com/servicios/staff-augmentation",
 	            "description": "Servicio para ampliar equipos tecnológicos con perfiles IT remotos integrados en herramientas, sprints y dirección diaria."
 	          }
 	        },
@@ -297,9 +297,9 @@ const ogImage = "Contratar-Talento.webp";
 	          "@type": "ListItem",
 	          "position": 4,
 	          "item": {
-	            "@id": "https://www.oberstaff.com/es/servicios/contractor-of-record#service",
+	            "@id": "https://www.oberstaff.com/servicios/contractor-of-record#service",
 	            "name": "Contractor of Record (CoR)",
-	            "url": "https://www.oberstaff.com/es/servicios/contractor-of-record",
+	            "url": "https://www.oberstaff.com/servicios/contractor-of-record",
 	            "description": "Servicio para formalizar la relación con freelancers e independientes sin crear un vínculo laboral de empleado."
 	          }
 	        }
@@ -307,7 +307,7 @@ const ogImage = "Contratar-Talento.webp";
 	    },
 	    {
 	      "@type": "FAQPage",
-	      "@id": "https://www.oberstaff.com/es/home#faq",
+	      "@id": "https://www.oberstaff.com/home#faq",
 	      "mainEntity": [
 	        {
 	          "@type": "Question",
@@ -361,13 +361,13 @@ const ogImage = "Contratar-Talento.webp";
 	    },
 	    {
 	      "@type": "BreadcrumbList",
-	      "@id": "https://www.oberstaff.com/es/home#breadcrumb",
+	      "@id": "https://www.oberstaff.com/home#breadcrumb",
 	      "itemListElement": [
 	        {
 	          "@type": "ListItem",
 	          "position": 1,
 	          "name": "Inicio",
-	          "item": "https://www.oberstaff.com/es/home"
+	          "item": "https://www.oberstaff.com/home"
 	        }
 	      ]
 	    }
