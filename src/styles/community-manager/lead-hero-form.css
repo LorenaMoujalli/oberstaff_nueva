@@ -54,7 +54,7 @@
     padding: 14px 18px;
     border-radius: 8px;
         border: 1px solid #E0E0E0;
-    font-size: 14px;
+    font-size: 12px;
     box-sizing: border-box;
     color: #1B1B1B;
     background-color: #FAFAFC;
@@ -80,9 +80,9 @@
     background: #FF66CC;
     color: #ffffff;
     border: 2px solid #FF66CC;
-    padding: 16px 20px;
+    padding: 12px 10px;
     border-radius: 50px;
-    font-size: 15px;
+    font-size: 13px;
     font-weight: 700;
     cursor: pointer;
     margin-top: 14px;
@@ -122,7 +122,7 @@
     color: #5A5A5A;
     font-size: 12px;
     font-weight: 500;
-    margin-top: 12px;
+   
     margin-bottom: 0;
     text-align: center;
 }
@@ -135,7 +135,7 @@
 .form-link {
     font-family: 'Poppins', sans-serif;
     display: block;
-    margin-top: 16px;
+    margin-top: 5px;
     color: #5A5A5A;
     text-decoration: none;
     font-size: 13px;
