@@ -2,6 +2,7 @@
 import DashboardLayoutCalculadora from "../../layouts/DashboardLayoutCalculadora.astro";
 
 const ogImage = "";
+const webhookUrl = "https://hooks.zapier.com/hooks/catch/12433184/4bfk2q7/";
 ---
 
 <DashboardLayoutCalculadora
@@ -198,6 +199,7 @@ const ogImage = "";
           <form
             id="calculator-lead-form"
             class="modern-form"
+            data-webhook-url={webhookUrl}
             style="max-width: 400px; width: 100%; margin: 0 auto; text-align: left; box-sizing: border-box;"
           >
             <div class="form-group" style="margin-bottom: 15px;">
@@ -205,7 +207,7 @@ const ogImage = "";
                 type="text"
                 id="leadName"
                 required
-                placeholder="Tu Nombre *"
+                placeholder="Tu Nombre Completo *"
                 class="quiz-input"
               />
             </div>
@@ -278,7 +280,8 @@ const ogImage = "";
           >
             La buena noticia: Tu estructura tiene el volumen perfecto para
             transicionar al modelo de talento remoto. <strong
-              >Tienes que ver esto:</strong>
+              >Tienes que ver esto:</strong
+            >
           </p>
 
           <div class="video-container">
@@ -405,6 +408,30 @@ const ogImage = "";
         v4,
       });
 
+      // Algoritmo matemático para enviar al webhook antes de mostrar los pasos de carga
+      const costoEspanaAnual = v2 * 12 * MULTIPLICADOR_SOCIAL;
+      const fugaSobrecostes = (costoEspanaAnual - COSTE_MEDIO_OBERSTAFF) * v1;
+      const fugaRotacion = v3 * COSTE_FUGA_REEMPLAZO;
+      const fugaTotal = fugaSobrecostes + fugaRotacion;
+
+      const urlWebhook = (leadForm as HTMLElement).dataset.webhookUrl || "";
+      if (urlWebhook) {
+        fetch(urlWebhook, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            Nombre: nombre,
+            Email: email,
+            "Tamaño plantilla (v1)": v1,
+            "Salario mensual (v2)": v2,
+            "Rotación anual (v3)": v3,
+            "Área de interés (v4)": v4,
+            "Fuga anual aproximada": fugaTotal,
+          }),
+          mode: "no-cors",
+        }).catch((err) => console.error("Error sending lead to webhook:", err));
+      }
+
       const progressBar = document.getElementById("quiz-progress-bar");
       if (progressBar) progressBar.classList.add("hidden");
 
@@ -425,12 +452,6 @@ const ogImage = "";
           loadingEl.innerText = loadingTexts[textIndex];
         }
       }, 800);
-
-      // Algoritmo matemático
-      const costoEspanaAnual = v2 * 12 * MULTIPLICADOR_SOCIAL;
-      const fugaSobrecostes = (costoEspanaAnual - COSTE_MEDIO_OBERSTAFF) * v1;
-      const fugaRotacion = v3 * COSTE_FUGA_REEMPLAZO;
-      const fugaTotal = fugaSobrecostes + fugaRotacion;
 
       const formatoEuros = new Intl.NumberFormat("es-ES", {
         style: "currency",
