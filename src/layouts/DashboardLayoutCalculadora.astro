@@ -1,0 +1,88 @@
+---
+interface Props {
+    title?: string;
+    ogTitle?: string;
+    ogDescription?: string;
+    ogUrl?: string;
+    ogImage?: string;
+}
+
+const {
+    title = "",
+    ogTitle = title,
+    ogDescription = "",
+    ogUrl = Astro.url.href,
+    ogImage = "",
+} = Astro.props;
+
+const canonicalOgImage = ogImage
+    ? ogImage.startsWith("http")
+        ? ogImage
+        : new URL(
+              ogImage.startsWith("/") ? ogImage : `/${ogImage}`,
+              Astro.url.origin,
+          ).href
+    : new URL("", Astro.url.origin).href;
+---
+
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content={ogTitle} />
+        <meta property="og:description" content={ogDescription} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={ogUrl} />
+        <meta property="og:image" content={canonicalOgImage} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={ogTitle} />
+        <meta name="twitter:description" content={ogDescription} />
+        <meta name="twitter:image" content={canonicalOgImage} />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Poppins:wght@300;400;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <title>{title}</title>
+        <slot name="head" />
+    </head>
+    <body>
+        <main class="report-layout-container">
+            <slot />
+        </main>
+    </body>
+</html>
+
+<style is:global>
+    :root {
+        --brand-pink: #ff66cc;
+        --brand-purple: #6663fd;
+        --font-heading: "Montserrat", sans-serif;
+        --font-body: "Poppins", sans-serif;
+    }
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        background-color: #121212;
+        color: #ffffff;
+        font-family: var(--font-body);
+        overflow-x: clip;
+    }
+
+    .report-layout-container {
+        min-height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 12px 20px;
+        position: relative;
+    }
+</style>

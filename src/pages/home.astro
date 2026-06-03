@@ -15,372 +15,368 @@ import BlogSection from "../components/blog-home/BlogSection.astro";
 import EorCta from "../components/eor-cta-servicios/EorCta.astro";
 
 const ogImage = "Contratar Talento.webp";
----  
+---
 
-<DashboardLayout ogImage={ogImage}> 
+<DashboardLayout ogImage={ogImage}>
 	<link rel="canonical" href="https://www.oberstaff.com/home" slot="head" />
 	<script slot="head" type="application/ld+json">
-	{
-	  "@context": "https://schema.org",
-	  "@graph": [
-	    {
-	      "@type": "Organization",
-	      "@id": "https://www.oberstaff.com/#organization",
-	      "name": "Oberstaff",
-	      "url": "https://www.oberstaff.com",
-	      "image": "https://www.oberstaff.com/mapa-de-Latinoamérica.webp",
-	      "description": "Empresa especializada en contratación, externalización e incorporación de talento remoto en LATAM para empresas españolas. Servicios de Employer of Record, Outsourcing de Personal, Staff Augmentation y Contractor of Record.",
-	      "foundingDate": "2017",
-	      "founder": {
-	        "@type": "Person",
-	        "name": "Edgardo Vázquez",
-	        "url": "https://www.linkedin.com/in/edgardomvazquez/"
-	      },
-	      "contactPoint": {
-	        "@type": "ContactPoint",
-	        "telephone": "+34-930-289-966",
-	        "contactType": "customer service",
-	        "availableLanguage": [
-	          "Spanish"
-	        ],
-	        "areaServed": {
-	          "@type": "Country",
-	          "name": "España"
-	        }
-	      },
-	      "address": {
-	        "@type": "PostalAddress",
-	        "addressCountry": "ES"
-	      },
-	      "areaServed": [
-	        {
-	          "@type": "Country",
-	          "name": "España"
-	        },
-	        {
-	          "@type": "Country",
-	          "name": "Colombia"
-	        },
-	        {
-	          "@type": "Country",
-	          "name": "Argentina"
-	        },
-	        {
-	          "@type": "Country",
-	          "name": "Venezuela"
-	        },
-	        {
-	          "@type": "Country",
-	          "name": "México"
-	        },
-	        {
-	          "@type": "Country",
-	          "name": "Chile"
-	        },
-	        {
-	          "@type": "Country",
-	          "name": "Perú"
-	        },
-	        {
-	          "@type": "Country",
-	          "name": "Ecuador"
-	        },
-	        {
-	          "@type": "Country",
-	          "name": "Uruguay"
-	        },
-	        {
-	          "@type": "Country",
-	          "name": "Panamá"
-	        },
-	        {
-	          "@type": "Country",
-	          "name": "Paraguay"
-	        }
-	      ],
-	      "sameAs": [
-	        "https://www.linkedin.com/company/oberstaff",
-	        "https://www.instagram.com/oberstaff"
-	      ],
-	      "knowsAbout": [
-	        "Employer of Record",
-	        "Outsourcing de Personal",
-	        "Staff Augmentation",
-	        "Contractor of Record",
-	        "Contratación de talento remoto en LATAM",
-	        "Reclutamiento remoto",
-	        "Externalización de personal",
-	        "Contratación internacional",
-	        "Payroll internacional",
-	        "Cumplimiento laboral",
-	        "Talento remoto LATAM"
-	      ],
-	      "review": [
-	        {
-	          "@type": "Review",
-	          "author": {
-	            "@type": "Person",
-	            "name": "Shadai Iborra",
-	            "image": "https://www.oberstaff.com/sha.webp"
-	          },
-	          "reviewBody": "Con Oberstaff pude dar trabajo a dos personas a tiempo completo, ahorrando costes de reclutamiento, espacios de oficina y salario que tendría al hacerlo en España. Lo mejor de todo es que todo está incluido en una misma factura.",
-	          "reviewRating": {
-	            "@type": "Rating",
-	            "ratingValue": "5",
-	            "bestRating": "5",
-	            "worstRating": "1"
-	          },
-	          "publisher": {
-	            "@type": "Organization",
-	            "name": "@amediastory"
-	          }
-	        },
-	        {
-	          "@type": "Review",
-	          "author": {
-	            "@type": "Person",
-	            "name": "Fernando Calderón",
-	            "image": "https://www.oberstaff.com/fernando.webp"
-	          },
-	          "reviewBody": "Estaba en busca de talento remoto especializado para mi empresa y después de varias búsquedas sin éxito, encontré a Oberstaff en Instagram. Desde nuestra primera llamada, su profesionalismo y calidad de trabajo me dejaron impresionado.",
-	          "reviewRating": {
-	            "@type": "Rating",
-	            "ratingValue": "5",
-	            "bestRating": "5",
-	            "worstRating": "1"
-	          },
-	          "publisher": {
-	            "@type": "Organization",
-	            "name": "BeautyPro"
-	          }
-	        }
-	      ],
-	      "aggregateRating": {
-	        "@type": "AggregateRating",
-	        "ratingValue": "5",
-	        "bestRating": "5",
-	        "worstRating": "1",
-	        "ratingCount": "2",
-	        "reviewCount": "2"
-	      },
-	      "subjectOf": [
-	        {
-	          "@type": "NewsArticle",
-	          "@id": "https://www.madridiario.es/actualidad-empresarial/fuga-de-capital-la-friccion-operativa-y-el-sobrecosto-del-talento-estan-frenando-las-pymes-espanolas-7128?target=external#newsarticle",
-	          "url": "https://www.madridiario.es/actualidad-empresarial/fuga-de-capital-la-friccion-operativa-y-el-sobrecosto-del-talento-estan-frenando-las-pymes-espanolas-7128?target=external",
-	          "mainEntityOfPage": "https://www.madridiario.es/actualidad-empresarial/fuga-de-capital-la-friccion-operativa-y-el-sobrecosto-del-talento-estan-frenando-las-pymes-espanolas-7128?target=external",
-	          "headline": "Fuga de capital: la fricción operativa y el sobrecosto del talento están frenando las pymes españolas",
-	          "publisher": {
-	            "@type": "NewsMediaOrganization",
-	            "name": "Madridiario",
-	            "url": "https://www.madridiario.es",
-	            "logo": {
-	              "@type": "ImageObject",
-	              "url": "https://www.oberstaff.com/logo-madridiario.webp"
-	            }
-	          }
-	        },
-	        {
-	          "@type": "NewsArticle",
-	          "@id": "https://www.elmundofinanciero.com/seccion/40/actividad-empresarial/fuga-de-capital-la-friccion-operativa-y-el-sobrecosto-del-talento-estan-frenando-las-pymes-espanolas-7606?target=external#newsarticle",
-	          "url": "https://www.elmundofinanciero.com/seccion/40/actividad-empresarial/fuga-de-capital-la-friccion-operativa-y-el-sobrecosto-del-talento-estan-frenando-las-pymes-espanolas-7606?target=external",
-	          "mainEntityOfPage": "https://www.elmundofinanciero.com/seccion/40/actividad-empresarial/fuga-de-capital-la-friccion-operativa-y-el-sobrecosto-del-talento-estan-frenando-las-pymes-espanolas-7606?target=external",
-	          "headline": "Fuga de capital: la fricción operativa y el sobrecosto del talento están frenando las pymes españolas",
-	          "publisher": {
-	            "@type": "NewsMediaOrganization",
-	            "name": "El Mundo Financiero",
-	            "url": "https://www.elmundofinanciero.com",
-	            "logo": {
-	              "@type": "ImageObject",
-	              "url": "https://www.oberstaff.com/logo-mundo-financiero.webp"
-	            }
-	          }
-	        },
-	        {
-	          "@type": "NewsArticle",
-	          "@id": "https://www.regiondigital.com/empresas/fuga-de-capital-la-friccion-operativa-y-el-sobrecosto-del-talento-estan-frenando-las-pymes-espanolas-9827?target=external#newsarticle",
-	          "url": "https://www.regiondigital.com/empresas/fuga-de-capital-la-friccion-operativa-y-el-sobrecosto-del-talento-estan-frenando-las-pymes-espanolas-9827?target=external",
-	          "mainEntityOfPage": "https://www.regiondigital.com/empresas/fuga-de-capital-la-friccion-operativa-y-el-sobrecosto-del-talento-estan-frenando-las-pymes-espanolas-9827?target=external",
-	          "headline": "Fuga de capital: la fricción operativa y el sobrecosto del talento están frenando las pymes españolas",
-	          "publisher": {
-	            "@type": "NewsMediaOrganization",
-	            "name": "Región Digital",
-	            "url": "https://www.regiondigital.com",
-	            "logo": {
-	              "@type": "ImageObject",
-	              "url": "https://www.oberstaff.com/logo-region-digital.webp"
-	            }
-	          }
-	        }
-	      ]
-	    },
-	    {
-	      "@type": "WebSite",
-	      "@id": "https://www.oberstaff.com/#website",
-	      "name": "Oberstaff",
-	      "url": "https://www.oberstaff.com",
-	      "inLanguage": "es-ES",
-	      "publisher": {
-	        "@id": "https://www.oberstaff.com/#organization"
-	      }
-	    },
-	    {
-	      "@type": "WebPage",
-	      "@id": "https://www.oberstaff.com/home#webpage",
-	      "url": "https://www.oberstaff.com/home",
-	      "name": "Contratar talento en LATAM desde España | Oberstaff",
-	      "description": "¿Buscas contratar talento en LATAM? Oberstaff te ayuda a acceder a perfiles validados, reducir costes y ampliar tu equipo con agilidad.",
-	      "inLanguage": "es-ES",
-	      "isPartOf": {
-	        "@id": "https://www.oberstaff.com/#website"
-	      },
-	      "about": {
-	        "@id": "https://www.oberstaff.com/#organization"
-	      },
-	      "publisher": {
-	        "@id": "https://www.oberstaff.com/#organization"
-	      },
-	      "mainEntity": {
-	        "@id": "https://www.oberstaff.com/#organization"
-	      },
-	      "audience": {
-	        "@type": "BusinessAudience",
-	        "audienceType": "Empresas españolas que buscan contratar, externalizar o incorporar talento remoto en LATAM",
-	        "geographicArea": {
-	          "@type": "Country",
-	          "name": "España"
-	        }
-	      },
-	      "dateModified": "2026-05-03",
-	      "breadcrumb": {
-	        "@id": "https://www.oberstaff.com/home#breadcrumb"
-	      }
-	    },
-	    {
-	      "@type": "ItemList",
-	      "@id": "https://www.oberstaff.com/home#servicios",
-	      "name": "Servicios de contratación de talento remoto en LATAM para empresas españolas",
-	      "description": "Modelos principales de Oberstaff para contratar, externalizar o incorporar talento remoto en LATAM desde España.",
-	      "numberOfItems": 4,
-	      "itemListElement": [
-	        {
-	          "@type": "ListItem",
-	          "position": 1,
-	          "item": {
-	            "@id": "https://www.oberstaff.com/servicios/employer-of-record#service",
-	            "name": "Employer of Record (EOR)",
-	            "url": "https://www.oberstaff.com/servicios/employer-of-record",
-	            "description": "Servicio para contratar empleados en LATAM con relación laboral formal, payroll y cumplimiento local, sin abrir filial."
-	          }
-	        },
-	        {
-	          "@type": "ListItem",
-	          "position": 2,
-	          "item": {
-	            "@id": "https://www.oberstaff.com/servicios/outsourcing-de-personal#service",
-	            "name": "Outsourcing de Personal",
-	            "url": "https://www.oberstaff.com/servicios/outsourcing-de-personal",
-	            "description": "Servicio para externalizar selección, contratación y administración de perfiles comerciales, administrativos, marketing y soporte en LATAM."
-	          }
-	        },
-	        {
-	          "@type": "ListItem",
-	          "position": 3,
-	          "item": {
-	            "@id": "https://www.oberstaff.com/servicios/staff-augmentation#service",
-	            "name": "Staff Augmentation",
-	            "url": "https://www.oberstaff.com/servicios/staff-augmentation",
-	            "description": "Servicio para ampliar equipos tecnológicos con perfiles IT remotos integrados en herramientas, sprints y dirección diaria."
-	          }
-	        },
-	        {
-	          "@type": "ListItem",
-	          "position": 4,
-	          "item": {
-	            "@id": "https://www.oberstaff.com/servicios/contractor-of-record#service",
-	            "name": "Contractor of Record (CoR)",
-	            "url": "https://www.oberstaff.com/servicios/contractor-of-record",
-	            "description": "Servicio para formalizar la relación con freelancers e independientes sin crear un vínculo laboral de empleado."
-	          }
-	        }
-	      ]
-	    },
-	    {
-	      "@type": "FAQPage",
-	      "@id": "https://www.oberstaff.com/home#faq",
-	      "mainEntity": [
-	        {
-	          "@type": "Question",
-	          "name": "¿Es legal contratar talento en LATAM desde España?",
-	          "acceptedAnswer": {
-	            "@type": "Answer",
-	            "text": "Sí, siempre que el modelo de contratación esté bien estructurado según el tipo de relación. Las empresas españolas lo hacen principalmente para reducir costes de personal, acceder a perfiles escasos en el mercado local y mantener compatibilidad horaria con España. Oberstaff gestiona la estructura legal y operativa para que tú solo dirijas el trabajo."
-	          }
-	        },
-	        {
-	          "@type": "Question",
-	          "name": "¿Cómo sé qué modelo de contratación necesito?",
-	          "acceptedAnswer": {
-	            "@type": "Answer",
-	            "text": "Depende de si necesitas un empleado formal, un freelancer, un refuerzo IT integrado en tu equipo o una función más delegada. Si no lo tienes claro, te orientamos antes de empezar para evitar errores de estructura."
-	          }
-	        },
-	        {
-	          "@type": "Question",
-	          "name": "¿Cuánto tiempo tarda el proceso de incorporación?",
-	          "acceptedAnswer": {
-	            "@type": "Answer",
-	            "text": "Varía según el perfil y el modelo, pero normalmente entre 2 semanas y 1 mes. El proceso es ágil gracias al pool de perfiles preseleccionados de Oberstaff."
-	          }
-	        },
-	        {
-	          "@type": "Question",
-	          "name": "¿Los profesionales trabajan en horario de España?",
-	          "acceptedAnswer": {
-	            "@type": "Answer",
-	            "text": "Sí. Todos los mercados en los que opera Oberstaff tienen husos horarios compatibles con España, lo que permite reuniones, seguimiento y coordinación diaria en tiempo real sin desfase."
-	          }
-	        },
-	        {
-	          "@type": "Question",
-	          "name": "¿Pueden ayudarme si aún no sé qué perfil o qué estructura necesito?",
-	          "acceptedAnswer": {
-	            "@type": "Answer",
-	            "text": "Sí, parte del valor de Oberstaff es ayudar a definir qué perfil conviene, qué nivel de control se necesita y qué modelo encaja mejor con la operación antes de iniciar la contratación. Así se evitan errores de estructura desde el principio."
-	          }
-	        },
-	        {
-	          "@type": "Question",
-	          "name": "¿En qué países de Latinoamérica operan?",
-	          "acceptedAnswer": {
-	            "@type": "Answer",
-	            "text": "Operamos en Colombia, Argentina, México, Venezuela, Chile, Perú, Uruguay, Ecuador, Panamá y Paraguay, principales mercados con concentración de talento profesional y zonas horarias compatibles con España."
-	          }
-	        }
-	      ]
-	    },
-	    {
-	      "@type": "BreadcrumbList",
-	      "@id": "https://www.oberstaff.com/home#breadcrumb",
-	      "itemListElement": [
-	        {
-	          "@type": "ListItem",
-	          "position": 1,
-	          "name": "Inicio",
-	          "item": "https://www.oberstaff.com/home"
-	        }
-	      ]
-	    }
-	  ]
-	}
+		{
+			"@context": "https://schema.org",
+			"@graph": [
+				{
+					"@type": "Organization",
+					"@id": "https://www.oberstaff.com/#organization",
+					"name": "Oberstaff",
+					"url": "https://www.oberstaff.com",
+					"image": "https://www.oberstaff.com/mapa-de-Latinoamérica.webp",
+					"description": "Empresa especializada en contratación, externalización e incorporación de talento remoto en LATAM para empresas españolas. Servicios de Employer of Record, Outsourcing de Personal, Staff Augmentation y Contractor of Record.",
+					"foundingDate": "2017",
+					"founder": {
+						"@type": "Person",
+						"name": "Edgardo Vázquez",
+						"url": "https://www.linkedin.com/in/edgardomvazquez/"
+					},
+					"contactPoint": {
+						"@type": "ContactPoint",
+						"telephone": "+34-930-289-966",
+						"contactType": "customer service",
+						"availableLanguage": ["Spanish"],
+						"areaServed": {
+							"@type": "Country",
+							"name": "España"
+						}
+					},
+					"address": {
+						"@type": "PostalAddress",
+						"addressCountry": "ES"
+					},
+					"areaServed": [
+						{
+							"@type": "Country",
+							"name": "España"
+						},
+						{
+							"@type": "Country",
+							"name": "Colombia"
+						},
+						{
+							"@type": "Country",
+							"name": "Argentina"
+						},
+						{
+							"@type": "Country",
+							"name": "Venezuela"
+						},
+						{
+							"@type": "Country",
+							"name": "México"
+						},
+						{
+							"@type": "Country",
+							"name": "Chile"
+						},
+						{
+							"@type": "Country",
+							"name": "Perú"
+						},
+						{
+							"@type": "Country",
+							"name": "Ecuador"
+						},
+						{
+							"@type": "Country",
+							"name": "Uruguay"
+						},
+						{
+							"@type": "Country",
+							"name": "Panamá"
+						},
+						{
+							"@type": "Country",
+							"name": "Paraguay"
+						}
+					],
+					"sameAs": [
+						"https://www.linkedin.com/company/oberstaff",
+						"https://www.instagram.com/oberstaff"
+					],
+					"knowsAbout": [
+						"Employer of Record",
+						"Outsourcing de Personal",
+						"Staff Augmentation",
+						"Contractor of Record",
+						"Contratación de talento remoto en LATAM",
+						"Reclutamiento remoto",
+						"Externalización de personal",
+						"Contratación internacional",
+						"Payroll internacional",
+						"Cumplimiento laboral",
+						"Talento remoto LATAM"
+					],
+					"review": [
+						{
+							"@type": "Review",
+							"author": {
+								"@type": "Person",
+								"name": "Shadai Iborra",
+								"image": "https://www.oberstaff.com/sha.webp"
+							},
+							"reviewBody": "Con Oberstaff pude dar trabajo a dos personas a tiempo completo, ahorrando costes de reclutamiento, espacios de oficina y salario que tendría al hacerlo en España. Lo mejor de todo es que todo está incluido en una misma factura.",
+							"reviewRating": {
+								"@type": "Rating",
+								"ratingValue": "5",
+								"bestRating": "5",
+								"worstRating": "1"
+							},
+							"publisher": {
+								"@type": "Organization",
+								"name": "@amediastory"
+							}
+						},
+						{
+							"@type": "Review",
+							"author": {
+								"@type": "Person",
+								"name": "Fernando Calderón",
+								"image": "https://www.oberstaff.com/fernando.webp"
+							},
+							"reviewBody": "Estaba en busca de talento remoto especializado para mi empresa y después de varias búsquedas sin éxito, encontré a Oberstaff en Instagram. Desde nuestra primera llamada, su profesionalismo y calidad de trabajo me dejaron impresionado.",
+							"reviewRating": {
+								"@type": "Rating",
+								"ratingValue": "5",
+								"bestRating": "5",
+								"worstRating": "1"
+							},
+							"publisher": {
+								"@type": "Organization",
+								"name": "BeautyPro"
+							}
+						}
+					],
+					"aggregateRating": {
+						"@type": "AggregateRating",
+						"ratingValue": "5",
+						"bestRating": "5",
+						"worstRating": "1",
+						"ratingCount": "2",
+						"reviewCount": "2"
+					},
+					"subjectOf": [
+						{
+							"@type": "NewsArticle",
+							"@id": "https://www.madridiario.es/actualidad-empresarial/fuga-de-capital-la-friccion-operativa-y-el-sobrecosto-del-talento-estan-frenando-las-pymes-espanolas-7128?target=external#newsarticle",
+							"url": "https://www.madridiario.es/actualidad-empresarial/fuga-de-capital-la-friccion-operativa-y-el-sobrecosto-del-talento-estan-frenando-las-pymes-espanolas-7128?target=external",
+							"mainEntityOfPage": "https://www.madridiario.es/actualidad-empresarial/fuga-de-capital-la-friccion-operativa-y-el-sobrecosto-del-talento-estan-frenando-las-pymes-espanolas-7128?target=external",
+							"headline": "Fuga de capital: la fricción operativa y el sobrecosto del talento están frenando las pymes españolas",
+							"publisher": {
+								"@type": "NewsMediaOrganization",
+								"name": "Madridiario",
+								"url": "https://www.madridiario.es",
+								"logo": {
+									"@type": "ImageObject",
+									"url": "https://www.oberstaff.com/logo-madridiario.webp"
+								}
+							}
+						},
+						{
+							"@type": "NewsArticle",
+							"@id": "https://www.elmundofinanciero.com/seccion/40/actividad-empresarial/fuga-de-capital-la-friccion-operativa-y-el-sobrecosto-del-talento-estan-frenando-las-pymes-espanolas-7606?target=external#newsarticle",
+							"url": "https://www.elmundofinanciero.com/seccion/40/actividad-empresarial/fuga-de-capital-la-friccion-operativa-y-el-sobrecosto-del-talento-estan-frenando-las-pymes-espanolas-7606?target=external",
+							"mainEntityOfPage": "https://www.elmundofinanciero.com/seccion/40/actividad-empresarial/fuga-de-capital-la-friccion-operativa-y-el-sobrecosto-del-talento-estan-frenando-las-pymes-espanolas-7606?target=external",
+							"headline": "Fuga de capital: la fricción operativa y el sobrecosto del talento están frenando las pymes españolas",
+							"publisher": {
+								"@type": "NewsMediaOrganization",
+								"name": "El Mundo Financiero",
+								"url": "https://www.elmundofinanciero.com",
+								"logo": {
+									"@type": "ImageObject",
+									"url": "https://www.oberstaff.com/logo-mundo-financiero.webp"
+								}
+							}
+						},
+						{
+							"@type": "NewsArticle",
+							"@id": "https://www.regiondigital.com/empresas/fuga-de-capital-la-friccion-operativa-y-el-sobrecosto-del-talento-estan-frenando-las-pymes-espanolas-9827?target=external#newsarticle",
+							"url": "https://www.regiondigital.com/empresas/fuga-de-capital-la-friccion-operativa-y-el-sobrecosto-del-talento-estan-frenando-las-pymes-espanolas-9827?target=external",
+							"mainEntityOfPage": "https://www.regiondigital.com/empresas/fuga-de-capital-la-friccion-operativa-y-el-sobrecosto-del-talento-estan-frenando-las-pymes-espanolas-9827?target=external",
+							"headline": "Fuga de capital: la fricción operativa y el sobrecosto del talento están frenando las pymes españolas",
+							"publisher": {
+								"@type": "NewsMediaOrganization",
+								"name": "Región Digital",
+								"url": "https://www.regiondigital.com",
+								"logo": {
+									"@type": "ImageObject",
+									"url": "https://www.oberstaff.com/logo-region-digital.webp"
+								}
+							}
+						}
+					]
+				},
+				{
+					"@type": "WebSite",
+					"@id": "https://www.oberstaff.com/#website",
+					"name": "Oberstaff",
+					"url": "https://www.oberstaff.com",
+					"inLanguage": "es-ES",
+					"publisher": {
+						"@id": "https://www.oberstaff.com/#organization"
+					}
+				},
+				{
+					"@type": "WebPage",
+					"@id": "https://www.oberstaff.com/home#webpage",
+					"url": "https://www.oberstaff.com/home",
+					"name": "Contratar talento en LATAM desde España | Oberstaff",
+					"description": "¿Buscas contratar talento en LATAM? Oberstaff te ayuda a acceder a perfiles validados, reducir costes y ampliar tu equipo con agilidad.",
+					"inLanguage": "es-ES",
+					"isPartOf": {
+						"@id": "https://www.oberstaff.com/#website"
+					},
+					"about": {
+						"@id": "https://www.oberstaff.com/#organization"
+					},
+					"publisher": {
+						"@id": "https://www.oberstaff.com/#organization"
+					},
+					"mainEntity": {
+						"@id": "https://www.oberstaff.com/#organization"
+					},
+					"audience": {
+						"@type": "BusinessAudience",
+						"audienceType": "Empresas españolas que buscan contratar, externalizar o incorporar talento remoto en LATAM",
+						"geographicArea": {
+							"@type": "Country",
+							"name": "España"
+						}
+					},
+					"dateModified": "2026-05-03",
+					"breadcrumb": {
+						"@id": "https://www.oberstaff.com/home#breadcrumb"
+					}
+				},
+				{
+					"@type": "ItemList",
+					"@id": "https://www.oberstaff.com/home#servicios",
+					"name": "Servicios de contratación de talento remoto en LATAM para empresas españolas",
+					"description": "Modelos principales de Oberstaff para contratar, externalizar o incorporar talento remoto en LATAM desde España.",
+					"numberOfItems": 4,
+					"itemListElement": [
+						{
+							"@type": "ListItem",
+							"position": 1,
+							"item": {
+								"@id": "https://www.oberstaff.com/servicios/employer-of-record#service",
+								"name": "Employer of Record (EOR)",
+								"url": "https://www.oberstaff.com/servicios/employer-of-record",
+								"description": "Servicio para contratar empleados en LATAM con relación laboral formal, payroll y cumplimiento local, sin abrir filial."
+							}
+						},
+						{
+							"@type": "ListItem",
+							"position": 2,
+							"item": {
+								"@id": "https://www.oberstaff.com/servicios/outsourcing-de-personal#service",
+								"name": "Outsourcing de Personal",
+								"url": "https://www.oberstaff.com/servicios/outsourcing-de-personal",
+								"description": "Servicio para externalizar selección, contratación y administración de perfiles comerciales, administrativos, marketing y soporte en LATAM."
+							}
+						},
+						{
+							"@type": "ListItem",
+							"position": 3,
+							"item": {
+								"@id": "https://www.oberstaff.com/servicios/staff-augmentation#service",
+								"name": "Staff Augmentation",
+								"url": "https://www.oberstaff.com/servicios/staff-augmentation",
+								"description": "Servicio para ampliar equipos tecnológicos con perfiles IT remotos integrados en herramientas, sprints y dirección diaria."
+							}
+						},
+						{
+							"@type": "ListItem",
+							"position": 4,
+							"item": {
+								"@id": "https://www.oberstaff.com/servicios/contractor-of-record#service",
+								"name": "Contractor of Record (CoR)",
+								"url": "https://www.oberstaff.com/servicios/contractor-of-record",
+								"description": "Servicio para formalizar la relación con freelancers e independientes sin crear un vínculo laboral de empleado."
+							}
+						}
+					]
+				},
+				{
+					"@type": "FAQPage",
+					"@id": "https://www.oberstaff.com/home#faq",
+					"mainEntity": [
+						{
+							"@type": "Question",
+							"name": "¿Es legal contratar talento en LATAM desde España?",
+							"acceptedAnswer": {
+								"@type": "Answer",
+								"text": "Sí, siempre que el modelo de contratación esté bien estructurado según el tipo de relación. Las empresas españolas lo hacen principalmente para reducir costes de personal, acceder a perfiles escasos en el mercado local y mantener compatibilidad horaria con España. Oberstaff gestiona la estructura legal y operativa para que tú solo dirijas el trabajo."
+							}
+						},
+						{
+							"@type": "Question",
+							"name": "¿Cómo sé qué modelo de contratación necesito?",
+							"acceptedAnswer": {
+								"@type": "Answer",
+								"text": "Depende de si necesitas un empleado formal, un freelancer, un refuerzo IT integrado en tu equipo o una función más delegada. Si no lo tienes claro, te orientamos antes de empezar para evitar errores de estructura."
+							}
+						},
+						{
+							"@type": "Question",
+							"name": "¿Cuánto tiempo tarda el proceso de incorporación?",
+							"acceptedAnswer": {
+								"@type": "Answer",
+								"text": "Varía según el perfil y el modelo, pero normalmente entre 2 semanas y 1 mes. El proceso es ágil gracias al pool de perfiles preseleccionados de Oberstaff."
+							}
+						},
+						{
+							"@type": "Question",
+							"name": "¿Los profesionales trabajan en horario de España?",
+							"acceptedAnswer": {
+								"@type": "Answer",
+								"text": "Sí. Todos los mercados en los que opera Oberstaff tienen husos horarios compatibles con España, lo que permite reuniones, seguimiento y coordinación diaria en tiempo real sin desfase."
+							}
+						},
+						{
+							"@type": "Question",
+							"name": "¿Pueden ayudarme si aún no sé qué perfil o qué estructura necesito?",
+							"acceptedAnswer": {
+								"@type": "Answer",
+								"text": "Sí, parte del valor de Oberstaff es ayudar a definir qué perfil conviene, qué nivel de control se necesita y qué modelo encaja mejor con la operación antes de iniciar la contratación. Así se evitan errores de estructura desde el principio."
+							}
+						},
+						{
+							"@type": "Question",
+							"name": "¿En qué países de Latinoamérica operan?",
+							"acceptedAnswer": {
+								"@type": "Answer",
+								"text": "Operamos en Colombia, Argentina, México, Venezuela, Chile, Perú, Uruguay, Ecuador, Panamá y Paraguay, principales mercados con concentración de talento profesional y zonas horarias compatibles con España."
+							}
+						}
+					]
+				},
+				{
+					"@type": "BreadcrumbList",
+					"@id": "https://www.oberstaff.com/home#breadcrumb",
+					"itemListElement": [
+						{
+							"@type": "ListItem",
+							"position": 1,
+							"name": "Inicio",
+							"item": "https://www.oberstaff.com/home"
+						}
+					]
+				}
+			]
+		}
 	</script>
-
-
 
 	<div class="welcome-section">
 		<div class="fade-in-section">
 			<Hero />
-		</div> 
+		</div>
 		<!--
 		<div class="fade-in-section">
 			<TrustSection />
@@ -400,7 +396,7 @@ const ogImage = "Contratar Talento.webp";
 		<div class="fade-in-section">
 			<ProfilesSection variant="grid" />
 		</div>
-			<div class="fade-in-section">
+		<div class="fade-in-section">
 			<EorCta
 				title="¿Quieres saber cuánto puedes ahorrar con talento remoto de LATAM?"
 				text="Te orientamos según tu operación, el tipo de perfil y el nivel de control que necesitas. En menos de 24 horas puedes tener claridad sobre cuál es el modelo más conveniente para tu negocio."
@@ -415,14 +411,16 @@ const ogImage = "Contratar Talento.webp";
 			<TestimonialsSection id="casos-de-exito" />
 		</div>
 		<div class="fade-in-section">
-			<FAQSection /> 
+			<FAQSection />
 		</div>
 		<div class="fade-in-section">
 			<PressSection />
 		</div>
 
 		<div class="fade-in-section">
-			<ContactFormSection webhookUrl="https://hooks.zapier.com/hooks/catch/12433184/4ovixjz/" />
+			<ContactFormSection
+				webhookUrl="https://hooks.zapier.com/hooks/catch/12433184/4ovixjz/"
+			/>
 		</div>
 
 		<div class="fade-in-section">
