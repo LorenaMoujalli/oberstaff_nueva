@@ -83,18 +83,20 @@ const webhookUrl = "https://hooks.zapier.com/hooks/catch/12433184/4bfk2q7/";
             ¿Cuál es el tamaño actual de tu plantilla o equipo de trabajo?
           </h2>
           <div class="quiz-options">
-            <button class="quiz-option-btn btn-q1" data-val="Solo yo / 1 empleado"
-              >Solo yo / 1 empleado</button
+            <button
+              class="quiz-option-btn btn-q1"
+              data-val="Solo yo / 1 empleado">Solo yo / 1 empleado</button
             >
             <button class="quiz-option-btn btn-q1" data-val="2 a 5 empleados"
-              >2 a 5 empleados</button 
+              >2 a 5 empleados</button
             >
             <button class="quiz-option-btn btn-q1" data-val="6 a 15 empleados"
               >6 a 15 empleados</button
             >
-            <button class="quiz-option-btn btn-q1" data-val="Más de 15 empleados"
-              >Más de 15 empleados</button
-            > 
+            <button
+              class="quiz-option-btn btn-q1"
+              data-val="Más de 15 empleados">Más de 15 empleados</button
+            >
           </div>
           <div class="insight-box">
             <strong>💡 ¿Sabías que...?</strong> Las empresas más pequeñas son las
@@ -113,12 +115,13 @@ const webhookUrl = "https://hooks.zapier.com/hooks/catch/12433184/4bfk2q7/";
             <button class="quiz-option-btn btn-q2" data-val="Menos de 1.300€"
               >Menos de 1.300€</button
             >
-            <button class="quiz-option-btn btn-q2" data-val="Entre 1.300€ y 1.800€"
-              >Entre 1.300€ y 1.800€</button
+            <button
+              class="quiz-option-btn btn-q2"
+              data-val="Entre 1.300€ y 1.800€">Entre 1.300€ y 1.800€</button
             >
             <button class="quiz-option-btn btn-q2" data-val="Más de 1.800€"
               >Más de 1.800€</button
-            > 
+            >
           </div>
           <div class="insight-box">
             <strong>💡 ¿Sabías que...?</strong> A este salario bruto debes sumarle
@@ -134,11 +137,14 @@ const webhookUrl = "https://hooks.zapier.com/hooks/catch/12433184/4bfk2q7/";
             has tenido?
           </h2>
           <div class="quiz-options">
-            <button class="quiz-option-btn btn-q3" data-val="Ninguna, mi equipo es muy estable."
+            <button
+              class="quiz-option-btn btn-q3"
+              data-val="Ninguna, mi equipo es muy estable."
               >Ninguna, mi equipo es muy estable.</button
             >
-            <button class="quiz-option-btn btn-q3" data-val="De 1 a 2 empleados."
-              >De 1 a 2 empleados.</button
+            <button
+              class="quiz-option-btn btn-q3"
+              data-val="De 1 a 2 empleados.">De 1 a 2 empleados.</button
             >
             <button class="quiz-option-btn btn-q3" data-val="3 o más empleados."
               >3 o más empleados.</button
@@ -157,18 +163,26 @@ const webhookUrl = "https://hooks.zapier.com/hooks/catch/12433184/4bfk2q7/";
             encontrar talento?
           </h2>
           <div class="quiz-options">
-            <button class="quiz-option-btn btn-q4" data-area="Administración, Contabilidad y Soporte (Asistentes, Data entry)"
+            <button
+              class="quiz-option-btn btn-q4"
+              data-area="Administración, Contabilidad y Soporte (Asistentes, Data entry)"
               >Administración, Contabilidad y Soporte (Asistentes, Data entry)</button
             >
-            <button class="quiz-option-btn btn-q4" data-area="Atención al Cliente y Ventas (Soporte, Telemarketing, Prospectores)"
+            <button
+              class="quiz-option-btn btn-q4"
+              data-area="Atención al Cliente y Ventas (Soporte, Telemarketing, Prospectores)"
               >Atención al Cliente y Ventas (Soporte, Telemarketing,
               Prospectores)</button
             >
-            <button class="quiz-option-btn btn-q4" data-area="Marketing Digital y Diseño (Gestión de Ads, Redes Sociales, Video)"
+            <button
+              class="quiz-option-btn btn-q4"
+              data-area="Marketing Digital y Diseño (Gestión de Ads, Redes Sociales, Video)"
               >Marketing Digital y Diseño (Gestión de Ads, Redes Sociales,
               Video)</button
             >
-            <button class="quiz-option-btn btn-q4" data-area="Tecnología (Desarrollo Web, Programadores)"
+            <button
+              class="quiz-option-btn btn-q4"
+              data-area="Tecnología (Desarrollo Web, Programadores)"
               >Tecnología (Desarrollo Web, Programadores)</button
             >
           </div>
@@ -363,7 +377,7 @@ const webhookUrl = "https://hooks.zapier.com/hooks/catch/12433184/4bfk2q7/";
     btn.addEventListener("click", (e) => {
       const target = e.target as HTMLButtonElement;
       responseQ1 = target.getAttribute("data-val") || "";
-      
+
       // Mapear el texto a valor numérico para los cálculos
       if (responseQ1.includes("Solo") || responseQ1.includes("1")) {
         v1 = 1;
@@ -435,7 +449,9 @@ const webhookUrl = "https://hooks.zapier.com/hooks/catch/12433184/4bfk2q7/";
   });
 
   // Manejo del envío del formulario
-  const leadForm = document.getElementById("calculator-lead-form") as HTMLFormElement;
+  const leadForm = document.getElementById(
+    "calculator-lead-form",
+  ) as HTMLFormElement;
   if (leadForm && !leadForm.dataset.listenerAdded) {
     leadForm.dataset.listenerAdded = "true";
     leadForm.addEventListener("submit", function (e) {
