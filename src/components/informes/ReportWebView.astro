@@ -1074,7 +1074,21 @@ const { webhookUrl = "" } = Astro.props;
         captchaInput?.classList.remove("invalid");
       }
 
-      if (hasError) return;
+             // ── Validate required fields ──
+            const requiredFields = f.querySelectorAll('[required]');
+            requiredFields.forEach((el) => {
+                const input = el as HTMLInputElement | HTMLSelectElement;
+                if (input.type !== 'checkbox') {
+                    if (!input.value || !input.value.trim()) {
+                        hasError = true;
+                        input.classList.add('invalid');
+                    } else {
+                        input.classList.remove('invalid');
+                    }
+                }
+            });
+
+            if (hasError) return;
 
       // ── Collect data ──
       const inputs = f.querySelectorAll(

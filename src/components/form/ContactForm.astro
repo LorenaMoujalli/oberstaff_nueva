@@ -438,16 +438,20 @@ const {
     }
 
     // ── Per-form initialization ────────────────────────────────────
-    document.querySelectorAll('form[data-webhook-url]').forEach((form) => {
-        const webhookUrl = (form as HTMLFormElement).dataset.webhookUrl;
+    document.querySelectorAll('form[data-webhook-url].form-grid').forEach((form) => {
+        const f = form as HTMLFormElement;
+        const webhookUrl = f.dataset.webhookUrl;
         if (!webhookUrl) return;
+
+        if (f.dataset.listenerAdded) return;
+        f.dataset.listenerAdded = 'true';
 
         // CAPTCHA state
         let currentCode = '';
-        const canvas = form.querySelector('#captcha-canvas') as HTMLCanvasElement;
-        const captchaInput = form.querySelector('#captcha-input') as HTMLInputElement;
-        const captchaRefresh = form.querySelector('#captcha-refresh') as HTMLButtonElement;
-        const captchaError = form.querySelector('#captcha-error') as HTMLElement;
+        const canvas = f.querySelector('#captcha-canvas') as HTMLCanvasElement;
+        const captchaInput = f.querySelector('#captcha-input') as HTMLInputElement;
+        const captchaRefresh = f.querySelector('#captcha-refresh') as HTMLButtonElement;
+        const captchaError = f.querySelector('#captcha-error') as HTMLElement;
 
         function refreshCaptcha() {
             currentCode = generateCaptchaCode();
@@ -461,16 +465,15 @@ const {
         captchaRefresh?.addEventListener('click', refreshCaptcha);
 
         // Consent elements
-        const consentCheckbox = form.querySelector('#sms-consent') as HTMLInputElement;
-        const consentError = form.querySelector('#consent-error') as HTMLElement;
+        const consentCheckbox = f.querySelector('#sms-consent') as HTMLInputElement;
+        const consentError = f.querySelector('#consent-error') as HTMLElement;
 
         // Save original button text
-        const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+        const btn = f.querySelector('button[type="submit"]') as HTMLButtonElement;
         if (btn) btn.dataset.originalText = btn.textContent ?? '';
 
-        form.addEventListener('submit', async (e) => {
+        f.addEventListener('submit', async (e) => {
             e.preventDefault();
-            const f = e.target as HTMLFormElement;
             const feedback = f.querySelector('.form-feedback') as HTMLElement;
 
             // ── Validate consent ──
@@ -499,6 +502,20 @@ const {
                 if (captchaError) captchaError.textContent = '';
                 captchaInput?.classList.remove('invalid');
             }
+
+            // ── Validate required fields ──
+            const requiredFields = f.querySelectorAll('[required]');
+            requiredFields.forEach((el) => {
+                const input = el as HTMLInputElement | HTMLSelectElement;
+                if (input.type !== 'checkbox') {
+                    if (!input.value || !input.value.trim()) {
+                        hasError = true;
+                        input.classList.add('invalid');
+                    } else {
+                        input.classList.remove('invalid');
+                    }
+                }
+            });
 
             if (hasError) return;
 

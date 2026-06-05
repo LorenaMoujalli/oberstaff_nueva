@@ -345,35 +345,51 @@ const { webhookUrl = "" } = Astro.props;
     }, 400);
   }
 
-  form?.addEventListener("submit", async (e) => {
-    e.preventDefault();
+   if (form && !form.dataset.listenerAdded) {
+    form.dataset.listenerAdded = "true";
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
 
-    // ── Validate consent ──
-    let hasError = false;
-    if (!consentCheckbox?.checked) {
-        if (consentError) consentError.textContent = '⚠ Debes aceptar el consentimiento para continuar.';
-        hasError = true;
-    } else {
-        if (consentError) consentError.textContent = '';
-    }
+      // ── Validate consent ──
+      let hasError = false;
+      if (!consentCheckbox?.checked) {
+          if (consentError) consentError.textContent = '⚠ Debes aceptar el consentimiento para continuar.';
+          hasError = true;
+      } else {
+          if (consentError) consentError.textContent = '';
+      }
 
-    // ── Validate CAPTCHA ──
-    const userCode = captchaInput?.value.trim().toUpperCase();
-    if (!userCode) {
-        if (captchaError) captchaError.textContent = '⚠ Este campo es obligatorio. Ingresa el código de la imagen.';
-        captchaInput?.classList.add('invalid');
-        hasError = true;
-    } else if (userCode !== currentCode) {
-        refreshCaptcha();
-        if (captchaError) captchaError.textContent = '❌ El código ingresado es incorrecto. Se generó un nuevo código, inténtalo de nuevo.';
-        captchaInput?.classList.add('invalid');
-        hasError = true;
-    } else {
-        if (captchaError) captchaError.textContent = '';
-        captchaInput?.classList.remove('invalid');
-    }
+      // ── Validate CAPTCHA ──
+      const userCode = captchaInput?.value.trim().toUpperCase();
+      if (!userCode) {
+          if (captchaError) captchaError.textContent = '⚠ Este campo es obligatorio. Ingresa el código de la imagen.';
+          captchaInput?.classList.add('invalid');
+          hasError = true;
+      } else if (userCode !== currentCode) {
+          refreshCaptcha();
+          if (captchaError) captchaError.textContent = '❌ El código ingresado es incorrecto. Se generó un nuevo código, inténtalo de nuevo.';
+          captchaInput?.classList.add('invalid');
+          hasError = true;
+      } else {
+          if (captchaError) captchaError.textContent = '';
+          captchaInput?.classList.remove('invalid');
+      }
 
-    if (hasError) return;
+      // ── Validate required fields ──
+      const requiredFields = form.querySelectorAll('[required]');
+      requiredFields.forEach((el) => {
+          const input = el as HTMLInputElement | HTMLSelectElement;
+          if (input.type !== 'checkbox') {
+              if (!input.value || !input.value.trim()) {
+                  hasError = true;
+                  input.classList.add('invalid');
+              } else {
+                  input.classList.remove('invalid');
+              }
+          }
+      });
+
+      if (hasError) return;
 
     // Send the lead to Zapier
     const data: Record<string, string> = {
@@ -431,6 +447,7 @@ const { webhookUrl = "" } = Astro.props;
       refreshCaptcha();
     }
   });
+}
 
   // Clear captcha error on input
   captchaInput?.addEventListener('input', () => {

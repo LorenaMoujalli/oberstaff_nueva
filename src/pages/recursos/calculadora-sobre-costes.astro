@@ -206,6 +206,7 @@ const webhookUrl = "https://hooks.zapier.com/hooks/catch/12433184/4bfk2q7/";
               <input
                 type="text"
                 id="leadName"
+                name="name"
                 required
                 placeholder="Tu Nombre Completo *"
                 class="quiz-input"
@@ -215,6 +216,7 @@ const webhookUrl = "https://hooks.zapier.com/hooks/catch/12433184/4bfk2q7/";
               <input
                 type="email"
                 id="leadEmail"
+                name="email"
                 required
                 placeholder="Tu Email Corporativo *"
                 class="quiz-input"
@@ -389,15 +391,21 @@ const webhookUrl = "https://hooks.zapier.com/hooks/catch/12433184/4bfk2q7/";
   });
 
   // Manejo del envío del formulario
-  const leadForm = document.getElementById("calculator-lead-form");
-  if (leadForm) {
+  const leadForm = document.getElementById("calculator-lead-form") as HTMLFormElement;
+  if (leadForm && !leadForm.dataset.listenerAdded) {
+    leadForm.dataset.listenerAdded = "true";
     leadForm.addEventListener("submit", function (e) {
       e.preventDefault();
 
       const nameEl = document.getElementById("leadName") as HTMLInputElement;
       const emailEl = document.getElementById("leadEmail") as HTMLInputElement;
-      const nombre = nameEl?.value;
-      const email = emailEl?.value;
+      const nombre = nameEl?.value?.trim() || "";
+      const email = emailEl?.value?.trim() || "";
+
+      if (!nombre || !email) {
+        console.warn("Intento de envío con datos vacíos abortado.");
+        return;
+      }
 
       console.log("Simulación de guardado local exitosa:", {
         nombre,
@@ -414,7 +422,7 @@ const webhookUrl = "https://hooks.zapier.com/hooks/catch/12433184/4bfk2q7/";
       const fugaRotacion = v3 * COSTE_FUGA_REEMPLAZO;
       const fugaTotal = fugaSobrecostes + fugaRotacion;
 
-      const urlWebhook = (leadForm as HTMLElement).dataset.webhookUrl || "";
+      const urlWebhook = leadForm.dataset.webhookUrl || "";
       if (urlWebhook) {
         fetch(urlWebhook, {
           method: "POST",
