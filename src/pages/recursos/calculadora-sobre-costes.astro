@@ -83,18 +83,18 @@ const webhookUrl = "https://hooks.zapier.com/hooks/catch/12433184/4bfk2q7/";
             ¿Cuál es el tamaño actual de tu plantilla o equipo de trabajo?
           </h2>
           <div class="quiz-options">
-            <button class="quiz-option-btn btn-q1" data-val="1"
+            <button class="quiz-option-btn btn-q1" data-val="Solo yo / 1 empleado"
               >Solo yo / 1 empleado</button
             >
-            <button class="quiz-option-btn btn-q1" data-val="3.5"
-              >2 a 5 empleados</button
+            <button class="quiz-option-btn btn-q1" data-val="2 a 5 empleados"
+              >2 a 5 empleados</button 
             >
-            <button class="quiz-option-btn btn-q1" data-val="10"
+            <button class="quiz-option-btn btn-q1" data-val="6 a 15 empleados"
               >6 a 15 empleados</button
             >
-            <button class="quiz-option-btn btn-q1" data-val="15"
+            <button class="quiz-option-btn btn-q1" data-val="Más de 15 empleados"
               >Más de 15 empleados</button
-            >
+            > 
           </div>
           <div class="insight-box">
             <strong>💡 ¿Sabías que...?</strong> Las empresas más pequeñas son las
@@ -110,15 +110,15 @@ const webhookUrl = "https://hooks.zapier.com/hooks/catch/12433184/4bfk2q7/";
             empleados?
           </h2>
           <div class="quiz-options">
-            <button class="quiz-option-btn btn-q2" data-val="1200"
+            <button class="quiz-option-btn btn-q2" data-val="Menos de 1.300€"
               >Menos de 1.300€</button
             >
-            <button class="quiz-option-btn btn-q2" data-val="1550"
+            <button class="quiz-option-btn btn-q2" data-val="Entre 1.300€ y 1.800€"
               >Entre 1.300€ y 1.800€</button
             >
-            <button class="quiz-option-btn btn-q2" data-val="2000"
+            <button class="quiz-option-btn btn-q2" data-val="Más de 1.800€"
               >Más de 1.800€</button
-            >
+            > 
           </div>
           <div class="insight-box">
             <strong>💡 ¿Sabías que...?</strong> A este salario bruto debes sumarle
@@ -134,13 +134,13 @@ const webhookUrl = "https://hooks.zapier.com/hooks/catch/12433184/4bfk2q7/";
             has tenido?
           </h2>
           <div class="quiz-options">
-            <button class="quiz-option-btn btn-q3" data-val="0"
+            <button class="quiz-option-btn btn-q3" data-val="Ninguna, mi equipo es muy estable."
               >Ninguna, mi equipo es muy estable.</button
             >
-            <button class="quiz-option-btn btn-q3" data-val="1.5"
+            <button class="quiz-option-btn btn-q3" data-val="De 1 a 2 empleados."
               >De 1 a 2 empleados.</button
             >
-            <button class="quiz-option-btn btn-q3" data-val="3"
+            <button class="quiz-option-btn btn-q3" data-val="3 o más empleados."
               >3 o más empleados.</button
             >
           </div>
@@ -157,18 +157,18 @@ const webhookUrl = "https://hooks.zapier.com/hooks/catch/12433184/4bfk2q7/";
             encontrar talento?
           </h2>
           <div class="quiz-options">
-            <button class="quiz-option-btn btn-q4" data-area="Administración"
+            <button class="quiz-option-btn btn-q4" data-area="Administración, Contabilidad y Soporte (Asistentes, Data entry)"
               >Administración, Contabilidad y Soporte (Asistentes, Data entry)</button
             >
-            <button class="quiz-option-btn btn-q4" data-area="Ventas"
+            <button class="quiz-option-btn btn-q4" data-area="Atención al Cliente y Ventas (Soporte, Telemarketing, Prospectores)"
               >Atención al Cliente y Ventas (Soporte, Telemarketing,
               Prospectores)</button
             >
-            <button class="quiz-option-btn btn-q4" data-area="Marketing"
+            <button class="quiz-option-btn btn-q4" data-area="Marketing Digital y Diseño (Gestión de Ads, Redes Sociales, Video)"
               >Marketing Digital y Diseño (Gestión de Ads, Redes Sociales,
               Video)</button
             >
-            <button class="quiz-option-btn btn-q4" data-area="Tecnologia"
+            <button class="quiz-option-btn btn-q4" data-area="Tecnología (Desarrollo Web, Programadores)"
               >Tecnología (Desarrollo Web, Programadores)</button
             >
           </div>
@@ -318,6 +318,11 @@ const webhookUrl = "https://hooks.zapier.com/hooks/catch/12433184/4bfk2q7/";
   let v3 = 0;
   let v4 = "";
 
+  let responseQ1 = "";
+  let responseQ2 = "";
+  let responseQ3 = "";
+  let responseQ4 = "";
+
   const MULTIPLICADOR_SOCIAL = 1.33;
   const COSTE_FUGA_REEMPLAZO = 7400;
   const COSTE_MEDIO_OBERSTAFF = 9600;
@@ -357,7 +362,21 @@ const webhookUrl = "https://hooks.zapier.com/hooks/catch/12433184/4bfk2q7/";
   document.querySelectorAll(".btn-q1").forEach((btn) => {
     btn.addEventListener("click", (e) => {
       const target = e.target as HTMLButtonElement;
-      v1 = parseFloat(target.getAttribute("data-val") || "0");
+      responseQ1 = target.getAttribute("data-val") || "";
+      
+      // Mapear el texto a valor numérico para los cálculos
+      if (responseQ1.includes("Solo") || responseQ1.includes("1")) {
+        v1 = 1;
+      } else if (responseQ1.includes("2 a 5")) {
+        v1 = 3.5;
+      } else if (responseQ1.includes("6 a 15")) {
+        v1 = 10.5;
+      } else if (responseQ1.includes("Más")) {
+        v1 = 20;
+      } else {
+        v1 = 0;
+      }
+
       showStep("step-q2");
       updateProgress(50);
     });
@@ -366,7 +385,19 @@ const webhookUrl = "https://hooks.zapier.com/hooks/catch/12433184/4bfk2q7/";
   document.querySelectorAll(".btn-q2").forEach((btn) => {
     btn.addEventListener("click", (e) => {
       const target = e.target as HTMLButtonElement;
-      v2 = parseFloat(target.getAttribute("data-val") || "0");
+      responseQ2 = target.getAttribute("data-val") || "";
+
+      // Mapear el texto a valor numérico para los cálculos
+      if (responseQ2.includes("Menos") || responseQ2.includes("1.300")) {
+        v2 = 1200;
+      } else if (responseQ2.includes("Entre")) {
+        v2 = 1550;
+      } else if (responseQ2.includes("Más")) {
+        v2 = 2200;
+      } else {
+        v2 = 0;
+      }
+
       showStep("step-q3");
       updateProgress(75);
     });
@@ -375,7 +406,19 @@ const webhookUrl = "https://hooks.zapier.com/hooks/catch/12433184/4bfk2q7/";
   document.querySelectorAll(".btn-q3").forEach((btn) => {
     btn.addEventListener("click", (e) => {
       const target = e.target as HTMLButtonElement;
-      v3 = parseFloat(target.getAttribute("data-val") || "0");
+      responseQ3 = target.getAttribute("data-val") || "";
+
+      // Mapear el texto a valor numérico para los cálculos
+      if (responseQ3.includes("Ninguna")) {
+        v3 = 0;
+      } else if (responseQ3.includes("1 a 2")) {
+        v3 = 1.5;
+      } else if (responseQ3.includes("3 o más")) {
+        v3 = 4;
+      } else {
+        v3 = 0;
+      }
+
       showStep("step-q4");
       updateProgress(90);
     });
@@ -384,7 +427,8 @@ const webhookUrl = "https://hooks.zapier.com/hooks/catch/12433184/4bfk2q7/";
   document.querySelectorAll(".btn-q4").forEach((btn) => {
     btn.addEventListener("click", (e) => {
       const target = e.target as HTMLButtonElement;
-      v4 = target.getAttribute("data-area") || "";
+      responseQ4 = target.getAttribute("data-area") || "";
+      v4 = responseQ4;
       showStep("step-lead");
       updateProgress(100);
     });
@@ -410,10 +454,10 @@ const webhookUrl = "https://hooks.zapier.com/hooks/catch/12433184/4bfk2q7/";
       console.log("Simulación de guardado local exitosa:", {
         nombre,
         email,
-        v1,
-        v2,
-        v3,
-        v4,
+        responseQ1,
+        responseQ2,
+        responseQ3,
+        responseQ4,
       });
 
       // Algoritmo matemático para enviar al webhook antes de mostrar los pasos de carga
@@ -421,6 +465,12 @@ const webhookUrl = "https://hooks.zapier.com/hooks/catch/12433184/4bfk2q7/";
       const fugaSobrecostes = (costoEspanaAnual - COSTE_MEDIO_OBERSTAFF) * v1;
       const fugaRotacion = v3 * COSTE_FUGA_REEMPLAZO;
       const fugaTotal = fugaSobrecostes + fugaRotacion;
+
+      const formatoEuros = new Intl.NumberFormat("es-ES", {
+        style: "currency",
+        currency: "EUR",
+        maximumFractionDigits: 0,
+      }).format(fugaTotal);
 
       const urlWebhook = leadForm.dataset.webhookUrl || "";
       if (urlWebhook) {
@@ -430,11 +480,11 @@ const webhookUrl = "https://hooks.zapier.com/hooks/catch/12433184/4bfk2q7/";
           body: JSON.stringify({
             Nombre: nombre,
             Email: email,
-            "Tamaño plantilla (v1)": v1,
-            "Salario mensual (v2)": v2,
-            "Rotación anual (v3)": v3,
-            "Área de interés (v4)": v4,
-            "Fuga anual aproximada": fugaTotal,
+            "Tamaño plantilla": responseQ1,
+            "Salario mensual": responseQ2,
+            "Rotación anual": responseQ3,
+            "Área de interés": responseQ4,
+            "Fuga anual aproximada": formatoEuros,
           }),
           mode: "no-cors",
         }).catch((err) => console.error("Error sending lead to webhook:", err));
@@ -460,12 +510,6 @@ const webhookUrl = "https://hooks.zapier.com/hooks/catch/12433184/4bfk2q7/";
           loadingEl.innerText = loadingTexts[textIndex];
         }
       }, 800);
-
-      const formatoEuros = new Intl.NumberFormat("es-ES", {
-        style: "currency",
-        currency: "EUR",
-        maximumFractionDigits: 0,
-      }).format(fugaTotal);
 
       const resultEl = document.getElementById("result-fuga-total");
       if (resultEl) resultEl.innerText = formatoEuros;
