@@ -85,17 +85,19 @@ const webhookUrl = "https://hooks.zapier.com/hooks/catch/12433184/4bfk2q7/";
           <div class="quiz-options">
             <button
               class="quiz-option-btn btn-q1"
-              data-val="Solo yo / 1 empleado">Solo yo / 1 empleado</button
+              data-val="Solo yo / 1 empleado"
+              data-num="1">Solo yo / 1 empleado</button
             >
-            <button class="quiz-option-btn btn-q1" data-val="2 a 5 empleados"
+            <button class="quiz-option-btn btn-q1" data-val="2 a 5 empleados" data-num="3.5"
               >2 a 5 empleados</button
             >
-            <button class="quiz-option-btn btn-q1" data-val="6 a 15 empleados"
+            <button class="quiz-option-btn btn-q1" data-val="6 a 15 empleados" data-num="10"
               >6 a 15 empleados</button
             >
             <button
               class="quiz-option-btn btn-q1"
-              data-val="Más de 15 empleados">Más de 15 empleados</button
+              data-val="Más de 15 empleados"
+              data-num="15">Más de 15 empleados</button
             >
           </div>
           <div class="insight-box">
@@ -112,14 +114,15 @@ const webhookUrl = "https://hooks.zapier.com/hooks/catch/12433184/4bfk2q7/";
             empleados?
           </h2>
           <div class="quiz-options">
-            <button class="quiz-option-btn btn-q2" data-val="Menos de 1.300€"
+            <button class="quiz-option-btn btn-q2" data-val="Menos de 1.300€" data-num="1200"
               >Menos de 1.300€</button
             >
             <button
               class="quiz-option-btn btn-q2"
-              data-val="Entre 1.300€ y 1.800€">Entre 1.300€ y 1.800€</button
+              data-val="Entre 1.300€ y 1.800€"
+              data-num="1550">Entre 1.300€ y 1.800€</button
             >
-            <button class="quiz-option-btn btn-q2" data-val="Más de 1.800€"
+            <button class="quiz-option-btn btn-q2" data-val="Más de 1.800€" data-num="2000"
               >Más de 1.800€</button
             >
           </div>
@@ -140,13 +143,15 @@ const webhookUrl = "https://hooks.zapier.com/hooks/catch/12433184/4bfk2q7/";
             <button
               class="quiz-option-btn btn-q3"
               data-val="Ninguna, mi equipo es muy estable."
+              data-num="0"
               >Ninguna, mi equipo es muy estable.</button
             >
             <button
               class="quiz-option-btn btn-q3"
-              data-val="De 1 a 2 empleados.">De 1 a 2 empleados.</button
+              data-val="De 1 a 2 empleados."
+              data-num="1.5">De 1 a 2 empleados.</button
             >
-            <button class="quiz-option-btn btn-q3" data-val="3 o más empleados."
+            <button class="quiz-option-btn btn-q3" data-val="3 o más empleados." data-num="3"
               >3 o más empleados.</button
             >
           </div>
@@ -165,24 +170,24 @@ const webhookUrl = "https://hooks.zapier.com/hooks/catch/12433184/4bfk2q7/";
           <div class="quiz-options">
             <button
               class="quiz-option-btn btn-q4"
-              data-area="Administración, Contabilidad y Soporte (Asistentes, Data entry)"
+              data-area="Administración"
               >Administración, Contabilidad y Soporte (Asistentes, Data entry)</button
             >
             <button
               class="quiz-option-btn btn-q4"
-              data-area="Atención al Cliente y Ventas (Soporte, Telemarketing, Prospectores)"
+              data-area="Ventas"
               >Atención al Cliente y Ventas (Soporte, Telemarketing,
               Prospectores)</button
             >
             <button
               class="quiz-option-btn btn-q4"
-              data-area="Marketing Digital y Diseño (Gestión de Ads, Redes Sociales, Video)"
+              data-area="Marketing"
               >Marketing Digital y Diseño (Gestión de Ads, Redes Sociales,
               Video)</button
             >
             <button
               class="quiz-option-btn btn-q4"
-              data-area="Tecnología (Desarrollo Web, Programadores)"
+              data-area="Tecnologia"
               >Tecnología (Desarrollo Web, Programadores)</button
             >
           </div>
@@ -310,59 +315,7 @@ const webhookUrl = "https://hooks.zapier.com/hooks/catch/12433184/4bfk2q7/";
           </p>
         </div>
 
-        <div id="step-results" class="quiz-step hidden text-center">
-          <div class="alert-box">
-            <span style="font-size: 40px; display: block; margin-bottom: 15px;"
-              >🚨</span
-            >
-            <h2
-              style="color: #FF4D4D; font-family: var(--font-heading); font-size: 27px; margin-bottom: 20px; text-transform: uppercase;"
-            >
-              Alerta de Fuga Operativa
-            </h2>
-            <p
-              style="color: #FFFFFF; font-size: 16px; line-height: 1.7; margin: 0;"
-            >
-              Basado en tu plantilla y rotación, tu empresa está asumiendo una
-              fuga de capital anual estimada de <strong
-                style="font-size: 32px; color: #FF4D4D; display: inline-block; margin: 0 8px;"
-                id="result-fuga-total">[CALCULANDO...]</strong
-              > en sobrecostes patronales (Seguridad Social + MEI) y pérdida de horas
-              productivas.
-            </p>
-          </div>
 
-          <p
-            class="text-light-gray"
-            style="font-size: 17px; margin: 40px 0 30px;"
-          >
-            La buena noticia: Tu estructura tiene el volumen perfecto para
-            transicionar al modelo de talento remoto. <strong
-              >Tienes que ver esto:</strong
-            >
-          </p>
-
-          <div class="video-container">
-            <iframe
-              src="https://www.youtube.com/embed/HDb_Ps3rsQo?rel=0&modestbranding=1"
-              style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
-              allow="autoplay"
-              allowfullscreen></iframe>
-          </div>
-
-          <a
-            href="https://info-oberstaff.zohobookings.com/#/4327750000006529861"
-            target="_blank"
-            style="text-decoration: none;"
-          >
-            <button
-              class="btn-pink rounded-pill heartbeat-anim"
-              style="width: 100%; font-size: 16px; padding: 21px;"
-            >
-              AGENDAR CONSULTORÍA DE VIABILIDAD &rarr;
-            </button>
-          </a>
-        </div>
       </div>
     </div>
   </div>
@@ -490,21 +443,9 @@ const webhookUrl = "https://hooks.zapier.com/hooks/catch/12433184/4bfk2q7/";
 
   document.querySelectorAll(".btn-q1").forEach((btn) => {
     btn.addEventListener("click", (e) => {
-      const target = e.target as HTMLButtonElement;
+      const target = e.currentTarget as HTMLButtonElement;
       responseQ1 = target.getAttribute("data-val") || "";
-
-      // Mapear el texto a valor numérico para los cálculos
-      if (responseQ1.includes("Solo") || responseQ1.includes("1")) {
-        v1 = 1;
-      } else if (responseQ1.includes("2 a 5")) {
-        v1 = 3.5;
-      } else if (responseQ1.includes("6 a 15")) {
-        v1 = 10.5;
-      } else if (responseQ1.includes("Más")) {
-        v1 = 20;
-      } else {
-        v1 = 0;
-      }
+      v1 = parseFloat(target.getAttribute("data-num") || "0");
 
       showStep("step-q2");
       updateProgress(50);
@@ -513,19 +454,9 @@ const webhookUrl = "https://hooks.zapier.com/hooks/catch/12433184/4bfk2q7/";
 
   document.querySelectorAll(".btn-q2").forEach((btn) => {
     btn.addEventListener("click", (e) => {
-      const target = e.target as HTMLButtonElement;
+      const target = e.currentTarget as HTMLButtonElement;
       responseQ2 = target.getAttribute("data-val") || "";
-
-      // Mapear el texto a valor numérico para los cálculos
-      if (responseQ2.includes("Menos") || responseQ2.includes("1.300")) {
-        v2 = 1200;
-      } else if (responseQ2.includes("Entre")) {
-        v2 = 1550;
-      } else if (responseQ2.includes("Más")) {
-        v2 = 2200;
-      } else {
-        v2 = 0;
-      }
+      v2 = parseFloat(target.getAttribute("data-num") || "0");
 
       showStep("step-q3");
       updateProgress(75);
@@ -534,19 +465,9 @@ const webhookUrl = "https://hooks.zapier.com/hooks/catch/12433184/4bfk2q7/";
 
   document.querySelectorAll(".btn-q3").forEach((btn) => {
     btn.addEventListener("click", (e) => {
-      const target = e.target as HTMLButtonElement;
+      const target = e.currentTarget as HTMLButtonElement;
       responseQ3 = target.getAttribute("data-val") || "";
-
-      // Mapear el texto a valor numérico para los cálculos
-      if (responseQ3.includes("Ninguna")) {
-        v3 = 0;
-      } else if (responseQ3.includes("1 a 2")) {
-        v3 = 1.5;
-      } else if (responseQ3.includes("3 o más")) {
-        v3 = 4;
-      } else {
-        v3 = 0;
-      }
+      v3 = parseFloat(target.getAttribute("data-num") || "0");
 
       showStep("step-q4");
       updateProgress(90);
@@ -683,23 +604,10 @@ const webhookUrl = "https://hooks.zapier.com/hooks/catch/12433184/4bfk2q7/";
         }
       }, 800);
 
-      const resultEl = document.getElementById("result-fuga-total");
-      if (resultEl) resultEl.innerText = formatoEuros;
-
       setTimeout(() => {
         clearInterval(textInterval);
-        showStep("step-results");
-
-        // Autoplay del video 5 segundos después de mostrar la pantalla de resultados (con sonido)
-        setTimeout(() => {
-          const iframe = document.querySelector("#step-results iframe");
-          if (iframe) {
-            iframe.setAttribute(
-              "src",
-              "https://www.youtube.com/embed/HDb_Ps3rsQo?autoplay=1&rel=0&modestbranding=1",
-            );
-          }
-        }, 5000);
+        // Redirigir a la página de resultados pasando el valor calculado como query param
+        window.location.href = '/recursos/resultados-calculadora-sobre-costes/?fuga=' + encodeURIComponent(formatoEuros);
       }, 3500);
     });
   }
