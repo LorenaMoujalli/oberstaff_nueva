@@ -9,6 +9,9 @@ interface Props {
 const { webhookUrl = "" } = Astro.props;
 ---
 
+<!-- Cargar html2pdf.js desde CDN para evitar problemas de optimización/pre-bundling de Vite -->
+<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" referrerpolicy="no-referrer"></script>
+
 <!-- Contenedor para la generación del PDF (se mantiene en el DOM pero no ocupa espacio visual) -->
 <div
   style="height: 0; overflow: hidden; position: absolute; top: 0; width: 210mm; z-index: -1;"
@@ -185,9 +188,6 @@ const { webhookUrl = "" } = Astro.props;
 </style>
 
 <script>
-  // @ts-ignore
-  import html2pdf from "html2pdf.js";
-
   // ── Toast Notification ─────────────────────────────────────────
   function showToast(message: string, type: 'success' | 'error' = 'success') {
       const existing = document.getElementById('form-toast');

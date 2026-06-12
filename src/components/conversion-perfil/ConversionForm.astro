@@ -5,17 +5,34 @@ interface Props {
 }
 const { buttonText = "<iconify-icon icon='solar:arrow-right-bold-duotone' style='font-size: 20px;'></iconify-icon> Solicitar propuesta gratuita" } = Astro.props;
 ---
+<!-- intl-tel-input library -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.10/build/css/intlTelInput.css" />
+<script is:inline src="https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.10/build/js/intlTelInput.min.js"></script>
+
 <div class="form-card-horizontal">
     <form class="horizontal-form">
         <div class="form-grid">
             <input type="text" placeholder="Nombre completo *" required>
             <input type="email" placeholder="Email corporativo *" required>
             <input type="text" placeholder="Empresa *" required>
-            <div style="position: relative; display: flex; align-items: center; width: 100%;">
-                <span style="position: absolute; left: 16px; color: #5A5A5A; font-family: inherit; font-size: 14px; pointer-events: none;">+34</span>
-                <input type="tel" placeholder="Teléfono *" required style="padding-left: 50px; width: 100%; box-sizing: border-box;" oninput="this.value = this.value.replace(/[^0-9 ]/g, '')">
-            </div>
+            <input type="tel" placeholder="Teléfono *" required style="width: 100%; box-sizing: border-box;" oninput="this.value = this.value.replace(/[^0-9 ]/g, '')" data-phone="true">
         </div>
         <button type="submit" class="btn-submit-blue" set:html={buttonText}></button>
     </form>
 </div>
+
+<script>
+    function initConversionFormPhone() {
+        const phoneInput = document.querySelector('.form-card-horizontal input[data-phone="true"]') as HTMLInputElement;
+        if (phoneInput && (window as any).intlTelInput) {
+            (window as any).intlTelInput(phoneInput, {
+                initialCountry: "es",
+                separateDialCode: true,
+                preferredCountries: ["es", "co", "ar", "mx", "cl", "pe", "ve"],
+                utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.10/build/js/utils.js",
+            });
+        }
+    }
+    document.addEventListener('astro:page-load', initConversionFormPhone);
+    document.addEventListener('DOMContentLoaded', initConversionFormPhone);
+</script>

@@ -28,6 +28,10 @@ const {
 const CardTitleTag = cardTitleTag as any;
 ---
 
+<!-- intl-tel-input library -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.10/build/css/intlTelInput.css" />
+<script is:inline src="https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.10/build/js/intlTelInput.min.js"></script>
+
 <div class="lead-form-wrapper">
     <form class="lead-form" data-webhook-url={webhookUrl}>
         <div class="lead-form-header">
@@ -48,22 +52,14 @@ const CardTitleTag = cardTitleTag as any;
         </div>
 
         <div class="input-group">
-            <div
-                style="position: relative; display: flex; align-items: center; width: 100%;"
-            >
-                <span
-                    style="position: absolute; left: 16px; color: #5A5A5A; font-family: inherit; font-size: 14px; pointer-events: none;"
-                    >+34</span
-                >
-                <input
-                    type="tel"
-                    placeholder="Teléfono *"
-                    required
-                    style="padding-left: 50px; width: 100%; box-sizing: border-box;"
-                    oninput="this.value = this.value.replace(/[^0-9 ]/g, '')"
-                    data-phone="true"
-                />
-            </div>
+            <input
+                type="tel"
+                placeholder="Teléfono *"
+                required
+                style="width: 100%; box-sizing: border-box;"
+                oninput="this.value = this.value.replace(/[^0-9 ]/g, '')"
+                data-phone="true"
+            />
         </div>
 
         <!-- SMS Consent Checkbox -->
@@ -393,6 +389,17 @@ const CardTitleTag = cardTitleTag as any;
         if (f.dataset.listenerAdded) return;
         f.dataset.listenerAdded = "true";
 
+        const phoneInput = f.querySelector('input[data-phone="true"]') as HTMLInputElement;
+        let iti: any = null;
+        if (phoneInput && (window as any).intlTelInput) {
+            iti = (window as any).intlTelInput(phoneInput, {
+                initialCountry: "es",
+                separateDialCode: true,
+                preferredCountries: ["es", "co", "ar", "mx", "cl", "pe", "ve"],
+                utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.10/build/js/utils.js",
+            });
+        }
+
         // CAPTCHA state
         let currentCode = "";
         const canvas = f.querySelector("#captcha-canvas") as HTMLCanvasElement;
@@ -490,7 +497,11 @@ const CardTitleTag = cardTitleTag as any;
                 const isPhone =
                     input.type === "tel" || input.dataset.phone === "true";
                 if (key) {
-                    data[key] = isPhone ? `+34 ${input.value}` : input.value;
+                    if (isPhone && iti) {
+                        data[key] = iti.getNumber();
+                    } else {
+                        data[key] = input.value;
+                    }
                 }
             });
             data["Consentimiento SMS"] = "Aceptado";

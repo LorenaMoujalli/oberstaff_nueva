@@ -18,6 +18,10 @@ const {
 } = Astro.props;
 ---
 
+<!-- intl-tel-input library -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.10/build/css/intlTelInput.css" />
+<script is:inline src="https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.10/build/js/intlTelInput.min.js"></script>
+
 <div class="form-card">
     <h2 set:html={title} />
     <p class="intro-text" set:html={description} />
@@ -28,10 +32,7 @@ const {
         
         <div class="form-row">
             <input type="email" placeholder="Email corporativo *" required />
-            <div style="position: relative; display: flex; align-items: center; width: 100%;">
-                <span style="position: absolute; left: 16px; color: #5A5A5A; font-family: inherit; font-size: 14px; pointer-events: none;">+34</span>
-                <input type="tel" placeholder="Teléfono *" required style="padding-left: 50px; width: 100%; box-sizing: border-box;" oninput="this.value = this.value.replace(/[^0-9 ]/g, '')" />
-            </div>
+            <input type="tel" placeholder="Teléfono *" required style="width: 100%; box-sizing: border-box;" oninput="this.value = this.value.replace(/[^0-9 ]/g, '')" data-phone="true" />
         </div>
 
         <input type="text" placeholder="¿Cuántos profesionales o qué roles buscas contratar? *" required />
@@ -277,6 +278,17 @@ const {
         if (f.dataset.listenerAdded) return;
         f.dataset.listenerAdded = 'true';
 
+        const phoneInput = f.querySelector('input[data-phone="true"]') as HTMLInputElement;
+        let iti: any = null;
+        if (phoneInput && (window as any).intlTelInput) {
+            iti = (window as any).intlTelInput(phoneInput, {
+                initialCountry: "es",
+                separateDialCode: true,
+                preferredCountries: ["es", "co", "ar", "mx", "cl", "pe", "ve"],
+                utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.10/build/js/utils.js",
+            });
+        }
+
         // CAPTCHA state
         let currentCode = '';
         const canvas = f.querySelector('#captcha-canvas') as HTMLCanvasElement;
@@ -357,7 +369,11 @@ const {
                 const key = placeholder.replace(' *', '').trim() || input.type;
                 const isPhone = input.type === 'tel' || input.dataset.phone === 'true';
                 if (key) {
-                    data[key] = isPhone ? `+34 ${input.value}` : input.value;
+                    if (isPhone && iti) {
+                        data[key] = iti.getNumber();
+                    } else {
+                        data[key] = input.value;
+                    }
                 }
             });
             data['Consentimiento SMS'] = 'Aceptado';
