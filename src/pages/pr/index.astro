@@ -1,0 +1,394 @@
+---
+import DashboardLayoutPr from "../../layouts/DashboardLayoutPr.astro";
+import Hero from "../../components/hero/Hero.astro";
+import StatsSection from "../../components/stats-oberstaff/StatsSection.astro";
+import ServicesSection from "../../components/services-oberstaff/ServicesSection.astro";
+import ProcessOberstaff from "../../components/process/ProcessOberstaff.astro";
+import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
+import BenefitsSection from "../../components/benefits/BenefitsSection.astro";
+import TestimonialsSection from "../../components/testimonios/TestimonialsSection.astro";
+import FAQSection from "../../components/faq/FAQSection.astro";
+import ContactFormSection from "../../components/form/ContactFormSection.astro";
+import PressSection from "../../components/press/PressSection.astro";
+import EorCta from "../../components/eor-cta-servicios/EorCta.astro";
+
+const ogImage = "Contratar Talento.webp"; 
+
+// --- 1. HERO PROPS ---
+const heroProps = {
+	title: `Puerto rico <br class="desktop-br"/>
+        LATAM para empresas en<br class="desktop-br"/>
+         Puerto Rico`,
+	description: `En <span class="brand-text">Oberstaff<span class="brand-dot">.</span></span> <span class="brand-text2">encontramos el mejor talento por menos, ¡mucho menos!</span> A través del reclutamiento remoto, te ayudamos a externalizar posiciones y contratar talento cualificado para tu empresa a un coste menor, reduciendo costes salariales y gastos asociados a empleados en plantilla.`,
+	socialProof: `Más de 500 empresas confían en <span class="brand-text">Oberstaff<span class="brand-dot">.</span></span>`,
+	buttonText: `Agendar llamada gratis`,
+	buttonHref: `#contacto`,
+	videoButtonText: `Ver cómo funciona`
+};
+
+// --- 2. STATS PROPS ---
+const statsProps = {
+	title: `Si estás evaluando <strong>Cómo reducir costes de personal</strong> sin perder calidad ni zona horaria, Latinoamérica es una de las vías más eficientes.`,
+	stat1_number: "70%",
+	stat1_label: "Ahorro versus contratación local en Puerto Rico",
+	stat2_number: "<30",
+	stat2_label: "Días hasta incorporar a tu candidato a tu operación",
+	stat3_number: "100%",
+	stat3_label: "Profesionales Compatibles con Zona horaria de Puerto Rico"
+};
+
+// --- 3. SERVICES PROPS ---
+const servicesList = [
+	{
+		icon: "⚖️",
+		title: "Employer of Record (EOR)",
+		description: "Contrata empleados en LATAM con contrato laboral formal, sin abrir una filial en el país.",
+		linkText: "Conoce nuestro servicio de Employer of Record (EOR)",
+		href: "/pr/servicios/employer-of-record",
+		colorClass: "purple-bg",
+		cardClass: "card-purple",
+	},
+	{
+		icon: "👥",
+		title: "Outsourcing de Personal",
+		description: "Delega la selección, contratación y gestión mensual de equipos comerciales, administrativos y de soporte",
+		linkText: "Conoce nuestro servicio de Outsourcing de personal",
+		href: "/pr/servicios/outsourcing-de-personal",
+		colorClass: "pink-bg",
+		cardClass: "card-green",
+	},
+	{
+		icon: "💻",
+		title: "Staff Augmentation",
+		description: "Amplía tu equipo tech integrando desarrolladores remotos de LATAM a tus flujos y sprints diarios.",
+		linkText: "Conoce nuestro servicio de Staff Augmentation",
+		href: "/pr/servicios/staff-augmentation",
+		colorClass: "orange-bg",
+		cardClass: "card-pink",
+	},
+	{
+		icon: "📋",
+		title: "Contractor of Record (CoR)",
+		description: "Gestionamos los contratos, pagos y cumplimiento de tus freelancers y contratistas en Latinoamérica.",
+		linkText: "Conoce nuestro servicio de Contractor of Record (CoR)",
+		href: "/pr/servicios/contractor-of-record",
+		colorClass: "gray-bg",
+		cardClass: "card-lime",
+	},
+];
+
+// --- 4. PROCESS PROPS ---
+const processItems = [
+	{
+		label: "Selección",
+		badge: "Gratis · Sin compromiso",
+		title: "1. Nos cuentas qué necesitas",
+		description: "Cuéntanos el perfil que buscas y, con nuestro reclutamiento remoto, encontraremos candidatos que encajen con tu empresa y cultura. Ideal si quieres contratar talento en el extranjero desde Puerto Rico, sin complicaciones.",
+	},
+	{
+		label: "Contratación",
+		badge: "Sin permanencia",
+		title: "2. Nosotros contratamos",
+		description: "Nosotros asumimos la contratación y la gestión administrativa del talento, para que tu empresa pueda integrar profesionales calificados sin asumir directamente la carga laboral ni comprometerse a contratos de larga duración",
+	},
+	{
+		label: "Integración",
+		badge: "En <30 días",
+		title: "3. Trabaja con los mejores",
+		description: "Tu nuevo profesional se integra a tu equipo en tu misma zona horaria. Paga menos que en Puerto Rico y accede a talento de primer nivel.",
+	},
+];
+
+// --- 5. PROFILES PROPS ---
+const profilesList = [
+	{
+		icon: "📈",
+		title: "Estrategia Comercial",
+		quote: "Más ventas, pipeline lleno y clientes que repiten",
+		roles: [
+			{ label: "Closer de Ventas", href: "/pr/perfiles/contratar-closer-de-ventas" }
+		],
+		iconColorClass: "purple-text",
+	}, 
+	{
+		icon: "📣",
+		title: "Marketing Digital",
+		quote: "Tu marca visible donde están tus clientes",
+		roles: [
+			{ label: "Especialista SEO", href: "/pr/perfiles/contratar-experto-seo" },
+			{ label: "Especialista Google Ads", href: "/pr/perfiles/especialista-en-google-ads" },
+			{ label: "Especialista Meta Ads", href: "/pr/perfiles/experto-en-meta-ads" },
+		],
+		iconColorClass: "pink-text", 
+	},
+	{
+		icon: "✍️",
+		title: "Redacción y Copywriting",
+		quote: "Palabras que venden, contenido que posiciona",
+		roles: [
+			{ label: "Copywriter", href: "/pr/perfiles/contratar-copywriter" }
+		],
+		iconColorClass: "orange-text",
+	},
+	{
+		icon: "📱",
+		title: "Redes Sociales",
+		quote: "Redes activas, audiencia creciendo, empresa escalando",
+		roles: [
+			{ label: "Community Manager", href: "/pr/perfiles/contratar-community-manager" },
+		],
+		iconColorClass: "blue-text",
+	},
+	{
+		icon: "🎨",
+		title: "Diseño",
+		quote: "Imagen profesional que genera confianza",
+		roles: [
+			{ label: "Diseñador Gráfico", href: "/pr/perfiles/contratar-disenador-grafico" }
+		],
+		iconColorClass: "purple-text",
+	},
+	{
+		icon: "🎬",
+		title: "Vídeo",
+		quote: "Vídeos que paran el scroll y convierten",
+		roles: [
+			{ label: "Editor de Vídeo", href: "/pr/perfiles/contratar-editor-de-videos" },
+		],
+		iconColorClass: "pink-text",
+	},
+	{
+		icon: "🗂️",
+		title: "Asistente Virtual",
+		quote: "Tu operación organizada, tú enfocado en crecer",
+		roles: [
+			{ label: "Asistente Virtual", href: "/pr/perfiles/contratar-un-asistente-virtual" },
+		],
+		iconColorClass: "orange-text",
+	},
+	{
+		icon: "🧮",
+		title: "Contabilidad",
+		quote: "Finanzas al día, sin sorpresas ni errores",
+		roles: [
+			{ label: "Contable", href: "/pr/perfiles/contratar-contable" },
+		],
+		iconColorClass: "blue-text",
+	},
+	{
+		icon: "⚙️",
+		title: "Tecnología",
+		quote: "El talento tech que necesitas, sin el coste que no puedes asumir",
+		roles: [
+			{ label: "Desarrollador Fullstack", href: "#" },
+			{ label: "Desarrollador Mobile", href: "#" }
+		],
+		iconColorClass: "purple-text",
+	},
+];
+
+// --- 6. BENEFITS PROPS ---
+const benefitsList = [
+	{
+		id: "riesgo-legal",
+		shortTitle: "Sin Riesgo Legal",
+		icon: "🛡️",
+		title: "Menos carga administrativa",
+		subtitle: "Sin riesgo",
+		text: "Oberstaff te ayuda a ordenar contratación, documentación y gestión recurrente.",
+		colorClass: "blue",
+	},
+	{
+		id: "menos-30-dias", 
+		shortTitle: "<30 Días",
+		icon: "⚡",
+		title: "Personal externo listo en <30 días",
+		subtitle: "Proceso de selección rápido y sin complicaciones",
+		text: "Nuestro proceso de reclutamiento remoto evalúa y preselecciona candidatos para que tú solo decidas con quién trabajar.",
+		colorClass: "orange",
+	},
+	{
+		id: "zona-horaria",
+		shortTitle: "Zona Horaria",
+		icon: "🕐",
+		title: "Zona horaria idéntica",
+		subtitle: "100% compatible con tu horario local",
+		text: "Tu equipo trabaja en tu misma franja horaria. Sin desfase, sin depender de husos horarios complejos.",
+		colorClass: "gray",
+	},
+	{
+		id: "factura-unica",
+		shortTitle: "Factura Única",
+		icon: "💶",
+		title: "Factura única para tu empresa",
+		subtitle: "Simplifica contabilidad y pagos",
+		text: "Recibes una factura mensual por el servicio y centralizamos pagos y gestión administrativa, para que tu equipo en Puerto Rico no tenga que lidiar con trámites en cada país.",
+		colorClass: "cyan",
+	},
+	{
+		id: "sin-permanencia",
+		shortTitle: "Sin Permanencia",
+		icon: "📅",
+		title: "Sin permanencia",
+		subtitle: "Cancela cuando quieras, sin penalizaciones",
+		text: "Ajusta a tu personal remoto según las necesidades reales de tu negocio. Total flexibilidad operativa.",
+		colorClass: "purple",
+	},
+	{
+		id: "talento-evaluado",
+		shortTitle: "Talento Evaluado",
+		icon: "✅",
+		title: "Talento remoto evaluado con rigor",
+		subtitle: "Pruebas psicométricas + entrevista previa",
+		text: "Toda la contratación de talento pasa por una evaluación exhaustiva. Puedes entrevistarlos antes de decidir.",
+		colorClass: "green",
+	},
+];
+const benefitsInfoText = `<strong>Oberstaff<span class="dot">.</span> factura de forma centralizada</strong>, todas las gestiones se hacen en tu idioma, en tu zona horaria y cumpliendo la normativa vigente para empresas de Puerto Rico.`;
+
+// --- 7. FAQS PROPS ---
+const faqsList = [
+	{
+		question: "¿Es legal contratar talento en LATAM desde Puerto Rico y por qué lo hacen las empresas?",
+		answers: [
+			"Sí, siempre que el modelo de contratación esté bien estructurado según el tipo de relación. Las empresas lo hacen principalmente para reducir costes de personal, acceder a perfiles escasos en el mercado local y mantener compatibilidad horaria con Puerto Rico. Oberstaff gestiona la estructura legal y operativa para que tú solo dirijas el trabajo.",
+		],
+	},
+	{
+		question: "¿Cómo sé qué modelo de contratación necesito?",
+		answers: [
+			"Depende de si necesitas un empleado formal, un freelancer, un refuerzo IT integrado en tu equipo o una función más delegada. Si no lo tienes claro, te orientamos antes de empezar para evitar errores de estructura.",
+		],
+	},
+	{
+		question: "¿Cuánto tiempo tarda el proceso de incorporación?",
+		answers: [
+			"Varía según el perfil y el modelo, pero normalmente, entre 2 semanas y 1 mes. Así que, si necesitas contratar personal extranjero, el proceso suele ser ágil gracias a nuestro pool de perfiles preseleccionado.",
+		],
+	},
+	{
+		question: "¿Los profesionales trabajan en horario de Puerto Rico?",
+		answers: [
+			"Sí. Todos los mercados en los que opera Oberstaff tienen husos horarios compatibles con Puerto Rico, lo que permite reuniones, seguimiento y coordinación diaria en tiempo real sin desfase.",
+		],
+	},
+	{
+		question: "¿Pueden ayudarme si aún no sé qué perfil o qué estructura necesito?",
+		answers: [
+			"Sí, parte del valor de Oberstaff es ayudar a definir qué perfil conviene, qué nivel de control se necesita y qué modelo encaja mejor con la operación antes de iniciar la contratación. Así se evitan errores de estructura desde el principio.",
+		],
+	},
+	{
+		question: "¿En qué países de Latinoamérica operan?",
+		answers: [
+			"Operamos en los principales mercados, los que poseen la mayor concentración de talento profesional y zonas horarias compatibles con Puerto Rico: Colombia, Argentina, México, Venezuela, Chile, Perú y Uruguay.",
+		]
+	}
+];
+
+// --- 8. PRESS PROPS ---
+const mentionsList = [
+	{
+		name: "Camara de Comercio",
+		className: "camara-comercio",
+		href: "https://www.camaraespanapr.org",
+		logo: "/logo-camara-comercio.webp",
+		alt: "Logo de Cámara de Comercio, patrocinador oficial de Oberstaff"
+	}
+];
+---
+
+<DashboardLayoutPr ogImage={ogImage}>
+	<link rel="canonical" href="https://oberstaff.com/pr/" slot="head" />
+	
+	<div class="welcome-section">
+		<div class="fade-in-section">
+			<Hero {...heroProps} />
+		</div>
+		
+		<div class="fade-in-section">
+			<StatsSection {...statsProps} />
+		</div>
+
+		<div class="fade-in-section">
+			<ServicesSection 
+				cardTitleTag="h3" 
+				title="Servicios para <strong>incorporar profesionales remotos de Latinoamérica</strong>"
+				description="No todas las empresas necesitan la misma estructura. Por eso Oberstaff te orienta hacia el modelo más eficiente según el tipo de perfil, la relación de trabajo y el nivel de control que buscas."
+				services={servicesList}
+			/>
+		</div>
+
+		<div class="fade-in-section">
+			<ProcessOberstaff 
+				id="como-funciona" 
+				useH3ForTitle={true}
+				title="Cómo <strong>reducir costes de personal</strong> contratando talento remoto en Latinoamérica"
+				items={processItems}
+			/>
+		</div>
+
+		<div class="fade-in-section">
+			<ProfilesSection 
+				variant="grid" 
+				title="Contratación de talento remoto - maximiza tu <strong>margen operativo</strong>"
+				description="Estos son algunos de los perfiles que pueden impulsar tus objetivos de negocio, con disponibilidad en la misma franja horaria y una integración fluida con tu equipo. Si buscas contratar talento especializado sin los costes de una contratación local, aquí tienes las categorías más demandadas."
+				profiles={profilesList}
+			/>
+		</div>
+
+		<div class="fade-in-section">
+			<EorCta
+				title="¿Quieres saber cuánto puedes ahorrar con talento remoto de LATAM?"
+				text="Te orientamos según tu operación, el tipo de perfil y el nivel de control que necesitas. En menos de 24 horas puedes tener claridad sobre cuál es el modelo más conveniente para tu negocio."
+				buttonText="Agenda una llamada gratuita"
+				buttonHref="#contacto"
+			/>
+		</div>
+
+		<div class="fade-in-section">
+			<BenefitsSection 
+				title="La forma más rápida de <strong>reducir costes de personal</strong> hasta un 70%"
+				benefits={benefitsList}
+				infoText={benefitsInfoText}
+			/>
+		</div>
+
+		<div class="fade-in-section">
+			<TestimonialsSection id="casos-de-exito" />
+		</div>
+
+		<div class="fade-in-section">
+			<FAQSection 
+				title="Todo lo que necesitas saber antes de <strong>contratar talento</strong> en LATAM"
+				ctaText="¿No sabes qué modelo de contratación necesitas para tu empresa?"
+				ctaButtonText="Agenda una llamada gratuita"
+				faqs={faqsList}
+			/>
+		</div>
+	
+		<div class="fade-in-section">
+			<ContactFormSection
+				title="¿Listo para <strong>contratar talento remoto</strong> en Latinoamérica desde Puerto Rico?"
+				subtitle="Cuéntanos qué perfil necesitas, qué objetivo buscas cubrir y qué nivel de control quieres tener sobre la operación. Con esa información podremos orientarte hacia la estructura más conveniente para tu negocio y ayudarte a activar el proceso con menos fricción."
+				directLabel="Atención directa en Puerto Rico:"
+				buttonText="Solicitar Presupuesto Gratuito"
+				webhookUrl="https://hooks.zapier.com/hooks/catch/12433184/4ovixjz/"
+			/>
+		</div>
+
+		<div class="fade-in-section">
+			<PressSection 
+				title="Nuestros colaboradores oficiales:"
+				mentions={mentionsList}
+				trustBadgeText="Solución segura para <strong>Contratar talentos en el extranjero</strong> con soporte integral"
+			/>
+		</div>
+	</div>
+</DashboardLayoutPr>
+
+<style>
+	.welcome-section {
+		/* Add any page-specific container styles here if needed */
+	}
+</style>

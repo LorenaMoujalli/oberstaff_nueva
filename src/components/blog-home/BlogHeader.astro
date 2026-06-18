@@ -6,11 +6,11 @@ interface Props {
     viewAllLink?: string;
 }
 
-const { title, viewAllLink = "#" } = Astro.props;
+const { title, viewAllLink = "/blog" } = Astro.props;
 /*https://oberstaff.com/blog/*/ 
 ---
 
-
+ 
 
 <div class="blog-header">
     <h2 class="blog-title" set:html={title} />

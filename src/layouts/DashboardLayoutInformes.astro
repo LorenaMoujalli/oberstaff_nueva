@@ -79,7 +79,8 @@ const canonicalOgImage = ogImage
     <noscript><img height="1" width="1" style="display:none"
       src="https://www.facebook.com/tr?id=1399493591830432&ev=PageView&noscript=1"
     /></noscript>
-    <!-- End Meta Pixel Code -->
+    <!-- 1. Estilos del Chat de n8n -->
+    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
@@ -104,16 +105,143 @@ const canonicalOgImage = ogImage
     <main class="report-layout-container">
       <slot />
     </main>
+    <!-- 2. Script que inicializa el Chatbot -->
+    <script type="module" is:inline>
+        import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+        createChat({
+            webhookUrl: 'https://n8n.obertrack.com/webhook/e4e73e31-e84f-4d2a-962e-2816fd7dae10/chat',
+            showWelcomeScreen: true,
+            defaultLanguage: 'en',
+            initialMessages: [
+                '¡Hola! 👋',
+                'Bienvenido a Oberstaff. ¿En qué te puedo ayudar hoy?'
+            ],
+            i18n: {
+                en: {
+                    title: 'Oberstaff Bot',
+                    subtitle: 'Estamos aquí para ayudarte 24/7.',
+                    inputPlaceholder: 'Escribe tu pregunta aquí...',
+                    getStarted: 'Nueva Conversación'
+                }
+            }
+        });
+    </script>
   </body>
 </html>
 
 <style is:global>
   :root {
+    /* Personalización del Chatbot de n8n */
+    --chat--color--primary: #ff66cc !important;
+    --chat--color--primary-shade-50: #ff66cc !important;
+    --chat--color--primary--shade-100: #ff66cc !important;
+    --chat--color-primary: #ff66cc !important;
+    --chat--color-primary-shade-50: #ff66cc !important;
+    --chat--header--background: #ff66cc !important;
+    --chat--header--color: #ffffff !important;
+    --chat--message--user--background: #6663FD !important;
+    --chat--message--user--color: #ffffff !important;
+    --chat--toggle--background: #ff66cc !important;
+    --chat--toggle--hover--background: #ff66cc !important;
+    --chat--toggle--active--background: #ff66cc !important;
+    --chat--message--padding: 1.1rem 1.3rem !important;
+    --chat--messages-list--padding: 1.2rem !important;
+
     --brand-pink: #ff66cc;
     /* Colores para el degradado de fondo profundo */
     --bg-dark-void: #0a0a0a; /* Negro casi total para la parte superior */
     --bg-light-glow: #2a2a2a; /* Gris con luz para la base */
   }
+
+  /* Aumentar padding en los mensajes y corregir listas que tocan los bordes */
+  #n8n-chat .chat-message-markdown,
+  #n8n-chat div[class*="message-markdown"] {
+    padding: 4px 8px !important;
+  }
+  #n8n-chat .chat-message-markdown ul,
+  #n8n-chat .chat-message-markdown ol,
+  #n8n-chat div[class*="message-markdown"] ul,
+  #n8n-chat div[class*="message-markdown"] ol {
+    padding-left: 20px !important;
+    margin-left: 5px !important;
+    margin-top: 8px !important;
+    margin-bottom: 8px !important;
+  }
+  #n8n-chat .chat-message-markdown li,
+  #n8n-chat div[class*="message-markdown"] li {
+    margin-bottom: 6px !important;
+    padding-left: 2px !important;
+  }
+
+  /* Centrar y alinear la caja de texto y botón de enviar */
+  #n8n-chat .chat-input-container,
+  #n8n-chat form[class*="input"],
+  #n8n-chat div[class*="input-container"] {
+    display: flex !important;
+    align-items: center !important;
+  }
+  #n8n-chat textarea,
+  #n8n-chat input[class*="input"] {
+    margin: 0 !important;
+    align-self: center !important;
+  }
+  #n8n-chat .chat-input-send-button,
+  #n8n-chat button[class*="send"] {
+    align-self: center !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* Centrar títulos en el header de n8n chat */
+  .chat-header,
+  #n8n-chat .chat-header {
+    text-align: center !important;
+    justify-content: center !important;
+  }
+  .chat-header .chat-header-title,
+  .chat-header .chat-header-subtitle,
+  #n8n-chat .chat-header .title,
+  #n8n-chat .chat-header .subtitle,
+  #n8n-chat .chat-header h1,
+  #n8n-chat .chat-header p {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 100% !important;
+  }
+
+  /* Estilos de los botones del chatbot n8n */
+  #n8n-chat .chat-input-send-button svg,
+  #n8n-chat button[class*="send"] svg,
+  #n8n-chat button[class*="send"] svg path {
+    fill: #6663FD !important;
+    stroke: #6663FD !important;
+  }
+
+  #n8n-chat .chat-input-send-button:hover,
+  #n8n-chat button[class*="send"]:hover,
+  #n8n-chat button[class*="send"]:active,
+  #n8n-chat button[class*="send"]:focus {
+    background: transparent !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  #n8n-chat .chat-toggle-button:hover,
+  .chat-toggle-button:hover,
+  #n8n-chat button[class*="toggle"]:hover,
+  #n8n-chat button[class*="bubble"]:hover,
+  #n8n-chat .chat-toggle-button:active,
+  .chat-toggle-button:active,
+  #n8n-chat button[class*="toggle"]:active,
+  #n8n-chat button[class*="bubble"]:active {
+    background-color: #ff66cc !important;
+    background: #ff66cc !important;
+    transform: scale(1.08) !important;
+  }
+
 
   * {
     box-sizing: border-box;

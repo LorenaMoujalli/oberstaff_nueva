@@ -3,11 +3,54 @@ import PressHeader from "./PressHeader.astro";
 import PressItem from "./PressItem.astro";
 import "../../styles/press/press-section.css";
 
-interface Props {
-    title?: string;
+interface Mention {
+    name: string;
+    className: string;
+    href: string;
+    logo: string;
+    alt: string;
 }
 
-const { title = "Nos han mencionado en:" } = Astro.props;
+interface Props {
+    title?: string;
+    mentions?: Mention[];
+    trustBadgeText?: string;
+}
+
+const {
+    title = "Nos han mencionado en:",
+    mentions = [
+        {
+            name: "Madridiario",
+            className: "mdo-madridiario",
+            href: "https://www.madridiario.es/actualidad-empresarial/fuga-de-capital-la-friccion-operativa-y-el-sobrecosto-del-talento-estan-frenando-las-pymes-espanolas-7128?target=external",
+            logo: "/logo-madridiario.webp",
+            alt: "Logo de Madridiario, medio que mencionó a Oberstaff"
+        },
+        {
+            name: "El Mundo Financiero",
+            className: "em-financiero",
+            href: "https://www.elmundofinanciero.com/seccion/40/actividad-empresarial/fuga-de-capital-la-friccion-operativa-y-el-sobrecosto-del-talento-estan-frenando-las-pymes-espanolas-7606?target=external",
+            logo: "/logo-mundo-financiero.webp",
+            alt: "Logo de El Mundo Financiero, medio que mencionó a Oberstaff"
+        },
+        {
+            name: "Region Digital",
+            className: "region-digital",
+            href: "https://www.regiondigital.com/empresas/fuga-de-capital-la-friccion-operativa-y-el-sobrecosto-del-talento-estan-frenando-las-pymes-espanolas-9827?target=external",
+            logo: "/logo-region-digital.webp",
+            alt: "Logo de Región Digital, medio que mencionó a Oberstaff"
+        },
+        {
+            name: "Camara de Comercio",
+            className: "camara-comercio",
+            href: "https://www.camaraespanapr.org",
+            logo: "/logo-camara-comercio.webp",
+            alt: "Logo de Cámara de Comercio, patrocinador oficial de Oberstaff"
+        }
+    ],
+    trustBadgeText = "Solución segura para <strong>Contratar talentos en el extranjero</strong> con soporte integral"
+} = Astro.props;
 ---
 
 <section class="press-mentions">
@@ -15,58 +58,20 @@ const { title = "Nos han mencionado en:" } = Astro.props;
         <PressHeader title={title} />
 
         <div class="mentions-wrapper">
-            <PressItem 
-                name="Madridiario" 
-                className="mdo-madridiario"
-                href="https://www.madridiario.es/actualidad-empresarial/fuga-de-capital-la-friccion-operativa-y-el-sobrecosto-del-talento-estan-frenando-las-pymes-espanolas-7128?target=external"
-            >
-                <img
-                    src="/logo-madridiario.webp"
-                    alt="Logo de Madridiario, medio que mencionó a Oberstaff"
-                    class="press-logo"
-                    aria-hidden="true"
-                />
-            </PressItem>
-
-            <PressItem 
-                name="El Mundo Financiero" 
-                className="em-financiero"
-                href="https://www.elmundofinanciero.com/seccion/40/actividad-empresarial/fuga-de-capital-la-friccion-operativa-y-el-sobrecosto-del-talento-estan-frenando-las-pymes-espanolas-7606?target=external"
-            >
-                <img
-                    src="/logo-mundo-financiero.webp"
-                    alt="Logo de El Mundo Financiero, medio que mencionó a Oberstaff"
-                    class="press-logo"
-                    aria-hidden="true"
-                />
-            </PressItem>
-
-            <PressItem 
-                name="Region Digital" 
-                className="region-digital"
-                href="https://www.regiondigital.com/empresas/fuga-de-capital-la-friccion-operativa-y-el-sobrecosto-del-talento-estan-frenando-las-pymes-espanolas-9827?target=external"
-            >
-                <img
-                    src="/logo-region-digital.webp"
-                    alt="Logo de Región Digital, medio que mencionó a Oberstaff"
-                    class="press-logo"
-                    aria-hidden="true"
-                />
-            </PressItem>
-
-             <PressItem 
-                name="Camara de Comercio" 
-                className="camara-comercio"
-                href="https://www.camaraespanapr.org"
-            >
-                <img
-                    src="/logo-camara-comercio.webp"
-                    alt="Logo de Cámara de Comercio, patrocinador oficial de Oberstaff"
-                    class="press-logo"
-                    aria-hidden="true"
-                    
-                />
-            </PressItem>
+            {mentions.map((mention) => (
+                <PressItem 
+                    name={mention.name} 
+                    className={mention.className}
+                    href={mention.href}
+                >
+                    <img
+                        src={mention.logo}
+                        alt={mention.alt}
+                        class="press-logo"
+                        aria-hidden="true"
+                    />
+                </PressItem>
+            ))}
         </div>
  
         <div style="text-align: center;">
@@ -74,7 +79,7 @@ const { title = "Nos han mencionado en:" } = Astro.props;
                 <span class="badge-icon" aria-hidden="true">
                     ✅
                 </span>
-                <span>Solución segura para <strong>Contratar talentos en el extranjero</strong> con soporte integral</span>
+                <span set:html={trustBadgeText} />
             </div>
         </div>
     </div>

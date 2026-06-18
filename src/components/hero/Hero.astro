@@ -2,11 +2,22 @@
 import HeroContent from "./HeroContent.astro";
 import HeroVisual from "./HeroVisual.astro";
 import "../../styles/hero/Hero.css";
+
+interface Props {
+    title?: string;
+    description?: string;
+    socialProof?: string;
+    buttonText?: string;
+    buttonHref?: string;
+    videoButtonText?: string;
+}
+
+const props = Astro.props;
 ---
 
 <section class="hero-oberstaff">
     <div class="hero-container">
-        <HeroContent />
+        <HeroContent {...props} />
         <HeroVisual />
     </div>
 </section>

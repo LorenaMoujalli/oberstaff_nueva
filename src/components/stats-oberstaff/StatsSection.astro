@@ -1,26 +1,44 @@
 ---
 import StatCard from "./StatCard.astro";
 import "../../styles/stats-oberstaff/stats-section.css";
+
+interface Props {
+    title?: string;
+    stat1_number?: string;
+    stat1_label?: string;
+    stat2_number?: string;
+    stat2_label?: string;
+    stat3_number?: string;
+    stat3_label?: string;
+}
+
+const {
+    title = `Si estás evaluando <strong>Cómo reducir costes de personal</strong> sin perder calidad ni zona horaria, Latinoamérica es una de las vías más eficientes.`,
+    stat1_number = "70%",
+    stat1_label = "Ahorro versus contratación local en España",
+    stat2_number = "<30",
+    stat2_label = "Días hasta incorporar a tu candidato a tu operación",
+    stat3_number = "100%",
+    stat3_label = "Profesionales Compatibles con Zona horaria de España"
+} = Astro.props;
 ---
 
 <section class="stats-oberstaff">
-    <h2 class="stats-main-title">
-        Si estás evaluando <strong>Cómo reducir costes de personal</strong> sin perder calidad ni zona horaria, Latinoamérica es una de las vías más eficientes.
-    </h2>
+    <h2 class="stats-main-title" set:html={title} />
     <div class="stats-container">
         <StatCard
-            number="70%"
-            label="Ahorro versus contratación local en España"
+            number={stat1_number}
+            label={stat1_label}
         />
 
         <StatCard
-            number="<30"
-            label="Días hasta incorporar a tu candidato a tu operación"
+            number={stat2_number}
+            label={stat2_label}
         />
 
         <StatCard
-            number="100%"
-            label="Profesionales Compatibles con Zona horaria de España"
+            number={stat3_number}
+            label={stat3_label}
         />
     </div>
 </section>
