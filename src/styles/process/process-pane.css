@@ -55,6 +55,16 @@
     line-height: 1.7;
 }
 
+.process-pane p .brand-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+}
+
+.process-pane p .brand-dot {
+    font-weight: 800;
+    color: #ff66cc;
+}
+
 /* --- Responsive --- */
 @media (max-width: 900px) {
     .process-content {

@@ -8,6 +8,7 @@ interface Props {
     buttonText?: string;
     buttonHref?: string;
     videoButtonText?: string;
+    badge?: string;
 }
 
 const {
@@ -20,11 +21,15 @@ gastos asociados a empleados en plantilla.`,
     socialProof = `Más de 500 empresas confían en <span class="brand-text">Oberstaff<span class="brand-dot">.</span></span>`,
     buttonText = `Agendar llamada gratis`,
     buttonHref = `#contacto`,
-    videoButtonText = `Ver cómo funciona`
+    videoButtonText = `Ver cómo funciona`,
+    badge = ""
 } = Astro.props;
 ---
 
 <div class="hero-text-content">
+    {badge && (
+        <p class="hero-badge">{badge}</p>
+    )}
     <h1 set:html={title} />
     <p class="hero-description" set:html={description} />
     <p class="social-proof" set:html={socialProof} />
@@ -39,5 +44,18 @@ gastos asociados a empleados en plantilla.`,
         </button>
     </div>
 </div>
+
+<style>
+    .hero-badge {
+        color: #ff66cc;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 800;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 12px;
+        display: block;
+    }
+</style>
 
 

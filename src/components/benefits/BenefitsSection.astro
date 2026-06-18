@@ -111,7 +111,7 @@ const {
                                 <h3 class="pane-title">{benefit.title}</h3>
                             </div>
                             <p class="pane-subtitle">{benefit.subtitle}</p>
-                            <p class="pane-text">{benefit.text}</p>
+                            <p class="pane-text" set:html={benefit.text}></p>
                         </div>
                     </div>
                 ))}

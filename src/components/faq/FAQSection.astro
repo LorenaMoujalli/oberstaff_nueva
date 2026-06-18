@@ -82,7 +82,7 @@ const {
                         faqs.map((faq: FAQ) => (
                             <FAQItem question={faq.question}>
                                 {faq.answers &&
-                                    faq.answers.map((answer: string) => <p>{answer}</p>)}
+                                    faq.answers.map((answer: string) => <p set:html={answer}></p>)}
 
                                 {faq.content === "countries" && (
                                     <>

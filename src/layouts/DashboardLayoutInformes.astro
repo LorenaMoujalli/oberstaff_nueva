@@ -105,8 +105,8 @@ const canonicalOgImage = ogImage
     <main class="report-layout-container">
       <slot />
     </main>
-    <!-- 2. Script que inicializa el Chatbot -->
-    <script type="module" is:inline>
+    <!-- 2. Script que inicializa el Chatbot
+		<script type="module" is:inline>
         import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
 
         createChat({
@@ -126,7 +126,22 @@ const canonicalOgImage = ogImage
                 }
             }
         });
-    </script>
+    
+			const observer = new MutationObserver(() => {
+				const chatTitle = document.querySelector('#n8n-chat h1');
+				if (chatTitle) {
+					const p = document.createElement('p');
+					p.classList.add('chat-title-p');
+					for (let attr of chatTitle.attributes) {
+						p.setAttribute(attr.name, attr.value);
+					}
+					p.innerHTML = chatTitle.innerHTML;
+					chatTitle.parentNode.replaceChild(p, chatTitle);
+				}
+			});
+			observer.observe(document.body, { childList: true, subtree: true });
+</script>
+		-->
   </body>
 </html>
 
@@ -195,6 +210,11 @@ const canonicalOgImage = ogImage
   }
 
   /* Centrar títulos en el header de n8n chat */
+	#n8n-chat .chat-header p.chat-title-p {
+		font-size: 1.25rem !important;
+		font-weight: 700 !important;
+	}
+
   .chat-header,
   #n8n-chat .chat-header {
     text-align: center !important;

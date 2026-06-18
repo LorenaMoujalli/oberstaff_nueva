@@ -10,6 +10,8 @@ interface Props {
     buttonText?: string;
     buttonHref?: string;
     videoButtonText?: string;
+    showPedro?: boolean;
+    badge?: string;
 }
 
 const props = Astro.props;
@@ -18,6 +20,6 @@ const props = Astro.props;
 <section class="hero-oberstaff">
     <div class="hero-container">
         <HeroContent {...props} />
-        <HeroVisual />
+        <HeroVisual showPedro={props.showPedro} />
     </div>
 </section>

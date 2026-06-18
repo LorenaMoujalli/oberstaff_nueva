@@ -4,6 +4,7 @@ import "../../styles/stats-oberstaff/stats-section.css";
 
 interface Props {
     title?: string;
+    description?: string;
     stat1_number?: string;
     stat1_label?: string;
     stat2_number?: string;
@@ -14,6 +15,7 @@ interface Props {
 
 const {
     title = `Si estás evaluando <strong>Cómo reducir costes de personal</strong> sin perder calidad ni zona horaria, Latinoamérica es una de las vías más eficientes.`,
+    description = "",
     stat1_number = "70%",
     stat1_label = "Ahorro versus contratación local en España",
     stat2_number = "<30",
@@ -25,6 +27,7 @@ const {
 
 <section class="stats-oberstaff">
     <h2 class="stats-main-title" set:html={title} />
+    {description && <p class="stats-description" set:html={description} />}
     <div class="stats-container">
         <StatCard
             number={stat1_number}

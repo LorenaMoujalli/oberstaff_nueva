@@ -1,6 +1,12 @@
 ---
 import FloatingCard from "./FloatingCard.astro";
 import "../../styles/hero/HeroVisual.css";
+
+interface Props {
+    showPedro?: boolean;
+}
+
+const { showPedro = true } = Astro.props;
 ---
 
 <div class="hero-visual">
@@ -22,16 +28,18 @@ import "../../styles/hero/HeroVisual.css";
             altText="Juan Escobar, especialista SEO"
         />
 
-        <FloatingCard
-            name="Pedro Pérez"
-            role="Full Stack Developer"
-            location="Remoto desde Arg"
-            image="/img2-hero.webp"
-            mapIcon="/ar.webp"
-            class="card-mateo"
-            delay="0.5s"
-            altText="Pedro Pérez, desarrollador full stack"
-        />
+        {showPedro && (
+            <FloatingCard
+                name="Pedro Pérez"
+                role="Full Stack Developer"
+                location="Remoto desde Arg"
+                image="/img2-hero.webp"
+                mapIcon="/ar.webp"
+                class="card-mateo"
+                delay="0.5s"
+                altText="Pedro Pérez, desarrollador full stack"
+            />
+        )}
 
         <FloatingCard
             name="María Gómez"

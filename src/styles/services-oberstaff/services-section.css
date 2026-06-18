@@ -37,6 +37,16 @@
     margin: 0 auto 30px auto;
 }
 
+.section-description .brand-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+}
+
+.section-description .brand-dot {
+    font-weight: 800;
+    color: #ff66cc;
+}
+
 .services-header h2 strong {
     font-weight: 900;
     color: #6663FD;
@@ -68,4 +78,15 @@
     .services-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* --- Cambios exclusivos para el Index de Puerto Rico (.pr-services) --- */
+.pr-services .service-card .service-link {
+    margin-top: 18px !important;
+    color: #0000EE !important;
+}
+
+.pr-services .service-card:hover {
+    border-color: rgba(0, 0, 0, 0.03) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
 }

@@ -22,5 +22,5 @@ const { id, badge, title, description, active = false, badgeColor, badgeBg, useH
     ) : (
         <p class="process-pane-title"><strong>{title}</strong></p>
     )}
-    <p>{description}</p>
+    <p set:html={description} />
 </div>

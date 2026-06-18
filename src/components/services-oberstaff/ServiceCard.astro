@@ -37,7 +37,7 @@ const TitleTag = titleTag;
         <span class="icon-emoji-servicios-home" aria-hidden="true">{icon}</span>
     </div>
     <TitleTag class="service-card-title" set:html={title} />
-    <p>{description}</p>
+    <p set:html={description} />
     {linkText && (
         <a href={href} class="service-link">
             {linkText}

@@ -15,6 +15,7 @@ interface Testimonial {
 interface Props {
     id?: string;
     testimonials?: Testimonial[];
+    title?: string;
 }
 
 const defaultTestimonials = [
@@ -36,13 +37,13 @@ const defaultTestimonials = [
     },
 ];
 
-const { id, testimonials = defaultTestimonials } = Astro.props;
+const { id, testimonials = defaultTestimonials, title = "Empresas que ya <strong>contratan talento remoto</strong> en Sudamérica" } = Astro.props;
 ---
 
 <section class="testimonials-section" id={id}>
     <div class="testimonials-container">
         <TestimonialsHeader
-            title="Empresas que ya <strong>contratan talento remoto</strong> en Sudamérica"
+            title={title}
         />
 
         <div class="testimonials-grid">

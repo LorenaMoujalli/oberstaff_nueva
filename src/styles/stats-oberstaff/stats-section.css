@@ -22,6 +22,15 @@
 color: #6663FD;
 }
 
+.stats-description {
+    text-align: center;
+    max-width: 800px;
+    margin: -35px auto 45px auto;
+    font-size: 18px;
+    color: #4B5563;
+    line-height: 1.6;
+}
+
 .stats-container {
     max-width: 1100px;
     margin: 0 auto;
@@ -41,6 +50,12 @@ color: #6663FD;
     .stats-main-title {
         font-size: 24px;
         margin-bottom: 40px;
+    }
+
+    .stats-description {
+        font-size: 16px;
+        margin: -25px auto 35px auto;
+        line-height: 1.5;
     }
 
     .stats-container {

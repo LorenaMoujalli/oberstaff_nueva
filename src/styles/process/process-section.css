@@ -39,6 +39,16 @@
     color: #6663FD;
 }
 
+.process-main-title .brand-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+}
+
+.process-main-title .brand-dot {
+    font-weight: 800;
+    color: #ff66cc;
+}
+
 /* --- Card principal (contenedor de 3 columnas) --- */
 .process-card {
     display: flex;
