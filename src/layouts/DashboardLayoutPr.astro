@@ -218,6 +218,16 @@ const canonicalOgImage = ogImage
 		transform: scale(1.08) !important;
 	}
 
+	/* Posición responsiva del chat de n8n para que no se corte en móviles */
+	@media (max-width: 768px) {
+		#n8n-chat .chat-toggle-button,
+		#n8n-chat button[class*="toggle"],
+		#n8n-chat div[class*="chat-toggle"],
+		.chat-toggle-button {
+			right: 20px !important;
+			bottom: 20px !important;
+		}
+	}
 
 	* {
 		box-sizing: border-box;
