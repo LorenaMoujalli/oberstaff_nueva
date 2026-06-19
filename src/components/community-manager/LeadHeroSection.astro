@@ -16,6 +16,7 @@ interface Badge {
 }
 
 interface Props {
+    backgroundImage?: string;
     topLabel?: string;
     title?: string;
     cardTitle?: string;
@@ -40,6 +41,7 @@ interface Props {
 }
 
 const {
+    backgroundImage,
     topLabel = "CONTRATAR TALENTO REMOTO DESDE LATINOAMÉRICA",
     title = "Delega el crecimiento de tu empresa en talento experto",
     cardTitle = "Comienza ahora",
@@ -62,9 +64,13 @@ const {
     placeholderCompany,
     placeholderPhone,
 } = Astro.props;
+
+const sectionStyle = backgroundImage 
+    ? `background: linear-gradient(to right, rgba(27, 27, 27, 0.95) 40%, rgba(27, 27, 27, 0.6) 100%), url('${backgroundImage}') !important; background-size: cover !important; background-position: center !important; background-repeat: no-repeat !important;`
+    : undefined;
 ---
 
-<section class="lead-hero-section">
+<section class="lead-hero-section" style={sectionStyle}>
     <!-- Aurora background elements -->
     <div class="blur-glow pink-glow"></div>
     <div class="blur-glow purple-glow"></div>
