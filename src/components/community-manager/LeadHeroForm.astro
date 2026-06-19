@@ -11,6 +11,10 @@ interface Props {
     footerLinkHref?: string;
     cardTitleTag?: string;
     webhookUrl?: string;
+    placeholderName?: string;
+    placeholderEmail?: string;
+    placeholderCompany?: string;
+    placeholderPhone?: string;
 }
 
 const {
@@ -23,6 +27,10 @@ const {
     footerLinkHref = "#",
     cardTitleTag = "p",
     webhookUrl = "",
+    placeholderName = "Nombre completo *",
+    placeholderEmail = "Email corporativo *",
+    placeholderCompany = "Empresa *",
+    placeholderPhone = "Teléfono *",
 } = Astro.props;
 
 const CardTitleTag = cardTitleTag as any;
@@ -40,21 +48,21 @@ const CardTitleTag = cardTitleTag as any;
         </div>
 
         <div class="input-group">
-            <input type="text" placeholder="Nombre completo *" required />
+            <input type="text" placeholder={placeholderName} required />
         </div>
 
         <div class="input-group">
-            <input type="email" placeholder="Email corporativo *" required />
+            <input type="email" placeholder={placeholderEmail} required />
         </div>
 
         <div class="input-group">
-            <input type="text" placeholder="Empresa *" required />
+            <input type="text" placeholder={placeholderCompany} required />
         </div>
 
         <div class="input-group">
             <input
                 type="tel"
-                placeholder="Teléfono *"
+                placeholder={placeholderPhone}
                 required
                 style="width: 100%; box-sizing: border-box;"
                 oninput="this.value = this.value.replace(/[^0-9 ]/g, '')"

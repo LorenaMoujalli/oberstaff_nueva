@@ -1,0 +1,2087 @@
+---
+import DashboardLayoutPerfilesPr from "../../../layouts/DashboardLayoutPerfilesPr.astro";
+import LeadHeroSection from "../../../components/community-manager/LeadHeroSection.astro";
+import ComparisonPerfiles from "../../../components/comparison-perfiles/ComparisonPerfiles.astro";
+import PricingCardPerfil from "../../../components/pricing-perfil/PricingCardPerfil.astro";
+import BeneficiosPerfilDisenador from "../../../components/beneficios-perfil/BeneficiosPerfilDisenador.astro";
+//import PressSection from "../../../components/press/PressSection.astro";
+import ConversionPerfilDisenador from "../../../components/conversion-perfil/ConversionPerfilDisenador.astro";
+import RolesPerfil from "../../../components/roles-del-perfil/RolesPerfil.astro";
+import QueEsServicioSection from "../../../components/QueEsServicio/QueEsServicioSection.astro";
+import ServicesSection from "../../../components/services-oberstaff/ServicesSection.astro";
+//import EorStepsSection from "../../../components/eor-steps-servicios/EorStepsSection.astro";
+import EorCta from "../../../components/eor-cta-servicios/EorCta.astro";
+import CasosExitoSection from "../../../components/casos-exito-servicios/CasosExitoSection.astro";
+import FAQSection from "../../../components/faq-servicios/FAQSection-community.astro";
+//import GuiaContratacion from "../../../components/guia-contratacion-perfiles/GuiaContratacion.astro";
+import ProcessOberstaff from "../../../components/process/ProcessOberstaff.astro";
+
+const ogImage = "Contratar community manager.webp";
+
+const faqs = [
+    {
+        question: "¿El CM trabajará con cuentas de otras empresas al mismo tiempo?",
+        answers: ["No. Tu profesional está asignado 100% en exclusiva a tu marca, trabajando únicamente en tu calendario editorial y analizando a tus competidores."]
+    },
+    {
+        question: "¿Puede un CM de Sudamérica gestionar mi comunidad en inglés y español?",
+        answers: ["Sí. Muchos perfiles tienen nivel B2-C1 de inglés escrito. Indícalo en el brief y lo filtramos desde la primera terna de candidatos."]
+    },
+    {
+        question: '¿Qué diferencia hay entre un community manager freelance y el modelo <span class="brand-oberstaff">Oberstaff<span class="brand-dot">.</span></span>?',
+        answers: ['El community manager freelance suele trabajar por proyecto o por horas, con disponibilidad variable. Con <span class="brand-oberstaff">Oberstaff<span class="brand-dot">.</span></span>, el perfil se integra de forma dedicada, con evaluación previa, más continuidad y soporte administrativo.']
+    },
+    {
+        question: "¿Cuándo conviene contratar un community manager?",
+        answers: ["Conviene cuando tu empresa en Puerto Rico necesita presencia constante en redes, responder a su comunidad en tiempo real y publicar con regularidad, sin cargar esa tarea sobre el equipo interno. Un perfil remoto especializado profesionaliza el manejo de redes y trabaja alineado al horario AST."]
+    },
+    {
+        question: "¿Qué pasa si el perfil no se adapta a nuestra voz de marca?",
+        answers: ["Puedes cancelar el servicio con 30 días de preaviso, sin indemnizaciones ni pleitos, o solicitar un reemplazo inmediato del profesional."]
+    },
+    {
+        question: "¿De qué países provienen los perfiles?",
+        answers: ["Reclutamos perfiles de comunicación, mercadeo y social media en Sudamérica —Colombia, Argentina, Perú, Venezuela— y también en México, mercados con talento digital competitivo."]
+    },
+    {
+        question: "¿Cómo validan las competencias técnicas?",
+        answers: ["Los candidatos pasan por revisión de experiencia, entrevistas, pruebas técnicas, análisis de criterio comunicacional y validación de herramientas antes de presentarse a tu empresa."]
+    },
+    {
+        question: "¿Cuáles son las ventajas del modelo EOR frente a contratar directamente?",
+        answers: ['<span class="brand-oberstaff">Oberstaff<span class="brand-dot">.</span></span> gestiona la relación contractual y administrativa en el país del profesional. Tu empresa recibe soporte mediante una estructura corporativa simplificada, reduciendo carga operativa frente a una contratación directa.']
+    }
+];
+---
+
+<DashboardLayoutPerfilesPr
+  ogImage={ogImage}
+  title="Community Manager en Puerto Rico | Oberstaff"
+  description="¿Buscas contratar community manager sin saber por dónde empezar? Perfiles evaluados de LATAM, zona horaria Puerto Rico y hasta un 70% de ahorro."
+  footerTitle="Roles Relacionados"
+  footerLinks={[
+    {
+      text: "🎨 Diseñador gráfico",
+      href: "#",
+    },
+    {
+      text: "🗂️ Asistente virtual",
+      href: "#",
+    },
+    {
+      text: "📹 Editor de video",
+      href: "#",
+    },
+  ]}
+>
+  <link
+    rel="canonical"
+    href="https://oberstaff.com/pr/perfiles/contratar-community-manager"
+    slot="head"
+  />
+  <script slot="head" type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://www.oberstaff.com/perfiles/contratar-community-manager#webpage",
+          "url": "https://www.oberstaff.com/perfiles/contratar-community-manager",
+          "name": "Contratar Community Manager para Empresas Españolas | Oberstaff",
+          "description": "¿Buscas contratar community manager sin saber por dónde empezar? Perfiles evaluados de LATAM, zona horaria España y hasta un 70% de ahorro.",
+          "inLanguage": "es-ES",
+          "isPartOf": {
+            "@id": "https://www.oberstaff.com/#website"
+          },
+          "publisher": {
+            "@id": "https://www.oberstaff.com/#organization"
+          },
+          "about": {
+            "@id": "https://www.oberstaff.com/perfiles/contratar-community-manager#service"
+          },
+          "mainEntity": {
+            "@id": "https://www.oberstaff.com/perfiles/contratar-community-manager#service"
+          },
+          "breadcrumb": {
+            "@id": "https://www.oberstaff.com/perfiles/contratar-community-manager#breadcrumb"
+          }
+        },
+        {
+          "@type": "Service",
+          "@id": "https://www.oberstaff.com/perfiles/contratar-community-manager#service",
+          "name": "Contratar Community Manager Remoto en LATAM para empresas españolas",
+          "alternateName": [
+            "Contratar community manager",
+            "Community manager remoto",
+            "Community manager para empresas",
+            "Community manager LATAM",
+            "Gestor de redes sociales remoto",
+            "Social media manager remoto",
+            "Talento social media remoto"
+          ],
+          "serviceType": "Contratación de community manager remoto",
+          "category": "Servicios de contratación de talento remoto para marketing y redes sociales",
+          "url": "https://www.oberstaff.com/perfiles/contratar-community-manager",
+          "provider": {
+            "@id": "https://www.oberstaff.com/#organization"
+          },
+          "description": "Servicio para empresas españolas que necesitan contratar un Community Manager remoto de LATAM con dedicación exclusiva, dominio de social media, gestión de comunidad, moderación, analítica, social listening, horario compatible con España y gestión laboral cubierta por Oberstaff.",
+          "slogan": "Delega el crecimiento de tu comunidad digital en talento experto, sin riesgo ni burocracia laboral local.",
+          "audience": {
+            "@type": "BusinessAudience",
+            "audienceType": "Empresas españolas que necesitan contratar community manager remoto en LATAM para gestionar redes sociales, comunidad digital, reputación online, engagement y contenidos",
+            "geographicArea": {
+              "@type": "Country",
+              "name": "España"
+            }
+          },
+          "serviceAudience": {
+            "@type": "BusinessAudience",
+            "audienceType": "Pymes, startups, ecommerce, agencias y empresas españolas que buscan Community Managers remotos dedicados, evaluados en social media, con horario compatible con España y gestión laboral resuelta",
+            "geographicArea": {
+              "@type": "Country",
+              "name": "España"
+            }
+          },
+          "areaServed": [
+            {
+              "@type": "Country",
+              "name": "España"
+            },
+            {
+              "@type": "Country",
+              "name": "Colombia"
+            },
+            {
+              "@type": "Country",
+              "name": "Argentina"
+            },
+            {
+              "@type": "Country",
+              "name": "México"
+            },
+            {
+              "@type": "Country",
+              "name": "Venezuela"
+            },
+            {
+              "@type": "Country",
+              "name": "Chile"
+            },
+            {
+              "@type": "Country",
+              "name": "Perú"
+            },
+            {
+              "@type": "Country",
+              "name": "Uruguay"
+            }
+          ],
+          "offers": {
+            "@type": "Offer",
+            "@id": "https://www.oberstaff.com/perfiles/contratar-community-manager#offer",
+            "name": "Community Manager Remoto Dedicado",
+            "url": "https://www.oberstaff.com/perfiles/contratar-community-manager#contacto",
+            "price": "820",
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/InStock",
+            "eligibleCustomerType": "http://purl.org/goodrelations/v1#Business",
+            "eligibleRegion": {
+              "@type": "Country",
+              "name": "España"
+            },
+            "description": "Contratación de Community Manager remoto desde 820€ al mes, dirigido a empresas españolas que necesitan gestión de redes sociales, moderación de comunidad, analítica mensual, coordinación con marketing, horario compatible con España y una única factura mensual en euros.",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "820",
+              "priceCurrency": "EUR",
+              "unitText": "profesional por mes"
+            }
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "@id": "https://www.oberstaff.com/perfiles/contratar-community-manager#included-services",
+            "name": "Qué puede hacer un Community Manager remoto por tu empresa",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "name": "Gestión táctica de perfiles sociales",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Gestión táctica de perfiles sociales",
+                  "description": "Programación de calendarios editoriales en Instagram, LinkedIn, TikTok, Facebook y X, adaptando la estrategia a cada plataforma."
+                }
+              },
+              {
+                "@type": "Offer",
+                "name": "Curación y adaptación de formatos",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Curación y adaptación de formatos",
+                  "description": "Estructuración de publicaciones, curación de tendencias y adaptación de mensajes para mantener activa la voz de marca."
+                }
+              },
+              {
+                "@type": "Offer",
+                "name": "Moderación de comunidad",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Moderación de comunidad",
+                  "description": "Respuesta a mensajes directos, comentarios y moderación de situaciones de reputación online para mantener la marca conectada con su audiencia."
+                }
+              },
+              {
+                "@type": "Offer",
+                "name": "Analítica y social listening",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Analítica y social listening",
+                  "description": "Medición de KPIs como alcance, engagement rate, clics y crecimiento de seguidores, con informes mensuales e insights estratégicos."
+                }
+              },
+              {
+                "@type": "Offer",
+                "name": "Estrategia de social media",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Estrategia de social media",
+                  "description": "Estudio de audiencias, análisis de competidores, selección de hashtags y detección de tendencias para mejorar el alcance orgánico."
+                }
+              },
+              {
+                "@type": "Offer",
+                "name": "Soporte en distribución Paid Social",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Soporte en distribución Paid Social",
+                  "description": "Gestión de la comunidad que interactúa con anuncios en Meta Ads y LinkedIn Ads, apoyando al equipo de performance marketing."
+                }
+              }
+            ]
+          }
+        },
+        {
+          "@type": "ItemList",
+          "@id": "https://www.oberstaff.com/perfiles/contratar-community-manager#advantages",
+          "name": "Ventajas de contratar Community Manager remoto con Oberstaff",
+          "description": "Ventajas operativas para empresas españolas que contratan Community Managers remotos en LATAM.",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Community Managers evaluados",
+              "description": "Perfiles evaluados con pruebas técnicas de social media y test psicométricos."
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Protección de accesos y activos digitales",
+              "description": "Oberstaff firma acuerdos de confidencialidad para proteger contraseñas, cuentas y activos digitales."
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Ahorro estructural",
+              "description": "Un profesional social media in-house consolidado en una única factura mensual."
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Flexibilidad sin indemnizaciones",
+              "description": "Posibilidad de cancelar o solicitar reemplazo si el Community Manager no logra captar la esencia de la marca."
+            }
+          ]
+        },
+        {
+          "@type": "ItemList",
+          "@id": "https://www.oberstaff.com/perfiles/contratar-community-manager#process",
+          "name": "Proceso para contratar Community Manager con Oberstaff",
+          "description": "Proceso de Oberstaff para conectar empresas españolas con Community Managers remotos de LATAM.",
+          "numberOfItems": 4,
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Diagnóstico de situación digital",
+              "description": "La empresa indica plataformas prioritarias, sector y tono de voz que debe tener el futuro Community Manager."
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Presentación de estrategas validados",
+              "description": "Oberstaff presenta entre 3 y 5 Community Managers con KPIs demostrables, experiencia previa y resultados de evaluación."
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Entrevistas de brand fit",
+              "description": "La empresa entrevista a los finalistas, evalúa su creatividad, criterio de comunicación y capacidad para representar la voz de marca."
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Activación de la gestión social",
+              "description": "Oberstaff asume el compliance legal y el Community Manager comienza a publicar, interactuar, moderar y medir resultados."
+            }
+          ]
+        },
+        {
+          "@type": "ItemList",
+          "@id": "https://www.oberstaff.com/perfiles/contratar-community-manager#profiles",
+          "name": "Tipos de Community Manager disponibles",
+          "description": "Especialidades de Community Manager remoto que empresas españolas pueden contratar con Oberstaff.",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Gestor de redes multiplataforma",
+              "description": "Dominio de Instagram, TikTok, Facebook y X para crecimiento orgánico y dinamización de comunidades visuales."
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Community Manager LinkedIn y B2B",
+              "description": "Construcción de autoridad corporativa, social selling y generación de leads cualificados en entornos profesionales."
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Community Manager para ecommerce y social commerce",
+              "description": "Gestión de atención al cliente por DM, reseñas públicas, catálogo social y lanzamientos."
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Community Manager para marca personal",
+              "description": "Ghostwriting y gestión de presencia digital para CEOs, divulgadores, coaches, fundadores y líderes."
+            }
+          ]
+        },
+        {
+          "@type": "ItemList",
+          "@id": "https://www.oberstaff.com/perfiles/contratar-community-manager#comparison",
+          "name": "Comparativa para contratar Community Manager",
+          "description": "Comparación entre contratar Community Manager con Oberstaff, contratar un CM local en España, plataformas freelance o agencia de social media externa.",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Oberstaff LATAM",
+              "description": "Desde 820€ al mes, jornada completa, dedicación exclusiva, horario compatible con España y validación técnica de social media."
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Community Manager local en España",
+              "description": "Coste orientativo entre 2.000€ y 2.800€ brutos al mes, sin contar Seguridad Social ni otros gastos."
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Plataformas freelance",
+              "description": "Coste variable entre 800€ y 2.000€, con menor garantía de dedicación exclusiva y horario fijo."
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Agencia Social Media externa",
+              "description": "Coste orientativo entre 1.500€ y 4.000€, con cuentas compartidas, más burocracia y menor respuesta inmediata."
+            }
+          ]
+        },
+        {
+          "@type": "ItemList",
+          "@id": "https://www.oberstaff.com/perfiles/contratar-community-manager#benefits",
+          "name": "Beneficios de contratar Community Manager con Oberstaff",
+          "description": "Beneficios para empresas españolas que incorporan Community Managers remotos de LATAM con Oberstaff.",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Mimetización con la marca",
+              "description": "El Community Manager trabaja enfocado en el calendario editorial, tendencias y comunidad diaria de la marca."
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Ecosistema sincronizado",
+              "description": "El perfil se conecta a canales internos como Slack, participa en ideas y programa contenido en herramientas como Metricool."
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Blindaje corporativo",
+              "description": "Contratos en el país de origen del talento para proteger accesos, datos, contraseñas y gestión laboral."
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Factura mensual única",
+              "description": "La empresa recibe una sola factura internacional en euros por el servicio del Community Manager remoto."
+            }
+          ]
+        },
+        {
+          "@type": "ItemList",
+          "@id": "https://www.oberstaff.com/perfiles/contratar-community-manager#guide",
+          "name": "Claves para buscar Community Manager estratégico",
+          "description": "Guía para empresas españolas que quieren contratar Community Manager remoto de forma estratégica.",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Agencia de Social Media o Community Manager dedicado",
+              "description": "Comparación entre agencias con cuentas compartidas y un Community Manager dedicado en exclusiva a la marca."
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Ventajas de Oberstaff frente a marketplaces o agencias",
+              "description": "Talento dedicado exclusivo, contrato estable, gestión laboral cubierta, integración y menor riesgo legal."
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Herramientas que debe dominar un Community Manager moderno",
+              "description": "Business Manager, Creator Studio, Metricool, Buffer, Later, social listening, Canva y CapCut."
+            }
+          ]
+        },
+        {
+          "@type": "ItemList",
+          "@id": "https://www.oberstaff.com/perfiles/contratar-community-manager#related-profiles",
+          "name": "Roles relacionados con Community Manager remoto",
+          "description": "Otros perfiles relacionados que empresas españolas pueden contratar mediante Oberstaff.",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Contratar diseñador gráfico",
+              "url": "https://www.oberstaff.com/perfiles/contratar-disenador-grafico"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Asistente administrativo virtual",
+              "url": "https://www.oberstaff.com/perfiles/contratar-un-asistente-virtual"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Editor de video remoto",
+              "url": "https://www.oberstaff.com/perfiles/contratar-editor-de-video"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://www.oberstaff.com/perfiles/contratar-community-manager#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "¿El Community Manager trabajará con cuentas de otras empresas al mismo tiempo?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. El profesional está asignado en exclusiva a tu marca, enfocado en tu calendario editorial, tu comunidad diaria y el análisis de tus competidores."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Cuándo conviene contratar un Community Manager?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Conviene cuando la empresa necesita constancia en redes sociales y seguimiento diario de la comunidad, pero no quiere saturar a perfiles internos con esa tarea."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Qué flexibilidad tengo si el Community Manager no logra captar nuestra voz corporativa?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Si el perfil no encaja con la voz de marca, puedes cancelar el servicio con preaviso o solicitar un reemplazo sin pleitos laborales ni indemnizaciones por despido."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿De qué países de LATAM son los estrategas sociales?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Oberstaff evalúa talento formado en comunicación y marketing en Colombia, Argentina, México, Venezuela, Chile, Perú y Uruguay, zonas horarias compatibles con España."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Cómo garantizan que el candidato sabe gestionar redes?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Mediante prueba técnica de social media, evaluación psicométrica y entrevista con el equipo de selección de Oberstaff."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Cuál es el precio de contratar un Community Manager?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Contratar un Community Manager local en España puede costar entre 2.000€ y 2.800€ brutos al mes, sin contar Seguridad Social ni otros gastos. Con Oberstaff puedes acceder a talento de LATAM desde 820€ al mes, en zona horaria compatible con España y sin gestión administrativa directa."
+              }
+            }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://www.oberstaff.com/perfiles/contratar-community-manager#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Inicio",
+              "item": "https://www.oberstaff.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Contratar Community Manager",
+              "item": "https://www.oberstaff.com/perfiles/contratar-community-manager"
+            }
+          ]
+        }
+      ]
+    }
+  </script>
+
+  <div class="service-detail-container" id="inicio">
+    <LeadHeroSection
+      webhookUrl="https://hooks.zapier.com/hooks/catch/12433184/4b3izyg/"
+      topLabel="PERFIL: COMMUNITY MANAGER"
+      topLabelInsideH1={false}
+      topLabelTag="h1"
+      titleTag="p"
+      title="Community Manager para Empresas en Puerto Rico que quieren crecer en Redes Sociales"
+      cardTitle="Ver perfiles preevaluados"
+      cardSubtitle="Solicita una propuesta personalizada en < 24h."
+      buttonText="Solicitar propuesta →"
+      buttonIcon=""
+      buttonSubtext=""
+      footerLinkText="Conoce cómo funciona nuestro modelo EOR para PR →"
+      footerLinkHref="/pr/servicios/employer-of-record/"
+      placeholderName="Nombre completo *"
+      placeholderEmail="Email corporativo *"
+      placeholderCompany="Nombre de la empresa / negocio *"
+      placeholderPhone="Teléfono (+1) *"
+      badges={[
+        { text: "Dedicación exclusiva a tu marca", icon: "✓" },
+        { text: "Talento bilingüe (ES/EN)", icon: "✓" },
+        { text: "Integración directa a tus canales", icon: "✓" },
+        { text: "Moderación en horario de Puerto Rico", icon: "✓" },
+      ]}
+      badgesClass="community-badges"
+    >
+      <Fragment slot="description">
+        En <strong>Oberstaff<span style="color: #ff62c4;">.</span></strong> integramos talento remoto de Sudamérica, bilingüe y alineado a tu horario AST, para que tu marca gane visibilidad, mejore su comunicación y convierta más interacciones en oportunidades reales de negocio.
+      </Fragment>
+    </LeadHeroSection>
+
+    <div class="fade-in-section">
+      <QueEsServicioSection
+        title="Ventajas de contratar un Community Manager remoto para tu empresa"
+        highlightWord=""
+        description="La gestión de redes sociales no es solo publicar contenido. Implica comunicación constante, cuidar la reputación de marca, responder con criterio y convertir cada canal digital en un punto activo de relación con clientes actuales y potenciales.<br><br>Con <strong style='color: #1b1b1b;'>Oberstaff<span style='color: #ff62c4;'>.</span></strong> integras un perfil especializado que trabaja bajo tus lineamientos, conoce tus objetivos comerciales y mantiene una operación diaria más ordenada, sin soluciones improvisadas ni equipos internos ya saturados de tareas."
+        imageSrc="/que-es-community-pr.webp"
+        imageAlt="Contratar Community manager"
+        badgeText=""
+        quoteText=""
+        checklistTitle="Checklist de ventajas:"
+        checklistIcon="✅"
+        checklistItems={[
+          "Tus redes mantienen actividad constante: publicaciones, respuestas y seguimiento alineados a una estrategia definida.",
+          "Cuentas con una persona enfocada en tu marca, con más contexto sobre tus productos, audiencia y dinámica interna.",
+          "Cada publicación responde a metas concretas: visibilidad, confianza, generación de leads, tráfico o posicionamiento.",
+          "Recibes reportes y aprendizajes sobre qué contenidos funcionan, qué canales rinden más y dónde conviene optimizar.",
+        ]}
+        ctaText="Solicitar candidatos →"
+        ctaHref="#formulario-perfil"
+        diffIcon=""
+        diffTitle="" 
+        diffDescription=""
+      />
+    </div>
+
+
+    <div class="fade-in-section">
+      <ComparisonPerfiles
+        criterioLabel="<span style='color: #1b1b1b;'>Criterio Financiero y Operativo</span>" 
+        title="Comparativa de costos: Community manager sueldo y precios <br><strong>Oberstaff<span style='color: #FF66CC; font-weight: 900;'>.</span></strong><span style='color:#6663FD;'> vs. mercado local</span>"
+        subtitle="Antes de decidir entre un empleado local, una agencia, un community manager freelance o un community manager remoto dedicado, conviene comparar la inversión real, el control y la continuity operativa que recibirá tu organización."
+        footerNote="* Estimaciones basadas en perfiles dedicados a tiempo completo. El presupuesto final se ajusta según la experiencia técnica y el país de origen del profesional."
+        oberstaffLabel="<span style='font-weight:800; color:#1B1B1B;'>Oberstaff<span style='color:#FF66CC;'>.</span></span> <br> <span style='font-weight:400; color:#5A5A5A;'>(Sudamérica)</span>"
+        competitors={[
+          "<span style='color: #1b1b1b;'>Empleado W-2</span> <br><span style='font-weight:400;'>(Puerto Rico)</span>",
+          "<span style='color: #1b1b1b;'>Agencia Externa</span> <br><span style='font-weight:400;'>(Local)</span>",
+          "<span style='color: #1b1b1b;'>CM Freelance</span> <br><span style='font-weight:400;'>(Marketplaces)</span>", 
+        ]}
+        rows={[
+          {
+            label: "Costo operativo mensual",
+            oberstaffValue: 
+              "<strong><span class='icon-check'>✓</span> Desde $820</strong>",
+            competitorValues: [
+              "<span class='icon-cross'>✕</span> $3,000–5,800",
+              "<span class='icon-cross'>✕</span>  $1,500–6,000",
+              "<span class='icon-warning'>⚠</span>  $900–2,500 o pago por post",
+            ],
+          },
+          {
+            label: "Dedicación y enfoque",
+            oberstaffValue:
+              "<span class='icon-check'>✓</span>  Jornada completa solo para tu marca",
+            competitorValues: [
+              "<span class='icon-check'>✓</span> Interno en tu estructura",
+              "<span class='icon-cross'>✕</span> Dividido entre varias cuentas",
+              "<span class='icon-cross'>✕</span>  Varios proyectos en simultáneo",
+            ],
+          },
+          {
+            label: "Cumplimiento y carga legal",
+            oberstaffValue:
+              "<span class='icon-check'>✓</span> Blindado por <span style='color:#1B1B1B; font-weight: 800;'>Oberstaff<span style='color:#FF66CC;'>.</span></span>, sin nómina local",
+            competitorValues: [
+              "<span class='icon-cross'>✕</span> Alto riesgo por despidos y beneficios",
+              "<span class='icon-check'>✓</span>  Sujeto a contratos corporativos ",
+              "<span class='icon-check'>✓</span> Riesgo por falta de contratos formales", 
+            ],
+          },
+          {
+            label: "Manejo en tiempo real", 
+            oberstaffValue:
+              "<span class='icon-check'>✓</span>  Inmediato, en horario de Puerto Rico",
+            competitorValues: [
+              "<span class='icon-check'>✓</span>  Inmediato en su jornada laboral",
+              "<span class='icon-warning'>⚠</span>  Limitado al horario de la agencia",
+              "<span class='icon-cross'>✕</span> Sin horarios fijos de respuesta",
+            ],
+          },
+          {
+            label: "Agilidad ante cambios y tendencias",
+            oberstaffValue:
+              "<span class='icon-check'>✓</span> Alta: pides el ajuste y se ejecuta rápido",
+            competitorValues: [
+              "<span class='icon-check'>✓</span> Alta durante su jornada laboral",
+              "<span class='icon-cross'>✕</span>  Procesos internos para aprobar cambios",
+              "<span class='icon-warning'>⚠</span> Variable según su carga de proyectos",
+            ],
+          },
+          {
+            label: "Validación de habilidades",
+            oberstaffValue:
+              "<span class='icon-check'>✓</span> Examen técnico de social media + psicometría",
+            competitorValues: [
+              "<span class='icon-cross'>✕</span>  Riesgo en tu propio reclutamiento",
+              "<span class='icon-check'>✓</span>  Equipos con experiencia demostrable",
+              "<span class='icon-warning'>⚠</span> Basado únicamente en portafolios",
+            ],
+          },
+          {
+            label: "Riesgo laboral y de indemnización",
+            oberstaffValue: "<span class='icon-check'>✓</span> Bajo: <span style='color:#1B1B1B; font-weight: 800;'>Oberstaff<span style='color:#FF66CC;'>.</span></span> gestiona lo contractual",
+            competitorValues: [
+              "<span class='icon-cross'>✕</span> Alto: leyes laborales y cargas patronales",
+              "<span class='icon-cross'>✕</span>  Medio/alto: penalización por cancelación",
+              "<span class='icon-warning'>⚠</span> Medio: depende del contrato y alcance",
+            ],
+          },
+        ]}
+      />
+    </div>
+
+
+    <div class="fade-in-section"> 
+      <ServicesSection
+        title="Cómo contratar un community manager efectivo para tu marca en Puerto Rico"
+        cardTitleTag="h3"
+        description="La reputación digital de una empresa en Puerto Rico no debe quedar en manos de un perfil improvisado. Antes de entregar accesos a tus cuentas, define qué canales son prioritarios, qué tono usará la marca, qué contenido se publicará y cómo se medirá el rendimiento."
+        image="/contratar-community-pr.webp"
+        imageAlt="Cómo contratar un community manager en Puerto Rico"
+        customClass="employer-use-cases"
+        services={[
+          {
+            icon: "⚖️",
+            title: "Community manager freelance o profesional dedicado: ¿qué modelo te conviene?", 
+            description:
+              "Un community manager freelance funciona para tareas puntuales o apoyo temporal. Pero cuando tu empresa necesita respuesta diaria, seguimiento comercial, protección de marca y continuidad, un profesional dedicado ofrece más estabilidad e integración con tu equipo.",
+            linkText: "",
+            href: "",
+            customIconBg: "transparent",
+            cardClass: "card-green",   
+          },
+          {
+            icon: "🌎 ",
+            title: "¿Por qué buscar talento remoto en el ecosistema de <span style='color: #1b1b1b; font-weight: 800;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 800;'>.</span>?",
+            description:
+              "<span style='color: #1b1b1b; font-weight: 800;'>Oberstaff<span style='color: #FF66CC; font-weight: 800;'>.</span></span> filtra, evalúa y presenta candidatos listos para integrarse a tu operación diaria. Así reduces el tiempo de búsqueda, evitas perfiles no verificados y logras que el conocimiento sobre tu marca permanezca en una relación de trabajo estable.",
+            linkText: "",
+            href: "",
+            customIconBg: "transparent", 
+            cardClass: "card-pink",
+          },
+          {
+            icon: "🇵🇷",
+            title: "¿Qué debe conocer del mercado de Puerto Rico?",
+            description:
+              "El perfil ideal entiende la mezcla cultural de audiencias locales y bilingües, adapta mensajes para consumidores que alternan español e inglés y responde con criterio en Instagram, Facebook, TikTok, LinkedIn y WhatsApp Business.",
+            linkText: "",
+            href: "",
+            customIconBg: "transparent",
+            cardClass: "card-lime",
+          },
+          {
+            icon: "🛠️ ",
+            title: "Herramientas que debe dominar",
+            description:
+              "Un community manager moderno maneja Meta Business Suite, herramientas de programación y analítica como Metricool, Buffer o Hootsuite, diseño ágil con Canva, edición de video con CapCut o Premiere, monitoreo de marca y reportes de KPIs.",
+            linkText: "",
+            href: "",
+            customIconBg: "transparent",
+            cardClass: "card-purple",  
+          }
+        ]}
+      />
+    </div>
+
+    <div class="fade-in-section"> 
+      <ServicesSection
+        title="Community Manager Funciones: <br> <span style='color: #6663FD;'>¿Qué impacto aporta a tu negocio?</span>"
+        cardTitleTag="h3"
+        description="Cuando una empresa busca un community manager, suele necesitar mucho más que publicar imágenes. El objetivo es convertir las redes sociales en un canal activo de reputación, conversación, servicio y generación de oportunidades."
+        customClass="funciones-section"
+        services={[
+          {
+            icon: "📱",
+            title: "Manejo táctico de canales y algoritmos",
+            description: "Planificación y ejecución de calendarios para Instagram, Facebook, TikTok, LinkedIn y otros canales, ajustando formatos, horarios y mensajes al comportamiento de cada plataforma.",
+            linkText: "",
+            href: "",
+            customIconBg: "#eef2ff",
+            cardClass: "card-funcs",   
+          },
+          {
+            icon: "✍️",
+            title: "Content creation y copywriting bilingüe",
+            description: "Redacción de publicaciones, captions, copies promocionales y respuestas frecuentes en español e inglés, manteniendo coherencia con la voz de tu marca.",
+            linkText: "",
+            href: "",
+            customIconBg: "#fff7ed", 
+            cardClass: "card-funcs",
+          },
+          {
+            icon: "💬",
+            title: "Community building",
+            description: "Monitoreo de mensajes, comentarios, menciones y reseñas, con respuesta rápida, derivación de leads y activación de protocolos ante comentarios sensibles.",
+            linkText: "",
+            href: "",
+            customIconBg: "#fdf2f8",
+            cardClass: "card-funcs",
+          },
+          {
+            icon: "📈",
+            title: "Analítica, KPIs y social listening",
+            description: "Seguimiento de alcance, engagement, clics, crecimiento de comunidad, mensajes y conversión, con reportes y recomendaciones accionables cada mes.",
+            linkText: "",
+            href: "",
+            customIconBg: "#f0f9ff",
+            cardClass: "card-funcs",  
+          },
+          {
+            icon: "🎯",
+            title: "Estrategia digital de contenidos",
+            description: "Auditoría de competidores, análisis de audiencia y selección de temas, formatos, hashtags y tendencias útiles para fortalecer el posicionamiento orgánico.",
+            linkText: "",
+            href: "",
+            customIconBg: "#fff1f2",
+            cardClass: "card-funcs",  
+          },
+          {
+            icon: "💸",
+            title: "Soporte en distribución y paid social",
+            description: "Coordinación con equipos de pauta, ventas o performance para que los usuarios atraídos por campañas reciban respuestas oportunas y alineadas al mensaje comercial.",
+            linkText: "",
+            href: "",
+            customIconBg: "#f0fdf4",
+            cardClass: "card-funcs",  
+          }
+        ]}
+      />
+    </div>
+
+     <div class="fade-in-section">
+      <EorCta
+        title="¿Necesitas un Community Manager que gestione tus redes con enfoque estratégico?"
+        titleTag="h2"
+        text="En <span style='color: #ffffff; font-weight: 800;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 800;'>.</span> te conectamos con perfiles de Sudamérica evaluados, bilingües y alineados al horario de Puerto Rico, listos para crear contenido, responder a tu comunidad, analizar resultados y fortalecer la presencia digital de tu organización."
+        buttonText="👉 Solicitar propuesta personalizada"
+        buttonHref="#formulario-perfil"
+      />
+    </div>
+
+
+    <!-- 
+    <div class="fade-in-section">
+      <EorStepsSection
+        title="Cómo contratar un community manager con <span style='color: #6663FD; font-weight: 800;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 800;'>.</span>"
+        subtitle="Un proceso sencillo, rápido y sin riesgo, desde que nos contactas hasta que tienes a tu CM dinamizando tus perfiles sociales. Si estabas en modo 'buscar community manager' sin saber por dónde empezar, aquí simplificamos el proceso para que tomes una decisión más rápida y con menos riesgo."
+        steps={[
+          {
+            title: "Cuéntanos tu situación digital actual",
+            lineColorClass: "line-black",
+            description:
+              "Indícanos las plataformas prioritarias para tu sector y el tono de voz (corporativo, disruptivo, educativo) que debe tener tu futuro CM.",
+            badge: "15 min · Sin compromiso",
+          },
+          {
+            title: "Recibe ternas de estrategas validados",
+            lineColorClass: "line-pink",
+            description:
+              "Te presentamos entre 3–5 Community Managers, verás sus analíticas de crecimiento en proyectos anteriores y los resultados de sus test de social media.",
+            badgeIcon: "📋",
+            badge: "Con KPIs demostrables",
+          },
+          {
+            title: "Entrevistas de 'Brand Fit'",
+            lineColorClass: "line-orange",
+            description:
+              "Habla directamente con ellos. Evalúa su fluidez, su creatividad ante escenarios hipotéticos de crisis en LinkedIn o Instagram y decide quién será la voz oficial de tu negocio.",
+            badge: "Tú tienes la decisión final",
+          },
+          {
+            title: "Toma el control del feed",
+            lineColorClass: "line-blue",
+            description:
+              "<span style='color: #1B1B1B; font-weight: 700;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 700;'>.</span> asume el compliance legal. Tú le das acceso de   'Editor' o 'Administrador' en tu Business Manager y tu nuevo Community Manager comienza a publicar, interactuar y medir",
+            badge: "",
+          },
+        ]}
+      />
+    </div>
+-->
+
+
+         <div class="fade-in-section" id="pr-cm-process-wrapper">
+            <ProcessOberstaff
+                className="process-employer"
+                title="Cómo integramos tu próximo community manager remoto con <span style='color: #1b1b1b; font-weight: 800;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 800;'>.</span>"
+                description="Nuestro proceso está diseñado para reducir riesgo, acelerar la selección y garantizar que el perfil se conecte con los objetivos comerciales de tu empresa en Puerto Rico."
+                items={[
+                    {
+                        label: "Ecosistema",
+                        badge: "",
+                        title: "Definición del perfil y ecosistema digital",
+                        description:
+                            "Revisamos tus canales prioritarios, industria, tono de comunicación, volumen de publicaciones, nivel de bilingüismo y objetivos de negocio. <br><br> <em>* Sesión corta sin compromisos contractuales iniciales.</em>",
+                        icon: "01",
+                        badgeColor: "#6663FD",
+                        badgeBg: "rgba(102, 99, 253, 0.1)", 
+                    },
+                    {
+                        label: "Evaluación",
+                        badge: "",
+                        title: "Evaluación de candidatos cualificados",
+                        description:
+                            "Te presentamos de 3 a 5 community managers con experiencia verificable, pruebas técnicas y ajuste al tipo de marca que necesitas fortalecer. <br><br> <em>* Perfiles verificados con analíticas de engagement.</em>",
+                        icon: "02",
+                        badgeColor: "#6aca8a",
+                        badgeBg: "rgba(102, 255, 153, 0.15)",  
+                    },
+                    {
+                        label: "Brand fit",
+                        badge: "",
+                        title: "Entrevistas de alineación cultural y brand fit",
+                        description:
+                            "Conversas con los finalistas, validas criterio, comunicación, dominio de herramientas y capacidad de respuesta ante escenarios reales. <br><br> <em>* Mantienes la autonomía total en la aprobación final del talento.</em>",
+                        icon: "03",
+                        badgeColor: "#FF66CC",
+                        badgeBg: "rgba(255, 102, 204, 0.1)",
+                    },
+                    {
+                        label: "Activación",
+                        badge: "",
+                        title: "Activación operativa y soporte administrativo",
+                        description:
+                            "<span style='color: #1b1b1b; font-weight: 700;'>Oberstaff<span style='color: #FF66CC; font-weight: 700;'>.</span></span> gestiona la estructura contractual y administrativa. Tu empresa entrega accesos mediante permisos seguros y el profesional inicia con un plan de trabajo definido.",
+                        icon: "04",
+                        badgeColor: "#1B1B1B",
+                        badgeBg: "rgba(204, 255, 102, 0.3)",
+                    },
+                ]}
+                ctaTitle="Empieza a ahorrar hoy"
+                ctaDescription="Un equipo dedicado gestionará todo el proceso por ti."
+                ctaBtnText="Agendar llamada" 
+                ctaBtnHref="#formulario-perfil"
+            />
+        </div>
+
+           <div class="fade-in-section">
+      <CasosExitoSection
+        title="Empresas que ya fortalecen sus equipos con <span style='font-weight: 900; color: #1b1b1b;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span>"
+        subtitle=""
+        columns={3}
+        testimonials={[
+          {
+            stars: 5,
+            avatar: "/fernando.webp",
+            imageAlt: "Fernando Calderón, cliente de Oberstaff en Madrid",
+            text: "Buscaba talento remoto especializado y, tras intentarlo en local sin éxito, encontré a <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong> Me impresionó la claridad de su estructura legal. Por el servicio y la misma zona horaria, ya amplié el contrato para sumar más personal.",
+            author: "Fernando Calderón",
+            role: "CEO · BeautyPro",
+            videoId: "24KxCAFGrDs",
+          },
+          {
+            stars: 5,
+            avatar: "/sha.webp",
+            imageAlt: "Shadai Iborra, cliente de Oberstaff en Barcelona",
+            text: "Con <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong> incorporé a dos personas a tiempo completo y me ahorré costes de reclutamiento, oficina y nómina local. Toda la gestión y los pagos quedan unificados en una sola factura mensual. La solución perfecta para nuestra contratación remota.",
+            author: "Shadai Iborra",
+            role: "CEO · @amediastory",
+            videoId: "_CxlPfluS7M",
+          },
+          {
+            stars: 5,
+            avatar: "/Kate.webp",
+            imageAlt: "Kate McCaferty, cliente de Oberstaff EOR",
+            text: "Llevamos casi dos años con <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong> y la experiencia es excelente desde el primer día. Tienes el respaldo de un equipo dedicado que evalúa miles de perfiles por ti. El ahorro real y la optimización de costes superaron nuestras expectativas.",
+            author: "Kate McCaferty",
+            role: "CEO · KM Real Estate (EE. UU.)",
+            videoId: "9RLgpEF-GVA",
+          },
+        ]}
+      />
+    </div>
+
+   
+
+    <div class="fade-in-section">
+      <RolesPerfil
+        title="Tipos de perfiles de Community Manager según tus objetivos comerciales"
+        subtitle="No todas las empresas necesitan el mismo perfil. La selección debe responder al canal de adquisición, el nivel de contenido, el volumen de interacción y la madurez digital de la marca."
+        layout="modern"
+        footerText=""
+        footerLinkText=""
+        footerLinkHref="#formulario-perfil"
+        roles={[
+          {
+            title: "Gestor de canales multiplataforma",
+            description: "",
+            icon: "",
+            iconColor: "#FF66CC",
+            borderColorClass: "border-pink",
+            subtitle:
+              "Especialista en crecimiento orgánico y operación diaria de Facebook, Instagram, TikTok y LinkedIn. Ideal para marcas que buscan consistencia, orden y comunidad activa.",
+            techStack: [
+              "Meta Business Suite",
+              "CapCut",
+              "Metricool",
+              "Canva Pro",
+            ]
+          },
+          {
+            title: "Community Manager B2B y LinkedIn corporate",
+            description: "",
+            icon: "",
+            iconColor: "#3b76f6",
+            borderColorClass: "border-blue",
+            subtitle:
+              "Perfil orientado a autoridad empresarial, social selling, posicionamiento de ejecutivos y creación de contenido para decisores corporativos de tu sector.",
+            techStack: ["LinkedIn", "Sales Navigator", "Hootsuite", "Notion"]
+          },
+          {
+            title: "Social commerce y gestión de eCommerce",
+            description: "",
+            icon: "",
+            iconColor: "#66FF99",
+            borderColorClass: "border-green",
+            subtitle:
+              "Profesional enfocado en atención por mensajes, reseñas, catálogos, seguimiento de consultas y apoyo a conversiones en tiendas online.",
+            techStack: ["Shopify", "ManyChat", "Meta Ads", "Klaviyo"]
+          },
+          {
+            title: "Ghostwriting y marca personal",
+            description: "",
+            icon: "",
+            iconColor: "#CCFF66",
+            borderColorClass: "border-yellow",
+            subtitle:
+              "Especialista en capturar la voz de fundadores, consultores y voceros institucionales para construir autoridad y confianza en redes.",
+            techStack: ["LinkedIn", "Instagram", "TikTok", "Editorial"]
+          },
+        ]}
+      />
+    </div>
+
+    
+    <div class="fade-in-section" id="pr-cm-pricing-wrapper">
+      <PricingCardPerfil
+        sectionTitle="Community manager precios:<span style='color:#6663FD; font-weight: 900;'> tarifas únicas adaptadas a Puerto Rico</span>"
+        sectionSubtitle="Un salario local o del mainland puede absorber tu presupuesto de marketing. Con <span style='color:#1B1B1B; font-weight: 700;'>Oberstaff</span><span style='color:#FF66CC; font-weight: 700;'>.</span> accedes al mismo nivel de talento por una fracción del costo, facturado en USD, sin nómina americana ni contribuciones patronales."
+        cardTitle="Community Manager"
+        titleTag="p"
+        cardSubtitle=""
+        priceLabel="Desde"
+        priceAmount="$820"
+        pricePeriod="USD / mes"
+        features={[
+          "Fee mensual único · Jornada completa · Facturación en USD",
+          "Estrategia multicanal en español e inglés",
+          "Moderación y protección de reputación de marca en horario AST",
+          "Analítica mensual con informes de resultados",
+          "Coordinación con tu equipo de marketing",
+          "Sin relación laboral bajo la FLSA ni el Código de Trabajo de PR",
+        ]}
+        ctaText="Solicitar propuesta"
+        ctaHref="#formulario-perfil"
+        disclaimer="*Precios orientativos según seniority y especialidad del perfil."
+      />
+    </div>
+
+    <div class="fade-in-section" id="pr-cm-benefits-wrapper">
+      <BeneficiosPerfilDisenador
+        showInfoCard={false}
+        title="Contratar community manager con <span style='font-weight: 900; color: #1b1b1b;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 700;'>.</span>:<br><span style='color:#6663FD; font-weight:900;'>¿Por qué confiar tu comunidad a talento de Sudamérica?</span>"
+        subtitle="Combinamos la inmersión de un perfil in-house que entiende la esencia de tu feed con la agilidad de un servicio externo, para que te centres en los likes, leads y resultados, no en los contratos."
+        image="/img2-community.webp"
+        imageAlt="Community manager estratégico analizando métricas y comunidad digital para una empresa"
+        infoTitle=""
+        features={[
+          {
+            icon: "🎯",
+            title: "Adaptación a tu marca",
+            description:
+              "Tu Community Manager se enfoca en tu calendario editorial, tu tono de comunicación, las tendencias de tu sector y la relación diaria con tu comunidad.",
+          },
+          {
+            icon: "⚙️",
+            title: "Operación sincronizada",
+            description:
+              "Se integra a tus canales internos y trabaja con Metricool, Meta Business Suite, Slack o las plataformas que ya utilice tu empresa.",
+          },
+          {
+            icon: "🛡️",
+            title: "Mayor seguridad operativa",
+            description:
+              "El manejo de accesos, cuentas y activos se realiza bajo protocolos definidos, mientras <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong> gestiona lo contractual y administrativo.",
+          },
+        ]}
+        infoItems={[
+          {
+            title: "",
+            description: "",
+          },
+          {
+            title: "",
+            description: "",
+          },
+          {
+            title: "",
+            description: "",
+          },
+        ]}
+      >
+        <div class="meta-custom-notice">
+          Recibes una sola factura internacional en USD. Tu empresa crece en comunidad, contenido y oportunidades comerciales, no en carga administrativa.
+        </div>
+      </BeneficiosPerfilDisenador>
+    </div>
+
+    <!-- 
+
+    <div class="fade-in-section">
+      <GuiaContratacion
+        titleTag="h2"
+        headerTitle="¿Cómo buscar community manager estratégico <span style='color:#6663FD; font-weight: 900;'>para tu negocio?</span>"
+        headerDescription="Criterios indispensables para acertar antes de entregar la reputación de tu marca a un gestor de redes sociales remoto"
+        cards={[
+          {
+            title: "¿Es mejor una Agencia de Social Media o un CM dedicado?",
+            description:
+              "Las agencias son útiles para estrategias puntuales, pero para el trabajo diario, suelen asignar tu cuenta a perfiles saturados. Con Oberstaff, tienes a un profesional senior In-house, reteniendo el know-how y reaccionando al instante.",
+            description2: "",
+          },
+          {
+            title: "¿Dónde busco Community Manager?: ventajas de Oberstaff",
+            description:
+              "Existen varias plataformas para incorporar CM, como marketplaces de freelancers o agencias. Sin embargo, Oberstaff ofrece un modelo diferente: talento dedicado exclusivo para ti, con contrato estable y toda la gestión laboral cubierta. Mayor compromiso, mejor integración y ausencia de riesgos legales para tu negocio.",
+            description2: "",
+          },
+          {
+            title: "¿Qué herramientas debería dominar un CM moderno?",
+            description:
+              "Exige que el candidato demuestre soltura en Business Manager, Creator Studio, herramientas de programación masiva (Metricool, Buffer, Later), plataformas de escucha social (Social Listening) y nociones sólidas de diseño ágil (Canva, CapCut) para maquetar el contenido diario.",
+            description2: "",
+          },
+        ]}
+      />
+    </div>
+-->
+
+
+    <FAQSection
+      title="Preguntas frecuentes sobre contratar un community manager en Puerto Rico"
+      ctaText="¿Tienes dudas sobre los perfiles de marketing?"
+      ctaButtonText="Agenda una llamada gratuita"
+      ctaButtonHref="#formulario-perfil"
+      useCardLayout={true}
+      faqs={faqs} 
+    />
+
+    <!-- 
+    <div class="fade-in-section">
+      <PressSection title="Prensa y menciones" />
+    </div>
+-->
+
+
+    <div class="fade-in-section">
+      <ConversionPerfilDisenador
+        webhookUrl="https://hooks.zapier.com/hooks/catch/12433184/4b3s4e0/"
+        title="Encuentra el community manager ideal para transformar tus canales digitales"
+        subtitle="Completa el formulario (menos de 1 minuto) y recibe una propuesta de talento ajustada a tu empresa en Puerto Rico. Te ayudamos a definir si necesitas un community manager remoto, un perfil con foco en contenido o un estratega bilingüe para comunicación corporativa. Primera consultoría gratuita."
+        buttonText="Solicitar propuesta gratuita →"
+        noteText=""  
+        isCommunityPR={true}
+      />
+    </div>
+  </div>
+</DashboardLayoutPerfilesPr>
+
+<style>
+  .service-detail-container {
+  }
+
+  :global(.community-badges) {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+  }
+
+  :global(.employer-use-cases-grid) {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  @media (max-width: 900px) {
+    :global(.employer-use-cases-grid) {
+      grid-template-columns: 1fr !important;
+    }
+  }
+
+  /* Override cards in ServicesSection on PR page to have static border and no hover effects */
+  :global(section.employer-use-cases .service-card),
+  :global(section.employer-use-cases .service-card.card-purple),
+  :global(section.employer-use-cases .service-card.card-green),
+  :global(section.employer-use-cases .service-card.card-pink),
+  :global(section.employer-use-cases .service-card.card-lime) {
+    border: 1px solid rgba(0, 0, 0, 0.05) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  :global(section.employer-use-cases .service-card:hover),
+  :global(section.employer-use-cases .service-card.card-purple:hover),
+  :global(section.employer-use-cases .service-card.card-green:hover),
+  :global(section.employer-use-cases .service-card.card-pink:hover),
+  :global(section.employer-use-cases .service-card.card-lime:hover),
+  :global(section.employer-use-cases .employer-use-cases-grid .service-card:nth-child(1):hover),
+  :global(section.employer-use-cases .employer-use-cases-grid .service-card:nth-child(2):hover),
+  :global(section.employer-use-cases .employer-use-cases-grid .service-card:nth-child(3):hover),
+  :global(section.employer-use-cases .employer-use-cases-grid .service-card:nth-child(4):hover) {
+    border-color: rgba(0, 0, 0, 0.05) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+    transform: none !important;
+  }
+
+  :global(section.employer-use-cases .service-card .card-gradient-bg) {
+    display: none !important;
+  }
+
+  /* Split layout with image for ServicesSection in Puerto Rico */
+  @media (min-width: 901px) {
+    :global(section.employer-use-cases) {
+      padding: 80px 60px !important;
+    }
+
+    :global(section.employer-use-cases .has-header-image) {
+      display: grid !important;
+      grid-template-columns: 1.15fr 0.85fr !important;
+      gap: 20px 60px !important;
+      align-items: center !important;
+      text-align: left !important;
+      margin-bottom: 50px !important;
+    }
+
+    :global(section.employer-use-cases .services-header-text h2) {
+      font-size: 36px !important;
+    }
+
+    :global(section.employer-use-cases .services-header-text .section-description) {
+      font-size: 16px !important;
+    }
+  }
+
+  :global(section.employer-use-cases .services-header-text) {
+    text-align: left !important;
+  }
+
+  :global(section.employer-use-cases .services-header-text h2) {
+    text-align: left !important;
+    margin: 0 0 20px 0 !important;
+    max-width: none !important;
+    line-height: 1.3 !important;
+  }
+
+  :global(section.employer-use-cases .services-header-text .section-description) {
+    text-align: left !important;
+    margin: 0 !important;
+    max-width: none !important;
+    line-height: 1.7 !important;
+  }
+
+  :global(section.employer-use-cases .services-header-image) {
+    display: block !important;
+    width: 100% !important;
+    max-width: 480px !important;
+    height: auto !important;
+    border-radius: 20px !important;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12) !important;
+    margin: 0 auto !important;
+  }
+
+  @media (max-width: 900px) {
+    :global(section.employer-use-cases) {
+      padding: 40px 20px !important;
+    }
+
+    :global(section.employer-use-cases .has-header-image) {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 25px !important;
+      text-align: center !important;
+      margin-bottom: 40px !important;
+    }
+
+    :global(section.employer-use-cases .services-header-text h2) {
+      font-size: 26px !important;
+      text-align: center !important;
+      margin: 0 auto 20px auto !important;
+    }
+
+    :global(section.employer-use-cases .services-header-text .section-description) {
+      font-size: 15px !important;
+      text-align: center !important;
+      margin: 0 auto !important;
+    }
+  }
+
+  :global(.employer-use-cases-grid .icon-box) {
+    background-color: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    margin-bottom: 25px !important;
+    justify-content: flex-start !important;
+  }
+
+  :global(.employer-use-cases-grid .icon-emoji-servicios-home) {
+    font-size: 35px !important;
+    padding: 0 !important;
+  }
+
+  @media (max-width: 768px) {
+    :global(.employer-use-cases-grid .icon-emoji-servicios-home) {
+      font-size: 30px !important;
+      padding: 0 !important;
+    }
+  }
+
+  /* --- Estilos exclusivos para Funciones Section (Community Manager Funciones) --- */
+  :global(section.funciones-section) {
+    background-color: #ffffff !important;
+    border-top: 1px solid #e5e7eb !important;
+    border-bottom: 1px solid #e5e7eb !important;
+    padding: 80px 60px !important;
+  }
+
+  :global(section.funciones-section .services-container) {
+    max-width: 1100px !important;
+    margin: 0 auto !important;
+  }
+
+  :global(section.funciones-section .services-header) {
+    text-align: center !important;
+    margin-bottom: 50px !important;
+  }
+
+  :global(section.funciones-section .services-header h2) {
+    font-size: 36px !important;
+    line-height: 1.3 !important;
+    text-align: center !important;
+    max-width: 800px !important;
+    margin: 0 auto 20px auto !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 700 !important;
+    color: #1B1B1B !important;
+  }
+
+  :global(section.funciones-section .section-description) {
+    font-size: 16px !important;
+    line-height: 1.7 !important;
+    text-align: center !important;
+    max-width: 800px !important;
+    margin: 0 auto !important;
+    font-family: 'Poppins', sans-serif !important;
+    color: #5A5A5A !important;
+  }
+
+  /* Grid layout: 2 columns on desktop */
+  :global(.funciones-section-grid) {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 30px !important;
+  }
+
+  /* Horizontal card layout: icon left, title/desc right */
+  :global(section.funciones-section .service-card) {
+    display: grid !important;
+    grid-template-columns: auto 1fr !important;
+    grid-template-rows: auto auto !important;
+    column-gap: 20px !important;
+    row-gap: 8px !important;
+    align-items: start !important;
+    padding: 30px !important;
+    border-radius: 20px !important;
+    background: #ffffff !important;
+    border: 1px solid rgba(0, 0, 0, 0.05) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  :global(section.funciones-section .service-card:hover) {
+    border-color: rgba(0, 0, 0, 0.05) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+    transform: none !important;
+  }
+
+  :global(section.funciones-section .service-card .card-gradient-bg) {
+    display: none !important;
+  }
+
+  :global(section.funciones-section .service-card .icon-box) {
+    grid-column: 1 !important;
+    grid-row: 1 / span 2 !important;
+    margin-bottom: 0 !important;
+    width: 54px !important;
+    height: 54px !important;
+    border-radius: 12px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border: none !important;
+  }
+
+  :global(section.funciones-section .service-card .icon-emoji-servicios-home) {
+    font-size: 24px !important;
+  }
+
+  :global(section.funciones-section .service-card .service-card-title) {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    color: #1B1B1B !important;
+    line-height: 1.3 !important;
+  }
+
+  :global(section.funciones-section .service-card p:not(.service-card-title)) {
+    grid-column: 2 !important;
+    grid-row: 2 !important;
+    min-height: 0 !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 14px !important;
+    color: #5A5A5A !important;
+    line-height: 1.6 !important;
+  }
+
+  /* Responsivo para Funciones Section */
+  @media (max-width: 900px) {
+    :global(section.funciones-section) {
+      padding: 50px 20px !important;
+    }
+
+    :global(section.funciones-section .services-header h2) {
+      font-size: 26px !important;
+    }
+
+    :global(section.funciones-section .section-description) {
+      font-size: 15px !important;
+    }
+
+    :global(.funciones-section-grid) {
+      grid-template-columns: 1fr !important;
+      gap: 20px !important;
+    }
+  }
+
+  @media (max-width: 600px) {
+    :global(section.funciones-section .service-card) {
+      padding: 20px !important;
+      column-gap: 15px !important;
+    }
+
+    :global(section.funciones-section .service-card .icon-box) {
+      width: 48px !important;
+      height: 48px !important;
+    }
+
+    :global(section.funciones-section .service-card .icon-emoji-servicios-home) {
+      font-size: 20px !important;
+    }
+
+    :global(section.funciones-section .service-card .service-card-title) {
+      font-size: 16px !important;
+    }
+  }
+
+  /* Estilos específicos para QueEsServicioSection en esta página */
+  :global(.que-es-servicio-section .quote-blue-border) {
+    border-left: 4px solid #ff66cc !important;
+    color: #ff66cc !important;
+    font-size: 16px !important;
+    margin-top: 0 !important; /* Para alinear con el inicio de la imagen */
+    font-weight: 600 !important;
+  }
+
+  :global(.que-es-servicio-section .que-es-main-content) {
+    align-items: flex-start !important;
+  }
+
+  /* Fondo exclusivo para la sección de áreas del diseñador */
+  :global(section.employer-use-cases) {
+    background-color: #fafafc !important;
+  }
+
+  /* Fondo exclusivo para la sección de casos de éxito en esta página */
+  :global(.casos-exito) {
+    background-color: #fafafc !important;
+
+    padding-bottom: 80px !important;
+  }
+
+  /* Estilos específicos para la sección FAQ en esta página */
+  :global(.faq-disenador-custom .faq-columns) {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  :global(.faq-disenador-custom .faq-left-column) {
+    position: static !important;
+    width: 100% !important;
+    max-width: 800px !important;
+    margin-bottom: 40px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+  }
+
+  :global(.faq-disenador-custom .faq-main-title) {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    text-align: left !important;
+  }
+
+  :global(.faq-disenador-custom .faq-right-column) {
+    display: none !important;
+  }
+
+  :global(.faq-disenador-custom .faq-cta-card) {
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: 600px !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    text-align: left !important;
+  }
+
+  :global(.faq-disenador-custom .faq-cta-card p) {
+    font-family: "Poppins", sans-serif !important;
+    font-size: 18px !important;
+    font-weight: 400 !important;
+    color: #5a5a5a !important;
+    line-height: 1.6 !important;
+    margin-bottom: 30px !important;
+  }
+
+  :global(.faq-disenador-custom .faq-cta-button) {
+    background-color: #6663fd !important;
+    border: 2px solid #6663fd !important;
+    color: #ffffff !important;
+    width: auto !important;
+    min-width: 220px !important;
+    padding: 14px 32px !important;
+    font-size: 15px !important;
+    display: inline-block !important;
+  }
+
+  :global(.faq-disenador-custom .faq-cta-button:hover) {
+    background-color: transparent !important;
+    border: 2px solid #6663fd !important;
+    color: #6663fd !important;
+  }
+
+  .meta-custom-notice {
+    font-family: "Poppins", sans-serif;
+    margin-top: 40px;
+    padding: 24px 30px;
+    background-color: #f7f8fc;
+    border-left: 4px solid #ff66cc;
+    color: #ff66cc;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  .service-detail-container :global(.guia-cards-grid .guia-card:nth-child(3)) { 
+    grid-column: 1 / -1;
+  }
+
+  :global(.lead-hero-section) {
+    background: linear-gradient(to right, rgba(27, 27, 27, 0.95) 40%, rgba(27, 27, 27, 0.6) 100%), url('/hero-perfiles-pr.webp') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+  }
+
+  :global(.lead-hero-section .top-label) {
+    color: #ff62c4 !important;
+    font-weight: 700 !important;
+    letter-spacing: 1px !important;
+    margin-bottom: 12px !important;
+    font-size: 14px !important;
+    display: inline-block !important;
+  }
+
+  :global(.lead-hero-section .title-as-h1) {
+    font-size: 30px !important;
+    line-height: 1.25 !important;
+    font-weight: 800 !important;
+    margin-bottom: 24px !important;
+    letter-spacing: -0.02em !important;
+  }
+
+  @media (min-width: 901px) {
+    :global(.lead-hero-section .title-as-h1) {
+      font-size: 44px !important;
+    }
+  }
+
+  :global(.lead-hero-section .badge-pill) {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    color: #ffffff !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+  }
+
+  :global(.lead-hero-section .badge-emoji) {
+    color: #66FF99 !important;
+    font-weight: bold !important;
+    font-size: 18px !important;
+  }
+
+  :global(.lead-hero-section .badges-grid) {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+    margin-top: 25px !important;
+  }
+
+  /* Form button styling */
+  :global(.lead-hero-section .btn-submit) {
+    background-color: #ff62c4 !important;
+    border-color: #ff62c4 !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    font-size: 15px !important;
+    padding: 16px 32px !important;
+    border-radius: 50px !important;
+    transition: all 0.3s ease !important;
+  }
+
+  :global(.lead-hero-section .btn-submit:hover) {
+    background-color: transparent !important;
+    border-color: #ff62c4 !important;
+    color: #ff62c4 !important;
+    box-shadow: 0 4px 15px rgba(255, 98, 196, 0.4) !important;
+  }
+
+  /* Form link styling */
+  :global(.lead-hero-section .form-link) {
+    color: #6663FD !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+  }
+
+  :global(.lead-hero-section .form-link:hover) {
+    text-decoration: none !important;
+  }
+
+  /* Make tel input wrapper same width */
+  :global(.lead-hero-section .iti) {
+    width: 100% !important;
+  }
+
+  /* Estilos personalizados para QueEsServicioSection de PR */
+  :global(.que-es-servicio-section .image-card) {
+    filter: none !important;
+  }
+
+  :global(.que-es-servicio-section .floating-badge-bottom) {
+    display: none !important;
+  }
+
+  :global(.que-es-servicio-section .ques-check-icon) {
+    font-size: 18px !important;
+    margin-right: 4px !important;
+    background: transparent !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  :global(.que-es-servicio-section .ques-checklist-item) {
+    color: #1B1B1B !important;
+  }
+
+  :global(.que-es-servicio-section .ques-cta-btn) {
+    background-color: #66FF99 !important;
+    color: #1B1B1B !important;
+    border: 1px solid #66FF99 !important;
+    font-weight: 700 !important;
+    padding: 14px 28px !important;
+    border-radius: 50px !important;
+    transition: all 0.3s ease !important;
+  }
+
+  :global(.que-es-servicio-section .ques-cta-btn:hover) {
+    background-color: transparent !important;
+    border-color: #6aca8a !important;
+    color: #6aca8a !important;
+  }
+
+  /* Grid layout overrides: cabecera centrada, checklist a la izquierda e imagen a la derecha */
+  @media (min-width: 901px) {
+    :global(.que-es-servicio-section .que-es-main-content) {
+      display: grid !important;
+      grid-template-columns: 1.1fr 0.9fr !important;
+      gap: 80px !important;
+      align-items: flex-start !important;
+    }
+
+    :global(.que-es-servicio-section .que-es-info-list) {
+      grid-column: 1 !important;
+      grid-row: 1 !important;
+    }
+
+    :global(.que-es-servicio-section .que-es-image-wrapper) {
+      grid-column: 2 !important;
+      grid-row: 1 !important;
+    }
+  }
+
+  /* Mobile stacking: Checklist -> Image */
+  @media (max-width: 900px) {
+    :global(.que-es-servicio-section .que-es-main-content) {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 30px !important;
+    }
+    :global(.que-es-servicio-section .que-es-info-list) {
+      order: 1 !important;
+    }
+    :global(.que-es-servicio-section .que-es-image-wrapper) {
+      order: 2 !important;
+    }
+    :global(.que-es-servicio-section .ques-cta-btn) {
+      display: block !important;
+      margin: 20px auto 0 !important;
+      width: fit-content !important;
+      text-align: center !important;
+    }
+  }
+
+  /* Ocultar badge y hacer el botón verde en ProcessOberstaff solo en esta página */
+  :global(section.process-employer .process-badge) {
+    display: none !important;
+  }
+
+  :global(section.process-employer .process-cta-btn) {
+    background-color: #66FF99 !important;
+    border: 2px solid #66FF99 !important;
+    color: #1b1b1b !important;
+    padding: 14px 32px !important;
+    border-radius: 50px !important;
+    font-weight: 700 !important;
+    font-size: 15px !important;
+    display: inline-block !important;
+    font-family: 'Poppins', sans-serif !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+  }
+
+  :global(section.process-employer .process-cta-btn:hover) {
+    background-color: transparent !important;
+    color: #6aca8a !important;
+    border-color: #6aca8a !important;
+  }
+</style>
+
+<!-- Overrides globales para ProcessOberstaff en esta página únicamente -->
+<style is:global>
+  /* ID selector = máxima especificidad, siempre gana sobre clases */
+  #pr-cm-process-wrapper .process-badge {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  #pr-cm-process-wrapper .process-cta-btn {
+    background-color: #66FF99 !important;
+    border: 2px solid #66FF99 !important;
+    color: #1b1b1b !important;
+    padding: 14px 32px !important;
+    border-radius: 50px !important;
+    font-weight: 700 !important;
+    font-size: 15px !important;
+    display: inline-block !important;
+    font-family: 'Poppins', sans-serif !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+  }
+
+  #pr-cm-process-wrapper .process-cta-btn:hover {
+    background-color: transparent !important;
+    color: #6aca8a !important;
+    border-color: #6aca8a !important;
+  }
+
+  /* Párrafos en color #1b1b1b y notas en itálica más pequeñas */
+  #pr-cm-process-wrapper .process-pane p {
+    color: #1b1b1b !important;
+  }
+
+  #pr-cm-process-wrapper .process-pane p em {
+    font-size: 13px !important;
+    font-style: italic !important;
+    color: #1b1b1b !important;
+    display: inline-block !important;
+    margin-top: 4px !important;
+  }
+
+  /* Fondo blanco para la sección de proceso únicamente en esta página */
+  #pr-cm-process-wrapper .process-section {
+    background-color: #ffffff !important;
+  }
+
+  /* Centrar el contenido de la tarjeta CTA de proceso */
+  #pr-cm-process-wrapper .process-cta {
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* Borde superior para la sección de roles únicamente en esta página */
+  .perfiles-disponibles {
+    border-top: 1px solid #f0f0f0 !important;
+  }
+
+  /* Personalización de tags de los roles (solo en esta página) */
+  .perfiles-disponibles .tag-modern {
+    background: rgba(102, 99, 253, 0.1) !important;
+    color: #6663FD !important;
+  }
+
+  /* Hover simplificado sin traducción ni colores diferentes (solo borde azul) */
+  .perfiles-disponibles .perfil-card.layout-modern:hover {
+    transform: none !important;
+    border-color: #6663FD !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02) !important;
+  }
+
+  /* Estilo personalizado de la tarjeta de precios para Puerto Rico */
+  #pr-cm-pricing-wrapper .pricing-card-new {
+    position: relative !important;
+    border: 1.5px solid rgba(102, 99, 253, 0.2) !important;
+    overflow: visible !important; /* Para permitir que la chapa sobresalga */
+  }
+
+  /* Badge / Chapa de TALENTO DEDICADO */
+  #pr-cm-pricing-wrapper .pricing-card-new::before {
+    content: "TALENTO DEDICADO" !important;
+    position: absolute !important;
+    top: -18px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    background: linear-gradient(135deg, #FF66CC 0%, #6663FD 100%) !important;
+    color: #FFFFFF !important;
+    padding: 8px 24px !important;
+    border-radius: 50px !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.1em !important;
+    z-index: 10 !important;
+    box-shadow: 0 4px 15px rgba(102, 99, 253, 0.2) !important;
+    text-transform: uppercase !important;
+    white-space: nowrap !important;
+  }
+
+  /* Hover de la tarjeta */
+  #pr-cm-pricing-wrapper .pricing-card-new:hover {
+    transform: translateY(-8px) !important;
+    border-color: #6663FD !important;
+    box-shadow: 0 15px 50px rgba(102, 99, 253, 0.15) !important;
+  }
+
+  /* Alineación del bloque del precio (columna izquierda) */
+  #pr-cm-pricing-wrapper .pricing-price-block {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 4px !important;
+    margin: 12px 0 !important;
+  }
+
+  #pr-cm-pricing-wrapper .pricing-label {
+    font-size: 15px !important;
+    color: #5A5A5A !important;
+    text-transform: none !important;
+    font-weight: 500 !important;
+    letter-spacing: normal !important;
+  }
+
+  #pr-cm-pricing-wrapper .pricing-amount {
+    font-size: 50px !important;
+    font-weight: 900 !important;
+    color: #1b1b1b !important;
+    line-height: 1 !important;
+  }
+
+  @media (max-width: 480px) {
+    #pr-cm-pricing-wrapper .pricing-amount {
+      font-size: 46px !important;
+    }
+  }
+
+  @media (min-width: 901px) {
+    #pr-cm-pricing-wrapper .pricing-amount {
+      font-size: 72px !important;
+    }
+  }
+
+  #pr-cm-pricing-wrapper .pricing-period {
+    font-size: 15px !important;
+    color: #5A5A5A !important;
+    padding-bottom: 0 !important;
+    align-self: flex-start !important;
+  }
+
+  /* Botón CTA Verde */
+  #pr-cm-pricing-wrapper .pricing-cta-btn {
+    background: #66FF99 !important;
+    color: #1b1b1b !important;
+    border: 2px solid #66FF99 !important;
+    font-weight: 700 !important;
+    padding: 15px 24px !important;
+    border-radius: 50px !important;
+    transition: all 0.3s ease !important;
+  }
+
+  #pr-cm-pricing-wrapper .pricing-cta-btn:hover {
+    background: transparent !important;
+    color: #22c55e !important;
+    border-color: #22c55e !important;
+  }
+
+  /* Responsivo para móviles */
+  @media (max-width: 600px) {
+    #pr-cm-pricing-wrapper .pricing-card-new::before {
+      font-size: 11px !important;
+      padding: 6px 18px !important;
+      top: -15px !important;
+    }
+    #pr-cm-pricing-wrapper .pricing-cta-btn {
+      padding: 12px 20px !important;
+      font-size: 13px !important;
+    }
+    :global(.faq-cta-card .faq-d-btn) {
+      padding: 10px 20px !important;
+      font-size: 13px !important;
+    }
+  }
+
+  /* Checklist y checks en color verde */
+  #pr-cm-pricing-wrapper .pricing-check {
+    background: rgba(102, 255, 153, 0.2) !important;
+    color: #1F9E4B !important;
+  }
+
+  /* Personalización de la sección de beneficios (Sudamérica) */
+  #pr-cm-benefits-wrapper .bp-container {
+    grid-template-columns: 1fr !important;
+    max-width: 1100px !important;
+    gap: 0 !important;
+  }
+
+  /* Ocultar la columna derecha (imagen) */
+  #pr-cm-benefits-wrapper .bp-right {
+    display: none !important;
+  }
+
+  /* Centrar cabecera */
+  #pr-cm-benefits-wrapper .bp-title {
+    text-align: center !important;
+    max-width: 900px !important;
+    margin: 0 auto 20px auto !important;
+    line-height: 1.35 !important;
+  }
+
+  #pr-cm-benefits-wrapper .bp-subtitle {
+    text-align: center !important;
+    max-width: 850px !important;
+    margin: 0 auto 48px auto !important;
+    font-size: 16px !important;
+  }
+
+  /* Distribución de las 3 características en cuadrícula de 3 columnas */
+  #pr-cm-benefits-wrapper .bp-features {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 30px !important;
+  }
+
+  /* Convertir cada característica en una tarjeta */
+  #pr-cm-benefits-wrapper .bp-feature {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    background: #ffffff !important;
+    border: 1px solid rgba(0, 0, 0, 0.05) !important;
+    border-radius: 20px !important;
+    padding: 40px 30px !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.02) !important;
+    height: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Rediseñar el icono de la tarjeta */
+  #pr-cm-benefits-wrapper .bp-feature-icon {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    font-size: 38px !important;
+    margin-bottom: 24px !important;
+    width: auto !important;
+    height: auto !important;
+  }
+
+  /* Título y descripción dentro de la tarjeta */
+  #pr-cm-benefits-wrapper .bp-feature-title {
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    color: #1B1B1B !important;
+    margin: 0 0 12px 0 !important;
+  }
+
+  #pr-cm-benefits-wrapper .bp-feature-desc {
+    font-size: 14px !important;
+    color: #5A5A5A !important;
+    line-height: 1.6 !important;
+    margin: 0 !important;
+  }
+
+  /* Centrar y estilizar la nota al pie */
+  #pr-cm-benefits-wrapper .meta-custom-notice {
+    text-align: center !important;
+    margin: 50px auto 0 auto !important;
+    width: 100% !important;
+    max-width: 900px !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    font-size: 15px !important;
+    color: #1b1b1b !important;
+    font-weight: 500 !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Transición para la elevación de las tarjetas de beneficios */
+  #pr-cm-benefits-wrapper .bp-feature {
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+  }
+
+  /* Primer card: hover con borde rosa y elevación */
+  #pr-cm-benefits-wrapper .bp-feature:nth-child(1):hover {
+    transform: translateY(-8px) !important;
+    border-color: #FF66CC !important;
+    box-shadow: 0 15px 35px rgba(255, 102, 204, 0.12) !important;
+  }
+
+  /* Segundo card: hover con borde azul y elevación */
+  #pr-cm-benefits-wrapper .bp-feature:nth-child(2):hover {
+    transform: translateY(-8px) !important;
+    border-color: #6663FD !important;
+    box-shadow: 0 15px 35px rgba(102, 99, 253, 0.12) !important;
+  }
+
+  /* Tercer card: hover con borde verde y elevación */
+  #pr-cm-benefits-wrapper .bp-feature:nth-child(3):hover {
+    transform: translateY(-8px) !important;
+    border-color: #66FF99 !important;
+    box-shadow: 0 15px 35px rgba(102, 255, 153, 0.12) !important;
+  }
+
+  /* Adaptación responsive */
+  @media (max-width: 900px) {
+    #pr-cm-benefits-wrapper .bp-features {
+      grid-template-columns: 1fr !important;
+      gap: 20px !important;
+    }
+    #pr-cm-benefits-wrapper .bp-feature {
+      padding: 35px 25px !important;
+    }
+    #pr-cm-benefits-wrapper .bp-title {
+      font-size: 26px !important;
+    }
+    #pr-cm-benefits-wrapper .bp-subtitle {
+      font-size: 15px !important;
+    }
+  }
+  /* Borde inferior para la sección de beneficios únicamente en esta página */
+  #pr-cm-benefits-wrapper .bp-section {
+    border-bottom: 1px solid #f0f0f0 !important;
+  }
+</style>

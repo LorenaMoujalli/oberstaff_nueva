@@ -1,0 +1,312 @@
+---
+import HeaderPr from "../components/HeaderPr.astro";
+import FooterPerfilesPr from "../components/FooterPerfilesPr.astro";
+import VideoTestimonialModal from "../components/video/VideoTestimonialModal.astro";
+
+interface FooterLink {
+    text: string;
+    href: string;
+}
+
+interface Props {
+	title?: string;
+	description?: string;
+	keywords?: string;
+    footerTitle?: string;
+    footerLinks?: FooterLink[];
+    ogTitle?: string;
+    ogDescription?: string;
+    ogUrl?: string;
+    ogImage?: string;
+} 
+
+const { 
+	title = "",
+	description = "",
+	keywords = "",
+    footerTitle,
+    footerLinks,
+    ogTitle = title,
+    ogDescription = description,
+    ogUrl = Astro.url.href,
+    ogImage = "Contratar-Talento.webp"
+} = Astro.props;
+
+const canonicalOgImage = ogImage 
+  ? (ogImage.startsWith('http') ? ogImage : new URL(ogImage.startsWith('/') ? ogImage : `/${ogImage}`, Astro.url.origin).href)
+  : new URL('/Contratar-Talento.webp', Astro.url.origin).href;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="keywords" content={keywords} />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="robots" content="index, follow" />
+		<meta property="og:title" content={ogTitle} />
+		<meta property="og:description" content={ogDescription} />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={ogUrl} />
+		<meta property="og:image" content={canonicalOgImage} />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={ogTitle} />
+		<meta name="twitter:description" content={ogDescription} />
+		<meta name="twitter:image" content={canonicalOgImage} />
+		<link rel="icon" type="image/webp" href="/icono_oberstaff.webp" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+			rel="stylesheet"
+		/>
+		<script
+			src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"
+		></script>
+		<script src="../scripts/scroll-animations.ts"></script>
+		<title>{title}</title>
+		<slot name="head" />
+		<!-- 1. Estilos del Chat de n8n
+		<link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+		-->
+	</head>
+	<body>
+		<div class="app-container">
+			<HeaderPr />
+			<main class="main-content">
+				<slot />
+			</main>
+			<FooterPerfilesPr title={footerTitle} links={footerLinks} />
+		</div>
+		<VideoTestimonialModal />
+		<!-- 2. Script que inicializa el Chatbot
+		<script type="module" is:inline>
+			import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+			createChat({
+				webhookUrl: 'https://n8n.obertrack.com/webhook/e4e73e31-e84f-4d2a-962e-2816fd7dae10/chat',
+				showWelcomeScreen: true,
+				defaultLanguage: 'en',
+				initialMessages: [
+					'¡Hola! 👋',
+					'Bienvenido a Oberstaff. ¿En qué te puedo ayudar hoy?'
+				],
+				i18n: {
+					en: {
+						title: 'Oberstaff Bot',
+						subtitle: 'Estamos aquí para ayudarte 24/7.',
+						inputPlaceholder: 'Escribe tu pregunta aquí...',
+						getStarted: 'Nueva Conversación'
+					}
+				}
+			});
+		
+			const observer = new MutationObserver(() => {
+				const chatTitle = document.querySelector('#n8n-chat h1');
+				if (chatTitle) {
+					const p = document.createElement('p');
+					p.classList.add('chat-title-p');
+					for (let attr of chatTitle.attributes) {
+						p.setAttribute(attr.name, attr.value);
+					}
+					p.innerHTML = chatTitle.innerHTML;
+					chatTitle.parentNode.replaceChild(p, chatTitle);
+				}
+			});
+			observer.observe(document.body, { childList: true, subtree: true });
+</script>
+		-->
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		/* Personalización del Chatbot de n8n */
+		--chat--color--primary: #ff66cc !important;
+		--chat--color--primary-shade-50: #ff66cc !important;
+		--chat--color--primary--shade-100: #ff66cc !important;
+		--chat--color-primary: #ff66cc !important;
+		--chat--color-primary-shade-50: #ff66cc !important;
+		--chat--header--background: #ff66cc !important;
+		--chat--header--color: #ffffff !important;
+		--chat--message--user--background: #6663FD !important;
+		--chat--message--user--color: #ffffff !important;
+		--chat--toggle--background: #ff66cc !important;
+		--chat--toggle--hover--background: #ff66cc !important;
+		--chat--toggle--active--background: #ff66cc !important;
+		--chat--message--padding: 1.1rem 1.3rem !important;
+		--chat--messages-list--padding: 1.2rem !important;
+
+		--primary: #1a1a1a;
+		--primary-hover: #333333;
+		--bg-gradient-start: #fff0f7; /* Very light pink based on #ff66cc */
+		--bg-gradient-end: #f5d0fe;
+		--sidebar-bg: #fff0f7; /* Consistent light pink */
+		--text-color: #1a1a1a;
+		--card-bg: #ffffff;
+	}
+
+	/* Aumentar padding en los mensajes y corregir listas que tocan los bordes */
+	#n8n-chat .chat-message-markdown,
+	#n8n-chat div[class*="message-markdown"] {
+		padding: 4px 8px !important;
+	}
+	#n8n-chat .chat-message-markdown ul,
+	#n8n-chat .chat-message-markdown ol,
+	#n8n-chat div[class*="message-markdown"] ul,
+	#n8n-chat div[class*="message-markdown"] ol {
+		padding-left: 20px !important;
+		margin-left: 5px !important;
+		margin-top: 8px !important;
+		margin-bottom: 8px !important;
+	}
+	#n8n-chat .chat-message-markdown li,
+	#n8n-chat div[class*="message-markdown"] li {
+		margin-bottom: 6px !important;
+		padding-left: 2px !important;
+	}
+
+	/* Centrar y alinear la caja de texto y botón de enviar */
+	#n8n-chat .chat-input-container,
+	#n8n-chat form[class*="input"],
+	#n8n-chat div[class*="input-container"] {
+		display: flex !important;
+		align-items: center !important;
+	}
+	#n8n-chat textarea,
+	#n8n-chat input[class*="input"] {
+		margin: 0 !important;
+		align-self: center !important;
+	}
+	#n8n-chat .chat-input-send-button,
+	#n8n-chat button[class*="send"] {
+		align-self: center !important;
+		display: flex !important;
+		align-items: center !important;
+		justify-content: center !important;
+	}
+
+	/* Centrar títulos en el header de n8n chat */
+	#n8n-chat .chat-header p.chat-title-p {
+		font-size: 1.25rem !important;
+		font-weight: 700 !important;
+	}
+
+	.chat-header,
+	#n8n-chat .chat-header {
+		text-align: center !important;
+		justify-content: center !important;
+	}
+	.chat-header .chat-header-title,
+	.chat-header .chat-header-subtitle,
+	#n8n-chat .chat-header .title,
+	#n8n-chat .chat-header .subtitle,
+	#n8n-chat .chat-header h1,
+	#n8n-chat .chat-header p {
+		text-align: center !important;
+		margin-left: auto !important;
+		margin-right: auto !important;
+		width: 100% !important;
+	}
+
+	/* Estilos de los botones del chatbot n8n */
+	#n8n-chat .chat-input-send-button svg,
+	#n8n-chat button[class*="send"] svg,
+	#n8n-chat button[class*="send"] svg path {
+		fill: #6663FD !important;
+		stroke: #6663FD !important;
+	}
+
+	#n8n-chat .chat-input-send-button:hover,
+	#n8n-chat button[class*="send"]:hover,
+	#n8n-chat button[class*="send"]:active,
+	#n8n-chat button[class*="send"]:focus {
+		background: transparent !important;
+		background-color: transparent !important;
+		box-shadow: none !important;
+	}
+
+	#n8n-chat .chat-toggle-button:hover,
+	.chat-toggle-button:hover,
+	#n8n-chat button[class*="toggle"]:hover,
+	#n8n-chat button[class*="bubble"]:hover,
+	#n8n-chat .chat-toggle-button:active,
+	.chat-toggle-button:active,
+	#n8n-chat button[class*="toggle"]:active,
+	#n8n-chat button[class*="bubble"]:active {
+		background-color: #ff66cc !important;
+		background: #ff66cc !important;
+		transform: scale(1.08) !important;
+	}
+
+
+	* {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
+
+	html {
+		font-family: "Poppins", sans-serif;
+		background-color: white;
+		color: var(--text-color);
+		scroll-behavior: smooth;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-family: "Montserrat", sans-serif;
+	}
+
+	p {
+		font-family: "Poppins", sans-serif;
+	}
+
+	body {
+		min-height: 100vh;
+	}
+
+	.app-container {
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+	}
+
+	.main-content {
+		flex: 1;
+
+		display: flex;
+		flex-direction: column;
+	}
+
+	/* Utility for cards */
+	.card {
+		background: white;
+		border-radius: 20px;
+		padding: 1.5rem;
+		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+	}
+
+	button {
+		cursor: pointer;
+		font-family: inherit;
+	}
+
+	/* Animación de aparición al hacer scroll */
+	.fade-in-section {
+		opacity: 0;
+		transform: translateY(40px);
+		transition: opacity 1s ease-out, transform 1s ease-out;
+		will-change: opacity, transform;
+	}
+
+	.fade-in-section.is-visible {
+		opacity: 1;
+		transform: translateY(0);
+	}
+</style>

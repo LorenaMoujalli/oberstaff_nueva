@@ -33,7 +33,7 @@ const {
             <table class="comparison-table">
                 <thead>
                     <tr>
-                        <th class="col-criterio">{criterioLabel}</th>
+                        <th class="col-criterio" set:html={criterioLabel}></th>
                         <th class="col-highlight" set:html={oberstaffLabel}></th>
                         {competitors.map((comp) => (
                             <th set:html={comp}></th>

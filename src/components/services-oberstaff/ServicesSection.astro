@@ -1,4 +1,4 @@
-﻿---
+---
 interface Service {
     icon: string;
     title: string;
@@ -16,6 +16,8 @@ interface Props {
     services?: Service[];
     customClass?: string;
     cardTitleTag?: "h3" | "p";
+    image?: string;
+    imageAlt?: string;
 }
 
 const {
@@ -65,6 +67,8 @@ const {
     ],
     customClass = "",
     cardTitleTag = "p",
+    image,
+    imageAlt = "",
 } = Astro.props;
 
 import ServiceCard from "./ServiceCard.astro";
@@ -73,9 +77,16 @@ import "../../styles/services-oberstaff/services-section.css";
 
 <section class={`services-oberstaff ${customClass}`} id="servicios">
     <div class="services-container">
-        <header class="services-header">
-            <h2 id="services-title" set:html={title} />
-            <p class="section-description" set:html={description} />
+        <header class={`services-header ${image ? 'has-header-image' : ''}`}>
+            <div class="services-header-text">
+                <h2 id="services-title" set:html={title} />
+                <p class="section-description" set:html={description} />
+            </div>
+            {image && (
+                <div class="services-header-image-container">
+                    <img src={image} alt={imageAlt} class="services-header-image" />
+                </div>
+            )}
         </header>
 
         <div

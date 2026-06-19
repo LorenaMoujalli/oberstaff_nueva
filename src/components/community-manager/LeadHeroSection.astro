@@ -33,6 +33,10 @@ interface Props {
     topLabelTag?: string;
     topLabelInsideH1?: boolean;
     webhookUrl?: string;
+    placeholderName?: string;
+    placeholderEmail?: string;
+    placeholderCompany?: string;
+    placeholderPhone?: string;
 }
 
 const {
@@ -52,7 +56,11 @@ const {
     titleTag = "h1",
     topLabelTag = "span",
     topLabelInsideH1 = false,
-    webhookUrl = ""
+    webhookUrl = "",
+    placeholderName,
+    placeholderEmail,
+    placeholderCompany,
+    placeholderPhone,
 } = Astro.props;
 ---
 
@@ -84,6 +92,10 @@ const {
             footerLinkHref={footerLinkHref}
             cardTitleTag={cardTitleTag}
             webhookUrl={webhookUrl}
+            placeholderName={placeholderName}
+            placeholderEmail={placeholderEmail}
+            placeholderCompany={placeholderCompany}
+            placeholderPhone={placeholderPhone}
         />
     </div>
 </section>
