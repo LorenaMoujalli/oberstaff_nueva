@@ -1,6 +1,7 @@
 ---
 import HeaderPr from "../components/HeaderPr.astro";
 import FooterServiciosPr from "../components/FooterServiciosPr.astro";
+import VideoTestimonialModal from "../components/video/VideoTestimonialModal.astro";
 
 interface Props {
 	title?: string;
@@ -72,6 +73,7 @@ const canonicalOgImage = ogImage
 			</main>
 			<FooterServiciosPr />
 		</div>
+		<VideoTestimonialModal />
 		<!-- 2. Script que inicializa el Chatbot
 		<script type="module" is:inline>
 			import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';

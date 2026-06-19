@@ -2,10 +2,10 @@
 import FAQItem from "../faq/FAQItem.astro";
 import "../../styles/faq/faq-section.css";
 
-const faqs = [
+const defaultFaqs = [
     {
         question: "¿Qué hace exactamente un Employer of Record?",
-        answers: ["Es la entidad que asume el riesgo legal y laboral. Oberstaff firma el contrato local, liquida impuestos y paga la nómina; mientras que tu empresa define las tareas, horarios y métricas de evaluación del talento."]
+        answers: ["Es la entidad que asume el riesgo legal y laboral. Oberstaff firma el contrato local, liquida impuestos y paga la nómina; mientras que tu empresa define las tareas, horarios and métricas de evaluación del talento."]
     },
     {
         question: "¿Cuándo conviene usar EOR?",
@@ -38,13 +38,15 @@ interface Props {
     ctaText?: string;
     ctaButtonText?: string;
     ctaButtonHref?: string;
+    faqs?: { question: string; answers: string[] }[];
 }
 
 const {
     title = "Todo lo que necesitas saber antes de su <strong>expansión en LATAM</strong>",
     ctaText = "¿No sabes qué modelo de contratación necesitas para tu empresa?",
     ctaButtonText = "Agenda una llamada gratuita",
-    ctaButtonHref = "#contacto"
+    ctaButtonHref = "#contacto",
+    faqs = defaultFaqs
 } = Astro.props;
 ---
 
@@ -91,7 +93,7 @@ const {
                         faqs.map((faq) => (
                             <FAQItem question={faq.question}>
                                 {faq.answers &&
-                                    faq.answers.map((answer) => <p>{answer}</p>)}
+                                    faq.answers.map((answer) => <p set:html={answer}></p>)}
                             </FAQItem>
                         ))
                     }

@@ -1,0 +1,1280 @@
+---
+import DashboardLayoutServiciosPr from "../../../layouts/DashboardLayoutServiciosPr.astro";
+import HeroService from "../../../components/hero-servicios/HeroService.astro";
+import FranjaEmpresasHome from "../../../components/franja-empresas-home/FranjaEmpresasHome.astro";
+import ConEorService from "../../../components/conEorServicios/ConEorService.astro";
+//import BeneficiosSeccion from "../../../components/beneficios-eor-servicios/BeneficiosSeccion.astro";
+import EorStepsSection from "../../../components/eor-steps-servicios/EorStepsSection.astro";
+import EorCta from "../../../components/eor-cta-servicios/EorCta.astro";
+import FeaturesSection from "../../../components/oberstaff-features-servicios/FeaturesSection.astro";
+import CoberturaSeccion from "../../../components/geografica-servicios/CoberturaSeccion.astro";
+import PricingSection from "../../../components/pricing-servicios/PricingSection.astro";
+import CasosExitoSection from "../../../components/casos-exito-servicios/CasosExitoSection.astro";
+//import RolesSection from "../../../components/roles-servicios/RolesSection.astro";
+import FAQSection from "../../../components/faq-servicios/FAQSection.astro";
+import OtrosServiciosSection from "../../../components/otros-servicios-servicios/OtrosServiciosSection.astro";
+import ContactFormSection from "../../../components/form/ContactFormSection.astro";
+//import ArticulosSection from "../../../components/articulos-servicios/ArticulosSection.astro";
+import QueEsServicioSection from "../../../components/QueEsServicio/QueEsServicioSection.astro";
+import ServicesSection from "../../../components/services-oberstaff/ServicesSection.astro";
+import ProcessOberstaff from "../../../components/process/ProcessOberstaff.astro";
+import ProfilesSection from "../../../components/profiles/ProfilesSection.astro";
+const ogImage = "Contractor Of Record.webp"; 
+
+const faqsList = [
+	{
+		question: "¿Qué significa Contractor of Record?",
+		answers: ["Contractor of Record es un servicio para formalizar, administrar y pagar a profesionales independientes en otros países. Tu empresa dirige el proyecto y los entregables; nosotros gestionamos el contrato, la documentación, los pagos internacionales y la administración operativa."]
+	},
+	{
+		question: "¿Qué permite un remote contractor para empresas en Puerto Rico?",
+		answers: ["Permite colaborar con talento remoto en Sudamérica sin que tu empresa abra una entidad legal en el país del profesional. Es útil para proyectos, campañas, sprints, consultorías o necesidades temporales de talento especializado."]
+	},
+	{
+		question: "¿Qué diferencia hay entre contratar un contratista en Puerto Rico y usar Contractor of Record?",
+		answers: ["Si buscas un contratista en Puerto Rico, piensas en talento externo. Pero si ese talento está en Sudamérica, debes resolver contratos, pagos internacionales y documentación. El Contractor of Record centraliza esa operación para que la colaboración sea más simple."]
+	},
+	{
+		question: "¿Un agent of record es lo mismo que un COR?",
+		answers: ["No siempre. El término agent of record se usa en otros contextos, como seguros o representación comercial. Para contratar profesionales remotos internacionales, el término correcto es Contractor of Record. Si dudas qué modelo encaja, nuestro equipo te orienta sin compromiso."]
+	},
+	{
+		question: "¿Qué pasa si el proyecto cambia de alcance o se alarga?",
+		answers: ["Oberstaff. acompaña renovaciones, ampliaciones, sustituciones y cambios de alcance. Solo debes comunicarlo a tu gestor de cuenta para actualizar la estructura operativa correspondiente."]
+	}
+];
+---
+ 
+<DashboardLayoutServiciosPr
+	ogImage={ogImage}
+	title="Contractor of Record en Puerto Rico | Oberstaff"
+	description="Contrata freelancers en LATAM ágilmente. Como tu Contractor of Record, gestionamos pagos, contratos y compliance internacional sin nexo laboral."
+>
+	<link rel="canonical" href="https://oberstaff.com/pr/servicios/contractor-of-record" slot="head" />
+	<script slot="head" type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://oberstaff.com/pr/servicios/contractor-of-record#webpage",
+      "url": "https://oberstaff.com/pr/servicios/contractor-of-record",
+      "name": "Contractor of Record para empresas en Puerto Rico | Oberstaff",
+      "description": "Expande tu equipo en LATAM desde Puerto Rico sin abrir filial. Como tu Contractor of Record, gestionamos contratos, pagos y cumplimiento legal en 10+ países.",
+      "inLanguage": "es-PR",
+      "isPartOf": {
+        "@id": "https://oberstaff.com/pr/#website"
+      },
+      "publisher": {
+        "@id": "https://oberstaff.com/pr/#organization"
+      },
+      "about": {
+        "@id": "https://oberstaff.com/pr/servicios/contractor-of-record#service"
+      },
+      "mainEntity": {
+        "@id": "https://oberstaff.com/pr/servicios/contractor-of-record#service"
+      },
+      "breadcrumb": {
+        "@id": "https://oberstaff.com/pr/servicios/contractor-of-record#breadcrumb"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://oberstaff.com/pr/servicios/contractor-of-record#service",
+      "name": "Contractor of Record en LATAM para empresas en Puerto Rico",
+      "alternateName": [
+        "COR",
+        "Contractor of Record",
+        "Contractor of Record para empresas en Puerto Rico",
+        "COR Puerto Rico",
+        "Contractor of Record services",
+        "Gestión de contratistas independientes"
+      ],
+      "serviceType": "Contractor of Record",
+      "category": "Servicios de gestión y pago de contratistas internacionales",
+      "url": "https://oberstaff.com/pr/servicios/contractor-of-record",
+      "provider": {
+        "@id": "https://oberstaff.com/pr/#organization"
+      },
+      "description": "Servicio de Contractor of Record para empresas en Puerto Rico que quieren trabajar con freelancers y profesionales independientes en Latinoamérica. Oberstaff asume la gestión de contratos mercantiles, centralización de pagos internacionales y cumplimiento legal.",
+      "slogan": "Gestión y pagos centralizados para tus contractors en LATAM.",
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Empresas en Puerto Rico que necesitan trabajar con contratistas independientes en LATAM sin crear una entidad legal propia",
+        "geographicArea": {
+          "@type": "Country",
+          "name": "Puerto Rico"
+        }
+      },
+      "serviceAudience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Pymes, startups y empresas de Puerto Rico que buscan trabajar con freelancers en Latinoamérica bajo un esquema legal blindado y con pagos centralizados",
+        "geographicArea": {
+          "@type": "Country",
+          "name": "Puerto Rico"
+        }
+      },
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "Puerto Rico"
+        },
+        {
+          "@type": "Country",
+          "name": "Colombia"
+        },
+        {
+          "@type": "Country",
+          "name": "Argentina"
+        },
+        {
+          "@type": "Country",
+          "name": "México"
+        },
+        {
+          "@type": "Country",
+          "name": "Venezuela"
+        },
+        {
+          "@type": "Country",
+          "name": "Perú"
+        },
+        {
+          "@type": "Country",
+          "name": "Ecuador"
+        },
+        {
+          "@type": "Country",
+          "name": "Paraguay"
+        },
+        {
+          "@type": "Country",
+          "name": "Uruguay"
+        },
+        {
+          "@type": "Country",
+          "name": "Panamá"
+        },
+        {
+          "@type": "Country",
+          "name": "Chile"
+        }
+      ],
+      "offers": {
+        "@type": "Offer",
+        "@id": "https://oberstaff.com/pr/servicios/contractor-of-record#offer",
+        "name": "Contractor of Record Completo",
+        "url": "https://oberstaff.com/pr/servicios/contractor-of-record#contacto",
+        "price": "790",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "eligibleCustomerType": "http://purl.org/goodrelations/v1#Business",
+        "eligibleRegion": {
+          "@type": "Country",
+          "name": "Puerto Rico"
+        },
+        "description": "Servicio Contractor of Record completo para gestionar de forma legal y centralizada tus contratistas independientes en Latinoamérica.",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "790",
+          "priceCurrency": "USD",
+          "unitText": "empleado por mes"
+        }
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "@id": "https://oberstaff.com/pr/servicios/contractor-of-record#included-services",
+        "name": "Qué incluye el servicio de Contractor of Record",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "name": "Estructuración contractual",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Estructuración contractual",
+              "description": "Redacción y firma de contratos mercantiles para profesionales independientes conforme a normativas locales."
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Centralización de pagos",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Centralización de pagos",
+              "description": "Gestión de pagos internacionales mensuales y soporte administrativo centralizado."
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Compliance y blindaje legal",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Compliance y blindaje legal",
+              "description": "Mitigación de riesgos de clasificación errónea y aseguramiento de la cesión de propiedad intelectual."
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Soporte y administración",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Soporte y administración",
+              "description": "Administración mensual, control de incidencias, cambios de alcance y renovación de contratos."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://oberstaff.com/pr/servicios/contractor-of-record#use-cases",
+      "name": "Cuándo usar el servicio Contractor of Record",
+      "description": "Casos en los que una empresa en Puerto Rico puede utilizar Contractor of Record para colaborar con talento independiente en LATAM.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Proyectos y campañas temporales",
+          "description": "Para incorporar especialistas por periodos cortos o hitos específicos."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Colaboraciones con freelancers",
+          "description": "Para trabajar con contratistas independientes externos a tu plantilla formal."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Mitigación de riesgos laborales",
+          "description": "Para blindar los contratos y evitar sanciones por mala clasificación de contratistas."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Centralización administrativa",
+          "description": "Para simplificar el pago mensual a múltiples profesionales en una sola factura."
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://oberstaff.com/pr/servicios/contractor-of-record#process",
+      "name": "Proceso Contractor of Record",
+      "description": "Proceso de Oberstaff para formalizar y activar a un contractor independiente en Latinoamérica para empresas de Puerto Rico.",
+      "numberOfItems": 4,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Definición del perfil",
+          "description": "La empresa comparte el alcance del proyecto, presupuesto and país de interés."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Validación del modelo",
+          "description": "Oberstaff revisa el encaje legal para asegurar que califica como contratista independiente."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Firma y alta del contractor",
+          "description": "El profesional independiente firma el contrato mercantil y se prepara la operativa de pago."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Gestión y pagos mensuales",
+          "description": "Oberstaff procesa los pagos mensuales y el soporte administrativo en una sola factura en USD."
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://oberstaff.com/pr/servicios/contractor-of-record#profiles",
+      "name": "Perfiles que puedes contratar con COR",
+      "description": "Especialistas independientes que las empresas de Puerto Rico pueden gestionar mediante el servicio Contractor of Record de Oberstaff.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Desarrollador Freelance"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "QA por release"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "DevOps por migración",
+          "url": "https://oberstaff.com/pr/servicios/contractor-of-record"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Especialista SEO",
+          "url": "https://oberstaff.com/pr/servicios/contractor-of-record"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Especialista Google Ads",
+          "url": "https://oberstaff.com/pr/servicios/contractor-of-record"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Especialista Meta Ads",
+          "url": "https://oberstaff.com/pr/servicios/contractor-of-record"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "Diseñador UI/UX",
+          "url": "https://oberstaff.com/pr/servicios/contractor-of-record"
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "Diseñador gráfico",
+          "url": "https://oberstaff.com/pr/servicios/contractor-of-record"
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "name": "Editor de vídeo"
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "name": "Consultor independiente"
+        },
+        {
+          "@type": "ListItem",
+          "position": 11,
+          "name": "Especialista de contenido"
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://oberstaff.com/pr/servicios/contractor-of-record#countries",
+      "name": "Países con cobertura para Contractor of Record",
+      "description": "Países de Latinoamérica donde Oberstaff permite a empresas de Puerto Rico pagar y gestionar contratistas independientes.",
+      "numberOfItems": 10,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Colombia"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Argentina"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "México"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Venezuela"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Perú"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Ecuador"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "Paraguay"
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "Uruguay"
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "name": "Panamá"
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "name": "Chile"
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://oberstaff.com/pr/servicios/contractor-of-record#benefits",
+      "name": "Beneficios del Contractor of Record con Oberstaff",
+      "description": "Beneficios para empresas de Puerto Rico que gestionan sus contratistas independientes en LATAM mediante Oberstaff.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Flexibilidad operativa",
+          "description": "Colaboraciones por entregables o proyectos específicos sin costes fijos de contratación laboral."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blindaje de contratos",
+          "description": "Reducción de riesgos fiscales y de reclasificación frente a IRS u otras entidades locales."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Facturación centralizada en USD",
+          "description": "Un único pago mensual que consolida todos los honorarios de tus contratistas independientes."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Huso horario compatible",
+          "description": "Los contratistas en LATAM trabajan alineados con la jornada laboral de Puerto Rico."
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Soporte B2B y operativo",
+          "description": "Gestión de incidencias, documentación y renovación de contratos por especialistas."
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Rapidez en la activación",
+          "description": "Alta y formalización del contratista en días, sin crear filiales ni registros locales."
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://oberstaff.com/pr/servicios/contractor-of-record#other-services",
+      "name": "Otros servicios de Oberstaff",
+      "description": "Otros servicios relacionados dentro de la arquitectura de Oberstaff para empresas en Puerto Rico.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Staff Augmentation",
+          "url": "https://oberstaff.com/pr/servicios/staff-augmentation",
+          "description": "Para ampliar equipos tecnológicos con perfiles IT integrados en tus herramientas y dirección diaria."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Outsourcing de Personal",
+          "url": "https://oberstaff.com/pr/servicios/outsourcing-de-personal",
+          "description": "Para externalizar selección, contratación y administración de perfiles funcionales y de negocio."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Employer of Record",
+          "url": "https://oberstaff.com/pr/servicios/employer-of-record",
+          "description": "Para contratar empleados locales con nómina, seguridad social y plenos derechos sin abrir filial."
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://oberstaff.com/pr/servicios/contractor-of-record#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Qué significa Contractor of Record?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Contractor of Record es un servicio para formalizar, administrar y pagar a profesionales independientes en otros países. Tu empresa dirige el proyecto y los entregables; nosotros gestionamos el contrato, la documentación, los pagos internacionales y la administración operativa."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué permite un remote contractor para empresas en Puerto Rico?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Permite colaborar con talento remoto en Sudamérica sin que tu empresa abra una entidad legal en el país del profesional. Es útil para proyectos, campañas, sprints, consultorías o necesidades temporales de talento especializado."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué diferencia hay entre contratar un contratista en Puerto Rico y usar Contractor of Record?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Si buscas un contratista en Puerto Rico, piensas en talento externo. Pero si ese talento está en Sudamérica, debes resolver contratos, pagos internacionales y documentación. El Contractor of Record centraliza esa operación para que la colaboración sea más simple."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Un agent of record es lo mismo que un COR?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No siempre. El término agent of record se usa en otros contextos, como seguros o representación comercial. Para contratar profesionales remotos internacionales, el término correcto es Contractor of Record."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué pasa si el proyecto cambia de alcance o se alarga?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oberstaff acompaña de cerca  renovaciones, ampliaciones, sustituciones y cambios de alcance. Solo debes comunicarlo a tu gestor de cuenta para actualizar la estructura operativa correspondiente."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Hay permanencia mínima?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No exigimos permanencia para el servicio. Puedes activar o finalizar colaboraciones con tus contratistas independientes según las necesidades del proyecto."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo se factura el servicio?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La facturación se realiza en USD para facilitar el registro de las empresas en Puerto Rico. Recibes una sola factura mensual consolidada por todos tus contratistas."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://oberstaff.com/pr/servicios/contractor-of-record#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://oberstaff.com/pr"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Contractor of Record",
+          "item": "https://oberstaff.com/pr/servicios/contractor-of-record"
+        }
+      ]
+    }
+  ]
+}
+</script>
+	<div class="service-detail-container">
+		<div class="fade-in-section">
+			<HeroService
+				label="CONTRACTOR OF RECORD • COR SERVICES"
+				preTitle="Contractor of Record en Sudamérica:"
+				title="Contrata freelancers e"
+				highlight="independientes con respaldo legal"
+				description="Colabora de forma ágil con profesionales independientes y cualquier <strong style='font-weight: 800;'>remote contractor</strong> en Sudamérica. Como tu <strong style='font-weight: 800;'>Contractor of Record para Puerto Rico</strong> , centralizamos tus pagos internacionales y blindamos tus contratos mercantiles contra la clasificación errónea de contratistas. Todo en una única factura."
+				videoImg="/fondo-video.webp"
+				remoteCountry="CO"
+				floatingText="Cero Riesgo Legal"
+				badgeRightTitle="Pagos Centralizados"
+				badgeRightText=""
+				badgeRightIcon="🔹"
+				primaryBtnText="Recibir propuesta en <24h"
+				primaryBtnHref="#contacto"
+				secondaryBtnText="Hablar con un especialista COR"
+				secondaryBtnHref="#contacto"
+				underBtnText="↳ Tardarás menos de 1 minuto · Sin compromiso"
+				modalTitle="¿Listo para expandir tu equipo en LATAM?"
+				modalDescription="Un especialista te explicará exactamente cuánto puedes ahorrar con nuestro modelo EOR."
+				modalBtnText="Agendar asesoría gratuita"
+				videoAlt="Employer of Record para contratar talento en LATAM"
+			/>
+		</div>
+
+		<div class="fade-in-section">
+			<FranjaEmpresasHome
+				stat1Number="100%"
+				stat1Label="Compliance para tus trabajadores independientes."
+				stat2Number="10 países"
+				stat2Label="Red de pagos centralizada en Sudamérica."
+				stat3Number="0"
+				stat3Label="Riesgo de contingencia por clasificación errónea." 
+			/>   
+		</div> 
+
+		<div class="fade-in-section">
+			<QueEsServicioSection
+				title="¿Qué es un Contractor of Record?"
+				highlightWord="Contractor of Record?"
+				description="Contratación internacional ágil de talento independiente sin fricción para tu negocio en Puerto Rico."
+				imageSrc="/img-contractor.webp"
+				imageAlt="Profesional trabajando"
+				badgeText="Contratos Blindados"
+				quoteText="Un <strong style='font-weight: 900;'>Contractor of Record</strong>, también conocido como COR, es un proveedor que ayuda a las empresas a contratar y administrar profesionales independientes en otros países sin crear una estructura legal propia en cada mercado."
+				infoItems={[
+					{
+						icon: "⚙️",
+						title: "Manejo y Operación",
+						description:
+							"En la práctica, tu empresa en Puerto Rico define el proyecto, los entregables, el alcance y la relación comercial. <span style='font-weight: 800; color: #1b1b1b;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> estructura el contrato mercantil, coordina la documentación, centraliza los pagos y sostiene la administración mensual del servicio.",
+					},
+					{
+						icon: "🛡️",
+						title: "Pautas de Naturaleza",
+						description:
+							"Este modelo está diseñado para freelancers, consultores, especialistas técnicos y talento independiente. No sustituye una relación laboral formal: si necesitas horario fijo, subordinación, dedicación exclusiva o contratación como empleado, el modelo correcto es <strong style='font-weight: 700;'>Employer of Record</strong>.",
+					},
+				]}
+		
+			/>
+		</div>
+
+        	<div class="fade-in-section">
+			<PricingSection
+				eyebrow=""
+				title="Precios simples para contratar <span style='font-weight: 900; color: #6663FD;'>contractors internacionales</span>"
+				subtitle=""
+				plans={[
+					{
+						badge: "MÁS POPULAR",
+						title: "Contractor of Record Completo",
+						price: "790",
+						currency: "€",
+						period: "/ empleado / mes",
+						teamSize: "Para equipos de 4-20 empleados",
+						features: [
+							"Contrato para profesional independiente",
+							"Gestión de pagos internacionales",
+							"Administración mensual del contractor",
+                            "Soporte humano en cada etapa del proceso",
+                            "Facturación adaptable a la contabilidad de tu empresa en Puerto Rico"
+						],
+						ctaText: "Solicitar propuesta", 
+						ctaHref: "#contacto",
+					},
+				]}
+			/>
+		</div>
+
+		<div class="fade-in-section">
+			<ServicesSection
+				title="¿Cuándo necesita tu empresa en Puerto Rico un <strong>Contractor of Record?</strong>"   
+				description="El COR es la opción ideal cuando necesitas flexibilidad y velocidad sin añadir estructura fija. Si buscas un <strong> contratista en Puerto Rico</strong> o a nivel remoto, considera estos escenarios:"
+				customClass="employer-use-cases"
+				services={[ 
+					{
+						icon: "📅",
+						title: "Proyectos puntuales",
+						description:
+							"Incorpora un desarrollador, diseñador, especialista SEO, media buyer o consultor durante 3, 6 o 12 meses, sin atarte a una contratación indefinida.",
+						linkText: "", 
+						href: "",
+						customIconBg: "rgba(255, 102, 204, 0.1)",
+						cardClass: "card-green",
+					},
+					{
+						icon: "🤝",
+						title: "Colaboraciones con remote contractors",
+						description:
+							"Trabaja con profesionales independientes en Sudamérica antes de decidir si tiene sentido convertir el rol en una posición fija.",
+						linkText: "",
+						href: "",
+						customIconBg: "rgba(102, 255, 153, 0.1)",
+						cardClass: "card-pink",
+					},
+					{
+						icon: "🌎",
+						title: "Expansión flexible en varios países",
+						description:
+							"Opera con especialistas independientes en Colombia, Venezuela, México, Argentina, Perú o Chile sin crear una entidad legal en cada país.",
+						linkText: "",
+						href: "",
+						customIconBg: "rgba(102, 99, 253, 0.1)",
+						cardClass: "card-lime", 
+					},
+					{
+						icon: "🔍",
+						title: "Talento especializado difícil de encontrar localmente",
+						description:
+							"Accede a perfiles de IA, data, cloud, desarrollo, UX/UI, automatización, performance marketing o contenido digital de alto nivel.",
+						linkText: "",
+						href: "",
+						customIconBg: "rgba(204, 255, 102, 0.2)",
+						cardClass: "card-lime",
+					},
+				]}
+			/>
+		</div>
+
+		<div class="fade-in-section">
+			<ConEorService
+				eyebrow=""
+				title="Gestionarlo internamente vs. hacerlo con <span style='color: #1b1b1b; font-weight: 900;'>Oberstaff<span style='color: #FF66CC; font-weight: 900;'>.</span></span>"
+				description=""
+				negativeTitle="❌ Sin contractor of record"
+				positiveTitle="✅ Con <span style='font-weight: 900;'>Oberstaff<span style='color: #FF66CC; font-weight: 900;'>.</span></span> como tu COR en PR"
+				badge="La opción inteligente"
+				negativeIcon=""
+				positiveIcon=""
+				negativeItems={[
+					"Buscas al freelancer en múltiples plataformas.",
+					"Pagos manuales a varios países a la vez.",
+					"Contratos sin validez local que exponen a tu empresa.",
+					"Riesgo de que el contratista reclame beneficios laborales.",
+					"Difícil escalar al trabajar con varios externos.",
+                    "Caos administrativo con facturas de muchos proveedores."
+				]}
+				positiveItems={[
+					"Accedes a nuestra red de especialistas preevaluados.",
+					"Pagos y seguimiento totalmente simplificados.",
+					"Contrato local válido desde el primer día.",
+					"Contrato mercantil blindado que elimina la mala clasificación.",
+					"Modelo pensado para operar con independientes en Sudamérica.",
+                    "Toda tu contratación internacional en una sola factura."
+				]}
+			/>
+		</div>
+
+		<div class="fade-in-section">
+			<ProcessOberstaff
+				className="process-employer"
+				title="¿Qué incluye nuestro servicio de <strong>Contractor of Record en Puerto Rico?</strong>"
+				items={[
+					{
+						label: "Validación",
+						badge: "Paso Previo",
+						title: "Validación del modelo correcto", 
+						description:
+							"Analizamos si el perfil debe operar como contractor independiente o si conviene otro modelo de contratación internacional.",
+						icon: "🔍",
+						badgeColor: "#6663FD",
+						badgeBg: "rgba(102, 99, 253, 0.1)", 
+					},
+					{
+						label: "Estructuración",
+						badge: "Cero Riesgos",
+						title: "Contrato y documentación",
+						description:
+							"Estructuramos toda la documentación contractual para formalizar la colaboración con el profesional independiente.",
+						icon: "📝",
+						badgeColor: "#6aca8a",
+						badgeBg: "rgba(102, 255, 153, 0.15)",  
+					},
+					{
+						label: "Adminitración",
+						badge: "Flujo Centralizado",
+						title: "Gestión mensual y pagos",
+						description:
+							"Centralizamos los pagos internacionales, la administración, el seguimiento y la coordinación operativa mes a mes.",
+						icon: "🗂️",
+						badgeColor: "#FF66CC",
+						badgeBg: "rgba(255, 102, 204, 0.1)",
+					},
+					{
+						label: "Sopprte",
+						badge: "Flexibilidad Operativa",
+						title: "Soporte continuo",
+						description:
+							"Te acompañamos en cambios de alcance, renovaciones, sustituciones y dudas durante toda la relación con el contractor.",
+						icon: "⚡",
+						badgeColor: "#1B1B1B",
+						badgeBg: "rgba(204, 255, 102, 0.3)",
+					},
+				]}
+				ctaTitle="Optimiza tus contratistas"
+				ctaDescription="Evita gestiones e impuestos dispersos por cada país."
+				ctaBtnText="Agendar llamada"
+			/>
+		</div>
+
+		<div class="fade-in-section profiles-employer-page">
+			<ProfilesSection
+				variant="grid"
+				title="Especialistas independientes que puedes <strong>incorporar con COR</strong>"
+				description="Perfiles de alta especialización con disponibilidad para trabajar por proyecto, con español nativo o bilingües, listos para integrarse a tu negocio."
+				profiles={[  
+					{
+						icon: "💻",
+						title: "Tecnología por proyecto",
+						quote: "Talento autónomo para auditorías o desarrollo de módulos aislados, facturando honorarios por proyecto.",
+						roles: [
+							{ label: "Desarrollador freelance", href: "#" },
+							{ label: "QA por release", href: "#" },
+                            { label: "DevOps por migración", href: "#" },
+                            { label: "Especialista IA/Data por implementación", href: "#" }
+						],
+						iconColorClass: "purple-text", 
+					},
+					{
+						icon: "🎨",
+						title: "Creativos y marketing por proyecto",
+						quote: "Para entregables por volumen, con relación estrictamente mercantil y sin riesgos laborales.",
+						roles: [
+							{ label: "Experto SEO externo", href: "#" },
+							{ label: "Especialista Google Ads por campaña", href: "#" },
+                            { label: "Especialista Meta Ads por lanzamiento", href: "#" },
+                            { label: "Email marketer por proyecto", href: "#" }
+						],
+						iconColorClass: "blue-text",
+					},
+					{
+						icon: "📊",
+						title: "Diseño y producto por proyecto",
+						quote: "Especialistas independientes para diseño e interfaces, con pagos por hitos y entregables bajo contrato mercantil.",
+						roles: [
+							{ label: "Diseñador UI/UX por sprint", href: "#" },
+							{ label: "Diseñador gráfico por campañas", href: "#" },
+							{ label: "Editor de vídeo para picos de producción", href: "#" }
+						],
+						iconColorClass: "pink-text",
+					}
+				]}
+			/>
+		</div>
+
+		<div class="fade-in-section">
+			<EorStepsSection
+				title="De necesidad a remote contractor operativo en <strong>4 pasos</strong>"
+				subtitle="Nuestro servicio de <strong style='color: #1B1B1B'>remote contractor</strong> está diseñado para que tu empresa en Puerto Rico active talento independiente con menos fricción."
+				steps={[
+					{
+						title: "Nos explicas el rol",
+						lineColorClass: "line-black",
+						description:
+							"Definimos alcance, perfil, duración, presupuesto, país de interés y tipo de entregables del proyecto.",
+					},
+					{
+						title: "Validamos el modelo",
+						lineColorClass: "line-pink",
+						description:
+							"Confirmamos si la figura correcta es un contractor independiente y definimos la estructura operativa adecuada.",
+					},
+					{ 
+						title: "Contrato y alta COR",
+						lineColorClass: "line-orange",
+						description:
+							"<span style='font-weight: 800; color: #1b1b1b;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> organiza el marco contractual y deja lista toda la operativa de colaboración.",
+					},
+					{
+						title: "Contractor operativo", 
+						lineColorClass: "line-blue",
+						description:
+							"Tú diriges el trabajo y los entregables; nosotros sostenemos la administración y los pagos.",
+					},
+				]}
+			/> 
+		</div>
+
+		<div class="fade-in-section">
+			<EorCta
+				title="¿Tienes un proyecto concreto y necesitas al especialista correcto?"
+				text="Cuéntanos qué perfil necesitas, en qué país te gustaría contratar y la duración del proyecto. Te diremos si encaja como contractor independiente, qué estructura conviene y cómo activar la colaboración con menos fricción."
+				buttonText="→  Solicitar propuesta gratuita" 
+				buttonHref="#contacto" 
+			/>
+		</div>
+
+		<div class="fade-in-section">
+			<FeaturesSection
+				customClass="eor-features"
+				eyebrow=""
+				title="Beneficios de <span style='font-weight: 900; color: #1b1b1b;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span> como tu Contractor of Record en Puerto Rico"
+				subtitle=""
+				features={[
+					{
+						title: "Flexibilidad real",
+						description:
+							"Modelo pensado para remote contractors independientes, proyectos específicos y colaboraciones por entregables.",
+						icon: "🛡️",
+						colorClass: "icon-blue",
+						cardClass: "hover-purple", 
+					},
+					{ 
+						title: "Menos carga administrativa",
+						description:
+							"Evitas contratos dispersos, pagos manuales, seguimiento fragmentado y procesos internacionales desordenados.",
+						icon: "🌎",
+						colorClass: "icon-green",
+						cardClass: "hover-green",
+					},
+					{
+						title: "Mitigación de riesgos",
+						description:
+							"Eliminas el riesgo de que un contratista reclame beneficios laborales, con contratos mercantiles blindados.",
+						icon: "🗣",
+						colorClass: "icon-yellow",
+						cardClass: "hover-pink",
+					},
+					{
+						title: "Rapidez de activación",
+						description:
+							"Pones en marcha la contratación internacional con más agilidad que con una estructura tradicional propia.",
+						icon: "💵",
+						colorClass: "icon-red",
+						cardClass: "hover-yellow",
+					},
+					{
+						title: "Modelo diseñado para independientes",
+						description:
+							"El servicio está pensado en exclusiva para freelancers y remote contractors externos a tu plantilla.",
+						icon: "🤝",
+						colorClass: "icon-purple",
+						cardClass: "hover-purple",
+					},
+					{
+						title: "Control financiero centralizado",
+						description:
+							"Centralizas pagos, administración y facturación de todos tus contractors en una sola estructura robusta.",
+						icon: "🧾",
+						colorClass: "icon-pink",
+						cardClass: "hover-green",
+					},
+				]}
+			/>
+		</div>
+
+		<div class="fade-in-section cobertura-full-bg">
+			<CoberturaSeccion
+				title="Contratación internacional <br/>de profesionales <br/>independientes en <span style='color: #6663FD; font-weight: 900; white-space: nowrap;'>10 <br/> países de Sudamérica, <br/> México y Panamá</span>"
+				description="Gestiona talento independiente en mercados estratégicos de Sudamérica desde tu empresa en Puerto Rico, sin administrar regulaciones, pagos y documentación país por país."
+				mapAlt="Mapa de cobertura de Contractor of Record (COR) en México, Colombia, Argentina, Chile, Perú y otros hubs de LATAM"
+				countries={[
+						{ code: "MX", name: "EOR México" },
+					{ code: "VE", name: "EOR Venezuela" },
+					{ code: "CO", name: "EOR Colombia" },
+					{ code: "EC", name: "Ecuador" },
+					{ code: "PE", name: "Perú" },
+					{ code: "PY", name: "Paraguay" },
+					{ code: "AR", name: "EOR Argentina" },
+					{ code: "UY", name: "Uruguay" },
+					{ code: "CL", name: "Chile" },
+                    { code: "PA", name: "EOR Panamá" }
+				]}
+			/>
+		</div>
+
+	
+
+		<div class="fade-in-section">
+			<CasosExitoSection
+				title="Empresas internacionales que ya contratan con <span style='font-weight: 900; color: #1b1b1b;'> Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span>"
+				subtitle=""
+				columns={3}
+				testimonials={[
+					{
+						stars: 5,
+						avatar: "/fernando.webp",
+						imageAlt: "Fernando Calderón, cliente de Oberstaff EOR",
+						text: "Buscaba talento remoto especializado y, tras intentarlo en local sin éxito, encontré a <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong>. Me impresionó la claridad de su estructura legal. Por el servicio y la misma zona horaria, ya amplié el contrato para sumar más personal.",
+						author: "Fernando Calderón",
+						role: "CEO · BeautyPro",
+						videoId: "24KxCAFGrDs",
+					},
+					{
+						stars: 5,
+						avatar: "/sha.webp",
+						imageAlt: "Shadai Iborra, cliente de Oberstaff EOR",
+						text: "Con <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong> incorporé a dos personas a tiempo completo y me ahorré costes de reclutamiento, oficina y nómina local. Toda la gestión y los pagos quedan unificados en una sola factura mensual. La solución perfecta para nuestra contratación remota.",
+						author: "Shadai Iborra",
+						role: "CEO · @amediastory",
+						videoId: "_CxlPfluS7M",
+					},
+					{
+						stars: 5,
+						avatar: "/Kate.webp",
+						imageAlt: "Kate McCaferty, cliente de Oberstaff EOR",
+						text: "Llevamos casi dos años con <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong> y la experiencia es excelente desde el primer día. Tienes el respaldo de un equipo dedicado que evalúa miles de perfiles por ti. El ahorro real y la optimización de costes superaron nuestras expectativas.",
+						author: "Kate McCaferty",
+						role: "CEO · KM Real Estate (EE. UU.)",
+						videoId: "9RLgpEF-GVA",
+					},
+				]}
+			/>
+		</div>
+
+		<FAQSection
+			title="Preguntas Frecuentes<br>sobre <span style='color: #6663FD; font-weight: 900;'> Contractor of <br> Record</span>"
+			ctaText="¿Quieres entender si este es el esquema ideal para resguardar la contabilidad y legalidad de tu empresa?"
+			ctaButtonText="Agenda una llamada gratuita"
+			faqs={faqsList}
+		/>
+
+		<div class="fade-in-section">
+			<OtrosServiciosSection
+				title="Otros servicios de <span style='font-weight: 900; color: #1b1b1b;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span>"
+				subtitle="" 
+				description="El Contractor of Record es ideal para proyectos puntuales con freelancers y profesionales independientes. Si tu necesidad es otra, <span style='font-weight: 800; color: #1b1b1b;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> también puede ayudarte con otros modelos:"
+				servicios={[
+					{
+						icon: "🔗",
+						title: "Employer of Record",
+						description:
+							"Ideal cuando necesitas contratar empleados en Sudamérica con relación laboral formal, nómina y cumplimiento local.",
+						href: "/pr/servicios/employer-of-record", 
+						colorClass: "icon-pink",
+						hoverClass: "hover-pink",
+						linkText: "Ver servicio",
+					},
+					{
+						icon: "🏢",
+						title: "Staff Augmentation",
+						description:
+							"Ideal cuando quieres ampliar tu equipo tech y dirigir su trabajo día a día desde dentro.",
+						href: "/pr/servicios/staff-augmentation",
+						colorClass: "icon-green",
+						hoverClass: "hover-green",
+						linkText: "Ver servicio",
+					},
+					{
+						icon: "📄",
+						title: "Outsourcing de Personal",
+						description:
+							"Ideal para externalizar la selección, contratación y administración de personal de negocio.",
+						href: "/pr/servicios/outsourcing-de-personal",
+						colorClass: "icon-purple",
+						hoverClass: "hover-purple",
+						linkText: "Ver servicio",
+					},
+				]}
+			/>
+		</div>
+
+		<!-- 
+		<div class="fade-in-section">
+			<RolesSection />
+		</div>
+		-->
+
+		<div class="fade-in-section">
+			<ContactFormSection
+				title="¿Listo para incorporar a tu próximo <span style='font-weight: 900; color: #6663FD;'>especialista independiente?</span>"
+				subtitle="Cuéntanos qué perfil necesitas, el tipo de proyecto y el plazo estimado. Te diremos si encaja con este modelo y, en menos de 24 horas, recibirás una propuesta personalizada sin compromiso. Primera consulta gratuita con nuestros especialistas en contratación internacional."
+				buttonText="Solicitar propuesta gratuita →"
+				directLabel="Rellenarlo te lleva"
+				phoneNumber="Menos de 60 segundos"
+				phoneHref=""
+				directEmoji="⏱️"
+				formLabels={{
+					name: "Nombre *",
+					lastName: "Apellido *",
+					company: "Nombre de la empresa",
+					email: "Email *",
+					phone: "Teléfono *",
+					comments: "¿Qué perfil necesitas? *", 
+				}}
+				formPlaceholders={{
+					name: "Tu nombre",
+					lastName: "Tu apellido",
+					company: "Nombre de tu organización",
+					email: "nombre@tuempresa.com",
+					phone: "+34 XXX XXX XXX",
+					comments:
+						"Ej. Desarrollador Web, Consultor SEO, etc.",
+				}}
+				customClass="employer-variant"
+				webhookUrl="https://hooks.zapier.com/hooks/catch/12433184/4by1xis/"
+			/>
+		</div>
+
+		<!-- 
+		<div class="fade-in-section">
+			<ArticulosSection />
+		</div>
+-->
+	</div>
+</DashboardLayoutServiciosPr>
+
+<style>
+	.service-detail-container {
+	}
+
+	/* --- Estilos específicos para el componente de proceso en Employer --- */
+	:global(.process-employer .process-menu) {
+		background-color: #fafafc;
+	}
+
+	:global(.process-employer .process-tab-label) {
+		color: #5a5a5a;
+		font-weight: 600;
+	}
+
+	:global(.process-employer .process-tab:hover) {
+		background-color: #f0f0f5;
+		color: #1b1b1b;
+	}
+
+	:global(.process-employer .process-tab.active) {
+		background-color: #ffffff;
+	}
+
+	/* --- Iconos de Features más grandes --- */
+	:global(.eor-features .emoji-icon),
+	:global(.eor-features iconify-icon) {
+		font-size: 30px !important;
+	}
+
+	/* Grid de 3 columnas en desktop para Contractor of Record */
+	@media (min-width: 1025px) {
+		:global(.profiles-employer-page .variant-grid .profiles-grid) {
+			grid-template-columns: repeat(3, 1fr) !important;
+		}
+	}
+
+	/* Ajustar ancho máximo del párrafo para que se vea más ancho y legible */
+	:global(.profiles-employer-page .variant-grid .header-centered p) {
+		max-width: 950px !important;
+	}
+
+	/* --- Forzar estadísticas arriba y logos de empresas abajo en la franja --- */
+	.service-detail-container :global(.franja-empresas-container) {
+		flex-direction: column;
+		text-align: center;
+		gap: 40px;
+	}
+
+	.service-detail-container :global(.franja-stats-left) {
+		justify-content: space-around;
+		width: 100%;
+		max-width: 1000px;
+		margin: 0 auto;
+		gap: 20px;
+	}
+
+	.service-detail-container :global(.franja-stat-block) {
+		width: auto !important;
+		max-width: 280px;
+	}
+
+	.service-detail-container :global(.franja-label) {
+		max-width: 280px !important;
+	}
+
+	.service-detail-container :global(.franja-logos-slider) {
+		max-width: 100%;
+		width: 100%;
+		flex: none;
+	}
+
+	.service-detail-container :global(.franja-empresas-section) {
+		padding: 40px 0;
+	}
+
+	.service-detail-container :global(.eor-pricing) {
+		background-color: #FAFAFC;
+        border-top: 1px solid #E4E4E4;
+	}
+
+	.service-detail-container :global(.eor-steps) {
+		background-color: #FAFAFC;
+	}
+
+	.service-detail-container :global(.faq-section) {
+		border-top: 1px solid #E4E4E4;
+	}
+
+	.service-detail-container .cobertura-full-bg {
+		background-color: #FAFAFC;
+		width: 100%;
+	}
+
+	.service-detail-container .cobertura-full-bg :global(.cobertura-geografica) {
+		background-color: transparent !important;
+	}
+
+	.service-detail-container :global(.cobertura-geografica .brand-dot) {
+		color: #FF66CC !important;
+	}
+
+	.service-detail-container :global(.btn-pricing-link) {
+		display: inline-block;
+		background-color: #7B70FF;
+		color: #ffffff !important;
+		padding: 14px 44px;
+		border-radius: 50px;
+		font-weight: 700;
+		text-align: center;
+		transition: all 0.3s ease;
+		text-decoration: none;
+	}
+
+	.service-detail-container :global(.process-employer .process-cta-btn) {
+		display: inline-block;
+		background-color: #7B70FF !important;
+		border: 2px solid #7B70FF !important;
+		color: #ffffff !important;
+		padding: 14px 44px !important;
+		border-radius: 50px !important;
+		font-weight: 700 !important;
+		font-family: 'Poppins', sans-serif !important;
+		font-size: 14px !important;
+		text-align: center !important;
+		text-decoration: none !important;
+		transition: all 0.3s ease !important;
+	}
+
+	.service-detail-container :global(.process-employer .process-cta-btn:hover) {
+		background-color: transparent !important;
+		color: #7B70FF !important;
+		border: 2px solid #7B70FF !important;
+	}
+
+	.service-detail-container :global(.faq-section .faq-cta-button) {
+		display: inline-block;
+		background-color: #7B70FF !important;
+		border: 2px solid #7B70FF !important;
+		color: #ffffff !important;
+		padding: 14px 44px !important;
+		border-radius: 50px !important;
+		font-weight: 700 !important;
+		font-family: 'Poppins', sans-serif !important;
+		font-size: 14px !important;
+		text-align: center !important;
+		text-decoration: none !important;
+		transition: all 0.3s ease !important;
+	}
+
+	.service-detail-container :global(.faq-section .faq-cta-button:hover) {
+		background-color: transparent !important;
+		color: #7B70FF !important;
+		border: 2px solid #7B70FF !important;
+	}
+
+	.service-detail-container :global(.employer-variant .btn-submit) {
+		display: inline-block;
+		background-color: #7B70FF !important;
+		border: 2px solid #7B70FF !important;
+		color: #ffffff !important;
+		padding: 14px 44px !important;
+		border-radius: 50px !important;
+		font-weight: 700 !important;
+		font-family: 'Poppins', sans-serif !important;
+		font-size: 14px !important;
+		text-align: center !important;
+		text-decoration: none !important;
+		transition: all 0.3s ease !important;
+		width: 100% !important;
+	}
+
+	.service-detail-container :global(.employer-variant .btn-submit:hover) {
+		background-color: transparent !important;
+		color: #7B70FF !important;
+		border: 2px solid #7B70FF !important;
+	}
+
+	.service-detail-container :global(.quote-blue-border) {
+		font-weight: 400 !important;
+	}
+
+	.service-detail-container :global(.quote-blue-border strong) {
+		font-weight: 700 !important;
+	}
+</style>

@@ -55,7 +55,7 @@ const {
     <div class="servicios-header">
         <h2 set:html={title} />
         {subtitle && <h3>{subtitle}</h3>}
-        {description && <p>{description}</p>}
+        {description && <p set:html={description}></p>}
     </div>
 
     <div class="servicios-grid">
