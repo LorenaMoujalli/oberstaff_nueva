@@ -216,8 +216,8 @@ const {
         <!-- Columna izquierda: texto -->
         <div class="conv-d-left">
             <h2 set:html={title} />
-            <p>{subtitle}</p>
-            {extraTitle && <p class="conv-d-extra-title">{extraTitle}</p>}
+            <p set:html={subtitle} />
+            {extraTitle && <p class="conv-d-extra-title" set:html={extraTitle} />}
         </div>
 
 <!-- intl-tel-input library -->
