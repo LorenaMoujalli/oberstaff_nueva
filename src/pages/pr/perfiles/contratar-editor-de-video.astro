@@ -16,39 +16,49 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-community.a
 //import GuiaContratacion from "../../../components/guia-contratacion-perfiles/GuiaContratacion.astro";
 import ProcessOberstaff from "../../../components/process/ProcessOberstaff.astro";
 
-const ogImage = "Contratar Asistente Virtual.webp";
+const ogImage = "Contratar editor de videos.webp";
 
 const faqs = [
     {
-        question: "¿Cuánto cuesta contratar un asistente virtual Puerto Rico?",
+        question: "¿Quién asume el costo de las licencias de software o bancos de música?",
         answers: [
-            "Un asistente administrativo local sube rápido al sumar salario, nómina, beneficios y reclutamiento (fácilmente $1,800–$3,000/mes). Con nosotros accedes al mismo nivel en formato asistente virtual online desde $820/mes.",
+            "El editor cuenta con su propia estación y hardware para procesar archivos de alta resolución. Para garantizar el control y la seguridad, sugerimos que tu empresa provea el acceso (asiento de usuario) a Adobe Creative Cloud y a las plataformas de música de stock que uses (Epidemic Sound, Envato o Artlist).",
         ],
     },
     {
-        question:
-            "¿Cuándo conviene contratar un asistente virtual administrativo?",
+        question: "¿Qué pasa si el estilo o el ritmo del editor no se adapta a la marca?",
         answers: [
-            "Cuando tu equipo directivo o de ventas necesita apoyo constante para no frenar la operación, pero no quieres los altos costos fijos ni la rigidez de una contratación local.",
+            "La edición es una disciplina subjetiva. Si en las primeras asignaciones el editor no captura tu identidad o tono, tienes flexibilidad total: cancelas con 30 días de aviso, sin penalidades, o pides la transición inmediata a otro perfil pre-evaluado.",
         ],
     },
     {
-        question: "¿Este recurso dará soporte a otras empresas a la vez?",
+        question: "¿Los editores dominan herramientas en la nube como Frame.io o Drive?",
         answers: [
-            "No. El modelo de virtual assistant puerto rico es de asignación exclusiva: jornada completa, integrado en tus canales y enfocado 100% en tus KPIs.",
+            "Sí. Nuestros editores de video profesional trabajan a diario con Frame.io para aprobación de cortes, Google Drive, Dropbox, Notion, Slack y Asana, e integran de inmediato a tus canales de comunicación.",
         ],
     },
     {
-        question: "¿Qué flexibilidad tengo si cambian mis necesidades?",
+        question: "¿Qué relación patronal o laboral se genera con el editor a través de <strong style='font-weight: 700;'>Oberstaff<span style='color: #ff62c4;'>.</span></strong>?",
         answers: [
-            "Total. El contrato B2B para integrar un asistente virtual remoto permite cancelar con 30 días de preaviso, protegiéndote de reclamos laborales locales.",
+            "Ninguna directa a nivel legal o de nómina. Tú llevas la dirección creativa y las prioridades diarias; <strong style='font-weight: 700;'>Oberstaff<span style='color: #ff62c4;'>.</span></strong> administra el contrato, el cumplimiento fiscal internacional y los pagos. Tu negocio solo procesa una factura B2B.",
         ],
     },
     {
-        question:
-            '¿Cómo garantiza <strong class="brand-oberstaff">Oberstaff<span class="brand-dot">.</span></strong> la calidad del talento?',
+        question: "¿Puedo pedir videos para redes, YouTube, ads y contenido corporativo al mismo editor?",
         answers: [
-            "Aplicamos un embudo de tres fases para validar cada virtual assistant: test de ofimática, evaluación psicométrica y entrevista final con nuestro equipo de Recursos Humanos.",
+            "Sí, si el perfil tiene experiencia en esos formatos y el volumen cabe en su jornada. En la selección definimos el contenido prioritario para no sobrecargar el rol.",
+        ],
+    },
+    {
+        question: "¿Cómo se protege la propiedad intelectual de mis videos?",
+        answers: [
+            "Trabajamos con acuerdos de confidencialidad, control de accesos y cesión de derechos sobre el material editado. Brutos, archivos fuente, versiones editables y exports quedan bajo propiedad de tu empresa.",
+        ],
+    },
+    {
+        question: "¿Cuándo conviene contratar editor de videos en lugar de pagar piezas sueltas?",
+        answers: [
+            "Conviene cuando publicas contenido cada semana, necesitas respuesta rápida, manejas varias campañas o quieres una línea visual consistente. Ahí un perfil dedicado rinde más que pagar por pieza, esperar disponibilidad o renegociar cada corrección.",
         ],
     },
 ];
@@ -56,27 +66,27 @@ const faqs = [
 
 <DashboardLayoutPerfilesPr
     ogImage={ogImage}
-    title="Contratar un Asistente Virtual para tu empresa | Oberstaff"
-    description="La forma más inteligente de contratar asistente virtual en Puerto Rico: talento de LATAM, jornada completa, zona horaria compatible (AST) y facturación directa en USD."
-    footerTitle="Otros perfiles relacionados"
+    title="Contratar editor de videos remoto para empresas en Puerto Rico"
+    description="La forma más inteligente de contratar editor de-video en Puerto Rico: talento de LATAM, jornada completa, zona horaria compatible (AST) y facturación directa en USD."
+    footerTitle="Soluciones de talento complementarias para tus canales digitales"
     footerLinks={[
         {
-            text: "🧮 Contratar contable remoto",
-            href: "#",
+            text: "🎨 Diseñador Gráfico",
+            href: "/pr/perfiles/contratar-diseñador-grafico",
         },
         {
             text: "📱 Community Manager",
-            href: "#",
+            href: "/pr/perfiles/contratar-community-manager",
         },
         {
-            text: "🔍 Experto SEO",
+            text: "📢 Especialista en Campañas de Google Ads y Tráfico Pago",
             href: "#",
         },
     ]}
 >
     <link
         rel="canonical"
-        href="https://oberstaff.com/pr/perfiles/asistente-virtual"
+        href="https://oberstaff.com/pr/perfiles/contratar-editor-de-video"
         slot="head"
     />
     <script slot="head" type="application/ld+json">
@@ -85,10 +95,10 @@ const faqs = [
     "@graph": [
         {
             "@type": "WebPage",
-            "@id": "https://oberstaff.com/pr/perfiles/asistente-virtual#webpage",
-            "url": "https://oberstaff.com/pr/perfiles/asistente-virtual",
-            "name": "Contratar un Asistente Virtual para tu empresa | Oberstaff",
-            "description": "La forma más inteligente de contratar asistente virtual en Puerto Rico: talento de LATAM, jornada completa, zona horaria compatible (AST) y facturación directa en USD.",
+            "@id": "https://oberstaff.com/pr/perfiles/contratar-editor-de-video#webpage",
+            "url": "https://oberstaff.com/pr/perfiles/contratar-editor-de-video",
+            "name": "Contratar editor de videos remoto para empresas en Puerto Rico",
+            "description": "La forma más inteligente de contratar editor de-video en Puerto Rico: talento de LATAM, jornada completa, zona horaria compatible (AST) y facturación directa en USD.",
             "inLanguage": "es-PR",
             "isPartOf": {
                 "@id": "https://oberstaff.com/#website"
@@ -97,37 +107,37 @@ const faqs = [
                 "@id": "https://oberstaff.com/#organization"
             },
             "about": {
-                "@id": "https://oberstaff.com/pr/perfiles/asistente-virtual#service"
+                "@id": "https://oberstaff.com/pr/perfiles/contratar-editor-de-video#service"
             },
             "mainEntity": {
-                "@id": "https://oberstaff.com/pr/perfiles/asistente-virtual#service"
+                "@id": "https://oberstaff.com/pr/perfiles/contratar-editor-de-video#service"
             },
             "breadcrumb": {
-                "@id": "https://oberstaff.com/pr/perfiles/asistente-virtual#breadcrumb"
+                "@id": "https://oberstaff.com/pr/perfiles/contratar-editor-de-video#breadcrumb"
             }
         },
         {
             "@type": "Service",
-            "@id": "https://oberstaff.com/pr/perfiles/asistente-virtual#service",
-            "name": "Contratar Asistente Virtual Administrativo Remoto en LATAM para empresas en Puerto Rico",
+            "@id": "https://oberstaff.com/pr/perfiles/contratar-editor-de-video#service",
+            "name": "Contratar Editor de Video Remoto en LATAM para empresas en Puerto Rico",
             "alternateName": [
-                "Contratar asistente virtual",
-                "Asistente virtual remoto",
-                "Asistente administrativo remoto",
-                "Virtual assistant remoto",
-                "Soporte administrativo virtual"
+                "Contratar editor de video",
+                "Editor de video remoto",
+                "Editor audiovisual remoto",
+                "Editor de reels y tiktok remoto",
+                "Creador de contenido de video"
             ],
-            "serviceType": "Contratación de asistente virtual remoto",
-            "category": "Servicios de soporte administrativo, gestión y asistencia virtual para empresas",
-            "url": "https://oberstaff.com/pr/perfiles/asistente-virtual",
+            "serviceType": "Contratación de editor de video remoto",
+            "category": "Servicios de edición de video, postproducción y creación de contenido",
+            "url": "https://oberstaff.com/pr/perfiles/contratar-editor-de-video",
             "provider": {
                 "@id": "https://oberstaff.com/#organization"
             },
-            "description": "Servicio para empresas en Puerto Rico que necesitan contratar un Asistente Virtual remoto de LATAM con dedicación exclusiva, habilidades administrativas, facturación, servicio al cliente, gestión de agendas, horario compatible con Puerto Rico (AST) y gestión laboral resuelta.",
-            "slogan": "Libera tiempo de tu equipo y delega tareas administrativas clave en un asistente virtual dedicado en tu zona horaria.",
+            "description": "Servicio para empresas en Puerto Rico que necesitan contratar un Editor de Video remoto de LATAM con dedicación exclusiva, dominio de Premiere Pro, After Effects, DaVinci Resolve, edición para redes sociales, anuncios pagados, horario compatible con Puerto Rico (AST) y gestión laboral cubierta.",
+            "slogan": "Optimiza la producción de tus contenidos y anuncios en video con un editor profesional dedicado en tu misma zona horaria.",
             "audience": {
                 "@type": "BusinessAudience",
-                "audienceType": "Empresas en Puerto Rico que necesitan contratar asistente virtual remoto en LATAM",
+                "audienceType": "Empresas en Puerto Rico que necesitan contratar editor de-video remoto en LATAM",
                 "geographicArea": {
                     "@type": "Country",
                     "name": "Puerto Rico"
@@ -135,7 +145,7 @@ const faqs = [
             },
             "serviceAudience": {
                 "@type": "BusinessAudience",
-                "audienceType": "Pymes, startups, ecommerce y empresas en Puerto Rico que buscan un asistente virtual remoto dedicado",
+                "audienceType": "Pymes, startups, ecommerce y empresas en Puerto Rico que buscan un editor de-video remoto dedicado",
                 "geographicArea": {
                     "@type": "Country",
                     "name": "Puerto Rico"
@@ -153,10 +163,10 @@ const faqs = [
             ],
             "offers": {
                 "@type": "Offer",
-                "@id": "https://oberstaff.com/pr/perfiles/asistente-virtual#offer",
-                "name": "Asistente Virtual Remoto Dedicado",
-                "url": "https://oberstaff.com/pr/perfiles/asistente-virtual#contacto",
-                "price": "820",
+                "@id": "https://oberstaff.com/pr/perfiles/contratar-editor-de-video#offer",
+                "name": "Editor De Video Remoto Dedicado",
+                "url": "https://oberstaff.com/pr/perfiles/contratar-editor-de-video#contacto",
+                "price": "990",
                 "priceCurrency": "USD",
                 "availability": "https://schema.org/InStock",
                 "eligibleCustomerType": "http://purl.org/goodrelations/v1#Business",
@@ -164,53 +174,53 @@ const faqs = [
                     "@type": "Country",
                     "name": "Puerto Rico"
                 },
-                "description": "Contratación de un Asistente Virtual remoto desde $820 USD al mes, dirigido a empresas de Puerto Rico que requieren soporte operativo con dedicación exclusiva, horario compatible con Puerto Rico y facturación directa.",
+                "description": "Contratación de un Editor de Video remoto desde $990 USD al mes, dirigido a empresas de Puerto Rico que requieren edición y postproducción de video con dedicación exclusiva, horario compatible con Puerto Rico y facturación directa.",
                 "priceSpecification": {
                     "@type": "UnitPriceSpecification",
-                    "price": "820",
+                    "price": "990",
                     "priceCurrency": "USD",
                     "unitText": "profesional por mes"
                 }
             },
             "hasOfferCatalog": {
                 "@type": "OfferCatalog",
-                "@id": "https://oberstaff.com/pr/perfiles/asistente-virtual#included-services",
-                "name": "Servicios incluidos de asistente virtual remoto",
+                "@id": "https://oberstaff.com/pr/perfiles/contratar-editor-de-video#included-services",
+                "name": "Servicios incluidos de edición de video remoto",
                 "itemListElement": [
                     {
                         "@type": "Offer",
-                        "name": "Gestión de Agenda y Correos",
+                        "name": "Edición y Montaje de Video",
                         "itemOffered": {
                             "@type": "Service",
-                            "name": "Soporte organizativo general",
-                            "description": "Organización de calendarios, coordinación de reuniones y primer filtro de atención en bandejas de correo corporativas."
+                            "name": "Edición de video profesional",
+                            "description": "Montaje de cortes limpios, ritmo narrativo, transiciones y corrección de color para videos corporativos, de marca o YouTube."
                         }
                     },
                     {
                         "@type": "Offer",
-                        "name": "Servicio al Cliente y DMs",
+                        "name": "Edición para Redes Sociales",
                         "itemOffered": {
                             "@type": "Service",
-                            "name": "Atención a prospectos y clientes",
-                            "description": "Resolución de dudas por chat, correo o plataformas de ticket, manteniendo un trato profesional y ágil."
+                            "name": "Creación de videos cortos (Reels, TikTok, Shorts)",
+                            "description": "Optimización de formatos, ganchos dinámicos, subtitulado automatizado o estilizado y efectos visuales para alta retención."
                         }
                     },
                     {
                         "@type": "Offer",
-                        "name": "Soporte en Facturación y Compras",
+                        "name": "Motion Graphics y Efectos",
                         "itemOffered": {
                             "@type": "Service",
-                            "name": "Asistencia operativa básica",
-                            "description": "Emisión de drafts de facturas, control de registros de gastos y cotización de proveedores o insumos."
+                            "name": "Animación y Motion Graphics",
+                            "description": "Creación de intros, tercios inferiores, llamadas a la acción animadas y efectos visuales integrados en tus videos."
                         }
                     },
                     {
                         "@type": "Offer",
-                        "name": "Organización de Documentos y CRM",
+                        "name": "Postproducción de Audio y Musicalización",
                         "itemOffered": {
                             "@type": "Service",
-                            "name": "Actualización de bases de datos",
-                            "description": "Registro de datos en CRM, orden en Google Drive/Dropbox y estructuración de reportes de control semanales."
+                            "name": "Diseño sonoro y musicalización",
+                            "description": "Limpieza de audio de voz, efectos de sonido (SFX) y sincronización con librerías de música libre de derechos."
                         }
                     }
                 ]
@@ -218,53 +228,69 @@ const faqs = [
         },
         {
             "@type": "FAQPage",
-            "@id": "https://oberstaff.com/pr/perfiles/asistente-virtual#faq",
+            "@id": "https://oberstaff.com/pr/perfiles/contratar-editor-de-video#faq",
             "mainEntity": [
                 {
                     "@type": "Question",
-                    "name": "¿Cuánto cuesta contratar un asistente virtual Puerto Rico?",
+                    "name": "¿Quién asume el costo de las licencias de software o bancos de música?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "Un asistente administrativo local sube rápido al sumar salario, nómina, beneficios y reclutamiento (fácilmente $1,800–$3,000/mes). Con nosotros accedes al mismo nivel en formato asistente virtual online desde $820/mes."
+                        "text": "El editor cuenta con su propia estación y hardware para procesar archivos de alta resolución. Para garantizar el control y la seguridad, sugerimos que tu empresa provea el acceso (asiento de usuario) a Adobe Creative Cloud y a las plataformas de música de stock que uses (Epidemic Sound, Envato o Artlist)."
                     }
                 },
                 {
                     "@type": "Question",
-                    "name": "¿Cuándo conviene contratar un asistente virtual administrativo?",
+                    "name": "¿Qué pasa si el estilo o el ritmo del editor no se adapta a la marca?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "Cuando tu equipo directivo o de ventas necesita apoyo constante para no frenar la operación, pero no quieres los altos costos fijos ni la rigidez de una contratación local."
+                        "text": "La edición es una disciplina subjetiva. Si en las primeras asignaciones el editor no captura tu identidad o tono, tienes flexibilidad total: cancelas con 30 días de aviso, sin penalidades, o pides la transición inmediata a otro perfil pre-evaluado."
                     }
                 },
                 {
                     "@type": "Question",
-                    "name": "¿Este recurso dará soporte a otras empresas a la vez?",
+                    "name": "¿Los editores dominan herramientas en la nube como Frame.io o Drive?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "No. El modelo de virtual assistant puerto rico es de asignación exclusiva: jornada completa, integrado en tus canales y enfocado 100% en tus KPIs."
+                        "text": "Sí. Nuestros editores de video profesional trabajan a diario con Frame.io para aprobación de cortes, Google Drive, Dropbox, Notion, Slack y Asana, e integran de inmediato a tus canales de comunicación."
                     }
                 },
                 {
                     "@type": "Question",
-                    "name": "¿Qué flexibilidad tengo si cambian mis necesidades?",
+                    "name": "¿Qué relación patronal o laboral se genera con el editor a través de <strong style='font-weight: 700;'>Oberstaff<span style='color: #ff62c4;'>.</span></strong>?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "Total. El contrato B2B para integrar un asistente virtual remoto permite cancelar con 30 días de preaviso, protegiéndote de reclamos laborales locales."
+                        "text": "Ninguna directa a nivel legal o de nómina. Tú llevas la dirección creativa y las prioridades diarias; Oberstaff. administra el contrato, el cumplimiento fiscal internacional y los pagos. Tu negocio solo procesa una factura B2B."
                     }
                 },
                 {
                     "@type": "Question",
-                    "name": "¿Cómo garantiza <strong class=\"brand-oberstaff\">Oberstaff<span class=\"brand-dot\">.</span></strong> la calidad del talento?",
+                    "name": "¿Puedo pedir videos para redes, YouTube, ads y contenido corporativo al mismo editor?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "Aplicamos un embudo de tres fases para validar cada virtual assistant: test de ofimática, evaluación psicométrica y entrevista final con nuestro equipo de Recursos Humanos."
+                        "text": "Sí, si el perfil tiene experiencia en esos formatos y el volumen cabe en su jornada. En la selección definimos el contenido prioritario para no sobrecargar el rol."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "¿Cómo se protege la propiedad intelectual de mis videos?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Trabajamos con acuerdos de confidencialidad, control de accesos y cesión de derechos sobre el material editado. Brutos, archivos fuente, versiones editables y exports quedan bajo propiedad de tu empresa."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "¿Cuándo conviene contratar editor de videos en lugar de pagar piezas sueltas?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Conviene cuando publicas contenido cada semana, necesitas respuesta rápida, manejas varias campañas o quieres una línea visual consistente. Ahí un perfil dedicado rinde más que pagar por pieza, esperar disponibilidad o renegociar cada corrección."
                     }
                 }
             ]
         },
         {
             "@type": "BreadcrumbList",
-            "@id": "https://oberstaff.com/pr/perfiles/asistente-virtual#breadcrumb",
+            "@id": "https://oberstaff.com/pr/perfiles/contratar-editor-de-video#breadcrumb",
             "itemListElement": [
                 {
                     "@type": "ListItem",
@@ -275,8 +301,8 @@ const faqs = [
                 {
                     "@type": "ListItem",
                     "position": 2,
-                    "name": "Contratar Asistente Virtual",
-                    "item": "https://oberstaff.com/pr/perfiles/asistente-virtual"
+                    "name": "Contratar Editor De Video",
+                    "item": "https://oberstaff.com/pr/perfiles/contratar-editor-de-video"
                 }
             ]
         }
@@ -287,63 +313,60 @@ const faqs = [
     <div class="service-detail-container" id="inicio">
         <LeadHeroSection
             webhookUrl="https://hooks.zapier.com/hooks/catch/12433184/4b3izyg/"
-            backgroundImage="/hero-av-pr.webp"
-            topLabel="Perfil: Asistente Virtual"
+            backgroundImage="/hero-videos-pr.webp"
+            topLabel="Perfil: Editor de Video"
             topLabelInsideH1={false}
             topLabelTag="p"
             titleTag="h1"
-            title="Asistente virtual Puerto Rico: externaliza tu back-office con talento administrativo de Sudamérica"
+            title="Contratar editor de video para tu empresa en Puerto Rico, sin ampliar tu plantilla local"
             cardTitle="Zona de captación inicial"
             cardSubtitle=""
-            buttonText="Ver perfiles pre-evaluados y solicitar propuesta →"
+            buttonText="Solicitar portafolios de editores de video →"
             buttonIcon=""
             buttonSubtext=""
-            footerLinkText=""
-            footerLinkHref=""
-            placeholderName="Nombre completo *"
+            footerLinkText="Descubrir cómo funciona nuestro modelo EOR →"
+            footerLinkHref="/pr/servicios/employer-of-record"
+            placeholderName="Nombre completo *" 
             placeholderEmail="Email corporativo *"
             placeholderCompany="Nombre de la empresa / negocio *"
             placeholderPhone="Teléfono (+1) *"
             badges={[
-                { text: "Talento 100% enfocado en tu negocio", icon: "✓" },
+                { text: "Dedicación 100% a tu timeline", icon: "✓" },
                 {
-                    text: "Especialistas en soporte administrativo, ya evaluados",
+                    text: "Portafolios técnicos pre-evaluados",
                     icon: "✓",
                 },
                 {
-                    text: "Integración ágil en tus herramientas corporativas",
+                    text: "Flujo de trabajo integrado en tu equipo",
                     icon: "✓",
                 },
-                { text: "Horario AST compatible con Puerto Rico", icon: "✓" },
+                { text: "Sincronía total en horario de Puerto Rico (AST)", icon: "✓" },
             ]}
             badgesClass="community-badges"
         >
             <Fragment slot="description">
-                El mayor freno al crecimiento es tener a los dueños atrapados en
-                microtareas. Con asistentes virtuales para empresas delegas
-                CRMs, SOPs y seguimiento a proveedores en un perfil dedicado.
-                Recuperas tu agenda mientras asumimos la carga burocrática,
-                legal y de compliance internacional.
+              Conecta tu negocio con un editor de video remoto de Sudamérica especializado en montaje, ritmo narrativo, subtitulado, color y entregables listos para publicar. <strong style='font-weight: 700;'>Oberstaff<span style='color: #ff62c4;'>.</span></strong> incorpora un perfil evaluado, a jornada completa y con horario compatible con PR, para que tu contenido salga a tiempo en Instagram, TikTok, YouTube, Meta Ads o canales corporativos.
             </Fragment>
         </LeadHeroSection>
 
         <div class="fade-in-section">
             <QueEsServicioSection
-                title="Descentraliza tu carga administrativa con un asistente virtual administrativo in-house"
+                title="Llegó el momento de escalar la producción audiovisual de tu negocio"
                 highlightWord=""
-                description="Mantener el soporte bajo nómina local (W-2) dispara tus costos fijos antes de generar retorno. Al contratar un <strong>asistente virtual remoto</strong> dedicado, integras a un profesional pre-evaluado que opera bajo tus protocolos de ciberseguridad, reduciendo gastos sin perder exclusividad."
-                imageSrc="/que-es-av-pr.webp"
+                description="Las empresas en Puerto Rico compiten por atención a diario: retail, bienes raíces, turismo, salud, educación y e-commerce necesitan videos constantes y bien editados para cada canal. Con <strong style='font-weight: 700;'>Oberstaff<span style='color: #ff62c4;'>.</span></strong> contratas un editor de video in-house de América del Sur integrado a tu equipo, sin convertir cada pieza en un proyecto aislado con costos variables. <br>  <br> No se trata solo de cortar clips, sino de sumar editores de video profesional que dominen ritmo, retención de audiencia, gestión de archivos, proxies, audio, color y formatos nativos 16:9, 9:16, 4:5 y 1:1."
+                imageSrc="/que-es-videos-pr.webp"
                 imageAlt="Contratar Community manager"
                 badgeText=""
                 quoteText=""
-                checklistTitle="Checklist de validación operativa:"
+                checklistTitle="Checklist de ventajas:"
                 checklistIcon="✅"
                 checklistItems={[
-                    "<strong>Validación de competencias:</strong> evaluamos las <strong>virtual assistant skills</strong> en gestión de archivos, redacción corporativa y herramientas cloud.",
-                    "<strong>Eficiencia fiscal:</strong> facturación B2B internacional, deducible para tu negocio al contratar un asistente virtual.",
-                    "<strong>Escalabilidad inmediata:</strong> ajustas tu soporte de <strong>asistente administrativo</strong> sin la rigidez de las leyes de despido locales.",
+                    "Editor de video evaluado con prueba técnica audiovisual, revisión de portafolio y test psicométrico.",
+                    "Jornada completa y dedicación a tu marca, no repartida entre varios clientes a la vez.",
+                    "Adaptación a tus guías visuales, plantillas, LUTs, bancos de música y estilo editorial.",
+                    "Propiedad total del material bruto, archivos de proyecto, versiones editables y exportaciones."
                 ]}
-                ctaText="Solicitar asistente virtual →"
+                ctaText="➡️ Solicitar candidatos a editor de video remoto →"
                 ctaHref="#formulario-perfil"
                 diffIcon=""
                 diffTitle=""
@@ -353,68 +376,75 @@ const faqs = [
 
         <div class="fade-in-section">
             <ComparisonPerfiles
-                criterioLabel="Factor de decisión"
-                title="Asistente virtual Puerto Rico vs. asistente remoto dedicado y otras opciones"
-                subtitle=""
-                footerNote="Nota: Precios B2B orientativos. La inversión exacta depende del seniority y el nivel técnico requerido."
-                oberstaffLabel="Asistente dedicado <br> <span style='font-weight:400; color:#5A5A5A;'>(<span style='font-weight:900; color:#1B1B1B;'>Oberstaff</span><span style='font-weight:900; color:#FF66CC;'>.</span>)</span>"
+                criterioLabel="Criterio"
+                title="Contratar editor de video con <strong><span style='font-weight:900; color:#1B1B1B;'>Oberstaff</span><span style='font-weight:900; color:#FF66CC;'>.</span></strong> vs. otras alternativas en Puerto Rico"
+                subtitle="Compara el costo operativo, la dedicación, el control de archivos y la carga administrativa de cada opción antes de decidir cómo escalar tu producción audiovisual."
+                footerNote=""
+                oberstaffLabel="Oberstaff<span style='color: #ff62c4;'>.</span> <br> <span style='font-weight:400; color:#5A5A5A;'>(Editor In-House Sudamérica)</span>"
                 competitors={[
-                    "<span style='color: #1b1b1b; font-weight: 700;'>Contratación Local</span> <br><span style='font-weight:400; color:#5A5A5A;'>(W-2)</span>",
-                    "<span style='color: #1b1b1b; font-weight: 700;'>Freelance</span>",
+                    "Empleado W-2 en <br> Puerto Rico",
+                    "Editor Freelance <br> Local",
+                    "Agencia de <br> Mercadeo Externa",
                 ]}
                 rows={[
                     {
-                        label: "Coste mensual",
+                        label: "Costo mensual aproximado",
                         oberstaffValue:
-                            "<strong><span class='icon-check'>✓</span> Desde $820 USD/mes</strong>",
+                            "<span class='icon-check'>✓</span> <strong>Desde $990/mes</strong>",
                         competitorValues: [
-                            "<span class='icon-cross'>✕</span> $1,800–$3,000/mes + seguro social y desempleo",
-                            "<span class='icon-warning'>⚠</span> $900–$2,500/mes",
+                            "<span class='icon-cross'>✕</span> $2,500–$4,500/mes + beneficios y seguros",
+                            "<span class='icon-cross'>✕</span> Por hora o por pieza ($50–$150+ por video)",
+                            "<span class='icon-cross'>✕</span> $1,500–$3,500/mes",
                         ],
                     },
                     {
-                        label: "Foco y atención",
+                        label: "Dedicación",
                         oberstaffValue:
-                            "<span class='icon-check'>✓</span> <strong>100% exclusivo: conoce tu empresa a fondo</strong>",
+                            "<span class='icon-check'>✓</span> <strong>Jornada completa en tu calendario de contenido</strong>",
                         competitorValues: [
-                            "<span class='icon-check'>✓</span> Exclusivo, pero con altos costes fijos",
-                            "<span class='icon-warning'>⚠</span> Multicliente: prioridades de <strong>secretaria virtual</strong> divididas",
+                            "<span class='icon-check'>✓</span> Alta, pero exige reclutamiento y gestión laboral",
+                            "<span class='icon-warning'>⚠</span> Variable: reparte tiempo entre clientes",
+                            "<span class='icon-warning'>⚠</span> Sujeta a un límite estricto por contrato",
                         ],
                     },
                     {
-                        label: "Seguridad de datos",
+                        label: "Propiedad de archivos fuente (.prproj / .drp)",
                         oberstaffValue:
-                            "<span class='icon-check'>✓</span> <strong>NDA corporativo y accesos controlados de virtual assistant puerto rico</strong>",
+                            "<span class='icon-check'>✓</span> <strong>100% de tu empresa</strong>",
                         competitorValues: [
-                            "<span class='icon-check'>✓</span> Seguro, pero costoso de escalar",
-                            "<span class='icon-cross'>✕</span> Sin control sobre sus dispositivos",
+                            "<span class='icon-check'>✓</span> 100% de tu empresa",
+                            "<span class='icon-cross'>✕</span> Rara vez entregan los editables originales",
+                            "<span class='icon-warning'>⚠</span> Suelen cobrar un extra por el código fuente",
                         ],
                     },
                     {
-                        label: "Latencia de respuesta",
+                        label: "Zona horaria y comunicación",
                         oberstaffValue:
-                            "<span class='icon-check'>✓</span> <strong>Tiempo real, en tu horario comercial</strong>",
+                            "<span class='icon-check'>✓</span> <strong>Sincronía completa con el horario de Puerto Rico</strong>",
                         competitorValues: [
-                            "<span class='icon-check'>✓</span> Tiempo real",
-                            "<span class='icon-warning'>⚠</span> Asíncrono: un <strong>asistente virtual online</strong> puede demorar horas",
+                            "<span class='icon-check'>✓</span> Sincronía completa",
+                            "<span class='icon-warning'>⚠</span> Variable, según su disponibilidad",
+                            "<span class='icon-warning'>⚠</span> Respuestas según tiempos de servicio (SLA)",
                         ],
                     },
                     {
-                        label: "Sin permanencia",
+                        label: "Integración operativa",
                         oberstaffValue:
-                            "<span class='icon-check'>✓</span> <strong>Sí, sin riesgos de Ley 80</strong>",
+                            "<span class='icon-check'>✓</span> <strong>Alta: Drive, Dropbox, Frame.io, Slack, Notion, Asana</strong>",
                         competitorValues: [
-                            "<span class='icon-cross'>✕</span> Liquidaciones, penalidades e indemnizaciones",
-                            "<span class='icon-warning'>⚠</span> Según contrato",
+                            "<span class='icon-check'>✓</span> Alta, si existe proceso interno",
+                            "<span class='icon-warning'>⚠</span> Media: depende de su metodología",
+                            "<span class='icon-cross'>✕</span> Baja",
                         ],
                     },
                     {
-                        label: "Auditoría de talento",
+                        label: "Sin permanencia larga",
                         oberstaffValue:
-                            "<span class='icon-check'>✓</span> <strong>Filtro técnico de virtual assistant skills + psicométrico</strong>",
+                            "<span class='icon-check'>✓</span> <strong>Sí</strong>",
                         competitorValues: [
-                            "<span class='icon-cross'>✕</span> Consume horas de Recursos Humanos",
-                            "<span class='icon-warning'>⚠</span> Basado solo en reseñas externas",
+                            "<span class='icon-cross'>✕</span> No, sujeto a leyes de empleo locales",
+                            "<span class='icon-warning'>⚠</span> Según el acuerdo del proyecto",
+                            "<span class='icon-cross'>✕</span> Contratos anuales en su mayoría",
                         ],
                     },
                 ]}
@@ -423,52 +453,52 @@ const faqs = [
 
         <div class="fade-in-section">
             <ServicesSection
-                title="Cómo filtrar y contratar a un asistente virtual administrativo con dominio de SOPs"
+                title="Cómo seleccionar al editor de postproducción idóneo para tu empresa en Puerto Rico"
                 cardTitleTag="h3"
-                description="La diferencia entre un asistente que genera orden y uno que genera más trabajo para el CEO está en su capacidad de operar bajo procesos estandarizados. Un perfil de alto nivel no espera instrucciones improvisadas: ejecuta y mejora la documentación existente."
+                description="Dar acceso a tus activos digitales y filmaciones crudas exige una selección estricta. Estos son los factores críticos para integrar talento técnico de alto nivel."
                 customClass="employer-use-cases-designer"
                 services={[
                     {
                         icon: "",
-                        title: "¿Asistente virtual freelance o uno integrado en remoto?",
+                        title: "Aspectos clave antes de iniciar la búsqueda",
                         description:
-                            "Si necesitas seguimiento diario, coordinación con tu equipo y alguien que forme parte de tu organización, un <strong>asistente administrativo remoto en español</strong> estable funciona mejor y a menor costo total.",
+                            "Antes de contratar, define el propósito de tus contenidos: campañas en redes, canales de YouTube, anuncios de conversión o videos corporativos internos. <br><br>Delimita el volumen semanal, la línea estética, los tiempos de entrega y el software requerido.",
                         linkText: "",
                         href: "",
                         cardClass: "card-av-1",
                     },
                     {
                         icon: "",
-                        title: "¿Qué soft skills y competencias técnicas exigir a un asistente administrativo?",
+                        title: "Dominio técnico del ecosistema audiovisual",
                         description:
-                            "Descarta perfiles reactivos y audita sus <strong>virtual assistant skills</strong>: mantener CRMs limpios, redactar SOPs y estructurar bases de datos. Una llamada de 15 minutos basta para trazar el <strong>asistente virtual puerto rico</strong> que necesitas.",
-                        linkText: "",
+                            "Comprueba la destreza de los editores de video profesional en Adobe Creative Cloud (Premiere Pro, After Effects, Audition) o su competencia en DaVinci Resolve para flujos avanzados de color. <br><br>Si tu foco es el contenido de redes de consumo rápido, la agilidad en CapCut Pro y el subtitulado automatizado acelera mucho los tiempos de publicación.",
+                        linkText: "", 
                         href: "",
                         cardClass: "card-av-2",
                     },
                     {
                         icon: "",
-                        title: "¿Qué stack tecnológico deben dominar los asistentes virtuales para empresas?",
+                        title: "El modelo remoto en Puerto Rico con talento de Sudamérica: ¿por qué funciona?",
                         description:
-                            "La ofimática básica ya no basta. El <strong>virtual assistant remote</strong> debe moverse con fluidez en Google Workspace, Microsoft 365, gestores de proyectos (Asana, Jira, Notion) y comunicación corporativa (Slack, Teams).",
+                            "Sudamérica reúne una comunidad enorme de profesionales de la comunicación y el cine con gran nivel técnico. Tu empresa en Puerto Rico gana una sincronía horaria casi total, así los videos se editan y aprueban en tu misma jornada y tus campañas ganan agilidad.",
                         linkText: "",
                         href: "",
                         cardClass: "card-av-3",
                     },
                     {
                         icon: "",
-                        title: "¿Secretaria virtual clásica o asistente administrativo virtual?",
+                        title: "Análisis de curvas de retención",
                         description:
-                            "Muchas búsquedas empiezan por <strong>secretaria virtual online</strong>, pero hoy el rol va más allá de contestar llamadas o agendar. Lo que mejor funciona es un asistente administrativo remoto en español o bilingüe capaz de seguir procesos y dar soporte constante.",
+                            "Un editor convencional cuida la estética; uno estratégico cuida la retención. Al evaluar portafolios, fíjate en cómo estructura los primeros 5 segundos (el gancho comercial). <br><br> El uso inteligente de B-roll, cortes dinámicos de escala y efectos de sonido precisos es clave para mantener alta la duración promedio de reproducción.",
                         linkText: "",
                         href: "",
                         cardClass: "card-av-4",
                     },
                     {
                         icon: "",
-                        title: "¿Qué ventaja tiene frente a un asistente tradicional en la isla?",
+                        title: "Considera si necesitas apoyo bilingüe",
                         description:
-                            "Las funciones son idénticas, pero contratar un <strong>asistente virtual</strong> con el modelo de <span style='font-weight: 800; color: #1B1B1B;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 800;'>.</span> aporta más agilidad, suprime los gastos fijos de oficina y te da talento bilingüe alineado a la zona horaria de Puerto Rico.",
+                            "Muchas empresas en PR comunican en español e inglés. Si necesitas subtítulos, versiones bilingües o adaptaciones para audiencias locales y de EE. UU., inclúyelo desde la búsqueda del perfil.",
                         linkText: "",
                         href: "",
                         cardClass: "card-av-5",
@@ -479,66 +509,66 @@ const faqs = [
 
         <div class="fade-in-section">
             <ServicesSection
-                title="¿Qué hace un virtual assistant corporativo? De la agenda al control del CRM"
+                title="¿Qué tareas asume tu editor de video dedicado en el día a día?"
                 cardTitleTag="h3"
-                description="Un asistente virtual administrativo descarga las tareas que frenan a tu equipo: agenda, filtrado de emails, reportes y coordinación interna. No es apoyo temporal: aporta orden documental, velocidad de respuesta y continuidad."
+                description="Transforma tus gigabytes de material grabado en activos digitales de alto rendimiento, diseñados para capturar la atención del consumidor actual."
                 customClass="funciones-section"
-                services={[ 
+                services={[  
                     {
-                        icon: "📅",
-                        title: "Gestión de agenda y calendario",
+                        icon: "▶️",
+                        title: "Edición estratégica para Redes Sociales",
                         description:
-                            "Organización de reuniones, coordinación de horarios, recordatorios y logística de viajes ejecutivos.",
-                        linkText: "",
+                            "Montaje ágil de Reels, TikToks y Shorts: transiciones rápidas, subtítulos en tendencia, keyframes y ganchos visuales que retienen en los primeros 3 segundos.",
+                        linkText: "", 
                         href: "",
                         customIconBg: "rgba(102, 99, 253, 0.08)",
                         cardClass: "card-funcs",
                     },
                     {
-                        icon: "📧",
-                        title: "Gestión de correo y comunicaciones",
+                        icon: "✨",
+                        title: "Postproducción para canales de YouTube",
                         description:
-                            "Clasificación de inbox, respuesta y seguimiento de correos, y atención rápida a clientes y suplidores.",
+                            "Si necesitas contratar editores de video YouTube, dominan el formato largo: inserción precisa de B-roll, ritmo constante y exportaciones optimizadas para la plataforma.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "rgba(102, 99, 253, 0.08)", 
+                        cardClass: "card-funcs", 
+                    },
+                    {
+                        icon: "📢",
+                        title: "Contenido publicitario y videos UGC (Ads)",
+                        description:
+                            "Edición enfocada en conversión y ROI: iteraciones rápidas, pruebas A/B de los primeros segundos y adaptación de formatos para Meta, TikTok y Google Ads.",
                         linkText: "",
                         href: "",
                         customIconBg: "rgba(102, 99, 253, 0.08)", 
                         cardClass: "card-funcs",
                     },
                     {
-                        icon: "📄",
-                        title: "Documentación y archivos",
+                        icon: "🎨",
+                        title: "Color Grading y Corrección de Color",
                         description:
-                            "Actualización de documentos, bases de datos, SOPs y archivos compartidos en la nube.",
-                        linkText: "",
-                        href: "",
-                        customIconBg: "rgba(102, 99, 253, 0.08)", 
-                        cardClass: "card-funcs",
-                    },
-                    {
-                        icon: "💼",
-                        title: "Soporte a dirección y gerencia",
-                        description:
-                            "Preparación de reuniones, seguimiento de pendientes y apoyo operativo a la gerencia.",
+                            "Corrección y estilización profesional con DaVinci Resolve o Premiere Pro, con LUTs personalizados y esquemas cinematográficos fieles a tu manual de marca.",
                         linkText: "",
                         href: "",
                         customIconBg: "rgba(102, 99, 253, 0.08)",
                         cardClass: "card-funcs", 
                     },
                     {
-                        icon: "🔢",
-                        title: "Higiene de datos en CRM",
+                        icon: "🎙️",
+                        title: "Diseño de sonido y Video-Podcasts",
                         description:
-                            "Actualización de leads, limpieza de pipelines y reportes de actividad comercial en tiempo real.",
+                            "Limpieza de ruido, ecualización y balance de voces, música libre de derechos y diseño sonoro (SFX) para dar máxima inmersión a cada producción.",
                         linkText: "",
                         href: "",
                         customIconBg: "rgba(102, 99, 253, 0.08)",
                         cardClass: "card-funcs", 
                     },
                     {
-                        icon: "🛠️",
-                        title: "Stack de productividad",
+                        icon: "🏢",
+                        title: "Control de assets y organización multimedia",
                         description:
-                            "Google Workspace, Microsoft 365, Notion, Asana, Slack, Calendly y plataformas de colaboración.",
+                            "Ingesta organizada, generación de proxies, estructura lógica de carpetas y nomenclatura estándar para mantener tu nube impecable.",
                         linkText: "",
                         href: "",
                         customIconBg: "rgba(102, 99, 253, 0.08)",
@@ -550,26 +580,26 @@ const faqs = [
 
         <div class="fade-in-section">
             <EorCta
-                title="¿Tu equipo gerencial está asfixiado por microtareas?"
+                title="Eleva tu volumen de contenido semanal sin crear un departamento audiovisual local"
                 titleTag="h2"
-                text="Recupera tu tiempo al contratar un asistente virtual de Sudamérica para tu empresa en Puerto Rico. Cuéntanos tu cuello de botella documental, define el perfil y recibe una propuesta en menos de 24 horas."
-                buttonText="👉 Solicitar una propuesta personalizada"
+                text="Cuéntanos qué habilidades técnicas buscas en tu profesional audiovisual y te enviaremos una propuesta a la medida en menos de 24 horas. Sin compromisos."
+                buttonText="👉 Deseo solicitar una propuesta personalizada"
                 buttonHref="#formulario-perfil" 
-            />
+            />  
         </div>
 
         <div class="fade-in-section" id="pr-cm-process-wrapper">
             <ProcessOberstaff
                 className="process-employer"
-                title="Virtual assistant hire seguro: tu roadmap de integración administrativa"
-                description="Externalizar el soporte con un <strong>asistente virtual</strong> exige una transición que proteja la privacidad y la data de tu negocio. Aplicamos un onboarding diseñado para la seguridad de la información."
+                title="Contratar editor de video con <span style='font-weight: 800;'>Oberstaff</span><span style='font-weight: 800;color: #ff66cc;'>.</span> en Puerto Rico en 4 pasos"
+                description="Un proceso pensado para que tu empresa delegue la postproducción pesada y mantenga el control creativo sobre cada pieza."
                 items={[
                     {
-                        label: "Auditoría", 
+                        label: "Flujo", 
                         badge: "",
-                        title: "01. Auditoría de cuellos de botella",
+                        title: "01 Cuéntanos tu flujo de trabajo de video",
                         description:
-                            "Definimos volumen de tareas, SLAs y el tech stack para diseñar las asistente administrativo funciones exactas. <br><br> <em>⚡ 15 minutos · sin compromiso</em>",
+                            "Evaluamos tus necesidades: si grabas en 4K, LOG o RAW, los entregables semanales y tu software (Premiere, DaVinci Resolve o Final Cut). <br><br> <em>→ Consulta sin compromiso</em>",
                         icon: "01",
                         badgeColor: "#6663FD",
                         badgeBg: "rgba(102, 99, 253, 0.1)", 
@@ -577,35 +607,35 @@ const faqs = [
                     {
                         label: "Selección",
                         badge: "",
-                        title: "02. Selección de talento",
+                        title: "02. Recibe talento audiovisual pre-evaluado",
                         description:
-                            "Te presentamos una terna (3 a 5) de virtual assistant con ofimática avanzada y fit cultural validado. <br><br> <em>📋 Perfiles evaluados</em>",
+                            "Te presentamos una terna de 3 a 5 editores de video pre-filtrados con pruebas técnicas, tests y entrevistas. Recibes sus fichas con muestras de su trabajo. <br><br> <em>→ Talento 100% verificado</em>",
                         icon: "02",
                         badgeColor: "#6aca8a",
                         badgeBg: "rgba(102, 255, 153, 0.15)", 
                     },
                     {
-                        label: "Validación",
+                        label: "Entrevista",
                         badge: "",
-                        title: "03. Entrevistas de validación",
+                        title: "03. Entrevista y selección final",
                         description:
-                            "Hablas con los candidatos, evalúas su criterio operativo y eliges a tu próximo asistente personal puerto rico. <br><br> <em>Tú tienes la última palabra</em>",
+                            "Conversas con los finalistas, revisas sus portafolios y eliges al profesional idóneo para incorporarse a tus proyectos. <br><br> <em>→ Tú tienes el control</em>",
                         icon: "03",
                         badgeColor: "#FF66CC",
                         badgeBg: "rgba(255, 102, 204, 0.1)", 
                     },
                     {
-                        label: "Operación",
+                        label: "Integración",
                         badge: "",
-                        title: "04. Sincronización operativa",
+                        title: "04. Integración inmediata en tus operaciones",
                         description:
-                            "El asistente administrativo comercial se integra en tus canales y asimila tu cultura y horarios desde el primer día. <br><br> <em>Integración en días</em>",
+                            "<strong class='brand-oberstaff'>Oberstaff<span style='font-weight: 800; color: #FF66CC;'>.</span></strong> firma los acuerdos de confidencialidad (NDA). Tu editor se conecta a Google Drive, Dropbox o Frame.io y empieza con el primer corte. <br><br> <em>→ Cero dolores de cabeza administrativos</em>",
                         icon: "04",
                         badgeColor: "#1B1B1B",
                         badgeBg: "rgba(204, 255, 102, 0.3)", 
                     },
                 ]}
-                ctaTitle="Acelera tu back-office hoy"
+                ctaTitle="Comienza a delegar hoy"
                 ctaDescription="Un equipo dedicado gestionará todo el proceso por ti."
                 ctaBtnText="Agendar llamada"
                 ctaBtnHref="#formulario-perfil"
@@ -614,8 +644,8 @@ const faqs = [
 
         <div class="fade-in-section">
             <CasosExitoSection
-                title="Casos de éxito corporativo: negocios que ya contratan talento con nosotros"
-                subtitle="Resultados reales de organizaciones que decidieron contratar asistente virtual con <span style='font-weight: 800; color: #1b1b1b;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span>"
+                title="Empresas que ya validaron el modelo de talento remoto de <span style='font-weight: 800; color: #1b1b1b;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span>"
+                subtitle=""
                 columns={3}
                 testimonials={[
                     {
@@ -653,62 +683,97 @@ const faqs = [
 
         <div class="fade-in-section">
             <RolesPerfil
-                title="Virtual assistant roles: especialización operativa para tu negocio"
-                subtitle=""
+                title="Perfiles de editor de video para contratar e integrar en tu equipo"
+                subtitle="La postproducción requiere un enfoque específico. Elige al profesional que domine el formato exacto que consume tu audiencia ideal."
                 layout="modern"
-                footerText="¿Necesitas un perfil que lleve contabilidad formal, conciliaciones y nómina? "
-                footerLinkText="→ Ver perfil de Contable Remoto"
+                footerText=""
+                footerLinkText=""
                 footerLinkHref="#"
                 roles={[
                     {
-                        title: "Asistente administrativo virtual",
+                        title: "Editores de video para YouTubers y creadores",
                         description: "",
-                        icon: "",
+                        icon: "🎬",
                         iconColor: "#6663FD",
                         borderColorClass: "border-purple",
                         subtitle:
-                            "Estandarización de SOPs, control de agenda y auditoría de documentos internos. Domina el rol de asistente administrativo en ingles si lo requieres.",
+                            "Especialista en retención de formato largo, narrativa visual dinámica, cortes de audio J/L y diseño sonoro integrado.",
                         techStack: [
-                            "Google Workspace",
-                            "Notion",
-                            "Trello",
-                            "Slack",
+                            "Premiere Pro",
+                            "Final Cut",
+                            "Conceptos de Miniaturas",
                         ],
                     },
                     {
-                        title: "Soporte y atención al cliente",
+                        title: "Editor y especialista en Motion Graphics",
                         description: "",
-                        icon: "",
+                        icon: "✨",
                         iconColor: "#6aca8a",
                         borderColorClass: "border-green",
                         subtitle:
-                            "Gestión de tickets, SLAs de primer nivel, resolución de incidencias y fidelización B2B/B2C.",
+                            "Postproducción avanzada con animación 2D, motion tracking, rotoscopia y títulos dinámicos integrados en video real.",
                         techStack: [
-                            "Zendesk",
-                            "Freshdesk",
-                            "Intercom",
-                            "WhatsApp Business",
+                            "After Effects",
+                            "Cinema 4D",
+                            "Lottie Files",
                         ],
                     },
                     {
-                        title: "Asistente virtual remoto para eCommerce",
+                        title: "Editor de video y Colorista",
                         description: "",
-                        icon: "",
+                        icon: "🎨",
                         iconColor: "#FF9933",
                         borderColorClass: "border-orange",
                         subtitle:
-                            "Actualización masiva de SKUs, control de inventario base y seguimiento de logística posventa.",
-                        techStack: ["Shopify", "Amazon Seller", "Klaviyo"],
+                            "Experto en vectorscopios, balance de blancos avanzado, igualación de color multicámara y estilización cinematográfica.",
+                        techStack: [
+                            "DaVinci Resolve",
+                            "Lumetri Color",
+                            "Creación de LUTs",
+                        ],
                     },
                     {
-                        title: "Asistente personal ejecutivo",
+                        title: "Editor de video corporativo e institucional",
                         description: "",
-                        icon: "",
+                        icon: "🏢",
                         iconColor: "#FF66CC",
                         borderColorClass: "border-pink",
                         subtitle:
-                            "Gestión de agendas gerenciales (C-Level) como asistente personal puerto rico, filtro de comunicaciones críticas y preparación de juntas.",
-                        techStack: ["Calendly", "Notion", "Zoom", "Asana"],
+                            "Piezas de comunicación interna, videos de adiestramiento, entrevistas ejecutivas y casos de éxito B2B con estética limpia y profesional.",
+                        techStack: [
+                            "Premiere Pro",
+                            "Videos explicativos",
+                            "Contenido de marca",
+                        ],
+                    },
+                    {
+                        title: "Editor experto en formatos cortos para Social Media",
+                        description: "",
+                        icon: "📱",
+                        iconColor: "#3b76f6",
+                        borderColorClass: "border-blue",
+                        subtitle:
+                            "Especialista en vertical (9:16), transiciones en tendencia, zooms rápidos y subtitulado dinámico de alta velocidad.",
+                        techStack: [
+                            "CapCut Pro",
+                            "Premiere Pro",
+                            "TikTok",
+                            "Instagram Reels",
+                        ],
+                    },
+                    {
+                        title: "Editor de video publicitario orientado a conversión",
+                        description: "",
+                        icon: "📢",
+                        iconColor: "#9333ea",
+                        borderColorClass: "border-indigo",
+                        subtitle:
+                            "Montaje enfocado en llamadas a la acción, ganchos de alta conversión y optimización de piezas para pautas pagadas.",
+                        techStack: [
+                            "Meta Ads",
+                            "YouTube Ads",
+                            "Pruebas A/B de creativos",
+                        ],
                     },
                 ]}
             />
@@ -716,54 +781,54 @@ const faqs = [
 
         <div class="fade-in-section" id="pr-cm-pricing-wrapper">
             <PricingCardPerfil
-                sectionTitle="Fin a los sobrecostes: tarifa plana al contratar un asistente virtual"
-                sectionSubtitle="Estructura tus costos fijos con total predictibilidad. La tarifa incluye todo: headhunting, compliance legal internacional y la nómina de tu asistente administrativo virtual. El costo escala solo según la especialización del talento."
-                cardTitle="Asistente Virtual"
+                sectionTitle="Un editor de video remoto dedicado por una fracción del costo de nómina"
+                sectionSubtitle="Facturar cada video o enfrentar cargos por cada pequeña corrección drena tu presupuesto de mercadeo. Con <strong style='color: #1b1b1b;'>Oberstaff<span style='color: #ff66cc;'>.</span></strong> obtienes una tarifa fija mensual para sostener tu estrategia de contenido continuo."
+                cardTitle="Editor de Video"
                 titleTag="p"
-                cardSubtitle=""
+                cardSubtitle="Tarifa mensual fija · jornada completa · sin costos ocultos de contratación"
                 priceLabel="Desde"
-                priceAmount="$820"
+                priceAmount="$990"
                 pricePeriod="USD / mes"
                 features={[
-                    "Todo incluido · jornada completa (full-time) · sin cargos ocultos",
-                    "Gestión de agenda ejecutiva y filtrado de comunicaciones",
-                    "Orden documental y soporte de asistente administrativo",
-                    "Dominio de CRMs y herramientas remotas de un virtual assistant remote",
-                    "Soporte directo a direcciones y gerencias de área",
-                    "Facturación B2B internacional en USD",
+                    "Revisiones y exportaciones ilimitadas dentro de su jornada.",
+                    "Montaje para YouTube y formatos verticales (Shorts / Reels / TikToks).",
+                    "Corrección de color profesional y aplicación de recursos visuales de marca.",
+                    "Sincronización de audio para video-podcasts, limpieza de ruido y multicámara.",
+                    "Organización de archivos en la nube, proxies y control de entregables.",
+                    "Protección legal completa sobre la IP del material editado y bruto.",
                 ]}
                 ctaText="Solicitar propuesta"
                 ctaHref="#formulario-perfil"
-                disclaimer="* Precios orientativos. El costo final depende del perfil, el país de origen del talento (ej. virtual assistant colombia) y el nivel de experiencia."
+                disclaimer="* Precios orientativos según experiencia, seniority, software y dominio técnico del perfil."
             />
         </div>
 
         <div class="fade-in-section" id="pr-cm-benefits-wrapper">
             <BeneficiosPerfilDisenador
                 showInfoCard={false}
-                title="Exclusividad y latencia cero: el ROI de tu virtual assistant puerto rico"
-                subtitle="El ROI de un perfil dedicado está en lo profundo que conoce tus procesos. Esa dedicación mantiene tu información precisa y disponible, y elimina el coste oculto de los errores por falta de contexto."
-                image="/img2-community.webp"
-                imageAlt="Community manager estratégico analizando métricas y comunidad digital para una empresa"
+                title="Ventajas operativas de nuestro modelo de postproducción remota"
+                subtitle="Más agilidad creativa que una agencia tradicional y muchas menos contingencias legales y de nómina que un empleado local."
+                image=""
+                imageAlt=""
                 infoTitle=""
                 features={[
                     {
                         icon: "🎯",
-                        title: "Eliminación de cargas patronales:",
+                        title: "Foco y atención exclusiva:",
                         description:
-                            "Bajo nuestro modelo, tu empresa se libera del marco laboral de Puerto Rico: sin desempleo (FUTA/SUTA), seguro social, póliza del Fondo del Seguro del Estado ni acumulación de licencias.",
+                            "Tu editor trabaja solo en tus proxies, campañas y las prioridades de tus canales digitales, sin repartirse entre clientes.",
                     },
                     {
-                        icon: "⏱️",
-                        title: "Recuperación del tiempo (deep work):",
+                        icon: "⏱️", 
+                        title: "Ajustes rápidos sin fricción financiera:",
                         description:
-                            "Al delegar correos y agendas en una secretaria virtual, liberas a tus líderes para tareas de alto impacto. Pasas de apagar fuegos a dirigir la estrategia.",
-                    },
+                            "¿Reemplazar una toma o corregir un texto? Con un editor integrado a tu flujo, pides el cambio y recibes el nuevo render en poco tiempo.",
+                    }, 
                     { 
                         icon: "🛡️",
-                        title: "Blindaje con NDAs corporativos:",
+                        title: "Seguridad jurídica y contractual:",
                         description:
-                            "La confidencialidad de tu asistente administrativo virtual es innegociable. Cada perfil opera bajo NDA estrictos que protegen tus bases de datos y clientes.",
+                            "Gestionamos la administración. El talento firma la cesión de derechos de IP hacia tu empresa y nosotros administramos los pagos internacionales.",
                     },
                 ]}
                 infoItems={[
@@ -782,16 +847,16 @@ const faqs = [
                 ]}
             >
                 <div class="meta-custom-notice">
-                   
+                   Una sola factura mensual en USD que registras como servicio profesional B2B, sin planes médicos ni retenciones locales.
                 </div>
             </BeneficiosPerfilDisenador>
         </div>
 
         <FAQSection
-            title="Blindaje legal y contingencia laboral de tu asistente virtual"
-            subtitle="Protege tus finanzas frente a las complejidades del Departamento del Trabajo local. Al integrar tu <strong>asistente virtual en ingles</strong> o español bajo nuestra arquitectura legal, desplazas la carga administrativa y los riesgos patronales a nuestra infraestructura global."
+            title="Preguntas frecuentes sobre contratar editor de video remoto para Puerto Rico"
+            subtitle="Resolvemos las dudas más frecuentes de empresas en PR que quieren incorporar postproducción audiovisual remota de forma estable."
             ctaText=""
-            ctaButtonText="👉 Hablar con asesor →"
+            ctaButtonText="➡️ Conversar con un especialista de talento →"
             ctaButtonHref="#formulario-perfil"
             useCardLayout={true} 
             faqs={faqs}
@@ -800,9 +865,9 @@ const faqs = [
         <div class="fade-in-section">
             <ConversionPerfilDisenador
                 webhookUrl="https://hooks.zapier.com/hooks/catch/12433184/4b3s4e0/"
-                title="Sistematiza tu empresa: contrata un asistente virtual para tu empresa en Puerto Rico"
-                subtitle="Dejar tu back-office al azar frena tu capacidad de escalar. Transforma tus costos fijos en una inversión operativa ágil con <strong>asistentes virtuales para empresas</strong>. <br> <br> Llena el formulario (menos de 1 minuto) y en menos de 24 horas recibirás una propuesta personalizada, sin compromiso."
-                buttonText="Solicitar propuesta gratuita →"
+                title="¿Quieres incorporar un editor de video remoto a tu equipo?"
+                subtitle="Completa el formulario en menos de un minuto. Uno de nuestros consultores evaluará tus requerimientos y recibirás una propuesta de talento a la medida en menos de 24 horas. La sesión informativa inicial es gratuita."
+                buttonText="➡️ Solicitar consulta y propuesta gratuita" 
                 noteText=""
                 isCommunityPR={false}
             />
