@@ -61,7 +61,7 @@ import "../../styles/QueEsServicio/QueEsContent.css";
                 <>
                     <div class="ques-checklist-block">
                         <p class="ques-checklist-title">
-                            <strong>{checklistTitle}</strong>
+                            <strong set:html={checklistTitle} />
                         </p>
                         <ul class="ques-checklist">
                             {checklistItems.map((item) => (

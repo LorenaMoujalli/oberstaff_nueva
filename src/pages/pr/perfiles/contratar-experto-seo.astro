@@ -1,0 +1,2344 @@
+---
+import DashboardLayoutPerfilesPr from "../../../layouts/DashboardLayoutPerfilesPr.astro";
+import LeadHeroSection from "../../../components/community-manager/LeadHeroSection.astro";
+import ComparisonPerfiles from "../../../components/comparison-perfiles/ComparisonPerfiles.astro";
+import PricingCardPerfil from "../../../components/pricing-perfil/PricingCardPerfil.astro";
+import BeneficiosPerfilDisenador from "../../../components/beneficios-perfil/BeneficiosPerfilDisenador.astro";
+//import PressSection from "../../../components/press/PressSection.astro";
+import ConversionPerfilDisenador from "../../../components/conversion-perfil/ConversionPerfilDisenador.astro";
+import RolesPerfil from "../../../components/roles-del-perfil/RolesPerfil.astro";
+import QueEsServicioSection from "../../../components/QueEsServicio/QueEsServicioSection.astro";
+import ServicesSection from "../../../components/services-oberstaff/ServicesSection.astro";
+//import EorStepsSection from "../../../components/eor-steps-servicios/EorStepsSection.astro";
+import EorCta from "../../../components/eor-cta-servicios/EorCta.astro";
+import CasosExitoSection from "../../../components/casos-exito-servicios/CasosExitoSection.astro";
+import FAQSection from "../../../components/faq-servicios/FAQSection-community.astro";
+//import GuiaContratacion from "../../../components/guia-contratacion-perfiles/GuiaContratacion.astro";
+import ProcessOberstaff from "../../../components/process/ProcessOberstaff.astro";
+
+const ogImage = "Contratar community manager.webp";
+
+const faqs = [
+    {
+        question: "¿Quién paga herramientas como Semrush, Ahrefs o Screaming Frog?",
+        answers: [
+            "Lo ideal es que tu empresa provea los accesos a sus cuentas corporativas de Ahrefs, Semrush, Screaming Frog o Sistrix. Así el historial de auditoria seo, los proyectos guardados y las keywords quedan bajo tu propiedad y control.",
+        ],
+    },
+    {
+        question: "¿En cuánto tiempo puedo ver resultados SEO?",
+        answers: [
+            "Las correcciones de errores técnicos críticos pueden mostrar impacto en semanas. Una estrategia integral con clústeres de contenido, on-page y backlinks suele madurar entre 3 y 6 meses, según competencia y punto de partida.",
+        ],
+    },
+    {
+        question: "¿El experto SEO implementa cambios directamente?",
+        answers: [
+            "Sí, dentro de los accesos que le otorgues. Puede aplicar cambios on-page, técnicos y de contenido en tu CMS, o entregar las indicaciones a tu equipo de desarrollo cuando el despliegue lo requiera.",
+        ],
+    },
+    {
+        question: "¿Qué accesos debo entregar?",
+        answers: [
+            "Solo los necesarios: Google Search Console, GA4, Google Tag Manager, CMS, herramientas SEO y dashboards. Recomendamos permisos controlados, no accesos de propietario absoluto.",
+        ],
+    },
+    {
+        question: "¿Qué pasa si el perfil no se ajusta a lo que necesito?",
+        answers: [
+            "Si el perfil no encaja técnica o estratégicamente, solicitas un cambio por un especialista con mayor seniority o una especialidad más alineada con tu proyecto.",
+        ],
+    },
+    {
+        question: "¿Cuál es la diferencia entre SEO en Puerto Rico y SEO local Puerto Rico?",
+        answers: [
+            "SEO en Puerto Rico abarca la estrategia orgánica completa para empresas que venden en la Isla o desde la Isla: técnica, contenidos, autoridad y analítica. SEO local Puerto Rico se enfoca en búsquedas por zona: Google Business Profile, reseñas, mapas y señales geográficas.",
+        ],
+    },
+    {
+        question: "¿Puedo contratar un SEO para un proyecto local en San Juan, Bayamón, Carolina o Ponce?",
+        answers: [
+            "Sí. Puedes contratar un especialista SEO con foco local para trabajar Google Business Profile, reseñas, landings geolocalizadas y búsquedas comerciales dentro de Puerto Rico.",
+        ],
+    },
+];
+---
+
+<DashboardLayoutPerfilesPr
+    ogImage={ogImage}
+    title="Contratar Experto SEO Remoto | Oberstaff"
+    description="Talento de LATAM exclusivo para tu empresa. Con Oberstaff, contratar experto SEO es seguro, ágil y con zona horaria 100% compatible."
+    footerTitle="Roles relacionados"
+    footerLinks={[
+        {
+            text: "📈 Contratar especialista en Google Ads",
+            href: "#",
+        },
+        {
+            text: "✍️ Contratar copywriter",
+            href: "#",
+        },
+        {
+            text: "🗂️ Contratar asistente virtual",
+            href: "/pr/perfiles/asistente-virtual",
+        },
+    ]}
+>
+    <link
+        rel="canonical"
+        href="https://oberstaff.com/pr/perfiles/contratar-experto-seo"
+        slot="head"
+    />
+    <script slot="head" type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "WebPage",
+                    "@id": "https://www.oberstaff.com/perfiles/contratar-community-manager#webpage",
+                    "url": "https://www.oberstaff.com/perfiles/contratar-community-manager",
+                    "name": "Contratar Community Manager para Empresas Españolas | Oberstaff",
+                    "description": "¿Buscas contratar community manager sin saber por dónde empezar? Perfiles evaluados de LATAM, zona horaria España y hasta un 70% de ahorro.",
+                    "inLanguage": "es-ES",
+                    "isPartOf": {
+                        "@id": "https://www.oberstaff.com/#website"
+                    },
+                    "publisher": {
+                        "@id": "https://www.oberstaff.com/#organization"
+                    },
+                    "about": {
+                        "@id": "https://www.oberstaff.com/perfiles/contratar-community-manager#service"
+                    },
+                    "mainEntity": {
+                        "@id": "https://www.oberstaff.com/perfiles/contratar-community-manager#service"
+                    },
+                    "breadcrumb": {
+                        "@id": "https://www.oberstaff.com/perfiles/contratar-community-manager#breadcrumb"
+                    }
+                },
+                {
+                    "@type": "Service",
+                    "@id": "https://www.oberstaff.com/perfiles/contratar-community-manager#service",
+                    "name": "Contratar Community Manager Remoto en LATAM para empresas españolas",
+                    "alternateName": [
+                        "Contratar community manager",
+                        "Community manager remoto",
+                        "Community manager para empresas",
+                        "Community manager LATAM",
+                        "Gestor de redes sociales remoto",
+                        "Social media manager remoto",
+                        "Talento social media remoto"
+                    ],
+                    "serviceType": "Contratación de community manager remoto",
+                    "category": "Servicios de contratación de talento remoto para marketing y redes sociales",
+                    "url": "https://www.oberstaff.com/perfiles/contratar-community-manager",
+                    "provider": {
+                        "@id": "https://www.oberstaff.com/#organization"
+                    },
+                    "description": "Servicio para empresas españolas que necesitan contratar un Community Manager remoto de LATAM con dedicación exclusiva, dominio de social media, gestión de comunidad, moderación, analítica, social listening, horario compatible con España y gestión laboral cubierta por Oberstaff.",
+                    "slogan": "Delega el crecimiento de tu comunidad digital en talento experto, sin riesgo ni burocracia laboral local.",
+                    "audience": {
+                        "@type": "BusinessAudience",
+                        "audienceType": "Empresas españolas que necesitan contratar community manager remoto en LATAM para gestionar redes sociales, comunidad digital, reputación online, engagement y contenidos",
+                        "geographicArea": {
+                            "@type": "Country",
+                            "name": "España"
+                        }
+                    },
+                    "serviceAudience": {
+                        "@type": "BusinessAudience",
+                        "audienceType": "Pymes, startups, ecommerce, agencias y empresas españolas que buscan Community Managers remotos dedicados, evaluados en social media, con horario compatible con España y gestión laboral resuelta",
+                        "geographicArea": {
+                            "@type": "Country",
+                            "name": "España"
+                        }
+                    },
+                    "areaServed": [
+                        {
+                            "@type": "Country",
+                            "name": "España"
+                        },
+                        {
+                            "@type": "Country",
+                            "name": "Colombia"
+                        },
+                        {
+                            "@type": "Country",
+                            "name": "Argentina"
+                        },
+                        {
+                            "@type": "Country",
+                            "name": "México"
+                        },
+                        {
+                            "@type": "Country",
+                            "name": "Venezuela"
+                        },
+                        {
+                            "@type": "Country",
+                            "name": "Chile"
+                        },
+                        {
+                            "@type": "Country",
+                            "name": "Perú"
+                        },
+                        {
+                            "@type": "Country",
+                            "name": "Uruguay"
+                        }
+                    ],
+                    "offers": {
+                        "@type": "Offer",
+                        "@id": "https://www.oberstaff.com/perfiles/contratar-community-manager#offer",
+                        "name": "Community Manager Remoto Dedicado",
+                        "url": "https://www.oberstaff.com/perfiles/contratar-community-manager#contacto",
+                        "price": "820",
+                        "priceCurrency": "EUR",
+                        "availability": "https://schema.org/InStock",
+                        "eligibleCustomerType": "http://purl.org/goodrelations/v1#Business",
+                        "eligibleRegion": {
+                            "@type": "Country",
+                            "name": "España"
+                        },
+                        "description": "Contratación de Community Manager remoto desde 820€ al mes, dirigido a empresas españolas que necesitan gestión de redes sociales, moderación de comunidad, analítica mensual, coordinación con marketing, horario compatible con España y una única factura mensual en euros.",
+                        "priceSpecification": {
+                            "@type": "UnitPriceSpecification",
+                            "price": "820",
+                            "priceCurrency": "EUR",
+                            "unitText": "profesional por mes"
+                        }
+                    },
+                    "hasOfferCatalog": {
+                        "@type": "OfferCatalog",
+                        "@id": "https://www.oberstaff.com/perfiles/contratar-community-manager#included-services",
+                        "name": "Qué puede hacer un Community Manager remoto por tu empresa",
+                        "itemListElement": [
+                            {
+                                "@type": "Offer",
+                                "name": "Gestión táctica de perfiles sociales",
+                                "itemOffered": {
+                                    "@type": "Service",
+                                    "name": "Gestión táctica de perfiles sociales",
+                                    "description": "Programación de calendarios editoriales en Instagram, LinkedIn, TikTok, Facebook y X, adaptando la estrategia a cada plataforma."
+                                }
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Curación y adaptación de formatos",
+                                "itemOffered": {
+                                    "@type": "Service",
+                                    "name": "Curación y adaptación de formatos",
+                                    "description": "Estructuración de publicaciones, curación de tendencias y adaptación de mensajes para mantener activa la voz de marca."
+                                }
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Moderación de comunidad",
+                                "itemOffered": {
+                                    "@type": "Service",
+                                    "name": "Moderación de comunidad",
+                                    "description": "Respuesta a mensajes directos, comentarios y moderación de situaciones de reputación online para mantener la marca conectada con su audiencia."
+                                }
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Analítica y social listening",
+                                "itemOffered": {
+                                    "@type": "Service",
+                                    "name": "Analítica y social listening",
+                                    "description": "Medición de KPIs como alcance, engagement rate, clics y crecimiento de seguidores, con informes mensuales e insights estratégicos."
+                                }
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Estrategia de social media",
+                                "itemOffered": {
+                                    "@type": "Service",
+                                    "name": "Estrategia de social media",
+                                    "description": "Estudio de audiencias, análisis de competidores, selección de hashtags y detección de tendencias para mejorar el alcance orgánico."
+                                }
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Soporte en distribución Paid Social",
+                                "itemOffered": {
+                                    "@type": "Service",
+                                    "name": "Soporte en distribución Paid Social",
+                                    "description": "Gestión de la comunidad que interactúa con anuncios en Meta Ads y LinkedIn Ads, apoyando al equipo de performance marketing."
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "@type": "ItemList",
+                    "@id": "https://www.oberstaff.com/perfiles/contratar-community-manager#advantages",
+                    "name": "Ventajas de contratar Community Manager remoto con Oberstaff",
+                    "description": "Ventajas operativas para empresas españolas que contratan Community Managers remotos en LATAM.",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Community Managers evaluados",
+                            "description": "Perfiles evaluados con pruebas técnicas de social media y test psicométricos."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": "Protección de accesos y activos digitales",
+                            "description": "Oberstaff firma acuerdos de confidencialidad para proteger contraseñas, cuentas y activos digitales."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 3,
+                            "name": "Ahorro estructural",
+                            "description": "Un profesional social media in-house consolidado en una única factura mensual."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 4,
+                            "name": "Flexibilidad sin indemnizaciones",
+                            "description": "Posibilidad de cancelar o solicitar reemplazo si el Community Manager no logra captar la esencia de la marca."
+                        }
+                    ]
+                },
+                {
+                    "@type": "ItemList",
+                    "@id": "https://www.oberstaff.com/perfiles/contratar-community-manager#process",
+                    "name": "Proceso para contratar Community Manager con Oberstaff",
+                    "description": "Proceso de Oberstaff para conectar empresas españolas con Community Managers remotos de LATAM.",
+                    "numberOfItems": 4,
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Diagnóstico de situación digital",
+                            "description": "La empresa indica plataformas prioritarias, sector y tono de voz que debe tener el futuro Community Manager."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": "Presentación de estrategas validados",
+                            "description": "Oberstaff presenta entre 3 y 5 Community Managers con KPIs demostrables, experiencia previa y resultados de evaluación."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 3,
+                            "name": "Entrevistas de brand fit",
+                            "description": "La empresa entrevista a los finalistas, evalúa su creatividad, criterio de comunicación y capacidad para representar la voz de marca."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 4,
+                            "name": "Activación de la gestión social",
+                            "description": "Oberstaff asume el compliance legal y el Community Manager comienza a publicar, interactuar, moderar y medir resultados."
+                        }
+                    ]
+                },
+                {
+                    "@type": "ItemList",
+                    "@id": "https://www.oberstaff.com/perfiles/contratar-community-manager#profiles",
+                    "name": "Tipos de Community Manager disponibles",
+                    "description": "Especialidades de Community Manager remoto que empresas españolas pueden contratar con Oberstaff.",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Gestor de redes multiplataforma",
+                            "description": "Dominio de Instagram, TikTok, Facebook y X para crecimiento orgánico y dinamización de comunidades visuales."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": "Community Manager LinkedIn y B2B",
+                            "description": "Construcción de autoridad corporativa, social selling y generación de leads cualificados en entornos profesionales."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 3,
+                            "name": "Community Manager para ecommerce y social commerce",
+                            "description": "Gestión de atención al cliente por DM, reseñas públicas, catálogo social y lanzamientos."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 4,
+                            "name": "Community Manager para marca personal",
+                            "description": "Ghostwriting y gestión de presencia digital para CEOs, divulgadores, coaches, fundadores y líderes."
+                        }
+                    ]
+                },
+                {
+                    "@type": "ItemList",
+                    "@id": "https://www.oberstaff.com/perfiles/contratar-community-manager#comparison",
+                    "name": "Comparativa para contratar Community Manager",
+                    "description": "Comparación entre contratar Community Manager con Oberstaff, contratar un CM local en España, plataformas freelance o agencia de social media externa.",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Oberstaff LATAM",
+                            "description": "Desde 820€ al mes, jornada completa, dedicación exclusiva, horario compatible con España y validación técnica de social media."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": "Community Manager local en España",
+                            "description": "Coste orientativo entre 2.000€ y 2.800€ brutos al mes, sin contar Seguridad Social ni otros gastos."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 3,
+                            "name": "Plataformas freelance",
+                            "description": "Coste variable entre 800€ y 2.000€, con menor garantía de dedicación exclusiva y horario fijo."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 4,
+                            "name": "Agencia Social Media externa",
+                            "description": "Coste orientativo entre 1.500€ y 4.000€, con cuentas compartidas, más burocracia y menor respuesta inmediata."
+                        }
+                    ]
+                },
+                {
+                    "@type": "ItemList",
+                    "@id": "https://www.oberstaff.com/perfiles/contratar-community-manager#benefits",
+                    "name": "Beneficios de contratar Community Manager con Oberstaff",
+                    "description": "Beneficios para empresas españolas que incorporan Community Managers remotos de LATAM con Oberstaff.",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Mimetización con la marca",
+                            "description": "El Community Manager trabaja enfocado en el calendario editorial, tendencias y comunidad diaria de la marca."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": "Ecosistema sincronizado",
+                            "description": "El perfil se conecta a canales internos como Slack, participa en ideas y programa contenido en herramientas como Metricool."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 3,
+                            "name": "Blindaje corporativo",
+                            "description": "Contratos en el país de origen del talento para proteger accesos, datos, contraseñas y gestión laboral."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 4,
+                            "name": "Factura mensual única",
+                            "description": "La empresa recibe una sola factura internacional en euros por el servicio del Community Manager remoto."
+                        }
+                    ]
+                },
+                {
+                    "@type": "ItemList",
+                    "@id": "https://www.oberstaff.com/perfiles/contratar-community-manager#guide",
+                    "name": "Claves para buscar Community Manager estratégico",
+                    "description": "Guía para empresas españolas que quieren contratar Community Manager remoto de forma estratégica.",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Agencia de Social Media o Community Manager dedicado",
+                            "description": "Comparación entre agencias con cuentas compartidas y un Community Manager dedicado en exclusiva a la marca."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": "Ventajas de Oberstaff frente a marketplaces o agencias",
+                            "description": "Talento dedicado exclusivo, contrato estable, gestión laboral cubierta, integración y menor riesgo legal."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 3,
+                            "name": "Herramientas que debe dominar un Community Manager moderno",
+                            "description": "Business Manager, Creator Studio, Metricool, Buffer, Later, social listening, Canva y CapCut."
+                        }
+                    ]
+                },
+                {
+                    "@type": "ItemList",
+                    "@id": "https://www.oberstaff.com/perfiles/contratar-community-manager#related-profiles",
+                    "name": "Roles relacionados con Community Manager remoto",
+                    "description": "Otros perfiles relacionados que empresas españolas pueden contratar mediante Oberstaff.",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Contratar diseñador gráfico",
+                            "url": "https://www.oberstaff.com/perfiles/contratar-disenador-grafico"
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": "Asistente administrativo virtual",
+                            "url": "https://www.oberstaff.com/perfiles/contratar-un-asistente-virtual"
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 3,
+                            "name": "Editor de video remoto",
+                            "url": "https://www.oberstaff.com/perfiles/contratar-editor-de-video"
+                        }
+                    ]
+                },
+                {
+                    "@type": "FAQPage",
+                    "@id": "https://www.oberstaff.com/perfiles/contratar-community-manager#faq",
+                    "mainEntity": [
+                        {
+                            "@type": "Question",
+                            "name": "¿El Community Manager trabajará con cuentas de otras empresas al mismo tiempo?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "No. El profesional está asignado en exclusiva a tu marca, enfocado en tu calendario editorial, tu comunidad diaria y el análisis de tus competidores."
+                            }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "¿Cuándo conviene contratar un Community Manager?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Conviene cuando la empresa necesita constancia en redes sociales y seguimiento diario de la comunidad, pero no quiere saturar a perfiles internos con esa tarea."
+                            }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "¿Qué flexibilidad tengo si el Community Manager no logra captar nuestra voz corporativa?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Si el perfil no encaja con la voz de marca, puedes cancelar el servicio con preaviso o solicitar un reemplazo sin pleitos laborales ni indemnizaciones por despido."
+                            }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "¿De qué países de LATAM son los estrategas sociales?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Oberstaff evalúa talento formado en comunicación y marketing en Colombia, Argentina, México, Venezuela, Chile, Perú y Uruguay, zonas horarias compatibles con España."
+                            }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "¿Cómo garantizan que el candidato sabe gestionar redes?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Mediante prueba técnica de social media, evaluación psicométrica y entrevista con el equipo de selección de Oberstaff."
+                            }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "¿Cuál es el precio de contratar un Community Manager?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Contratar un Community Manager local en España puede costar entre 2.000€ y 2.800€ brutos al mes, sin contar Seguridad Social ni otros gastos. Con Oberstaff puedes acceder a talento de LATAM desde 820€ al mes, en zona horaria compatible con España y sin gestión administrativa directa."
+                            }
+                        }
+                    ]
+                },
+                {
+                    "@type": "BreadcrumbList",
+                    "@id": "https://www.oberstaff.com/perfiles/contratar-community-manager#breadcrumb",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Inicio",
+                            "item": "https://www.oberstaff.com/"
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": "Contratar Community Manager",
+                            "item": "https://www.oberstaff.com/perfiles/contratar-community-manager"
+                        }
+                    ]
+                }
+            ]
+        }
+    </script>
+
+    <div class="service-detail-container" id="inicio">
+        <LeadHeroSection
+            webhookUrl="https://hooks.zapier.com/hooks/catch/12433184/4b3izyg/"
+            backgroundImage="/hero-seo-pr.webp"
+            topLabel="Perfil: Experto SEO"
+            topLabelInsideH1={false}
+            topLabelTag="h1"
+            titleTag="p"
+            title="Contratar experto SEO: talento remoto para hacer crecer el tráfico orgánico de tu negocio en Puerto Rico"
+            cardTitle="Zona de captación inicial" 
+            cardSubtitle=""
+            buttonText="Ver perfiles SEO pre-evaluados →"
+            buttonIcon=""
+            buttonSubtext=""
+            footerLinkText=""
+            footerLinkHref=""
+            placeholderName="Nombre completo *"
+            placeholderEmail="Email corporativo *"
+            placeholderCompany="Nombre de la empresa / negocio *"
+            placeholderPhone="Teléfono (+1) *"
+            badges={[
+                { text: "Talento SEO dedicado a tu dominio.", icon: "✓" },
+                {
+                    text: "Servicios de SEO en Puerto Rico en horario AST.",
+                    icon: "✓",
+                },
+                {
+                    text: "Integración segura a tu Google Search Console.",
+                    icon: "✓",
+                },
+                { text: "Expertos en Semrush, Ahrefs y Screaming Frog.", icon: "✓" },
+            ]}
+            badgesClass="community-badges"
+        >
+            <Fragment slot="description">
+              Con <span style="color: #ffffff; font-weight: 700;">Oberstaff<span style="color: #ff62c4;">.</span></span> contratas un especialista en SEO remoto de Sudamérica para tu empresa en Puerto Rico: dedicación exclusiva, horario compatible y experiencia en SEO técnico, contenidos, analítica, autoridad y posicionamiento local.
+            </Fragment>
+        </LeadHeroSection>
+
+        <div class="fade-in-section">
+            <QueEsServicioSection
+                title="Servicios de SEO en Puerto Rico, ejecutados por un especialista dedicado"
+                highlightWord=""
+                description="Integra un experto en posicionamiento SEO de Sudamérica, listo para auditar tu arquitectura web, mejorar tu contenido, resolver problemas de indexación, optimizar tus landings comerciales y fortalecer la visibilidad orgánica de tu negocio en la Isla."
+                imageSrc="/que-es-seo-pr.webp"
+                imageAlt="Experto SEO remoto analizando tráfico orgánico"
+                badgeText=""
+                quoteText=""
+                checklistTitle="Ventajas de contratar expertos en posicionamiento web con <span style='font-weight: 800;'>Oberstaff</span><span style='color: #ff62c4;'>.</span>"
+                checklistIcon="✅"
+                checklistItems={[
+                    "Perfil SEO remoto evaluado en auditoría técnica, contenidos, analítica y crecimiento orgánico.",
+                    "Reacción inmediata ante los Core Updates de Google en tu misma jornada, sin desfases de horario.",
+                    "Tus datos en Search Console y GA4 protegidos: <span style='font-weight: 800;'>Oberstaff</span><span style='color: #ff62c4; font-weight: 800;'>.</span> firma los acuerdos de confidencialidad (NDA).",
+                    "Tarifa plana B2B: escalas tu captación de leads orgánicos sin los altos fees de las agencias.",
+                    "Flexibilidad: si la estrategia no mueve el tráfico Non-Brand, cancelas con 30 días de preaviso."
+                ]}
+                ctaText="👉 Solicitar propuesta de talento SEO"
+                ctaHref="#formulario-perfil"
+                diffIcon=""
+                diffTitle=""
+                diffDescription=""
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <ComparisonPerfiles
+                criterioLabel="Criterio"
+                title="Especialista SEO remoto dedicado vs. freelance o agencia especialista en SEO"
+                subtitle="Antes de elegir cómo cubrir tu estrategia de SEO en Puerto Rico, compara dedicación, costos, velocidad de implementación e integración con tu equipo." 
+                footerNote="Nota: la tarifa final depende del nivel del perfil, la especialidad SEO, la experiencia previa, las herramientas requeridas y el alcance de trabajo."
+                oberstaffLabel="SEO Oberstaff<span style='color: #ff62c4;'>.</span> <br> <span style='font-weight:400; color:#5A5A5A;'>(Sudamérica)</span>"
+                competitors={[
+                    "Especialista local <br> <span style='font-weight:400; color:#5A5A5A;'>(Puerto Rico)</span>",
+                    "Freelance SEO",
+                    "Agencia SEO",
+                ]}
+                rows={[
+                    {
+                        label: "Estructura mensual",
+                        oberstaffValue:
+                            "<span class='icon-check'>✓</span> <strong>Desde USD 950/mes</strong>",
+                        competitorValues: [
+                            "<span class='icon-cross'>✕</span> $2,500–$4,500/mes + empleo, beneficios y seguro",
+                            "<span class='icon-cross'>✕</span> $1,500–$3,000/mes o pago único por auditoría",
+                            "<span class='icon-cross'>✕</span> Fee variable y contratos fijos a largo plazo",
+                        ],
+                    },
+                    {
+                        label: "Foco en tu Crawl Budget",
+                        oberstaffValue:
+                            "<span class='icon-check'>✓</span> <strong>Dedicado solo a tu web, jornada completa</strong>",
+                        competitorValues: [
+                            "<span class='icon-check'>✓</span> Integrado a tu equipo directo",
+                            "<span class='icon-warning'>⚠</span> Multicliente: compites con otras cuentas",
+                            "<span class='icon-warning'>⚠</span> Compites por horas limitadas de atención",
+                        ],
+                    },
+                    {
+                        label: "Velocidad de ejecución",
+                        oberstaffValue:
+                            "<span class='icon-check'>✓</span> <strong>Muy alta</strong>",
+                        competitorValues: [
+                            "<span class='icon-check'>✓</span> Muy alta",
+                            "<span class='icon-warning'>⚠</span> Media, según su disponibilidad",
+                            "<span class='icon-warning'>⚠</span> Lenta, sujeta a procesos y tickets",
+                        ],
+                    },
+                    {
+                        label: "Sincronía de horario",
+                        oberstaffValue:
+                            "<span class='icon-check'>✓</span> <strong>100% compatible con Puerto Rico (EST/AST)</strong>",
+                        competitorValues: [
+                            "<span class='icon-check'>✓</span> Mismo horario local",
+                            "<span class='icon-warning'>⚠</span> Variable según su carga",
+                            "<span class='icon-warning'>⚠</span> Limitada al horario de la agencia",
+                        ],
+                    },
+                    {
+                        label: "Integración en herramientas",
+                        oberstaffValue:
+                            "<span class='icon-check'>✓</span> <strong>Completa: GSC, GA4, Semrush, etc.</strong>",
+                        competitorValues: [
+                            "<span class='icon-check'>✓</span> Alta integración",
+                            "<span class='icon-warning'>⚠</span> Media o acceso limitado",
+                            "<span class='icon-warning'>⚠</span> Parcial: suelen usar sus propios reportes",
+                        ],
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <ServicesSection
+                title="Qué evaluar antes de contratar un especialista SEO para tu negocio en Puerto Rico"
+                cardTitleTag="h3"
+                description="Antes de sumar un perfil SEO a tu operación, define si necesitas resolver problemas técnicos, mejorar contenidos, captar leads locales, optimizar un eCommerce o fortalecer la autoridad de tu dominio."
+                customClass="employer-use-cases-designer"
+                services={[ 
+                    {
+                        icon: "",
+                        title: "Especialista SEO dedicado vs. consultor SEO en Puerto Rico",
+                        description:
+                            "Un experto en SEO presencial en Puerto Rico o EE. UU. puede superar los $4,000 mensuales en costos totales de nómina. Los freelancers dan flexibilidad, pero no dedicación exclusiva a tu marca. <br><br> Un especialista remoto de Colombia, Argentina o Venezuela con <span class='brand-oberstaff'>Oberstaff<span class='brand-dot'>.</span></span> combina lo mejor: jornada completa, exclusividad en tu nicho y tarifas desde $950/mes, sin relaciones laborales directas ni riesgos de empleo.",
+                        linkText: "",
+                        href: "",
+                        cardClass: "card-av-1", 
+                    },
+                    {
+                        icon: "",
+                        title: "Más allá del 'semáforo verde': qué evaluar técnicamente antes de contratar un consultor SEO",
+                        description:
+                            "Antes de contratar, define tus metas de negocio: ¿más tráfico orgánico general, mejores rankings para keywords de alta conversión, una <strong>auditoria de pagina web</strong> profunda o un plan agresivo de contenidos? <br><br> Cuanto más claro sea el briefing, más rápido adaptará el profesional la estrategia a los cambios del algoritmo. En <span class='brand-oberstaff'>Oberstaff</span><span class='brand-dot'>.</span> estructuramos ese alcance en una llamada de 15 minutos.",
+                        linkText: "",
+                        href: "",
+                        cardClass: "card-av-2",
+                    },
+                    {
+                        icon: "",
+                        title: "La búsqueda cambia, pero la estrategia SEO sigue siendo necesaria",
+                        description:
+                            "Con AI Overviews, ChatGPT y Gemini, las empresas necesitan contenido más claro, estructurado y confiable. Un especialista SEO ordena datos, mejora EEAT, implementa Schema Markup y construye autoridad temática.",
+                        linkText: "",
+                        href: "",
+                        cardClass: "card-av-3",
+                    },
+                    {
+                        icon: "",
+                        title: "¿Dónde contratar un especialista en SEO confiable para Puerto Rico?",
+                        description:
+                            "Hay muchas alternativas, desde plataformas de freelancers hasta una agencia especialista en SEO. <span class='brand-oberstaff'>Oberstaff</span><span class='brand-dot'>.</span> aporta un modelo superior: talento dedicado en exclusiva, contrato estable y gestión administrativa cubierta. Más compromiso, integración natural y cero riesgo legal.",
+                        linkText: "",
+                        href: "",
+                        cardClass: "card-av-4",
+                    }
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <ServicesSection
+                title="¿Qué ejecuta un experto SEO dedicado para tu empresa en Puerto Rico?"
+                cardTitleTag="h3"
+                description="Nuestros especialistas SEO trabajan sobre los pilares que de verdad mueven la visibilidad orgánica: estado técnico, arquitectura de contenidos, autoridad, SEO local, analítica y conversión. El objetivo no es solo atraer visitas, sino captar tráfico cualificado."
+                customClass="funciones-section" 
+                services={[ 
+                    {
+                        icon: "⚙️",
+                        title: "Auditoría SEO y auditoría de página web",
+                        description:
+                            "Revisión de indexación, rastreo, Core Web Vitals, redirecciones, canonical, robots.txt, sitemap y arquitectura interna que limite tu crecimiento orgánico.",
+                        linkText: "", 
+                        href: "",
+                        customIconBg: "rgba(102, 99, 253, 0.08)",
+                        cardClass: "card-funcs",
+                    },
+                    {
+                        icon: "✍️",
+                        title: "Estrategia de contenidos y EEAT",
+                        description:
+                            "Keyword research, definición de clústeres temáticos, optimización de landings, mejora de contenidos, corrección de thin content y canibalizaciones.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "rgba(102, 99, 253, 0.08)", 
+                        cardClass: "card-funcs",
+                    },
+                    {
+                        icon: "📍",
+                        title: "SEO local Puerto Rico y dominio del map pack",
+                        description:
+                            "Optimización de Google Business Profile, datos NAP, reseñas y páginas geolocalizadas para San Juan, Bayamón, Carolina, Caguas, Ponce, Mayagüez y más.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "rgba(102, 99, 253, 0.08)", 
+                        cardClass: "card-funcs",
+                    },
+                    {
+                        icon: "🔗",
+                        title: "Link building y autoridad digital",
+                        description:
+                            "Auditoría de backlinks, análisis de autoridad, estrategia de enlaces entrantes, digital PR y limpieza de señales tóxicas que afecten tu reputación.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "rgba(102, 99, 253, 0.08)",
+                        cardClass: "card-funcs", 
+                    },
+                    {
+                        icon: "📈",
+                        title: "Analítica orgánica y reporting",
+                        description:
+                            "Configuración y seguimiento en Search Console, GA4, Looker Studio, Semrush o Ahrefs para medir rankings, tráfico, conversiones y oportunidades.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "rgba(102, 99, 253, 0.08)", 
+                        cardClass: "card-funcs", 
+                    },
+                    {
+                        icon: "🛒",
+                        title: "SEO para eCommerce y servicios profesionales",
+                        description:
+                            "Optimización de categorías, fichas de producto, páginas transaccionales, landings de servicios y flujos de captación orgánica en Puerto Rico.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "rgba(102, 99, 253, 0.08)",
+                        cardClass: "card-funcs",  
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <EorCta
+                title="¿Tu empresa en Puerto Rico necesita más visibilidad en los motores de búsqueda?"
+                titleTag="h2"
+                text="Cuéntanos si tu problema está en la parte técnica, el contenido, el SEO local, la falta de autoridad o la caída de tráfico. Te enviaremos una propuesta con perfiles SEO listos para integrarse y trabajar sobre tu dominio."
+                buttonText="👉 Solicitar perfiles SEO para Puerto Rico" 
+                buttonHref="#formulario-perfil" 
+            />
+        </div>
+
+        <div class="fade-in-section" id="pr-cm-process-wrapper">
+            <ProcessOberstaff
+                className="process-employer"
+                title="Cómo seleccionamos al especialista SEO adecuado que protegerá tu dominio"
+                description="Un error técnico puede borrar meses de crecimiento orgánico. Por eso en <span style='font-weight: 700;'>Oberstaff<span style='color: #ff62c4;'>.</span></span> filtramos perfiles con criterio real de ejecución: un consultor seo capaz de analizar datos, detectar problemas de rastreo, ordenar contenidos y convertir el seo pr en una fuente estable de captación."
+                items={[ 
+                    {
+                        label: "Objetivos", 
+                        badge: "",
+                        title: "Analizamos tus objetivos de posicionamiento",
+                        description:
+                            "Revisamos el estado de tu web, tus objetivos comerciales, el mercado, tus herramientas y el perfil que necesitas: SEO técnico, contenidos, local, eCommerce o 360. <br><br> <em>15 min · Sin compromiso</em>",
+                        icon: "01",
+                        badgeColor: "#6663FD",
+                        badgeBg: "rgba(102, 99, 253, 0.1)", 
+                    },
+                    {
+                        label: "Selección",
+                        badge: "",
+                        title: "Filtramos perfiles SEO de Sudamérica",
+                        description:
+                            "Seleccionamos entre 3 y 5 especialistas SEO evaluados según tu industria, nivel técnico requerido, experiencia previa y compatibilidad horaria con Puerto Rico.<br><br> <em>Perfiles pre-evaluados</em>",
+                        icon: "02",
+                        badgeColor: "#6aca8a",
+                        badgeBg: "rgba(102, 255, 153, 0.15)", 
+                    },
+                    {
+                        label: "Entrevista",
+                        badge: "",
+                        title: "Entrevistas y eliges tú",
+                        description:
+                            "Validas directamente cómo auditan una web, cómo priorizan oportunidades, cómo resuelven canibalizaciones y cómo plantean una estrategia orientada a negocio.<br><br> <em>Tú decides el perfil final</em>",
+                        icon: "03", 
+                        badgeColor: "#FF66CC",
+                        badgeBg: "rgba(255, 102, 204, 0.1)", 
+                    },
+                    {
+                        label: "Operación",
+                        badge: "",
+                        title: "Comienza a trabajar",
+                        description:
+                            "Facilitamos el onboarding para que se integre rápido a tus plataformas (GSC, GA4, Semrush), realice la auditoría inicial y entregue su primer plan de acción. <br><br> <em>Integración técnica en pocos días</em>",
+                        icon: "04",
+                        badgeColor: "#1B1B1B",
+                        badgeBg: "rgba(204, 255, 102, 0.3)",  
+                    },
+                ]}
+                ctaTitle="Crece de forma orgánica"
+                ctaDescription="Un equipo dedicado gestionará todo el proceso por ti."
+                ctaBtnText="Agendar llamada"
+                ctaBtnHref="#formulario-perfil"
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <CasosExitoSection
+                title="Empresas que ya confían en <span style='font-weight: 800; color: #1b1b1b;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span> para sumar talento remoto especializado"
+                subtitle="Organizaciones de distintos mercados utilizan <span style='font-weight: 800; color: #1b1b1b;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span> para incorporar talento remoto especializado, reducir fricción operativa y escalar sus equipos con perfiles dedicados."
+                columns={3}
+                testimonials={[
+                    {
+                        stars: 5,
+                        avatar: "/fernando.webp",
+                        imageAlt:
+                            "Fernando Calderón, cliente de Oberstaff en Madrid",
+                        text: "Buscaba talento remoto especializado y, tras intentarlo en local sin éxito, encontré a <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong> Me impresionó la claridad de su estructura legal. Por el servicio y la misma zona horaria, ya amplié el contrato para sumar más personal.",
+                        author: "Fernando Calderón",
+                        role: "CEO · BeautyPro",
+                        videoId: "24KxCAFGrDs",
+                    },
+                    {
+                        stars: 5,
+                        avatar: "/sha.webp",
+                        imageAlt:
+                            "Shadai Iborra, cliente de Oberstaff en Barcelona",
+                        text: "Con <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong> incorporé a dos personas a tiempo completo y me ahorré costes de reclutamiento, oficina y nómina local. Toda la gestión y los pagos quedan unificados en una sola factura mensual. La solución perfecta para nuestra contratación remota.",
+                        author: "Shadai Iborra",
+                        role: "CEO · @amediastory",
+                        videoId: "_CxlPfluS7M",
+                    },
+                    {
+                        stars: 5,
+                        avatar: "/Kate.webp",
+                        imageAlt: "Kate McCaferty, cliente de Oberstaff EOR",
+                        text: "Llevamos casi dos años con <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong> y la experiencia es excelente desde el primer día. Tienes el respaldo de un equipo dedicado que evalúa miles de perfiles por ti. El ahorro real y la optimización de costes superaron nuestras expectativas.",
+                        author: "Kate McCaferty",
+                        role: "CEO · KM Real Estate (EE. UU.)",
+                        videoId: "9RLgpEF-GVA",
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <RolesPerfil
+                title="Tipos de especialistas SEO que puedes contratar para tu empresa en Puerto Rico"
+                subtitle="Cada negocio necesita un perfil distinto. No es lo mismo optimizar una clínica local en San Juan, un eCommerce que vende en toda la isla o una empresa B2B que busca leads cualificados desde Google."
+                layout="modern"
+                footerText=""
+                footerLinkText=""
+                footerLinkHref="#"
+                roles={[
+                    {
+                        title: "Especialista en SEO técnico (Crawl & Index)",
+                        description: "",
+                        icon: "",
+                        iconColor: "#6663FD",
+                        borderColorClass: "border-purple",
+                        subtitle:
+                            "Ideal para webs con problemas de indexación, rendimiento, migraciones, arquitectura, errores de rastreo o caídas de tráfico.",
+                        techStack: [
+                            "Screaming Frog",
+                            "GSC",
+                            "Core Web Vitals",
+                            "Semrush",
+                        ],
+                    },
+                    {
+                        title: "Especialista en contenidos SEO y EEAT",
+                        description: "",
+                        icon: "",
+                        iconColor: "#6aca8a",
+                        borderColorClass: "border-green",
+                        subtitle:
+                            "Enfocado en keyword research, optimización de landings, arquitectura de información, EEAT, briefs de contenido y mejora de páginas existentes.",
+                        techStack: [
+                            "Ahrefs",
+                            "Semrush",
+                            "Surfer SEO",
+                            "WordPress",
+                            "Schema",
+                        ],
+                    },
+                    {
+                        title: "Especialista SEO local",
+                        description: "",
+                        icon: "",
+                        iconColor: "#FF9933",
+                        borderColorClass: "border-orange",
+                        subtitle:
+                            "Perfecto para empresas con presencia física o servicios por zona: clínicas, firmas legales, real estate, turismo, restaurantes o servicios locales.",
+                        techStack: [
+                            "Google Business Profile",
+                            "Reseñas",
+                            "NAP",
+                            "Landings locales",
+                        ],
+                    },
+                    {
+                        title: "Especialista en link building (Off-Page)",
+                        description: "",
+                        icon: "",
+                        iconColor: "#FF66CC",
+                        borderColorClass: "border-pink",
+                        subtitle:
+                            "Orientado a mejorar autoridad de dominio, conseguir backlinks relevantes, analizar anchors y detectar enlaces tóxicos que afecten tu reputación.",
+                        techStack: [
+                            "Ahrefs",
+                            "Moz",
+                            "Digital PR",
+                            "Outreach",
+                            "Disavow Tool",
+                        ],
+                    },
+                    {
+                        title: "Especialista SEO para eCommerce",
+                        description: "",
+                        icon: "",
+                        iconColor: "#3b76f6",
+                        borderColorClass: "border-blue",
+                        subtitle:
+                            "Recomendado para tiendas con categorías, productos, filtros, paginaciones, contenido duplicado o problemas de conversión orgánica.",
+                        techStack: [
+                            "Shopify",
+                            "WooCommerce",
+                            "Taxonomías",
+                            "CRO",
+                            "GA4",
+                        ],
+                    },
+                    {
+                        title: "Consultor SEO 360",
+                        description: "",
+                        icon: "",
+                        iconColor: "#9333ea",
+                        borderColorClass: "border-indigo",
+                        subtitle:
+                            "Perfil senior o semi-senior capaz de coordinar SEO técnico, contenidos, autoridad, analítica y priorización estratégica para negocios en crecimiento.",
+                        techStack: [
+                            "Semrush",
+                            "GA4",
+                            "Search Console",
+                            "Looker Studio",
+                        ],
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section" id="pr-cm-pricing-wrapper">
+            <PricingCardPerfil
+                sectionTitle="Precio de contratar un experto SEO remoto con <span style='font-weight: 800;'>Oberstaff<span style='font-weight: 800; color: #ff66cc;'>.</span></span>"
+                sectionSubtitle="Tarifas claras y fijas para empresas en Puerto Rico que quieren mejorar su visibilidad orgánica sin depender solo de la pauta, de una agencia especialista en SEO tradicional o de recursos internos limitados."
+                cardTitle="Experto SEO"
+                titleTag="p"
+                cardSubtitle="Fee mensual · perfil dedicado · gestión simple · sin costos ocultos"
+                priceLabel="Desde"
+                priceAmount="$950"
+                pricePeriod="USD / mes"
+                features={[
+                    "SEO técnico: auditorías, indexación, Core Web Vitals y velocidad.",
+                    "SEO de contenidos: keyword research, arquitectura y optimización on-page.",
+                    "SEO local: Google Business Profile, reseñas y búsquedas geolocalizadas.",
+                    "Autoridad: backlinks, digital PR y auditoría de enlaces.",
+                    "Analítica: GA4, Search Console, Semrush y reporting mensual."
+                ]}
+                ctaText="Solicitar propuesta"
+                ctaHref="#formulario-perfil"
+                disclaimer="La suscripción final se ajusta según la complejidad técnica y el nivel de experiencia del analista seleccionado."
+            />
+        </div>
+
+        <div class="fade-in-section" id="pr-cm-benefits-wrapper">
+            <BeneficiosPerfilDisenador
+                showInfoCard={false}
+                title="Escala tu tráfico orgánico con un especialista SEO dedicado a tu empresa en Puerto Rico"
+                subtitle="Oberstaff. combina la dedicación de un perfil in-house con la flexibilidad de un modelo remoto. Tu empresa mantiene el control de la estrategia, las herramientas y los datos, mientras el especialista ejecuta sobre objetivos claros de crecimiento orgánico."
+                image=""
+                imageAlt=""
+                infoTitle=""
+                features={[
+                    {
+                        icon: "🎯",
+                        title: "Ejecución continua",
+                        description:
+                            "Tu experto SEO revisa el estado de tus URLs, detecta caídas de tráfico, encuentra oportunidades de contenido y prioriza mejoras técnicas de forma recurrente.",
+                    },
+                    { 
+                        icon: "🛡️",
+                        title: "Menor dependencia del costo por clic",
+                        description:
+                            "Construye un dominio con autoridad que capta prospectos y clientes a un costo marginal casi nulo, sostenible a lo largo del tiempo.",
+                    },
+                    { 
+                        icon: "🔗",
+                        title: "Conocimiento orgánico dentro de tu empresa",
+                        description:
+                            "El keyword research, los reportes, la arquitectura de contenidos y las decisiones de SEO PR quedan centralizados en tu operación.",
+                    },
+                ]}
+                infoItems={[ 
+                    {
+                        title: "",
+                        description: "",
+                    },
+                    {
+                        title: "",
+                        description: "",
+                    },
+                    {
+                        title: "",
+                        description: "",
+                    },
+                ]}
+            >
+                <div class="meta-custom-notice">
+                   Recibes una sola factura mensual corporativa. Sin trámites de empleo, retenciones patronales ni seguros. Escalas en visibilidad, no en burocracia.
+                </div>
+            </BeneficiosPerfilDisenador>
+        </div>
+
+        <FAQSection
+            title="Resolviendo tus dudas antes de escalar tu estrategia en motores de búsqueda"
+            subtitle=""
+            ctaText=""
+            ctaButtonText="Contactar con un asesor →"
+            ctaButtonHref="#formulario-perfil"
+            useCardLayout={true} 
+            faqs={faqs}
+        />
+
+        <div class="fade-in-section">
+            <ConversionPerfilDisenador
+                webhookUrl="https://hooks.zapier.com/hooks/catch/12433184/4b3s4e0/"
+                title="¿Listo para contratar un especialista y mejorar el SEO en Puerto Rico de tu empresa?"
+                subtitle="Completa el formulario en menos de un minuto y cuéntanos qué necesitas mejorar: tráfico orgánico, SEO técnico, contenidos, SEO local, autoridad o analítica. Te enviaremos una propuesta con perfiles SEO pre-evaluados para tu negocio."
+                buttonText="Solicitar propuesta gratuita →"
+                noteText=""
+                isCommunityPR={false}
+            />
+        </div>
+    </div>
+</DashboardLayoutPerfilesPr>
+
+<style>
+    .service-detail-container {
+    }
+
+    :global(.community-badges) {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 10px !important;
+    }
+
+    :global(.employer-use-cases-grid) {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    @media (max-width: 900px) {
+        :global(.employer-use-cases-grid) {
+            grid-template-columns: 1fr !important;
+        }
+    }
+
+    /* Override cards in ServicesSection on PR page to have static border and no hover effects */
+    :global(section.employer-use-cases .service-card),
+    :global(section.employer-use-cases .service-card.card-purple),
+    :global(section.employer-use-cases .service-card.card-green),
+    :global(section.employer-use-cases .service-card.card-pink),
+    :global(section.employer-use-cases .service-card.card-lime) {
+        border: 1px solid rgba(0, 0, 0, 0.05) !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+        transform: none !important;
+        transition: none !important;
+    }
+
+    :global(section.employer-use-cases .service-card:hover),
+    :global(section.employer-use-cases .service-card.card-purple:hover),
+    :global(section.employer-use-cases .service-card.card-green:hover),
+    :global(section.employer-use-cases .service-card.card-pink:hover),
+    :global(section.employer-use-cases .service-card.card-lime:hover),
+    :global(
+        section.employer-use-cases
+            .employer-use-cases-grid
+            .service-card:nth-child(1):hover
+    ),
+    :global(
+        section.employer-use-cases
+            .employer-use-cases-grid
+            .service-card:nth-child(2):hover
+    ),
+    :global(
+        section.employer-use-cases
+            .employer-use-cases-grid
+            .service-card:nth-child(3):hover
+    ),
+    :global(
+        section.employer-use-cases
+            .employer-use-cases-grid
+            .service-card:nth-child(4):hover
+    ) {
+        border-color: rgba(0, 0, 0, 0.05) !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+        transform: none !important;
+    }
+
+    :global(section.employer-use-cases .service-card .card-gradient-bg) {
+        display: none !important;
+    }
+
+    /* Split layout with image for ServicesSection in Puerto Rico */
+    @media (min-width: 901px) {
+        :global(section.employer-use-cases) {
+            padding: 80px 60px !important;
+        }
+
+        :global(section.employer-use-cases .has-header-image) {
+            display: grid !important;
+            grid-template-columns: 1.15fr 0.85fr !important;
+            gap: 20px 60px !important;
+            align-items: center !important;
+            text-align: left !important;
+            margin-bottom: 50px !important;
+        }
+
+        :global(section.employer-use-cases .services-header-text h2) {
+            font-size: 36px !important;
+        }
+
+        :global(
+            section.employer-use-cases
+                .services-header-text
+                .section-description
+        ) {
+            font-size: 16px !important;
+        }
+    }
+
+    :global(section.employer-use-cases .services-header-text) {
+        text-align: left !important;
+    }
+
+    :global(section.employer-use-cases .services-header-text h2) {
+        text-align: left !important;
+        margin: 0 0 20px 0 !important;
+        max-width: none !important;
+        line-height: 1.3 !important;
+    }
+
+    :global(
+        section.employer-use-cases .services-header-text .section-description
+    ) {
+        text-align: left !important;
+        margin: 0 !important;
+        max-width: none !important;
+        line-height: 1.7 !important;
+    }
+
+    :global(section.employer-use-cases .services-header-image) {
+        display: block !important;
+        width: 100% !important;
+        max-width: 480px !important;
+        height: auto !important;
+        border-radius: 20px !important;
+        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12) !important;
+        margin: 0 auto !important;
+    }
+
+    @media (max-width: 900px) {
+        :global(section.employer-use-cases) {
+            padding: 40px 20px !important;
+        }
+
+        :global(section.employer-use-cases .has-header-image) {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 25px !important;
+            text-align: center !important;
+            margin-bottom: 40px !important;
+        }
+
+        :global(section.employer-use-cases .services-header-text h2) {
+            font-size: 26px !important;
+            text-align: center !important;
+            margin: 0 auto 20px auto !important;
+        }
+
+        :global(
+            section.employer-use-cases
+                .services-header-text
+                .section-description
+        ) {
+            font-size: 15px !important;
+            text-align: center !important;
+            margin: 0 auto !important;
+        }
+    }
+
+    :global(.employer-use-cases-grid .icon-box) {
+        background-color: transparent !important;
+        border: none !important;
+        padding: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        margin-bottom: 25px !important;
+        justify-content: flex-start !important;
+    }
+
+    :global(.employer-use-cases-grid .icon-emoji-servicios-home) {
+        font-size: 35px !important;
+        padding: 0 !important;
+    }
+
+    @media (max-width: 768px) {
+        :global(.employer-use-cases-grid .icon-emoji-servicios-home) {
+            font-size: 30px !important;
+            padding: 0 !important;
+        }
+    }
+
+    /* --- Estilos exclusivos para la sección de servicios del diseñador en PR --- */
+    :global(section.employer-use-cases-designer) {
+        background-color: #fafafc !important;
+        padding: 80px 60px !important;
+    }
+    @media (max-width: 900px) {
+        :global(section.employer-use-cases-designer) {
+            padding: 40px 20px !important;
+        }
+    }
+
+    :global(section.employer-use-cases-designer .services-header) {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        margin-bottom: 50px !important;
+    }
+
+    :global(section.employer-use-cases-designer .services-header-text) {
+        text-align: center !important;
+        max-width: 800px !important;
+        margin: 0 auto !important;
+    }
+
+    :global(section.employer-use-cases-designer .services-header-text h2) {
+        text-align: center !important;
+        margin: 0 auto 20px auto !important;
+        font-size: 36px !important;
+        font-family: "Montserrat", sans-serif !important;
+        font-weight: 700 !important;
+        color: #1b1b1b !important;
+        line-height: 1.3 !important;
+    }
+    @media (max-width: 900px) {
+        :global(section.employer-use-cases-designer .services-header-text h2) {
+            font-size: 26px !important;
+        }
+    }
+
+    :global(
+        section.employer-use-cases-designer
+            .services-header-text
+            .section-description
+    ) {
+        text-align: center !important;
+        margin: 0 auto !important;
+        font-size: 16px !important;
+        font-family: "Poppins", sans-serif !important;
+        color: #5a5a5a !important;
+        line-height: 1.7 !important;
+    }
+    @media (max-width: 900px) {
+        :global(
+            section.employer-use-cases-designer
+                .services-header-text
+                .section-description
+        ) {
+            font-size: 15px !important;
+        }
+    }
+
+    /* Grid layout to have 2 cards side-by-side, 3rd card centered below them */
+    :global(.employer-use-cases-designer-grid) {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 30px !important;
+        max-width: 1000px !important;
+        margin: 0 auto !important;
+    }
+
+    :global(.employer-use-cases-designer-grid .service-card) {
+        border: 1px solid rgba(0, 0, 0, 0.05) !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+        transition:
+            transform 0.3s ease,
+            border-color 0.3s ease,
+            box-shadow 0.3s ease !important;
+    }
+    :global(.employer-use-cases-designer-grid .service-card:hover) {
+        transform: translateY(-8px) !important;
+        border-color: rgba(0, 0, 0, 0.05) !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+    }
+    :global(.employer-use-cases-designer-grid .service-card .card-gradient-bg) {
+        display: none !important;
+    }
+
+    :global(.employer-use-cases-designer-grid .service-card:nth-child(5)) {
+        grid-column: 1 / span 2 !important;
+        justify-self: center !important;
+        max-width: 800px !important;
+        width: 100% !important;
+    }
+
+    :global(
+        .employer-use-cases-designer-grid
+            .service-card:nth-child(5)
+            .service-card-title
+    ),
+    :global(.employer-use-cases-designer-grid .service-card:nth-child(5) p) {
+        text-align: center !important;
+    }
+
+    :global(.employer-use-cases-designer-grid .icon-box) {
+        display: none !important;
+    }
+
+    @media (max-width: 900px) {
+        :global(.employer-use-cases-designer-grid) {
+            grid-template-columns: 1fr !important;
+            gap: 20px !important;
+        }
+        :global(.employer-use-cases-designer-grid .service-card:nth-child(5)) {
+            grid-column: auto !important;
+            max-width: none !important;
+            width: 100% !important;
+        }
+    }
+
+    @media (max-width: 768px) {
+        :global(.employer-use-cases-designer-grid .icon-emoji-servicios-home) {
+            font-size: 30px !important;
+        }
+    }
+
+    /* --- Estilos exclusivos para Funciones Section (Community Manager Funciones) --- */
+    :global(section.funciones-section) {
+        background-color: #ffffff !important;
+        border-top: 1px solid #e5e7eb !important;
+        border-bottom: 1px solid #e5e7eb !important;
+        padding: 80px 60px !important;
+    }
+
+    :global(section.funciones-section .services-container) {
+        max-width: 1100px !important;
+        margin: 0 auto !important;
+    }
+
+    :global(section.funciones-section .services-header) {
+        text-align: center !important;
+        margin-bottom: 50px !important;
+    }
+
+    :global(section.funciones-section .services-header h2) {
+        font-size: 36px !important;
+        line-height: 1.3 !important;
+        text-align: center !important;
+        max-width: 800px !important;
+        margin: 0 auto 20px auto !important;
+        font-family: "Montserrat", sans-serif !important;
+        font-weight: 700 !important;
+        color: #1b1b1b !important;
+    }
+
+    :global(section.funciones-section .section-description) {
+        font-size: 16px !important;
+        line-height: 1.7 !important;
+        text-align: center !important;
+        max-width: 800px !important;
+        margin: 0 auto !important;
+        font-family: "Poppins", sans-serif !important;
+        color: #5a5a5a !important;
+    }
+
+    /* Grid layout: 2 columns on desktop */
+    :global(.funciones-section-grid) {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 30px !important;
+    }
+
+    /* Horizontal card layout: icon left, title/desc right */
+    :global(section.funciones-section .service-card) {
+        display: grid !important;
+        grid-template-columns: auto 1fr !important;
+        grid-template-rows: auto auto !important;
+        column-gap: 20px !important;
+        row-gap: 8px !important;
+        align-items: start !important;
+        padding: 30px !important;
+        border-radius: 20px !important;
+        background: #ffffff !important;
+        border: 1px solid rgba(0, 0, 0, 0.05) !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+        transition:
+            transform 0.3s ease,
+            border-color 0.3s ease,
+            box-shadow 0.3s ease !important;
+    }
+
+    :global(section.funciones-section .service-card:hover) {
+        box-shadow: 0 10px 30px rgba(194, 194, 202, 0.12) !important;
+        transform: translateY(-8px) !important;
+    }
+
+    :global(section.funciones-section .service-card .card-gradient-bg) {
+        display: none !important;
+    }
+
+    :global(section.funciones-section .service-card .icon-box) {
+        grid-column: 1 !important;
+        grid-row: 1 / span 2 !important;
+        margin-bottom: 0 !important;
+        width: 54px !important;
+        height: 54px !important;
+        border-radius: 12px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        border: none !important;
+    }
+
+    :global(
+        section.funciones-section .service-card .icon-emoji-servicios-home
+    ) {
+        font-size: 24px !important;
+    }
+
+    :global(section.funciones-section .service-card .service-card-title) {
+        grid-column: 2 !important;
+        grid-row: 1 !important;
+        margin-bottom: 0 !important;
+        margin-top: 0 !important;
+        font-family: "Montserrat", sans-serif !important;
+        font-size: 18px !important;
+        font-weight: 700 !important;
+        color: #1b1b1b !important;
+        line-height: 1.3 !important;
+    }
+
+    :global(
+        section.funciones-section .service-card p:not(.service-card-title)
+    ) {
+        grid-column: 2 !important;
+        grid-row: 2 !important;
+        min-height: 0 !important;
+        font-family: "Poppins", sans-serif !important;
+        font-size: 14px !important;
+        color: #5a5a5a !important;
+        line-height: 1.6 !important;
+    }
+
+    /* Responsivo para Funciones Section */
+    @media (max-width: 900px) {
+        :global(section.funciones-section) {
+            padding: 50px 20px !important;
+        }
+
+        :global(section.funciones-section .services-header h2) {
+            font-size: 26px !important;
+        }
+
+        :global(section.funciones-section .section-description) {
+            font-size: 15px !important;
+        }
+
+        :global(.funciones-section-grid) {
+            grid-template-columns: 1fr !important;
+            gap: 20px !important;
+        }
+    }
+
+    @media (max-width: 600px) {
+        :global(section.funciones-section .service-card) {
+            padding: 20px !important;
+            column-gap: 15px !important;
+        }
+
+        :global(section.funciones-section .service-card .icon-box) {
+            width: 48px !important;
+            height: 48px !important;
+        }
+
+        :global(
+            section.funciones-section .service-card .icon-emoji-servicios-home
+        ) {
+            font-size: 20px !important;
+        }
+
+        :global(section.funciones-section .service-card .service-card-title) {
+            font-size: 16px !important;
+        }
+    }
+
+    /* Estilos específicos para QueEsServicioSection en esta página */
+    :global(.que-es-servicio-section .quote-blue-border) {
+        border-left: 4px solid #ff66cc !important;
+        color: #ff66cc !important;
+        font-size: 16px !important;
+        margin-top: 0 !important; /* Para alinear con el inicio de la imagen */
+        font-weight: 600 !important;
+    }
+
+    :global(.que-es-servicio-section .que-es-main-content) {
+        align-items: flex-start !important;
+    }
+
+    /* Fondo exclusivo para la sección de áreas del diseñador */
+    :global(section.employer-use-cases) {
+        background-color: #fafafc !important;
+    }
+
+    /* Fondo exclusivo para la sección de casos de éxito en esta página */
+    :global(.casos-exito) {
+        background-color: #fafafc !important;
+
+        padding-bottom: 80px !important;
+    }
+
+    :global(.casos-exito .casos-header p) {
+        max-width: 800px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    /* Estilos específicos para la sección FAQ en esta página */
+    :global(.faq-disenador-custom .faq-columns) {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    :global(.faq-disenador-custom .faq-left-column) {
+        position: static !important;
+        width: 100% !important;
+        max-width: 800px !important;
+        margin-bottom: 40px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        text-align: left !important;
+    }
+
+    :global(.faq-disenador-custom .faq-main-title) {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        text-align: left !important;
+    }
+
+    :global(.faq-disenador-custom .faq-right-column) {
+        display: none !important;
+    }
+
+    :global(.faq-disenador-custom .faq-cta-card) {
+        margin: 0 !important;
+        padding: 0 !important;
+        max-width: 600px !important;
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        text-align: left !important;
+    }
+
+    :global(.faq-disenador-custom .faq-cta-card p) {
+        font-family: "Poppins", sans-serif !important;
+        font-size: 18px !important;
+        font-weight: 400 !important;
+        color: #5a5a5a !important;
+        line-height: 1.6 !important;
+        margin-bottom: 30px !important;
+    }
+
+    :global(.faq-disenador-custom .faq-cta-button) {
+        background-color: #6663fd !important;
+        border: 2px solid #6663fd !important;
+        color: #ffffff !important;
+        width: auto !important;
+        min-width: 220px !important;
+        padding: 14px 32px !important;
+        font-size: 15px !important;
+        display: inline-block !important;
+    }
+
+    :global(.faq-disenador-custom .faq-cta-button:hover) {
+        background-color: transparent !important;
+        border: 2px solid #6663fd !important;
+        color: #6663fd !important;
+    }
+
+    :global(.faq-d-section .faq-cta-card .faq-d-btn) {
+        background-color: #ff66cc !important;
+        border-color: #ff66cc !important;
+        color: #ffffff !important;
+    }
+
+    :global(.faq-d-section .faq-cta-card .faq-d-btn:hover) {
+        background-color: transparent !important;
+        border-color: #ff66cc !important;
+        color: #ff66cc !important;
+    }
+
+    .meta-custom-notice {
+        font-family: "Poppins", sans-serif;
+        margin-top: 40px;
+        padding: 24px 30px;
+        background-color: #f7f8fc;
+        border-left: 4px solid #ff66cc;
+        color: #ff66cc;
+        font-family: "Montserrat", sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 1.4;
+    }
+
+    .service-detail-container
+        :global(.guia-cards-grid .guia-card:nth-child(3)) {
+        grid-column: 1 / -1;
+    }
+
+    :global(.lead-hero-section) {
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+    }
+
+    :global(.lead-hero-section .top-label) {
+        color: #ff62c4 !important;
+        font-weight: 700 !important;
+        letter-spacing: 1px !important;
+        margin-bottom: 12px !important;
+        font-size: 14px !important;
+        display: inline-block !important;
+    }
+
+    :global(.lead-hero-section .title-as-h1) {
+        font-size: 30px !important;
+        line-height: 1.25 !important;
+        font-weight: 800 !important;
+        margin-bottom: 24px !important;
+        letter-spacing: -0.02em !important;
+    }
+
+    @media (min-width: 901px) {
+        :global(.lead-hero-section .title-as-h1) {
+            font-size: 44px !important;
+        }
+    }
+
+    :global(.lead-hero-section .badge-pill) {
+        background: transparent !important;
+        border: none !important;
+        padding: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+        color: #ffffff !important;
+        font-size: 15px !important;
+        font-weight: 500 !important;
+    }
+
+    :global(.lead-hero-section .badge-emoji) {
+        color: #66ff99 !important;
+        font-weight: bold !important;
+        font-size: 18px !important;
+    }
+
+    :global(.lead-hero-section .badges-grid) {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 12px !important;
+        margin-top: 25px !important;
+    }
+
+    /* Form button styling */
+    :global(.lead-hero-section .btn-submit) {
+        background-color: #ff62c4 !important;
+        border-color: #ff62c4 !important;
+        color: #ffffff !important;
+        font-weight: 700 !important;
+        font-size: 15px !important;
+        padding: 16px 32px !important;
+        border-radius: 50px !important;
+        transition: all 0.3s ease !important;
+    }
+
+    :global(.lead-hero-section .btn-submit:hover) {
+        background-color: transparent !important;
+        border-color: #ff62c4 !important;
+        color: #ff62c4 !important;
+        box-shadow: 0 4px 15px rgba(255, 98, 196, 0.4) !important;
+    }
+
+    /* Form link styling */
+    :global(.lead-hero-section .form-link) {
+        color: #6663fd !important;
+        font-weight: 600 !important;
+        text-decoration: none !important;
+    }
+
+    :global(.lead-hero-section .form-link:hover) {
+        text-decoration: none !important;
+    }
+
+    /* Estilos para el formulario final en esta página */
+    :global(.conv-d-section .conv-d-btn) {
+        background: #ff66cc !important;
+        border-color: #ff66cc !important;
+        color: #ffffff !important;
+    }
+
+    :global(.conv-d-section .conv-d-btn:hover) {
+        background: transparent !important;
+        color: #ff66cc !important;
+        border-color: #ff66cc !important;
+    }
+
+    :global(.conv-d-section .conv-d-row) {
+        grid-template-columns: 1fr !important;
+    }
+
+    :global(.conv-d-section .iti) {
+        width: 100% !important;
+    }
+
+    /* Estilos personalizados para QueEsServicioSection de PR */
+    :global(.que-es-servicio-section .image-card) {
+        filter: none !important;
+    }
+
+    :global(.que-es-servicio-section .floating-badge-bottom) {
+        display: none !important;
+    }
+
+    :global(.que-es-servicio-section .ques-check-icon) {
+        font-size: 18px !important;
+        margin-right: 4px !important;
+        background: transparent !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    :global(.que-es-servicio-section .ques-checklist-item) {
+        color: #1b1b1b !important;
+    }
+
+    :global(.que-es-servicio-section .ques-cta-btn) {
+        background-color: #ff66cc !important;
+        color: #ffffff !important;
+        border: 1px solid #ff66cc !important;
+        font-weight: 700 !important;
+        padding: 14px 28px !important;
+        border-radius: 50px !important;
+        transition: all 0.3s ease !important;
+    }
+
+    :global(.que-es-servicio-section .ques-cta-btn:hover) {
+        background-color: transparent !important;
+        border-color: #ff66cc !important;
+        color: #ff66cc !important;
+    }
+
+    /* Grid layout overrides: cabecera centrada, checklist a la izquierda e imagen a la derecha */
+    @media (min-width: 901px) {
+        :global(.que-es-servicio-section .que-es-main-content) {
+            display: grid !important;
+            grid-template-columns: 1.1fr 0.9fr !important;
+            gap: 80px !important;
+            align-items: flex-start !important;
+        }
+
+        :global(.que-es-servicio-section .que-es-info-list) {
+            grid-column: 1 !important;
+            grid-row: 1 !important;
+        }
+
+        :global(.que-es-servicio-section .que-es-image-wrapper) {
+            grid-column: 2 !important;
+            grid-row: 1 !important;
+        }
+    }
+
+    /* Mobile stacking: Checklist -> Image */
+    @media (max-width: 900px) {
+        :global(.que-es-servicio-section .que-es-main-content) {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 30px !important;
+        }
+        :global(.que-es-servicio-section .que-es-info-list) {
+            order: 1 !important;
+        }
+        :global(.que-es-servicio-section .que-es-image-wrapper) {
+            order: 2 !important;
+        }
+        :global(.que-es-servicio-section .ques-cta-btn) {
+            display: block !important;
+            margin: 20px auto 0 !important;
+            width: fit-content !important;
+            text-align: center !important;
+        }
+    }
+
+    /* Ocultar badge y hacer el botón verde en ProcessOberstaff solo en esta página */
+    :global(section.process-employer .process-badge) {
+        display: none !important;
+    }
+
+    :global(section.process-employer .process-cta-btn) {
+        background-color: #ff66cc !important;
+        border: 2px solid #ff66cc !important;
+        color: #ffffff !important;
+        padding: 14px 32px !important;
+        border-radius: 50px !important;
+        font-weight: 700 !important;
+        font-size: 15px !important;
+        display: inline-block !important;
+        font-family: "Poppins", sans-serif !important;
+        text-decoration: none !important;
+        transition: all 0.3s ease !important;
+    }
+
+    :global(section.process-employer .process-cta-btn:hover) {
+        background-color: transparent !important;
+        color: #ff66cc !important;
+        border-color: #ff66cc !important;
+    }
+</style>
+
+<!-- Overrides globales para ProcessOberstaff en esta página únicamente -->
+<style is:global>
+    /* ID selector = máxima especificidad, siempre gana sobre clases */
+    #pr-cm-process-wrapper .process-badge {
+        display: none !important;
+        visibility: hidden !important;
+        height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    #pr-cm-process-wrapper .process-cta-btn {
+        background-color: #ff66cc !important;
+        border: 2px solid #ff66cc !important;
+        color: #ffffff !important;
+        padding: 14px 32px !important;
+        border-radius: 50px !important;
+        font-weight: 700 !important;
+        font-size: 15px !important;
+        display: inline-block !important;
+        font-family: "Poppins", sans-serif !important;
+        text-decoration: none !important;
+        transition: all 0.3s ease !important;
+    }
+
+    #pr-cm-process-wrapper .process-cta-btn:hover {
+        background-color: transparent !important;
+        color: #ff66cc !important;
+        border-color: #ff66cc !important;
+    }
+
+    /* Párrafos en color #1b1b1b y notas en itálica más pequeñas */
+    #pr-cm-process-wrapper .process-pane p {
+        color: #1b1b1b !important;
+    }
+
+    #pr-cm-process-wrapper .process-pane p em {
+        font-size: 13px !important;
+        font-style: italic !important;
+        color: #1b1b1b !important;
+        display: inline-block !important;
+        margin-top: 4px !important;
+    }
+
+    /* Fondo blanco para la sección de proceso únicamente en esta página */
+    #pr-cm-process-wrapper .process-section {
+        background-color: #ffffff !important;
+    }
+
+    /* Centrar el contenido de la tarjeta CTA de proceso */
+    #pr-cm-process-wrapper .process-cta {
+        text-align: center !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    /* Borde superior para la sección de roles únicamente en esta página */
+    .perfiles-disponibles {
+        border-top: 1px solid #f0f0f0 !important;
+    }
+
+    /* Rediseño de las tarjetas del perfil en modo modern */
+    .perfiles-disponibles .perfil-card.layout-modern {
+        border: 1px solid rgba(0, 0, 0, 0.05) !important;
+        border-top: 1px solid rgba(0, 0, 0, 0.05) !important; /* Quita el borde de color superior */
+        padding: 35px 30px !important;
+        border-radius: 20px !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02) !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        background: #ffffff !important;
+    }
+
+    /* Stacking vertical del icono y título */
+    .perfiles-disponibles .card-title-row {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 15px !important;
+        margin-bottom: 15px !important;
+    }
+
+    .perfiles-disponibles .profile-icon-modern {
+        font-size: 28px !important;
+        line-height: 1 !important;
+        margin-bottom: 0 !important;
+        display: block !important;
+    }
+
+    .perfiles-disponibles .layout-modern h3 {
+        font-family: "Montserrat", sans-serif !important;
+        font-size: 20px !important;
+        font-weight: 700 !important;
+        color: #1b1b1b !important;
+        line-height: 1.3 !important;
+        margin: 0 !important;
+    }
+
+    /* Estilo del texto descriptor en gris oscuro */
+    .perfiles-disponibles .card-subtitle-modern {
+        font-family: "Poppins", sans-serif !important;
+        font-size: 14px !important;
+        color: #5a5a5a !important;
+        font-weight: 400 !important;
+        line-height: 1.6 !important;
+        margin: 0 0 25px 0 !important;
+    }
+
+    /* Divisor gris por encima de los tags */
+    .perfiles-disponibles .tech-stack-modern {
+        border-top: 1px solid #f0f0f0 !important;
+        padding-top: 20px !important;
+        margin-top: auto !important;
+        margin-bottom: 0 !important;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 10px !important;
+    }
+
+    /* Personalización de tags de los roles (solo en esta página) */
+    .perfiles-disponibles .tag-modern {
+        background: rgba(102, 99, 253, 0.08) !important;
+        color: #6663fd !important;
+        font-family: "Poppins", sans-serif !important;
+        font-size: 12px !important;
+        font-weight: 600 !important;
+        padding: 6px 16px !important;
+        border-radius: 50px !important;
+    }
+
+    /* Hover simplificado: el borde cambia a azul */
+    .perfiles-disponibles .perfil-card.layout-modern:hover {
+        transform: none !important;
+        border-color: #6663fd !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02) !important;
+    }
+
+    /* Estilo personalizado de la tarjeta de precios para Puerto Rico */
+    #pr-cm-pricing-wrapper .pricing-card-new {
+        position: relative !important;
+        border: 1.5px solid rgba(102, 99, 253, 0.2) !important;
+        overflow: visible !important; /* Para permitir que la chapa sobresalga */
+    }
+
+    /* Badge / Chapa de TALENTO DEDICADO */
+    #pr-cm-pricing-wrapper .pricing-card-new::before {
+        content: "TALENTO DEDICADO" !important;
+        position: absolute !important;
+        top: -18px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        background: linear-gradient(
+            135deg,
+            #ff66cc 0%,
+            #6663fd 100%
+        ) !important;
+        color: #ffffff !important;
+        padding: 8px 24px !important;
+        border-radius: 50px !important;
+        font-family: "Poppins", sans-serif !important;
+        font-size: 13px !important;
+        font-weight: 800 !important;
+        letter-spacing: 0.1em !important;
+        z-index: 10 !important;
+        box-shadow: 0 4px 15px rgba(102, 99, 253, 0.2) !important;
+        text-transform: uppercase !important;
+        white-space: nowrap !important;
+    }
+
+    /* Hover de la tarjeta */
+    #pr-cm-pricing-wrapper .pricing-card-new:hover {
+        transform: translateY(-8px) !important;
+        border-color: #6663fd !important;
+        box-shadow: 0 15px 50px rgba(102, 99, 253, 0.15) !important;
+    }
+
+    /* Alineación del bloque del precio (columna izquierda) */
+    #pr-cm-pricing-wrapper .pricing-price-block {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 4px !important;
+        margin: 12px 0 !important;
+    }
+
+    #pr-cm-pricing-wrapper .pricing-label {
+        font-size: 15px !important;
+        color: #5a5a5a !important;
+        text-transform: none !important;
+        font-weight: 500 !important;
+        letter-spacing: normal !important;
+    }
+
+    #pr-cm-pricing-wrapper .pricing-amount {
+        font-size: 50px !important;
+        font-weight: 900 !important;
+        color: #1b1b1b !important;
+        line-height: 1 !important;
+    }
+
+    @media (max-width: 480px) {
+        #pr-cm-pricing-wrapper .pricing-amount {
+            font-size: 46px !important;
+        }
+    }
+
+    @media (min-width: 901px) {
+        #pr-cm-pricing-wrapper .pricing-amount {
+            font-size: 72px !important;
+        }
+    }
+
+    #pr-cm-pricing-wrapper .pricing-period {
+        font-size: 15px !important;
+        color: #5a5a5a !important;
+        padding-bottom: 0 !important;
+        align-self: flex-start !important;
+    }
+
+    /* Botón CTA Rosa */
+    #pr-cm-pricing-wrapper .pricing-cta-btn {
+        background: #ff66cc !important;
+        color: #ffffff !important;
+        border: 2px solid #ff66cc !important;
+        font-weight: 700 !important;
+        padding: 15px 24px !important;
+        border-radius: 50px !important;
+        transition: all 0.3s ease !important;
+    }
+
+    #pr-cm-pricing-wrapper .pricing-cta-btn:hover {
+        background: transparent !important;
+        color: #ff66cc !important;
+        border-color: #ff66cc !important;
+    }
+
+    /* Responsivo para móviles */
+    @media (max-width: 600px) {
+        #pr-cm-pricing-wrapper .pricing-card-new::before {
+            font-size: 11px !important;
+            padding: 6px 18px !important;
+            top: -15px !important;
+        }
+        #pr-cm-pricing-wrapper .pricing-cta-btn {
+            padding: 12px 20px !important;
+            font-size: 13px !important;
+        }
+        :global(.faq-cta-card .faq-d-btn) {
+            padding: 10px 20px !important;
+            font-size: 13px !important;
+        }
+    }
+
+    /* Checklist y checks en color verde */
+    #pr-cm-pricing-wrapper .pricing-check {
+        background: rgba(102, 255, 153, 0.2) !important;
+        color: #1f9e4b !important;
+    }
+
+    /* Personalización de la sección de beneficios (Sudamérica) */
+    #pr-cm-benefits-wrapper .bp-container {
+        grid-template-columns: 1fr !important;
+        max-width: 1100px !important;
+        gap: 0 !important;
+    }
+
+    /* Ocultar la columna derecha (imagen) */
+    #pr-cm-benefits-wrapper .bp-right {
+        display: none !important;
+    }
+
+    /* Centrar cabecera */
+    #pr-cm-benefits-wrapper .bp-title {
+        text-align: center !important;
+        max-width: 900px !important;
+        margin: 0 auto 20px auto !important;
+        line-height: 1.35 !important;
+    }
+
+    #pr-cm-benefits-wrapper .bp-subtitle {
+        text-align: center !important;
+        max-width: 850px !important;
+        margin: 0 auto 48px auto !important;
+        font-size: 16px !important;
+    }
+
+    /* Distribución de las 3 características en cuadrícula de 3 columnas */
+    #pr-cm-benefits-wrapper .bp-features {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 30px !important;
+    }
+
+    /* Convertir cada característica en una tarjeta */
+    #pr-cm-benefits-wrapper .bp-feature {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        background: #ffffff !important;
+        border: 1px solid rgba(0, 0, 0, 0.05) !important;
+        border-radius: 20px !important;
+        padding: 40px 30px !important;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.02) !important;
+        height: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Rediseñar el icono de la tarjeta */
+    #pr-cm-benefits-wrapper .bp-feature-icon {
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        font-size: 38px !important;
+        margin-bottom: 24px !important;
+        width: auto !important;
+        height: auto !important;
+    }
+
+    /* Título y descripción dentro de la tarjeta */
+    #pr-cm-benefits-wrapper .bp-feature-title {
+        font-size: 18px !important;
+        font-weight: 700 !important;
+        color: #1b1b1b !important;
+        margin: 0 0 12px 0 !important;
+    }
+
+    #pr-cm-benefits-wrapper .bp-feature-desc {
+        font-size: 14px !important;
+        color: #5a5a5a !important;
+        line-height: 1.6 !important;
+        margin: 0 !important;
+    }
+
+    /* Centrar y estilizar la nota al pie */
+    #pr-cm-benefits-wrapper .meta-custom-notice {
+        text-align: center !important;
+        margin: 50px auto 0 auto !important;
+        width: 100% !important;
+        max-width: 900px !important;
+        background: transparent !important;
+        border: none !important;
+        padding: 0 !important;
+        font-size: 15px !important;
+        color: #1b1b1b !important;
+        font-weight: 500 !important;
+        line-height: 1.5 !important;
+    }
+
+    /* Transición para la elevación de las tarjetas de beneficios */
+    #pr-cm-benefits-wrapper .bp-feature {
+        transition:
+            transform 0.3s ease,
+            border-color 0.3s ease,
+            box-shadow 0.3s ease !important;
+    }
+
+    /* Primer card: hover con borde rosa y elevación */
+    #pr-cm-benefits-wrapper .bp-feature:nth-child(1):hover {
+        transform: translateY(-8px) !important;
+        border-color: #ff66cc !important;
+        box-shadow: 0 15px 35px rgba(255, 102, 204, 0.12) !important;
+    }
+
+    /* Segundo card: hover con borde azul y elevación */
+    #pr-cm-benefits-wrapper .bp-feature:nth-child(2):hover {
+        transform: translateY(-8px) !important;
+        border-color: #6663fd !important;
+        box-shadow: 0 15px 35px rgba(102, 99, 253, 0.12) !important;
+    }
+
+    /* Tercer card: hover con borde verde y elevación */
+    #pr-cm-benefits-wrapper .bp-feature:nth-child(3):hover {
+        transform: translateY(-8px) !important;
+        border-color: #66ff99 !important;
+        box-shadow: 0 15px 35px rgba(102, 255, 153, 0.12) !important;
+    }
+
+    /* Adaptación responsive */
+    @media (max-width: 900px) {
+        #pr-cm-benefits-wrapper .bp-features {
+            grid-template-columns: 1fr !important;
+            gap: 20px !important;
+        }
+        #pr-cm-benefits-wrapper .bp-feature {
+            padding: 35px 25px !important;
+        }
+        #pr-cm-benefits-wrapper .bp-title {
+            font-size: 26px !important;
+        }
+        #pr-cm-benefits-wrapper .bp-subtitle {
+            font-size: 15px !important;
+        }
+    }
+    /* Borde inferior para la sección de beneficios únicamente en esta página */
+    #pr-cm-benefits-wrapper .bp-section {
+        border-bottom: 1px solid #f0f0f0 !important;
+    }
+
+    /* Especificidad alta (3 clases) para ganar sobre service-card.css (2 clases) */
+    .employer-use-cases-designer-grid .service-card.card-green:hover,
+    .employer-use-cases-designer-grid .service-card.card-pink:hover,
+    .employer-use-cases-designer-grid .service-card.card-lime:hover {
+        border-color: rgba(0, 0, 0, 0.05) !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+    }
+
+    /* Colores diferentes en hover para cada una de las 5 cards de asistente virtual */
+    .employer-use-cases-designer-grid .service-card.card-av-1:hover {
+        border-color: #FF66CC !important;
+      ;
+    }
+    .employer-use-cases-designer-grid .service-card.card-av-2:hover {
+        border-color: #6663FD !important;
+       
+    }
+    .employer-use-cases-designer-grid .service-card.card-av-3:hover {
+        border-color: #66FF99 !important;
+     
+    }
+    .employer-use-cases-designer-grid .service-card.card-av-4:hover {
+        border-color: #FF9933 !important;
+   
+    }
+    .employer-use-cases-designer-grid .service-card.card-av-5:hover {
+        border-color: #3b76f6 !important;
+       
+    }
+</style>
