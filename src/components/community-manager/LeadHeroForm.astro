@@ -34,6 +34,11 @@ const {
 } = Astro.props;
 
 const CardTitleTag = cardTitleTag as any;
+
+const isPrPage = Astro.url.pathname.includes('/pr');
+const privacyPolicyUrl = isPrPage 
+  ? "/pr/politica-de-privacidad-y-cookies-de-oberstaff" 
+  : "/politica-de-privacidad-y-cookies-de-oberstaff";
 ---
 
 <!-- intl-tel-input library -->
@@ -97,7 +102,7 @@ const CardTitleTag = cardTitleTag as any;
                     datos. Responde STOP para cancelar la suscripción. Responde
                     Help para obtener ayuda.
                     <a
-                        href="/politica-de-privacidad-y-cookies-de-oberstaff"
+                        href={privacyPolicyUrl}
                         target="_blank"
                         class="consent-link"
                         style="color: #6663FD; text-decoration: underline;"

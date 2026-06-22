@@ -46,6 +46,11 @@ const {
     },
     customClass = ""
 } = Astro.props;
+
+const isPrPage = Astro.url.pathname.includes('/pr');
+const privacyPolicyUrl = isPrPage 
+  ? "/pr/politica-de-privacidad-y-cookies-de-oberstaff" 
+  : "/politica-de-privacidad-y-cookies-de-oberstaff";
 ---
 
 <!-- intl-tel-input library -->
@@ -115,7 +120,7 @@ const {
                     "Mensajes relacionados con atención al cliente" de Oberstaff.
                     La frecuencia de los mensajes puede variar. Pueden aplicarse tarifas estándar de mensajes y datos.
                     Responde STOP para cancelar la suscripción. Responde Help para obtener ayuda.
-                    <a href="/politica-de-privacidad-y-cookies-de-oberstaff" target="_blank" class="consent-link">Política de privacidad y uso de cookies.</a>
+                    <a href={privacyPolicyUrl} target="_blank" class="consent-link">Política de privacidad y uso de cookies.</a>
                     <span class="required-star">*</span>
                 </span>
             </label>

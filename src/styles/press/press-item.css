@@ -40,6 +40,25 @@
     max-height: 90px; /* Larger logo for Cámara de Comercio */
 }
 
+/* Reducir tamaño de logos patrocinadores únicamente en la página de inicio de PR */
+.press-mentions.is-pr-home .camara-comercio .press-logo {
+    max-height: 60px;
+}
+
+.press-mentions.is-pr-home .one-planet .press-logo {
+    max-height: 50px;
+}
+
+@media (max-width: 768px) {
+    .press-mentions.is-pr-home .camara-comercio .press-logo {
+        max-height: 60px;
+    }
+    
+    .press-mentions.is-pr-home .one-planet .press-logo {
+        max-height: 45px;
+    }
+}
+
 /* Trust badge below logos */
 .press-trust-badge {
  

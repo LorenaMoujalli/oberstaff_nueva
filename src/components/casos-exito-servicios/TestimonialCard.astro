@@ -12,9 +12,11 @@ interface Props {
 }
 
 const { stars, text, author, role, avatar, videoId, imageAlt } = Astro.props;
+
+const isPrPage = Astro.url.pathname.includes('/pr/perfiles/') || Astro.url.pathname.includes('/pr/servicios/');
 ---
 
-<div class="testimonial-card">
+<div class={`testimonial-card ${isPrPage ? 'is-pr-page' : ''}`}>
 
     <!-- Header: avatar + estrellas + nombre + cargo -->
     <div class="testimonial-header">

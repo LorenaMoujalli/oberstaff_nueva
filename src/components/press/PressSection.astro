@@ -51,9 +51,11 @@ const {
     ],
     trustBadgeText = "Solución segura para <strong>Contratar talentos en el extranjero</strong> con soporte integral"
 } = Astro.props;
+
+const isPrHome = Astro.url.pathname.includes('/pr') && !Astro.url.pathname.includes('/perfiles/') && !Astro.url.pathname.includes('/servicios/');
 ---
 
-<section class="press-mentions">
+<section class={`press-mentions ${isPrHome ? 'is-pr-home' : ''}`}>
     <div class="press-container">
         <PressHeader title={title} />
 

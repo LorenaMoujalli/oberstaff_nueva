@@ -114,3 +114,15 @@
     text-align: left;
 }
 
+/* Reducir tamaño de fuente del nombre únicamente en páginas de PR */
+.testimonial-card.is-pr-page .testimonial-author {
+    font-size: 18px;
+}
+
+@media (max-width: 768px) {
+    .testimonial-card.is-pr-page .testimonial-author {
+        font-size: 15px;
+    }
+}
+
+
