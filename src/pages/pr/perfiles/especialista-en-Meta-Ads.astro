@@ -1,0 +1,2253 @@
+---
+import DashboardLayoutPerfilesPr from "../../../layouts/DashboardLayoutPerfilesPr.astro";
+import LeadHeroSection from "../../../components/community-manager/LeadHeroSection.astro";
+import ComparisonPerfiles from "../../../components/comparison-perfiles/ComparisonPerfiles.astro";
+import PricingCardPerfil from "../../../components/pricing-perfil/PricingCardPerfil.astro";
+import BeneficiosPerfilDisenador from "../../../components/beneficios-perfil/BeneficiosPerfilDisenador.astro";
+//import PressSection from "../../../components/press/PressSection.astro";
+import ConversionPerfilDisenador from "../../../components/conversion-perfil/ConversionPerfilDisenador.astro";
+import RolesPerfil from "../../../components/roles-del-perfil/RolesPerfil.astro";
+import QueEsServicioSection from "../../../components/QueEsServicio/QueEsServicioSection.astro";
+import ServicesSection from "../../../components/services-oberstaff/ServicesSection.astro";
+//import EorStepsSection from "../../../components/eor-steps-servicios/EorStepsSection.astro";
+import EorCta from "../../../components/eor-cta-servicios/EorCta.astro";
+import CasosExitoSection from "../../../components/casos-exito-servicios/CasosExitoSection.astro";
+import FAQSection from "../../../components/faq-servicios/FAQSection-community.astro";
+//import GuiaContratacion from "../../../components/guia-contratacion-perfiles/GuiaContratacion.astro";
+import ProcessOberstaff from "../../../components/process/ProcessOberstaff.astro";
+
+const ogImage = "Experto en Meta Ads.webp";
+
+const faqs = [
+    {
+        question:
+            "¿Puede trabajar en campañas para Puerto Rico y Estados Unidos?",
+        answers: [
+            "Sí. Si vendes en Puerto Rico y también atiendes audiencias en Estados Unidos, filtramos perfiles con experiencia en campañas bilingües, segmentación regional y mensajes adaptados por mercado.",
+        ],
+    },
+    {
+        question: "¿A quién le pago la inversión publicitaria?",
+        answers: [
+            "La inversión en anuncios se paga directo a Meta desde la cuenta publicitaria de tu empresa. A <span style='font-weight: 700; color: #1b1b1b;'>Oberstaff<span style='color: #ff66cc;'>.</span></span> le pagas el fee mensual del especialista y la gestión del modelo de contratación remota.",
+        ],
+    },
+    {
+        question: "¿Qué accesos necesita el especialista en Facebook Ads?",
+        answers: [
+            "Habitualmente permisos sobre Business Manager, cuenta publicitaria, Pixel, API de Conversiones, catálogos y, si aplica, GTM, GA4, ecommerce, CRM o landing pages. Siempre con permisos controlados, no con credenciales personales.",
+        ],
+    },
+    {
+        question: "¿Puede trabajar con mi equipo creativo o de ventas?",
+        answers: [
+            "Sí, y es recomendable. Meta Ads funciona mejor cuando el especialista recibe feedback de ventas, objeciones reales, piezas creativas nuevas y datos sobre qué lead termina comprando o agendando.",
+        ],
+    },
+    {
+        question: "¿Qué pasa si mi cuenta ya tiene campañas activas?",
+        answers: [
+            "El especialista parte del histórico. Primero audita estructura, aprendizaje, calidad de señal, anuncios, audiencias, presupuesto y resultados. Luego define qué mantener, ordenar, pausar y escalar sin destruir aprendizajes útiles.",
+        ],
+    },
+    {
+        question:
+            "¿Sirve si vendo por WhatsApp, llamada o CRM y no por ecommerce?",
+        answers: [
+            "Sí. Muchas empresas en Puerto Rico cierran por conversación, llamada o cita. En ese caso, el especialista necesita que el equipo devuelva información de calidad: estado del lead, oportunidad, cierre, ticket o feedback cualitativo.",
+        ],
+    },
+    {
+        question: "¿Puede adaptar los anuncios al tono de Puerto Rico?",
+        answers: [
+            "Sí. Localizar no es llenar los anuncios de modismos, sino usar un lenguaje natural para la audiencia, revisar objeciones locales, ajustar promesas y probar mensajes en español, inglés o bilingüe cuando el negocio lo requiera.",
+        ],
+    },
+    {
+        question: "¿Qué pasa si el especialista no encaja con mi negocio?",
+        answers: [
+            "Puedes solicitar revisión, ajuste de perfil o reemplazo según las condiciones del servicio. La ventaja del modelo es que reduces fricción frente a una contratación directa mal alineada.",
+        ],
+    },
+    {
+        question:
+            "¿Qué ocurre si mi cuenta publicitaria sufre un bloqueo o restricción?",
+        answers: [
+            "El especialista aplica buenas prácticas, revisa las políticas comerciales de Meta, documenta cambios y apoya el proceso de apelación si ocurre una restricción. Aun así, ninguna gestión garantiza que una plataforma externa nunca limite una cuenta.",
+        ],
+    },
+];
+---
+
+<DashboardLayoutPerfilesPr
+    ogImage={ogImage}
+    title="Meta Ads: Experto en Meta Ads | Escala tus conversiones"
+    description="Incorpora un experto en Meta Ads. Especialistas de LATAM en Business Manager, CAPI y escalado de ROAS con dedicación exclusiva. Maximiza tu inversión."
+    footerTitle="ROLES RELACIONADOS"
+    footerLinks={[
+        {
+            text: "🔍 Especialista en Google Ads para Puerto Rico",
+            href: "/pr/perfiles/Especialista-en-Google-Ads",
+        },
+        {
+            text: "🎨 Diseñador gráfico remoto",
+            href: "/pr/perfiles/contratar-diseñador-grafico",
+        },
+        {
+            text: "📹 Editor de video para Reels, Stories y UGC Ads",
+            href: "/pr/perfiles/contratar-editor-de-video",
+        },
+    ]}
+>
+    <link
+        rel="canonical"
+        href="https://oberstaff.com/pr/perfiles/especialista-en-Meta-Ads"
+        slot="head"
+    />
+    <script slot="head" type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "WebPage",
+                    "@id": "https://oberstaff.com/pr/perfiles/especialista-en-Meta-Ads#webpage",
+                    "url": "https://oberstaff.com/pr/perfiles/especialista-en-Meta-Ads",
+                    "name": "Contratar especialista en Meta Ads remoto para empresas en Puerto Rico | Oberstaff",
+                    "description": "La forma más inteligente de contratar un especialista en Meta Ads en Puerto Rico: talento de LATAM, jornada completa, zona horaria compatible (AST) y facturación directa en USD.",
+                    "inLanguage": "es-PR",
+                    "isPartOf": {
+                        "@id": "https://oberstaff.com/#website"
+                    },
+                    "publisher": {
+                        "@id": "https://oberstaff.com/#organization"
+                    },
+                    "about": {
+                        "@id": "https://oberstaff.com/pr/perfiles/especialista-en-Meta-Ads#service"
+                    },
+                    "mainEntity": {
+                        "@id": "https://oberstaff.com/pr/perfiles/especialista-en-Meta-Ads#service"
+                    },
+                    "breadcrumb": {
+                        "@id": "https://oberstaff.com/pr/perfiles/especialista-en-Meta-Ads#breadcrumb"
+                    }
+                },
+                {
+                    "@type": "Service",
+                    "@id": "https://oberstaff.com/pr/perfiles/especialista-en-Meta-Ads#service",
+                    "name": "Contratar Especialista en Meta Ads Remoto en LATAM para empresas en Puerto Rico",
+                    "alternateName": [
+                        "Contratar especialista en Meta Ads",
+                        "Especialista en Meta Ads remoto",
+                        "Experto en Facebook Ads remoto",
+                        "Media Buyer Meta Ads remoto",
+                        "Especialista en Instagram Ads"
+                    ],
+                    "serviceType": "Contratación de especialista en Meta Ads remoto",
+                    "category": "Servicios de marketing digital, publicidad digital y Meta Ads",
+                    "url": "https://oberstaff.com/pr/perfiles/especialista-en-Meta-Ads",
+                    "provider": {
+                        "@id": "https://oberstaff.com/#organization"
+                    },
+                    "description": "Servicio para empresas en Puerto Rico que necesitan contratar un Especialista en Meta Ads remoto de LATAM con dedicación exclusiva, dominio de Meta Business Manager, Eventos, Pixel, Conversiones API (CAPI), catálogos de productos y optimización continua de campañas.",
+                    "slogan": "Optimiza y escala tus campañas en Facebook e Instagram con un especialista dedicado en tu misma zona horaria.",
+                    "audience": {
+                        "@type": "BusinessAudience",
+                        "audienceType": "Empresas en Puerto Rico que necesitan contratar especialista en Meta Ads remoto en LATAM",
+                        "geographicArea": {
+                            "@type": "Country",
+                            "name": "Puerto Rico"
+                        }
+                    },
+                    "serviceAudience": {
+                        "@type": "BusinessAudience",
+                        "audienceType": "Pymes, startups, y empresas en Puerto Rico que buscan un especialista en Meta Ads remoto dedicado",
+                        "geographicArea": {
+                            "@type": "Country",
+                            "name": "Puerto Rico"
+                        }
+                    },
+                    "areaServed": [
+                        {
+                            "@type": "Country",
+                            "name": "Puerto Rico"
+                        },
+                        {
+                            "@type": "Country",
+                            "name": "United States"
+                        }
+                    ],
+                    "offers": {
+                        "@type": "Offer",
+                        "@id": "https://oberstaff.com/pr/perfiles/especialista-en-Meta-Ads#offer",
+                        "name": "Especialista en Meta Ads Remoto Dedicado",
+                        "url": "https://oberstaff.com/pr/perfiles/especialista-en-Meta-Ads#contacto",
+                        "price": "950",
+                        "priceCurrency": "USD",
+                        "availability": "https://schema.org/InStock",
+                        "eligibleCustomerType": "http://purl.org/goodrelations/v1#Business",
+                        "eligibleRegion": {
+                            "@type": "Country",
+                            "name": "Puerto Rico"
+                        },
+                        "description": "Contratación de un especialista en Meta Ads remoto desde $950 USD al mes, dirigido a empresas de Puerto Rico que requieren gestión y optimización de campañas de Facebook/Instagram Ads con dedicación exclusiva, horario compatible con Puerto Rico y facturación directa.",
+                        "priceSpecification": {
+                            "@type": "UnitPriceSpecification",
+                            "price": "950",
+                            "priceCurrency": "USD",
+                            "unitText": "profesional por mes"
+                        }
+                    },
+                    "hasOfferCatalog": {
+                        "@type": "OfferCatalog",
+                        "@id": "https://oberstaff.com/pr/perfiles/especialista-en-Meta-Ads#included-services",
+                        "name": "Servicios incluidos de Meta Ads remoto",
+                        "itemListElement": [
+                            {
+                                "@type": "Offer",
+                                "name": "Planificación y Lanzamiento de Campañas",
+                                "itemOffered": {
+                                    "@type": "Service",
+                                    "name": "Configuración y estructuración de campañas",
+                                    "description": "Creación y optimización de campañas en Facebook e Instagram enfocadas a conversión, leads, ventas, mensajes o tráfico."
+                                }
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Setup de Píxel y Conversiones API",
+                                "itemOffered": {
+                                    "@type": "Service",
+                                    "name": "Seguimiento técnico y atribución",
+                                    "description": "Configuración del Píxel de Meta, API de Conversiones (CAPI) y deduplicación de eventos para una medición precisa de conversiones."
+                                }
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Control de Audiencias y Segmentación",
+                                "itemOffered": {
+                                    "@type": "Service",
+                                    "name": "Estrategia de audiencias personalizadas y remarketing",
+                                    "description": "Estructura de audiencias personalizadas, similares (lookalikes), exclusión de compradores y campañas de remarketing dinámico."
+                                }
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Monitoreo, Testeo A/B y Reporting",
+                                "itemOffered": {
+                                    "@type": "Service",
+                                    "name": "Auditorías de frecuencia y fatiga creativa",
+                                    "description": "Pruebas constantes de copys y creatividades, control de saturación de audiencias y reportes mensuales con foco en CPL, CPA y ROAS."
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "@type": "FAQPage",
+                    "@id": "https://oberstaff.com/pr/perfiles/especialista-en-Meta-Ads#faq",
+                    "mainEntity": [
+                        {
+                            "@type": "Question",
+                            "name": "¿Puede trabajar en campañas para Puerto Rico y Estados Unidos?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Sí. Si vendes en Puerto Rico y también atiendes audiencias en Estados Unidos, filtramos perfiles con experiencia en campañas bilingües, segmentación regional y mensajes adaptados por mercado."
+                            }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "¿A quién le pago la inversión publicitaria?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "La inversión en anuncios se paga directo a Meta desde la cuenta publicitaria de tu empresa. A Oberstaff. le pagas el fee mensual del especialista y la gestión del modelo de contratación remota."
+                            }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "¿Qué accesos necesita el especialista en Facebook Ads?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Habitualmente permisos sobre Business Manager, cuenta publicitaria, Pixel, API de Conversiones, catálogos y, si aplica, GTM, GA4, ecommerce, CRM o landing pages. Siempre con permisos controlados, no con credenciales personales."
+                            }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "¿Puede trabajar con mi equipo creativo o de ventas?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Sí, y es recomendable. Meta Ads funciona mejor cuando el especialista recibe feedback de ventas, objeciones reales, piezas creativas nuevas y datos sobre qué lead termina comprando o agendando."
+                            }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "¿Qué pasa si mi cuenta ya tiene campañas activas?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "El especialista parte del histórico. Primero audita estructura, aprendizaje, calidad de señal, anuncios, audiencias, presupuesto y resultados. Luego define qué mantener, ordenar, pausar y escalar sin destruir aprendizajes útiles."
+                            }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "¿Sirve si vendo por WhatsApp, llamada o CRM y no por ecommerce?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Sí. Muchas empresas en Puerto Rico cierran por conversación, llamada o cita. En ese caso, el especialista necesita que el equipo devuelva información de calidad: estado del lead, oportunidad, cierre, ticket o feedback cualitativo."
+                            }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "¿Puede adaptar los anuncios al tono de Puerto Rico?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Sí. Localizar no es llenar los anuncios de modismos, sino usar un lenguaje natural para la audiencia, revisar objeciones locales, ajustar promesas y probar mensajes en español, inglés o bilingüe cuando el negocio lo requiera."
+                            }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "¿Qué pasa si el especialista no encaja con mi negocio?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Puedes solicitar revisión, ajuste de perfil o reemplazo según las condiciones del servicio. La ventaja del modelo es que reduces fricción frente a una contratación directa mal alineada."
+                            }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "¿Qué ocurre si mi cuenta publicitaria sufre un bloqueo o restricción?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "El especialista aplica buenas prácticas, revisa las políticas comerciales de Meta, documenta cambios y apoya el proceso de apelación si ocurre una restricción. Aun así, ninguna gestión garantiza que una plataforma externa nunca limite una cuenta."
+                            }
+                        }
+                    ]
+                },
+                {
+                    "@type": "BreadcrumbList",
+                    "@id": "https://oberstaff.com/pr/perfiles/especialista-en-Meta-Ads#breadcrumb",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Inicio",
+                            "item": "https://oberstaff.com/"
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": "Especialista en Meta Ads",
+                            "item": "https://oberstaff.com/pr/perfiles/especialista-en-Meta-Ads"
+                        }
+                    ]
+                }
+            ]
+        }
+    </script>
+
+    <div class="service-detail-container" id="inicio">
+        <LeadHeroSection
+            webhookUrl="https://hooks.zapier.com/hooks/catch/12433184/422fcy0/"
+            backgroundImage="/hero-meta-pr.webp"
+            topLabel="Perfil: Experto en Meta Ads"
+            topLabelInsideH1={false}
+            topLabelTag="p"
+            titleTag="h1"
+            title="Experto en Meta Ads para Puerto Rico: escala Facebook e Instagram con talento remoto de Sudamérica"
+            cardTitle="Zona de captación inicial"
+            cardSubtitle=""
+            buttonText="Ver perfiles preevaluados y solicitar propuesta →"
+            buttonIcon=""
+            buttonSubtext=""
+            footerLinkText="Ver como funciona el modelo EOR →"
+            footerLinkHref="/pr/servicios/employer-of-record"
+            placeholderName="Nombre completo *"
+            placeholderEmail="Email corporativo *"
+            placeholderCompany="Nombre de la empresa / negocio *"
+            placeholderPhone="Teléfono (+1) *"
+            badges={[
+                {
+                    text: "Campañas Facebook Ads e Instagram Ads orientadas a leads, ecommerce, reservas, citas y ventas.",
+                    icon: "✓",
+                },
+                {
+                    text: "Tracking con Pixel de Meta, API de Conversiones, GA4 y GTM.",
+                    icon: "✓",
+                },
+                {
+                    text: "Testing creativo continuo para reducir fatiga, mejorar CTR y controlar CPA.",
+                    icon: "✓",
+                },
+                {
+                    text: "Reporting alineado a CPL, CAC, ROAS, MER y ventas reales, no solo métricas de plataforma.",
+                    icon: "✓",
+                },
+            ]}
+            badgesClass="community-badges"
+        >
+            <Fragment slot="description">
+                Convierte Facebook e Instagram en canales reales de captación,
+                no solo en fuentes de clics. Con Oberstaff. incorporas un
+                experto en Meta Ads dedicado a tu cuenta, alineado con tu
+                operación comercial y preparado para generar leads, ventas y
+                retorno medible.
+            </Fragment>
+        </LeadHeroSection>
+
+        <div class="fade-in-section">
+            <QueEsServicioSection
+                title="Optimiza tu inversión con un experto en Facebook Ads dedicado a tu crecimiento"
+                highlightWord=""
+                description="La publicidad en Meta cambió: ya no basta con activar campañas, segmentar intereses y esperar resultados. Hoy necesitas una estructura capaz de leer datos, sostener testing creativo, entender la calidad del lead y conectar la pauta con lo que pasa después: WhatsApp, llamada, formulario, CRM, carrito o venta. <br><br> En <strong class='brand-oberstaff'>Oberstaff<span class='brand-dot'>.</span></strong> conectamos a empresas puertorriqueñas con expertos en Meta Ads que trabajan en remoto, como una extensión real de tu equipo de marketing. Tú mantienes el control de tu Business Manager, tus audiencias, tu Pixel, tus catálogos y tu inversión publicitaria. "
+                imageSrc="/que-es-meta-pr.webp"
+                imageAlt="Contratar especialista en Google Ads"
+                badgeText=""
+                quoteText=""
+                checklistTitle="Checklist de ventajas operativas:"
+                checklistIcon="✅"
+                checklistItems={[
+                    "<strong>Horario compatible con Puerto Rico:</strong> coordinación diaria sin equipos con desfase horario complejo.",
+                    "<strong>Lectura local y regional:</strong> campañas pensadas para la Isla, con mensajes en español, inglés o enfoque bilingüe según la oferta.",
+                    "<strong>Optimización con criterio comercial:</strong> no solo CPM, CTR y CPL; también calidad del lead, tasa de contacto, costo por oportunidad y retorno.",
+                    "<strong>Integración con tu equipo:</strong> el especialista trabaja con ventas, diseño, ecommerce, CRM, WhatsApp, analítica y dirección comercial.",
+                    "<strong>Accesos y activos protegidos:</strong> acuerdos de confidencialidad, permisos controlados y operación dentro de tus propias cuentas.",
+                    "<strong>Flexibilidad:</strong> si el perfil no encaja con tu etapa, industria u objetivos, solicitas revisión o reemplazo según el servicio.",
+                ]}
+                ctaText=""
+                ctaHref=""
+                diffIcon=""
+                diffTitle=""
+                diffDescription=""
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <ServicesSection
+                title="Expertos en Facebook Ads: qué incluye su trabajo en tu cuenta publicitaria"
+                cardTitleTag="h3"
+                description="Al contratar un especialista en Facebook Ads e Instagram Ads con <strong class='brand-oberstaff'>Oberstaff<span class='brand-dot'>.</span></strong>, incorporas un perfil enfocado en ordenar la cuenta, mejorar la medición, acelerar aprendizajes creativos y alinear la inversión con objetivos de negocio."
+                customClass="funciones-section"
+                services={[
+                    {
+                        icon: "🔍",
+                        title: "Auditoría inicial y lectura del funnel",
+                        description:
+                            "Revisión del histórico de campañas, estructura de conjuntos, objetivos, presupuesto, frecuencia, creatividades, calidad de eventos, atribución, landings, formularios, WhatsApp y CRM, para detectar las fugas entre anuncio y cierre comercial.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "rgba(102, 99, 253, 0.08)",
+                        cardClass: "card-funcs",
+                    },
+                    {
+                        icon: "🏗️",
+                        title: "Arquitectura de campañas y audiencias",
+                        description:
+                            "Reordenamiento de campañas según objetivo real: leads, mensajes, ventas, reservas, citas, tráfico, catálogo o remarketing. Definición de audiencias amplias, personalizadas y similares, con control del solapamiento y la presión publicitaria.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "rgba(102, 99, 253, 0.08)",
+                        cardClass: "card-funcs",
+                    },
+                    {
+                        icon: "🧪",
+                        title: "Gestión creativa y testeo A/B de anuncios",
+                        description:
+                            "Definición de hooks, ángulos de venta, copies, formatos nativos y pruebas multivariable. Coordina testing de imagen, carrusel, video corto, Reels Ads, Stories y UGC para hallar combinaciones con mejor CTR, menor CPA y mayor calidad de conversión.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "rgba(102, 99, 253, 0.08)",
+                        cardClass: "card-funcs",
+                    },
+                    {
+                        icon: "🎯",
+                        title: "Tracking, calidad de señal y atribución",
+                        description:
+                            "Implementación o revisión del Pixel de Meta, API de Conversiones, eventos personalizados, deduplicación, GTM, GA4 y tableros de seguimiento. No se trata solo de medir clics, sino de entender qué campañas generan oportunidades y ventas reales.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "rgba(102, 99, 253, 0.08)",
+                        cardClass: "card-funcs",
+                    },
+                    {
+                        icon: "⚙️",
+                        title: "Optimización diaria de presupuesto y aprendizaje",
+                        description:
+                            "Seguimiento de CPM, CTR, CPC, CPL, CPA, ROAS, frecuencia, fatiga creativa, saturación de audiencia y señales de aprendizaje. El especialista ajusta presupuesto con disciplina, sin cambios impulsivos que rompan el algoritmo.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "rgba(102, 99, 253, 0.08)",
+                        cardClass: "card-funcs",
+                    },
+                    {
+                        icon: "📊",
+                        title: "Reporting ejecutivo orientado a negocio",
+                        description:
+                            "Reportes claros para dirección y marketing: qué se invirtió, qué generó oportunidades, qué aprendimos, qué pausar, qué escalar y qué necesita ventas o creatividad para mejorar el retorno.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "rgba(102, 99, 253, 0.08)",
+                        cardClass: "card-funcs",
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section" id="pr-cm-process-wrapper">
+            <ProcessOberstaff
+                className="process-employer"
+                title="Encuentra tu próximo experto en Meta Ads para Puerto Rico en 4 pasos"
+                description="Simplificamos el reclutamiento para que te enfoques en vender mientras <strong class='brand-oberstaff'>Oberstaff<span class='brand-dot'>.</span></strong> filtra perfiles remotos de Sudamérica con experiencia en campañas de Facebook Ads, medición y performance."
+                items={[
+                    {
+                        badge: "",
+                        label: "Definición",
+                        title: "01 - Definición de objetivos y etapa de tus campañas",
+                        description:
+                            "Analizamos tu inversión mensual actual y el tipo de producto o servicio que promocionas. <br><br> <em>15 min - Sin compromiso</em>",
+                        icon: "01",
+                        badgeColor: "#6663FD",
+                        badgeBg: "rgba(102, 99, 253, 0.1)",
+                    },
+                    {
+                        badge: "",
+                        label: "Selección",
+                        title: "02 - Selección de perfiles de especialistas en Facebook Ads",
+                        description:
+                            "Filtramos candidatos de Sudamérica y te presentamos perfiles con experiencia en Meta Business Manager, campañas de conversión, Pixel, CAPI, testing creativo y reporting. <br><br> <em>En menos de 7 días</em>",
+                        icon: "02",
+                        badgeColor: "#6aca8a",
+                        badgeBg: "rgba(102, 255, 153, 0.15)",
+                    },
+                    {
+                        badge: "",
+                        label: "Validación",
+                        title: "03 - Entrevista y validación de criterio de negocio",
+                        description:
+                            "Evalúa cómo resolverían un CPM costoso, cómo estructurarían una campaña Advantage+ para tu nicho y decide quién manejará tu inversión. <br><br> <em>Tú decides siempre</em>",
+                        icon: "03",
+                        badgeColor: "#FF66CC",
+                        badgeBg: "rgba(255, 102, 204, 0.1)",
+                    },
+                    {
+                        label: "Ecosistema",
+                        badge: "",
+                        title: "04 - Integración a tu ecosistema publicitario",
+                        description:
+                            "Una vez elegido el perfil, facilitamos onboarding, acuerdos de confidencialidad y acceso seguro a cuenta publicitaria, Pixel, catálogo, landing, GA4 o CRM. <br><br> <em>Integración en días</em>",
+                        icon: "04",
+                        badgeColor: "#1B1B1B",
+                        badgeBg: "rgba(204, 255, 102, 0.3)",
+                    },
+                ]}
+                ctaTitle="Mejora tu ROAS hoy"
+                ctaDescription="Un equipo dedicado gestionará todo el proceso por ti."
+                ctaBtnText="Agendar llamada"
+                ctaBtnHref="#formulario-perfil"
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <EorCta
+                title="¿Tu inversión en Meta Ads no genera oportunidades reales en Puerto Rico?"
+                titleTag="h2"
+                text="Cuéntanos si tu prioridad es generar leads cualificados, vender más con tu ecommerce, llenar agenda de citas, captar prospectos de servicios profesionales o reactivar audiencias calientes. Revisaremos tu caso y te diremos qué tipo de especialista en Facebook Ads necesitas."
+                buttonText="👉 Solicitar propuesta y perfiles de Meta Ads para Puerto Rico"
+                buttonHref="#formulario-perfil"
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <RolesPerfil
+                title="Expertos en Facebook Ads que puedes incorporar a tu operación en Puerto Rico"
+                subtitle="Filtramos perfiles según tipo de embudo, volumen de inversión, complejidad técnica, idioma de campaña, modelo de monetización y capacidad de integración con ventas."
+                layout="modern"
+                footerText=" "
+                footerLinkText=""
+                footerLinkHref=""
+                roles={[
+                    {
+                        title: "Experto en Facebook Ads para generación de leads",
+                        description: "",
+                        icon: "",
+                        iconColor: "#6663FD",
+                        borderColorClass: "border-purple",
+                        subtitle:
+                            "Especializado en capturar demanda con Formularios Instantáneos, Messenger, WhatsApp, llamadas o landing pages. Ideal para servicios, clínicas, educación, seguros, B2B, reservas, citas o cotizaciones.",
+                        techStack: [
+                            "Lead Ads",
+                            "WhatsApp",
+                            "Landing Pages",
+                            "CRM",
+                        ],
+                    },
+                    {
+                        title: "Experto en Meta Ads para ecommerce",
+                        description: "",
+                        icon: "",
+                        iconColor: "#6aca8a",
+                        borderColorClass: "border-green",
+                        subtitle:
+                            "Domina campañas de ventas, catálogos, Advantage+ Shopping, remarketing dinámico y embudos de compra. Pensado para tiendas Shopify, WooCommerce o ecommerce propio que buscan ROAS y recuperar carritos.",
+                        techStack: [
+                            "Shopify",
+                            "WooCommerce",
+                            "Catálogo Meta",
+                            "ROAS",
+                        ],
+                    },
+                    {
+                        title: "Especialista en retargeting y audiencias calientes",
+                        description: "",
+                        icon: "",
+                        iconColor: "#FF9933",
+                        borderColorClass: "border-orange",
+                        subtitle:
+                            "Trabaja audiencias personalizadas por visitas web, engagement, listas de clientes, video views, carrito y compradores. Evita desperdiciar presupuesto en usuarios que ya convirtieron o audiencias saturadas.",
+                        techStack: [
+                            "Custom Audiences",
+                            "Remarketing",
+                            "LTV",
+                            "DPA",
+                        ],
+                    },
+                    {
+                        title: "Especialista en Pixel, CAPI y medición",
+                        description: "",
+                        icon: "",
+                        iconColor: "#3b76f6",
+                        borderColorClass: "border-blue",
+                        subtitle:
+                            "Implementación técnica del Pixel de Meta y la API de Conversiones del lado del servidor para sortear las limitaciones de iOS 14. Configuración avanzada de eventos y atribución orientada a negocio.",
+                        techStack: ["Meta Pixel", "CAPI", "GTM", "GA4"],
+                    },
+                    {
+                        title: "Especialista en creatividades, Reels Ads y UGC",
+                        description: "",
+                        icon: "",
+                        iconColor: "#FF66CC",
+                        borderColorClass: "border-pink",
+                        subtitle:
+                            "Apoya la hipótesis creativa: hooks, ángulos, guiones cortos, formatos nativos, pruebas de piezas y análisis del impacto creativo en CTR, CPM, CPA y calidad de lead.",
+                        techStack: [
+                            "Reels Ads",
+                            "Stories",
+                            "UGC",
+                            "A/B Testing",
+                        ],
+                    },
+                    {
+                        title: "Media buyer Meta Ads 360°",
+                        description: "",
+                        icon: "",
+                        iconColor: "#9333ea",
+                        borderColorClass: "border-indigo",
+                        subtitle:
+                            "Perfil senior generalista que orquesta el paid social completo: estructura, presupuesto, testing, reporting, coordinación con diseño y ventas, y decisiones de escalado.",
+                        techStack: [
+                            "Business Manager",
+                            "Paid Social",
+                            "Looker Studio",
+                            "Performance",
+                        ],
+                    },
+                ]}
+            />
+        </div>
+
+           <div class="fade-in-section sector-comparison-wrapper">
+            <ComparisonPerfiles
+                criterioLabel="Sector"
+                title="Campañas Facebook Ads para sectores frecuentes en Puerto Rico"
+                subtitle="Ideal cuando la empresa puertorriqueña atiende audiencias locales y también prospectos en Estados Unidos. El perfil adapta las campañas publicitarias en Facebook con mensajes en español, inglés o spanglish controlado según industria, buyer persona y canal de cierre."
+                footerNote=""
+                oberstaffLabel="Enfoque de campaña"
+                competitors={[]}
+                rows={[
+                    {
+                        label: "Clínicas, salud privada y estética",
+                        oberstaffValue: "Citas, evaluaciones, formularios, WhatsApp, llamadas y seguimiento de pacientes potenciales, con revisión cuidadosa de políticas publicitarias.",
+                        competitorValues: []
+                    },
+                    {
+                        label: "Real estate e inversiones inmobiliarias",
+                        oberstaffValue: "Leads para proyectos, tours, llamadas, formularios de interés, públicos similares y retargeting a quienes interactuaron con propiedades.",
+                        competitorValues: []
+                    },
+                    {
+                        label: "Educación, cursos y formación",
+                        oberstaffValue: "Captación de estudiantes, solicitudes de información, campañas de admisión, webinars, formularios instantáneos y remarketing.",
+                        competitorValues: []
+                    },
+                    {
+                        label: "Turismo, restaurantes y hospitality",
+                        oberstaffValue: "Reservas, experiencias, eventos, promociones locales y campañas para audiencias en la Isla o visitantes desde Estados Unidos.",
+                        competitorValues: []
+                    },
+                    {
+                        label: "Ecommerce y marcas DTC",
+                        oberstaffValue: "Catálogos, campañas de venta, recuperación de carrito, bundles, testing creativo, ROAS y análisis de margen.",
+                        competitorValues: []
+                    },
+                    {
+                        label: "Servicios profesionales y B2B",
+                        oberstaffValue: "Oportunidades para consultorías, despachos, seguros, tecnología, reclutamiento, outsourcing y servicios especializados.",
+                        competitorValues: []
+                    }
+                ]}
+            />
+        </div>
+
+
+        <div class="fade-in-section">
+            <ComparisonPerfiles
+                criterioLabel="Criterio"
+                title="Experto en Meta Ads con <span style='color: #1b1b1b; font-weight:800;'>Oberstaff<span style='color: #ff62c4; font-weight:800'>.</span></span> vs. contratar publicidad Facebook local, freelance o agencia"
+                subtitle="Comparamos las alternativas del mercado para mostrarte cómo un especialista en Meta Ads remoto de Sudamérica te da dedicación exclusiva, retención total de la data de tu Business Manager y una reducción drástica de costos operativos."
+                footerNote="Nota: los costos son orientativos. El valor final depende del perfil, experiencia, modalidad y alcance de la cuenta publicitaria."
+                oberstaffLabel="Experto Meta Ads<br>remoto<br><span style='font-size: 12px; font-weight: 400; color: #5A5A5A;'>(con <span style='color: #1b1b1b; font-weight:500'><strong>Oberstaff</strong></span><span style='color: #ff66cc;font-weight:500'>.</span>)</span>"
+                competitors={[
+                    "Especialista local<br><span style='font-size: 12px; font-weight: 400; color: #5A5A5A;'>en Puerto Rico</span>",
+                    "Freelance por<br>horas",
+                    "Agencia multicuentas",
+                ]}
+                rows={[
+                    {
+                        label: "Coste mensual orientativo",
+                        oberstaffValue:
+                            "<span class='icon-check'>✓</span> Desde US$950/mes, según seniority y alcance",
+                        competitorValues: [
+                            "<span class='icon-cross'>✕</span> $3,500–$5,500 USD + carga patronal",
+                            "<span class='icon-cross'>✕</span> $1,500–$3,000 USD o por campaña",
+                            "<span class='icon-cross'>✕</span> Fee base + 10–15% de tu inversión",
+                        ],
+                    },
+                    {
+                        label: "Foco operativo",
+                        oberstaffValue:
+                            "<span class='icon-check'>✓</span> Dedicado a tu cuenta, como extensión del equipo interno",
+                        competitorValues: [
+                            "<span class='icon-check'>✓</span> Parte de tu equipo interno",
+                            "<span class='icon-warning'>⚠</span> Reparte su tiempo entre varios clientes",
+                            "<span class='icon-warning'>⚠</span> Medio/bajo: cartera amplia y procesos estandarizados",
+                        ],
+                    },
+                    {
+                        label: "Velocidad de respuesta",
+                        oberstaffValue:
+                            "<span class='icon-check'>✓</span> Alta: seguimiento diario en horario compatible con PR",
+                        competitorValues: [
+                            "<span class='icon-check'>✓</span> Alta",
+                            "<span class='icon-warning'>⚠</span> Variable según su disponibilidad",
+                            "<span class='icon-warning'>⚠</span> Según tickets, reuniones y carga operativa",
+                        ],
+                    },
+                    {
+                        label: "Propiedad de la data",
+                        oberstaffValue:
+                            "<span class='icon-check'>✓</span> Tu Business Manager, Pixel, audiencias y CRM bajo tu control",
+                        competitorValues: [
+                            "<span class='icon-check'>✓</span> Alta: opera en tus activos",
+                            "<span class='icon-warning'>⚠</span> Conocimiento superficial de tu negocio",
+                            "<span class='icon-warning'>⚠</span> El contexto queda repartido entre varias manos",
+                        ],
+                    },
+                    {
+                        label: "Comisión sobre inversión en Ads",
+                        oberstaffValue:
+                            "<span class='icon-check'>✓</span> Ninguna: tarifa fija B2B",
+                        competitorValues: [
+                            "<span class='icon-check'>✓</span> Normalmente no aplica",
+                            "<span class='icon-warning'>⚠</span> Algunos modelos incluyen porcentaje",
+                            "<span class='icon-cross'>✕</span> Frecuente en agencias de performance",
+                        ],
+                    },
+                    {
+                        label: "Flexibilidad",
+                        oberstaffValue:
+                            "<span class='icon-check'>✓</span> Reemplazo o ajuste de perfil según el servicio",
+                        competitorValues: [
+                            "<span class='icon-cross'>✕</span> Menor si hay contratación directa",
+                            "<span class='icon-check'>✓</span> Alta para tareas puntuales, menor para continuidad",
+                            "<span class='icon-warning'>⚠</span> Media: depende del contrato y el equipo asignado",
+                        ],
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section" id="pr-cm-pricing-wrapper">
+            <PricingCardPerfil
+                sectionTitle="Control financiero con tu experto en Meta Ads: coste fijo y cero comisión sobre inversión"
+                sectionSubtitle=""
+                cardTitle="Especialista en Meta Ads"
+                titleTag="p"
+                cardSubtitle="Fee mensual orientativo · especialista remoto dedicado a tus campañas, sin comisiones sobre tu inversión publicitaria en Meta"
+                priceLabel="Desde"
+                priceAmount="$950"
+                pricePeriod="USD / mes"
+                features={[
+                    "Auditoría inicial de Business Manager, cuenta publicitaria y campañas activas.",
+                    "Gestión de campañas Facebook Ads e Instagram Ads: frío, consideración, retargeting y conversión.",
+                    "Audiencias amplias, personalizadas, similares y segmentos por comportamiento.",
+                    "Pixel de Meta y API de Conversiones para mejorar señal, atribución y medición.",
+                    "Testing A/B de creatividades, copies, formatos y ofertas.",
+                    "Reporte de CPL, CPA, ROAS, MER, calidad de lead y aprendizajes comerciales.",
+                ]}
+                ctaText="Empezar ahora"
+                ctaHref="#formulario-perfil"
+                disclaimer="Precios orientativos. El coste final depende del perfil, país, seniority, dedicación y complejidad de la cuenta. Sin costes ocultos ni comisión automática sobre pauta."
+            />
+        </div>
+
+        <div class="fade-in-section" id="pr-cm-benefits-wrapper">
+            <BeneficiosPerfilDisenador
+                showInfoCard={false}
+                title="¿Cómo se integra tu experto en Meta Ads remoto con tu empresa en Puerto Rico?"
+                subtitle="El profesional no necesita estar físicamente en Puerto Rico para operar con contexto, velocidad y responsabilidad. Se integra a tu equipo con reuniones, reportes, accesos seguros y objetivos claros, manteniendo tus activos bajo control."
+                image=""
+                imageAlt=""
+                infoTitle=""
+                features={[
+                    {
+                        icon: "🎯",
+                        title: "Enfoque publicitario exclusivo:",
+                        description:
+                            "Tu experto trabaja sobre tu Business Manager, tus audiencias, tu frecuencia de impacto y tu calendario de pruebas creativas.",
+                    },
+                    {
+                        icon: "⏱️",
+                        title: "Operación sincronizada con ventas:",
+                        description:
+                            "Revisa feedback de llamadas, WhatsApp, formularios y CRM para distinguir leads baratos de oportunidades reales.",
+                    },
+                    {
+                        icon: "🛡️",
+                        title: "Protección corporativa:",
+                        description: 
+                            "Tus cuentas, audiencias, catálogos y datos se operan con permisos controlados, acuerdos de confidencialidad y documentación clara.",
+                    },
+                ]}
+                infoItems={[
+                    {
+                        title: "",
+                        description: "",
+                    },
+                    {
+                        title: "",
+                        description: "",
+                    },
+                    {
+                        title: "",
+                        description: "",
+                    },
+                ]}
+            >
+                <div class="meta-custom-notice">
+                 Recibes una sola factura mensual en dólares ($USD). Es hora de escalar tus ventas con Meta Ads.
+                </div>
+            </BeneficiosPerfilDisenador>
+        </div>
+
+        <div class="fade-in-section">
+            <ServicesSection
+                title="Qué revisar antes de contratar un experto en Meta Ads para Puerto Rico"
+                cardTitleTag="h3"
+                description="Antes de entregar acceso a tu cuenta publicitaria, evalúa si el perfil sabe diagnosticar negocio, medición y creatividad. Meta Ads no es mover botones: es construir un sistema de adquisición rentable."
+                customClass="employer-use-cases-designer"
+                services={[
+                    {
+                        icon: "",
+                        title: "¿Qué stack técnico debe dominar un especialista en Facebook Ads?",
+                        description:
+                            "Meta Business Manager, Ads Manager, Events Manager, Pixel, Conversiones API, GTM, GA4, catálogos, audiencias personalizadas y similares, campañas de leads, ventas, mensajes, tráfico, remarketing dinámico y control de frecuencia.<br><br>También debe entender CPL, CAC, CPA, ROAS, MER, ticket promedio, tasa de cierre, calidad de contacto, atribución y aprendizajes accionables para el próximo ciclo creativo.",
+                        linkText: "",
+                        href: "",
+                        cardClass: "card-av-1",
+                    },
+                    {
+                        icon: "",
+                        title: "¿Cuando conviene incorporar un experto en Meta Ads?",
+                        description:
+                            "Cuando tu empresa ya tiene una oferta clara, margen para invertir, capacidad de atender leads y necesidad de convertir Facebook e Instagram en un canal consistente de adquisición.<br><br>También cuando tu cuenta ya invierte, pero no sabes qué campañas generan venta real, qué anuncios están agotados, qué audiencias se solapan o por qué el panel de Meta no coincide con tu CRM.",
+                        linkText: "",
+                        href: "",
+                        cardClass: "card-av-2",
+                    },
+                    {
+                        icon: "",
+                        title: "Cuando no conviene contratar Facebook Ads",
+                        description:
+                            "<div><span style='background-color: #ef4444; color: white; padding: 4px 8px; border-radius: 4px; font-size: 11px; font-weight: 700; display: inline-block; margin-bottom: 12px; text-transform: uppercase;'>Antes de invertir</span><ul style='list-style: none; padding-left: 0; margin: 15px 0;'><li style='margin-bottom: 10px; padding-left: 20px; position: relative;'><span style='color: #6663fd; position: absolute; left: 0;'>◆</span> Si aún no tienes una propuesta de valor clara o una oferta validada.</li><li style='margin-bottom: 10px; padding-left: 20px; position: relative;'><span style='color: #6663fd; position: absolute; left: 0;'>◆</span> Si esperas que Meta Ads corrija problemas de producto, precio, margen o cierre comercial.</li><li style='margin-bottom: 10px; padding-left: 20px; position: relative;'><span style='color: #6663fd; position: absolute; left: 0;'>◆</span> Si no tienes presupuesto para una fase inicial de testeo y aprendizaje.</li><li style='margin-bottom: 10px; padding-left: 20px; position: relative;'><span style='color: #6663fd; position: absolute; left: 0;'>◆</span> Si buscas solo un operador táctico y no estás dispuesto a compartir datos de ventas o feedback comercial.</li></ul><div style='background-color: #f3f4f6; padding: 12px 16px; border-radius: 8px; font-size: 13px; color: #1b1b1b; line-height: 1.5; font-weight: 400; margin-top: 15px; font-style: italic;'>Primero valida oferta, margen y capacidad comercial. Después tiene sentido escalar con un especialista.</div></div>",
+                        linkText: "",
+                        href: "",
+                        cardClass: "card-meta-pr-noinvierte",
+                    },
+                    {
+                        icon: "",
+                        title: "Señales de que estás perdiendo dinero en Meta Ads",
+                        description:
+                            "<div><ul style='list-style: none; padding-left: 0; margin: 0 0 15px 0;'><li style='margin-bottom: 10px; padding-left: 20px; position: relative;'><span style='color: #f59e0b; position: absolute; left: 0;'>⚠️</span> Tus campañas dependen del mismo anuncio durante semanas y nadie gestiona la fatiga creativa.</li><li style='margin-bottom: 10px; padding-left: 20px; position: relative;'><span style='color: #f59e0b; position: absolute; left: 0;'>⚠️</span> El CPL baja, pero ventas indica que la calidad de los leads es mala.</li><li style='margin-bottom: 10px; padding-left: 20px; position: relative;'><span style='color: #f59e0b; position: absolute; left: 0;'>⚠️</span> Cambias presupuesto, público y copy sin respetar la fase de aprendizaje.</li><li style='margin-bottom: 10px; padding-left: 20px; position: relative;'><span style='color: #f59e0b; position: absolute; left: 0;'>⚠️</span> No sabes si las conversiones llegan por Pixel, CAPI, CRM, WhatsApp o una mezcla mal deduplicada.</li><li style='margin-bottom: 10px; padding-left: 20px; position: relative;'><span style='color: #f59e0b; position: absolute; left: 0;'>⚠️</span> Tu remarketing es pequeño, está solapado o impacta a personas que ya compraron.</li><li style='margin-bottom: 10px; padding-left: 20px; position: relative;'><span style='color: #f59e0b; position: absolute; left: 0;'>⚠️</span> Tienes comentarios negativos, frecuencia alta o CPM creciendo sin un plan creativo de renovación.</li></ul><div style='background-color: #f3f4f6; padding: 12px 16px; border-radius: 8px; font-size: 13px; color: #1b1b1b; line-height: 1.5; font-weight: 400; font-style: italic;'>Si aparecen estas señales, necesitas diagnóstico, medición y una estrategia de optimización antes de seguir escalando inversión.</div></div>",
+                        linkText: "",
+                        href: "",
+                        cardClass: "card-meta-pr-senales",
+                    },
+                    {
+                        icon: "",
+                        title: "¿Qué necesito antes de contratar publicidad Facebook para mi empresa en Puerto Rico?",
+                        description:
+                            "Necesitas una oferta clara, presupuesto para aprendizaje, capacidad de atender prospectos y acceso ordenado a cuenta publicitaria, landing, Pixel, CRM o WhatsApp. Así las campañas publicitarias en Facebook se optimizan contra oportunidades reales, no solo contra clics.",
+                        linkText: "",
+                        href: "",
+                        cardClass: "card-av-5",
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <CasosExitoSection
+                title="Empresas que confían en el modelo de talento remoto de <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong>"
+                subtitle=""
+                columns={3}
+                testimonials={[
+                    {
+                        stars: 5,
+                        avatar: "/fernando.webp",
+                        imageAlt:
+                            "Fernando Calderón, cliente de Oberstaff en Madrid",
+                        text: "Buscaba talento remoto especializado y, tras intentarlo en local sin éxito, encontré a <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong> Me impresionó la claridad de su estructura legal. Por el servicio y la misma zona horaria, ya amplié el contrato para sumar más personal.",
+                        author: "Fernando Calderón",
+                        role: "CEO · BeautyPro",
+                        videoId: "24KxCAFGrDs",
+                    },
+                    {
+                        stars: 5,
+                        avatar: "/sha.webp",
+                        imageAlt:
+                            "Shadai Iborra, cliente de Oberstaff en Barcelona",
+                        text: "Con <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong> incorporé a dos personas a tiempo completo y me ahorré costes de reclutamiento, oficina y nómina local. Toda la gestión y los pagos quedan unificados en una sola factura mensual. La solución perfecta para nuestra contratación remota.",
+                        author: "Shadai Iborra",
+                        role: "CEO · @amediastory",
+                        videoId: "_CxlPfluS7M",
+                    },
+                    {
+                        stars: 5,
+                        avatar: "/Kate.webp",
+                        imageAlt: "Kate McCaferty, cliente de Oberstaff EOR",
+                        text: "Llevamos casi dos años con <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong> y la experiencia es excelente desde el primer día. Tienes el respaldo de un equipo dedicado que evalúa miles de perfiles por ti. El ahorro real y la optimización de costes superaron nuestras expectativas.",
+                        author: "Kate McCaferty",
+                        role: "CEO · KM Real Estate (EE. UU.)",
+                        videoId: "9RLgpEF-GVA",
+                    },
+                ]}
+            />
+        </div>
+
+        <FAQSection
+            title="¿Quieres contratar un experto en Meta Ads con nosotros? Esto es lo que debes saber"
+            subtitle="Estas respuestas resuelven objeciones específicas de empresas puertorriqueñas que buscan incorporar talento remoto especializado en Facebook e Instagram Ads."
+            ctaText=""
+            ctaButtonText="Hablar con un asesor →"
+            ctaButtonHref="#formulario-perfil"
+            useCardLayout={true}
+            faqs={faqs}
+        />
+
+        <div class="fade-in-section">
+            <ConversionPerfilDisenador
+                webhookUrl="https://hooks.zapier.com/hooks/catch/12433184/422lvr6/"
+                title="¿Listo para dejar de improvisar en Facebook e Instagram Ads?"
+                subtitle="Cuéntanos qué necesita tu empresa en Puerto Rico: generar leads cualificados, vender más con ecommerce, captar citas, ordenar una cuenta que gasta sin control o construir un sistema de retargeting rentable. Evaluaremos tu caso y te enviaremos una propuesta para incorporar el perfil adecuado."
+                buttonText="→ Solicitar propuesta gratuita"
+                noteText=""
+                isCommunityPR={false}
+            />
+        </div>
+    </div>
+</DashboardLayoutPerfilesPr>
+
+<style>
+    .service-detail-container {
+    }
+
+    :global(.community-badges) {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 10px !important;
+    }
+
+    :global(.employer-use-cases-grid) {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    @media (max-width: 900px) {
+        :global(.employer-use-cases-grid) {
+            grid-template-columns: 1fr !important;
+        }
+    }
+
+    /* Override cards in ServicesSection on PR page to have static border and no hover effects */
+    :global(section.employer-use-cases .service-card),
+    :global(section.employer-use-cases .service-card.card-purple),
+    :global(section.employer-use-cases .service-card.card-green),
+    :global(section.employer-use-cases .service-card.card-pink),
+    :global(section.employer-use-cases .service-card.card-lime) {
+        border: 1px solid rgba(0, 0, 0, 0.05) !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+        transform: none !important;
+        transition: none !important;
+    }
+
+    :global(section.employer-use-cases .service-card:hover),
+    :global(section.employer-use-cases .service-card.card-purple:hover),
+    :global(section.employer-use-cases .service-card.card-green:hover),
+    :global(section.employer-use-cases .service-card.card-pink:hover),
+    :global(section.employer-use-cases .service-card.card-lime:hover),
+    :global(
+        section.employer-use-cases
+            .employer-use-cases-grid
+            .service-card:nth-child(1):hover
+    ),
+    :global(
+        section.employer-use-cases
+            .employer-use-cases-grid
+            .service-card:nth-child(2):hover
+    ),
+    :global(
+        section.employer-use-cases
+            .employer-use-cases-grid
+            .service-card:nth-child(3):hover
+    ),
+    :global(
+        section.employer-use-cases
+            .employer-use-cases-grid
+            .service-card:nth-child(4):hover
+    ) {
+        border-color: rgba(0, 0, 0, 0.05) !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+        transform: none !important;
+    }
+
+    :global(section.employer-use-cases .service-card .card-gradient-bg) {
+        display: none !important;
+    }
+
+    /* Split layout with image for ServicesSection in Puerto Rico */
+    @media (min-width: 901px) {
+        :global(section.employer-use-cases) {
+            padding: 80px 60px !important;
+        }
+
+        :global(section.employer-use-cases .has-header-image) {
+            display: grid !important;
+            grid-template-columns: 1.15fr 0.85fr !important;
+            gap: 20px 60px !important;
+            align-items: center !important;
+            text-align: left !important;
+            margin-bottom: 50px !important;
+        }
+
+        :global(section.employer-use-cases .services-header-text h2) {
+            font-size: 36px !important;
+        }
+
+        :global(
+            section.employer-use-cases
+                .services-header-text
+                .section-description
+        ) {
+            font-size: 16px !important;
+        }
+    }
+
+    :global(section.employer-use-cases .services-header-text) {
+        text-align: left !important;
+    }
+
+    :global(section.employer-use-cases .services-header-text h2) {
+        text-align: left !important;
+        margin: 0 0 20px 0 !important;
+        max-width: none !important;
+        line-height: 1.3 !important;
+    }
+
+    :global(
+        section.employer-use-cases .services-header-text .section-description
+    ) {
+        text-align: left !important;
+        margin: 0 !important;
+        max-width: none !important;
+        line-height: 1.7 !important;
+    }
+
+    :global(section.employer-use-cases .services-header-image) {
+        display: block !important;
+        width: 100% !important;
+        max-width: 480px !important;
+        height: auto !important;
+        border-radius: 20px !important;
+        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12) !important;
+        margin: 0 auto !important;
+    }
+
+    @media (max-width: 900px) {
+        :global(section.employer-use-cases) {
+            padding: 40px 20px !important;
+        }
+
+        :global(section.employer-use-cases .has-header-image) {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 25px !important;
+            text-align: center !important;
+            margin-bottom: 40px !important;
+        }
+
+        :global(section.employer-use-cases .services-header-text h2) {
+            font-size: 26px !important;
+            text-align: center !important;
+            margin: 0 auto 20px auto !important;
+        }
+
+        :global(
+            section.employer-use-cases
+                .services-header-text
+                .section-description
+        ) {
+            font-size: 15px !important;
+            text-align: center !important;
+            margin: 0 auto !important;
+        }
+    }
+
+    :global(.employer-use-cases-grid .icon-box) {
+        background-color: transparent !important;
+        border: none !important;
+        padding: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        margin-bottom: 25px !important;
+        justify-content: flex-start !important;
+    }
+
+    :global(.employer-use-cases-grid .icon-emoji-servicios-home) {
+        font-size: 35px !important;
+        padding: 0 !important;
+    }
+
+    @media (max-width: 768px) {
+        :global(.employer-use-cases-grid .icon-emoji-servicios-home) {
+            font-size: 30px !important;
+            padding: 0 !important;
+        }
+    }
+
+    /* --- Estilos exclusivos para la sección de servicios del diseñador en PR --- */
+    :global(section.employer-use-cases-designer) {
+        background-color: #fafafc !important;
+        padding: 80px 60px !important;
+    }
+    @media (max-width: 900px) {
+        :global(section.employer-use-cases-designer) {
+            padding: 40px 20px !important;
+        }
+    }
+
+    :global(section.employer-use-cases-designer .services-header) {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        margin-bottom: 50px !important;
+    }
+
+    :global(section.employer-use-cases-designer .services-header-text) {
+        text-align: center !important;
+        max-width: 800px !important;
+        margin: 0 auto !important;
+    }
+
+    :global(section.employer-use-cases-designer .services-header-text h2) {
+        text-align: center !important;
+        margin: 0 auto 20px auto !important;
+        font-size: 36px !important;
+        font-family: "Montserrat", sans-serif !important;
+        font-weight: 700 !important;
+        color: #1b1b1b !important;
+        line-height: 1.3 !important;
+    }
+    @media (max-width: 900px) {
+        :global(section.employer-use-cases-designer .services-header-text h2) {
+            font-size: 26px !important;
+        }
+    }
+
+    :global(
+        section.employer-use-cases-designer
+            .services-header-text
+            .section-description
+    ) {
+        text-align: center !important;
+        margin: 0 auto !important;
+        font-size: 16px !important;
+        font-family: "Poppins", sans-serif !important;
+        color: #5a5a5a !important;
+        line-height: 1.7 !important;
+    }
+    @media (max-width: 900px) {
+        :global(
+            section.employer-use-cases-designer
+                .services-header-text
+                .section-description
+        ) {
+            font-size: 15px !important;
+        }
+    }
+
+    /* Grid layout to have 2 cards side-by-side, 3rd card centered below them */
+    :global(.employer-use-cases-designer-grid) {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 30px !important;
+        max-width: 1000px !important;
+        margin: 0 auto !important;
+    }
+
+    :global(.employer-use-cases-designer-grid .service-card) {
+        border: 1px solid rgba(0, 0, 0, 0.05) !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+        transition:
+            transform 0.3s ease,
+            border-color 0.3s ease,
+            box-shadow 0.3s ease !important;
+    }
+    :global(.employer-use-cases-designer-grid .service-card:hover) {
+        transform: translateY(-8px) !important;
+        border-color: rgba(0, 0, 0, 0.05) !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+    }
+    :global(.employer-use-cases-designer-grid .service-card .card-gradient-bg) {
+        display: none !important;
+    }
+
+    :global(.employer-use-cases-designer-grid .service-card:nth-child(5)) {
+        grid-column: 1 / span 2 !important;
+        justify-self: center !important;
+        max-width: 800px !important;
+        width: 100% !important;
+    }
+
+    :global(
+        .employer-use-cases-designer-grid
+            .service-card:nth-child(5)
+            .service-card-title
+    ),
+    :global(.employer-use-cases-designer-grid .service-card:nth-child(5) p) {
+        text-align: center !important;
+    }
+
+    :global(.employer-use-cases-designer-grid .icon-box) {
+        display: none !important;
+        background-color: transparent !important;
+        border: none !important;
+        padding: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        margin-bottom: 25px !important;
+        justify-content: center !important;
+    }
+
+    :global(.employer-use-cases-designer-grid .icon-emoji-servicios-home) {
+        font-size: 30px !important;
+    }
+
+    @media (max-width: 900px) {
+        :global(.employer-use-cases-designer-grid) {
+            grid-template-columns: 1fr !important;
+            gap: 20px !important;
+        }
+        :global(.employer-use-cases-designer-grid .service-card:nth-child(5)) {
+            grid-column: auto !important;
+            max-width: none !important;
+            width: 100% !important;
+        }
+    }
+
+    @media (max-width: 768px) {
+        :global(.employer-use-cases-designer-grid .icon-emoji-servicios-home) {
+            font-size: 38px !important;
+        }
+    }
+
+    /* --- Estilos exclusivos para Funciones Section (Community Manager Funciones) --- */
+    :global(section.funciones-section) {
+        background-color: #ffffff !important;
+        border-top: 1px solid #e5e7eb !important;
+        border-bottom: 1px solid #e5e7eb !important;
+        padding: 80px 60px !important;
+    }
+
+    :global(section.funciones-section .services-container) {
+        max-width: 1100px !important;
+        margin: 0 auto !important;
+    }
+
+    :global(section.funciones-section .services-header) {
+        text-align: center !important;
+        margin-bottom: 50px !important;
+    }
+
+    :global(section.funciones-section .services-header h2) {
+        font-size: 36px !important;
+        line-height: 1.3 !important;
+        text-align: center !important;
+        max-width: 800px !important;
+        margin: 0 auto 20px auto !important;
+        font-family: "Montserrat", sans-serif !important;
+        font-weight: 700 !important;
+        color: #1b1b1b !important;
+    }
+
+    :global(section.funciones-section .section-description) {
+        font-size: 16px !important;
+        line-height: 1.7 !important;
+        text-align: center !important;
+        max-width: 800px !important;
+        margin: 0 auto !important;
+        font-family: "Poppins", sans-serif !important;
+        color: #5a5a5a !important;
+    }
+
+    /* Grid layout: 2 columns on desktop */
+    :global(.funciones-section-grid) {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 30px !important;
+    }
+
+    /* Horizontal card layout: icon left, title/desc right */
+    :global(section.funciones-section .service-card) {
+        display: grid !important;
+        grid-template-columns: auto 1fr !important;
+        grid-template-rows: auto auto !important;
+        column-gap: 20px !important;
+        row-gap: 8px !important;
+        align-items: start !important;
+        padding: 30px !important;
+        border-radius: 20px !important;
+        background: #ffffff !important;
+        border: 1px solid rgba(0, 0, 0, 0.05) !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+        transition:
+            transform 0.3s ease,
+            border-color 0.3s ease,
+            box-shadow 0.3s ease !important;
+    }
+
+    :global(section.funciones-section .service-card:hover) {
+        box-shadow: 0 10px 30px rgba(194, 194, 202, 0.12) !important;
+        transform: translateY(-8px) !important;
+    }
+
+    :global(section.funciones-section .service-card .card-gradient-bg) {
+        display: none !important;
+    }
+
+    :global(section.funciones-section .service-card .icon-box) {
+        grid-column: 1 !important;
+        grid-row: 1 / span 2 !important;
+        margin-bottom: 0 !important;
+        width: 54px !important;
+        height: 54px !important;
+        border-radius: 12px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        border: none !important;
+    }
+
+    :global(
+        section.funciones-section .service-card .icon-emoji-servicios-home
+    ) {
+        font-size: 24px !important;
+    }
+
+    :global(section.funciones-section .service-card .service-card-title) {
+        grid-column: 2 !important;
+        grid-row: 1 !important;
+        margin-bottom: 0 !important;
+        margin-top: 0 !important;
+        font-family: "Montserrat", sans-serif !important;
+        font-size: 18px !important;
+        font-weight: 700 !important;
+        color: #1b1b1b !important;
+        line-height: 1.3 !important;
+    }
+
+    :global(
+        section.funciones-section .service-card p:not(.service-card-title)
+    ) {
+        grid-column: 2 !important;
+        grid-row: 2 !important;
+        min-height: 0 !important;
+        font-family: "Poppins", sans-serif !important;
+        font-size: 14px !important;
+        color: #5a5a5a !important;
+        line-height: 1.6 !important;
+    }
+
+    /* Responsivo para Funciones Section */
+    @media (max-width: 900px) {
+        :global(section.funciones-section) {
+            padding: 50px 20px !important;
+        }
+
+        :global(section.funciones-section .services-header h2) {
+            font-size: 26px !important;
+        }
+
+        :global(section.funciones-section .section-description) {
+            font-size: 15px !important;
+        }
+
+        :global(.funciones-section-grid) {
+            grid-template-columns: 1fr !important;
+            gap: 20px !important;
+        }
+    }
+
+    @media (max-width: 600px) {
+        :global(section.funciones-section .service-card) {
+            padding: 20px !important;
+            column-gap: 15px !important;
+        }
+
+        :global(section.funciones-section .service-card .icon-box) {
+            width: 48px !important;
+            height: 48px !important;
+        }
+
+        :global(
+            section.funciones-section .service-card .icon-emoji-servicios-home
+        ) {
+            font-size: 20px !important;
+        }
+
+        :global(section.funciones-section .service-card .service-card-title) {
+            font-size: 16px !important;
+        }
+    }
+
+    /* Estilos específicos para QueEsServicioSection en esta página */
+    :global(.que-es-servicio-section .quote-blue-border) {
+        border-left: 4px solid #ff66cc !important;
+        color: #ff66cc !important;
+        font-size: 16px !important;
+        margin-top: 0 !important; /* Para alinear con el inicio de la imagen */
+        font-weight: 600 !important;
+    }
+
+    :global(.que-es-servicio-section .que-es-main-content) {
+        align-items: flex-start !important;
+    }
+
+    /* Fondo exclusivo para la sección de áreas del diseñador */
+    :global(section.employer-use-cases) {
+        background-color: #fafafc !important;
+    }
+
+    /* Fondo exclusivo para la sección de casos de éxito en esta página */
+    :global(.casos-exito) {
+        background-color: #fafafc !important;
+
+        padding-bottom: 80px !important;
+    }
+
+    /* Estilos específicos para la sección FAQ en esta página */
+    :global(.faq-disenador-custom .faq-columns) {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    :global(.faq-disenador-custom .faq-left-column) {
+        position: static !important;
+        width: 100% !important;
+        max-width: 800px !important;
+        margin-bottom: 40px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        text-align: left !important;
+    }
+
+    :global(.faq-disenador-custom .faq-main-title) {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        text-align: left !important;
+    }
+
+    :global(.faq-disenador-custom .faq-right-column) {
+        display: none !important;
+    }
+
+    :global(.faq-disenador-custom .faq-cta-card) {
+        margin: 0 !important;
+        padding: 0 !important;
+        max-width: 600px !important;
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        text-align: left !important;
+    }
+
+    :global(.faq-disenador-custom .faq-cta-card p) {
+        font-family: "Poppins", sans-serif !important;
+        font-size: 18px !important;
+        font-weight: 400 !important;
+        color: #5a5a5a !important;
+        line-height: 1.6 !important;
+        margin-bottom: 30px !important;
+    }
+
+    :global(.faq-disenador-custom .faq-cta-button) {
+        background-color: #6663fd !important;
+        border: 2px solid #6663fd !important;
+        color: #ffffff !important;
+        width: auto !important;
+        min-width: 220px !important;
+        padding: 14px 32px !important;
+        font-size: 15px !important;
+        display: inline-block !important;
+    }
+
+    :global(.faq-disenador-custom .faq-cta-button:hover) {
+        background-color: transparent !important;
+        border: 2px solid #6663fd !important;
+        color: #6663fd !important;
+    }
+
+    :global(.faq-d-section .faq-cta-card) {
+        margin: 0 !important;
+        padding: 0 !important;
+        max-width: 600px !important;
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        text-align: left !important;
+        display: flex !important;
+        align-items: flex-start !important;
+        gap: 0 !important;
+    }
+
+    :global(.faq-d-section .faq-cta-card p) {
+        display: none !important;
+    }
+
+    :global(.faq-d-section .faq-cta-card .faq-d-btn) {
+        background-color: #ff66cc !important;
+        border-color: #ff66cc !important;
+        color: #ffffff !important;
+        margin-left: 0 !important;
+        margin-right: auto !important;
+    }
+
+    :global(.faq-d-section .faq-cta-card .faq-d-btn:hover) {
+        background-color: transparent !important;
+        border-color: #ff66cc !important;
+        color: #ff66cc !important;
+    }
+
+    .meta-custom-notice {
+        font-family: "Poppins", sans-serif;
+        margin-top: 40px;
+        padding: 24px 30px;
+        background-color: #f7f8fc;
+        border-left: 4px solid #ff66cc;
+        color: #ff66cc;
+        font-family: "Montserrat", sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 1.4;
+    }
+
+    .service-detail-container
+        :global(.guia-cards-grid .guia-card:nth-child(3)) {
+        grid-column: 1 / -1;
+    }
+
+    :global(.lead-hero-section) {
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+    }
+
+    :global(.lead-hero-section .top-label) {
+        color: #ff62c4 !important;
+        font-weight: 700 !important;
+        letter-spacing: 1px !important;
+        margin-bottom: 12px !important;
+        font-size: 14px !important;
+        display: inline-block !important;
+    }
+
+    :global(.lead-hero-section .title-as-h1) {
+        font-size: 30px !important;
+        line-height: 1.25 !important;
+        font-weight: 800 !important;
+        margin-bottom: 24px !important;
+        letter-spacing: -0.02em !important;
+    }
+
+    @media (min-width: 901px) {
+        :global(.lead-hero-section .title-as-h1) {
+            font-size: 44px !important;
+        }
+    }
+
+    :global(.lead-hero-section .badge-pill) {
+        background: transparent !important;
+        border: none !important;
+        padding: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+        color: #ffffff !important;
+        font-size: 15px !important;
+        font-weight: 500 !important;
+    }
+
+    :global(.lead-hero-section .badge-emoji) {
+        color: #66ff99 !important;
+        font-weight: bold !important;
+        font-size: 18px !important;
+    }
+
+    :global(.lead-hero-section .badges-grid) {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 12px !important;
+        margin-top: 25px !important;
+    }
+
+    /* Form button styling */
+    :global(.lead-hero-section .btn-submit) {
+        background-color: #ff62c4 !important;
+        border-color: #ff62c4 !important;
+        color: #ffffff !important;
+        font-weight: 700 !important;
+        font-size: 15px !important;
+        padding: 16px 32px !important;
+        border-radius: 50px !important;
+        transition: all 0.3s ease !important;
+    }
+
+    :global(.lead-hero-section .btn-submit:hover) {
+        background-color: transparent !important;
+        border-color: #ff62c4 !important;
+        color: #ff62c4 !important;
+        box-shadow: 0 4px 15px rgba(255, 98, 196, 0.4) !important;
+    }
+
+    /* Form link styling */
+    :global(.lead-hero-section .form-link) {
+        color: #6663fd !important;
+        font-weight: 600 !important;
+        text-decoration: none !important;
+    }
+
+    :global(.lead-hero-section .form-link:hover) {
+        text-decoration: none !important;
+    }
+
+    /* Estilos para el formulario final en esta página */
+    :global(.conv-d-section .conv-d-btn) {
+        background: #ff66cc !important;
+        border-color: #ff66cc !important;
+        color: #ffffff !important;
+    }
+
+    :global(.conv-d-section .conv-d-btn:hover) {
+        background: transparent !important;
+        color: #ff66cc !important;
+        border-color: #ff66cc !important;
+    }
+
+    :global(.conv-d-section .conv-d-row) {
+        grid-template-columns: 1fr !important;
+    }
+
+    :global(.conv-d-section .iti) {
+        width: 100% !important;
+    }
+
+    /* Estilos personalizados para QueEsServicioSection de PR */
+    :global(.que-es-servicio-section .image-card) {
+        filter: none !important;
+    }
+
+    :global(.que-es-servicio-section .floating-badge-bottom) {
+        display: none !important;
+    }
+
+    :global(.que-es-servicio-section .ques-check-icon) {
+        font-size: 18px !important;
+        margin-right: 4px !important;
+        background: transparent !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    :global(.que-es-servicio-section .ques-checklist-item) {
+        color: #1b1b1b !important;
+    }
+
+    :global(.que-es-servicio-section .ques-cta-btn) {
+        display: inline-block !important;
+        width: 100% !important;
+        max-width: 520px !important;
+        text-align: center !important;
+        background-color: #ff66cc !important;
+        color: #ffffff !important;
+        border: 1px solid #ff66cc !important;
+        font-weight: 700 !important;
+        padding: 14px 28px !important;
+        border-radius: 50px !important;
+        transition: all 0.3s ease !important;
+    }
+
+    :global(.que-es-servicio-section .ques-cta-btn:hover) {
+        background-color: transparent !important;
+        border-color: #ff66cc !important;
+        color: #ff66cc !important;
+    }
+
+    /* Grid layout overrides: cabecera centrada, checklist a la izquierda e imagen a la derecha */
+    @media (min-width: 901px) {
+        :global(.que-es-servicio-section .que-es-main-content) {
+            display: grid !important;
+            grid-template-columns: 1.1fr 0.9fr !important;
+            gap: 80px !important;
+            align-items: flex-start !important;
+        }
+
+        :global(.que-es-servicio-section .que-es-info-list) {
+            grid-column: 1 !important;
+            grid-row: 1 !important;
+        }
+
+        :global(.que-es-servicio-section .que-es-image-wrapper) {
+            grid-column: 2 !important;
+            grid-row: 1 !important;
+        }
+    }
+
+    /* Mobile stacking: Checklist -> Image */
+    @media (max-width: 900px) {
+        :global(.que-es-servicio-section .que-es-main-content) {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 30px !important;
+        }
+        :global(.que-es-servicio-section .que-es-info-list) {
+            order: 1 !important;
+        }
+        :global(.que-es-servicio-section .que-es-image-wrapper) {
+            order: 2 !important;
+        }
+        :global(.que-es-servicio-section .ques-cta-btn) {
+            display: block !important;
+            margin: 20px auto 0 !important;
+            width: fit-content !important;
+            text-align: center !important;
+        }
+    }
+
+    /* Ocultar badge y hacer el botón verde en ProcessOberstaff solo en esta página */
+    :global(section.process-employer .process-badge) {
+        display: none !important;
+    }
+
+    :global(section.process-employer .process-cta-btn) {
+        background-color: #ff66cc !important;
+        border: 2px solid #ff66cc !important;
+        color: #ffffff !important;
+        padding: 14px 32px !important;
+        border-radius: 50px !important;
+        font-weight: 700 !important;
+        font-size: 15px !important;
+        display: inline-block !important;
+        font-family: "Poppins", sans-serif !important;
+        text-decoration: none !important;
+        transition: all 0.3s ease !important;
+    }
+
+    :global(section.process-employer .process-cta-btn:hover) {
+        background-color: transparent !important;
+        color: #ff66cc !important;
+        border-color: #ff66cc !important;
+    }
+</style>
+
+<!-- Overrides globales para ProcessOberstaff en esta página únicamente -->
+<style is:global>
+    /* ID selector = máxima especificidad, siempre gana sobre clases */
+    #pr-cm-process-wrapper .process-badge {
+        display: none !important;
+        visibility: hidden !important;
+        height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    #pr-cm-process-wrapper .process-cta-btn {
+        background-color: #ff66cc !important;
+        border: 2px solid #ff66cc !important;
+        color: #ffffff !important;
+        padding: 14px 32px !important;
+        border-radius: 50px !important;
+        font-weight: 700 !important;
+        font-size: 15px !important;
+        display: inline-block !important;
+        font-family: "Poppins", sans-serif !important;
+        text-decoration: none !important;
+        transition: all 0.3s ease !important;
+    }
+
+    #pr-cm-process-wrapper .process-cta-btn:hover {
+        background-color: transparent !important;
+        color: #ff66cc !important;
+        border-color: #ff66cc !important;
+    }
+
+    /* Párrafos en color #1b1b1b y notas en itálica más pequeñas */
+    #pr-cm-process-wrapper .process-pane p {
+        color: #1b1b1b !important;
+    }
+
+    #pr-cm-process-wrapper .process-pane p em {
+        font-size: 13px !important;
+        font-style: italic !important;
+        color: #1b1b1b !important;
+        display: inline-block !important;
+        margin-top: 4px !important;
+    }
+
+    /* Fondo blanco para la sección de proceso únicamente en esta página */
+    #pr-cm-process-wrapper .process-section {
+        background-color: #ffffff !important;
+    }
+
+    /* Centrar el contenido de la tarjeta CTA de proceso */
+    #pr-cm-process-wrapper .process-cta {
+        text-align: center !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    /* Borde superior para la sección de roles únicamente en esta página */
+    .perfiles-disponibles {
+        border-top: 1px solid #f0f0f0 !important;
+    }
+
+    /* Rediseño de las tarjetas del perfil en modo modern */
+    .perfiles-disponibles .perfil-card.layout-modern {
+        border: 1px solid rgba(0, 0, 0, 0.05) !important;
+        border-top: 1px solid rgba(0, 0, 0, 0.05) !important; /* Quita el borde de color superior */
+        padding: 35px 30px !important;
+        border-radius: 20px !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02) !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        background: #ffffff !important;
+    }
+
+    /* Stacking vertical del icono y título */
+    .perfiles-disponibles .card-title-row {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 15px !important;
+        margin-bottom: 15px !important;
+    }
+
+    .perfiles-disponibles .profile-icon-modern {
+        font-size: 28px !important;
+        line-height: 1 !important;
+        margin-bottom: 0 !important;
+        display: block !important;
+    }
+
+    .perfiles-disponibles .layout-modern h3 {
+        font-family: "Montserrat", sans-serif !important;
+        font-size: 20px !important;
+        font-weight: 700 !important;
+        color: #1b1b1b !important;
+        line-height: 1.3 !important;
+        margin: 0 !important;
+    }
+
+    /* Estilo del texto descriptor en gris oscuro */
+    .perfiles-disponibles .card-subtitle-modern {
+        font-family: "Poppins", sans-serif !important;
+        font-size: 14px !important;
+        color: #5a5a5a !important;
+        font-weight: 400 !important;
+        line-height: 1.6 !important;
+        margin: 0 0 25px 0 !important;
+    }
+
+    /* Divisor gris por encima de los tags */
+    .perfiles-disponibles .tech-stack-modern {
+        border-top: 1px solid #f0f0f0 !important;
+        padding-top: 20px !important;
+        margin-top: auto !important;
+        margin-bottom: 0 !important;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 10px !important;
+    }
+
+    /* Personalización de tags de los roles (solo en esta página) */
+    .perfiles-disponibles .tag-modern {
+        background: rgba(102, 99, 253, 0.08) !important;
+        color: #6663fd !important;
+        font-family: "Poppins", sans-serif !important;
+        font-size: 12px !important;
+        font-weight: 600 !important;
+        padding: 6px 16px !important;
+        border-radius: 50px !important;
+    }
+
+    /* Hover simplificado: el borde cambia a azul */
+    .perfiles-disponibles .perfil-card.layout-modern:hover {
+        transform: none !important;
+        border-color: #6663fd !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02) !important;
+    }
+
+    /* Estilo personalizado de la tarjeta de precios para Puerto Rico */
+    #pr-cm-pricing-wrapper .pricing-card-new {
+        position: relative !important;
+        border: 1.5px solid rgba(102, 99, 253, 0.2) !important;
+        overflow: visible !important; /* Para permitir que la chapa sobresalga */
+    }
+
+    /* Badge / Chapa de TALENTO DEDICADO */
+    #pr-cm-pricing-wrapper .pricing-card-new::before {
+        content: "TALENTO DEDICADO" !important;
+        position: absolute !important;
+        top: -18px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        background: linear-gradient(
+            135deg,
+            #ff66cc 0%,
+            #6663fd 100%
+        ) !important;
+        color: #ffffff !important;
+        padding: 8px 24px !important;
+        border-radius: 50px !important;
+        font-family: "Poppins", sans-serif !important;
+        font-size: 13px !important;
+        font-weight: 800 !important;
+        letter-spacing: 0.1em !important;
+        z-index: 10 !important;
+        box-shadow: 0 4px 15px rgba(102, 99, 253, 0.2) !important;
+        text-transform: uppercase !important;
+        white-space: nowrap !important;
+    }
+
+    /* Hover de la tarjeta */
+    #pr-cm-pricing-wrapper .pricing-card-new:hover {
+        transform: translateY(-8px) !important;
+        border-color: #6663fd !important;
+        box-shadow: 0 15px 50px rgba(102, 99, 253, 0.15) !important;
+    }
+
+    /* Alineación del bloque del precio (columna izquierda) */
+    #pr-cm-pricing-wrapper .pricing-price-block {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 4px !important;
+        margin: 12px 0 !important;
+    }
+
+    #pr-cm-pricing-wrapper .pricing-label {
+        font-size: 15px !important;
+        color: #5a5a5a !important;
+        text-transform: none !important;
+        font-weight: 500 !important;
+        letter-spacing: normal !important;
+    }
+
+    #pr-cm-pricing-wrapper .pricing-amount {
+        font-size: 50px !important;
+        font-weight: 900 !important;
+        color: #1b1b1b !important;
+        line-height: 1 !important;
+    }
+
+    @media (max-width: 480px) {
+        #pr-cm-pricing-wrapper .pricing-amount {
+            font-size: 46px !important;
+        }
+    }
+
+    @media (min-width: 901px) {
+        #pr-cm-pricing-wrapper .pricing-amount {
+            font-size: 72px !important;
+        }
+    }
+
+    #pr-cm-pricing-wrapper .pricing-period {
+        font-size: 15px !important;
+        color: #5a5a5a !important;
+        padding-bottom: 0 !important;
+        align-self: flex-start !important;
+    }
+
+    /* Botón CTA Rosa */
+    #pr-cm-pricing-wrapper .pricing-cta-btn {
+        background: #ff66cc !important;
+        color: #ffffff !important;
+        border: 2px solid #ff66cc !important;
+        font-weight: 700 !important;
+        padding: 15px 24px !important;
+        border-radius: 50px !important;
+        transition: all 0.3s ease !important;
+    }
+
+    #pr-cm-pricing-wrapper .pricing-cta-btn:hover {
+        background: transparent !important;
+        color: #ff66cc !important;
+        border-color: #ff66cc !important;
+    }
+
+    /* Responsivo para móviles */
+    @media (max-width: 600px) {
+        #pr-cm-pricing-wrapper .pricing-card-new::before {
+            font-size: 11px !important;
+            padding: 6px 18px !important;
+            top: -15px !important;
+        }
+        #pr-cm-pricing-wrapper .pricing-cta-btn {
+            padding: 12px 20px !important;
+            font-size: 13px !important;
+        }
+        :global(.faq-cta-card .faq-d-btn) {
+            padding: 10px 20px !important;
+            font-size: 13px !important;
+        }
+    }
+
+    /* Checklist y checks en color verde */
+    #pr-cm-pricing-wrapper .pricing-check {
+        background: rgba(102, 255, 153, 0.2) !important;
+        color: #1f9e4b !important;
+    }
+
+    /* Personalización de la sección de beneficios (Sudamérica) */
+    #pr-cm-benefits-wrapper .bp-container {
+        grid-template-columns: 1fr !important;
+        max-width: 1100px !important;
+        gap: 0 !important;
+    }
+
+    /* Ocultar la columna derecha (imagen) */
+    #pr-cm-benefits-wrapper .bp-right {
+        display: none !important;
+    }
+
+    /* Centrar cabecera */
+    #pr-cm-benefits-wrapper .bp-title {
+        text-align: center !important;
+        max-width: 900px !important;
+        margin: 0 auto 20px auto !important;
+        line-height: 1.35 !important;
+    }
+
+    #pr-cm-benefits-wrapper .bp-subtitle {
+        text-align: center !important;
+        max-width: 850px !important;
+        margin: 0 auto 48px auto !important;
+        font-size: 16px !important;
+    }
+
+    /* Distribución de las 3 características en cuadrícula de 3 columnas */
+    #pr-cm-benefits-wrapper .bp-features {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 30px !important;
+    }
+
+    /* Convertir cada característica en una tarjeta */
+    #pr-cm-benefits-wrapper .bp-feature {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        background: #ffffff !important;
+        border: 1px solid rgba(0, 0, 0, 0.05) !important;
+        border-radius: 20px !important;
+        padding: 40px 30px !important;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.02) !important;
+        height: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Rediseñar el icono de la tarjeta */
+    #pr-cm-benefits-wrapper .bp-feature-icon {
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        font-size: 38px !important;
+        margin-bottom: 24px !important;
+        width: auto !important;
+        height: auto !important;
+    }
+
+    /* Título y descripción dentro de la tarjeta */
+    #pr-cm-benefits-wrapper .bp-feature-title {
+        font-size: 18px !important;
+        font-weight: 700 !important;
+        color: #1b1b1b !important;
+        margin: 0 0 12px 0 !important;
+    }
+
+    #pr-cm-benefits-wrapper .bp-feature-desc {
+        font-size: 14px !important;
+        color: #5a5a5a !important;
+        line-height: 1.6 !important;
+        margin: 0 !important;
+    }
+
+    /* Centrar y estilizar la nota al pie */
+    #pr-cm-benefits-wrapper .meta-custom-notice {
+        text-align: center !important;
+        margin: 50px auto 0 auto !important;
+        width: 100% !important;
+        max-width: 900px !important;
+        background: transparent !important;
+        border: none !important;
+        padding: 0 !important;
+        font-size: 15px !important;
+        color: #1b1b1b !important;
+        font-weight: 500 !important;
+        line-height: 1.5 !important;
+    }
+
+    /* Transición para la elevación de las tarjetas de beneficios */
+    #pr-cm-benefits-wrapper .bp-feature {
+        transition:
+            transform 0.3s ease,
+            border-color 0.3s ease,
+            box-shadow 0.3s ease !important;
+    }
+
+    /* Primer card: hover con borde rosa y elevación */
+    #pr-cm-benefits-wrapper .bp-feature:nth-child(1):hover {
+        transform: translateY(-8px) !important;
+        border-color: #ff66cc !important;
+        box-shadow: 0 15px 35px rgba(255, 102, 204, 0.12) !important;
+    }
+
+    /* Segundo card: hover con borde azul y elevación */
+    #pr-cm-benefits-wrapper .bp-feature:nth-child(2):hover {
+        transform: translateY(-8px) !important;
+        border-color: #6663fd !important;
+        box-shadow: 0 15px 35px rgba(102, 99, 253, 0.12) !important;
+    }
+
+    /* Tercer card: hover con borde verde y elevación */
+    #pr-cm-benefits-wrapper .bp-feature:nth-child(3):hover {
+        transform: translateY(-8px) !important;
+        border-color: #66ff99 !important;
+        box-shadow: 0 15px 35px rgba(102, 255, 153, 0.12) !important;
+    }
+
+    /* Adaptación responsive */
+    @media (max-width: 900px) {
+        #pr-cm-benefits-wrapper .bp-features {
+            grid-template-columns: 1fr !important;
+            gap: 20px !important;
+        }
+        #pr-cm-benefits-wrapper .bp-feature {
+            padding: 35px 25px !important;
+        }
+        #pr-cm-benefits-wrapper .bp-title {
+            font-size: 26px !important;
+        }
+        #pr-cm-benefits-wrapper .bp-subtitle {
+            font-size: 15px !important;
+        }
+    }
+    /* Borde inferior para la sección de beneficios únicamente en esta página */
+    #pr-cm-benefits-wrapper .bp-section {
+        border-bottom: 1px solid #f0f0f0 !important;
+    }
+
+    /* Ocultar caja de iconos en esta sección */
+    .employer-use-cases-designer-grid .icon-box {
+        display: none !important;
+    }
+
+    /* Sin elevación ni sombras adicionales en hover para esta sección, manteniendo la sombra base */
+    .employer-use-cases-designer-grid .service-card:hover {
+        transform: none !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+    }
+
+    /* Colores diferentes en hover para cada una de las 5 cards de Meta Ads */
+    .employer-use-cases-designer-grid .service-card.card-av-1:hover {
+        border-color: #ff66cc !important;
+    }
+    .employer-use-cases-designer-grid .service-card.card-av-2:hover {
+        border-color: #6663fd !important;
+    }
+    .employer-use-cases-designer-grid .service-card.card-meta-pr-noinvierte:hover {
+        border-color: #66ff99 !important;
+    }
+    .employer-use-cases-designer-grid .service-card.card-meta-pr-senales:hover {
+        border-color: #ff9933 !important;
+    }
+    .employer-use-cases-designer-grid .service-card.card-av-5:hover {
+        border-color: #3b76f6 !important;
+    }
+
+    /* ── Que Es Servicio CTA button — wider only on this page ── */
+    .ques-cta-btn {
+        padding-left: 48px;
+        padding-right: 48px;
+    }
+
+    /* Estilos para la tabla de sectores sin destacar la segunda columna */
+    .sector-comparison-wrapper .col-highlight {
+        background-color: transparent !important;
+        border-left: none !important;
+        border-right: none !important;
+        box-shadow: none !important;
+        text-align: left !important;
+    }
+    .sector-comparison-wrapper tr:last-child td.col-highlight {
+        border-bottom: none !important;
+    }
+    .sector-comparison-wrapper th.col-highlight {
+        border-top: none !important;
+        border-bottom: 1px solid #e8eaed !important;
+        color: #5a5a5a !important;
+        font-family: 'Montserrat', sans-serif !important;
+        font-size: 16px !important;
+        font-weight: 700 !important;
+        text-align: left !important;
+    }
+
+    /* Ajustes de espacio entre título y contenido en las cards 3 y 4 */
+    :global(.employer-use-cases-designer-grid .card-meta-pr-noinvierte h3),
+    :global(.employer-use-cases-designer-grid .card-meta-pr-senales h3) {
+        margin-bottom: 4px !important;
+    }
+
+</style>
