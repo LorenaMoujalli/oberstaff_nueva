@@ -1,0 +1,846 @@
+---
+const webhookUrlHero = "https://hooks.zapier.com/hooks/catch/12433184/42rc349/";
+const webhookUrlFooter = "https://hooks.zapier.com/hooks/catch/12433184/42r7nb6/";
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Obertrack - Visibilidad total sobre tu equipo remoto</title>
+  <!-- intl-tel-input library -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.10/build/css/intlTelInput.css" />
+  <script is:inline src="https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.10/build/js/intlTelInput.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+
+    :root {
+      --prussian-blue: #060b23;
+      --blue-violet: #8a2be2;
+      --smart-blue: #2d68c4;
+      --neon-ice: #15f4ee;
+      --fresh-sky: #45b1e8;
+      --lavender-mist: #f5f2fb;
+      --white: #ffffff;
+      --ob-pink: #ee82ee; 
+      --form-bg: rgba(255, 255, 255, 0.04); 
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--lavender-mist);
+      color: var(--prussian-blue);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      text-align: left;
+    }
+
+    a { text-decoration: none; }
+    .landing-container { width: 100%; margin: 0 auto; overflow-x: hidden; }
+    h1, h2, h3, h4 { font-weight: 800; line-height: 1.2; letter-spacing: -0.02em; }
+
+    /* HIGHLIGHTS */
+    .accent-text { color: var(--neon-ice); }
+    .accent-violet { color: var(--blue-violet); }
+    .accent-sky { color: var(--fresh-sky); }
+
+    /* REGLAS ESTRICTAS MARCA OBERSTAFF */
+    .ob { font-weight: 800 !important; color: var(--prussian-blue) !important; text-transform: none !important;}
+    .dark-section .ob { color: var(--white) !important; }
+    .ob::after { content: "." !important; color: var(--ob-pink) !important; font-weight: 800 !important; }
+
+    /* BUTTONS */
+    .pill-btn {
+      display: inline-block; padding: 16px 32px; border-radius: 50px;
+      font-weight: 800; font-size: 1.1rem; text-align: center; cursor: pointer;
+      transition: all 0.3s ease; border: none; font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .primary-btn.neon-btn { 
+      background-color: var(--neon-ice); 
+      color: #000000; 
+    }
+    .primary-btn.neon-btn:hover { background-color: #0ddcd7; transform: translateY(-2px); }
+
+    /* DARK SECTIONS */
+    .dark-section { background-color: var(--prussian-blue); color: var(--white); }
+
+    /* HERO SECTION */
+    .hero { padding: 30px 40px 100px 40px; border-radius: 0 0 40px 40px; }
+    .hero-inner-container { max-width: 1400px; margin: 0 auto; width: 100%; }
+    .logo-container { width: 100%; margin-bottom: 25px; text-align: left; }
+    .logo { max-width: 270px; height: auto; }
+
+    /* FILA SUPERIOR: TEXTOS + FORMULARIO */
+    .hero-top-row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 60px;
+      width: 100%;
+      margin-bottom: 60px; /* Espacio antes de la imagen */
+    }
+
+    .hero-text-col {
+      flex: 1;
+      text-align: left;
+      padding-top: 100px;
+    }
+
+    .hero-form-col {
+      width: 440px;
+      flex-shrink: 0;
+    }
+
+    /* FILA INFERIOR: IMAGEN DASHBOARD */
+    .hero-bottom-row {
+      width: 100%;
+      text-align: center; /* Centramos la imagen en su contenedor */
+    }
+
+    .dashboard-image {
+      width: 100%;
+      max-width: 1200px; /* Hacemos la imagen muy grande pero controlada */
+      border-radius: 16px;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+      display: inline-block;
+    }
+
+    /* EYEBROW Y TEXTOS DEL HERO */
+    .eyebrow-container { margin-bottom: 24px; }
+    .eyebrow {
+      display: inline-block; 
+      background-color: rgba(255, 255, 255, 0.08); 
+      color: var(--fresh-sky);
+      padding: 8px 16px; 
+      border-radius: 50px; 
+      font-size: 0.8rem; 
+      font-weight: 800;
+      letter-spacing: 0.5px; 
+    }
+    .hero h1 { font-size: 4rem; margin: 0 0 24px 0; color: var(--white); }
+    .hero .subtitle { font-size: 1.3rem; margin: 0 0 0 0; opacity: 0.9; color: var(--white); max-width: 800px; }
+
+    /* TARJETA DEL FORMULARIO */
+    .form-wrapper {
+      background-color: var(--form-bg);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 40px 32px;
+      border-radius: 20px;
+      text-align: center;
+    }
+    .form-wrapper h3 { font-size: 1.6rem; margin-bottom: 24px; color: var(--white); }
+
+    .hero-form { display: flex; flex-direction: column; gap: 16px; width: 100%; align-items: stretch; }
+    .hero-form input:not([type="checkbox"]) {
+      width: 100%; padding: 16px 20px; border-radius: 12px; border: 1.5px solid #e2e8f0;
+      font-family: inherit; font-size: 1rem; outline: none; color: var(--prussian-blue);
+      background-color: var(--white);
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .hero-form input:not([type="checkbox"])::placeholder { color: #888; font-weight: 600; }
+    .hero-form input:not([type="checkbox"]):focus {
+      border-color: var(--ob-pink);
+      box-shadow: 0 0 0 4px rgba(238, 130, 238, 0.15);
+    }
+    .hero-form button { width: 100%; margin-top: 8px; }
+
+    .support-text { font-size: 0.85rem; margin-top: 20px; color: #a1a1aa; line-height: 1.4; }
+
+    /* CONFIRMACIÓN DEL FORMULARIO */
+    :global(.form-confirmation) { text-align: center; animation: fadeUp 0.4s ease; padding: 20px 0; }
+    :global(.confirm-ring) {
+      width: 60px; height: 60px; border-radius: 50%;
+      background: var(--neon-ice); color: var(--prussian-blue);
+      font-size: 1.8rem; font-weight: 800; display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 18px auto;
+    }
+    :global(.form-confirmation p) { font-size: 1.05rem; line-height: 1.6; color: var(--white); }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+    /* OTRAS SECCIONES */
+    .credibility-bar { text-align: center; padding: 40px 20px; font-weight: 600; font-size: 1.1rem; color: var(--smart-blue); max-width: 1200px; margin: 0 auto; }
+
+    .problem-section { padding: 80px 40px; max-width: 900px; margin: 0 auto; text-align: left; }
+    .problem-section h2 { font-size: 2.8rem; margin-bottom: 32px; }
+    .problem-content p { font-size: 1.2rem; margin-bottom: 20px; }
+    .problem-content .bold-text { font-weight: 800; font-size: 1.4rem; margin-top: 30px; }
+    .solution-wrapper { margin-top: 20px; }
+    .solution-text { display: inline-block; background-color: var(--blue-violet); color: var(--white); padding: 6px 16px; border-radius: 8px; font-weight: 800; font-size: 1.5rem; transform: rotate(-2deg); }
+
+    .features-section { padding: 80px 40px; max-width: 1400px; margin: 0 auto; }
+    .features-section h2 { font-size: 2.5rem; margin-bottom: 60px; text-align: center; }
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+    .feature-card { background: var(--white); padding: 40px; border-radius: 24px; box-shadow: 0 10px 30px rgba(6, 11, 35, 0.05); text-align: left; }
+    .feature-icon { font-size: 3rem; margin-bottom: 20px; }
+    .feature-card h3 { font-size: 1.5rem; margin-bottom: 16px; color: var(--blue-violet); }
+
+    .steps-section { padding: 80px 40px; background-color: var(--white); border-radius: 40px; margin: 0 40px; max-width: 1400px; margin-left: auto; margin-right: auto; }
+    .steps-section h2 { font-size: 2.8rem; margin-bottom: 80px; text-align: center; }
+    .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
+    .step-card { background: var(--lavender-mist); padding: 40px 30px; border-radius: 24px; position: relative; text-align: left; }
+    .step-number { font-size: 8rem; font-weight: 800; line-height: 1; position: absolute; top: -60px; right: 20px; color: transparent; -webkit-text-stroke: 3px var(--smart-blue); opacity: 0.15; }
+    .step-card h3 { font-size: 1.5rem; margin-bottom: 16px; }
+
+    .ecosystem-section { padding: 100px 40px; display: flex; flex-wrap: wrap; align-items: center; gap: 60px; max-width: 1200px; margin: 0 auto; text-align: left; }
+    .ecosystem-content { flex: 1; min-width: 300px; }
+    .ecosystem-content h2 { font-size: 2.5rem; margin-bottom: 24px; }
+    .ecosystem-content p { font-size: 1.1rem; margin-bottom: 16px; }
+    .ecosystem-visual { flex: 1; min-width: 300px; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+    .eco-box { width: 100%; text-align: center; padding: 30px; border-radius: 20px; font-weight: 800; font-size: 1.2rem; color: var(--white); }
+    .blue-violet-bg { background-color: var(--blue-violet); }
+    .smart-blue-bg { background-color: var(--smart-blue); }
+    .eco-connector { font-size: 2rem; font-weight: 800; color: var(--prussian-blue); text-align: center; }
+
+    .faq-section { padding: 80px 40px; max-width: 1200px; margin: 0 auto; }
+    .faq-section h2 { font-size: 2.8rem; margin-bottom: 50px; text-align: center;}
+    .faq-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+    .faq-card { padding: 40px; border-radius: 24px; color: var(--white); cursor: pointer; position: relative; display: flex; flex-direction: column; justify-content: space-between; min-height: 220px; text-align: left; }
+    .bg-blue-violet { background-color: var(--blue-violet); }
+    .bg-smart-blue { background-color: var(--smart-blue); }
+    .bg-fresh-sky { background-color: var(--fresh-sky); color: var(--prussian-blue); }
+    .bg-prussian { background-color: var(--prussian-blue); }
+    .faq-card h4 { font-size: 1.3rem; margin-bottom: 20px; padding-right: 40px; }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.25s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease-out; opacity: 0; }
+    .faq-card.active .faq-answer { max-height: 120px; opacity: 1; margin-bottom: 20px; }
+    .expand-btn { background: var(--white); color: var(--prussian-blue); border: none; width: 40px; height: 40px; border-radius: 50%; font-size: 1.5rem; font-weight: 800; display: flex; align-items: center; justify-content: center; position: absolute; bottom: 30px; right: 30px; transition: transform 0.3s; }
+    .faq-card.active .expand-btn { transform: rotate(45deg); }
+
+    .final-cta-section { padding: 100px 40px; text-align: center; border-radius: 40px 40px 0 0; }
+    .final-cta-section h2 { font-size: 3.5rem; margin-bottom: 20px; }
+    .final-cta-section .subtitle { font-size: 1.2rem; margin-bottom: 40px; opacity: 0.9; }
+    .footer-form-container { max-width: 440px; margin: 0 auto; background-color: var(--form-bg); padding: 40px; border-radius: 20px; }
+
+    @media (max-width: 1024px) {
+      /* Apila de arriba abajo: Textos, luego Formulario, luego Imagen */
+      .hero-top-row { flex-direction: column; gap: 50px; text-align: center; margin-bottom: 40px; }
+      .hero-text-col { text-align: center; }
+      .logo-container { text-align: center; }
+      
+      .hero-form-col { width: 100%; max-width: 500px; margin: 0 auto; }
+      .hero h1 { font-size: 3rem; }
+      .hero .subtitle { margin: 0 auto; }
+    }
+
+    @media (max-width: 768px) {
+      .hero { padding: 40px 16px; }
+      .hero h1 { font-size: 2.2rem; }
+      .hero .subtitle { font-size: 1.1rem; }
+      .form-wrapper { padding: 24px 16px; }
+      .form-wrapper h3 { font-size: 1.4rem; }
+      .hero-form input { padding: 14px 20px; }
+      
+      .problem-section { padding: 60px 16px; }
+      .problem-section h2 { font-size: 2rem; text-align: center; }
+      .problem-content p { font-size: 1.1rem; }
+      .problem-content .bold-text { font-size: 1.2rem; }
+      .solution-text { font-size: 1.2rem; }
+
+      .features-section { padding: 60px 16px; }
+      .features-section h2 { font-size: 2rem; margin-bottom: 40px; }
+      .feature-card { padding: 24px; }
+      .feature-icon { font-size: 2rem; margin-bottom: 12px; }
+      .features-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+
+      .steps-section { margin: 0 16px; padding: 40px 20px; }
+      .steps-section h2 { font-size: 2rem; margin-bottom: 50px; }
+      .step-card { padding: 24px; }
+      .step-number { font-size: 5rem; top: -25px; right: 10px; }
+      .steps-grid { grid-template-columns: 1fr; gap: 30px; }
+
+      .ecosystem-section { padding: 60px 16px; gap: 40px; }
+      .ecosystem-content h2 { font-size: 2rem; }
+      .ecosystem-content p { font-size: 1rem; }
+      .eco-box { padding: 20px; font-size: 1.1rem; }
+
+      .faq-section { padding: 60px 16px; }
+      .faq-section h2 { font-size: 2rem; margin-bottom: 30px; }
+      .faq-grid { grid-template-columns: 1fr; gap: 16px; }
+      .faq-card { padding: 24px; min-height: auto; }
+      .faq-card h4 { font-size: 1.1rem; margin-bottom: 12px; }
+      .faq-answer p { font-size: 0.95rem; }
+      .expand-btn { bottom: 20px; right: 20px; }
+
+      .final-cta-section { padding: 60px 16px; }
+      .final-cta-section h2 { font-size: 2.2rem; }
+      .final-cta-section .subtitle { font-size: 1.1rem; margin-bottom: 30px; }
+      .footer-form-container { padding: 24px 16px; }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 1.8rem; }
+      .hero .subtitle { font-size: 1rem; }
+      .logo { max-width: 210px; }
+      .dashboard-image { box-shadow: 0 15px 30px rgba(0,0,0,0.4); }
+    }
+
+    :global(.iti) {
+      display: block !important;
+      width: 100% !important;
+      margin-bottom: 0 !important;
+    }
+    :global(.iti__country-list) {
+      color: var(--prussian-blue) !important;
+      text-align: left !important;
+    }
+    :global(.iti__selected-country) {
+      background: transparent !important;
+      border-right: 1.5px solid #e2e8f0;
+      padding-right: 10px !important;
+      padding-left: 14px !important;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    :global(.iti__selected-dial-code) {
+      font-weight: 600;
+      color: var(--prussian-blue);
+      font-size: 0.95rem;
+      margin-left: 4px;
+    }
+    :global(.iti__arrow) {
+      margin-left: 4px !important;
+    }
+    :global(.iti input[type="tel"]) {
+      padding-left: 120px !important;
+    }
+    .captcha-input.invalid {
+      border-color: #ef4444 !important;
+      box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.12) !important;
+    }
+    .captcha-refresh:hover {
+      background: var(--neon-ice) !important;
+      color: var(--prussian-blue) !important;
+    }
+  </style>
+</head>
+<body>
+
+  <main class="landing-container">
+
+    <section class="hero dark-section">
+      <div class="hero-inner-container">
+        <div class="logo-container">
+          <img src="/logo-obertrack-blanco.webp" alt="Obertrack" class="logo">
+        </div>
+
+        <div class="hero-top-row">
+          <div class="hero-text-col">
+            <div class="eyebrow-container">
+              <span class="eyebrow">EXCLUSIVO PARA CLIENTES DE <span class="ob">Oberstaff</span> · INCLUIDO SIN COSTO ADICIONAL</span>
+            </div>
+            <h1>Visibilidad total sobre tu equipo remoto, en una <span class="accent-text">sola pantalla.</span></h1>
+            <p class="subtitle">
+              Obertrack es la plataforma de seguimiento de trabajo remoto de <span class="ob">Oberstaff</span> Gestiona tareas, aprueba horas y revisa reportes de productividad, todo en un lugar.
+            </p>
+          </div>
+
+          <div class="hero-form-col">
+            <div class="form-wrapper">
+              <h3>Solicita tu acceso gratis</h3>
+              <form class="hero-form" id="heroForm" data-webhook-url={webhookUrlHero}>
+                <input type="text" name="nombre" placeholder="Tu nombre completo *" required>
+                <input type="email" name="correo" placeholder="Tu correo electrónico *" required>
+                <div class="input-group" style="width: 100%;">
+                  <input
+                    type="tel"
+                    name="telefono"
+                    placeholder="Tu teléfono *"
+                    required
+                    style="width: 100%; box-sizing: border-box;"
+                    oninput="this.value = this.value.replace(/[^0-9 ]/g, '')"
+                    data-phone="true"
+                  />
+                </div>
+
+                <!-- SMS Consent Checkbox -->
+                <div class="form-group full-width consent-group" style="margin: 15px 0; text-align: left;">
+                  <label class="consent-label" style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer;">
+                    <input
+                      type="checkbox"
+                      class="sms-consent"
+                      required
+                      style="flex-shrink: 0; width: 18px; height: 18px; margin-top: 3px; accent-color: var(--blue-violet); cursor: pointer;"
+                    />
+                    <span class="consent-text" style="font-size: 10px; line-height: 1.6; color: #a1a1aa; text-align: left;">
+                      <strong>Al facilitar su número de teléfono</strong>, aceptas recibir mensajes SMS "Mensajes relacionados con atención al cliente" de Oberstaff. La frecuencia de los mensajes puede variar. Pueden aplicarse tarifas estándar de mensajes y datos. Responde STOP para cancelar la suscripción. Responde Help para obtener ayuda.
+                      <a href="/politica-de-privacidad-y-cookies-de-oberstaff" target="_blank" class="consent-link" style="color: var(--neon-ice); text-decoration: underline;">Política de privacidad y uso de cookies.</a>
+                      <span class="required-star" style="color: #ef4444; font-weight: 700; margin-left: 2px;">*</span>
+                    </span>
+                  </label>
+                  <p class="consent-error" style="font-size: 12px; color: #ef4444; margin-top: 4px; min-height: 1em; text-align: left;"></p>
+                </div>
+
+                <!-- CAPTCHA Verification -->
+                <div class="form-group full-width captcha-group" style="margin-bottom: 20px; text-align: left;">
+                  <label class="captcha-label" style="font-size: 14px; font-weight: 600; color: var(--white); display: block; margin-bottom: 4px;">
+                    Código de verificación <span class="required-star" style="color: #ef4444; font-weight: 700; margin-left: 2px;">*</span>
+                  </label>
+                  <p class="captcha-hint" style="font-size: 12px; color: #a1a1aa; margin: 0 0 8px 0;">Ingresa el texto que ves en la imagen</p>
+                  <div class="captcha-input-row" style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
+                    <input
+                      type="text"
+                      class="captcha-input"
+                      placeholder="Escribe el código"
+                      autocomplete="off"
+                      maxlength="8"
+                      style="background-color: var(--white); border: 1px solid #E0E0E0; padding: 10px 10px; border-radius: 8px; font-size: 12px; outline: none; transition: border-color 0.3s ease, box-shadow 0.3s ease; width: 200px; color: var(--prussian-blue); letter-spacing: 2px;"
+                    />
+                    <button
+                      type="button"
+                      class="captcha-refresh"
+                      title="Nuevo código"
+                      aria-label="Generar nuevo código"
+                      style="background: none; border: 1.5px solid var(--neon-ice); border-radius: 6px; color: var(--neon-ice); font-size: 18px; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s, color 0.2s; padding: 0; flex-shrink: 0;"
+                    >
+                      &#x21bb;
+                    </button>
+                  </div>
+                  <canvas
+                    class="captcha-canvas"
+                    width="200"
+                    height="60"
+                    aria-label="Código de verificación visual"
+                    style="display: block; border-radius: 8px; border: 1px solid #ddd; background: #f4f4f8; user-select: none; pointer-events: none;"
+                  ></canvas>
+                  <p class="captcha-error" style="font-size: 12px; color: #ef4444; margin-top: 4px; min-height: 1em;"></p>
+                </div>
+
+                <button type="submit" class="pill-btn primary-btn neon-btn">Solicitar acceso gratis &rarr;</button>
+              </form>
+              <p class="support-text">Solo disponible para clientes activos de <span class="ob">Oberstaff</span> Sin tarjeta de crédito.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-bottom-row">
+          <img src="/dashboard-obertrack.webp" alt="Dashboard de Obertrack" class="dashboard-image">
+        </div>
+      </div>
+    </section>
+
+    <section class="credibility-bar">
+      <p>Obertrack es desarrollado por <span class="ob">Oberstaff</span> para que tengas control total sobre el talento remoto que contratamos para ti.</p>
+    </section>
+
+    <section class="problem-section">
+      <h2>¿Cómo sabes <span class="accent-violet">realmente</span> cuánto está trabajando tu equipo remoto?</h2>
+      <div class="problem-content">
+        <p>Cuando tu equipo trabaja en remoto, el día a día se vuelve invisible. Los correos se mezclan con WhatsApp. Las tareas viven en hojas de cálculo que nadie actualiza. Las horas se reportan al final de la semana, si es que se reportan.</p>
+        <p class="bold-text">No es un problema de confianza. Es un problema de visibilidad.</p>
+        <div class="solution-wrapper">
+          <p class="solution-text">Obertrack lo resuelve.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="features-section">
+      <h2>Todo lo que necesitas para gestionar tu equipo remoto, <br>en un solo lugar.</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3>Dashboard de control</h3>
+          <p>Ve de un vistazo cuántas horas lleva registradas tu equipo esta semana, qué tareas están activas y qué está pendiente de tu aprobación. Sin abrir ningún chat.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📋</div>
+          <h3>Tableros de tareas</h3>
+          <p>Crea tableros con las fases que usa tu equipo. Asigna tareas, ponles prioridad y fecha límite. Muévelas arrastrando.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⏱️</div>
+          <h3>Registro y aprobación</h3>
+          <p>Tus profesionales registran su jornada diaria en la plataforma. Tú apruebas con un clic, individualmente o para todo el equipo.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📈</div>
+          <h3>Reportes de productividad</h3>
+          <p>Filtra por persona y por fechas. Ve la distribución de horas diarias y el estado de cada tarea. Exporta en PDF o Excel.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💬</div>
+          <h3>Chat integrado</h3>
+          <p>Mensajes directos y canales por proyecto, públicos o privados. La comunicación de tu equipo dentro de la herramienta.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎫</div>
+          <h3>Soporte por ticket</h3>
+          <p>¿Necesitas ayuda? Abre un ticket directo desde la plataforma y recibe asistencia del equipo de <span class="ob">Oberstaff</span> sin salir de Obertrack.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🚀</div>
+          <h3>Onboarding incluido</h3>
+          <p>Tutoriales en video de menos de 3 minutos para cada función. Tu equipo arranca solo desde el primer día.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="steps-section">
+      <h2>Empezar toma menos de 5 minutos.</h2>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h3>Activa tu cuenta</h3>
+          <p>Ingresa con el correo que tienes registrado en <span class="ob">Oberstaff</span> Tu acceso ya está listo.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h3>Invita a tu equipo</h3>
+          <p>Agrega a los profesionales de <span class="ob">Oberstaff</span> que trabajan contigo. Reciben una invitación automática.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h3>Empieza a operar</h3>
+          <p>Crea tu primer tablero, asigna tareas y activa el registro de horas. Desde hoy tienes visibilidad completa.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="ecosystem-section">
+      <div class="ecosystem-content">
+        <h2><span class="ob">Oberstaff</span> gestiona los recursos humanos. <span class="accent-sky">Obertrack te da el control</span> del día a día.</h2>
+        <p><span class="ob">Oberstaff</span> se encarga de reclutar, contratar y gestionar los pagos de tu talento remoto en América Latina.</p>
+        <p>Obertrack es la capa operativa: la herramienta que te permite ver qué están haciendo, cuánto tiempo invierten y en qué proyectos avanzan.</p>
+        <p class="bold-text">Dos herramientas. Un ecosistema. Todo incluido en tu servicio.</p>
+      </div>
+      <div class="ecosystem-visual">
+        <div class="eco-box blue-violet-bg"><span class="ob">Oberstaff</span> (RRHH)</div>
+        <div class="eco-connector">+</div>
+        <div class="eco-box smart-blue-bg">Obertrack (Operación)</div>
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <h2>Preguntas frecuentes</h2>
+      <div class="faq-grid">
+        <div class="faq-card bg-blue-violet">
+          <h4>¿Obertrack tiene algún costo adicional?</h4>
+          <div class="faq-answer">
+            <p>No. Obertrack se incluye de forma gratuita para todos los clientes activos de <span class="ob">Oberstaff</span> Sin planes de pago, sin límites ocultos.</p>
+          </div>
+          <button class="expand-btn">+</button>
+        </div>
+        <div class="faq-card bg-smart-blue">
+          <h4>¿Mis profesionales necesitan hacer algo especial?</h4>
+          <div class="faq-answer">
+            <p>No. Cuando actives tu cuenta, ellos reciben una invitación automática con tutoriales de menos de 3 minutos.</p>
+          </div>
+          <button class="expand-btn">+</button>
+        </div>
+        <div class="faq-card bg-fresh-sky">
+          <h4>¿Puedo usarlo si tengo un solo profesional?</h4>
+          <div class="faq-answer">
+            <p>Sí. Obertrack funciona desde un solo usuario. Es igual de útil para equipos pequeños.</p>
+          </div>
+          <button class="expand-btn">+</button>
+        </div>
+        <div class="faq-card bg-prussian">
+          <h4>¿Mis datos están seguros?</h4>
+          <div class="faq-answer">
+            <p>Obertrack es operado por <span class="ob">Oberstaff</span> Tu información está bajo los mismos estándares de privacidad de siempre.</p>
+          </div>
+          <button class="expand-btn">+</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta-section dark-section">
+      <h2>Tu equipo remoto te está esperando en <span class="accent-text">Obertrack.</span></h2>
+      <p class="subtitle">Déjanos tus datos y empieza a tener visibilidad total en menos de 5 minutos.</p>
+
+      <div class="footer-form-container">
+        <form class="hero-form" id="footerForm" data-webhook-url={webhookUrlFooter}>
+          <input type="text" name="nombre" placeholder="Tu nombre completo *" required>
+          <input type="email" name="correo" placeholder="Tu correo electrónico *" required>
+          <div class="input-group" style="width: 100%;">
+            <input
+              type="tel"
+              name="telefono"
+              placeholder="Tu teléfono *"
+              required
+              style="width: 100%; box-sizing: border-box;"
+              oninput="this.value = this.value.replace(/[^0-9 ]/g, '')"
+              data-phone="true"
+            />
+          </div>
+
+          <!-- SMS Consent Checkbox -->
+          <div class="form-group full-width consent-group" style="margin: 15px 0; text-align: left;">
+            <label class="consent-label" style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer;">
+              <input
+                type="checkbox"
+                class="sms-consent"
+                required
+                style="flex-shrink: 0; width: 18px; height: 18px; margin-top: 3px; accent-color: var(--blue-violet); cursor: pointer;"
+              />
+              <span class="consent-text" style="font-size: 10px; line-height: 1.6; color: #a1a1aa; text-align: left;">
+                <strong>Al facilitar su número de teléfono</strong>, aceptas recibir mensajes SMS "Mensajes relacionados con atención al cliente" de Oberstaff. La frecuencia de los mensajes puede variar. Pueden aplicarse tarifas estándar de mensajes y datos. Responde STOP para cancelar la suscripción. Responde Help para obtener ayuda.
+                <a href="/politica-de-privacidad-y-cookies-de-oberstaff" target="_blank" class="consent-link" style="color: var(--neon-ice); text-decoration: underline;">Política de privacidad y uso de cookies.</a>
+                <span class="required-star" style="color: #ef4444; font-weight: 700; margin-left: 2px;">*</span>
+              </span>
+            </label>
+            <p class="consent-error" style="font-size: 12px; color: #ef4444; margin-top: 4px; min-height: 1em; text-align: left;"></p>
+          </div>
+
+          <!-- CAPTCHA Verification -->
+          <div class="form-group full-width captcha-group" style="margin-bottom: 20px; text-align: left;">
+            <label class="captcha-label" style="font-size: 14px; font-weight: 600; color: var(--white); display: block; margin-bottom: 4px;">
+              Código de verificación <span class="required-star" style="color: #ef4444; font-weight: 700; margin-left: 2px;">*</span>
+            </label>
+            <p class="captcha-hint" style="font-size: 12px; color: #a1a1aa; margin: 0 0 8px 0;">Ingresa el texto que ves en la imagen</p>
+            <div class="captcha-input-row" style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
+              <input
+                type="text"
+                class="captcha-input"
+                placeholder="Escribe el código"
+                autocomplete="off"
+                maxlength="8"
+                style="background-color: var(--white); border: 1px solid #E0E0E0; padding: 10px 10px; border-radius: 8px; font-size: 12px; outline: none; transition: border-color 0.3s ease, box-shadow 0.3s ease; width: 200px; color: var(--prussian-blue); letter-spacing: 2px;"
+              />
+              <button
+                type="button"
+                class="captcha-refresh"
+                title="Nuevo código"
+                aria-label="Generar nuevo código"
+                style="background: none; border: 1.5px solid var(--neon-ice); border-radius: 6px; color: var(--neon-ice); font-size: 18px; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s, color 0.2s; padding: 0; flex-shrink: 0;"
+              >
+                &#x21bb;
+              </button>
+            </div>
+            <canvas
+              class="captcha-canvas"
+              width="200"
+              height="60"
+              aria-label="Código de verificación visual"
+              style="display: block; border-radius: 8px; border: 1px solid #ddd; background: #f4f4f8; user-select: none; pointer-events: none;"
+            ></canvas>
+            <p class="captcha-error" style="font-size: 12px; color: #ef4444; margin-top: 4px; min-height: 1em;"></p>
+          </div>
+
+          <button type="submit" class="pill-btn primary-btn neon-btn">Solicitar acceso gratis &rarr;</button>
+        </form>
+      </div>
+
+      <p class="support-text">¿Tienes dudas? Escríbenos a soporte@oberstaff.com y te ayudamos en el día.</p>
+    </section>
+
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+      // ── CAPTCHA Generator ──────────────────────────────────────────
+      const CAPTCHA_CHARS = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+
+      function generateCaptchaCode(length = 6) {
+        let code = '';
+        for (let i = 0; i < length; i++) {
+          code += CAPTCHA_CHARS[Math.floor(Math.random() * CAPTCHA_CHARS.length)];
+        }
+        return code;
+      }
+
+      function drawCaptcha(canvas: HTMLCanvasElement | null, code: string) {
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        if (!ctx) return;
+        const w = canvas.width;
+        const h = canvas.height;
+
+        // Background
+        ctx.clearRect(0, 0, w, h);
+        ctx.fillStyle = '#f0f0f6';
+        ctx.fillRect(0, 0, w, h);
+
+        // Noise lines
+        for (let i = 0; i < 6; i++) {
+          ctx.strokeStyle = `hsl(${Math.random() * 360}, 40%, 70%)`;
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.moveTo(Math.random() * w, Math.random() * h);
+          ctx.lineTo(Math.random() * w, Math.random() * h);
+          ctx.stroke();
+        }
+
+        // Noise dots
+        for (let i = 0; i < 40; i++) {
+          ctx.fillStyle = `hsl(${Math.random() * 360}, 40%, 65%)`;
+          ctx.beginPath();
+          ctx.arc(Math.random() * w, Math.random() * h, 1, 0, Math.PI * 2);
+          ctx.fill();
+        }
+
+        // Draw characters
+        const charW = w / (code.length + 1);
+        for (let i = 0; i < code.length; i++) {
+          ctx.save();
+          const x = charW * (i + 0.9);
+          const y = h / 2 + 8;
+          const angle = (Math.random() - 0.5) * 0.4;
+          ctx.translate(x, y);
+          ctx.rotate(angle);
+          ctx.font = `bold ${20 + Math.random() * 6}px monospace`;
+          ctx.fillStyle = `hsl(${240 + Math.random() * 60}, 55%, 35%)`;
+          ctx.strokeStyle = `hsl(${240 + Math.random() * 60}, 40%, 60%)`;
+          ctx.lineWidth = 0.5;
+          ctx.strokeText(code[i], 0, 0);
+          ctx.fillText(code[i], 0, 0);
+          ctx.restore();
+        }
+      }
+
+      // Procesamiento de los formularios (Hero y Footer)
+      const forms = document.querySelectorAll('.hero-form');
+      forms.forEach(formElement => {
+        const form = formElement as HTMLFormElement;
+
+        // Initialize intl-tel-input
+        const phoneInput = form.querySelector('input[data-phone="true"]') as HTMLInputElement;
+        let iti: any = null;
+        if (phoneInput && (window as any).intlTelInput) {
+          iti = (window as any).intlTelInput(phoneInput, {
+            initialCountry: "es",
+            separateDialCode: true,
+            preferredCountries: ["es", "co", "ar", "mx", "cl", "pe", "ve"],
+            utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.10/build/js/utils.js",
+          });
+        }
+
+        // CAPTCHA setup
+        let currentCode = '';
+        const canvas = form.querySelector('.captcha-canvas') as HTMLCanvasElement;
+        const captchaInput = form.querySelector('.captcha-input') as HTMLInputElement;
+        const captchaRefresh = form.querySelector('.captcha-refresh') as HTMLButtonElement;
+        const captchaError = form.querySelector('.captcha-error') as HTMLElement;
+
+        function refreshCaptcha() {
+          currentCode = generateCaptchaCode();
+          drawCaptcha(canvas, currentCode);
+          if (captchaInput) {
+            captchaInput.value = '';
+            captchaInput.classList.remove('invalid');
+          }
+          if (captchaError) captchaError.textContent = '';
+        }
+
+        if (canvas) {
+          refreshCaptcha();
+        }
+        captchaRefresh?.addEventListener('click', refreshCaptcha);
+        captchaInput?.addEventListener('input', () => {
+          captchaInput.classList.remove('invalid');
+          if (captchaError) captchaError.textContent = '';
+        });
+
+        // Consent checkbox
+        const consentCheckbox = form.querySelector('.sms-consent') as HTMLInputElement;
+        const consentError = form.querySelector('.consent-error') as HTMLElement;
+
+        consentCheckbox?.addEventListener('change', () => {
+          if (consentCheckbox.checked && consentError) {
+            consentError.textContent = '';
+          }
+        });
+
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+
+          let hasError = false;
+
+          // Validate Consent Checkbox
+          if (consentCheckbox && !consentCheckbox.checked) {
+            if (consentError) {
+              consentError.textContent = '⚠ Debes aceptar el consentimiento para continuar.';
+            }
+            hasError = true;
+          }
+
+          // Validate Captcha
+          if (captchaInput) {
+            const userCode = captchaInput.value.trim().toUpperCase();
+            if (!userCode) {
+              if (captchaError) captchaError.textContent = '⚠ Este campo es obligatorio. Ingresa el código.';
+              captchaInput.classList.add('invalid');
+              hasError = true;
+            } else if (userCode !== currentCode) {
+              refreshCaptcha();
+              if (captchaError) captchaError.textContent = '❌ Código incorrecto. Se generó un nuevo código, inténtalo de nuevo.';
+              captchaInput.classList.add('invalid');
+              hasError = true;
+            }
+          }
+
+          if (hasError) return;
+
+          const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+          const originalBtnText = btn ? btn.innerHTML : '';
+          
+          const nombre   = (form.querySelector('input[name="nombre"]') as HTMLInputElement).value.trim();
+          const correo   = (form.querySelector('input[name="correo"]') as HTMLInputElement).value.trim();
+          const telefono = phoneInput ? phoneInput.value.trim() : '';
+          const webhookUrl = form.dataset.webhookUrl;
+
+          // Format phone number with country dial code
+          const formattedTelefono = (iti && telefono) ? iti.getNumber() : telefono;
+
+          const data = {
+            nombre,
+            correo,
+            telefono: formattedTelefono,
+            origen: "Obertrack Clientes - " + form.id,
+            fecha: new Date().toISOString()
+          };
+
+          try {
+            if (btn) {
+              btn.disabled = true;
+              btn.innerHTML = "Enviando...";
+            }
+
+            if (webhookUrl) {
+              await fetch(webhookUrl, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data),
+                mode: "no-cors"
+              });
+            }
+
+            // Mensaje de éxito reemplazando el formulario
+            const primer = nombre.split(' ')[0] || '';
+            const msg = document.createElement('div');
+            msg.className = 'form-confirmation';
+            msg.innerHTML =
+              '<div class="confirm-ring">&#10003;</div>' +
+              '<p>¡Gracias' + (primer ? ', ' + primer : '') + '! El <strong>equipo de Customer Success</strong> ' +
+              'se comunicará contigo <strong>hoy mismo</strong> para ayudarte a acceder a tu cuenta.</p>';
+            form.replaceWith(msg);
+
+          } catch (error) {
+            console.error('Error al enviar webhook:', error);
+            alert('Hubo un error al enviar tus datos. Por favor, inténtalo de nuevo.');
+            if (btn) {
+              btn.disabled = false;
+              btn.innerHTML = originalBtnText;
+            }
+          }
+        });
+      });
+
+      // Interactividad del acordon FAQ
+      const faqCards = document.querySelectorAll('.faq-card');
+      faqCards.forEach(card => {
+        card.addEventListener('click', () => {
+          faqCards.forEach(otherCard => {
+            if (otherCard !== card) otherCard.classList.remove('active');
+          });
+          card.classList.toggle('active');
+        });
+      });
+
+    });
+  </script>
+</body>
+</html>

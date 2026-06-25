@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obertrack - Tu jornada bajo control</title>
+    
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* PALETA DE COLORES OFICIAL OBERTRACK */
+        :root {
+            --prussian-blue: #060b23;
+            --lavender-mist: #f5f2fb;
+            --violet: #ee82ee;
+            --blue-violet: #8a2be2;
+            --azure-blue: #007fff;
+            --neon-ice: #15f4ee;
+            --smart-blue: #2d68c4;
+            --fresh-sky: #45b1e8;
+            --vivid-orchid: #cc33cc;
+            --indigo-velvet: #512888;
+            
+            --white: #ffffff;
+            --text-dark: #0c1233;
+            --text-muted: #5c6280;
+        }
+
+        /* RESET GENERAL */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--lavender-mist);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* REGLA ESTRICTA DE MARCA MADRE */
+        .pink-dot {
+            color: var(--violet);
+            font-weight: 800;
+        }
+
+        /* ESTRUCTURA & CONTENEDORES */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section {
+            padding-top: 100px;
+            padding-bottom: 100px;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(135deg, var(--prussian-blue) 0%, var(--indigo-velvet) 100%);
+            color: var(--white);
+            padding: 140px 0 100px;
+            text-align: center;
+            position: relative;
+            border-bottom: 6px solid var(--neon-ice);
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-top: 20px solid var(--neon-ice);
+        }
+
+        .hero-container {
+            max-width: 850px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background-color: rgba(21, 244, 238, 0.15);
+            color: var(--neon-ice);
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            border: 1px solid rgba(21, 244, 238, 0.3);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            background: linear-gradient(120deg, #ffffff, var(--fresh-sky));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            font-weight: 300;
+            color: rgba(245, 242, 251, 0.85);
+            margin-bottom: 40px;
+            line-height: 1.7;
+        }
+
+        /* BOTONES */
+        .btn {
+            display: inline-block;
+            text-decoration: none;
+            padding: 14px 32px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: var(--neon-ice);
+            color: var(--prussian-blue);
+            box-shadow: 0 8px 20px rgba(21, 244, 238, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--white);
+            color: var(--blue-violet);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 24px rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-whatsapp {
+            background: linear-gradient(90deg, #25D366 0%, #1cbd55 100%);
+            color: var(--white);
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 6px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.4);
+            opacity: 0.95;
+        }
+
+        /* FILAS DE CARACTERÍSTICAS INTERCALADAS */
+        .feature-row {
+            display: flex;
+            align-items: center;
+            gap: 64px;
+            margin-bottom: 120px;
+        }
+
+        .feature-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .feature-row:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .feature-text {
+            flex: 1;
+        }
+
+        .step-number {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--blue-violet);
+            margin-bottom: 8px;
+            display: inline-block;
+            border-bottom: 2px solid var(--neon-ice);
+        }
+
+        .feature-text h2 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: var(--prussian-blue);
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .feature-text p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+
+        .feature-text ul {
+            list-style: none;
+        }
+
+        .feature-text ul li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 16px;
+            font-size: 1.05rem;
+            color: var(--text-dark);
+        }
+
+        .feature-text ul li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--blue-violet);
+            font-weight: 700;
+        }
+
+        /* CONTENEDORES MULTIMEDIA (PLACEHOLDERS) */
+        .media-container {
+            flex: 1;
+        }
+
+        .media-box {
+            background-color: var(--white);
+            border: 3px dashed var(--smart-blue);
+            border-radius: 20px;
+            padding: 40px;
+            min-height: 320px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 15px 35px rgba(6, 11, 35, 0.04);
+            transition: border-color 0.3s ease;
+        }
+
+        .media-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+
+        .type-image::before {
+            background: linear-gradient(90deg, var(--azure-blue), var(--fresh-sky));
+        }
+
+        .type-video::before {
+            background: linear-gradient(90deg, var(--vivid-orchid), var(--violet));
+        }
+
+        .media-badge {
+            background-color: var(--azure-blue);
+            color: var(--white);
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 6px 14px;
+            border-radius: 30px;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .video-badge {
+            background-color: var(--vivid-orchid);
+        }
+
+        .media-instruction {
+            font-size: 0.95rem;
+            color: var(--prussian-blue);
+            line-height: 1.6;
+            max-width: 90%;
+        }
+
+        /* CTA / CUSTOMER SUCCESS SECTION */
+        .cta-section {
+            background-color: var(--prussian-blue);
+            color: var(--white);
+            padding: 100px 0;
+            border-top: 6px solid var(--violet);
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .cta-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--lavender-mist);
+            opacity: 0.8;
+            margin-bottom: 60px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 40px;
+        }
+
+        .contact-card {
+            background: rgba(245, 242, 251, 0.04);
+            border: 1px solid rgba(245, 242, 251, 0.1);
+            border-radius: 24px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .border-whatsapp {
+            border-left: 5px solid #25D366;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .status-indicator {
+            width: 12px;
+            height: 12px;
+            background-color: #25D366;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 10px #25D366;
+        }
+
+        .contact-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .contact-card p {
+            color: rgba(245, 242, 251, 0.75);
+            font-size: 1.05rem;
+            margin-bottom: 30px;
+        }
+
+        .phone-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--neon-ice);
+            margin-bottom: 24px;
+            letter-spacing: 0.5px;
+        }
+
+        .team-members {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .member {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            border-bottom: 1px solid rgba(245, 242, 251, 0.1);
+        }
+
+        .member:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .member-info h4 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .member-info .role {
+            font-size: 0.9rem;
+            color: var(--fresh-sky);
+        }
+
+        .email-link {
+            color: var(--neon-ice);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        .email-link:hover {
+            color: var(--white);
+            text-decoration: underline;
+        }
+
+        /* FOOTER */
+        .main-footer {
+            background-color: #030614;
+            color: rgba(245, 242, 251, 0.5);
+            padding: 40px 0;
+            text-align: center;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(245, 242, 251, 0.05);
+        }
+
+        /* ANIMACIONES DE ENTRADA SCROLL */
+        .scroll-anim {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .scroll-anim.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 992px) {
+            .feature-row, .feature-row:nth-child(even) {
+                flex-direction: column;
+                gap: 40px;
+                margin-bottom: 80px;
+            }
+            
+            .hero h1 {
+                font-size: 2.75rem;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 16px;
+            }
+            .section {
+                padding-top: 60px;
+                padding-bottom: 60px;
+            }
+            .hero {
+                padding: 100px 0 60px;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .hero p {
+                font-size: 1.05rem;
+                margin-bottom: 24px;
+            }
+            .feature-text h2 {
+                font-size: 1.75rem;
+                margin-bottom: 12px;
+            }
+            .media-box {
+                padding: 24px 16px;
+                min-height: 260px;
+            }
+            .cta-section {
+                padding: 60px 0;
+            }
+            .cta-section h2 {
+                font-size: 1.8rem;
+            }
+            .cta-subtitle {
+                font-size: 1.05rem;
+                margin-bottom: 40px;
+            }
+            .contact-card {
+                padding: 24px 16px;
+            }
+            .phone-number {
+                font-size: 1.6rem;
+            }
+            .member {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 6px;
+                padding-bottom: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .feature-text h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <div class="container hero-container">
+            <div class="hero-badge">Beneficio Exclusivo</div>
+            <h1>Tu acceso a Obertrack está listo</h1>
+            <p>Gestiona tu día a día de forma ágil y transparente con la plataforma exclusiva creada por <strong>Oberstaff<span class="pink-dot">.</span></strong> Diseñada especialmente para simplificar tu registro de jornada, organizar tus tareas y mantener a tu equipo conectado en un solo lugar sin complicaciones.</p>
+            <a href="#features" class="btn btn-primary">Explorar la Plataforma</a>
+        </div>
+    </header>
+
+    <!-- CONTENT SECTION -->
+    <main id="features" class="container section">
+        
+        <!-- Feature 1: Dashboard -->
+        <section class="feature-row scroll-anim">
+            <div class="feature-text">
+                <div class="step-number">01</div>
+                <h2>Dashboard Principal</h2>
+                <p>Al ingresar a la plataforma, lo primero que verás es un resumen general intuitivo de tu jornada laboral y tus actividades del día.</p>
+                <ul>
+                    <li><strong>Métricas en tiempo real:</strong> Visualiza tus horas acumuladas de la semana, horas aprobadas y pendientes.</li>
+                    <li><strong>Acceso rápido:</strong> Cuenta con un botón destacado para crear nuevas actividades de manera inmediata.</li>
+                    <li><strong>Historial detallado:</strong> Explora el registro reciente de tu jornada y el estado de tus entregas justo debajo del panel principal.</li>
+                </ul>
+            </div>
+            <div class="media-container">
+                <div class="media-box type-image">
+                    <span class="media-badge">IMAGEN</span>
+                    <p class="media-instruction"><strong>Visualización requerida:</strong> Captura de pantalla de la interfaz de usuario de Obertrack mostrando el Dashboard de un profesional. Debe verse el saludo "Buenos días, Mary", las tarjetas de métricas con "27.0h" de horas semanales y la gráfica de barra con el historial de registros recientes.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature 2: Tareas -->
+        <section class="feature-row scroll-anim">
+            <div class="feature-text">
+                <div class="step-number">02</div>
+                <h2>Tableros y Gestión de Tareas</h2>
+                <p>Organiza tus entregables mediante flujos de trabajo dinámicos y tableros visuales interactivos estilo Kanban.</p>
+                <ul>
+                    <li><strong>Creación de tableros:</strong> Define el nombre, color y descripción de tu espacio de trabajo (ej. Marketing, IT, Diseño).</li>
+                    <li><strong>Colaboración:</strong> Agrega miembros de tu equipo para trabajar juntos en un mismo tablero o únete a uno existente creado por la empresa.</li>
+                    <li><strong>Control total de tareas:</strong> Asigna títulos, descripciones, niveles de prioridad, fechas límite y responsables con un solo clic. Arrastra las tarjetas fácilmente entre fases (Por hacer, En proceso, Finalizado).</li>
+                </ul>
+            </div>
+            <div class="media-container">
+                <div class="media-box type-video">
+                    <span class="media-badge video-badge">VIDEO / GIF ANIMADO</span>
+                    <p class="media-instruction"><strong>Visualización requerida:</strong> Demostración interactiva de la pantalla de tareas. Debe mostrar un clic en "+ Crear Tablero", el rellenado rápido de campos y una animación suave de "drag and drop" (arrastrar y soltar) moviendo la tarjeta "Diseñar carruseles para Meta Ads" desde la fase "Por hacer" hacia "En proceso".</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature 3: Horas -->
+        <section class="feature-row scroll-anim">
+            <div class="feature-text">
+                <div class="step-number">03</div>
+                <h2>Registro de Jornada y Ausencias</h2>
+                <p>Mantén un control transparente y preciso de tus horas laborales para asegurar que cada minuto de tu talento sea reconocido.</p>
+                <ul>
+                    <li><strong>Jornada Completa:</strong> Registra tus días normales simplemente detallando de forma breve las actividades que realizaste.</li>
+                    <li><strong>Gestión de Ausencias:</strong> Si necesitas reportar una ausencia o permiso personal, especifica las horas no trabajadas y el motivo. Si cubre el día completo, basta con indicar la razón del permiso.</li>
+                    <li><strong>Flexibilidad temporal:</strong> ¿Olvidaste registrar un día? Súbelo retroactivamente en cualquier momento, siempre y cuando la fecha pertenezca a la misma semana en curso.</li>
+                </ul>
+            </div>
+            <div class="media-container">
+                <div class="media-box type-image">
+                    <span class="media-badge">IMAGEN</span>
+                    <p class="media-instruction"><strong>Visualización requerida:</strong> Captura dividida. A la izquierda, el calendario mensual de "Mi Jornada" (Junio 2026) mostrando círculos e íconos verdes para días completados y naranjas para ausencias. A la derecha, el modal emergente "Registrar Día" con el campo de texto enriquecido completado con la descripción de tareas.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature 4: Chat -->
+        <section class="feature-row scroll-anim">
+            <div class="feature-text">
+                <div class="step-number">04</div>
+                <h2>Canales y Mensajería Directa</h2>
+                <p>Centraliza la comunicación corporativa sin necesidad de mezclar canales personales como WhatsApp o correos electrónicos externos.</p>
+                <ul>
+                    <li><strong>Mensajes Directos:</strong> Inicia conversaciones privadas uno a uno con cualquier profesional o miembro del equipo interno en segundos.</li>
+                    <li><strong>Canales públicos o privados:</strong> Crea salas de conversación por proyectos. Usa canales 'Públicos' para que cualquiera en la empresa se sume, o 'Privados' para accesos restringidos mediante invitación.</li>
+                </ul>
+            </div>
+            <div class="media-container">
+                <div class="media-box type-image">
+                    <span class="media-badge">IMAGEN</span>
+                    <p class="media-instruction"><strong>Visualización requerida:</strong> Interfaz del Chat de Obertrack. Debe visualizarse la sección lateral de Canales y Mensajes Directos, junto con el diálogo abierto de "Crear canal" configurando la privacidad en modo "Público".</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature 5: Tutoriales y Perfil -->
+        <section class="feature-row scroll-anim">
+            <div class="feature-text">
+                <div class="step-number">05</div>
+                <h2>Centro de Soporte y Perfil</h2>
+                <p>Todo el conocimiento técnico y el control de tus credenciales de seguridad al alcance de tu mano.</p>
+                <ul>
+                    <li><strong>Tutoriales integrados:</strong> Accede a guías rápidas y explicaciones en video diseñadas especialmente para resolver dudas operativas sobre el uso de la plataforma.</li>
+                    <li><strong>Gestión de perfil:</strong> Actualiza tus datos de contacto (teléfono, ciudad, dirección), gestiona tu puesto oficial, cambia tu contraseña y cierra sesión de forma segura.</li>
+                </ul>
+            </div>
+            <div class="media-container">
+                <div class="media-box type-video">
+                    <span class="media-badge video-badge">VIDEO / GIF ANIMADO</span>
+                    <p class="media-instruction"><strong>Visualización requerida:</strong> Video corto recorriendo la sección de "Tutoriales" interactuando con las tarjetas de reproducción de 3 minutos, pasando rápidamente a la ventana de edición de perfil donde se muestra la actualización correcta de la información personal.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature 6: Manager -->
+        <section class="feature-row scroll-anim">
+            <div class="feature-text">
+                <div class="step-number">06</div>
+                <h2>El Rol de Manager</h2>
+                <p>Una funcionalidad avanzada de supervisión para liderar y coordinar los flujos de trabajo internos de los equipos distribuidos.</p>
+                <ul>
+                    <li><strong>Aprobación de horas:</strong> Los usuarios con rol de Manager cuentan con la facultad exclusiva de auditar, revisar y aprobar las horas cargadas por los profesionales a su cargo.</li>
+                    <li><strong>Evolución profesional:</strong> Este rol no es automático; se asigna de manera estratégica cuando la empresa decide ascender al talento a una posición de mayor responsabilidad de liderazgo.</li>
+                </ul>
+            </div>
+            <div class="media-container">
+                <div class="media-box type-image">
+                    <span class="media-badge">IMAGEN</span>
+                    <p class="media-instruction"><strong>Visualización requerida:</strong> Captura de pantalla del perfil de Manager en Obertrack. Debe destacar la lista de registros de los miembros del equipo (ej. Rebeca Martínez) con las etiquetas de estado "PENDIENTE" y "APROBADO", junto con el botón de acción masiva "Aprobar todos".</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- CTA / CUSTOMER SUCCESS SECTION -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>¿Tienes más dudas? Consulta con el equipo de Customer Success de <strong>Oberstaff<span class="pink-dot">.</span></strong></h2>
+            <p class="cta-subtitle">Estamos aquí para acompañarte en cada paso de tu adaptación tecnológica y asegurar tu crecimiento.</p>
+            
+            <div class="contact-grid">
+                <!-- Card 1: WhatsApp -->
+                <div class="contact-card border-whatsapp">
+                    <div class="card-header">
+                        <span class="status-indicator"></span>
+                        <h3>Línea Directa de WhatsApp</h3>
+                    </div>
+                    <p>Una vía directa, ágil y en tiempo real para resolver de forma inmediata cualquier consulta operativa o incidencia técnica dentro de la plataforma.</p>
+                    <div class="phone-number">+34 930 28 99 66</div>
+                    <a href="https://wa.me/34930289966" target="_blank" class="btn btn-whatsapp">Enviar mensaje ahora 🚀</a>
+                </div>
+
+                <!-- Card 2: Strategy / Emails -->
+                <div class="contact-card">
+                    <div class="card-header">
+                        <h3>Consultas y Evolución Estratégica</h3>
+                    </div>
+                    <p>Para análisis detallados de tus flujos de trabajo, casos complejos o la planificación de tu plan de crecimiento profesional dentro de <strong>Oberstaff<span class="pink-dot">.</span></strong></p>
+                    
+                    <div class="team-members">
+                        <div class="member">
+                            <div class="member-info">
+                                <h4>Neri López</h4>
+                                <span class="role">Customer Success Analyst</span>
+                            </div>
+                            <a href="mailto:neri@oberstaff.com" class="email-link">neri@oberstaff.com</a>
+                        </div>
+                        
+                        <div class="member">
+                            <div class="member-info">
+                                <h4>Lenis Civira</h4>
+                                <span class="role">Manager of Customer Success</span>
+                            </div>
+                            <a href="mailto:lenis@oberstaff.com" class="email-link">lenis@oberstaff.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2026 <strong>Oberstaff<span class="pink-dot">.</span></strong> Todos los derechos reservados. Obertrack es una marca registrada de <strong>Oberstaff<span class="pink-dot">.</span></strong> para el seguimiento de trabajo remoto.</p>
+        </div>
+    </footer>
+
+    <script>
+        // ANIMACIÓN DE ELEMENTOS AL HACER SCROLL (INTERSECTION OBSERVER)
+        document.addEventListener("DOMContentLoaded", () => {
+            const scrollElements = document.querySelectorAll(".scroll-anim");
+
+            const elementInView = (entries: IntersectionObserverEntry[], observer: IntersectionObserver) => {
+                entries.forEach((entry: IntersectionObserverEntry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("active");
+                        // Una vez activada la animación del elemento, dejamos de observarlo para optimizar rendimiento
+                        observer.unobserve(entry.target);
+                    }
+                });
+            };
+
+            const options = {
+                root: null, // utiliza el viewport del navegador
+                rootMargin: "0px",
+                threshold: 0.15 // se activa cuando el 15% del elemento es visible en pantalla
+            };
+
+            const observer = new IntersectionObserver(elementInView, options);
+
+            scrollElements.forEach((element) => {
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>
