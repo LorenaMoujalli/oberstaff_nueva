@@ -2,7 +2,7 @@
 import FAQItem from "../faq/FAQItem.astro";
 import "../../styles/faq/faq-section.css";
 
-const faqs = [
+const defaultFaqs = [
     {
         question: "¿Qué es <span style='color: #1B1B1B; font-weight: 800;'>Oberstaff</span><span style='color: #ff66cc; font-weight: 800;'>.</span>?",
         answers: ["Oberstaff es una empresa que conecta empresas españolas con profesionales preparados de LATAM mediante modelos de trabajo remoto claros, estructurados y eficientes."]
@@ -27,13 +27,15 @@ interface Props {
     ctaText?: string;
     ctaButtonText?: string;
     ctaButtonHref?: string;
+    faqs?: Array<{ question: string; answers: string[] }>;
 }
 
 const {
     title = "Todo lo que necesitas saber antes de su <strong>expansión en LATAM</strong>",
     ctaText = "¿No estás seguro de qué modelo necesitas? El staff augmentation es ideal para perfiles tech integrados en tu equipo. Pero dependiendo de tu operación, puede que necesites un servicio diferente o combinar varios.",
     ctaButtonText = "Agenda una llamada gratuita",
-    ctaButtonHref = "#"
+    ctaButtonHref = "#",
+    faqs = defaultFaqs
 } = Astro.props;
 ---
 

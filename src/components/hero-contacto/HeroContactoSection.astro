@@ -14,6 +14,7 @@ interface Props {
     primaryHref?: string;
     secondaryText?: string;
     secondaryHref?: string;
+    whatsappNumber?: string;
     stats?: any[];
 }
 
@@ -26,8 +27,13 @@ const {
     primaryHref,
     secondaryText,
     secondaryHref,
+    whatsappNumber,
     stats
 } = Astro.props;
+
+const finalSecondaryHref = whatsappNumber
+    ? `https://wa.me/${whatsappNumber.replace(/[^0-9]/g, '')}`
+    : secondaryHref;
 ---
 
 <section class="hero-cro-section">
@@ -45,7 +51,7 @@ const {
             primaryText={primaryText}
             primaryHref={primaryHref}
             secondaryText={secondaryText}
-            secondaryHref={secondaryHref}
+            secondaryHref={finalSecondaryHref}
         />
         
         <HeroStats stats={stats} />

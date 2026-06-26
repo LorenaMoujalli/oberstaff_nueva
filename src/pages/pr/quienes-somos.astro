@@ -1,0 +1,470 @@
+---
+import DashboardLayoutContactoPr from "../../layouts/DashboardLayoutContactoPr.astro";
+//import HeroContactoSection from "../../components/hero-contacto/HeroContactoSection.astro";
+//import FormContactoSection from "../../components/form-contacto/FormContactoSection.astro";
+//import ChannelsSection from "../../components/canales-contacto/ChannelsSection.astro";
+import LeadHeroSection from "../../components/community-manager/LeadHeroSection.astro";
+import QueEsServicioSection from "../../components/QueEsServicio/QueEsServicioSection.astro";
+import VisionMisionSection from "../../components/vision-mision-contacto/VisionMisionSection.astro";
+import VisionMisionCard from "../../components/vision-mision-contacto/VisionMisionCard.astro";
+import FAQSection from "../../components/faq-servicios/FAQSection-quienes-somos.astro";
+const ogImage = "Quienes somos Oberstaff.webp";
+
+const faqs = [
+    {
+        question: "¿Qué es <strong style='color: #1B1B1B; font-weight: 800;'>Oberstaff</strong><span style='color: #ff66cc; font-weight: 800;'>.</span>?",
+        answers: ["Es una plataforma integral y partner estratégico que conecta corporaciones y pymes con profesionales evaluados en América del Sur bajo modalidades de trabajo remoto claras, seguras y altamente eficientes."]
+    },
+    {
+        question: "¿Cuál es el beneficio de <strong style='color: #1B1B1B; font-weight: 800;'>Oberstaff</strong><span style='color: #ff66cc; font-weight: 800;'>.</span> para un patrono en Puerto Rico?", 
+        answers: ["Permite mitigar la escasez de talento local, optimizar los costos operacionales y de nómina, y delegar la carga administrativa del reclutamiento, asegurando una integración fluida con los objetivos de la empresa."]
+    },
+    {
+        question: "¿Cómo se manejan los pagos y la facturación?",
+        answers: ["Simplificamos todo el proceso. Tu empresa recibe una sola factura comercial transparente en dólares (USD), lo que elimina complicaciones fiscales internacionales, burocracia de nómina y reduce significativamente los sobrecostos laborales."]
+    },
+    {
+        question: "¿Qué diferencia a <strong style='color: #1B1B1B; font-weight: 800;'>Oberstaff</strong><span style='color: #ff66cc; font-weight: 800;'>.</span> de una agencia de empleo tradicional?",
+        answers: ["No nos limitamos a enviar hojas de vida (resumes). Evaluamos con filtros rigurosos y acompañamos de manera activa la relación laboral y el cumplimiento normativo para garantizar que el rendimiento y la cultura organizacional se mantengan alineados a largo plazo."]
+    }
+];
+---
+
+<DashboardLayoutContactoPr
+    ogImage={ogImage}
+    title="Oberstaff Puerto Rico | Quiénes Somos "
+    description="Conoce Oberstaff. Conectamos patronos en Puerto Rico con profesionales remotos premium de Sudamérica. Reduce costos operativos con facturación clara en USD. "
+>
+    <link rel="canonical" href="https://oberstaff.com/pr/quienes-somos/" slot="head" />
+    <script slot="head" type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "AboutPage",
+                    "@id": "https://www.oberstaff.com/pr/quienes-somos#webpage",
+                    "url": "https://www.oberstaff.com/pr/quienes-somos",
+                    "name": "Oberstaff Puerto Rico | Quiénes Somos ",
+                    "description": "Conoce Oberstaff. Conectamos patronos en Puerto Rico con profesionales remotos premium de Sudamérica. Reduce costos operativos con facturación clara en USD. ",
+                    "inLanguage": "es-PR",
+                    "isPartOf": {
+                        "@id": "https://www.oberstaff.com/#website"
+                    },
+                    "publisher": {
+                        "@id": "https://www.oberstaff.com/#organization"
+                    },
+                    "about": {
+                        "@id": "https://www.oberstaff.com/#organization"
+                    },
+                    "mainEntity": {
+                        "@id": "https://www.oberstaff.com/#organization"
+                    },
+                    "audience": {
+                        "@type": "BusinessAudience",
+                        "audienceType": "Patronos y empresas en Puerto Rico que buscan contratar, externalizar o incorporar talento remoto en LATAM mediante modelos estructurados",
+                        "geographicArea": {
+                            "@type": "Country",
+                            "name": "Puerto Rico"
+                        }
+                    },
+                    "breadcrumb": {
+                        "@id": "https://www.oberstaff.com/pr/quienes-somos#breadcrumb"
+                    },
+                    "mentions": [
+                        {
+                            "@id": "https://www.oberstaff.com/pr/quienes-somos#identity"
+                        },
+                        {
+                            "@id": "https://www.oberstaff.com/pr/quienes-somos#purpose"
+                        },
+                        {
+                            "@id": "https://www.oberstaff.com/pr/quienes-somos#trust"
+                        },
+                        {
+                            "@id": "https://www.oberstaff.com/pr/quienes-somos#faq"
+                        }
+                    ]
+                },
+                {
+                    "@type": "Organization",
+                    "@id": "https://www.oberstaff.com/#organization",
+                    "name": "Oberstaff",
+                    "url": "https://www.oberstaff.com",
+                    "description": "Oberstaff conecta empresas en Puerto Rico con profesionales preparados de LATAM mediante modelos de trabajo remoto claros, estructurados y eficientes.",
+                    "slogan": "Un puente entre empresas y talento con propósito.",
+                    "foundingDate": "2017",
+                    "founder": {
+                        "@type": "Person",
+                        "name": "Edgardo Vázquez",
+                        "url": "https://www.linkedin.com/in/edgardomvazquez/"
+                    },
+                    "areaServed": [
+                        {
+                            "@type": "Country",
+                            "name": "Puerto Rico"
+                        },
+                        {
+                            "@type": "Country",
+                            "name": "Colombia"
+                        },
+                        {
+                            "@type": "Country",
+                            "name": "México"
+                        },
+                        {
+                            "@type": "Country",
+                            "name": "Argentina"
+                        },
+                        {
+                            "@type": "Country",
+                            "name": "Chile"
+                        },
+                        {
+                            "@type": "Country",
+                            "name": "Perú"
+                        },
+                        {
+                            "@type": "Country",
+                            "name": "Venezuela"
+                        },
+                        {
+                            "@type": "Country",
+                            "name": "Ecuador"
+                        },
+                        {
+                            "@type": "Country",
+                            "name": "Uruguay"
+                        },
+                        {
+                            "@type": "Country",
+                            "name": "Panamá"
+                        },
+                        {
+                            "@type": "Country",
+                            "name": "Paraguay"
+                        }
+                    ],
+                    "knowsAbout": [
+                        "Contratación de talento remoto en LATAM",
+                        "Trabajo remoto estructurado",
+                        "Employer of Record",
+                        "Outsourcing de Personal",
+                        "Staff Augmentation",
+                        "Contractor of Record",
+                        "Gestión de talento remoto",
+                        "Contratación internacional",
+                        "Modelos de trabajo remoto para empresas en Puerto Rico",
+                        "Talento profesional de Latinoamérica"
+                    ],
+                    "sameAs": [
+                        "https://www.linkedin.com/company/oberstaff",
+                        "https://www.instagram.com/oberstaff"
+                    ]
+                },
+                {
+                    "@type": "ItemList",
+                    "@id": "https://www.oberstaff.com/pr/quienes-somos#identity",
+                    "name": "Identidad de Oberstaff",
+                    "description": "Elementos principales que explican qué es Oberstaff, por qué nació y cómo conecta empresas en Puerto Rico con talento de LATAM.",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Qué es Oberstaff",
+                            "description": "Oberstaff es un socio estratégico que conecta a compañías y patronos en Puerto Rico con profesionales de primer nivel en Sudamérica a través de modelos de trabajo remoto estructurados, eficientes y listos para ejecutar."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": "Por qué nació Oberstaff",
+                            "description": "Oberstaff surge al identificar un reto crítico en el mercado de la Isla: la necesidad de las empresas de expandir su capacidad operativa de forma ágil sin disparar los costos de nómina tradicionales, y la disponibilidad de profesionales altamente capacitados en la región que aportan un valor inmediato desde el primer día."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 3,
+                            "name": "Quiénes somos",
+                            "description": "Fundada en 2017 por Edgardo Vázquez, Oberstaff tiene una visión contundente: el trabajo remoto es la estrategia más flexible y eficiente para robustecer tus equipos de trabajo y acelerar el crecimiento de tu negocio."
+                        }
+                    ]
+                },
+                {
+                    "@type": "ItemList",
+                    "@id": "https://www.oberstaff.com/pr/quienes-somos#purpose",
+                    "name": "Propósito, misión y visión de Oberstaff",
+                    "description": "Principios que explican el propósito institucional de Oberstaff y su visión sobre el trabajo remoto entre Puerto Rico y LATAM.",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Propósito",
+                            "description": "Transformar el trabajo remoto en una solución clara, organizada y completamente sostenible para que las organizaciones en Puerto Rico y los profesionales cualificados de América del Sur colaboren con estructura, confianza y objetivos de negocio compartidos."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": "Misión",
+                            "description": "Lograr que el trabajo remoto entre las empresas de Puerto Rico y los profesionales de Sudamérica funcione a la perfección: con total transparencia, máxima confianza y un firme sentido humano."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 3,
+                            "name": "Visión",
+                            "description": "Visualizamos un panorama empresarial donde la ubicación geográfica no sea una barrera para la competitividad operativa de Puerto Rico, basándonos en una infraestructura de confianza."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 4,
+                            "name": "Modelo de trabajo",
+                            "description": "Oberstaff entiende que el trabajo remoto necesita procesos claros, comunicación responsable, modelos de cumplimiento adecuados y acompañamiento continuo."
+                        }
+                    ]
+                },
+                {
+                    "@type": "ItemList",
+                    "@id": "https://www.oberstaff.com/pr/quienes-somos#trust",
+                    "name": "Principios de confianza de Oberstaff",
+                    "description": "Pilares que resumen el enfoque institucional de Oberstaff.",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Reducción estratégica de gastos operacionales"
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": "Filtros de selección rigurosos"
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 3,
+                            "name": "Escalabilidad inmediata de tu equipo"
+                        }
+                    ]
+                },
+                {
+                    "@type": "FAQPage",
+                    "@id": "https://www.oberstaff.com/pr/quienes-somos#faq",
+                    "mainEntity": [
+                        {
+                            "@type": "Question",
+                            "name": "¿Qué es Oberstaff?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Es una plataforma integral y partner estratégico que conecta corporaciones y pymes con profesionales evaluados en América del Sur bajo modalidades de trabajo remoto claras, seguras y altamente eficientes."
+                            }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "¿Cuál es el beneficio de Oberstaff para un patrono en Puerto Rico?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Permite mitigar la escasez de talento local, optimizar los costos operacionales y de nómina, y delegar la carga administrativa del reclutamiento, asegurando una integración fluida con los objetivos de la empresa."
+                            }
+                        }
+                    ]
+                },
+                {
+                    "@type": "BreadcrumbList",
+                    "@id": "https://www.oberstaff.com/pr/quienes-somos#breadcrumb",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Inicio",
+                            "item": "https://www.oberstaff.com/"
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": "Quiénes somos",
+                            "item": "https://www.oberstaff.com/pr/quienes-somos/"
+                        }
+                    ]
+                }
+            ]
+        }
+    </script>
+    <LeadHeroSection
+        topLabel="Nuestra Identidad"
+        title="Somos Oberstaff<span style='color: #FF66CC;'>.</span>: el puente estratégico entre empresas en Puerto Rico y el mejor talento remoto de Sudamérica"
+        cardTitle="Conoce cómo trabajamos"
+        cardSubtitle="Completa tus datos para recibir una asesoría personalizada sobre nuestro modelo de contratación y optimización de nómina."
+        buttonText="Agendar llamada gratuita →"
+        buttonIcon=""
+        buttonSubtext=""
+        footerLinkText=""
+        footerLinkHref="#" 
+        badges={[
+            { text: "Reducción estratégica de gastos operacionales", icon: "⚡" },
+            { text: "Filtros de selección rigurosos", icon: "🔍" },
+            { text: "Escalabilidad inmediata de tu equipo", icon: "📈" },
+        ]}
+        badgesClass="community-badges"
+        cardTitleTag="p"
+        webhookUrl="https://hooks.zapier.com/hooks/catch/12433184/42f45gt/"
+    >
+        <Fragment slot="description">
+           Nacimos para transformar el trabajo remoto en una solución clara, organizada y completamente sostenible. En Oberstaff ayudamos a que las organizaciones en Puerto Rico y los profesionales cualificados de América del Sur colaboren con estructura, confianza y objetivos de negocio compartidos.
+        </Fragment>
+    </LeadHeroSection>
+
+    <div class="fade-in-section">
+        <div class="fade-in-section quienesomos-que-es">
+            <QueEsServicioSection
+                title="No somos solo una alternativa para reducir gastos. Somos tu aliado más inteligente para escalar."
+                highlightWord="Somos tu aliado más inteligente para escalar."
+                description=""
+                imageSrc="/img-quienes.webp" 
+                imageAlt="Talento profesional en Oberstaff"
+                badgeText=" Conexión Estratégica y Bilingüe"
+                itemTitleTag="h3"
+                quoteText="<h3 style='color: #ff66cc; font-size: 15px; font-weight: 800; display: block; margin-bottom: 5px; font-family: inherit;'>¿Qué es <span style='color: #1B1B1B;'>Oberstaff</span><span style='color: #ff66cc;'>.</span>?</h3> Somos un socio estratégico que conecta a compañías y patronos en Puerto Rico con profesionales de primer nivel en Sudamérica a través de modelos de trabajo remoto estructurados, eficientes y listos para ejecutar."
+                infoItems={[
+                    {
+                        icon: "",
+                        title: "Por qué nació <span style='color: #1B1B1B; font-weight: 700;'>Oberstaff</span><span style='color: #ff66cc; font-weight: 900;'>.</span>",
+                        description:
+                            "<strong style='color: #1B1B1B; font-weight: 800;'>Oberstaff<span style='color: #ff66cc; font-weight: 800;'>.</span></strong> surge al identificar un reto crítico en el mercado de la Isla: la necesidad de las empresas de expandir su capacidad operativa de forma ágil sin disparar los costos de nómina tradicionales, y la disponibilidad de profesionales altamente capacitados en la región que aportan un valor inmediato desde el primer día.",
+                    },
+                    {
+                        icon: "",
+                        title: "Quiénes Somos",
+                        description:
+                            "<strong style='color: #1B1B1B; font-weight: 800;'>Oberstaff<span style='color: #ff66cc; font-weight: 800;'>.</span></strong> es una empresa fundada en 2017 por Edgardo Vázquez con una visión contundente: el trabajo remoto puede ser mucho más que una solución para disminuir costos. Bien ejecutado, es la estrategia más flexible y eficiente para robustecer tus equipos de trabajo y acelerar el crecimiento de tu negocio.",
+                    },
+                ]} 
+                ctaText="Agendar llamada gratuita →"
+                ctaHref="#"
+            />
+        </div>
+    </div>
+
+    <div class="fade-in-section">
+        <VisionMisionSection title="El propósito detrás de <span style='color: #6663FD; font-weight: 700;'>nuestro modelo operativo</span>">
+            <VisionMisionCard
+                icon="🎯"
+                iconBgClass="bg-soft-pink"
+                title="Nuestra misión"
+                customClass="card-mision"
+            >
+               Lograr que el trabajo remoto entre las empresas de Puerto Rico y los profesionales de Sudamérica funcione a la perfección: con total transparencia, máxima confianza y un firme sentido humano. Queremos que los negocios locales crezcan sin las limitaciones de las estructuras de contratación tradicionales, abriendo las puertas a talento cualificado cuyo compromiso y capacidad impulsan resultados reales.
+            </VisionMisionCard>
+
+            <VisionMisionCard
+                icon="👁️"
+                iconBgClass="bg-soft-purple"
+                title="Nuestra visión"
+                customClass="card-vision"
+            >
+             Visualizamos un panorama empresarial donde la ubicación geográfica no sea una barrera para la competitividad operativa de Puerto Rico. Creemos que el trabajo a distancia requiere una infraestructura de confianza: procesos definidos, comunicación corporativa responsable, modelos de cumplimiento (compliance) adecuados y un acompañamiento continuo. Esa es la visión que mueve a Oberstaff.
+            </VisionMisionCard>
+        </VisionMisionSection>
+    </div>
+
+    <div class="fade-in-section faq-quienesomos-wrapper">
+        <FAQSection
+            title="Preguntas frecuentes <br> sobre <span style='color: #6663FD; font-weight: 900;'>Oberstaff<span style='color: #ff66cc; font-weight: 900;'>.</span> en Puerto Rico</span><span style='color: #ff66cc; font-weight: 900;'></span>"
+            ctaText="Resolvemos tus dudas sobre cómo conectamos a los patronos y empresas en la Isla con el mejor talento de LATAM de manera segura, ágil y legal."
+            ctaButtonText="Hablar con asesor →"
+            faqs={faqs}
+        /> 
+    </div>
+</DashboardLayoutContactoPr>
+
+<style is:global>
+    /* Estilos para el Título Principal */
+    .quienesomos-que-es .que-es-header h2 {
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+    .quienesomos-que-es .que-es-header .blue-text {
+        color: #6663fd;
+        display: block;
+        font-size: 32px;
+        margin-top: 5px;
+        font-weight: 800;
+    }
+
+    /* Estilos para la Cita Rosa */
+    .quienesomos-que-es .quote-blue-border {
+        border-left: 4px solid #ff66cc !important;
+        background: linear-gradient(
+            90deg,
+            rgba(102, 99, 253, 0.08),
+            transparent
+        ) !important;
+        color: #ff66cc !important;
+        font-size: 15px !important;
+        font-weight: 400 !important;
+        padding: 20px 25px !important;
+        border-radius: 0 12px 12px 0 !important;
+        margin-bottom: 35px !important;
+    }
+    .quienesomos-que-es .quote-blue-border h3 {
+        margin: 0 !important;
+        padding: 0 !important;
+        font-family: 'Montserrat', sans-serif !important;
+        font-size: 15px !important;
+    }
+
+    /* Ocultar iconos y ajustar info-items */
+    .quienesomos-que-es .icon-box {
+        display: none !important;
+    }
+    .quienesomos-que-es .info-item {
+        margin-bottom: 30px !important;
+    }
+    .quienesomos-que-es .text-box .text-box-title {
+        font-size: 20px !important;
+        font-weight: 500 !important;
+        color: #1b1b1b !important;
+        margin-bottom: 12px !important;
+        font-family: 'Poppins', sans-serif !important;
+    }
+    .quienesomos-que-es .text-box p {
+        font-size: 15px !important;
+        color: #5a5a5a !important;
+        line-height: 1.6 !important;
+    }
+
+    /* Botón CTA Outlined */
+    .quienesomos-que-es .ques-cta-btn {
+        background: transparent !important;
+        border: 1.5px solid #e5e5e5 !important;
+        color: #1b1b1b !important;
+        padding: 14px 35px !important;
+        border-radius: 50px !important;
+        font-weight: 600 !important;
+        transition: all 0.3s ease !important;
+        box-shadow: none !important;
+        margin-top: 20px !important;
+    }
+    .quienesomos-que-es .ques-cta-btn:hover {
+        border-color: #1b1b1b !important;
+    }
+
+    /* Imagen en Blanco y Negro */
+    .quienesomos-que-es .image-card {
+        filter: grayscale(100%) !important;
+        border-radius: 30px !important;
+    }
+
+    .faq-quienesomos-wrapper {
+        border-top: 1px solid #e0e0e0;
+    }
+
+    @media screen and (max-width: 768px) {
+        .quienesomos-que-es .que-es-header h2 {
+            font-size: 28px !important;
+        }
+        .quienesomos-que-es .que-es-header .blue-text {
+            font-size: 28px !important;
+        }
+
+        .quienesomos-que-es .quote-blue-border {
+            margin-top: 1px !important;
+        }
+    }
+</style>
