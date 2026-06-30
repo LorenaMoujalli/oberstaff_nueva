@@ -45,6 +45,54 @@ const canonicalOgImage = ogImage
 		})(window,document,'script','dataLayer','GTM-MKTCXHCB');</script> 
 		<!-- End Google Tag Manager -->
 
+		
+		
+		
+		
+		<!-- Geo-Redirección: América → /pr/ | Europa/Resto → raíz -->
+		<script is:inline>
+		(function() {
+			// Solo actuar si el usuario está exactamente en la raíz "/"
+			if (window.location.pathname !== '/') return;
+
+			// Países del continente americano (Norte, Centro, Sur y Caribe)
+			var AMERICAS = [
+				'AG','AI','AN','AR','AW','BB','BL','BM','BO','BQ','BR','BS','BZ',
+				'CA','CL','CO','CR','CU','CW','DM','DO','EC','FK','GD','GF','GL',
+				'GP','GT','GY','HN','HT','JM','KN','KY','LC','MF','MQ','MS','MX',
+				'NI','PA','PE','PM','PR','PY','SR','SV','SX','TC','TT','US','UY',
+				'VC','VE','VG','VI'
+			];
+
+			// Consultar Cloudflare trace (público, sin API key, sin límite)
+			var ctrl = typeof AbortController !== 'undefined' ? new AbortController() : null;
+			var tid = setTimeout(function() {
+				if (ctrl) ctrl.abort();
+			}, 800);
+
+			fetch('https://www.cloudflare.com/cdn-cgi/trace', ctrl ? { signal: ctrl.signal } : {})
+				.then(function(r) { return r.text(); })
+				.then(function(text) {
+					clearTimeout(tid);
+					var m = text.match(/loc=([A-Z]{2})/);
+					if (m && AMERICAS.indexOf(m[1]) !== -1) {
+						window.location.replace('/pr/');
+					}
+				})
+				.catch(function() {
+					clearTimeout(tid);
+				});
+		})();
+		</script>
+		<!-- Fin Geo-Redirección -->
+
+
+
+
+
+
+		
+
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
 		{keywords && <meta name="keywords" content={keywords} />}
