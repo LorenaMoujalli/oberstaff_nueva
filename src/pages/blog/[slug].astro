@@ -197,11 +197,18 @@ if (
 ) {
     categoryName = post._embedded["wp:term"][0][0].name || "Artículo del Blog";
 }
+const metaTitle = post.yoast_head_json?.title || `${title}`;
+const metaDescription = post.yoast_head_json?.description || rawExcerpt;
+const ogTitleValue = post.yoast_head_json?.og_title || metaTitle;
+const ogDescriptionValue = post.yoast_head_json?.og_description || metaDescription;
+const canonicalUrl = post.yoast_head_json?.canonical;
 ---
 
 <DashboardLayout
-    title={`${title} | Oberstaff`}
-    description={rawExcerpt}
+    title={metaTitle}
+    description={metaDescription}
+    ogTitle={ogTitleValue}
+    ogDescription={ogDescriptionValue}
     ogImage={ogImage}
 >
     <link
@@ -209,6 +216,7 @@ if (
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         slot="head"
     />
+    {canonicalUrl && <link rel="canonical" href={canonicalUrl} slot="head" />}
 
     <!-- INICIO DEL MARKUP AISLADO -->
     <div id="os-isolated-scope">
