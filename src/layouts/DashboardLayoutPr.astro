@@ -44,6 +44,73 @@ const canonicalOgImage = ogImage
 		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 		})(window,document,'script','dataLayer','GTM-MKTCXHCB');</script> 
 		<!-- End Google Tag Manager -->
+		
+
+
+
+
+
+		<!-- Geo-Redirección: América → /pr/ | Europa/Resto → raíz -->
+		<script is:inline>
+		(function() {
+			var path = window.location.pathname;
+			var isPR = (path === '/pr' || path.indexOf('/pr/') === 0);
+
+			// Solo actuar si está en la raíz "/" o en una ruta de PR "/pr..."
+			if (path !== '/' && !isPR) return;
+
+			// Países del continente americano (Norte, Centro, Sur y Caribe)
+			var AMERICAS = [
+				'AG','AI','AN','AR','AW','BB','BL','BM','BO','BQ','BR','BS','BZ',
+				'CA','CL','CO','CR','CU','CW','DM','DO','EC','FK','GD','GF','GL',
+				'GP','GT','GY','HN','HT','JM','KN','KY','LC','MF','MQ','MS','MX',
+				'NI','PA','PE','PM','PR','PY','SR','SV','SX','TC','TT','US','UY',
+				'VC','VE','VG','VI'
+			];
+
+			// Consultar Cloudflare trace 
+			var ctrl = typeof AbortController !== 'undefined' ? new AbortController() : null;
+			var tid = setTimeout(function() {
+				if (ctrl) ctrl.abort();
+			}, 800);
+
+			fetch('https://www.cloudflare.com/cdn-cgi/trace', ctrl ? { signal: ctrl.signal } : {})
+				.then(function(r) { return r.text(); })
+				.then(function(text) {
+					clearTimeout(tid);
+					var m = text.match(/loc=([A-Z]{2})/);
+					if (m) {
+						var country = m[1];
+						var isAmerica = AMERICAS.indexOf(country) !== -1;
+
+						if (isAmerica) {
+							// Si es de América y está en la raíz, redirigir a /pr/
+							if (path === '/') {
+								window.location.replace('/pr/');
+							}
+						} else {
+							// Si NO es de América y está en ruta PR, redirigir a la versión de España
+							if (isPR) {
+								var targetPath = '/';
+								if (path === '/pr') {
+									targetPath = '/';
+								} else if (path.indexOf('/pr/') === 0) {
+									targetPath = '/' + path.substring(4); // Remover "/pr/"
+								}
+								window.location.replace(targetPath);
+							}
+						}
+					}
+				})
+				.catch(function() {
+					clearTimeout(tid);
+				});
+		})();
+		</script>
+
+
+
+		
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
 		{keywords && <meta name="keywords" content={keywords} />}

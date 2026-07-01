@@ -442,6 +442,11 @@
                 margin-bottom: 80px;
             }
             
+            .feature-text, .media-container {
+                width: 100%;
+                flex: none !important;
+            }
+            
             .hero h1 {
                 font-size: 2.75rem;
             }
@@ -547,7 +552,7 @@
 
         <!-- Feature 2: Tareas -->
         <section class="feature-row scroll-anim">
-            <div class="feature-text">
+            <div class="feature-text" style="flex: 1;">
                 <div class="step-number">02</div>
                 <h2>Tableros y Gestión de Tareas</h2>
                 <p>Organiza tus entregables mediante flujos de trabajo dinámicos y tableros visuales interactivos estilo Kanban.</p>
@@ -557,17 +562,16 @@
                     <li><strong>Control total de tareas:</strong> Asigna títulos, descripciones, niveles de prioridad, fechas límite y responsables con un solo clic. Arrastra las tarjetas fácilmente entre fases (Por hacer, En proceso, Finalizado).</li>
                 </ul>
             </div>
-            <div class="media-container">
-                <div class="media-box type-video">
-                    <span class="media-badge video-badge">VIDEO / GIF ANIMADO</span>
-                    <p class="media-instruction"><strong>Visualización requerida:</strong> Demostración interactiva de la pantalla de tareas. Debe mostrar un clic en "+ Crear Tablero", el rellenado rápido de campos y una animación suave de "drag and drop" (arrastrar y soltar) moviendo la tarjeta "Diseñar carruseles para Meta Ads" desde la fase "Por hacer" hacia "En proceso".</p>
+            <div class="media-container" style="flex: 1.2;">
+                <div style="position: relative; overflow: hidden; border-radius: 20px; box-shadow: 0 15px 35px rgba(6, 11, 35, 0.08); max-width: 600px; margin: 0 auto; aspect-ratio: 16/9;">
+                    <iframe src="https://www.youtube.com/embed/1D5DAoHfdiA" title="Tableros y Gestión de Tareas de Obertrack" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
             </div>
         </section>
 
         <!-- Feature 3: Horas -->
         <section class="feature-row scroll-anim">
-            <div class="feature-text">
+            <div class="feature-text" style="flex: 1;">
                 <div class="step-number">03</div>
                 <h2>Registro de Jornada y Ausencias</h2>
                 <p>Mantén un control transparente y preciso de tus horas laborales para asegurar que cada minuto de tu talento sea reconocido.</p>
@@ -577,17 +581,16 @@
                     <li><strong>Flexibilidad temporal:</strong> ¿Olvidaste registrar un día? Súbelo retroactivamente en cualquier momento, siempre y cuando la fecha pertenezca a la misma semana en curso.</li>
                 </ul>
             </div>
-            <div class="media-container">
-                <div class="media-box type-image">
-                    <span class="media-badge">IMAGEN</span>
-                    <p class="media-instruction"><strong>Visualización requerida:</strong> Captura dividida. A la izquierda, el calendario mensual de "Mi Jornada" (Junio 2026) mostrando círculos e íconos verdes para días completados y naranjas para ausencias. A la derecha, el modal emergente "Registrar Día" con el campo de texto enriquecido completado con la descripción de tareas.</p>
+            <div class="media-container" style="flex: 1.2;">
+                <div style="position: relative; overflow: hidden; border-radius: 20px; box-shadow: 0 15px 35px rgba(6, 11, 35, 0.08); max-width: 600px; margin: 0 auto;">
+                    <img src="/imagen-jornada.webp" alt="Registro de Jornada y Ausencias en Obertrack" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px; display: block;" />
                 </div>
             </div>
         </section>
 
         <!-- Feature 4: Chat -->
         <section class="feature-row scroll-anim">
-            <div class="feature-text">
+            <div class="feature-text" style="flex: 1;">
                 <div class="step-number">04</div>
                 <h2>Canales y Mensajería Directa</h2>
                 <p>Centraliza la comunicación corporativa sin necesidad de mezclar canales personales como WhatsApp o correos electrónicos externos.</p>
@@ -596,10 +599,9 @@
                     <li><strong>Canales públicos o privados:</strong> Crea salas de conversación por proyectos. Usa canales 'Públicos' para que cualquiera en la empresa se sume, o 'Privados' para accesos restringidos mediante invitación.</li>
                 </ul>
             </div>
-            <div class="media-container">
-                <div class="media-box type-image">
-                    <span class="media-badge">IMAGEN</span>
-                    <p class="media-instruction"><strong>Visualización requerida:</strong> Interfaz del Chat de Obertrack. Debe visualizarse la sección lateral de Canales y Mensajes Directos, junto con el diálogo abierto de "Crear canal" configurando la privacidad en modo "Público".</p>
+            <div class="media-container" style="flex: 1.2;">
+                <div style="position: relative; overflow: hidden; border-radius: 20px; box-shadow: 0 15px 35px rgba(6, 11, 35, 0.08); max-width: 600px; margin: 0 auto;">
+                    <img src="/imagen-canal.webp" alt="Canales y Mensajería Directa en Obertrack" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px; display: block;" />
                 </div>
             </div>
         </section>
@@ -625,7 +627,7 @@
 
         <!-- Feature 6: Manager -->
         <section class="feature-row scroll-anim">
-            <div class="feature-text">
+            <div class="feature-text" style="flex: 1;">
                 <div class="step-number">06</div>
                 <h2>El Rol de Manager</h2>
                 <p>Una funcionalidad avanzada de supervisión para liderar y coordinar los flujos de trabajo internos de los equipos distribuidos.</p>
@@ -634,10 +636,9 @@
                     <li><strong>Evolución profesional:</strong> Este rol no es automático; se asigna de manera estratégica cuando la empresa decide ascender al talento a una posición de mayor responsabilidad de liderazgo.</li>
                 </ul>
             </div>
-            <div class="media-container">
-                <div class="media-box type-image">
-                    <span class="media-badge">IMAGEN</span>
-                    <p class="media-instruction"><strong>Visualización requerida:</strong> Captura de pantalla del perfil de Manager en Obertrack. Debe destacar la lista de registros de los miembros del equipo (ej. Rebeca Martínez) con las etiquetas de estado "PENDIENTE" y "APROBADO", junto con el botón de acción masiva "Aprobar todos".</p>
+            <div class="media-container" style="flex: 1.2;">
+                <div style="position: relative; overflow: hidden; border-radius: 20px; box-shadow: 0 15px 35px rgba(6, 11, 35, 0.08); max-width: 600px; margin: 0 auto;">
+                    <img src="/imagen-manager.webp" alt="El Rol de Manager en Obertrack" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px; display: block;" />
                 </div>
             </div>
         </section>
@@ -679,10 +680,10 @@
                         
                         <div class="member">
                             <div class="member-info">
-                                <h4>Lenis Civira</h4>
+                                <h4>Lucía Murena</h4>
                                 <span class="role">Manager of Customer Success</span>
                             </div>
-                            <a href="mailto:lenis@oberstaff.com" class="email-link">lenis@oberstaff.com</a>
+                            <a href="mailto:lucia@oberstaff.com" class="email-link">lucia@oberstaff.com</a>
                         </div>
                     </div>
                 </div>
