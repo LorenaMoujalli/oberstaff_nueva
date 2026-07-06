@@ -228,6 +228,7 @@
 
     /* ===== PILL ===== */
     .header-pill {
+        position: relative;
         pointer-events: all;
         background: #1b1b1b;
         border-radius: 60px;
@@ -301,6 +302,15 @@
         flex: 1;
         display: flex;
         justify-content: center;
+    }
+    
+    @media (min-width: 1025px) {
+        .nav-links {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: max-content;
+        }
     }
 
     .nav-links ul {

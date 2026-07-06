@@ -49,12 +49,11 @@ const canonicalOgImage = ogImage
 		
 		
 		
-		<!-- Geo-Redirección: si ES de América y está en ruta España → redirigir a /pr/ -->
+		<!-- Geo-Redirección Unificada -->
 		<script is:inline>
 		(function() {
 			var path = window.location.pathname;
 			var isPR = (path === '/pr' || path.indexOf('/pr/') === 0);
-			if (isPR) return;
 
 			var AMERICAS = [
 				'AG','AI','AN','AR','AW','BB','BL','BM','BO','BQ','BR','BS','BZ',
@@ -64,10 +63,27 @@ const canonicalOgImage = ogImage
 				'VC','VE','VG','VI'
 			];
 
+			function handleCountry(country) {
+				var isAmerica = AMERICAS.indexOf(country) !== -1;
+				if (isAmerica && !isPR) {
+					var targetPath = path === '/' ? '/pr/' : '/pr' + path;
+					window.location.replace(targetPath);
+				} else if (!isAmerica && isPR) {
+					var targetPath = path === '/pr' ? '/' : '/' + path.substring(4);
+					window.location.replace(targetPath);
+				}
+			}
+
+			var cachedCountry = sessionStorage.getItem('geo_country');
+			if (cachedCountry) {
+				handleCountry(cachedCountry);
+				return;
+			}
+
 			var ctrl = typeof AbortController !== 'undefined' ? new AbortController() : null;
 			var tid = setTimeout(function() {
 				if (ctrl) ctrl.abort();
-			}, 800);
+			}, 2500);
 
 			fetch('https://www.cloudflare.com/cdn-cgi/trace', ctrl ? { signal: ctrl.signal } : {})
 				.then(function(r) { return r.text(); })
@@ -76,11 +92,8 @@ const canonicalOgImage = ogImage
 					var m = text.match(/loc=([A-Z]{2})/);
 					if (m) {
 						var country = m[1];
-						var isAmerica = AMERICAS.indexOf(country) !== -1;
-						if (isAmerica) {
-							var targetPath = path === '/' ? '/pr/' : '/pr' + path;
-							window.location.replace(targetPath);
-						}
+						sessionStorage.setItem('geo_country', country);
+						handleCountry(country);
 					}
 				})
 				.catch(function() {
