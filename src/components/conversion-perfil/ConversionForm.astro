@@ -4,13 +4,14 @@ interface Props {
   buttonText?: string;
 }
 const { buttonText = "<iconify-icon icon='solar:arrow-right-bold-duotone' style='font-size: 20px;'></iconify-icon> Solicitar propuesta gratuita" } = Astro.props;
+const isPrPage = Astro.url.pathname.includes('/pr');
 ---
 <!-- intl-tel-input library -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.10/build/css/intlTelInput.css" />
 <script is:inline src="https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.10/build/js/intlTelInput.min.js"></script>
 
 <div class="form-card-horizontal">
-    <form class="horizontal-form">
+    <form class="horizontal-form" data-is-pr={isPrPage ? "true" : "false"}>
         <div class="form-grid">
             <input type="text" placeholder="Nombre completo *" required>
             <input type="email" placeholder="Email corporativo *" required>
@@ -23,12 +24,16 @@ const { buttonText = "<iconify-icon icon='solar:arrow-right-bold-duotone' style=
 
 <script>
     function initConversionFormPhone() {
+        const form = document.querySelector('.form-card-horizontal .horizontal-form') as HTMLFormElement;
         const phoneInput = document.querySelector('.form-card-horizontal input[data-phone="true"]') as HTMLInputElement;
         if (phoneInput && (window as any).intlTelInput) {
+            const isPr = form ? form.dataset.isPr === 'true' : false;
             (window as any).intlTelInput(phoneInput, {
-                initialCountry: "es",
+                initialCountry: isPr ? "pr" : "es",
                 separateDialCode: true,
-                preferredCountries: ["es", "co", "ar", "mx", "cl", "pe", "ve"],
+                preferredCountries: isPr
+                    ? ["pr", "co", "ar", "mx", "cl", "pe", "ve"]
+                    : ["es", "co", "ar", "mx", "cl", "pe", "ve"],
                 utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.10/build/js/utils.js",
             });
         }

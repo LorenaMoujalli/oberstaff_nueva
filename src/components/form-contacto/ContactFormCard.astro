@@ -16,6 +16,11 @@ const {
     microcopy = "↳ Sin compromiso - Te contactaremos en menos de 24 horas para entender tu necesidad y explicarte los siguientes pasos.",
     webhookUrl = ""
 } = Astro.props;
+
+const isPrPage = Astro.url.pathname.includes('/pr');
+const privacyPolicyUrl = isPrPage 
+  ? "/pr/politica-de-privacidad-y-cookies-de-oberstaff" 
+  : "/politica-de-privacidad-y-cookies-de-oberstaff";
 ---
 
 <!-- intl-tel-input library -->
@@ -26,7 +31,7 @@ const {
     <h2 set:html={title} />
     <p class="intro-text" set:html={description} />
 
-    <form class="modern-form" data-webhook-url={webhookUrl}>
+    <form class="modern-form" data-webhook-url={webhookUrl} data-is-pr={isPrPage ? "true" : "false"}>
         <input type="text" placeholder="Nombre completo *" required />
         <input type="text" placeholder="Nombre de la empresa *" required />
         
@@ -53,7 +58,7 @@ const {
                     "Mensajes relacionados con atención al cliente" de Oberstaff.
                     La frecuencia de los mensajes puede variar. Pueden aplicarse tarifas estándar de mensajes y datos.
                     Responde STOP para cancelar la suscripción. Responde Help para obtener ayuda.
-                    <a href="/politica-de-privacidad-y-cookies-de-oberstaff" target="_blank" class="consent-link" style="color: #6663FD; text-decoration: underline;">Política de privacidad y uso de cookies.</a>
+                    <a href={privacyPolicyUrl} target="_blank" class="consent-link" style="color: #6663FD; text-decoration: underline;">Política de privacidad y uso de cookies.</a>
                     <span class="required-star" style="color: #ef4444; font-weight: 700; margin-left: 2px;">*</span>
                 </span>
             </label>
@@ -281,10 +286,13 @@ const {
         const phoneInput = f.querySelector('input[data-phone="true"]') as HTMLInputElement;
         let iti: any = null;
         if (phoneInput && (window as any).intlTelInput) {
+            const isPr = f.dataset.isPr === 'true';
             iti = (window as any).intlTelInput(phoneInput, {
-                initialCountry: "es",
+                initialCountry: isPr ? "pr" : "es",
                 separateDialCode: true,
-                preferredCountries: ["es", "co", "ar", "mx", "cl", "pe", "ve"],
+                preferredCountries: isPr
+                    ? ["pr", "co", "ar", "mx", "cl", "pe", "ve"]
+                    : ["es", "co", "ar", "mx", "cl", "pe", "ve"],
                 utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.10/build/js/utils.js",
             });
         }

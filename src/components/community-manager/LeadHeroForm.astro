@@ -46,7 +46,7 @@ const privacyPolicyUrl = isPrPage
 <script is:inline src="https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.10/build/js/intlTelInput.min.js"></script>
 
 <div class="lead-form-wrapper">
-    <form class="lead-form" data-webhook-url={webhookUrl}>
+    <form class="lead-form" data-webhook-url={webhookUrl} data-is-pr={isPrPage ? "true" : "false"}>
         <div class="lead-form-header">
             <CardTitleTag class="lead-form-title">{cardTitle}</CardTitleTag>
             {cardSubtitle && <p class="card-subtitle">{cardSubtitle}</p>}
@@ -411,10 +411,13 @@ const privacyPolicyUrl = isPrPage
         const phoneInput = f.querySelector('input[data-phone="true"]') as HTMLInputElement;
         let iti: any = null;
         if (phoneInput && (window as any).intlTelInput) {
+            const isPr = f.dataset.isPr === 'true';
             iti = (window as any).intlTelInput(phoneInput, {
-                initialCountry: "es",
+                initialCountry: isPr ? "pr" : "es",
                 separateDialCode: true,
-                preferredCountries: ["es", "co", "ar", "mx", "cl", "pe", "ve"],
+                preferredCountries: isPr
+                    ? ["pr", "co", "ar", "mx", "cl", "pe", "ve"]
+                    : ["es", "co", "ar", "mx", "cl", "pe", "ve"],
                 utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.10/build/js/utils.js",
             });
         }
