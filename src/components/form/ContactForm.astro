@@ -59,7 +59,7 @@ const privacyPolicyUrl = isPrPage
 
 <div class={`form-card ${customClass}`}>
     {formTitle && <p class="form-title">{formTitle}</p>}
-    <form action="#" method="POST" class="form-grid" data-webhook-url={webhookUrl}>
+    <form action="#" method="POST" class="form-grid" data-webhook-url={webhookUrl} data-is-pr={isPrPage ? "true" : "false"}>
         <div class="form-group half-width">
             <label>{labels.name}</label>
             <input
@@ -455,10 +455,13 @@ const privacyPolicyUrl = isPrPage
         const phoneInput = f.querySelector('input[data-phone="true"]') as HTMLInputElement;
         let iti: any = null;
         if (phoneInput && (window as any).intlTelInput) {
+            const isPr = f.dataset.isPr === 'true';
             iti = (window as any).intlTelInput(phoneInput, {
-                initialCountry: "es",
+                initialCountry: isPr ? "pr" : "es",
                 separateDialCode: true,
-                preferredCountries: ["es", "co", "ar", "mx", "cl", "pe", "ve"],
+                preferredCountries: isPr
+                    ? ["pr", "co", "ar", "mx", "cl", "pe", "ve"]
+                    : ["es", "co", "ar", "mx", "cl", "pe", "ve"],
                 utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.10/build/js/utils.js",
             });
         }

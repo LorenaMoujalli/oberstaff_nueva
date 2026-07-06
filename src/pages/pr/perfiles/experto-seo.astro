@@ -16,37 +16,49 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-community.a
 //import GuiaContratacion from "../../../components/guia-contratacion-perfiles/GuiaContratacion.astro";
 import ProcessOberstaff from "../../../components/process/ProcessOberstaff.astro";
 
-const ogImage = "Contratar closer de ventas.webp";
+const ogImage = "Contratar experto SEO.webp";
 
 const faqs = [
     {
-        question: "¿Qué ocurre si el closer no mejora la tasa de cierre?",
+        question: "¿Quién paga herramientas como Semrush, Ahrefs o Screaming Frog?",
         answers: [
-            "Si en el período inicial el perfil no se alinea con los KPIs acordados, solicitas revisión, reemplazo o cancelación con 30 días de preaviso, sin indemnizaciones ni compromisos laborales con el profesional.",
+            "Lo ideal es que tu empresa provea los accesos a sus cuentas corporativas de Ahrefs, Semrush, Screaming Frog o Sistrix. Así el historial de auditoria seo, los proyectos guardados y las keywords quedan bajo tu propiedad y control.",
         ],
     },
     {
-        question: "¿El closer puede adaptarse a mi CRM y mis scripts de venta?",
+        question: "¿En cuánto tiempo puedo ver resultados SEO?",
         answers: [
-            "Sí. Trabajan con HubSpot, Salesforce, Pipedrive, Notion, Slack, Zoom o Google Meet. Se integran a tu metodología y documentan cada avance.",
+            "Las correcciones de errores técnicos críticos pueden mostrar impacto en semanas. Una estrategia integral con clústeres de contenido, on-page y backlinks suele madurar entre 3 y 6 meses, según competencia y punto de partida.",
         ],
     },
     {
-        question: "¿Qué diferencia al modelo <strong>Oberstaff<span style='color: #ff62c4;'>.</span></strong> de buscar freelance closer en marketplaces?",
+        question: "¿El experto SEO implementa cambios directamente?",
         answers: [
-            "Un freelance en marketplaces sirve para proyectos puntuales, pero depende de perfiles autodeclarados y poca integración. Con <strong>Oberstaff<span style='color: #ff62c4;'>.</span></strong> recibes closers de ventas con dedicación estable que trabajan dentro de tu CRM, bajo NDA, con continuidad en el seguimiento.",
+            "Sí, dentro de los accesos que le otorgues. Puede aplicar cambios on-page, técnicos y de contenido en tu CMS, o entregar las indicaciones a tu equipo de desarrollo cuando el despliegue lo requiera.",
         ],
     },
     {
-        question: "¿Quién entrega los leads y quién hace el seguimiento?",
+        question: "¿Qué accesos debo entregar?",
         answers: [
-            "Depende de tu modelo. Algunas empresas ya generan oportunidades; otras necesitan que el closer tome llamadas entrantes y reactive propuestas abiertas. Se define antes de incorporar el perfil.",
+            "Solo los necesarios: Google Search Console, GA4, Google Tag Manager, CMS, herramientas SEO y dashboards. Recomendamos permisos controlados, no accesos de propietario absoluto.",
         ],
     },
     {
-        question: "¿Es útil para empresas que buscan closer de ventas en Puerto Rico?",
+        question: "¿Qué pasa si el perfil no se ajusta a lo que necesito?",
         answers: [
-            "Sí, para negocios con leads calificados, demos, propuestas abiertas o ciclos que requieren seguimiento profesional. La clave es elegir un perfil con experiencia en tu ticket y sector.",
+            "Si el perfil no encaja técnica o estratégicamente, solicitas un cambio por un especialista con mayor seniority o una especialidad más alineada con tu proyecto.",
+        ],
+    },
+    {
+        question: "¿Cuál es la diferencia entre SEO en Puerto Rico y SEO local Puerto Rico?",
+        answers: [
+            "SEO en Puerto Rico abarca la estrategia orgánica completa para empresas que venden en la Isla o desde la Isla: técnica, contenidos, autoridad y analítica. SEO local Puerto Rico se enfoca en búsquedas por zona: Google Business Profile, reseñas, mapas y señales geográficas.",
+        ],
+    },
+    {
+        question: "¿Puedo contratar un SEO para un proyecto local en San Juan, Bayamón, Carolina o Ponce?",
+        answers: [
+            "Sí. Puedes contratar un especialista SEO con foco local para trabajar Google Business Profile, reseñas, landings geolocalizadas y búsquedas comerciales dentro de Puerto Rico.",
         ],
     },
 ];
@@ -54,289 +66,654 @@ const faqs = [
 
 <DashboardLayoutPerfilesPr
     ogImage={ogImage}
-    title="Closer de ventas remoto para empresas en Puerto Rico"
-    description="Convierte más leads en clientes con un closer de ventas remoto para tu empresa en Puerto Rico. Talento de Sudamérica evaluado, full-time y sin comisión."
-    footerTitle="Otros perfiles comerciales y de marketing que puedes contratar con Oberstaff."
+    title="SEO en Puerto Rico | Contrata un Experto SEO"
+    description="Contrata un experto SEO para tu empresa en Puerto Rico. Talento remoto de LATAM dedicado a mejorar visibilidad, tráfico orgánico y captación de leads. "
+    footerTitle="Roles relacionados"
     footerLinks={[
         {
-            text: "📱 Especialista en Meta Ads",
-            href: "/pr/perfiles/especialista-en-Meta-Ads",
-        },
-        {
-            text: "✍️ Copywriter",
-            href: "/pr/perfiles/contratar-copywriter",
-        },
-        {
-            text: "🔍 Especialista en Google Ads",
+            text: "📈 Contratar especialista en Google Ads",
             href: "/pr/perfiles/Especialista-en-Google-Ads",
         },
         {
-            text: "🗂️ Asistente Virtual ",
-            href: "/pr/perfiles/asistente-virtual",
+            text: "✍️ Contratar copywriter",
+            href: "/pr/perfiles/contratar-copywriter",
+        },
+        {
+            text: "🗂️ Contratar asistente virtual",
+            href: "/pr/perfiles/asistente-virtual-puerto-rico",
         },
     ]}
 >
     <link
         rel="canonical"
-        href="https://oberstaff.com/pr/perfiles/contratar-closer-de-ventas/"
+        href="https://oberstaff.com/pr/perfiles/experto-seo/"
         slot="head"
     />
+    <link rel="alternate" hreflang="es-PR" href="https://oberstaff.com/pr/perfiles/experto-seo/" slot="head" />
+    <link rel="alternate" hreflang="es-ES" href="https://oberstaff.com/perfiles/contratar-experto-seo/" slot="head" />
+    <link rel="alternate" hreflang="x-default" href="https://oberstaff.com/perfiles/contratar-experto-seo/" slot="head" />
     <script slot="head" type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@graph": [
-                {
-                    "@type": "WebPage",
-                    "@id": "https://oberstaff.com/pr/perfiles/contratar-closer-de-ventas#webpage",
-                    "url": "https://oberstaff.com/pr/perfiles/contratar-closer-de-ventas",
-                    "name": "Closer de ventas remoto para empresas en Puerto Rico",
-                    "description": "Convierte más leads en clientes con un closer de ventas remoto para tu empresa en Puerto Rico. Talento de Sudamérica evaluado, full-time y sin comisión.",
-                    "inLanguage": "es-PR",
-                    "isPartOf": {
-                        "@id": "https://oberstaff.com/#website"
-                    },
-                    "publisher": {
-                        "@id": "https://oberstaff.com/#organization"
-                    },
-                    "about": {
-                        "@id": "https://oberstaff.com/pr/perfiles/contratar-closer-de-ventas#service"
-                    },
-                    "mainEntity": {
-                        "@id": "https://oberstaff.com/pr/perfiles/contratar-closer-de-ventas#service"
-                    },
-                    "breadcrumb": {
-                        "@id": "https://oberstaff.com/pr/perfiles/contratar-closer-de-ventas#breadcrumb"
-                    }
-                },
-                {
-                    "@type": "Service",
-                    "@id": "https://oberstaff.com/pr/perfiles/contratar-closer-de-ventas#service",
-                    "name": "Contratar closer de ventas para empresas en Puerto Rico",
-                    "alternateName": [
-                        "Closer de ventas remoto",
-                        "Closer comercial remoto",
-                        "Vendedor remoto",
-                        "Representante de ventas remoto",
-                        "Closer de ventas High Ticket"
-                    ],
-                    "serviceType": "Contratación de closer de ventas remoto",
-                    "category": "Servicios de ventas, desarrollo comercial y cierre de negocios",
-                    "url": "https://oberstaff.com/pr/perfiles/contratar-closer-de-ventas",
-                    "provider": {
-                        "@id": "https://oberstaff.com/#organization"
-                    },
-                    "description": "Servicio para empresas en Puerto Rico que necesitan contratar un closer de ventas remoto de LATAM con dedicación exclusiva, dominio de CRM (HubSpot, Salesforce, Pipedrive), gestión de objeciones, cierre de ventas High Ticket, horario compatible con Puerto Rico (AST) y sin comisiones sobre ventas.",
-                    "slogan": "Convierte más leads calificados en clientes con un closer de ventas dedicado, sin comisiones ni pasivos laborales locales.",
-                    "audience": {
-                        "@type": "BusinessAudience",
-                        "audienceType": "Empresas en Puerto Rico que necesitan contratar closer de ventas remoto en LATAM",
-                        "geographicArea": {
-                            "@type": "Country",
-                            "name": "Puerto Rico"
-                        }
-                    },
-                    "serviceAudience": {
-                        "@type": "BusinessAudience",
-                        "audienceType": "Pymes, startups, agencias y empresas en Puerto Rico que buscan un closer de ventas remoto dedicado",
-                        "geographicArea": {
-                            "@type": "Country",
-                            "name": "Puerto Rico"
-                        }
-                    },
-                    "areaServed": [
-                        {
-                            "@type": "Country",
-                            "name": "Puerto Rico"
-                        },
-                        {
-                            "@type": "Country",
-                            "name": "United States"
-                        }
-                    ],
-                    "offers": {
-                        "@type": "Offer",
-                        "@id": "https://oberstaff.com/pr/perfiles/contratar-closer-de-ventas#offer",
-                        "name": "Closer de Ventas Remoto Dedicado",
-                        "url": "https://oberstaff.com/pr/perfiles/contratar-closer-de-ventas#contacto",
-                        "price": "910",
-                        "priceCurrency": "USD",
-                        "availability": "https://schema.org/InStock",
-                        "eligibleCustomerType": "http://purl.org/goodrelations/v1#Business",
-                        "eligibleRegion": {
-                            "@type": "Country",
-                            "name": "Puerto Rico"
-                        },
-                        "description": "Contratación de un closer de ventas remoto dedicado desde $910 USD al mes, dirigido a empresas de Puerto Rico que requieren cerrar ventas con dedicación exclusiva y horario compatible con Puerto Rico.",
-                        "priceSpecification": {
-                            "@type": "UnitPriceSpecification",
-                            "price": "910",
-                            "priceCurrency": "USD",
-                            "unitText": "profesional por mes"
-                        }
-                    },
-                    "hasOfferCatalog": {
-                        "@type": "OfferCatalog",
-                        "@id": "https://oberstaff.com/pr/perfiles/contratar-closer-de-ventas#included-services",
-                        "name": "Servicios incluidos de cierre de ventas remoto",
-                        "itemListElement": [
-                            {
-                                "@type": "Offer",
-                                "name": "Llamadas de cierre y seguimiento",
-                                "itemOffered": {
-                                    "@type": "Service",
-                                    "name": "Gestión activa de llamadas comerciales",
-                                    "description": "Llamadas con guiones adaptados, manejo de objeciones y seguimiento riguroso de prospectos calificados."
-                                }
-                            },
-                            {
-                                "@type": "Offer",
-                                "name": "Manejo de CRM de ventas",
-                                "itemOffered": {
-                                    "@type": "Service",
-                                    "name": "Higiene y mantenimiento de CRM",
-                                    "description": "Registro de interacciones, cambio de etapas de negocios, actualización de notas y forecast de ventas."
-                                }
-                            },
-                            {
-                                "@type": "Offer",
-                                "name": "Cierre High Ticket y B2B",
-                                "itemOffered": {
-                                    "@type": "Service",
-                                    "name": "Venta consultiva de alto valor",
-                                    "description": "Procesos con múltiples decisores, resolución de dudas complejas y justificación de ROI."
-                                }
-                            }
-                        ]
-                    }
-                },
-                {
-                    "@type": "FAQPage",
-                    "@id": "https://oberstaff.com/pr/perfiles/contratar-closer-de-ventas#faq",
-                    "mainEntity": [
-                        {
-                            "@type": "Question",
-                            "name": "¿Qué ocurre si el closer no mejora la tasa de cierre?",
-                            "acceptedAnswer": {
-                                "@type": "Answer",
-                                "text": "Si en el período inicial el perfil no se alinea con los KPIs acordados, solicitas revisión, reemplazo o cancelación con 30 días de preaviso, sin indemnizaciones ni compromisos laborales con el profesional."
-                            }
-                        },
-                        {
-                            "@type": "Question",
-                            "name": "¿El closer puede adaptarse a mi CRM y mis scripts de venta?",
-                            "acceptedAnswer": {
-                                "@type": "Answer",
-                                "text": "Sí. Trabajan con HubSpot, Salesforce, Pipedrive, Notion, Slack, Zoom o Google Meet. Se integran a tu metodología y documentan cada avance."
-                            }
-                        },
-                        {
-                            "@type": "Question",
-                            "name": "¿Qué diferencia al modelo Oberstaff. de buscar freelance closer en marketplaces?",
-                            "acceptedAnswer": {
-                                "@type": "Answer",
-                                "text": "Un freelance en marketplaces sirve para proyectos puntuales, pero depende de perfiles autodeclarados y poca integración. Con Oberstaff. recibes closers de ventas con dedicación estable que trabajan dentro de tu CRM, bajo NDA, con continuidad en el seguimiento."
-                            }
-                        },
-                        {
-                            "@type": "Question",
-                            "name": "¿Quién entrega los leads y quién hace el seguimiento?",
-                            "acceptedAnswer": {
-                                "@type": "Answer",
-                                "text": "Depende de tu modelo. Algunas empresas ya generan oportunidades; otras necesitan que el closer tome llamadas entrantes y reactive propuestas abiertas. Se define antes de incorporar el perfil."
-                            }
-                        },
-                        {
-                            "@type": "Question",
-                            "name": "¿Es útil para empresas que buscan closer de ventas en Puerto Rico?",
-                            "acceptedAnswer": {
-                                "@type": "Answer",
-                                "text": "Sí, para negocios con leads calificados, demos, propuestas abiertas o ciclos que requieren seguimiento profesional. La clave es elegir un perfil con experiencia en tu ticket y sector."
-                            }
-                        }
-                    ]
-                },
-                {
-                    "@type": "BreadcrumbList",
-                    "@id": "https://oberstaff.com/pr/perfiles/contratar-closer-de-ventas#breadcrumb",
-                    "itemListElement": [
-                        {
-                            "@type": "ListItem",
-                            "position": 1,
-                            "name": "Inicio",
-                            "item": "https://oberstaff.com/"
-                        },
-                        {
-                            "@type": "ListItem",
-                            "position": 2,
-                            "name": "Contratar Closer de Ventas",
-                            "item": "https://oberstaff.com/pr/perfiles/contratar-closer-de-ventas"
-                        }
-                    ]
-                }
-            ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://oberstaff.com/pr/perfiles/experto-seo/#webpage",
+      "url": "https://oberstaff.com/pr/perfiles/experto-seo/",
+      "name": "SEO en Puerto Rico | Contrata un Experto SEO",
+      "description": "Contrata un experto SEO para tu empresa en Puerto Rico. Talento remoto de LATAM dedicado a mejorar visibilidad, tráfico orgánico y captación de leads.",
+      "inLanguage": "es-PR",
+      "isPartOf": {
+        "@id": "https://oberstaff.com#website"
+      },
+      "publisher": {
+        "@id": "https://oberstaff.com#organization"
+      },
+      "about": {
+        "@id": "https://oberstaff.com/pr/perfiles/experto-seo/#service"
+      },
+      "mainEntity": {
+        "@id": "https://oberstaff.com/pr/perfiles/experto-seo/#service"
+      },
+      "breadcrumb": {
+        "@id": "https://oberstaff.com/pr/perfiles/experto-seo/#breadcrumb"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://oberstaff.com/pr/perfiles/experto-seo/#service",
+      "name": "Contratar Experto SEO Remoto para empresas en Puerto Rico",
+      "alternateName": [
+        "Experto SEO Puerto Rico",
+        "Especialista SEO remoto",
+        "Consultor SEO Puerto Rico",
+        "Servicios de SEO en Puerto Rico",
+        "SEO local Puerto Rico",
+        "Especialista en posicionamiento SEO",
+        "Experto en posicionamiento web",
+        "SEO PR"
+      ],
+      "serviceType": "Contratación de experto SEO remoto",
+      "category": "Servicios de contratación de talento SEO remoto y posicionamiento orgánico",
+      "url": "https://oberstaff.com/pr/perfiles/experto-seo/",
+      "provider": {
+        "@id": "https://oberstaff.com#organization"
+      },
+      "description": "Servicio para empresas en Puerto Rico que necesitan contratar un especialista SEO remoto de Sudamérica con dedicación exclusiva, horario compatible AST/EST y experiencia en SEO técnico, contenidos, analítica, autoridad, SEO local y crecimiento de tráfico orgánico.",
+      "slogan": "Talento SEO remoto dedicado para hacer crecer el tráfico orgánico de tu negocio en Puerto Rico.",
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Empresas en Puerto Rico que necesitan mejorar visibilidad orgánica, tráfico cualificado, captación de leads, SEO técnico, contenidos, autoridad y SEO local",
+        "geographicArea": {
+          "@type": "AdministrativeArea",
+          "name": "Puerto Rico"
         }
-    </script>
+      },
+      "serviceAudience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Pymes, startups, eCommerce, empresas B2B, servicios profesionales y negocios locales en Puerto Rico que buscan un especialista SEO dedicado de LATAM",
+        "geographicArea": {
+          "@type": "AdministrativeArea",
+          "name": "Puerto Rico"
+        }
+      },
+      "areaServed": [
+        {
+          "@type": "AdministrativeArea",
+          "name": "Puerto Rico"
+        },
+        {
+          "@type": "Country",
+          "name": "Colombia"
+        },
+        {
+          "@type": "Country",
+          "name": "Argentina"
+        },
+        {
+          "@type": "Country",
+          "name": "Venezuela"
+        },
+        {
+          "@type": "Country",
+          "name": "Perú"
+        },
+        {
+          "@type": "Country",
+          "name": "México"
+        }
+      ],
+      "offers": {
+        "@type": "Offer",
+        "@id": "https://oberstaff.com/pr/perfiles/experto-seo/#offer",
+        "name": "Experto SEO Remoto Dedicado",
+        "url": "https://oberstaff.com/pr/perfiles/experto-seo/#contacto",
+        "price": "950",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "eligibleCustomerType": "http://purl.org/goodrelations/v1#Business",
+        "eligibleRegion": {
+          "@type": "AdministrativeArea",
+          "name": "Puerto Rico"
+        },
+        "description": "Contratación de experto SEO remoto desde 950 USD al mes, dirigido a empresas en Puerto Rico que necesitan SEO técnico, contenidos, SEO local, link building, analítica orgánica, reporting y ejecución dedicada en horario compatible AST/EST.",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "950",
+          "priceCurrency": "USD",
+          "unitText": "profesional por mes"
+        }
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "@id": "https://oberstaff.com/pr/perfiles/experto-seo/#included-services",
+        "name": "Qué ejecuta un experto SEO dedicado para tu empresa",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "Offer",
+              "name": "Auditoría SEO y auditoría de página web",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Auditoría SEO y auditoría de página web",
+                "description": "Revisión de indexación, rastreo, Core Web Vitals, redirecciones, canonical, robots.txt, sitemap y arquitectura interna."
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "Offer",
+              "name": "Estrategia de contenidos y EEAT",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Estrategia de contenidos y EEAT",
+                "description": "Keyword research, definición de clústeres temáticos, optimización de landings, mejora de contenidos y corrección de thin content y canibalizaciones."
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+              "@type": "Offer",
+              "name": "SEO local Puerto Rico",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "SEO local Puerto Rico",
+                "description": "Optimización de Google Business Profile, datos NAP, reseñas y páginas geolocalizadas para San Juan, Bayamón, Carolina, Caguas, Ponce y Mayagüez."
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "item": {
+              "@type": "Offer",
+              "name": "Link building y autoridad digital",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Link building y autoridad digital",
+                "description": "Auditoría de backlinks, estrategia de enlaces entrantes, digital PR y limpieza de señales tóxicas."
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "item": {
+              "@type": "Offer",
+              "name": "Analítica orgánica y reporting",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Analítica orgánica y reporting",
+                "description": "Configuración y seguimiento en Google Search Console, GA4, Looker Studio, Semrush o Ahrefs para medir rankings, tráfico, conversiones y oportunidades."
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 6,
+            "item": {
+              "@type": "Offer",
+              "name": "SEO para eCommerce y servicios profesionales",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "SEO para eCommerce y servicios profesionales",
+                "description": "Optimización de categorías, fichas de producto, páginas transaccionales, landings de servicios y flujos de captación orgánica."
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://oberstaff.com/pr/perfiles/experto-seo/#trust-bar",
+      "name": "Señales de confianza del servicio SEO",
+      "description": "Elementos de confianza para empresas en Puerto Rico que quieren contratar un experto SEO remoto con Oberstaff.",
+      "numberOfItems": 4,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Talento SEO dedicado a tu dominio"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Servicios de SEO en Puerto Rico en horario AST"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Integración segura a Google Search Console"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Expertos en Semrush, Ahrefs y Screaming Frog"
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://oberstaff.com/pr/perfiles/experto-seo/#advantages",
+      "name": "Ventajas de contratar expertos en posicionamiento web con Oberstaff",
+      "description": "Ventajas para empresas en Puerto Rico que contratan un especialista SEO remoto dedicado con Oberstaff.",
+      "numberOfItems": 5,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Perfil SEO remoto evaluado",
+          "description": "Especialista evaluado en auditoría técnica, contenidos, analítica y crecimiento orgánico."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Respuesta ante actualizaciones de Google",
+          "description": "Reacción inmediata ante Core Updates de Google en horario compatible con Puerto Rico."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Protección de datos SEO",
+          "description": "Accesos a Google Search Console and GA4 protegidos mediante acuerdos de confidencialidad."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Tarifa plana B2B",
+          "description": "Permite escalar captación orgánica sin los altos fees de una agencia SEO tradicional."
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Flexibilidad operativa",
+          "description": "Si la estrategia no se ajusta, puedes cancelar con 30 días de preaviso o solicitar otro perfil."
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://oberstaff.com/pr/perfiles/experto-seo/#comparison",
+      "name": "Especialista SEO remoto dedicado vs freelance o agencia SEO",
+      "description": "Comparación entre contratar un especialista SEO con Oberstaff, un especialista local en Puerto Rico, un freelance SEO o una agencia SEO.",
+      "numberOfItems": 4,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "SEO Oberstaff Sudamérica",
+          "description": "Desde 950 USD al mes, dedicado solo a tu web, velocidad de ejecución alta, horario compatible con Puerto Rico e integración completa con GSC, GA4, Semrush y otras herramientas."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Especialista local en Puerto Rico",
+          "description": "Puede implicar costos totales entre 2,500 y 4,500 USD al mes más empleo, beneficios y seguros."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Freelance SEO",
+          "description": "Puede costar entre 1,500 y 3,000 USD al mes o por auditoría, con disponibilidad variable y sin dedicación exclusiva."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Agencia SEO",
+          "description": "Puede tener fees variables, contratos fijos a largo plazo, ejecución sujeta a procesos internos y atención dividida entre varias cuentas."
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://oberstaff.com/pr/perfiles/experto-seo/#guide",
+      "name": "Qué evaluar antes de contratar un especialista SEO para Puerto Rico",
+      "description": "Guía para empresas en Puerto Rico que necesitan contratar un especialista SEO remoto confiable.",
+      "numberOfItems": 4,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Especialista SEO dedicado vs consultor SEO en Puerto Rico",
+          "description": "Un especialista remoto con Oberstaff combina jornada completa, exclusividad y tarifas desde 950 USD al mes sin relación laboral directa."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Evaluación técnica más allá del semáforo verde",
+          "description": "Antes de contratar, conviene definir si el objetivo es tráfico orgánico, rankings de alta conversión, auditoría profunda o contenidos."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "SEO para entornos con IA generativa",
+          "description": "Con AI Overviews, ChatGPT y Gemini, las empresas necesitan contenido claro, estructurado, confiable, EEAT, Schema Markup y autoridad temática."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Dónde contratar un especialista SEO confiable",
+          "description": "Oberstaff ofrece talento dedicado, contrato estable, integración natural y gestión administrativa cubierta frente a marketplaces, freelancers o agencias."
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://oberstaff.com/pr/perfiles/experto-seo/#process",
+      "name": "Proceso para seleccionar un especialista SEO",
+      "description": "Proceso de Oberstaff para seleccionar e integrar un experto SEO remoto en empresas de Puerto Rico.",
+      "numberOfItems": 4,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Analizamos tus objetivos de posicionamiento",
+          "description": "Revisamos el estado de la web, objetivos comerciales, mercado, herramientas y perfil SEO requerido: técnico, contenidos, local, eCommerce o 360."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Filtramos perfiles SEO de Sudamérica",
+          "description": "Seleccionamos de 3 a 5 especialistas SEO evaluados según industria, nivel técnico, experiencia y compatibilidad horaria con Puerto Rico."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Entrevistas y eliges tú",
+          "description": "La empresa valida cómo auditan una web, priorizan oportunidades, resuelven canibalizaciones y plantean estrategias orientadas a negocio."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Comienza a trabajar",
+          "description": "El especialista se integra a plataformas como GSC, GA4 y Semrush, realiza auditoría inicial y entrega su primer plan de acción."
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://oberstaff.com/pr/perfiles/experto-seo/#profiles",
+      "name": "Tipos de especialistas SEO que puedes contratar",
+      "description": "Especialidades SEO disponibles para empresas en Puerto Rico según el tipo de negocio y objetivo orgánico.",
+      "numberOfItems": 6,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Especialista en SEO técnico",
+          "description": "Perfil para problemas de indexación, rendimiento, migraciones, arquitectura, errores de rastreo o caídas de tráfico. Herramientas: Screaming Frog, GSC, Core Web Vitals y Semrush."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Especialista en contenidos SEO y EEAT",
+          "description": "Perfil enfocado en keyword research, optimización de landings, arquitectura de información, EEAT, briefs de contenido y mejora de páginas existentes."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Especialista SEO local",
+          "description": "Perfil para clínicas, firmas legales, real estate, turismo, restaurantes o servicios locales con Google Business Profile, reseñas, NAP y landings locales."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Especialista en link building",
+          "description": "Perfil orientado a mejorar autoridad de dominio, conseguir backlinks relevantes, analizar anchors y detectar enlaces tóxicos."
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Especialista SEO para eCommerce",
+          "description": "Perfil para tiendas con categorías, productos, filtros, paginaciones, contenido duplicado o problemas de conversión orgánica."
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Consultor SEO 360",
+          "description": "Perfil senior o semi-senior capaz de coordinar SEO técnico, contenidos, autoridad, analítica y priorización estratégica."
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://oberstaff.com/pr/perfiles/experto-seo/#benefits",
+      "name": "Beneficios de contratar un especialista SEO dedicado",
+      "description": "Beneficios para empresas en Puerto Rico que incorporan un experto SEO remoto dedicado con Oberstaff.",
+      "numberOfItems": 4,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Ejecución continua",
+          "description": "El experto SEO revisa URLs, detecta caídas de tráfico, encuentra oportunidades de contenido y prioriza mejoras técnicas de forma recurrente."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Menor dependencia del costo por clic",
+          "description": "Construye un dominio con autoridad que capta prospectos y clientes a un costo marginal más sostenible en el tiempo."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Conocimiento orgánico dentro de tu empresa",
+          "description": "El keyword research, los reportes, la arquitectura de contenidos y las decisiones de SEO PR quedan centralizados en la operación."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Factura mensual corporativa",
+          "description": "La empresa recibe una sola factura mensual sin trámites de empleo, retenciones patronales ni seguros."
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://oberstaff.com/pr/perfiles/experto-seo/#related-profiles",
+      "name": "Roles relacionados con SEO remoto",
+      "description": "Otros perfiles relacionados que empresas en Puerto Rico pueden contratar mediante Oberstaff.",
+      "numberOfItems": 3,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Especialista en Google Ads",
+          "url": "https://oberstaff.com/pr/perfiles/especialista-en-google-ads/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Copywriter",
+          "url": "https://oberstaff.com/pr/perfiles/contratar-copywriter/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Asistente Virtual",
+          "url": "https://oberstaff.com/pr/perfiles/asistente-virtual-puerto-rico/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://oberstaff.com/pr/perfiles/experto-seo/#faq",
+      "inLanguage": "es-PR",
+      "isPartOf": {
+        "@id": "https://oberstaff.com/pr/perfiles/experto-seo/#webpage"
+      },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Quién paga herramientas como Semrush, Ahrefs o Screaming Frog?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Lo ideal es que tu empresa provea los accesos a sus cuentas corporativas de Ahrefs, Semrush, Screaming Frog o Sistrix. Así el historial de auditoría SEO, los proyectos guardados y las keywords quedan bajo tu propiedad y control."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿En cuánto tiempo puedo ver resultados SEO?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Las correcciones de errores técnicos críticos pueden mostrar impacto en semanas. Una estrategia integral con clústeres de contenido, on-page y backlinks suele madurar entre 3 y 6 meses, según competencia y punto de partida."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿El experto SEO implementa cambios directamente?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí, dentro de los accesos que le otorgues. Puede aplicar cambios on-page, técnicos y de contenido en tu CMS, o entregar las indicaciones a tu equipo de desarrollo cuando el despliegue lo requiera."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué accesos debo entregar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Solo los necesarios: Google Search Console, GA4, Google Tag Manager, CMS, herramientas SEO y dashboards. Recomendamos permisos controlados, no accesos de propietario absoluto."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué pasa si el perfil no se ajusta a lo que necesito?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Si el perfil no encaja técnica o estratégicamente, puedes solicitar un cambio por un especialista con mayor seniority o una especialidad más alineada con tu proyecto."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuál es la diferencia entre SEO en Puerto Rico y SEO local Puerto Rico?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SEO en Puerto Rico abarca la estrategia orgánica completa para empresas que venden en la Isla o desde la Isla: técnica, contenidos, autoridad y analítica. SEO local Puerto Rico se enfoca en búsquedas por zona: Google Business Profile, reseñas, mapas y señales geográficas."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Puedo contratar un SEO para un proyecto local en San Juan, Bayamón, Carolina o Ponce?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Puedes contratar un especialista SEO con foco local para trabajar Google Business Profile, reseñas, landings geolocalizadas y búsquedas comerciales dentro de Puerto Rico."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://oberstaff.com/pr/perfiles/experto-seo/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://oberstaff.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Puerto Rico",
+          "item": "https://oberstaff.com/pr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Contratar Experto SEO",
+          "item": "https://oberstaff.com/pr/perfiles/experto-seo/"
+        }
+      ]
+    }
+  ]
+}
+</script>
 
     <div class="service-detail-container" id="inicio">
         <LeadHeroSection
-            webhookUrl="https://hooks.zapier.com/hooks/catch/12433184/42eubj9/"
-            backgroundImage="/hero-closer-pr.webp"
-            topLabel="Perfil: Closer de Ventas"
+            webhookUrl="https://hooks.zapier.com/hooks/catch/12433184/42288d4/"
+            backgroundImage="/hero-seo-pr.webp"
+            topLabel="Perfil: Experto SEO"
             topLabelInsideH1={false}
             topLabelTag="p"
             titleTag="h1"
-            title="Closer de ventas remoto para tu empresa en Puerto Rico: convierte oportunidades calificadas en clientes"
-            cardTitle="Zona de captación inicial"
+            title="Contratar experto SEO: talento remoto para hacer crecer el tráfico orgánico de tu negocio en Puerto Rico"
+            cardTitle="Zona de captación inicial" 
             cardSubtitle=""
-            buttonText="👉 Ver closer ventas pre-evaluados y solicitar propuesta"
+            buttonText="Ver perfiles SEO pre-evaluados →"
             buttonIcon=""
             buttonSubtext=""
-            footerLinkText="Solicitar perfiles de closers de ventas →"
-            footerLinkHref="#"
+            footerLinkText=""
+            footerLinkHref=""
             placeholderName="Nombre completo *"
             placeholderEmail="Email corporativo *"
             placeholderCompany="Nombre de la empresa / negocio *"
             placeholderPhone="Teléfono (+1) *"
             badges={[
-                { text: "Venta consultiva y seguimiento comercial con criterio profesional.", icon: "✓" },
+                { text: "Talento SEO dedicado a tu dominio.", icon: "✓" },
                 {
-                    text: "Experiencia en CRM, pipeline, objeciones y forecast.",
+                    text: "Servicios de SEO en Puerto Rico en horario AST.",
                     icon: "✓",
                 },
                 {
-                    text: "Closers compatibles con Puerto Rico, EE. UU. y procesos remotos.",
+                    text: "Integración segura a tu Google Search Console.",
                     icon: "✓",
                 },
-                {
-                    text: "Perfiles para high ticket, B2B, SaaS y ventas digitales.",
-                    icon: "✓",
-                },
+                { text: "Expertos en Semrush, Ahrefs y Screaming Frog.", icon: "✓" },
             ]}
             badgesClass="community-badges"
         >
             <Fragment slot="description">
-               Tienes los leads; te falta quien los cierre. Suma un closer de ventas remoto de Sudamérica dedicado a tu pipeline en Puerto Rico.
+              Con <span style="color: #ffffff; font-weight: 700;">Oberstaff<span style="color: #ff62c4;">.</span></span> contratas un especialista en SEO remoto de Sudamérica para tu empresa en Puerto Rico: dedicación exclusiva, horario compatible y experiencia en SEO técnico, contenidos, analítica, autoridad y posicionamiento local.
             </Fragment>
         </LeadHeroSection>
 
         <div class="fade-in-section">
             <QueEsServicioSection
-                title="Cuando el pipeline se llena pero los contratos no llegan, necesitas un closer de venta dedicado"
+                title="Servicios de SEO en Puerto Rico, ejecutados por un especialista dedicado"
                 highlightWord=""
-                description="Invertir en captación sin alguien entrenado para cerrar deja dinero sobre la mesa. Tus campañas generan leads, pero si las llamadas, propuestas y cotizaciones no reciben seguimiento, la oportunidad se enfría y el prospecto se va con otro. <br/><br/>Al contratar closer de ventas remoto para Puerto Rico, sumas un profesional que trabaja el fondo del embudo: llama, maneja objeciones, actualiza el CRM y empuja cada oportunidad hacia una decisión. Tu estrategia comercial se vuelve más disciplinada y medible.<br/><br/> Ideal para empresas que buscan closer de ventas con dedicación estable, horario compatible y capacidad de vender a compradores de Puerto Rico, Estados Unidos y mercados hispanos."
-                imageSrc="/que-es-closer-pr.webp"
-                imageAlt="Experto SEO remoto analizando tráfico orgánico" 
+                description="Integra un experto en posicionamiento SEO de Sudamérica, listo para auditar tu arquitectura web, mejorar tu contenido, resolver problemas de indexación, optimizar tus landings comerciales y fortalecer la visibilidad orgánica de tu negocio en la Isla."
+                imageSrc="/que-es-seo-pr.webp"
+                imageAlt="Experto SEO remoto analizando tráfico orgánico"
                 badgeText=""
                 quoteText=""
-                checklistTitle="Señales de fuga comercial"
+                checklistTitle="Ventajas de contratar expertos en posicionamiento web con <span style='font-weight: 800;'>Oberstaff</span><span style='color: #ff62c4;'>.</span>"
                 checklistIcon="✅"
                 checklistItems={[
-                    "Tienes llamadas agendadas, pero la tasa de cierre no acompaña al volumen.",
-                    "Envías cotizaciones, pero no hay una cadencia clara de seguimiento.",
-                    "Los prospectos preguntan precio, piden pensarlo y dejan de responder.",
-                    "Marketing genera leads y ventas dice que 'no convierten', pero nadie documenta por qué se pierden los deals."
+                    "Perfil SEO remoto evaluado en auditoría técnica, contenidos, analítica y crecimiento orgánico.",
+                    "Reacción inmediata ante los Core Updates de Google en tu misma jornada, sin desfases de horario.",
+                    "Tus datos en Search Console y GA4 protegidos: <span style='font-weight: 800;'>Oberstaff</span><span style='color: #ff62c4; font-weight: 800;'>.</span> firma los acuerdos de confidencialidad (NDA).",
+                    "Tarifa plana B2B: escalas tu captación de leads orgánicos sin los altos fees de las agencias.",
+                    "Flexibilidad: si la estrategia no mueve el tráfico Non-Brand, cancelas con 30 días de preaviso."
                 ]}
-                ctaText="→ Solicitar perfiles de closer de ventas"
+                ctaText="👉 Solicitar propuesta de talento SEO"
                 ctaHref="#formulario-perfil"
                 diffIcon=""
                 diffTitle=""
@@ -346,77 +723,65 @@ const faqs = [
 
         <div class="fade-in-section">
             <ComparisonPerfiles
-                criterioLabel="Criterio comercial"
-                title="Análisis de inversión: closer de ventas remoto de Sudamérica vs. contratación local en Puerto Rico"
-                subtitle="Antes de sumar capacidad de cierre, compara el coste real, la dedicación, el control del proceso y la carga administrativa de cada alternativa."
-                footerNote="Precios orientativos. El coste final varía según seniority, sector, país del profesional, idioma, ticket promedio y nivel de especialización requerido."
-                oberstaffLabel="Closer de ventas remoto<br> <span style='font-weight:400; color:#1b1b1b;'>(con <strong>Oberstaff<span style='color: #ff62c4;'>.</span></strong> Sudamérica)</span>"
+                criterioLabel="Criterio"
+                title="Especialista SEO remoto dedicado vs. freelance o agencia especialista en SEO"
+                subtitle="Antes de elegir cómo cubrir tu estrategia de SEO en Puerto Rico, compara dedicación, costos, velocidad de implementación e integración con tu equipo." 
+                footerNote="Nota: la tarifa final depende del nivel del perfil, la especialidad SEO, la experiencia previa, las herramientas requeridas y el alcance de trabajo."
+                oberstaffLabel="SEO Oberstaff<span style='color: #ff62c4;'>.</span> <br> <span style='font-weight:400; color:#5A5A5A;'>(Sudamérica)</span>"
                 competitors={[
-                    "Profesional contratado <br> localmente <br> <span style='font-weight:400; color:#1b1b1b; font-size: 14px;'>en Puerto Rico</span>",
-                    "Freelance closer",
+                    "Especialista local <br> <span style='font-weight:400; color:#5A5A5A;'>(Puerto Rico)</span>",
+                    "Freelance SEO",
+                    "Agencia SEO",
                 ]}
                 rows={[
                     {
-                        label: "Precio closer de ventas / closer price",
+                        label: "Estructura mensual",
                         oberstaffValue:
-                            "<span class='icon-check'>✓</span> Desde $910/mes",
+                            "<span class='icon-check'>✓</span> <strong>Desde USD 950/mes</strong>",
                         competitorValues: [
-                            "<span class='icon-cross'>✕</span> $3,000–$4,500/mes + cargas patronales",
-                            "<span class='icon-cross'>✕</span> $1,500–$2,500 o % alto sobre ventas",
+                            "<span class='icon-cross'>✕</span> $2,500–$4,500/mes + empleo, beneficios y seguro",
+                            "<span class='icon-cross'>✕</span> $1,500–$3,000/mes o pago único por auditoría",
+                            "<span class='icon-cross'>✕</span> Fee variable y contratos fijos a largo plazo",
                         ],
                     },
                     {
-                        label: "Dedicación exclusiva a tu pipeline",
+                        label: "Foco en tu Crawl Budget",
                         oberstaffValue:
-                            "<span class='icon-check'>✓</span> Sí, jornada completa y foco en tu cuenta",
+                            "<span class='icon-check'>✓</span> <strong>Dedicado solo a tu web, jornada completa</strong>",
                         competitorValues: [
-                            "<span class='icon-check'>✓</span> Sí, pero con mayor coste fijo",
-                            "<span class='icon-warning'>⚠</span> Multicliente, agenda variable",
+                            "<span class='icon-check'>✓</span> Integrado a tu equipo directo",
+                            "<span class='icon-warning'>⚠</span> Multicliente: compites con otras cuentas",
+                            "<span class='icon-warning'>⚠</span> Compites por horas limitadas de atención",
                         ],
                     },
                     {
-                        label: "Evaluación de capacidad de cierre",
+                        label: "Velocidad de ejecución",
                         oberstaffValue:
-                            "<span class='icon-check'>✓</span> Roleplay + prueba técnica + validación de comunicación",
+                            "<span class='icon-check'>✓</span> <strong>Muy alta</strong>",
                         competitorValues: [
-                            "<span class='icon-warning'>⚠</span> Depende del proceso interno de selección",
-                            "<span class='icon-warning'>⚠</span> Historial declarado y referencias limitadas",
+                            "<span class='icon-check'>✓</span> Muy alta",
+                            "<span class='icon-warning'>⚠</span> Media, según su disponibilidad",
+                            "<span class='icon-warning'>⚠</span> Lenta, sujeta a procesos y tickets",
                         ],
                     },
                     {
-                        label: "Control del CRM y grabaciones",
+                        label: "Sincronía de horario",
                         oberstaffValue:
-                            "<span class='icon-check'>✓</span> Opera dentro de tus herramientas, con NDA",
+                            "<span class='icon-check'>✓</span> <strong>100% compatible con Puerto Rico (EST/AST)</strong>",
                         competitorValues: [
-                            "<span class='icon-check'>✓</span> Control directo si se gestiona internamente",
-                            "<span class='icon-warning'>⚠</span> Control variable según contrato y dispositivos",
+                            "<span class='icon-check'>✓</span> Mismo horario local",
+                            "<span class='icon-warning'>⚠</span> Variable según su carga",
+                            "<span class='icon-warning'>⚠</span> Limitada al horario de la agencia",
                         ],
                     },
                     {
-                        label: "Comisión sobre ventas cerradas",
+                        label: "Integración en herramientas",
                         oberstaffValue:
-                            "<span class='icon-check'>✓</span> Ninguna. Tarifa plana B2B",
+                            "<span class='icon-check'>✓</span> <strong>Completa: GSC, GA4, Semrush, etc.</strong>",
                         competitorValues: [
-                            "<span class='icon-warning'>⚠</span> Puede requerir variable o bono comercial",
-                            "<span class='icon-warning'>⚠</span> Frecuente exigir % por deal cerrado",
-                        ],
-                    },
-                    {
-                        label: "Riesgo laboral / beneficios",
-                        oberstaffValue:
-                            "<span class='icon-check'>✓</span> Cero pasivo laboral, sin retención de W2",
-                        competitorValues: [
-                            "<span class='icon-cross'>✕</span> Cargas de Seguro Social, desempleo, Ley 80",
-                            "<span class='icon-check'>✓</span> Nulo",
-                        ],
-                    },
-                    {
-                        label: "Escalabilidad del equipo comercial",
-                        oberstaffValue:
-                            "<span class='icon-check'>✓</span> Sumas, reemplazas o ajustas perfiles con agilidad",
-                        competitorValues: [
-                            "<span class='icon-warning'>⚠</span> Contratación más lenta y rígida",
-                            "<span class='icon-warning'>⚠</span> Disponibilidad irregular",
+                            "<span class='icon-check'>✓</span> Alta integración",
+                            "<span class='icon-warning'>⚠</span> Media o acceso limitado",
+                            "<span class='icon-warning'>⚠</span> Parcial: suelen usar sus propios reportes",
                         ],
                     },
                 ]}
@@ -425,117 +790,117 @@ const faqs = [
 
         <div class="fade-in-section">
             <ServicesSection
-                title="Cómo evaluar y contratar un closer de ventas que suba tu tasa de cierre"
+                title="Qué evaluar antes de contratar un especialista SEO para tu negocio en Puerto Rico"
                 cardTitleTag="h3"
-                description="Estos criterios te ayudan a validar si el perfil puede trabajar conversaciones complejas, defender tu propuesta de valor y sostener un proceso comercial medible."
+                description="Antes de sumar un perfil SEO a tu operación, define si necesitas resolver problemas técnicos, mejorar contenidos, captar leads locales, optimizar un eCommerce o fortalecer la autoridad de tu dominio."
                 customClass="employer-use-cases-designer"
-                services={[
+                services={[ 
                     {
                         icon: "",
-                        title: "📊 ¿Qué métricas deben manejar los closers de ventas de alto rendimiento?",
+                        title: "💼 Especialista SEO dedicado vs. consultor SEO en Puerto Rico",
                         description:
-                            "Un closer estratégico trabaja con datos: tasa de cierre, show rate, no-show, velocidad del ciclo, valor promedio del contrato, motivos de pérdida y probabilidad de cierre por etapa del pipeline.",
+                            "Un experto en SEO presencial en Puerto Rico o EE. UU. puede superar los $4,000 mensuales en costos totales de nómina. Los freelancers dan flexibilidad, pero no dedicación exclusiva a tu marca. <br><br> Un especialista remoto de Colombia, Argentina o Venezuela con <span class='brand-oberstaff'>Oberstaff<span class='brand-dot'>.</span></span> combina lo mejor: jornada completa, exclusividad en tu nicho y tarifas desde $950/mes, sin relaciones laborales directas ni riesgos de empleo.",
                         linkText: "",
                         href: "",
-                        cardClass: "card-av-1",
+                        cardClass: "card-av-1", 
                     },
                     {
                         icon: "",
-                        title: "🧩 ¿En qué se diferencia un closer de un Setter o un SDR?",
+                        title: "🛠️ Más allá del 'semáforo verde': qué evaluar técnicamente antes de contratar un consultor SEO",
                         description:
-                            "El Setter o SDR genera, contacta y califica. El closer toma el relevo cuando el prospecto ya mostró interés y necesita decidir: llamada final, propuesta, negociación y cierre.",
+                            "Antes de contratar, define tus metas de negocio: ¿más tráfico orgánico general, mejores rankings para keywords de alta conversión, una <strong>auditoria de pagina web</strong> profunda o un plan agresivo de contenidos? <br><br> Cuanto más claro sea el briefing, más rápido adaptará el profesional la estrategia a los cambios del algoritmo. En <span class='brand-oberstaff'>Oberstaff</span><span class='brand-dot'>.</span> estructuramos ese alcance en una llamada de 15 minutos.",
                         linkText: "",
                         href: "",
-                        cardClass: "card-av-2", 
+                        cardClass: "card-av-2",
                     },
                     {
                         icon: "",
-                        title: "🌎 ¿Funciona un closer de ventas remoto de Sudamérica para empresas en Puerto Rico?",
+                        title: "⚡ La búsqueda cambia, pero la estrategia SEO sigue siendo necesaria",
                         description:
-                            "Sí, si el perfil se selecciona por experiencia, comunicación, horario y dominio del proceso. Oberstaff. filtra talento de Sudamérica que vende en español y, cuando hace falta, opera en conversaciones bilingües.",
+                            "Con AI Overviews, ChatGPT y Gemini, las empresas necesitan contenido más claro, estructurado y confiable. Un especialista SEO ordena datos, mejora EEAT, implementa Schema Markup y construye autoridad temática.",
                         linkText: "",
-                        href: "", 
+                        href: "",
                         cardClass: "card-av-3",
                     },
                     {
                         icon: "",
-                        title: "💻 ¿Cuándo conviene contratar closer de ventas digital?",
+                        title: "🎯 ¿Dónde contratar un especialista en SEO confiable para Puerto Rico?",
                         description:
-                            "Cuando ya recibes mensajes, formularios, demos o cotizaciones, pero la tasa de cierre no refleja el esfuerzo de captación. Si vendes por Zoom, WhatsApp o webinars, un closer de ventas online ordena el seguimiento.",
+                            "Hay muchas alternativas, desde plataformas de freelancers hasta una agencia especialista en SEO. <span class='brand-oberstaff'>Oberstaff</span><span class='brand-dot'>.</span> aporta un modelo superior: talento dedicado en exclusiva, contrato estable y gestión administrativa cubierta. Más compromiso, integración natural y cero riesgo legal.",
                         linkText: "",
                         href: "",
-                        cardClass: "card-av-4", 
-                    },
+                        cardClass: "card-av-4",
+                    }
                 ]}
             />
         </div>
 
         <div class="fade-in-section">
             <ServicesSection
-                title="¿Qué ejecuta un closer en ventas dedicado dentro de tu proceso comercial?"
+                title="¿Qué ejecuta un experto SEO dedicado para tu empresa en Puerto Rico?"
                 cardTitleTag="h3"
-                description="Toma el relevo cuando el prospecto ya mostró interés y convierte conversaciones en decisiones: preguntas consultivas, seguimiento ordenado, lectura de señales de compra y cierre con el menor desgaste para tu equipo."
-                customClass="funciones-section"  
-                services={[
+                description="Nuestros especialistas SEO trabajan sobre los pilares que de verdad mueven la visibilidad orgánica: estado técnico, arquitectura de contenidos, autoridad, SEO local, analítica y conversión. El objetivo no es solo atraer visitas, sino captar tráfico cualificado."
+                customClass="funciones-section" 
+                services={[ 
                     {
-                        icon: "📞",
-                        title: "Gestión de llamadas de cierre y seguimiento activo",
+                        icon: "⚙️",
+                        title: "Auditoría SEO y auditoría de página web",
                         description:
-                            "Llamadas de venta con guión adaptado a tu oferta y seguimiento por llamada, email, WhatsApp o videollamada para recuperar oportunidades pendientes tras una demo, cotización o reunión.",
-                        linkText: "",
+                            "Revisión de indexación, rastreo, Core Web Vitals, redirecciones, canonical, robots.txt, sitemap y arquitectura interna que limite tu crecimiento orgánico.",
+                        linkText: "", 
                         href: "",
                         customIconBg: "rgba(102, 99, 253, 0.08)",
                         cardClass: "card-funcs",
                     },
                     {
-                        icon: "🎯",
-                        title: "Manejo avanzado de objeciones comerciales",
+                        icon: "✍️",
+                        title: "Estrategia de contenidos y EEAT",
                         description:
-                            "Respuesta a objeciones de precio, presupuesto, competencia, timing o autoridad de decisión. El objetivo no es presionar, sino ayudar al prospecto a decidir con claridad.",
+                            "Keyword research, definición de clústeres temáticos, optimización de landings, mejora de contenidos, corrección de thin content y canibalizaciones.",
                         linkText: "",
                         href: "",
-                        customIconBg: "rgba(102, 99, 253, 0.08)",
+                        customIconBg: "rgba(102, 99, 253, 0.08)", 
                         cardClass: "card-funcs",
                     },
                     {
-                        icon: "💼",
-                        title: "Cierre de ventas high ticket y B2B",
+                        icon: "📍",
+                        title: "SEO local Puerto Rico y dominio del map pack",
                         description:
-                            "Procesos de ticket medio-alto, con varios decisores y etapas de aprobación. Ideal para servicios profesionales, educación online, consultoría, software, agencias y ofertas digitales.",
+                            "Optimización de Google Business Profile, datos NAP, reseñas y páginas geolocalizadas para San Juan, Bayamón, Carolina, Caguas, Ponce, Mayagüez y más.",
                         linkText: "",
                         href: "",
-                        customIconBg: "rgba(102, 99, 253, 0.08)",
+                        customIconBg: "rgba(102, 99, 253, 0.08)", 
                         cardClass: "card-funcs",
                     },
                     {
-                        icon: "📊",
-                        title: "Higiene y actualización del CRM de ventas",
+                        icon: "🔗",
+                        title: "Link building y autoridad digital",
                         description:
-                            "Registro de cada interacción en HubSpot, Salesforce o Pipedrive: notas, etapa del deal, próximo contacto, probabilidad y motivos de pérdida. Tu pipeline deja de depender de la memoria.",
+                            "Auditoría de backlinks, análisis de autoridad, estrategia de enlaces entrantes, digital PR y limpieza de señales tóxicas que afecten tu reputación.",
                         linkText: "",
                         href: "",
                         customIconBg: "rgba(102, 99, 253, 0.08)",
-                        cardClass: "card-funcs",
+                        cardClass: "card-funcs", 
                     },
                     {
-                        icon: "🔁",
-                        title: "Gestión del pipeline comercial y forecast",
+                        icon: "📈",
+                        title: "Analítica orgánica y reporting",
                         description:
-                            "Clasificación de oportunidades por madurez y probabilidad, detección de deals estancados, forecast semanal y acciones para mover conversaciones abiertas demasiado tiempo.",
+                            "Configuración y seguimiento en Search Console, GA4, Looker Studio, Semrush o Ahrefs para medir rankings, tráfico, conversiones y oportunidades.",
                         linkText: "",
                         href: "",
-                        customIconBg: "rgba(102, 99, 253, 0.08)",
-                        cardClass: "card-funcs",
+                        customIconBg: "rgba(102, 99, 253, 0.08)", 
+                        cardClass: "card-funcs", 
                     },
                     {
-                        icon: "📋",
-                        title: "Coordinación con marketing, setters y gerencia",
+                        icon: "🛒",
+                        title: "SEO para eCommerce y servicios profesionales",
                         description:
-                            "Retroalimentación sobre calidad del lead, objeciones repetidas y puntos de fricción para mejorar campañas, scripts, landings, secuencias y ofertas.",
+                            "Optimización de categorías, fichas de producto, páginas transaccionales, landings de servicios y flujos de captación orgánica en Puerto Rico.",
                         linkText: "",
                         href: "",
                         customIconBg: "rgba(102, 99, 253, 0.08)",
-                        cardClass: "card-funcs",
+                        cardClass: "card-funcs",  
                     },
                 ]}
             />
@@ -543,62 +908,62 @@ const faqs = [
 
         <div class="fade-in-section">
             <EorCta
-                title="¿Cuántas oportunidades se quedan sin seguimiento tras la llamada o la cotización?"
+                title="¿Tu empresa en Puerto Rico necesita más visibilidad en los motores de búsqueda?"
                 titleTag="h2"
-                text="Cuéntanos tu ticket promedio, volumen de reuniones mensuales y canal principal de captación. Te mostraremos closers de ventas compatibles con tu proceso."
-                buttonText="👉 Solicitar propuesta personalizada"
-                buttonHref="#formulario-perfil"
+                text="Cuéntanos si tu problema está en la parte técnica, el contenido, el SEO local, la falta de autoridad o la caída de tráfico. Te enviaremos una propuesta con perfiles SEO listos para integrarse y trabajar sobre tu dominio."
+                buttonText="👉 Solicitar perfiles SEO para Puerto Rico" 
+                buttonHref="#formulario-perfil" 
             />
         </div>
 
         <div class="fade-in-section" id="pr-cm-process-wrapper">
             <ProcessOberstaff
                 className="process-employer"
-                title="Cómo integramos a tu experto en cierre de ventas en 4 pasos"
-                description="Delegar la conversación más crítica del embudo exige selección y onboarding con criterio comercial. Filtramos closers según tu ticket, canal de entrada, sector, idioma y estilo de venta."
-                items={[
+                title="Cómo seleccionamos al especialista SEO adecuado que protegerá tu dominio"
+                description="Un error técnico puede borrar meses de crecimiento orgánico. Por eso en <span style='font-weight: 700;'>Oberstaff<span style='color: #ff62c4;'>.</span></span> filtramos perfiles con criterio real de ejecución: un consultor seo capaz de analizar datos, detectar problemas de rastreo, ordenar contenidos y convertir el seo pr en una fuente estable de captación."
+                items={[ 
                     {
-                        label: "Proceso",
+                        label: "Objetivos", 
                         badge: "",
-                        title: "01 Mapeamos tu proceso de cierre actual",
+                        title: "Analizamos tus objetivos de posicionamiento",
                         description:
-                            "Dinos el ticket promedio, la duración del ciclo de venta, el CRM que usas y los principales motivos de pérdida de deals.<br><br> <em>⚡ 15 min · Sin compromiso</em>",
+                            "Revisamos el estado de tu web, tus objetivos comerciales, el mercado, tus herramientas y el perfil que necesitas: SEO técnico, contenidos, local, eCommerce o 360. <br><br> <em>15 min · Sin compromiso</em>",
                         icon: "01",
                         badgeColor: "#6663FD",
-                        badgeBg: "rgba(102, 99, 253, 0.1)",
+                        badgeBg: "rgba(102, 99, 253, 0.1)", 
                     },
                     {
                         label: "Selección",
                         badge: "",
-                        title: "02 Seleccionamos closers con fit comercial",
+                        title: "Filtramos perfiles SEO de Sudamérica",
                         description:
-                            "Buscamos en nuestra base y en el mercado. Evaluamos resiliencia, dicción, acento neutral y manejo de objeciones bajo presión.<br><br> <em>📋 Roleplay y validación técnica</em>",
+                            "Seleccionamos entre 3 y 5 especialistas SEO evaluados según tu industria, nivel técnico requerido, experiencia previa y compatibilidad horaria con Puerto Rico.<br><br> <em>Perfiles pre-evaluados</em>",
                         icon: "02",
                         badgeColor: "#6aca8a",
-                        badgeBg: "rgba(102, 255, 153, 0.15)",
+                        badgeBg: "rgba(102, 255, 153, 0.15)", 
                     },
                     {
-                        label: "Validación",
+                        label: "Entrevista",
                         badge: "",
-                        title: "03 Entrevistas y validas el estilo de venta",
+                        title: "Entrevistas y eliges tú",
                         description:
-                            "Escucha cómo manejarían una objeción de presupuesto en tu sector o cómo estructurarían el seguimiento de un deal frío.<br><br> <em>Tú tienes la decisión final.</em>",
-                        icon: "03",
+                            "Validas directamente cómo auditan una web, cómo priorizan oportunidades, cómo resuelven canibalizaciones y cómo plantean una estrategia orientada a negocio.<br><br> <em>Tú decides el perfil final</em>",
+                        icon: "03", 
                         badgeColor: "#FF66CC",
-                        badgeBg: "rgba(255, 102, 204, 0.1)",
+                        badgeBg: "rgba(255, 102, 204, 0.1)", 
                     },
                     {
-                        label: "Integración",
+                        label: "Operación",
                         badge: "",
-                        title: "04 El closer se integra a tu operación comercial",
+                        title: "Comienza a trabajar",
                         description:
-                            "<span style='font-weight: 800; color: #1b1b1b;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span> firma los NDA. Tu closer accede a tu CRM y calendario y empieza a trabajar las oportunidades activas de inmediato.<br><br> <em>Integración activa en días</em>",
+                            "Facilitamos el onboarding para que se integre rápido a tus plataformas (GSC, GA4, Semrush), realice la auditoría inicial y entregue su primer plan de acción. <br><br> <em>Integración técnica en pocos días</em>",
                         icon: "04",
                         badgeColor: "#1B1B1B",
-                        badgeBg: "rgba(204, 255, 102, 0.3)",
+                        badgeBg: "rgba(204, 255, 102, 0.3)",  
                     },
                 ]}
-                ctaTitle="Mejora tu tasa de cierre"
+                ctaTitle="Crece de forma orgánica"
                 ctaDescription="Un equipo dedicado gestionará todo el proceso por ti."
                 ctaBtnText="Agendar llamada"
                 ctaBtnHref="#formulario-perfil"
@@ -607,8 +972,8 @@ const faqs = [
 
         <div class="fade-in-section">
             <CasosExitoSection
-                title="Clientes que ya confían su equipo remoto a <span style='font-weight: 800; color: #1b1b1b;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span>"
-                subtitle=""
+                title="Empresas que ya confían en <span style='font-weight: 800; color: #1b1b1b;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span> para sumar talento remoto especializado"
+                subtitle="Organizaciones de distintos mercados utilizan <span style='font-weight: 800; color: #1b1b1b;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span> para incorporar talento remoto especializado, reducir fricción operativa y escalar sus equipos con perfiles dedicados."
                 columns={3}
                 testimonials={[
                     {
@@ -646,71 +1011,104 @@ const faqs = [
 
         <div class="fade-in-section">
             <RolesPerfil
-                title="Qué tipo de closer necesita tu empresa según ticket, canal y ciclo de venta"
-                subtitle="No todos los procesos de cierre funcionan igual. Filtramos perfiles según modelo de negocio, valor de la oferta, tipo de comprador, urgencia y complejidad del ciclo."
+                title="Tipos de especialistas SEO que puedes contratar para tu empresa en Puerto Rico"
+                subtitle="Cada negocio necesita un perfil distinto. No es lo mismo optimizar una clínica local en San Juan, un eCommerce que vende en toda la isla o una empresa B2B que busca leads cualificados desde Google."
                 layout="modern"
                 footerText=""
                 footerLinkText=""
                 footerLinkHref="#"
                 roles={[
                     {
-                        title: "Closer de ventas High Ticket",
+                        title: "Especialista en SEO técnico (Crawl & Index)",
                         description: "",
-                        icon: "🎯",
+                        icon: "",
                         iconColor: "#6663FD",
                         borderColorClass: "border-purple",
                         subtitle:
-                            "Para ofertas de alto valor donde el prospecto necesita confianza y seguimiento antes de decidir. Trabaja objeciones de precio, ROI, comparación y aprobación interna.",
+                            "Ideal para webs con problemas de indexación, rendimiento, migraciones, arquitectura, errores de rastreo o caídas de tráfico.",
                         techStack: [
-                            "HubSpot",
-                            "Pipedrive",
-                            "Calendly",
-                            "Zoom",
+                            "Screaming Frog",
+                            "GSC",
+                            "Core Web Vitals",
+                            "Semrush",
                         ],
                     },
                     {
-                        title: "Closer de ventas online en español o bilingüe para infoproductos",
+                        title: "Especialista en contenidos SEO y EEAT",
                         description: "",
-                        icon: "📱",
+                        icon: "",
                         iconColor: "#6aca8a",
                         borderColorClass: "border-green",
                         subtitle:
-                            "Habituado a llamadas de descubrimiento tras webinars, masterclasses o funnels de Meta Ads. Trabaja urgencia real y cierre ético sin presión excesiva.",
+                            "Enfocado en keyword research, optimización de landings, arquitectura de información, EEAT, briefs de contenido y mejora de páginas existentes.",
                         techStack: [
-                            "Zoom",
-                            "Hotmart",
-                            "ActiveCampaign",
-                            "Stripe",
+                            "Ahrefs",
+                            "Semrush",
+                            "Surfer SEO",
+                            "WordPress",
+                            "Schema",
                         ],
                     },
                     {
-                        title: "Closer B2B para servicios profesionales",
+                        title: "Especialista SEO local",
                         description: "",
-                        icon: "🏢",
+                        icon: "",
                         iconColor: "#FF9933",
                         borderColorClass: "border-orange",
                         subtitle:
-                            "Ideal para agencias, consultoras, proveedores B2B, clínicas privadas, real estate o tecnología. Cierra con dueños, gerentes y directores comerciales.",
+                            "Perfecto para empresas con presencia física o servicios por zona: clínicas, firmas legales, real estate, turismo, restaurantes o servicios locales.",
                         techStack: [
-                            "Salesforce",
-                            "LinkedIn",
-                            "Notion",
-                            "HubSpot CRM",
+                            "Google Business Profile",
+                            "Reseñas",
+                            "NAP",
+                            "Landings locales",
                         ],
                     },
                     {
-                        title: "Closer ventas digital para SaaS y software",
+                        title: "Especialista en link building (Off-Page)",
                         description: "",
-                        icon: "🔁",
+                        icon: "",
                         iconColor: "#FF66CC",
                         borderColorClass: "border-pink",
                         subtitle:
-                            "Especializado en demos, suscripciones, renovaciones y upselling. Domina la venta de valor de plataforma, ROI, comparación de planes y objeciones de implementación.",
+                            "Orientado a mejorar autoridad de dominio, conseguir backlinks relevantes, analizar anchors y detectar enlaces tóxicos que afecten tu reputación.",
                         techStack: [
-                            "Intercom",
-                            "Gong",
-                            "Salesloft",
-                            "Pipedrive",
+                            "Ahrefs",
+                            "Moz",
+                            "Digital PR",
+                            "Outreach",
+                            "Disavow Tool",
+                        ],
+                    },
+                    {
+                        title: "Especialista SEO para eCommerce",
+                        description: "",
+                        icon: "",
+                        iconColor: "#3b76f6",
+                        borderColorClass: "border-blue",
+                        subtitle:
+                            "Recomendado para tiendas con categorías, productos, filtros, paginaciones, contenido duplicado o problemas de conversión orgánica.",
+                        techStack: [
+                            "Shopify",
+                            "WooCommerce",
+                            "Taxonomías",
+                            "CRO",
+                            "GA4",
+                        ],
+                    },
+                    {
+                        title: "Consultor SEO 360",
+                        description: "",
+                        icon: "",
+                        iconColor: "#9333ea",
+                        borderColorClass: "border-indigo",
+                        subtitle:
+                            "Perfil senior o semi-senior capaz de coordinar SEO técnico, contenidos, autoridad, analítica y priorización estratégica para negocios en crecimiento.",
+                        techStack: [
+                            "Semrush",
+                            "GA4",
+                            "Search Console",
+                            "Looker Studio",
                         ],
                     },
                 ]}
@@ -719,57 +1117,56 @@ const faqs = [
 
         <div class="fade-in-section" id="pr-cm-pricing-wrapper">
             <PricingCardPerfil
-                sectionTitle="¿Cuánto cuesta contratar un closer de ventas remoto con <span style='font-weight: 800;'>Oberstaff<span style='font-weight: 800; color: #ff66cc;'>.</span></span> para Puerto Rico? "
-                sectionSubtitle="Una estructura de costes predecible para reforzar tu cierre comercial, sin comisiones sobre ventas, sin variables ocultas y sin procesos de contratación local pesados."
-                cardTitle="Closer de ventas"
+                sectionTitle="Precio de contratar un experto SEO remoto con <span style='font-weight: 800;'>Oberstaff<span style='font-weight: 800; color: #ff66cc;'>.</span></span>"
+                sectionSubtitle="Tarifas claras y fijas para empresas en Puerto Rico que quieren mejorar su visibilidad orgánica sin depender solo de la pauta, de una agencia especialista en SEO tradicional o de recursos internos limitados."
+                cardTitle="Experto SEO"
                 titleTag="p"
-                cardSubtitle="Fee mensual único · jornada completa · sin comisiones sobre ventas"
+                cardSubtitle="Fee mensual · perfil dedicado · gestión simple · sin costos ocultos"
                 priceLabel="Desde"
-                priceAmount="$910"
+                priceAmount="$950"
                 pricePeriod="USD / mes"
                 features={[
-                    "Llamadas de cierre y seguimiento activo del pipeline",
-                    "Manejo de objeciones y negociación comercial",
-                    "Gestión y actualización diaria del CRM (HubSpot, Pipedrive, Salesforce u otros)",
-                    "Forecast semanal y reporte de tasa de cierre", 
-                    "Coordinación con marketing, setters o equipo comercial interno",
-                    "Blindaje contractual: NDA, documentación y cesión de materiales cuando aplique"
+                    "SEO técnico: auditorías, indexación, Core Web Vitals y velocidad.",
+                    "SEO de contenidos: keyword research, arquitectura y optimización on-page.",
+                    "SEO local: Google Business Profile, reseñas y búsquedas geolocalizadas.",
+                    "Autoridad: backlinks, digital PR y auditoría de enlaces.",
+                    "Analítica: GA4, Search Console, Semrush y reporting mensual."
                 ]}
                 ctaText="Solicitar propuesta"
                 ctaHref="#formulario-perfil"
-                disclaimer="Precios orientativos según seniority, sector, país del profesional, idioma y complejidad del proceso de venta."
+                disclaimer="La suscripción final se ajusta según la complejidad técnica y el nivel de experiencia del analista seleccionado."
             />
         </div>
 
         <div class="fade-in-section" id="pr-cm-benefits-wrapper">
             <BeneficiosPerfilDisenador
                 showInfoCard={false}
-                title="Por qué un closer de ventas digital rinde más que un fundador saturado o un comercial generalista"
-                subtitle="Un closer dedicado no solo 'atiende llamadas': se concentra en convertir interés en decisión. Para empresas que ya invierten en captación, esa especialización marca la diferencia entre conversaciones abiertas y ventas medibles."
+                title="Escala tu tráfico orgánico con un especialista SEO dedicado a tu empresa en Puerto Rico"
+                subtitle="Oberstaff. combina la dedicación de un perfil in-house con la flexibilidad de un modelo remoto. Tu empresa mantiene el control de la estrategia, las herramientas y los datos, mientras el especialista ejecuta sobre objetivos claros de crecimiento orgánico."
                 image=""
                 imageAlt=""
                 infoTitle=""
                 features={[
                     {
-                        icon: "⚡",
-                        title: "Especialización real en el momento crítico",
+                        icon: "🎯",
+                        title: "Ejecución continua",
                         description:
-                            "Captar y cerrar son disciplinas distintas. El closer trabaja donde más cuesta improvisar: objeciones, precio, urgencia y seguimiento.",
+                            "Tu experto SEO revisa el estado de tus URLs, detecta caídas de tráfico, encuentra oportunidades de contenido y prioriza mejoras técnicas de forma recurrente.",
                     },
-                    {
-                        icon: "📅",
-                        title: "Seguimiento que no depende de la memoria",
+                    { 
+                        icon: "🛡️",
+                        title: "Menor dependencia del costo por clic",
                         description:
-                            "Cada oportunidad tiene una próxima acción clara. Sin cotizaciones olvidadas ni prospectos esperando respuesta durante días.",
+                            "Construye un dominio con autoridad que capta prospectos y clientes a un costo marginal casi nulo, sostenible a lo largo del tiempo.",
                     },
-                    {
-                        icon: "📈",
-                        title: "Más visibilidad comercial para la gerencia",
+                    { 
+                        icon: "🔗",
+                        title: "Conocimiento orgánico dentro de tu empresa",
                         description:
-                            "Con el CRM al día, ves qué entra, qué avanza, qué se estanca y qué argumentos ayudan a cerrar más rápido.",
+                            "El keyword research, los reportes, la arquitectura de contenidos y las decisiones de SEO PR quedan centralizados en tu operación.",
                     },
                 ]}
-                infoItems={[
+                infoItems={[ 
                     {
                         title: "",
                         description: "",
@@ -785,27 +1182,27 @@ const faqs = [
                 ]}
             >
                 <div class="meta-custom-notice">
-                    Recibes una sola factura mensual y mantienes el control comercial, mientras <strong style='font-weight: 700;'>Oberstaff<span style='color: #ff62c4;'>.</span></strong> facilita el acceso a talento remoto evaluado y compatible con tu operación.
+                   Recibes una sola factura mensual corporativa. Sin trámites de empleo, retenciones patronales ni seguros. Escalas en visibilidad, no en burocracia.
                 </div>
             </BeneficiosPerfilDisenador>
         </div>
 
         <FAQSection
-            title="Resolviendo tus dudas sobre el servicio"
-            subtitle="Respondemos las dudas más frecuentes de empresas en Puerto Rico que quieren sumar capacidad de cierre remota sin una estructura local pesada."
+            title="Resolviendo tus dudas antes de escalar tu estrategia en motores de búsqueda"
+            subtitle=""
             ctaText=""
-            ctaButtonText="Hablar con asesor →"
+            ctaButtonText="Contactar con un asesor →"
             ctaButtonHref="#formulario-perfil"
-            useCardLayout={false}
+            useCardLayout={false} 
             faqs={faqs}
         />
 
         <div class="fade-in-section">
             <ConversionPerfilDisenador
-                webhookUrl="https://hooks.zapier.com/hooks/catch/12433184/42eujjl/"
-                title="Deja de perder oportunidades calificadas y empieza a cerrarlas con método"
-                subtitle="Si quieres contratar closer de ventas para tu negocio en Puerto Rico y reforzar tu equipo con talento remoto evaluado, hablemos hoy. <br><br> <span style='font-weight: 500; color: #1b1b1b;'>SOLICITA UNA SESIÓN ESTRATÉGICA GRATUITA</span>"
-                buttonText="→ Solicitar propuesta y perfiles de closer de ventas"
+                webhookUrl="https://hooks.zapier.com/hooks/catch/12433184/422eax6/"
+                title="¿Listo para contratar un especialista y mejorar el SEO en Puerto Rico de tu empresa?"
+                subtitle="Completa el formulario en menos de un minuto y cuéntanos qué necesitas mejorar: tráfico orgánico, SEO técnico, contenidos, SEO local, autoridad o analítica. Te enviaremos una propuesta con perfiles SEO pre-evaluados para tu negocio."
+                buttonText="Solicitar propuesta gratuita →"
                 noteText=""
                 isCommunityPR={false}
             />
@@ -2022,18 +2419,23 @@ const faqs = [
 
     /* Colores diferentes en hover para cada una de las 5 cards de asistente virtual */
     .employer-use-cases-designer-grid .service-card.card-av-1:hover {
-        border-color: #ff66cc !important;
+        border-color: #FF66CC !important;
+      ;
     }
     .employer-use-cases-designer-grid .service-card.card-av-2:hover {
-        border-color: #6663fd !important;
+        border-color: #6663FD !important;
+       
     }
     .employer-use-cases-designer-grid .service-card.card-av-3:hover {
-        border-color: #66ff99 !important;
+        border-color: #66FF99 !important;
+     
     }
     .employer-use-cases-designer-grid .service-card.card-av-4:hover {
-        border-color: #ff9933 !important;
+        border-color: #FF9933 !important;
+   
     }
     .employer-use-cases-designer-grid .service-card.card-av-5:hover {
         border-color: #3b76f6 !important;
+       
     }
 </style>

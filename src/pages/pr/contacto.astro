@@ -8,285 +8,339 @@ const ogImage = "Contacto Oberstaff.webp";
 
 <DashboardLayoutContactoPr
     ogImage={ogImage}
-    title="Contacto Oberstaff | Solicita una llamada gratuita"
-    description="Solicita una llamada gratuita con Oberstaff y recibe orientación sobre perfiles, costes y modelos de colaboración."
+    title="Contacto Oberstaff Puerto Rico "
+    description="Habla con nuestro equipo en Puerto Rico. Te ayudamos a incorporar profesionales remotos de alto nivel de forma rápida y flexible. ¡Escríbenos! "
     keywords="Solicitar llamada gratuita Oberstaff"
 >
     <link rel="canonical" href="https://oberstaff.com/pr/contacto/" slot="head" />
+    <link rel="alternate" hreflang="es-PR" href="https://oberstaff.com/pr/contacto/" slot="head" />
+    <link rel="alternate" hreflang="es-ES" href="https://oberstaff.com/contacto/" slot="head" />
+    <link rel="alternate" hreflang="x-default" href="https://oberstaff.com/contacto/" slot="head" />
     <script slot="head" type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@graph": [
-                {
-                    "@type": "ContactPage",
-                    "@id": "https://oberstaff.com/pr/contacto/#webpage",
-                    "url": "https://oberstaff.com/pr/contacto/",
-                    "name": "Contacto Oberstaff | Solicita una llamada gratuita",
-                    "description": "Solicita una llamada gratuita con Oberstaff y recibe orientación sobre perfiles, costes y modelos de colaboración.",
-                    "inLanguage": "es-PR",
-                    "isPartOf": {
-                        "@id": "https://oberstaff.com/#website"
-                    },
-                    "publisher": {
-                        "@id": "https://oberstaff.com/#organization"
-                    },
-                    "about": {
-                        "@id": "https://oberstaff.com/#organization"
-                    },
-                    "mainEntity": {
-                        "@id": "https://oberstaff.com/pr/contacto/#contact-options"
-                    },
-                    "audience": {
-                        "@type": "BusinessAudience",
-                        "audienceType": "Patronos en Puerto Rico que quieren solicitar una llamada gratuita con Oberstaff para recibir orientación sobre perfiles, costes, talento remoto y modelos de colaboración",
-                        "geographicArea": {
-                            "@type": "Country",
-                            "name": "Puerto Rico"
-                        }
-                    },
-                    "breadcrumb": {
-                        "@id": "https://oberstaff.com/pr/contacto/#breadcrumb"
-                    },
-                    "mentions": [
-                        {
-                            "@id": "https://oberstaff.com/pr/contacto/#trust-bar"
-                        },
-                        {
-                            "@id": "https://oberstaff.com/pr/contacto/#contact-process"
-                        },
-                        {
-                            "@id": "https://oberstaff.com/pr/contacto/#call-topics"
-                        },
-                        {
-                            "@id": "https://oberstaff.com/pr/contacto/#contact-options"
-                        }
-                    ]
-                },
-                {
-                    "@type": "Organization",
-                    "@id": "https://oberstaff.com/#organization",
-                    "name": "Oberstaff",
-                    "url": "https://oberstaff.com",
-                    "description": "Oberstaff conecta empresas en Puerto Rico con profesionales remotos premium de Sudamérica mediante modelos de trabajo remoto claros, estructurados y eficientes.",
-                    "contactPoint": [
-                        {
-                            "@type": "ContactPoint",
-                            "@id": "https://oberstaff.com/pr/contacto/#sales-contact",
-                            "contactType": "sales",
-                            "url": "https://oberstaff.com/pr/contacto/#formulario",
-                            "availableLanguage": ["Spanish", "English"],
-                            "areaServed": {
-                                "@type": "Country",
-                                "name": "Puerto Rico"
-                            },
-                            "description": "Canal de contacto para empresas que quieren incorporar talento remoto, comparar modelos de colaboración o solicitar una llamada gratuita con Oberstaff."
-                        },
-                        {
-                            "@type": "ContactPoint",
-                            "@id": "https://oberstaff.com/pr/contacto/#candidate-contact",
-                            "contactType": "recruiting",
-                            "url": "https://oberstaff.zohorecruit.com/jobs/careers",
-                            "availableLanguage": ["Spanish"],
-                            "description": "Canal para candidatos que quieren formar parte de la red de talento de Oberstaff."
-                        },
-                        {
-                            "@type": "ContactPoint",
-                            "@id": "https://oberstaff.com/pr/contacto/#support-contact",
-                            "contactType": "customer support",
-                            "url": "https://oberstaff.com/pr/contacto/",
-                            "availableLanguage": ["Spanish"],
-                            "description": "Canal para clientes actuales que necesitan soporte sobre una contratación, factura, perfil o proceso activo."
-                        }
-                    ]
-                },
-                {
-                    "@type": "ItemList",
-                    "@id": "https://oberstaff.com/pr/contacto/#trust-bar",
-                    "name": "Indicadores de confianza de Oberstaff",
-                    "description": "Datos destacados que refuerzan la confianza en Oberstaff para empresas que buscan talento remoto.",
-                    "itemListElement": [
-                        {
-                            "@type": "ListItem",
-                            "position": 1,
-                            "name": "+500 empresas han confiado en Oberstaff"
-                        },
-                        {
-                            "@type": "ListItem",
-                            "position": 2,
-                            "name": "Hasta 70% de ahorro frente a contratación local"
-                        },
-                        {
-                            "@type": "ListItem",
-                            "position": 3,
-                            "name": "Menos de 30 días para incorporar perfiles según disponibilidad"
-                        }
-                    ]
-                },
-                {
-                    "@type": "ItemList",
-                    "@id": "https://oberstaff.com/pr/contacto/#contact-process",
-                    "name": "Qué ocurre después de enviar el formulario de contacto",
-                    "description": "Proceso posterior al envío del formulario de contacto en Oberstaff.",
-                    "numberOfItems": 4,
-                    "itemListElement": [
-                        {
-                            "@type": "ListItem",
-                            "position": 1,
-                            "name": "Revisión de la información",
-                            "description": "Oberstaff revisa la información enviada para entender la necesidad real de la empresa."
-                        },
-                        {
-                            "@type": "ListItem",
-                            "position": 2,
-                            "name": "Contacto inicial",
-                            "description": "Un especialista contacta a la empresa para coordinar una llamada o pedir datos adicionales si hace falta."
-                        },
-                        {
-                            "@type": "ListItem",
-                            "position": 3,
-                            "name": "Orientación sobre perfil y modelo",
-                            "description": "Oberstaff orienta sobre el perfil, coste estimado, modelo de colaboración y tiempos de incorporación."
-                        },
-                        {
-                            "@type": "ListItem",
-                            "position": 4,
-                            "name": "Propuesta o búsqueda del perfil",
-                            "description": "Si existe encaje, se avanza con una propuesta o con la búsqueda del perfil adecuado."
-                        }
-                    ]
-                },
-                {
-                    "@type": "ItemList",
-                    "@id": "https://oberstaff.com/pr/contacto/#call-topics",
-                    "name": "Temas que se pueden revisar en la llamada gratuita",
-                    "description": "Puntos principales que Oberstaff puede revisar con una empresa durante la llamada gratuita.",
-                    "itemListElement": [
-                        {
-                            "@type": "ListItem",
-                            "position": 1,
-                            "name": "Perfil necesario",
-                            "description": "Qué perfil necesita la empresa y qué funciones tendría dentro de la operación."
-                        },
-                        {
-                            "@type": "ListItem",
-                            "position": 2,
-                            "name": "Nivel de experiencia",
-                            "description": "Qué nivel de seniority conviene para el puesto que la empresa necesita cubrir."
-                        },
-                        {
-                            "@type": "ListItem",
-                            "position": 3,
-                            "name": "Modelo de colaboración",
-                            "description": "Qué modelo puede encajar mejor: Employer of Record, Outsourcing de Personal, Staff Augmentation o Contractor of Record."
-                        },
-                        {
-                            "@type": "ListItem",
-                            "position": 4,
-                            "name": "Rango de costes",
-                            "description": "Qué rango de costes podría esperar la empresa frente a una contratación local."
-                        },
-                        {
-                            "@type": "ListItem",
-                            "position": 5,
-                            "name": "Próximos pasos",
-                            "description": "Qué pasos habría que seguir para iniciar el proceso con menos fricción."
-                        }
-                    ]
-                },
-                {
-                    "@type": "ItemList",
-                    "@id": "https://oberstaff.com/pr/contacto/#contact-options",
-                    "name": "Canales de contacto de Oberstaff",
-                    "description": "Opciones de contacto disponibles según el tipo de usuario: empresas, candidatos o clientes actuales.",
-                    "itemListElement": [
-                        {
-                            "@type": "ListItem",
-                            "position": 1,
-                            "name": "Empresas",
-                            "description": "Canal para empresas que quieren incorporar talento remoto o comparar modelos de colaboración.",
-                            "url": "https://oberstaff.com/pr/contacto/#formulario"
-                        },
-                        {
-                            "@type": "ListItem",
-                            "position": 2,
-                            "name": "Candidatos",
-                            "description": "Canal para profesionales que quieren formar parte de la red de talento de Oberstaff.",
-                            "url": "https://oberstaff.zohorecruit.com/jobs/careers"
-                        },
-                        {
-                            "@type": "ListItem",
-                            "position": 3,
-                            "name": "Clientes actuales",
-                            "description": "Canal para clientes actuales que necesitan soporte sobre una contratación, factura, perfil o proceso activo.",
-                            "url": "https://oberstaff.com/pr/contacto/"
-                        }
-                    ]
-                },
-                {
-                    "@type": "ItemList",
-                    "@id": "https://oberstaff.com/pr/contacto/#related-services",
-                    "name": "Modelos de colaboración que Oberstaff puede revisar en la llamada",
-                    "description": "Servicios principales sobre los que Oberstaff puede orientar a empresas españolas durante una llamada gratuita.",
-                    "itemListElement": [
-                        {
-                            "@type": "ListItem",
-                            "position": 1,
-                            "item": {
-                                "@id": "https://oberstaff.com/pr/servicios/employer-of-record#service",
-                                "name": "Employer of Record",
-                                "url": "https://oberstaff.com/pr/servicios/employer-of-record"
-                            }
-                        },
-                        {
-                            "@type": "ListItem",
-                            "position": 2,
-                            "item": {
-                                "@id": "https://oberstaff.com/pr/servicios/outsourcing-de-personal#service",
-                                "name": "Outsourcing de Personal",
-                                "url": "https://oberstaff.com/pr/servicios/outsourcing-de-personal"
-                            }
-                        },
-                        {
-                            "@type": "ListItem",
-                            "position": 3,
-                            "item": {
-                                "@id": "https://oberstaff.com/pr/servicios/staff-augmentation#service",
-                                "name": "Staff Augmentation",
-                                "url": "https://oberstaff.com/pr/servicios/staff-augmentation"
-                            }
-                        },
-                        {
-                            "@type": "ListItem",
-                            "position": 4,
-                            "item": {
-                                "@id": "https://oberstaff.com/pr/servicios/contractor-of-record#service",
-                                "name": "Contractor of Record",
-                                "url": "https://oberstaff.com/pr/servicios/contractor-of-record"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "@type": "BreadcrumbList",
-                    "@id": "https://oberstaff.com/pr/contacto/#breadcrumb",
-                    "itemListElement": [
-                        {
-                            "@type": "ListItem",
-                            "position": 1,
-                            "name": "Inicio",
-                            "item": "https://oberstaff.com/"
-                        },
-                        {
-                            "@type": "ListItem",
-                            "position": 2,
-                            "name": "Contacto",
-                            "item": "https://oberstaff.com/pr/contacto/"
-                        }
-                    ]
-                }
-            ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ContactPage",
+      "@id": "https://oberstaff.com/pr/contacto/#webpage",
+      "url": "https://oberstaff.com/pr/contacto/",
+      "name": "Contacto Oberstaff Puerto Rico",
+      "description": "Habla con nuestro equipo en Puerto Rico. Te ayudamos a incorporar profesionales remotos de alto nivel de forma rápida y flexible.",
+      "inLanguage": "es-PR",
+      "isPartOf": {
+        "@id": "https://oberstaff.com#website"
+      },
+      "publisher": {
+        "@id": "https://oberstaff.com#organization"
+      },
+      "about": {
+        "@id": "https://oberstaff.com/#organization"
+      },
+      "mainEntity": {
+        "@id": "https://oberstaff.com/pr/contacto/#contact-options"
+      },
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Empresas y patronos de Puerto Rico que quieren solicitar una llamada gratuita con Oberstaff para recibir orientación sobre talento remoto, perfiles, costes en USD y modelos de colaboración",
+        "geographicArea": {
+          "@type": "AdministrativeArea",
+          "name": "Puerto Rico"
         }
-    </script>
+      },
+      "breadcrumb": {
+        "@id": "https://oberstaff.com/pr/contacto/#breadcrumb"
+      },
+      "mentions": [
+        {
+          "@id": "https://oberstaff.com/pr/contacto/#trust-bar"
+        },
+        {
+          "@id": "https://oberstaff.com/pr/contacto/#contact-process"
+        },
+        {
+          "@id": "https://oberstaff.com/pr/contacto/#call-topics"
+        },
+        {
+          "@id": "https://oberstaff.com/pr/contacto/#contact-options"
+        },
+        {
+          "@id": "https://oberstaff.com/pr/contacto/#related-services"
+        },
+        {
+          "@id": "https://oberstaff.com/pr/contacto/#faq"
+        }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://oberstaff.com#organization",
+      "name": "Oberstaff",
+      "url": "https://oberstaff.com",
+      "description": "Oberstaff conecta empresas y patronos de Puerto Rico con profesionales remotos de Sudamérica mediante modelos de colaboración flexibles, estructurados y eficientes.",
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "@id": "https://oberstaff.com/pr/contacto/#sales-contact",
+          "contactType": "sales",
+          "url": "https://oberstaff.com/pr/contacto/#formulario",
+          "availableLanguage": [
+            "Spanish",
+            "English"
+          ],
+          "areaServed": {
+            "@type": "AdministrativeArea",
+            "name": "Puerto Rico"
+          },
+          "description": "Canal de contacto para empresas y patronos de Puerto Rico que quieren incorporar talento remoto, comparar modelos de colaboración o solicitar una llamada gratuita con Oberstaff."
+        },
+        {
+          "@type": "ContactPoint",
+          "@id": "https://oberstaff.com/pr/contacto/#candidate-contact",
+          "contactType": "recruiting",
+          "url": "https://oberstaff.zohorecruit.com/jobs/careers",
+          "availableLanguage": [
+            "Spanish",
+            "English"
+          ],
+          "description": "Canal para candidatos y profesionales que quieren formar parte de la red de talento global de Oberstaff."
+        },
+        {
+          "@type": "ContactPoint",
+          "@id": "https://oberstaff.com/pr/contacto/#support-contact",
+          "contactType": "customer support",
+          "url": "https://oberstaff.com/pr/contacto/#soporte",
+          "availableLanguage": [
+            "Spanish",
+            "English"
+          ],
+          "areaServed": {
+            "@type": "AdministrativeArea",
+            "name": "Puerto Rico"
+          },
+          "description": "Canal para clientes activos que necesitan soporte sobre procesos, facturación, contratos o gestión de personal en curso."
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://oberstaff.com/pr/contacto/#trust-bar",
+      "name": "Indicadores de confianza de Oberstaff para Puerto Rico",
+      "description": "Datos destacados que refuerzan la confianza en Oberstaff para empresas de Puerto Rico que buscan talento remoto.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "+500 compañías han confiado en el modelo de Oberstaff"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Hasta 70% de ahorro frente a contratación local y cargas contributivas de nómina en Puerto Rico"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Menos de 30 días para integrar profesionales listos para aportar, según disponibilidad del perfil"
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://oberstaff.com/pr/contacto/#contact-process",
+      "name": "Qué ocurre después de enviar el formulario de contacto",
+      "description": "Proceso posterior al envío del formulario de contacto en la página de Oberstaff Puerto Rico.",
+      "numberOfItems": 4,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Evaluamos tu solicitud",
+          "description": "Oberstaff analiza los requisitos del negocio para entender el perfil exacto que necesita la empresa."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Coordinamos el contacto",
+          "description": "Un especialista llama o escribe para agendar una sesión breve o solicitar detalles adicionales si es necesario."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Orientamos con claridad",
+          "description": "Oberstaff presenta un desglose del perfil, costes estimados en dólares, modelo de colaboración idóneo y tiempos estimados de contratación."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Activamos la búsqueda",
+          "description": "Si el modelo encaja con la empresa, se avanza con la propuesta formal y la selección del talento remoto."
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://oberstaff.com/pr/contacto/#call-topics",
+      "name": "Puntos clave que Oberstaff revisa en la llamada gratuita",
+      "description": "Temas principales que pueden revisarse con una empresa de Puerto Rico durante la llamada gratuita con Oberstaff.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Funciones específicas del puesto",
+          "description": "Revisión de las funciones y objetivos que debe cumplir el profesional remoto."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Nivel de experiencia requerido",
+          "description": "Definición del seniority adecuado para maximizar la productividad desde el primer día."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Modelo contractual óptimo",
+          "description": "Análisis del modelo más conveniente: Employer of Record, Outsourcing de Personal, Staff Augmentation o Contractor of Record."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Comparativa de costes proyectados",
+          "description": "Comparación frente a salarios, beneficios de ley y seguros patronales locales en Puerto Rico."
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Próximos pasos del proceso",
+          "description": "Cómo iniciar el proceso de forma ágil, transparente y con cero fricción legal."
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://oberstaff.com/pr/contacto/#contact-options",
+      "name": "Canales de contacto de Oberstaff Puerto Rico",
+      "description": "Opciones de contacto disponibles según el tipo de usuario: empresas, candidatos o clientes activos.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Patronos y empresas",
+          "description": "Canal para empresas que quieren integrar profesionales remotos calificados de América del Sur o comparar modelos corporativos.",
+          "url": "https://oberstaff.com/pr/contacto/#formulario"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Candidatos y profesionales",
+          "description": "Canal para profesionales que quieren formar parte de la red de talento global de Oberstaff y aplicar a vacantes internacionales.",
+          "url": "https://oberstaff.zohorecruit.com/jobs/careers"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Clientes activos",
+          "description": "Canal para clientes activos que necesitan soporte sobre procesos activos, facturación, contratos o gestión de personal.",
+          "url": "https://oberstaff.com/pr/contacto/#soporte"
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://oberstaff.com/pr/contacto/#related-services",
+      "name": "Modelos de colaboración que Oberstaff puede revisar en la llamada",
+      "description": "Servicios principales sobre los que Oberstaff puede orientar a empresas de Puerto Rico durante una llamada gratuita.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@id": "https://oberstaff.com/pr/servicios/employer-of-record#service",
+            "name": "Employer of Record",
+            "url": "https://oberstaff.com/pr/servicios/employer-of-record"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@id": "https://oberstaff.com/pr/servicios/outsourcing-de-personal#service",
+            "name": "Outsourcing de Personal",
+            "url": "https://oberstaff.com/pr/servicios/outsourcing-de-personal"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@id": "https://oberstaff.com/pr/servicios/staff-augmentation#service",
+            "name": "Staff Augmentation",
+            "url": "https://oberstaff.com/pr/servicios/staff-augmentation"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@id": "https://oberstaff.com/pr/servicios/contractor-of-record#service",
+            "name": "Contractor of Record",
+            "url": "https://oberstaff.com/pr/servicios/contractor-of-record"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://oberstaff.com/pr/contacto/#faq",
+      "inLanguage": "es-PR",
+      "isPartOf": {
+        "@id": "https://oberstaff.com/pr/contacto/#webpage"
+      },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cómo factura Oberstaff a las empresas en Puerto Rico?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Toda la facturación se realiza en dólares americanos (USD). Oberstaff emite una sola factura mensual consolidada corporativa que cubre los servicios del talento seleccionado, simplificando la contabilidad sin necesidad de manejar divisas extranjeras ni trámites bancarios complejos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué ventajas ofrece el modelo frente a las leyes laborales locales (DTRH)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Al utilizar servicios como Employer of Record u Outsourcing, Oberstaff asume la responsabilidad legal y de cumplimiento en el país de origen del trabajador en Latinoamérica. Esto permite que la empresa en Puerto Rico evite costos adicionales asociados a seguro social federal, desempleo y seguros patronales locales, dentro de una estructura de cumplimiento adecuada."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://oberstaff.com/pr/contacto/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://oberstaff.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Puerto Rico",
+          "item": "https://oberstaff.com/pr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Contacto",
+          "item": "https://oberstaff.com/pr/contacto/"
+        }
+      ]
+    }
+  ]
+}
+</script>
     <div class="fade-in-section">
 <HeroContactoSection whatsappNumber="17875000120" />
 

@@ -16,49 +16,39 @@ import FAQSection from "../../../components/faq-servicios/FAQSection-community.a
 //import GuiaContratacion from "../../../components/guia-contratacion-perfiles/GuiaContratacion.astro";
 import ProcessOberstaff from "../../../components/process/ProcessOberstaff.astro";
 
-const ogImage = "Contratar experto SEO.webp";
+const ogImage = "Contratar Asistente Virtual.webp";
 
 const faqs = [
     {
-        question: "¿Quién paga herramientas como Semrush, Ahrefs o Screaming Frog?",
+        question: "¿Cuánto cuesta contratar un asistente virtual Puerto Rico?",
         answers: [
-            "Lo ideal es que tu empresa provea los accesos a sus cuentas corporativas de Ahrefs, Semrush, Screaming Frog o Sistrix. Así el historial de auditoria seo, los proyectos guardados y las keywords quedan bajo tu propiedad y control.",
+            "Un asistente administrativo local sube rápido al sumar salario, nómina, beneficios y reclutamiento (fácilmente $1,800–$3,000/mes). Con nosotros accedes al mismo nivel en formato asistente virtual online desde $820/mes.",
         ],
     },
     {
-        question: "¿En cuánto tiempo puedo ver resultados SEO?",
+        question:
+            "¿Cuándo conviene contratar un asistente virtual administrativo?",
         answers: [
-            "Las correcciones de errores técnicos críticos pueden mostrar impacto en semanas. Una estrategia integral con clústeres de contenido, on-page y backlinks suele madurar entre 3 y 6 meses, según competencia y punto de partida.",
+            "Cuando tu equipo directivo o de ventas necesita apoyo constante para no frenar la operación, pero no quieres los altos costos fijos ni la rigidez de una contratación local.",
         ],
     },
     {
-        question: "¿El experto SEO implementa cambios directamente?",
+        question: "¿Este recurso dará soporte a otras empresas a la vez?",
         answers: [
-            "Sí, dentro de los accesos que le otorgues. Puede aplicar cambios on-page, técnicos y de contenido en tu CMS, o entregar las indicaciones a tu equipo de desarrollo cuando el despliegue lo requiera.",
+            "No. El modelo de virtual assistant puerto rico es de asignación exclusiva: jornada completa, integrado en tus canales y enfocado 100% en tus KPIs.",
         ],
     },
     {
-        question: "¿Qué accesos debo entregar?",
+        question: "¿Qué flexibilidad tengo si cambian mis necesidades?",
         answers: [
-            "Solo los necesarios: Google Search Console, GA4, Google Tag Manager, CMS, herramientas SEO y dashboards. Recomendamos permisos controlados, no accesos de propietario absoluto.",
+            "Total. El contrato B2B para integrar un asistente virtual remoto permite cancelar con 30 días de preaviso, protegiéndote de reclamos laborales locales.",
         ],
     },
     {
-        question: "¿Qué pasa si el perfil no se ajusta a lo que necesito?",
+        question:
+            '¿Cómo garantiza <strong class="brand-oberstaff">Oberstaff<span class="brand-dot">.</span></strong> la calidad del talento?',
         answers: [
-            "Si el perfil no encaja técnica o estratégicamente, solicitas un cambio por un especialista con mayor seniority o una especialidad más alineada con tu proyecto.",
-        ],
-    },
-    {
-        question: "¿Cuál es la diferencia entre SEO en Puerto Rico y SEO local Puerto Rico?",
-        answers: [
-            "SEO en Puerto Rico abarca la estrategia orgánica completa para empresas que venden en la Isla o desde la Isla: técnica, contenidos, autoridad y analítica. SEO local Puerto Rico se enfoca en búsquedas por zona: Google Business Profile, reseñas, mapas y señales geográficas.",
-        ],
-    },
-    {
-        question: "¿Puedo contratar un SEO para un proyecto local en San Juan, Bayamón, Carolina o Ponce?",
-        answers: [
-            "Sí. Puedes contratar un especialista SEO con foco local para trabajar Google Business Profile, reseñas, landings geolocalizadas y búsquedas comerciales dentro de Puerto Rico.",
+            "Aplicamos un embudo de tres fases para validar cada virtual assistant: test de ofimática, evaluación psicométrica y entrevista final con nuestro equipo de Recursos Humanos.",
         ],
     },
 ];
@@ -66,262 +56,586 @@ const faqs = [
 
 <DashboardLayoutPerfilesPr
     ogImage={ogImage}
-    title="Contratar Experto SEO Remoto | Oberstaff"
-    description="Talento de LATAM exclusivo para tu empresa. Con Oberstaff, contratar experto SEO es seguro, ágil y con zona horaria 100% compatible."
-    footerTitle="Roles relacionados"
+    title=" Asistente Virtual en Puerto Rico para tu Empresa"
+    description="Contrata un asistente virtual para tu empresa en Puerto Rico. Oberstaff conecta tu negocio con talento administrativo remoto de LATAM. Consulta gratis."
+    footerTitle="Otros perfiles relacionados"
     footerLinks={[
         {
-            text: "📈 Contratar especialista en Google Ads",
-            href: "/pr/perfiles/Especialista-en-Google-Ads",
+            text: "🧮 Contratar contable remoto",
+            href: "/pr/perfiles/contratar-contable",
         },
         {
-            text: "✍️ Contratar copywriter",
-            href: "/pr/perfiles/contratar-copywriter",
+            text: "📱 Community Manager",
+            href: "/pr/perfiles/community-manager-remoto",
         },
         {
-            text: "🗂️ Contratar asistente virtual",
-            href: "/pr/perfiles/asistente-virtual",
+            text: "🔍 Experto SEO",
+            href: "/pr/perfiles/experto-seo",
         },
     ]}
 >
     <link
         rel="canonical"
-        href="https://oberstaff.com/pr/perfiles/contratar-experto-seo/"
+        href="https://oberstaff.com/pr/perfiles/asistente-virtual-puerto-rico/"
         slot="head"
     />
+    <link rel="alternate" hreflang="es-PR" href="https://oberstaff.com/pr/perfiles/asistente-virtual-puerto-rico/" slot="head" />
+    <link rel="alternate" hreflang="es-ES" href="https://oberstaff.com/perfiles/contratar-un-asistente-virtual/" slot="head" />
+    <link rel="alternate" hreflang="x-default" href="https://oberstaff.com/perfiles/contratar-un-asistente-virtual/" slot="head" />
     <script slot="head" type="application/ld+json">
 {
-    "@context": "https://schema.org",
-    "@graph": [
-        {
-            "@type": "WebPage",
-            "@id": "https://oberstaff.com/pr/perfiles/contratar-experto-seo#webpage",
-            "url": "https://oberstaff.com/pr/perfiles/contratar-experto-seo",
-            "name": "Contratar Experto SEO Remoto | Oberstaff",
-            "description": "Talento de LATAM exclusivo para tu empresa. Con Oberstaff, contratar experto SEO es seguro, ágil y con zona horaria 100% compatible.",
-            "inLanguage": "es-PR",
-            "isPartOf": {
-                "@id": "https://oberstaff.com/#website"
-            },
-            "publisher": {
-                "@id": "https://oberstaff.com/#organization"
-            },
-            "about": {
-                "@id": "https://oberstaff.com/pr/perfiles/contratar-experto-seo#service"
-            },
-            "mainEntity": {
-                "@id": "https://oberstaff.com/pr/perfiles/contratar-experto-seo#service"
-            },
-            "breadcrumb": {
-                "@id": "https://oberstaff.com/pr/perfiles/contratar-experto-seo#breadcrumb"
-            }
-        },
-        {
-            "@type": "Service",
-            "@id": "https://oberstaff.com/pr/perfiles/contratar-experto-seo#service",
-            "name": "Contratar Experto SEO Remoto en LATAM para empresas en Puerto Rico",
-            "alternateName": [
-                "Contratar experto SEO",
-                "Especialista SEO remoto",
-                "Consultor SEO remoto",
-                "Especialista en posicionamiento web remoto",
-                "Experto en SEO local"
-            ],
-            "serviceType": "Contratación de experto SEO remoto",
-            "category": "Servicios de posicionamiento en buscadores (SEO) y marketing digital",
-            "url": "https://oberstaff.com/pr/perfiles/contratar-experto-seo",
-            "provider": {
-                "@id": "https://oberstaff.com/#organization"
-            },
-            "description": "Servicio para empresas en Puerto Rico que necesitan contratar un especialista o experto SEO remoto de LATAM con dedicación exclusiva, dominio de SEO técnico, optimización on-page, Link Building, analítica web, horario compatible con Puerto Rico (AST) y gestión laboral resuelta.",
-            "slogan": "Acelera el crecimiento de tu tráfico orgánico y visibilidad en Google con un especialista SEO dedicado, sin complicaciones laborales locales.",
-            "audience": {
-                "@type": "BusinessAudience",
-                "audienceType": "Empresas en Puerto Rico que necesitan contratar experto seo remoto en LATAM",
-                "geographicArea": {
-                    "@type": "Country",
-                    "name": "Puerto Rico"
-                }
-            },
-            "serviceAudience": {
-                "@type": "BusinessAudience",
-                "audienceType": "Pymes, startups, ecommerce y empresas en Puerto Rico que buscan un experto seo remoto dedicado",
-                "geographicArea": {
-                    "@type": "Country",
-                    "name": "Puerto Rico"
-                }
-            },
-            "areaServed": [
-                {
-                    "@type": "Country",
-                    "name": "Puerto Rico"
-                },
-                {
-                    "@type": "Country",
-                    "name": "United States"
-                }
-            ],
-            "offers": {
-                "@type": "Offer",
-                "@id": "https://oberstaff.com/pr/perfiles/contratar-experto-seo#offer",
-                "name": "Experto Seo Remoto Dedicado",
-                "url": "https://oberstaff.com/pr/perfiles/contratar-experto-seo#contacto",
-                "price": "950",
-                "priceCurrency": "USD",
-                "availability": "https://schema.org/InStock",
-                "eligibleCustomerType": "http://purl.org/goodrelations/v1#Business",
-                "eligibleRegion": {
-                    "@type": "Country",
-                    "name": "Puerto Rico"
-                },
-                "description": "Contratación de un Experto SEO remoto desde $950 USD al mes, dirigido a empresas de Puerto Rico que requieren posicionamiento orgánico con dedicación exclusiva, horario compatible con Puerto Rico y facturación directa.",
-                "priceSpecification": {
-                    "@type": "UnitPriceSpecification",
-                    "price": "950",
-                    "priceCurrency": "USD",
-                    "unitText": "profesional por mes"
-                }
-            },
-            "hasOfferCatalog": {
-                "@type": "OfferCatalog",
-                "@id": "https://oberstaff.com/pr/perfiles/contratar-experto-seo#included-services",
-                "name": "Servicios incluidos de posicionamiento SEO remoto",
-                "itemListElement": [
-                    {
-                        "@type": "Offer",
-                        "name": "SEO Técnico y Auditorías",
-                        "itemOffered": {
-                            "@type": "Service",
-                            "name": "Optimización técnica del sitio web",
-                            "description": "Auditorías de rastreo, indexación, Core Web Vitals, velocidad de carga y corrección de errores técnicos."
-                        }
-                    },
-                    {
-                        "@type": "Offer",
-                        "name": "SEO On-Page y Contenidos",
-                        "itemOffered": {
-                            "@type": "Service",
-                            "name": "Optimización SEO On-Page",
-                            "description": "Keyword research, optimización de meta-etiquetas, encabezados, enlazado interno y estrategia de clústeres de contenido."
-                        }
-                    },
-                    {
-                        "@type": "Offer",
-                        "name": "SEO Local y SEO B2B/Ecommerce",
-                        "itemOffered": {
-                            "@type": "Service",
-                            "name": "SEO Local y Optimización Local",
-                            "description": "Gestión de Google Business Profile, SEO geolocalizado en Puerto Rico y optimización de landings locales."
-                        }
-                    },
-                    {
-                        "@type": "Offer",
-                        "name": "Link Building y Autoridad",
-                        "itemOffered": {
-                            "@type": "Service",
-                            "name": "Estrategia de Link Building",
-                            "description": "Adquisición de enlaces de calidad y menciones de marca para potenciar la autoridad de dominio en motores de búsqueda."
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            "@type": "FAQPage",
-            "@id": "https://oberstaff.com/pr/perfiles/contratar-experto-seo#faq",
-            "mainEntity": [
-                {
-                    "@type": "Question",
-                    "name": "¿Quién paga herramientas como Semrush, Ahrefs o Screaming Frog?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Lo ideal es que tu empresa provea los accesos a sus cuentas corporativas de Ahrefs, Semrush, Screaming Frog o Sistrix. Así el historial de auditoria seo, los proyectos guardados y las keywords quedan bajo tu propiedad y control."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "¿En cuánto tiempo puedo ver resultados SEO?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Las correcciones de errores técnicos críticos pueden mostrar impacto en semanas. Una estrategia integral con clústeres de contenido, on-page y backlinks suele madurar entre 3 y 6 meses, según competencia y punto de partida."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "¿El experto SEO implementa cambios directamente?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Sí, dentro de los accesos que le otorgues. Puede aplicar cambios on-page, técnicos y de contenido en tu CMS, o entregar las indicaciones a tu equipo de desarrollo cuando el despliegue lo requiera."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "¿Qué accesos debo entregar?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Solo los necesarios: Google Search Console, GA4, Google Tag Manager, CMS, herramientas SEO y dashboards. Recomendamos permisos controlados, no accesos de propietario absoluto."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "¿Qué pasa si el perfil no se ajusta a lo que necesito?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Si el perfil no encaja técnica o estratégicamente, solicitas un cambio por un especialista con mayor seniority o una especialidad más alineada con tu proyecto."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "¿Cuál es la diferencia entre SEO en Puerto Rico y SEO local Puerto Rico?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "SEO en Puerto Rico abarca la estrategia orgánica completa para empresas que venden en la Isla o desde la Isla: técnica, contenidos, autoridad y analítica. SEO local Puerto Rico se enfoca en búsquedas por zona: Google Business Profile, reseñas, mapas y señales geográficas."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "¿Puedo contratar un SEO para un proyecto local en San Juan, Bayamón, Carolina o Ponce?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Sí. Puedes contratar un especialista SEO con foco local para trabajar Google Business Profile, reseñas, landings geolocalizadas y búsquedas comerciales dentro de Puerto Rico."
-                    }
-                }
-            ]
-        },
-        {
-            "@type": "BreadcrumbList",
-            "@id": "https://oberstaff.com/pr/perfiles/contratar-experto-seo#breadcrumb",
-            "itemListElement": [
-                {
-                    "@type": "ListItem",
-                    "position": 1,
-                    "name": "Inicio",
-                    "item": "https://oberstaff.com/"
-                },
-                {
-                    "@type": "ListItem",
-                    "position": 2,
-                    "name": "Contratar Experto Seo",
-                    "item": "https://oberstaff.com/pr/perfiles/contratar-experto-seo"
-                }
-            ]
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://oberstaff.com/pr/perfiles/asistente-virtual-puerto-rico/#webpage",
+      "url": "https://oberstaff.com/pr/perfiles/asistente-virtual-puerto-rico/",
+      "name": "Asistente Virtual en Puerto Rico para tu Empresa",
+      "description": "Contrata un asistente virtual para tu empresa en Puerto Rico. Oberstaff conecta tu negocio con talento administrativo remoto de LATAM. Consulta gratis.",
+      "inLanguage": "es-PR",
+      "isPartOf": {
+        "@id": "https://oberstaff.com#website"
+      },
+      "publisher": {
+        "@id": "https://oberstaff.com#organization"
+      },
+      "about": {
+        "@id": "https://oberstaff.com/pr/perfiles/asistente-virtual-puerto-rico/#service"
+      },
+      "mainEntity": {
+        "@id": "https://oberstaff.com/pr/perfiles/asistente-virtual-puerto-rico/#service"
+      },
+      "breadcrumb": {
+        "@id": "https://oberstaff.com/pr/perfiles/asistente-virtual-puerto-rico/#breadcrumb"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://oberstaff.com/pr/perfiles/asistente-virtual-puerto-rico/#service",
+      "name": "Contratar asistente virtual remoto para empresas en Puerto Rico",
+      "alternateName": [
+        "Asistente virtual Puerto Rico",
+        "Contratar asistente virtual",
+        "Asistente virtual administrativo",
+        "Virtual assistant Puerto Rico",
+        "Virtual assistant remote",
+        "Secretaria virtual online",
+        "Asistente administrativo remoto",
+        "Asistente personal virtual"
+      ],
+      "serviceType": "Contratación de asistente virtual remoto",
+      "category": "Servicios de contratación de talento administrativo remoto",
+      "url": "https://oberstaff.com/pr/perfiles/asistente-virtual-puerto-rico/",
+      "provider": {
+        "@id": "https://oberstaff.com#organization"
+      },
+      "description": "Servicio para empresas en Puerto Rico que necesitan contratar un asistente virtual remoto de Sudamérica para delegar back-office, agenda, correo, documentación, CRM, SOPs, soporte administrativo y coordinación operativa, con talento evaluado, horario compatible AST y facturación B2B internacional en USD.",
+      "slogan": "Externaliza tu back-office con talento administrativo de Sudamérica.",
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Empresas en Puerto Rico que necesitan delegar tareas administrativas, soporte ejecutivo, CRM, SOPs, documentación, agenda y comunicaciones sin asumir nómina local",
+        "geographicArea": {
+          "@type": "AdministrativeArea",
+          "name": "Puerto Rico"
         }
-    ]
+      },
+      "serviceAudience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Dueños, gerentes, equipos comerciales, pymes, startups y empresas en Puerto Rico que buscan un asistente virtual remoto dedicado, evaluado y alineado al horario AST",
+        "geographicArea": {
+          "@type": "AdministrativeArea",
+          "name": "Puerto Rico"
+        }
+      },
+      "areaServed": [
+        {
+          "@type": "AdministrativeArea",
+          "name": "Puerto Rico"
+        },
+        {
+          "@type": "Country",
+          "name": "Colombia"
+        },
+        {
+          "@type": "Country",
+          "name": "México"
+        },
+        {
+          "@type": "Country",
+          "name": "Argentina"
+        },
+        {
+          "@type": "Country",
+          "name": "Chile"
+        },
+        {
+          "@type": "Country",
+          "name": "Perú"
+        },
+        {
+          "@type": "Country",
+          "name": "Venezuela"
+        },
+        {
+          "@type": "Country",
+          "name": "Ecuador"
+        },
+        {
+          "@type": "Country",
+          "name": "Uruguay"
+        },
+        {
+          "@type": "Country",
+          "name": "Panamá"
+        },
+        {
+          "@type": "Country",
+          "name": "Paraguay"
+        }
+      ],
+      "offers": {
+        "@type": "Offer",
+        "@id": "https://oberstaff.com/pr/perfiles/asistente-virtual-puerto-rico/#offer",
+        "name": "Asistente Virtual Remoto Dedicado",
+        "url": "https://oberstaff.com/pr/perfiles/asistente-virtual-puerto-rico/#contacto",
+        "price": "820",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "eligibleCustomerType": "http://purl.org/goodrelations/v1#Business",
+        "eligibleRegion": {
+          "@type": "AdministrativeArea",
+          "name": "Puerto Rico"
+        },
+        "description": "Contratación de asistente virtual remoto desde 820 USD al mes, con jornada completa, soporte administrativo, gestión de agenda, correo, documentación, CRM, herramientas remotas, facturación B2B internacional en USD y talento evaluado de Sudamérica.",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "820",
+          "priceCurrency": "USD",
+          "unitText": "profesional por mes"
+        }
+      },
+      "hasOfferCatalog": {
+        "@id": "https://oberstaff.com/pr/perfiles/asistente-virtual-puerto-rico/#included-services"
+      }
+    },
+    {
+      "@type": "OfferCatalog",
+      "@id": "https://oberstaff.com/pr/perfiles/asistente-virtual-puerto-rico/#included-services",
+      "name": "Qué puede hacer un asistente virtual administrativo por tu empresa",
+      "description": "Funciones operativas que puede asumir un asistente virtual remoto para empresas en Puerto Rico.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Offer",
+            "name": "Gestión de agenda y calendario",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Gestión de agenda y calendario",
+              "description": "Organización de reuniones, coordinación de horarios, recordatorios y logística de viajes ejecutivos."
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Offer",
+            "name": "Gestión de correo y comunicaciones",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Gestión de correo y comunicaciones",
+              "description": "Clasificación de inbox, respuesta y seguimiento de correos, atención a clientes, suplidores y comunicaciones internas."
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Offer",
+            "name": "Documentación, SOPs y archivos",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Documentación, SOPs y archivos",
+              "description": "Actualización de documentos, bases de datos, procesos internos, SOPs y archivos compartidos en la nube."
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "Offer",
+            "name": "Soporte a dirección y gerencia",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Soporte a dirección y gerencia",
+              "description": "Preparación de reuniones, seguimiento de pendientes, filtrado de comunicaciones críticas y apoyo operativo a gerencias."
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@type": "Offer",
+            "name": "Higiene de datos en CRM",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Higiene de datos en CRM",
+              "description": "Actualización de leads, limpieza de pipelines, control de bases de datos y reportes de actividad comercial."
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "item": {
+            "@type": "Offer",
+            "name": "Stack de productividad",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Stack de productividad",
+              "description": "Trabajo con Google Workspace, Microsoft 365, Notion, Asana, Trello, Slack, Calendly, Zoom y plataformas de colaboración."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://oberstaff.com/pr/perfiles/asistente-virtual-puerto-rico/#trust-bar",
+      "name": "Razones de confianza para contratar un asistente virtual con Oberstaff",
+      "description": "Señales de confianza del servicio de asistente virtual remoto para empresas en Puerto Rico.",
+      "numberOfItems": 4,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Talento 100% enfocado en tu negocio"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Especialistas en soporte administrativo ya evaluados"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Integración ágil en herramientas corporativas"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Horario AST compatible con Puerto Rico"
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://oberstaff.com/pr/perfiles/asistente-virtual-puerto-rico/#advantages",
+      "name": "Ventajas de contratar un asistente virtual remoto con Oberstaff",
+      "description": "Ventajas operativas y administrativas para empresas en Puerto Rico que contratan asistentes virtuales remotos de Sudamérica.",
+      "numberOfItems": 3,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Validación de competencias",
+          "description": "Evaluación de habilidades en gestión de archivos, redacción corporativa, herramientas cloud y soporte administrativo."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Eficiencia fiscal y facturación B2B",
+          "description": "Servicio con facturación internacional en USD para empresas que buscan contratar soporte administrativo remoto."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Escalabilidad inmediata",
+          "description": "Permite ajustar el soporte administrativo sin la rigidez de una contratación local tradicional."
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://oberstaff.com/pr/perfiles/asistente-virtual-puerto-rico/#comparison",
+      "name": "Comparativa para contratar asistente virtual en Puerto Rico",
+      "description": "Comparación entre contratar asistente virtual con Oberstaff, contratación local W-2 y freelance.",
+      "numberOfItems": 3,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Asistente dedicado con Oberstaff",
+          "description": "Desde 820 USD al mes, foco exclusivo, NDA corporativo, accesos controlados, horario AST y validación técnica de habilidades administrativas."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Contratación local W-2",
+          "description": "Costo orientativo de 1,800 a 3,000 USD al mes más cargas patronales, seguro social, desempleo y posibles liquidaciones."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Freelance",
+          "description": "Costo variable de 900 a 2,500 USD al mes, posible enfoque multicliente y menor control sobre dispositivos, horarios y disponibilidad."
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://oberstaff.com/pr/perfiles/asistente-virtual-puerto-rico/#guide",
+      "name": "Guía para contratar un asistente virtual administrativo",
+      "description": "Claves para filtrar y contratar un asistente virtual administrativo con dominio de SOPs, herramientas cloud y procesos internos.",
+      "numberOfItems": 5,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Asistente virtual freelance o integrado en remoto",
+          "description": "Para seguimiento diario y coordinación estable, un asistente administrativo remoto dedicado suele funcionar mejor que un freelance por horas."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Soft skills y competencias técnicas",
+          "description": "Validación de habilidades para mantener CRMs limpios, redactar SOPs, estructurar bases de datos y comunicar con criterio corporativo."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Stack tecnológico necesario",
+          "description": "Dominio de Google Workspace, Microsoft 365, Asana, Jira, Notion, Slack, Teams y herramientas de comunicación corporativa."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Secretaria virtual clásica vs asistente administrativo virtual",
+          "description": "El rol moderno va más allá de agendar o responder llamadas: sigue procesos, documenta, coordina y da soporte constante al equipo."
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Ventaja frente a un asistente tradicional en Puerto Rico",
+          "description": "El modelo remoto permite reducir gastos fijos de oficina y acceder a talento bilingüe alineado con la zona horaria de Puerto Rico."
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://oberstaff.com/pr/perfiles/asistente-virtual-puerto-rico/#process",
+      "name": "Proceso para contratar un asistente virtual remoto",
+      "description": "Roadmap de Oberstaff para integrar un asistente virtual administrativo de forma segura en empresas de Puerto Rico.",
+      "numberOfItems": 4,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Auditoría de cuellos de botella",
+          "description": "Definición del volumen de tareas, SLAs, herramientas y funciones administrativas requeridas."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Selección de talento",
+          "description": "Presentación de una terna de 3 a 5 asistentes virtuales con ofimática avanzada y fit cultural validado."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Entrevistas de validación",
+          "description": "La empresa entrevista candidatos, evalúa criterio operativo y elige al perfil más adecuado."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Sincronización operativa",
+          "description": "El asistente se integra en canales, herramientas, cultura y horarios de la empresa desde el primer día."
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://oberstaff.com/pr/perfiles/asistente-virtual-puerto-rico/#profiles",
+      "name": "Tipos de asistentes virtuales remotos disponibles",
+      "description": "Especializaciones de asistente virtual que empresas en Puerto Rico pueden contratar con Oberstaff.",
+      "numberOfItems": 4,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Asistente administrativo virtual",
+          "description": "Estandarización de SOPs, control de agenda, auditoría de documentos internos y soporte administrativo. Herramientas: Google Workspace, Notion, Trello y Slack."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Soporte y atención al cliente",
+          "description": "Gestión de tickets, SLAs de primer nivel, resolución de incidencias y fidelización B2B o B2C. Herramientas: Zendesk, Freshdesk, Intercom y WhatsApp Business."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Asistente virtual remoto para eCommerce",
+          "description": "Actualización de SKUs, control de inventario base y seguimiento de logística posventa. Herramientas: Shopify, Amazon Seller y Klaviyo."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Asistente personal ejecutivo",
+          "description": "Gestión de agendas gerenciales, filtro de comunicaciones críticas y preparación de juntas. Herramientas: Calendly, Notion, Zoom y Asana."
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://oberstaff.com/pr/perfiles/asistente-virtual-puerto-rico/#benefits",
+      "name": "Beneficios de contratar un asistente virtual con Oberstaff",
+      "description": "Beneficios para empresas en Puerto Rico que incorporan un asistente virtual remoto de Sudamérica.",
+      "numberOfItems": 3,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Eliminación de cargas patronales",
+          "description": "Permite evitar la estructura de contratación local, cargas patronales, seguros y acumulación de licencias asociadas a nómina directa."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blindaje con NDAs corporativos",
+          "description": "Cada perfil opera bajo acuerdos de confidencialidad que protegen bases de datos, información interna y clientes."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Recuperación del tiempo directivo",
+          "description": "Delegar correos, agendas y seguimiento operativo libera a líderes y gerencias para enfocarse en tareas de alto impacto."
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://oberstaff.com/pr/perfiles/asistente-virtual-puerto-rico/#related-profiles",
+      "name": "Roles relacionados con asistente virtual remoto",
+      "description": "Otros perfiles relacionados que empresas en Puerto Rico pueden contratar mediante Oberstaff.",
+      "numberOfItems": 3,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Contable remoto",
+          "url": "https://oberstaff.com/pr/perfiles/contratar-contable"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Community Manager",
+          "url": "https://oberstaff.com/pr/perfiles/community-manager-remoto"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Experto SEO",
+          "url": "https://oberstaff.com/pr/perfiles/experto-seo"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://oberstaff.com/pr/perfiles/asistente-virtual-puerto-rico/#faq",
+      "inLanguage": "es-PR",
+      "isPartOf": {
+        "@id": "https://oberstaff.com/pr/perfiles/asistente-virtual-puerto-rico/#webpage"
+      },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cuánto cuesta contratar un asistente virtual Puerto Rico?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Un asistente administrativo local puede costar entre 1,800 y 3,000 USD al mes al sumar salario, nómina, beneficios y reclutamiento. Con Oberstaff puedes contratar un asistente virtual online desde 820 USD al mes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuándo conviene contratar un asistente virtual administrativo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Conviene cuando tu equipo directivo o comercial necesita apoyo constante para no frenar la operación, pero no quieres asumir los altos costos fijos ni la rigidez de una contratación local."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Este recurso dará soporte a otras empresas a la vez?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. El modelo es de asignación exclusiva: jornada completa, integración en tus canales y enfoque completo en tus KPIs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué flexibilidad tengo si cambian mis necesidades?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El contrato B2B para integrar un asistente virtual remoto permite cancelar con 30 días de preaviso y ajustar el soporte según las necesidades de la operación."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo garantiza Oberstaff la calidad del talento?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oberstaff aplica un embudo de validación con test de ofimática, evaluación psicométrica y entrevista final con el equipo de Recursos Humanos antes de presentar candidatos."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://oberstaff.com/pr/perfiles/asistente-virtual-puerto-rico/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://oberstaff.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Puerto Rico",
+          "item": "https://oberstaff.com/pr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Contratar Asistente Virtual",
+          "item": "https://oberstaff.com/pr/perfiles/asistente-virtual-puerto-rico/"
+        }
+      ]
+    }
+  ]
 }
-    </script>
+</script>
 
     <div class="service-detail-container" id="inicio">
         <LeadHeroSection
-            webhookUrl="https://hooks.zapier.com/hooks/catch/12433184/42288d4/"
-            backgroundImage="/hero-seo-pr.webp"
-            topLabel="Perfil: Experto SEO"
+            webhookUrl="https://hooks.zapier.com/hooks/catch/12433184/422wzzo/"
+            backgroundImage="/hero-av-pr.webp"
+            topLabel="Perfil: Asistente Virtual"
             topLabelInsideH1={false}
             topLabelTag="p"
             titleTag="h1"
-            title="Contratar experto SEO: talento remoto para hacer crecer el tráfico orgánico de tu negocio en Puerto Rico"
-            cardTitle="Zona de captación inicial" 
+            title="Asistente virtual Puerto Rico: externaliza tu back-office con talento administrativo de Sudamérica"
+            cardTitle="Zona de captación inicial"
             cardSubtitle=""
-            buttonText="Ver perfiles SEO pre-evaluados →"
+            buttonText="Ver perfiles pre-evaluados y solicitar propuesta →"
             buttonIcon=""
             buttonSubtext=""
             footerLinkText=""
@@ -331,43 +645,45 @@ const faqs = [
             placeholderCompany="Nombre de la empresa / negocio *"
             placeholderPhone="Teléfono (+1) *"
             badges={[
-                { text: "Talento SEO dedicado a tu dominio.", icon: "✓" },
+                { text: "Talento 100% enfocado en tu negocio", icon: "✓" },
                 {
-                    text: "Servicios de SEO en Puerto Rico en horario AST.",
+                    text: "Especialistas en soporte administrativo, ya evaluados",
                     icon: "✓",
                 },
                 {
-                    text: "Integración segura a tu Google Search Console.",
+                    text: "Integración ágil en tus herramientas corporativas",
                     icon: "✓",
                 },
-                { text: "Expertos en Semrush, Ahrefs y Screaming Frog.", icon: "✓" },
+                { text: "Horario AST compatible con Puerto Rico", icon: "✓" },
             ]}
             badgesClass="community-badges"
         >
             <Fragment slot="description">
-              Con <span style="color: #ffffff; font-weight: 700;">Oberstaff<span style="color: #ff62c4;">.</span></span> contratas un especialista en SEO remoto de Sudamérica para tu empresa en Puerto Rico: dedicación exclusiva, horario compatible y experiencia en SEO técnico, contenidos, analítica, autoridad y posicionamiento local.
+                El mayor freno al crecimiento es tener a los dueños atrapados en
+                microtareas. Con asistentes virtuales para empresas delegas
+                CRMs, SOPs y seguimiento a proveedores en un perfil dedicado.
+                Recuperas tu agenda mientras asumimos la carga burocrática,
+                legal y de compliance internacional.
             </Fragment>
         </LeadHeroSection>
 
         <div class="fade-in-section">
             <QueEsServicioSection
-                title="Servicios de SEO en Puerto Rico, ejecutados por un especialista dedicado"
+                title="Descentraliza tu carga administrativa con un asistente virtual administrativo in-house"
                 highlightWord=""
-                description="Integra un experto en posicionamiento SEO de Sudamérica, listo para auditar tu arquitectura web, mejorar tu contenido, resolver problemas de indexación, optimizar tus landings comerciales y fortalecer la visibilidad orgánica de tu negocio en la Isla."
-                imageSrc="/que-es-seo-pr.webp"
-                imageAlt="Experto SEO remoto analizando tráfico orgánico"
+                description="Mantener el soporte bajo nómina local (W-2) dispara tus costos fijos antes de generar retorno. Al contratar un <strong>asistente virtual remoto</strong> dedicado, integras a un profesional pre-evaluado que opera bajo tus protocolos de ciberseguridad, reduciendo gastos sin perder exclusividad."
+                imageSrc="/que-es-av-pr.webp"
+                imageAlt="Contratar Community manager"
                 badgeText=""
                 quoteText=""
-                checklistTitle="Ventajas de contratar expertos en posicionamiento web con <span style='font-weight: 800;'>Oberstaff</span><span style='color: #ff62c4;'>.</span>"
+                checklistTitle="Checklist de validación operativa:"
                 checklistIcon="✅"
                 checklistItems={[
-                    "Perfil SEO remoto evaluado en auditoría técnica, contenidos, analítica y crecimiento orgánico.",
-                    "Reacción inmediata ante los Core Updates de Google en tu misma jornada, sin desfases de horario.",
-                    "Tus datos en Search Console y GA4 protegidos: <span style='font-weight: 800;'>Oberstaff</span><span style='color: #ff62c4; font-weight: 800;'>.</span> firma los acuerdos de confidencialidad (NDA).",
-                    "Tarifa plana B2B: escalas tu captación de leads orgánicos sin los altos fees de las agencias.",
-                    "Flexibilidad: si la estrategia no mueve el tráfico Non-Brand, cancelas con 30 días de preaviso."
+                    "<strong>Validación de competencias:</strong> evaluamos las <strong>virtual assistant skills</strong> en gestión de archivos, redacción corporativa y herramientas cloud.",
+                    "<strong>Eficiencia fiscal:</strong> facturación B2B internacional, deducible para tu negocio al contratar un asistente virtual.",
+                    "<strong>Escalabilidad inmediata:</strong> ajustas tu soporte de <strong>asistente administrativo</strong> sin la rigidez de las leyes de despido locales.",
                 ]}
-                ctaText="👉 Solicitar propuesta de talento SEO"
+                ctaText="Solicitar asistente virtual →"
                 ctaHref="#formulario-perfil"
                 diffIcon=""
                 diffTitle=""
@@ -377,65 +693,68 @@ const faqs = [
 
         <div class="fade-in-section">
             <ComparisonPerfiles
-                criterioLabel="Criterio"
-                title="Especialista SEO remoto dedicado vs. freelance o agencia especialista en SEO"
-                subtitle="Antes de elegir cómo cubrir tu estrategia de SEO en Puerto Rico, compara dedicación, costos, velocidad de implementación e integración con tu equipo." 
-                footerNote="Nota: la tarifa final depende del nivel del perfil, la especialidad SEO, la experiencia previa, las herramientas requeridas y el alcance de trabajo."
-                oberstaffLabel="SEO Oberstaff<span style='color: #ff62c4;'>.</span> <br> <span style='font-weight:400; color:#5A5A5A;'>(Sudamérica)</span>"
+                criterioLabel="Factor de decisión"
+                title="Asistente virtual Puerto Rico vs. asistente remoto dedicado y otras opciones"
+                subtitle=""
+                footerNote="Nota: Precios B2B orientativos. La inversión exacta depende del seniority y el nivel técnico requerido."
+                oberstaffLabel="Asistente dedicado <br> <span style='font-weight:400; color:#5A5A5A;'>(<span style='font-weight:900; color:#1B1B1B;'>Oberstaff</span><span style='font-weight:900; color:#FF66CC;'>.</span>)</span>"
                 competitors={[
-                    "Especialista local <br> <span style='font-weight:400; color:#5A5A5A;'>(Puerto Rico)</span>",
-                    "Freelance SEO",
-                    "Agencia SEO",
+                    "<span style='color: #1b1b1b; font-weight: 700;'>Contratación Local</span> <br><span style='font-weight:400; color:#5A5A5A;'>(W-2)</span>",
+                    "<span style='color: #1b1b1b; font-weight: 700;'>Freelance</span>",
                 ]}
                 rows={[
                     {
-                        label: "Estructura mensual",
+                        label: "Coste mensual",
                         oberstaffValue:
-                            "<span class='icon-check'>✓</span> <strong>Desde USD 950/mes</strong>",
+                            "<strong><span class='icon-check'>✓</span> Desde $820 USD/mes</strong>",
                         competitorValues: [
-                            "<span class='icon-cross'>✕</span> $2,500–$4,500/mes + empleo, beneficios y seguro",
-                            "<span class='icon-cross'>✕</span> $1,500–$3,000/mes o pago único por auditoría",
-                            "<span class='icon-cross'>✕</span> Fee variable y contratos fijos a largo plazo",
+                            "<span class='icon-cross'>✕</span> $1,800–$3,000/mes + seguro social y desempleo",
+                            "<span class='icon-warning'>⚠</span> $900–$2,500/mes",
                         ],
                     },
                     {
-                        label: "Foco en tu Crawl Budget",
+                        label: "Foco y atención",
                         oberstaffValue:
-                            "<span class='icon-check'>✓</span> <strong>Dedicado solo a tu web, jornada completa</strong>",
+                            "<span class='icon-check'>✓</span> <strong>100% exclusivo: conoce tu empresa a fondo</strong>",
                         competitorValues: [
-                            "<span class='icon-check'>✓</span> Integrado a tu equipo directo",
-                            "<span class='icon-warning'>⚠</span> Multicliente: compites con otras cuentas",
-                            "<span class='icon-warning'>⚠</span> Compites por horas limitadas de atención",
+                            "<span class='icon-check'>✓</span> Exclusivo, pero con altos costes fijos",
+                            "<span class='icon-warning'>⚠</span> Multicliente: prioridades de <strong>secretaria virtual</strong> divididas",
                         ],
                     },
                     {
-                        label: "Velocidad de ejecución",
+                        label: "Seguridad de datos",
                         oberstaffValue:
-                            "<span class='icon-check'>✓</span> <strong>Muy alta</strong>",
+                            "<span class='icon-check'>✓</span> <strong>NDA corporativo y accesos controlados de virtual assistant puerto rico</strong>",
                         competitorValues: [
-                            "<span class='icon-check'>✓</span> Muy alta",
-                            "<span class='icon-warning'>⚠</span> Media, según su disponibilidad",
-                            "<span class='icon-warning'>⚠</span> Lenta, sujeta a procesos y tickets",
+                            "<span class='icon-check'>✓</span> Seguro, pero costoso de escalar",
+                            "<span class='icon-cross'>✕</span> Sin control sobre sus dispositivos",
                         ],
                     },
                     {
-                        label: "Sincronía de horario",
+                        label: "Latencia de respuesta",
                         oberstaffValue:
-                            "<span class='icon-check'>✓</span> <strong>100% compatible con Puerto Rico (EST/AST)</strong>",
+                            "<span class='icon-check'>✓</span> <strong>Tiempo real, en tu horario comercial</strong>",
                         competitorValues: [
-                            "<span class='icon-check'>✓</span> Mismo horario local",
-                            "<span class='icon-warning'>⚠</span> Variable según su carga",
-                            "<span class='icon-warning'>⚠</span> Limitada al horario de la agencia",
+                            "<span class='icon-check'>✓</span> Tiempo real",
+                            "<span class='icon-warning'>⚠</span> Asíncrono: un <strong>asistente virtual online</strong> puede demorar horas",
                         ],
                     },
                     {
-                        label: "Integración en herramientas",
+                        label: "Sin permanencia",
                         oberstaffValue:
-                            "<span class='icon-check'>✓</span> <strong>Completa: GSC, GA4, Semrush, etc.</strong>",
+                            "<span class='icon-check'>✓</span> <strong>Sí, sin riesgos de Ley 80</strong>",
                         competitorValues: [
-                            "<span class='icon-check'>✓</span> Alta integración",
-                            "<span class='icon-warning'>⚠</span> Media o acceso limitado",
-                            "<span class='icon-warning'>⚠</span> Parcial: suelen usar sus propios reportes",
+                            "<span class='icon-cross'>✕</span> Liquidaciones, penalidades e indemnizaciones",
+                            "<span class='icon-warning'>⚠</span> Según contrato",
+                        ],
+                    },
+                    {
+                        label: "Auditoría de talento",
+                        oberstaffValue:
+                            "<span class='icon-check'>✓</span> <strong>Filtro técnico de virtual assistant skills + psicométrico</strong>",
+                        competitorValues: [
+                            "<span class='icon-cross'>✕</span> Consume horas de Recursos Humanos",
+                            "<span class='icon-warning'>⚠</span> Basado solo en reseñas externas",
                         ],
                     },
                 ]}
@@ -444,113 +763,122 @@ const faqs = [
 
         <div class="fade-in-section">
             <ServicesSection
-                title="Qué evaluar antes de contratar un especialista SEO para tu negocio en Puerto Rico"
+                title="Cómo filtrar y contratar a un asistente virtual administrativo con dominio de SOPs"
                 cardTitleTag="h3"
-                description="Antes de sumar un perfil SEO a tu operación, define si necesitas resolver problemas técnicos, mejorar contenidos, captar leads locales, optimizar un eCommerce o fortalecer la autoridad de tu dominio."
+                description="La diferencia entre un asistente que genera orden y uno que genera más trabajo para el CEO está en su capacidad de operar bajo procesos estandarizados. Un perfil de alto nivel no espera instrucciones improvisadas: ejecuta y mejora la documentación existente."
                 customClass="employer-use-cases-designer"
-                services={[ 
+                services={[
                     {
                         icon: "",
-                        title: "💼 Especialista SEO dedicado vs. consultor SEO en Puerto Rico",
+                        title: "💼 ¿Asistente virtual freelance o uno integrado en remoto?",
                         description:
-                            "Un experto en SEO presencial en Puerto Rico o EE. UU. puede superar los $4,000 mensuales en costos totales de nómina. Los freelancers dan flexibilidad, pero no dedicación exclusiva a tu marca. <br><br> Un especialista remoto de Colombia, Argentina o Venezuela con <span class='brand-oberstaff'>Oberstaff<span class='brand-dot'>.</span></span> combina lo mejor: jornada completa, exclusividad en tu nicho y tarifas desde $950/mes, sin relaciones laborales directas ni riesgos de empleo.",
+                            "Si necesitas seguimiento diario, coordinación con tu equipo y alguien que forme parte de tu organización, un <strong>asistente administrativo remoto en español</strong> estable funciona mejor y a menor costo total.",
                         linkText: "",
                         href: "",
-                        cardClass: "card-av-1", 
+                        cardClass: "card-av-1",
                     },
                     {
                         icon: "",
-                        title: "🛠️ Más allá del 'semáforo verde': qué evaluar técnicamente antes de contratar un consultor SEO",
+                        title: "🧠 ¿Qué soft skills y competencias técnicas exigir a un asistente administrativo?",
                         description:
-                            "Antes de contratar, define tus metas de negocio: ¿más tráfico orgánico general, mejores rankings para keywords de alta conversión, una <strong>auditoria de pagina web</strong> profunda o un plan agresivo de contenidos? <br><br> Cuanto más claro sea el briefing, más rápido adaptará el profesional la estrategia a los cambios del algoritmo. En <span class='brand-oberstaff'>Oberstaff</span><span class='brand-dot'>.</span> estructuramos ese alcance en una llamada de 15 minutos.",
+                            "Descarta perfiles reactivos y audita sus <strong>virtual assistant skills</strong>: mantener CRMs limpios, redactar SOPs y estructurar bases de datos. Una llamada de 15 minutos basta para trazar el <strong>asistente virtual puerto rico</strong> que necesitas.",
                         linkText: "",
                         href: "",
                         cardClass: "card-av-2",
                     },
                     {
                         icon: "",
-                        title: "⚡ La búsqueda cambia, pero la estrategia SEO sigue siendo necesaria",
+                        title: "🛠️ ¿Qué stack tecnológico deben dominar los asistentes virtuales para empresas?",
                         description:
-                            "Con AI Overviews, ChatGPT y Gemini, las empresas necesitan contenido más claro, estructurado y confiable. Un especialista SEO ordena datos, mejora EEAT, implementa Schema Markup y construye autoridad temática.",
+                            "La ofimática básica ya no basta. El <strong>virtual assistant remote</strong> debe moverse con fluidez en Google Workspace, Microsoft 365, gestores de proyectos (Asana, Jira, Notion) y comunicación corporativa (Slack, Teams).",
                         linkText: "",
                         href: "",
                         cardClass: "card-av-3",
                     },
                     {
                         icon: "",
-                        title: "🎯 ¿Dónde contratar un especialista en SEO confiable para Puerto Rico?",
+                        title: "🔄 ¿Secretaria virtual clásica o asistente administrativo virtual?",
                         description:
-                            "Hay muchas alternativas, desde plataformas de freelancers hasta una agencia especialista en SEO. <span class='brand-oberstaff'>Oberstaff</span><span class='brand-dot'>.</span> aporta un modelo superior: talento dedicado en exclusiva, contrato estable y gestión administrativa cubierta. Más compromiso, integración natural y cero riesgo legal.",
+                            "Muchas búsquedas empiezan por <strong>secretaria virtual online</strong>, pero hoy el rol va más allá de contestar llamadas o agendar. Lo que mejor funciona es un asistente administrativo remoto en español o bilingüe capaz de seguir procesos y dar soporte constante.",
                         linkText: "",
                         href: "",
                         cardClass: "card-av-4",
-                    }
+                    },
+                    {
+                        icon: "",
+                        title: "📉 ¿Qué ventaja tiene frente a un asistente tradicional en la isla?",
+                        description:
+                            "Las funciones son idénticas, pero contratar un <strong>asistente virtual</strong> con el modelo de <span style='font-weight: 800; color: #1B1B1B;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 800;'>.</span> aporta más agilidad, suprime los gastos fijos de oficina y te da talento bilingüe alineado a la zona horaria de Puerto Rico.",
+                        linkText: "",
+                        href: "",
+                        cardClass: "card-av-5",
+                    },
                 ]}
             />
         </div>
 
         <div class="fade-in-section">
             <ServicesSection
-                title="¿Qué ejecuta un experto SEO dedicado para tu empresa en Puerto Rico?"
+                title="¿Qué hace un virtual assistant corporativo? De la agenda al control del CRM"
                 cardTitleTag="h3"
-                description="Nuestros especialistas SEO trabajan sobre los pilares que de verdad mueven la visibilidad orgánica: estado técnico, arquitectura de contenidos, autoridad, SEO local, analítica y conversión. El objetivo no es solo atraer visitas, sino captar tráfico cualificado."
-                customClass="funciones-section" 
+                description="Un asistente virtual administrativo descarga las tareas que frenan a tu equipo: agenda, filtrado de emails, reportes y coordinación interna. No es apoyo temporal: aporta orden documental, velocidad de respuesta y continuidad."
+                customClass="funciones-section"
                 services={[ 
                     {
-                        icon: "⚙️",
-                        title: "Auditoría SEO y auditoría de página web",
+                        icon: "📅",
+                        title: "Gestión de agenda y calendario",
                         description:
-                            "Revisión de indexación, rastreo, Core Web Vitals, redirecciones, canonical, robots.txt, sitemap y arquitectura interna que limite tu crecimiento orgánico.",
-                        linkText: "", 
+                            "Organización de reuniones, coordinación de horarios, recordatorios y logística de viajes ejecutivos.",
+                        linkText: "",
                         href: "",
                         customIconBg: "rgba(102, 99, 253, 0.08)",
                         cardClass: "card-funcs",
                     },
                     {
-                        icon: "✍️",
-                        title: "Estrategia de contenidos y EEAT",
+                        icon: "📧",
+                        title: "Gestión de correo y comunicaciones",
                         description:
-                            "Keyword research, definición de clústeres temáticos, optimización de landings, mejora de contenidos, corrección de thin content y canibalizaciones.",
+                            "Clasificación de inbox, respuesta y seguimiento de correos, y atención rápida a clientes y suplidores.",
                         linkText: "",
                         href: "",
                         customIconBg: "rgba(102, 99, 253, 0.08)", 
                         cardClass: "card-funcs",
                     },
                     {
-                        icon: "📍",
-                        title: "SEO local Puerto Rico y dominio del map pack",
+                        icon: "📄",
+                        title: "Documentación y archivos",
                         description:
-                            "Optimización de Google Business Profile, datos NAP, reseñas y páginas geolocalizadas para San Juan, Bayamón, Carolina, Caguas, Ponce, Mayagüez y más.",
+                            "Actualización de documentos, bases de datos, SOPs y archivos compartidos en la nube.",
                         linkText: "",
                         href: "",
                         customIconBg: "rgba(102, 99, 253, 0.08)", 
                         cardClass: "card-funcs",
                     },
                     {
-                        icon: "🔗",
-                        title: "Link building y autoridad digital",
+                        icon: "💼",
+                        title: "Soporte a dirección y gerencia",
                         description:
-                            "Auditoría de backlinks, análisis de autoridad, estrategia de enlaces entrantes, digital PR y limpieza de señales tóxicas que afecten tu reputación.",
+                            "Preparación de reuniones, seguimiento de pendientes y apoyo operativo a la gerencia.",
                         linkText: "",
                         href: "",
                         customIconBg: "rgba(102, 99, 253, 0.08)",
                         cardClass: "card-funcs", 
                     },
                     {
-                        icon: "📈",
-                        title: "Analítica orgánica y reporting",
+                        icon: "🔢",
+                        title: "Higiene de datos en CRM",
                         description:
-                            "Configuración y seguimiento en Search Console, GA4, Looker Studio, Semrush o Ahrefs para medir rankings, tráfico, conversiones y oportunidades.",
+                            "Actualización de leads, limpieza de pipelines y reportes de actividad comercial en tiempo real.",
                         linkText: "",
                         href: "",
-                        customIconBg: "rgba(102, 99, 253, 0.08)", 
+                        customIconBg: "rgba(102, 99, 253, 0.08)",
                         cardClass: "card-funcs", 
                     },
                     {
-                        icon: "🛒",
-                        title: "SEO para eCommerce y servicios profesionales",
+                        icon: "🛠️",
+                        title: "Stack de productividad",
                         description:
-                            "Optimización de categorías, fichas de producto, páginas transaccionales, landings de servicios y flujos de captación orgánica en Puerto Rico.",
+                            "Google Workspace, Microsoft 365, Notion, Asana, Slack, Calendly y plataformas de colaboración.",
                         linkText: "",
                         href: "",
                         customIconBg: "rgba(102, 99, 253, 0.08)",
@@ -562,10 +890,10 @@ const faqs = [
 
         <div class="fade-in-section">
             <EorCta
-                title="¿Tu empresa en Puerto Rico necesita más visibilidad en los motores de búsqueda?"
+                title="¿Tu equipo gerencial está asfixiado por microtareas?"
                 titleTag="h2"
-                text="Cuéntanos si tu problema está en la parte técnica, el contenido, el SEO local, la falta de autoridad o la caída de tráfico. Te enviaremos una propuesta con perfiles SEO listos para integrarse y trabajar sobre tu dominio."
-                buttonText="👉 Solicitar perfiles SEO para Puerto Rico" 
+                text="Recupera tu tiempo al contratar un asistente virtual de Sudamérica para tu empresa en Puerto Rico. Cuéntanos tu cuello de botella documental, define el perfil y recibe una propuesta en menos de 24 horas."
+                buttonText="👉 Solicitar una propuesta personalizada"
                 buttonHref="#formulario-perfil" 
             />
         </div>
@@ -573,15 +901,15 @@ const faqs = [
         <div class="fade-in-section" id="pr-cm-process-wrapper">
             <ProcessOberstaff
                 className="process-employer"
-                title="Cómo seleccionamos al especialista SEO adecuado que protegerá tu dominio"
-                description="Un error técnico puede borrar meses de crecimiento orgánico. Por eso en <span style='font-weight: 700;'>Oberstaff<span style='color: #ff62c4;'>.</span></span> filtramos perfiles con criterio real de ejecución: un consultor seo capaz de analizar datos, detectar problemas de rastreo, ordenar contenidos y convertir el seo pr en una fuente estable de captación."
-                items={[ 
+                title="Virtual assistant hire seguro: tu roadmap de integración administrativa"
+                description="Externalizar el soporte con un <strong>asistente virtual</strong> exige una transición que proteja la privacidad y la data de tu negocio. Aplicamos un onboarding diseñado para la seguridad de la información."
+                items={[
                     {
-                        label: "Objetivos", 
+                        label: "Auditoría", 
                         badge: "",
-                        title: "Analizamos tus objetivos de posicionamiento",
+                        title: "01. Auditoría de cuellos de botella",
                         description:
-                            "Revisamos el estado de tu web, tus objetivos comerciales, el mercado, tus herramientas y el perfil que necesitas: SEO técnico, contenidos, local, eCommerce o 360. <br><br> <em>15 min · Sin compromiso</em>",
+                            "Definimos volumen de tareas, SLAs y el tech stack para diseñar las asistente administrativo funciones exactas. <br><br> <em>⚡ 15 minutos · sin compromiso</em>",
                         icon: "01",
                         badgeColor: "#6663FD",
                         badgeBg: "rgba(102, 99, 253, 0.1)", 
@@ -589,35 +917,35 @@ const faqs = [
                     {
                         label: "Selección",
                         badge: "",
-                        title: "Filtramos perfiles SEO de Sudamérica",
+                        title: "02. Selección de talento",
                         description:
-                            "Seleccionamos entre 3 y 5 especialistas SEO evaluados según tu industria, nivel técnico requerido, experiencia previa y compatibilidad horaria con Puerto Rico.<br><br> <em>Perfiles pre-evaluados</em>",
+                            "Te presentamos una terna (3 a 5) de virtual assistant con ofimática avanzada y fit cultural validado. <br><br> <em>📋 Perfiles evaluados</em>",
                         icon: "02",
                         badgeColor: "#6aca8a",
                         badgeBg: "rgba(102, 255, 153, 0.15)", 
                     },
                     {
-                        label: "Entrevista",
+                        label: "Validación",
                         badge: "",
-                        title: "Entrevistas y eliges tú",
+                        title: "03. Entrevistas de validación",
                         description:
-                            "Validas directamente cómo auditan una web, cómo priorizan oportunidades, cómo resuelven canibalizaciones y cómo plantean una estrategia orientada a negocio.<br><br> <em>Tú decides el perfil final</em>",
-                        icon: "03", 
+                            "Hablas con los candidatos, evalúas su criterio operativo y eliges a tu próximo asistente personal puerto rico. <br><br> <em>Tú tienes la última palabra</em>",
+                        icon: "03",
                         badgeColor: "#FF66CC",
                         badgeBg: "rgba(255, 102, 204, 0.1)", 
                     },
                     {
                         label: "Operación",
                         badge: "",
-                        title: "Comienza a trabajar",
+                        title: "04. Sincronización operativa",
                         description:
-                            "Facilitamos el onboarding para que se integre rápido a tus plataformas (GSC, GA4, Semrush), realice la auditoría inicial y entregue su primer plan de acción. <br><br> <em>Integración técnica en pocos días</em>",
+                            "El asistente administrativo comercial se integra en tus canales y asimila tu cultura y horarios desde el primer día. <br><br> <em>Integración en días</em>",
                         icon: "04",
                         badgeColor: "#1B1B1B",
-                        badgeBg: "rgba(204, 255, 102, 0.3)",  
+                        badgeBg: "rgba(204, 255, 102, 0.3)", 
                     },
                 ]}
-                ctaTitle="Crece de forma orgánica"
+                ctaTitle="Acelera tu back-office hoy"
                 ctaDescription="Un equipo dedicado gestionará todo el proceso por ti."
                 ctaBtnText="Agendar llamada"
                 ctaBtnHref="#formulario-perfil"
@@ -626,8 +954,8 @@ const faqs = [
 
         <div class="fade-in-section">
             <CasosExitoSection
-                title="Empresas que ya confían en <span style='font-weight: 800; color: #1b1b1b;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span> para sumar talento remoto especializado"
-                subtitle="Organizaciones de distintos mercados utilizan <span style='font-weight: 800; color: #1b1b1b;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span> para incorporar talento remoto especializado, reducir fricción operativa y escalar sus equipos con perfiles dedicados."
+                title="Casos de éxito corporativo: negocios que ya contratan talento con nosotros"
+                subtitle="Resultados reales de organizaciones que decidieron contratar asistente virtual con <span style='font-weight: 800; color: #1b1b1b;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span>"
                 columns={3}
                 testimonials={[
                     {
@@ -665,105 +993,62 @@ const faqs = [
 
         <div class="fade-in-section">
             <RolesPerfil
-                title="Tipos de especialistas SEO que puedes contratar para tu empresa en Puerto Rico"
-                subtitle="Cada negocio necesita un perfil distinto. No es lo mismo optimizar una clínica local en San Juan, un eCommerce que vende en toda la isla o una empresa B2B que busca leads cualificados desde Google."
+                title="Virtual assistant roles: especialización operativa para tu negocio"
+                subtitle=""
                 layout="modern"
-                footerText=""
-                footerLinkText=""
+                footerText="¿Necesitas un perfil que lleve contabilidad formal, conciliaciones y nómina? "
+                footerLinkText="→ Ver perfil de Contable Remoto"
                 footerLinkHref="#"
                 roles={[
                     {
-                        title: "Especialista en SEO técnico (Crawl & Index)",
+                        title: "Asistente administrativo virtual",
                         description: "",
                         icon: "",
                         iconColor: "#6663FD",
                         borderColorClass: "border-purple",
                         subtitle:
-                            "Ideal para webs con problemas de indexación, rendimiento, migraciones, arquitectura, errores de rastreo o caídas de tráfico.",
+                            "Estandarización de SOPs, control de agenda y auditoría de documentos internos. Domina el rol de asistente administrativo en ingles si lo requieres.",
                         techStack: [
-                            "Screaming Frog",
-                            "GSC",
-                            "Core Web Vitals",
-                            "Semrush",
+                            "Google Workspace",
+                            "Notion",
+                            "Trello",
+                            "Slack",
                         ],
                     },
                     {
-                        title: "Especialista en contenidos SEO y EEAT",
+                        title: "Soporte y atención al cliente",
                         description: "",
                         icon: "",
                         iconColor: "#6aca8a",
                         borderColorClass: "border-green",
                         subtitle:
-                            "Enfocado en keyword research, optimización de landings, arquitectura de información, EEAT, briefs de contenido y mejora de páginas existentes.",
+                            "Gestión de tickets, SLAs de primer nivel, resolución de incidencias y fidelización B2B/B2C.",
                         techStack: [
-                            "Ahrefs",
-                            "Semrush",
-                            "Surfer SEO",
-                            "WordPress",
-                            "Schema",
+                            "Zendesk",
+                            "Freshdesk",
+                            "Intercom",
+                            "WhatsApp Business",
                         ],
                     },
                     {
-                        title: "Especialista SEO local",
+                        title: "Asistente virtual remoto para eCommerce",
                         description: "",
                         icon: "",
                         iconColor: "#FF9933",
                         borderColorClass: "border-orange",
                         subtitle:
-                            "Perfecto para empresas con presencia física o servicios por zona: clínicas, firmas legales, real estate, turismo, restaurantes o servicios locales.",
-                        techStack: [
-                            "Google Business Profile",
-                            "Reseñas",
-                            "NAP",
-                            "Landings locales",
-                        ],
+                            "Actualización masiva de SKUs, control de inventario base y seguimiento de logística posventa.",
+                        techStack: ["Shopify", "Amazon Seller", "Klaviyo"],
                     },
                     {
-                        title: "Especialista en link building (Off-Page)",
+                        title: "Asistente personal ejecutivo",
                         description: "",
                         icon: "",
                         iconColor: "#FF66CC",
                         borderColorClass: "border-pink",
                         subtitle:
-                            "Orientado a mejorar autoridad de dominio, conseguir backlinks relevantes, analizar anchors y detectar enlaces tóxicos que afecten tu reputación.",
-                        techStack: [
-                            "Ahrefs",
-                            "Moz",
-                            "Digital PR",
-                            "Outreach",
-                            "Disavow Tool",
-                        ],
-                    },
-                    {
-                        title: "Especialista SEO para eCommerce",
-                        description: "",
-                        icon: "",
-                        iconColor: "#3b76f6",
-                        borderColorClass: "border-blue",
-                        subtitle:
-                            "Recomendado para tiendas con categorías, productos, filtros, paginaciones, contenido duplicado o problemas de conversión orgánica.",
-                        techStack: [
-                            "Shopify",
-                            "WooCommerce",
-                            "Taxonomías",
-                            "CRO",
-                            "GA4",
-                        ],
-                    },
-                    {
-                        title: "Consultor SEO 360",
-                        description: "",
-                        icon: "",
-                        iconColor: "#9333ea",
-                        borderColorClass: "border-indigo",
-                        subtitle:
-                            "Perfil senior o semi-senior capaz de coordinar SEO técnico, contenidos, autoridad, analítica y priorización estratégica para negocios en crecimiento.",
-                        techStack: [
-                            "Semrush",
-                            "GA4",
-                            "Search Console",
-                            "Looker Studio",
-                        ],
+                            "Gestión de agendas gerenciales (C-Level) como asistente personal puerto rico, filtro de comunicaciones críticas y preparación de juntas.",
+                        techStack: ["Calendly", "Notion", "Zoom", "Asana"],
                     },
                 ]}
             />
@@ -771,56 +1056,57 @@ const faqs = [
 
         <div class="fade-in-section" id="pr-cm-pricing-wrapper">
             <PricingCardPerfil
-                sectionTitle="Precio de contratar un experto SEO remoto con <span style='font-weight: 800;'>Oberstaff<span style='font-weight: 800; color: #ff66cc;'>.</span></span>"
-                sectionSubtitle="Tarifas claras y fijas para empresas en Puerto Rico que quieren mejorar su visibilidad orgánica sin depender solo de la pauta, de una agencia especialista en SEO tradicional o de recursos internos limitados."
-                cardTitle="Experto SEO"
+                sectionTitle="Fin a los sobrecostes: tarifa plana al contratar un asistente virtual"
+                sectionSubtitle="Estructura tus costos fijos con total predictibilidad. La tarifa incluye todo: headhunting, compliance legal internacional y la nómina de tu asistente administrativo virtual. El costo escala solo según la especialización del talento."
+                cardTitle="Asistente Virtual"
                 titleTag="p"
-                cardSubtitle="Fee mensual · perfil dedicado · gestión simple · sin costos ocultos"
+                cardSubtitle=""
                 priceLabel="Desde"
-                priceAmount="$950"
+                priceAmount="$820"
                 pricePeriod="USD / mes"
                 features={[
-                    "SEO técnico: auditorías, indexación, Core Web Vitals y velocidad.",
-                    "SEO de contenidos: keyword research, arquitectura y optimización on-page.",
-                    "SEO local: Google Business Profile, reseñas y búsquedas geolocalizadas.",
-                    "Autoridad: backlinks, digital PR y auditoría de enlaces.",
-                    "Analítica: GA4, Search Console, Semrush y reporting mensual."
+                    "Todo incluido · jornada completa (full-time) · sin cargos ocultos",
+                    "Gestión de agenda ejecutiva y filtrado de comunicaciones",
+                    "Orden documental y soporte de asistente administrativo",
+                    "Dominio de CRMs y herramientas remotas de un virtual assistant remote",
+                    "Soporte directo a direcciones y gerencias de área",
+                    "Facturación B2B internacional en USD",
                 ]}
                 ctaText="Solicitar propuesta"
                 ctaHref="#formulario-perfil"
-                disclaimer="La suscripción final se ajusta según la complejidad técnica y el nivel de experiencia del analista seleccionado."
+                disclaimer="* Precios orientativos. El costo final depende del perfil, el país de origen del talento (ej. virtual assistant colombia) y el nivel de experiencia."
             />
         </div>
 
         <div class="fade-in-section" id="pr-cm-benefits-wrapper">
             <BeneficiosPerfilDisenador
                 showInfoCard={false}
-                title="Escala tu tráfico orgánico con un especialista SEO dedicado a tu empresa en Puerto Rico"
-                subtitle="Oberstaff. combina la dedicación de un perfil in-house con la flexibilidad de un modelo remoto. Tu empresa mantiene el control de la estrategia, las herramientas y los datos, mientras el especialista ejecuta sobre objetivos claros de crecimiento orgánico."
-                image=""
-                imageAlt=""
+                title="Exclusividad y latencia cero: el ROI de tu virtual assistant puerto rico"
+                subtitle="El ROI de un perfil dedicado está en lo profundo que conoce tus procesos. Esa dedicación mantiene tu información precisa y disponible, y elimina el coste oculto de los errores por falta de contexto."
+                image="/img2-community.webp"
+                imageAlt="Community manager estratégico analizando métricas y comunidad digital para una empresa"
                 infoTitle=""
                 features={[
                     {
                         icon: "🎯",
-                        title: "Ejecución continua",
+                        title: "Eliminación de cargas patronales:",
                         description:
-                            "Tu experto SEO revisa el estado de tus URLs, detecta caídas de tráfico, encuentra oportunidades de contenido y prioriza mejoras técnicas de forma recurrente.",
+                            "Bajo nuestro modelo, tu empresa se libera del marco laboral de Puerto Rico: sin desempleo (FUTA/SUTA), seguro social, póliza del Fondo del Seguro del Estado ni acumulación de licencias.",
+                    },
+                    {
+                        icon: "⏱️",
+                        title: "Recuperación del tiempo (deep work):",
+                        description:
+                            "Al delegar correos y agendas en una secretaria virtual, liberas a tus líderes para tareas de alto impacto. Pasas de apagar fuegos a dirigir la estrategia.",
                     },
                     { 
                         icon: "🛡️",
-                        title: "Menor dependencia del costo por clic",
+                        title: "Blindaje con NDAs corporativos:",
                         description:
-                            "Construye un dominio con autoridad que capta prospectos y clientes a un costo marginal casi nulo, sostenible a lo largo del tiempo.",
-                    },
-                    { 
-                        icon: "🔗",
-                        title: "Conocimiento orgánico dentro de tu empresa",
-                        description:
-                            "El keyword research, los reportes, la arquitectura de contenidos y las decisiones de SEO PR quedan centralizados en tu operación.",
+                            "La confidencialidad de tu asistente administrativo virtual es innegociable. Cada perfil opera bajo NDA estrictos que protegen tus bases de datos y clientes.",
                     },
                 ]}
-                infoItems={[ 
+                infoItems={[
                     {
                         title: "",
                         description: "",
@@ -836,16 +1122,16 @@ const faqs = [
                 ]}
             >
                 <div class="meta-custom-notice">
-                   Recibes una sola factura mensual corporativa. Sin trámites de empleo, retenciones patronales ni seguros. Escalas en visibilidad, no en burocracia.
+                   
                 </div>
             </BeneficiosPerfilDisenador>
         </div>
 
         <FAQSection
-            title="Resolviendo tus dudas antes de escalar tu estrategia en motores de búsqueda"
-            subtitle=""
+            title="Blindaje legal y contingencia laboral de tu asistente virtual"
+            subtitle="Protege tus finanzas frente a las complejidades del Departamento del Trabajo local. Al integrar tu <strong>asistente virtual en ingles</strong> o español bajo nuestra arquitectura legal, desplazas la carga administrativa y los riesgos patronales a nuestra infraestructura global."
             ctaText=""
-            ctaButtonText="Contactar con un asesor →"
+            ctaButtonText="👉 Hablar con asesor →"
             ctaButtonHref="#formulario-perfil"
             useCardLayout={false} 
             faqs={faqs}
@@ -853,9 +1139,9 @@ const faqs = [
 
         <div class="fade-in-section">
             <ConversionPerfilDisenador
-                webhookUrl="https://hooks.zapier.com/hooks/catch/12433184/422eax6/"
-                title="¿Listo para contratar un especialista y mejorar el SEO en Puerto Rico de tu empresa?"
-                subtitle="Completa el formulario en menos de un minuto y cuéntanos qué necesitas mejorar: tráfico orgánico, SEO técnico, contenidos, SEO local, autoridad o analítica. Te enviaremos una propuesta con perfiles SEO pre-evaluados para tu negocio."
+                webhookUrl="https://hooks.zapier.com/hooks/catch/12433184/422l8kv/"
+                title="Sistematiza tu empresa: contrata un asistente virtual para tu empresa en Puerto Rico"
+                subtitle="Dejar tu back-office al azar frena tu capacidad de escalar. Transforma tus costos fijos en una inversión operativa ágil con <strong>asistentes virtuales para empresas</strong>. <br> <br> Llena el formulario (menos de 1 minuto) y en menos de 24 horas recibirás una propuesta personalizada, sin compromiso."
                 buttonText="Solicitar propuesta gratuita →"
                 noteText=""
                 isCommunityPR={false}
@@ -1348,12 +1634,6 @@ const faqs = [
         background-color: #fafafc !important;
 
         padding-bottom: 80px !important;
-    }
-
-    :global(.casos-exito .casos-header p) {
-        max-width: 800px !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
     }
 
     /* Estilos específicos para la sección FAQ en esta página */
