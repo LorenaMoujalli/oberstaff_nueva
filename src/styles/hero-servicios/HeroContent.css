@@ -133,7 +133,13 @@
     .pre-title { font-size: 18px; margin-top: 15px;font-weight: bold;  }
 
     /* --- main-title --- */
-    .main-title { font-size: 32px; letter-spacing: -1px; }
+    .main-title { 
+        font-size: 32px; 
+        letter-spacing: -1px; 
+        word-break: break-word;
+        overflow-wrap: break-word;
+        max-width: 100%;
+    }
 
     /* --- hero-description --- */
     .hero-description { font-size: 16px; margin-bottom: 30px; padding: 0 10px; }
@@ -144,12 +150,23 @@
         align-items: center; 
         gap: 12px; 
         padding: 0 20px;
+        width: 100%;
+        box-sizing: border-box;
     }
     
     /* --- btn-pink & btn-outline --- */
     .primary-btn-container { width: 100%; flex-direction: column; }
     .under-btn-text { position: static; white-space: normal; margin-top: 8px; text-align: center; }
-    .btn-pink, .btn-outline { width: 100%; text-align: center; font-size: 12px; }
+    .btn-pink, .btn-outline { 
+        width: 100%; 
+        max-width: 100%;
+        text-align: center; 
+        font-size: 12px; 
+        white-space: normal;
+        word-break: break-word;
+        line-height: 1.4;
+        box-sizing: border-box;
+    }
 }
 
 @media (max-width: 480px) {

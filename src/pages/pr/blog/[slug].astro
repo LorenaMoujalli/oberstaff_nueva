@@ -201,10 +201,7 @@ const metaTitle = post.yoast_head_json?.title || `${title}`;
 const metaDescription = post.yoast_head_json?.description || rawExcerpt;
 const ogTitleValue = post.yoast_head_json?.og_title || metaTitle;
 const ogDescriptionValue = post.yoast_head_json?.og_description || metaDescription;
-let canonicalUrl = post.yoast_head_json?.canonical;
-if (canonicalUrl && canonicalUrl.includes('/blog/')) {
-    canonicalUrl = canonicalUrl.replace('/blog/', '/pr/blog/');
-}
+const canonicalUrl = post.yoast_head_json?.canonical;
 ---
 
 <DashboardLayoutPr

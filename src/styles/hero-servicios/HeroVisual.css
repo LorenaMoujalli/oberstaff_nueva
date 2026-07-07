@@ -61,7 +61,7 @@
 .floating-badge {
     background: #ffffff;
     padding: 10px 20px;
-    border: 1px solid rgba(0, 0, 0, 0.05); /* Sutil, como en el ajuste del usuario */
+    border: 1px solid rgba(0, 0, 0, 0.05);
     border-radius: 50px;
     display: flex;
     align-items: center;
@@ -70,7 +70,7 @@
     font-weight: 600;
     font-size: 13px;
     letter-spacing: 0.3px;
-    white-space: nowrap;
+    white-space: nowrap; /* Keep on desktop */
     animation: subtleFloat 4s ease-in-out infinite;
 }
 
@@ -107,28 +107,35 @@
     .hero-visual-wrapper {
         flex-direction: column;
         gap: 20px;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
     }
     
     /* --- video-preview --- */
     .video-preview {
         width: 120px;
         height: 120px;
-        order: 2; /* Video stays in the middle */
+        order: 2;
     }
 
     /* --- badge-left & badge-right (.floating-badge) --- */
     .badge-left {
-        order: 1; /* Left badge goes on top */
+        order: 1;
     }
 
     .badge-right {
-        order: 3; /* Right badge goes on bottom */
+        order: 3;
     }
 
     .floating-badge {
         padding: 8px 16px;
         font-size: 12px;
         gap: 8px;
+        white-space: normal; /* Allow wrapping on mobile */
+        max-width: 90vw;
+        box-sizing: border-box;
     }
     
     /* --- icon-emoji --- */

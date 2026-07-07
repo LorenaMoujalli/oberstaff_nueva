@@ -100,6 +100,14 @@
 
   /* --- hero-section container --- */
   .hero-section {
-    padding: 10px 20px;
+    padding: 10px 24px;
+    box-sizing: border-box;
+  }
+
+  /* --- hero-container: constrain to viewport width --- */
+  .hero-container {
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
   }
 }

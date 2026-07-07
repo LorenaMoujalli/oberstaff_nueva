@@ -148,6 +148,7 @@ color: #1B1B1B;
         grid-template-columns: 1fr;
         padding: 40px 24px;
         gap: 40px;
+        overflow-x: hidden; /* Prevents horizontal overflow caused by floating badges */
     }
 
     .cobertura-text {
@@ -157,6 +158,11 @@ color: #1B1B1B;
     /* Eliminar saltos de línea del título en móvil */
     .cobertura-text h2 br {
         display: none;
+    }
+
+    /* Override inline white-space: nowrap to allow text wrapping on mobile */
+    .cobertura-text h2 span {
+        white-space: normal !important;
     }
 
     .cobertura-text p {
@@ -170,27 +176,44 @@ color: #1B1B1B;
         display: flex;
         justify-content: center;
         align-items: center;
-        transform: translateX(-35px);
+        transform: translateX(-15px); /* Adjusted to keep it centered but prevent clipping */
+        width: 100%;
+        max-width: 100%;
     }
 
     .cobertura-map-img {
-        height: 450px !important;
+        height: 400px !important;
         max-width: 100%;
         margin: 0 auto;
     }
 
     .map-country-badge {
         font-size: 11px;
-        padding: 5px 10px;
+        padding: 4px 8px;
+        gap: 6px;
     }
 
-    .map-badge-flag {
-        font-size: 16px;
+    .map-badge-img-wrapper {
+        width: 12px;
+        height: 12px;
     }
 }
 
 @media (max-width: 600px) {
     .cobertura-text h2 {
         font-size: 24px;
+    }
+
+    .cobertura-map-wrapper {
+        transform: translateX(-10px) scale(0.9);
+        transform-origin: center center;
+    }
+    
+    .cobertura-map-img {
+        height: 350px !important;
+    }
+
+    .map-country-badge {
+        font-size: 10px;
     }
 }
