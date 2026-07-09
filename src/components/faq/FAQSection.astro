@@ -12,7 +12,7 @@ const homeFaqs: FAQ[] = [
     {
         question: "¿Es legal contratar talento en LATAM desde España y por qué lo hacen las empresas españolas?",
         answers: [
-            "Sí, siempre que el modelo de contratación esté bien estructurado según el tipo de relación. Las empresas españolas lo hacen principalmente para reducir costes de personal, acceder a perfiles escasos en el mercado local y mantener compatibilidad horaria con España. Oberstaff gestiona la estructura legal y operativa para que tú solo dirijas el trabajo.",
+            "Sí, siempre que el modelo de contratación esté bien estructurado según el tipo de relación. Las empresas españolas lo hacen principalmente para reducir costes de personal, acceder a perfiles escasos en el mercado local y mantener compatibilidad horaria con España. <strong class=\"brand-oberstaff\">Oberstaff<span class=\"brand-dot\">.</span></strong> gestiona la estructura legal y operativa para que tú solo dirijas el trabajo.",
         ],
     },
     {
@@ -24,26 +24,68 @@ const homeFaqs: FAQ[] = [
     {
         question: "¿Cuánto tiempo tarda el proceso de incorporación?",
         answers: [
-            "Varía según el perfil y el modelo, pero normalmente, entre 2 semanas y 1 mes. Así que, si necesitas contratar personal extranjero, el proceso suele ser ágil gracias a nuestro pool de perfiles preseleccionado.",
+            "Varía según el perfil y el modelo, pero normalmente, entre 2 semanas y 1 mes. Así que, si necesitas contratar personal extranjero, el proceso suele ser ágil gracias a nuestro pool de perfiles preseleccionados.",
         ],
     },
     {
         question: "¿Los profesionales trabajan en horario de España?",
         answers: [
-            "Sí. Todos los mercados en los que opera Oberstaff tienen husos horarios compatibles con España, lo que permite reuniones, seguimiento y coordinación diaria en tiempo real sin desfase.",
+            "Sí. Todos los mercados en los que opera <strong class=\"brand-oberstaff\">Oberstaff<span class=\"brand-dot\">.</span></strong> tienen husos horarios compatibles con España, lo que permite reuniones, seguimiento y coordinación diaria en tiempo real sin desfase.",
         ],
     },
     {
         question: "¿Pueden ayudarme si aún no sé qué perfil o qué estructura necesito?",
         answers: [
-            "Sí, parte del valor de Oberstaff es ayudar a definir qué perfil conviene, qué nivel de control se necesita y qué modelo encaja mejor con la operación antes de iniciar la contratación. Así se evitan errores de estructura desde el principio.",
+            "Sí, parte del valor de <strong class=\"brand-oberstaff\">Oberstaff<span class=\"brand-dot\">.</span></strong> es ayudar a definir qué perfil conviene, qué nivel de control se necesita y qué modelo encaja mejor con la operación antes de iniciar la contratación. Así se evitan errores de estructura desde el principio.",
         ],
     },
     {
         question: "¿En qué países de Latinoamérica operan?",
         content: "countries",
-    } 
-];
+    },
+    {
+        question: "¿Puedo cancelar el servicio cuando quiera?",
+        answers: [
+            "Sí. Puedes cancelar el servicio con un preaviso de 30 días, sin penalizaciones ni compromisos de permanencia. Esta flexibilidad te permite ajustar tu equipo remoto según las necesidades reales de tu empresa",
+        ],
+    },
+    {
+        question: "¿Tiene algún coste cancelar el servicio?",
+        answers: [
+            "No aplicamos penalizaciones por cancelación. Nuestro modelo está pensado para que puedas ampliar, ajustar o reducir tu equipo sin asumir costes de despido, finiquitos locales o cargas laborales innecesarias.",
+        ],
+    },
+     {
+        question: "¿Tengo que pagar Seguridad Social, beneficios laborales o nómina?",
+        answers: [
+            "No gestionas directamente la nómina, Seguridad Social ni beneficios laborales del profesional. <strong class=\"brand-oberstaff\">Oberstaff<span class=\"brand-dot\">.</span></strong> centraliza la estructura administrativa y tu empresa recibe una factura mensual por el servicio, reduciendo trámites y carga operativa.",
+        ],
+    },
+    {
+        question: "¿Puedo entrevistar al profesional antes de contratarlo?",
+        answers: [
+            "Sí. Te presentamos perfiles previamente evaluados para que puedas entrevistarlos, validar experiencia, revisar encaje cultural y elegir al candidato que mejor se adapte a tu empresa.",
+        ], 
+    },
+    {
+        question: "¿Cómo gestiono a un profesional remoto en el día a día?",
+        answers: [
+            "Nosotros no lo hacemos, lo harás tú. Te recomendaremos herramientas tecnológicas y métodos para gestionar a tus profesionales remotos y sus tareas. Además, ofrecemos servicios de telefonía VOIP para que tu asistente virtual o cualquier miembro del equipo tenga un teléfono de empresa en tu país.",
+        ],
+    },
+    {
+        question: "¿Cómo se realiza el cobro?",
+        answers: [
+            "Mediante cobro automático mensual a una tarjeta de débito o crédito. Recibes una única factura que simplifica la gestión administrativa, sin complicaciones de seguridad social ni trámites laborales adicionales.",
+        ],
+    },
+    {
+        question: "¿Cuánto cuesta contratar talento remoto con <strong class=\"brand-oberstaff\">Oberstaff<span class=\"brand-dot\">.</span></strong>?",
+        answers: [
+            "El coste depende del perfil, experiencia, país de residencia, seniority y modelo de contratación. Te damos una propuesta mensual cerrada para que conozcas el coste total antes de iniciar el proceso, sin cargos ocultos ni sorpresas.",
+        ],
+    },
+]; 
 
 interface Props {
     title?: string;
@@ -107,7 +149,7 @@ const {
                                             <li>
                                                 <span class="subtle-bold">EOR:</span>{" "}
                                                 contratas en LATAM sin abrir empresa;
-                                                Oberstaff es el empleador legal.
+                                                <strong class="brand-oberstaff">Oberstaff<span class="brand-dot">.</span></strong> es el empleador legal.
                                             </li>
                                             <li>
                                                 <span class="subtle-bold">

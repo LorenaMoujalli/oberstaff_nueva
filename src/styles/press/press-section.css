@@ -52,5 +52,34 @@
         filter: grayscale(0%); /* En móvil mostramos color por defecto */
         opacity: 1;
     }
+
+    /* Reducir espacio entre los últimos logos en móvil */
+    .mention-item.digital-sevilla,
+    .mention-item.negocios,
+    .mention-item.orientario,
+    .mention-item.madrid-noticias,
+    .mention-item.rsf {
+        margin-top: -15px;
+    }
+}
+
+/* Custom logo size and positioning adjustments */
+.mention-item.digital-sevilla img {
+    transform: translateY(-5px);
+}
+.mention-item.digital-sevilla img:hover {
+    transform: translateY(-9px) scale(1.05);
+}
+
+.mention-item.negocios img {
+    max-height: 70px;
+}
+
+.mention-item.orientario img {
+    max-height: 32px;
+}
+
+.mention-item.madrid-noticias img {
+    max-height: 90px;
 }
 

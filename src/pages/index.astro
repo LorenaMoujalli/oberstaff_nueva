@@ -15,6 +15,72 @@ import BlogSection from "../components/blog-home/BlogSection.astro";
 import EorCta from "../components/eor-cta-servicios/EorCta.astro";
 
 const ogImage = "Contratar Talento.webp";
+
+const spainMentions = [
+	{
+		name: "Madridiario",
+		className: "mdo-madridiario",
+		href: "https://www.madridiario.es/actualidad-empresarial/fuga-de-capital-la-friccion-operativa-y-el-sobrecosto-del-talento-estan-frenando-las-pymes-espanolas-7128?target=external",
+		logo: "/logo-madridiario.webp",
+		alt: "Logo de Madridiario, medio que mencionó a Oberstaff"
+	},
+	{
+		name: "El Mundo Financiero",
+		className: "em-financiero",
+		href: "https://www.elmundofinanciero.com/seccion/40/actividad-empresarial/fuga-de-capital-la-friccion-operativa-y-el-sobrecosto-del-talento-estan-frenando-las-pymes-espanolas-7606?target=external",
+		logo: "/logo-mundo-financiero.webp",
+		alt: "Logo de El Mundo Financiero, medio que mencionó a Oberstaff"
+	},
+	{
+		name: "Region Digital",
+		className: "region-digital",
+		href: "https://www.regiondigital.com/empresas/fuga-de-capital-la-friccion-operativa-y-el-sobrecosto-del-talento-estan-frenando-las-pymes-espanolas-9827?target=external",
+		logo: "/logo-region-digital.webp",
+		alt: "Logo de Región Digital, medio que mencionó a Oberstaff"
+	},
+	{
+		name: "Camara de Comercio",
+		className: "camara-comercio",
+		href: "https://www.camaraespanapr.org",
+		logo: "/logo-camara-comercio.webp",
+		alt: "Logo de Cámara de Comercio, patrocinador oficial de Oberstaff"
+	},
+	{
+		name: "Digital Sevilla",
+		className: "digital-sevilla",
+		href: "https://digitalsevilla.com/2026/02/14/fuga-de-capital-la-friccion-operativa-y-el-sobrecosto-del-talento-estan-frenando-las-pymes-espanolas/?target=external",
+		logo: "/logo-digital-sevilla.webp",
+		alt: "Logo de Digital Sevilla"
+	},
+	{
+		name: "Negocios Expansión",
+		className: "negocios",
+		href: "https://negociosexpansion.com/fuga-de-capital-la-friccion-operativa-y-el-sobrecosto-del-talento-estan-frenando-las-pymes-espanolas?target=external",
+		logo: "/logo-negocios.webp",
+		alt: "Logo de Negocios"
+	},
+	{
+		name: "Orientario",
+		className: "orientario",
+		href: "https://orientarioja.com/fuga-de-capital-la-friccion-operativa-y-el-sobrecosto-del-talento-estan-frenando-las-pymes-espanolas?target=external",
+		logo: "/logo-orientario.webp",
+		alt: "Logo de Orientario"
+	},
+	{
+		name: "Madrid Noticias",
+		className: "madrid-noticias",
+		href: "https://madrid-noticias.com/actualidad-empresarial/175033-fuga-de-capital-la-friccion-operativa-y-el-sobrecosto-del-talento-estan-frenando-las-pymes-espanolas.htm?target=external",
+		logo: "/logo-madrid-noticias.webp",
+		alt: "Logo de Madrid Noticias"
+	},
+	{
+		name: "Reporteros sin fronteras",
+		className: "rsf",
+		href: "https://informeanualrsf.es/fuga-de-capital-la-friccion-operativa-y-el-sobrecosto-del-talento-estan-frenando-las-pymes-espanolas?target=external",
+		logo: "/logo-rsf.webp",
+		alt: "Logo de RSF"
+	}
+];
 ---
 
 <DashboardLayout 
@@ -374,7 +440,7 @@ const ogImage = "Contratar Talento.webp";
 			<FAQSection />
 		</div>
 		<div class="fade-in-section">
-			<PressSection />
+			<PressSection mentions={spainMentions} />
 		</div>
 
 		<div class="fade-in-section">

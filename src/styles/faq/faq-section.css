@@ -201,3 +201,11 @@
     border-color: #5552eb;
     color: #ffffff;
 }
+
+/* Brand styling for FAQ section */
+.brand-oberstaff {
+    font-weight: 700;
+}
+.brand-dot {
+    color: #FF66CC;
+}
