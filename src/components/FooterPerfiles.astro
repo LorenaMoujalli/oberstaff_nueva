@@ -21,7 +21,7 @@ const {
 ---
 
 <footer class="oberstaff-footer-perfiles">
-    <h2 class="copyright">{title}</h2>
+    <h2 class="copyright" set:html={title}></h2>
 
     <div class="footer-links-row">
         {
@@ -35,6 +35,13 @@ const {
 </footer>
 
 <style>
+    :global(.brand-oberstaff) {
+        font-weight: 800;
+        color: #c2bcbc !important;
+    }
+    :global(.brand-dot) {
+        color: #FF66CC !important;
+    }
     .oberstaff-footer-perfiles {
         background-color: #1b1b1b;
         color: #ffffff;
@@ -50,11 +57,11 @@ const {
     .copyright {
         text-align: center;
         font-family: "Montserrat", sans-serif;
-        font-size: 12px;
+        font-size: 15px;
         margin: 0;
         font-weight: 600;
         margin-bottom: 20px;
-        text-transform: uppercase;
+     
         color: #888;
         letter-spacing: 2px;
     }

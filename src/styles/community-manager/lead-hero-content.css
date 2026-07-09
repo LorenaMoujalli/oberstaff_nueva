@@ -10,11 +10,11 @@
 .top-label {
     font-family: 'Montserrat', sans-serif;
         background: linear-gradient(90deg, #FF66CC, #FA3AB5);
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 800;
   /*  color: #FF66CC;*/
     letter-spacing: 1.2px;
-    text-transform: uppercase;
+    text-transform: none;
     display: block;
     margin-top: 0;
     margin-bottom: 20px;

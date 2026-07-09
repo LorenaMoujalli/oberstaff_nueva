@@ -13,14 +13,14 @@ import "../../styles/guia-contratacion-perfiles/GuiaCard.css";
 ---
 
 <div class={`guia-card ${type}`}>
-    <h3>{title}</h3>
-    {description && <p>{description}</p>}
-    {description2 && <p>{description2}</p>}
+    <h3 set:html={title}></h3>
+    {description && <p set:html={description}></p>}
+    {description2 && <p set:html={description2}></p>}
     
     {items.length > 0 && (
         <ul class={type === "negative" ? "list-x" : type === "warning" ? "list-warning" : ""}>
             {items.map((item) => (
-                <li>{item}</li>
+                <li set:html={item}></li>
             ))}
         </ul>
     )}

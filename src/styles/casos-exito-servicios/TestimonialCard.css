@@ -85,6 +85,17 @@
     flex-grow: 1;
 }
 
+.testimonial-text .brand-gradient {
+    font-weight: 700;
+    font-style: normal;
+}
+
+.testimonial-text .brand-dot {
+    color: #FF66CC;
+    font-style: normal;
+    font-weight: 700;
+}
+
 @media (max-width: 768px) {
     .testimonial-card {
         padding: 30px 25px;
