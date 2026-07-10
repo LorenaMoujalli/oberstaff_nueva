@@ -15,12 +15,14 @@ interface Props {
     title?: string;
     mentions?: Mention[];
     trustBadgeText?: string;
+    customClass?: string;
 }
 
 const {
     title = "Nos han mencionado en:",
     mentions: customMentions,
-    trustBadgeText = "Solución segura para <strong>contratar talentos en el extranjero</strong> con soporte integral"
+    trustBadgeText = "Solución segura para <strong>contratar talentos en el extranjero</strong> con soporte integral",
+    customClass = ""
 } = Astro.props;
 
 const spainDefaultMentions: Mention[] = [
@@ -128,7 +130,7 @@ const isPrHome = Astro.url.pathname.includes('/pr') && !Astro.url.pathname.inclu
 
 <section class={`press-mentions ${isPrHome ? 'is-pr-home' : ''}`}>
     <div class="press-container">
-        <PressHeader title={title} />
+        <PressHeader title={title} class={customClass} />
 
         <div class="mentions-wrapper">
             {mentions.map((mention) => (

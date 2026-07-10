@@ -3,9 +3,10 @@ import "../../styles/press/press-header.css";
 
 interface Props {
     title: string;
+    class?: string;
 }
 
-const { title } = Astro.props;
+const { title, class: className } = Astro.props;
 ---
 
-<h2 class="press-subtitle">{title}</h2>
+<h2 class={`press-subtitle ${className || ''}`} set:html={title} />

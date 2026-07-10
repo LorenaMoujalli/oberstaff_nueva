@@ -13,7 +13,12 @@ interface Props {
 
 const { stars, text, author, role, avatar, videoId, imageAlt } = Astro.props;
 
-const isPrPage = Astro.url.pathname.includes('/pr/perfiles/') || Astro.url.pathname.includes('/pr/servicios/');
+const isPrPage = Astro.url.pathname.startsWith('/pr') || Astro.url.pathname.includes('/pr/');
+const isSpainPage = !isPrPage;
+
+const formattedText = isSpainPage 
+    ? text.replace(/Oberstaff\.?/gi, "<strong style='font-weight: 700;'>Oberstaff<span style='color: #FF66CC;'>.</span></strong>")
+    : text;
 ---
 
 <div class={`testimonial-card ${isPrPage ? 'is-pr-page' : ''}`}>
@@ -40,7 +45,7 @@ const isPrPage = Astro.url.pathname.includes('/pr/perfiles/') || Astro.url.pathn
 
     <!-- Cita -->
     <blockquote class="testimonial-text">
-        <span set:html={`"${text}"`}></span>
+        <span set:html={`"${formattedText}"`}></span>
         <cite style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;">{author}, {role}</cite>
     </blockquote>
 
