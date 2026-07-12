@@ -5,7 +5,7 @@ import "../../styles/faq/faq-section.css";
 const defaultFaqs = [
     {
         question: "¿Qué es <span style='color: #1B1B1B; font-weight: 800;'>Oberstaff</span><span style='color: #ff66cc; font-weight: 800;'>.</span>?",
-        answers: ["Oberstaff es una empresa que conecta empresas españolas con profesionales preparados de LATAM mediante modelos de trabajo remoto claros, estructurados y eficientes."]
+        answers: ["<strong>Oberstaff<span style='color: #ff66cc;'>.</span></strong> es una empresa que conecta empresas españolas con profesionales preparados de LATAM mediante modelos de trabajo remoto claros, estructurados y eficientes."]
     },
     {
         question: "¿Cuál es el propósito de <span style='color: #1B1B1B; font-weight: 800;'>Oberstaff</span><span style='color: #ff66cc; font-weight: 800;'>.</span>?", 
@@ -13,7 +13,7 @@ const defaultFaqs = [
     },
     {
         question: "¿Qué diferencia a <span style='color: #1B1B1B; font-weight: 800;'>Oberstaff</span><span style='color: #ff66cc; font-weight: 800;'>.</span>?",
-        answers: ["Su enfoque no se limita a conectar perfiles. Oberstaff acompaña el proceso con criterio, estructura y seguimiento para que la relación funcione mejor desde el inicio."]
+        answers: ["Su enfoque no se limita a conectar perfiles. <strong>Oberstaff<span style='color: #ff66cc;'>.</span></strong> acompaña el proceso con criterio, estructura y seguimiento para que la relación funcione mejor desde el inicio."]
     },
     {
         question: "¿Qué tipo de empresas pueden trabajar con <span style='color: #1B1B1B; font-weight: 800;'>Oberstaff</span><span style='color: #ff66cc; font-weight: 800;'>.</span>?",
@@ -174,7 +174,7 @@ const {
                 faqs.map((faq) => (
                     <FAQItem question={faq.question}>
                         {faq.answers &&
-                            faq.answers.map((answer) => <p>{answer}</p>)}
+                            faq.answers.map((answer) => <p set:html={answer} />)}
                     </FAQItem>
                 ))
             }

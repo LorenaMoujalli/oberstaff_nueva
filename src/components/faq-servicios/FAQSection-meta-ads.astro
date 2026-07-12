@@ -5,7 +5,7 @@ import "../../styles/faq/faq-section.css";
 const faqs = [
     {
         question: "¿A quién le pago la inversión publicitaria?",
-        answers: ["La inversión en anuncios se paga directamente a Meta desde la cuenta publicitaria de tu empresa. A Oberstaff le pagas el fee mensual del especialista y la gestión del modelo de contratación."]
+        answers: ["La inversión en anuncios se paga directamente a Meta desde la cuenta publicitaria de tu empresa. A <strong>Oberstaff<span style='color: #ff66cc;'>.</span></strong> le pagas el fee mensual del especialista y la gestión del modelo de contratación."]
     },
     {
         question: "¿Qué accesos necesita el especialista Facebook Ads?", 
@@ -31,7 +31,7 @@ const faqs = [
         question: "¿Qué pasa si mi cuenta publicitaria sufre un bloqueo o baneo?",
         answers: ["Nuestros expertos en Facebook Ads conocen las políticas comerciales de Meta y aplican buenas prácticas para minimizar riesgos. Si ocurre un bloqueo imprevisto por parte del algoritmo, el especialista se encargará de gestionar las apelaciones correspondientes con el soporte de Meta de forma proactiva."]
     },
-    
+     
 ]; 
 
 interface Props {
@@ -184,7 +184,7 @@ const {
                 faqs.map((faq) => (
                     <FAQItem question={faq.question}>
                         {faq.answers &&
-                            faq.answers.map((answer) => <p>{answer}</p>)}
+                            faq.answers.map((answer) => <p set:html={answer} />)}
                     </FAQItem>
                 ))
             }

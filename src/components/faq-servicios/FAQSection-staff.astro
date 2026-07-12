@@ -17,11 +17,11 @@ const faqs = [
     },
     {
         question: "¿El profesional trabaja bajo mi dirección?",
-        answers: ["Sí, 100%. Tú defines las tareas, el ritmo de trabajo, las herramientas y los criterios de calidad. Oberstaff gestiona la parte administrativa y contractual, pero la dirección técnica es tuya."]
+        answers: ["Sí, 100%. Tú defines las tareas, el ritmo de trabajo, las herramientas y los criterios de calidad. <strong>Oberstaff<span style='color: #ff66cc;'>.</span></strong> gestiona la parte administrativa y contractual, pero la dirección técnica es tuya."]
     },
     {
-        question: "¿Qué incluyen los servicios de nearshore staff augmentation con Oberstaff?",
-        answers: ["Incluyen la búsqueda, validación e incorporación de talento IT de LATAM a tu equipo. Oberstaff presenta perfiles alineados con tu necesidad y facilita la contratación para que tu empresa mantenga el control operativo del trabajo diario."]
+        question: "¿Qué incluyen los servicios de nearshore staff augmentation con <strong>Oberstaff<span style='color: #ff66cc;'>.</span></strong>?",
+        answers: ["Incluyen la búsqueda, validación e incorporación de talento IT de LATAM a tu equipo. <strong>Oberstaff<span style='color: #ff66cc;'>.</span></strong> presenta perfiles alineados con tu necesidad y facilita la contratación para que tu empresa mantenga el control operativo del trabajo diario."]
     }
 ]; 
 
@@ -83,7 +83,7 @@ const {
                         faqs.map((faq) => (
                             <FAQItem question={faq.question}>
                                 {faq.answers &&
-                                    faq.answers.map((answer) => <p>{answer}</p>)}
+                                    faq.answers.map((answer) => <p set:html={answer} />)}
                             </FAQItem>
                         ))
                     }

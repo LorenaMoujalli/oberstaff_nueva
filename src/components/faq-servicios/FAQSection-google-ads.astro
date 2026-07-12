@@ -4,7 +4,7 @@ import "../../styles/faq/faq-section.css";
 
 const faqs = [
     {
-        question: "¿Qué nivel de permisos necesitan los expertos Google Ads en mi cuenta?",
+        question: "¿Qué nivel de permisos necesitan los expertos en Google Ads en mi cuenta?",
         answers: ["Necesitarán acceso 'Estándar' o 'Administrador' a Google Ads, además de permisos en GA4 y Google Tag Manager para configurar conversiones. Nuestra infraestructura legal (NDA) garantiza que esta cesión de accesos sea completamente segura."]
     },
     {
@@ -16,8 +16,8 @@ const faqs = [
         answers: ["El algoritmo requiere una fase de aprendizaje. Sin embargo, si consideras que la estrategia técnica no es la adecuada, puedes cancelar la suscripción con 30 días de preaviso o solicitar un cambio de profesional."]
     },
     {
-        question: "¿A quién le pago el presupuesto de los anuncios, a Google o a Oberstaff?",
-        answers: ["La inversión publicitaria siempre se factura directamente a tu empresa por parte de Google Ads (mediante tu tarjeta o cuenta bancaria). A Oberstaff únicamente le abonas la cuota mensual fija por los honorarios del especialista SEM y la gestión laboral."]
+        question: "¿A quién le pago el presupuesto de los anuncios, a Google o a <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong>?",
+        answers: ["La inversión publicitaria siempre se factura directamente a tu empresa por parte de Google Ads (mediante tu tarjeta o cuenta bancaria). A <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong> únicamente le abonas la cuota mensual fija por los honorarios del especialista SEM y la gestión laboral."]
     },
     {
         question: "¿Existe riesgo de pagar impuestos o contingencias laborales por el experto Google Ads?",
@@ -176,7 +176,7 @@ const {
                 faqs.map((faq) => (
                     <FAQItem question={faq.question}>
                         {faq.answers &&
-                            faq.answers.map((answer) => <p>{answer}</p>)}
+                            faq.answers.map((answer) => <p set:html={answer} />)}
                     </FAQItem>
                 ))
             }

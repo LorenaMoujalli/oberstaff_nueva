@@ -9,7 +9,7 @@ const faqs = [
     },
     {
         question: "¿Qué te permite un contractor of record remote?",
-        answers: ["Puedes contratar profesionales remotos sin que tu compañía asuma el contrato ni las obligaciones legales, Oberstaff actúa como representante legal local."]
+        answers: ["Puedes contratar profesionales remotos sin que tu compañía asuma el contrato ni las obligaciones legales. <strong>Oberstaff<span style='color: #ff66cc;'>.</span></strong> actúa como representante legal local."]
     },
     {
         question: "¿Es lo mismo contract of record que contractor of record?",
@@ -21,7 +21,7 @@ const faqs = [
     },
     {
         question: "¿Qué pasa si el proyecto cambia de alcance o se alarga?",
-        answers: ["Oberstaff gestiona renovaciones, ampliaciones y cambios de alcance como parte del servicio. Sólo tienes que comunicarlo a tu gestor de cuenta y nosotros actualizamos el contrato con el contractor."]
+        answers: ["<strong>Oberstaff<span style='color: #ff66cc;'>.</span></strong> gestiona renovaciones, ampliaciones y cambios de alcance como parte del servicio. Solo tienes que comunicarlo a tu gestor de cuenta y nosotros actualizamos el contrato con el contractor."]
     },
     {
         question: "¿Cuánto tarda la activación?",
@@ -87,7 +87,7 @@ const {
                         faqs.map((faq) => (
                             <FAQItem question={faq.question}>
                                 {faq.answers &&
-                                    faq.answers.map((answer) => <p>{answer}</p>)}
+                                    faq.answers.map((answer) => <p set:html={answer} />)}
                             </FAQItem>
                         ))
                     }
