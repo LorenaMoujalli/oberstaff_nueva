@@ -78,7 +78,7 @@ const privacyPolicyUrl = isPrPage
         </div>
         <div class="form-group full-width">
             <label>{labels.company}</label>
-            <input type="text" placeholder={placeholders.company} />
+            <input type="text" placeholder={placeholders.company} required />
         </div>
         <div class="form-group half-width">
             <label>{labels.email}</label>
@@ -138,6 +138,7 @@ const privacyPolicyUrl = isPrPage
                     placeholder="Escribe el código"
                     autocomplete="off"
                     maxlength="8"
+                    required
                 />
                 <button type="button" id="captcha-refresh" class="captcha-refresh-btn" title="Nuevo código" aria-label="Generar nuevo código">
                     &#x21bb;

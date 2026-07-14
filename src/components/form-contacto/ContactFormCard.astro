@@ -13,7 +13,7 @@ const {
     title = "Cuéntanos qué necesita tu empresa",
     description = "Completa el formulario y un especialista de <strong style=\"font-weight: 800;\"><span style=\"color: #1B1B1B;\">Oberstaff</span><span style=\"color: #FF66CC;\">.</span></strong> te orientará sobre la estructura más conveniente. No necesitas tener todo definido: podemos ayudarte a aclarar el perfil, el nivel de seniority, el modelo y los próximos pasos.",
     buttonText = "Solicitar llamada gratuita →",
-    microcopy = "↳ Sin compromiso. Te contactaremos en menos de 24 horas para entender tu necesidad y explicarte los siguientes pasos.",
+    microcopy = "↳ Sin compromiso · te contactaremos en menos de 24 horas para entender tu necesidad y explicarte los siguientes pasos.",
     webhookUrl = ""
 } = Astro.props;
 
@@ -76,6 +76,7 @@ const privacyPolicyUrl = isPrPage
                     placeholder="Escribe el código"
                     autocomplete="off"
                     maxlength="8"
+                    required
                     style="font-family: 'Poppins', sans-serif; background-color: #FAFAFC; border: 1px solid #E0E0E0; padding: 10px 14px; border-radius: 8px; font-size: 15px; outline: none; transition: border-color 0.3s ease, box-shadow 0.3s ease; width: 200px; color: #1B1B1B; letter-spacing: 2px;"
                 />
                 <button type="button" id="captcha-refresh" class="captcha-refresh-btn" title="Nuevo código" aria-label="Generar nuevo código" style="background: none; border: 1.5px solid #6663FD; border-radius: 6px; color: #6663FD; font-size: 18px; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s, color 0.2s; padding: 0; flex-shrink: 0;">
