@@ -6,88 +6,163 @@ interface Props {
 	title?: string;
 	description?: string;
 	keywords?: string;
-    ogTitle?: string;
-    ogDescription?: string;
-    ogUrl?: string;
-    ogImage?: string;
-} 
+	ogTitle?: string;
+	ogDescription?: string;
+	ogUrl?: string;
+	ogImage?: string;
+}
 
-const { 
+const {
 	title = "",
 	description = "",
 	keywords = "",
-    ogTitle = title,
-    ogDescription = description,
-    ogUrl = Astro.url.href,
-    ogImage = "Contratar-Talento.webp"
+	ogTitle = title,
+	ogDescription = description,
+	ogUrl = Astro.url.href,
+	ogImage = "Contratar-Talento.webp",
 } = Astro.props;
 
-const canonicalOgImage = ogImage 
-  ? (ogImage.startsWith('http') ? ogImage : new URL(ogImage.startsWith('/') ? ogImage : `/${ogImage}`, Astro.url.origin).href)
-  : new URL('/Contratar-Talento.webp', Astro.url.origin).href;
+const canonicalOgImage = ogImage
+	? ogImage.startsWith("http")
+		? ogImage
+		: new URL(
+				ogImage.startsWith("/") ? ogImage : `/${ogImage}`,
+				Astro.url.origin,
+			).href
+	: new URL("/Contratar-Talento.webp", Astro.url.origin).href;
 ---
 
 <!doctype html>
 <html lang="es">
 	<head>
 		<!-- Google Tag Manager -->
-		<script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-		})(window,document,'script','dataLayer','GTM-MKTCXHCB');</script>
+		<script is:inline>
+			(function (w, d, s, l, i) {
+				w[l] = w[l] || [];
+				w[l].push({
+					"gtm.start": new Date().getTime(),
+					event: "gtm.js",
+				});
+				var f = d.getElementsByTagName(s)[0],
+					j = d.createElement(s),
+					dl = l != "dataLayer" ? "&l=" + l : "";
+				j.async = true;
+				j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+				f.parentNode.insertBefore(j, f);
+			})(window, document, "script", "dataLayer", "GTM-MKTCXHCB");
+		</script>
 		<!-- End Google Tag Manager -->
 		<!-- Geo-Redirección Unificada -->
 		<script is:inline>
-		(function() {
-			var path = window.location.pathname;
-			var isPR = (path === '/pr' || path.indexOf('/pr/') === 0);
+			(function () {
+				var path = window.location.pathname;
+				var isPR = path === "/pr" || path.indexOf("/pr/") === 0;
 
-			var AMERICAS = [
-				'AG','AI','AN','AR','AW','BB','BL','BM','BO','BQ','BR','BS','BZ',
-				'CA','CL','CO','CR','CU','CW','DM','DO','EC','FK','GD','GF','GL',
-				'GP','GT','GY','HN','HT','JM','KN','KY','LC','MF','MQ','MS','MX',
-				'NI','PA','PE','PM','PR','PY','SR','SV','SX','TC','TT','US','UY',
-				'VC','VE','VG','VI'
-			];
+				var AMERICAS = [
+					"AG",
+					"AI",
+					"AN",
+					"AR",
+					"AW",
+					"BB",
+					"BL",
+					"BM",
+					"BO",
+					"BQ",
+					"BR",
+					"BS",
+					"BZ",
+					"CA",
+					"CL",
+					"CO",
+					"CR",
+					"CU",
+					"CW",
+					"DM",
+					"DO",
+					"EC",
+					"FK",
+					"GD",
+					"GF",
+					"GL",
+					"GP",
+					"GT",
+					"GY",
+					"HN",
+					"HT",
+					"JM",
+					"KN",
+					"KY",
+					"LC",
+					"MF",
+					"MQ",
+					"MS",
+					"MX",
+					"NI",
+					"PA",
+					"PE",
+					"PM",
+					"PR",
+					"PY",
+					"SR",
+					"SV",
+					"SX",
+					"TC",
+					"TT",
+					"US",
+					"UY",
+					"VC",
+					"VE",
+					"VG",
+					"VI",
+				];
 
-			function handleCountry(country) {
-				var isAmerica = AMERICAS.indexOf(country) !== -1;
-				if (isAmerica && !isPR) {
-					var targetPath = path === '/' ? '/pr/' : '/pr' + path;
-					window.location.replace(targetPath);
-				} else if (!isAmerica && isPR) {
-					var targetPath = path === '/pr' ? '/' : '/' + path.substring(4);
-					window.location.replace(targetPath);
-				}
-			}
-
-			var cachedCountry = sessionStorage.getItem('geo_country');
-			if (cachedCountry) {
-				handleCountry(cachedCountry);
-				return;
-			}
-
-			var ctrl = typeof AbortController !== 'undefined' ? new AbortController() : null;
-			var tid = setTimeout(function() {
-				if (ctrl) ctrl.abort();
-			}, 2500);
-
-			fetch('https://www.cloudflare.com/cdn-cgi/trace', ctrl ? { signal: ctrl.signal } : {})
-				.then(function(r) { return r.text(); })
-				.then(function(text) {
-					clearTimeout(tid);
-					var m = text.match(/loc=([A-Z]{2})/);
-					if (m) {
-						var country = m[1];
-						sessionStorage.setItem('geo_country', country);
-						handleCountry(country);
+				function handleCountry(country) {
+					var isAmerica = AMERICAS.indexOf(country) !== -1;
+					if (isAmerica && !isPR) {
+						var targetPath = path === "/" ? "/pr/" : "/pr" + path;
+						window.location.replace(targetPath);
+					} else if (!isAmerica && isPR) {
+						var targetPath =
+							path === "/pr" ? "/" : "/" + path.substring(4);
+						window.location.replace(targetPath);
 					}
-				})
-				.catch(function() {
-					clearTimeout(tid);
-				});
-		})();
+				}
+
+				var cachedCountry = sessionStorage.getItem("geo_country");
+				if (cachedCountry) {
+					handleCountry(cachedCountry);
+					return;
+				}
+
+				var ctrl =
+					typeof AbortController !== "undefined"
+						? new AbortController()
+						: null;
+				var tid = setTimeout(function () {
+					if (ctrl) ctrl.abort();
+				}, 2500);
+
+				fetch(
+					"https://www.cloudflare.com/cdn-cgi/trace",
+					ctrl ? { signal: ctrl.signal } : {},
+				)
+					.then(function (r) {
+						return r.text();
+					})
+					.then(function (text) {
+						clearTimeout(tid);
+						var m = text.match(/loc=([A-Z]{2})/);
+						if (m) {
+							var country = m[1];
+							sessionStorage.setItem("geo_country", country);
+							handleCountry(country);
+						}
+					})
+					.catch(function () {
+						clearTimeout(tid);
+					});
+			})();
 		</script>
 		<!-- Fin Geo-Redirección -->
 
@@ -119,30 +194,57 @@ const canonicalOgImage = ogImage
 		<title>{title}</title>
 		<slot name="head" />
 		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16507199657"></script>
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=AW-16507199657"
+		></script>
 		<script is:inline>
 			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag("js", new Date());
 
-			gtag('config', 'AW-16507199657');
+			gtag("config", "AW-16507199657");
 		</script>
 		<!-- Meta Pixel Code -->
 		<script is:inline>
-			!function(f,b,e,v,n,t,s)
-			{if(f.fbq)return;n=f.fbq=f.fbq||function(){n.callMethod?
-			n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-			if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-			n.queue=[];t=b.createElement(e);t.async=!0;
-			t.src=v;s=b.getElementsByTagName(e)[0];
-			s.parentNode.insertBefore(t,s)}(window, document,'script',
-			'https://connect.facebook.net/en_US/fbevents.js');
-			fbq('init', '1399493591830432');
-			fbq('track', 'PageView');
+			!(function (f, b, e, v, n, t, s) {
+				if (f.fbq) return;
+				n = f.fbq =
+					f.fbq ||
+					function () {
+						n.callMethod
+							? n.callMethod.apply(n, arguments)
+							: n.queue.push(arguments);
+					};
+				if (!f._fbq) f._fbq = n;
+				n.push = n;
+				n.loaded = !0;
+				n.version = "2.0";
+				n.queue = [];
+				t = b.createElement(e);
+				t.async = !0;
+				t.src = v;
+				s = b.getElementsByTagName(e)[0];
+				s.parentNode.insertBefore(t, s);
+			})(
+				window,
+				document,
+				"script",
+				"https://connect.facebook.net/en_US/fbevents.js",
+			);
+			fbq("init", "1399493591830432");
+			fbq("track", "PageView");
 		</script>
-		<noscript><img height="1" width="1" style="display:none"
-			src="https://www.facebook.com/tr?id=1399493591830432&ev=PageView&noscript=1"
-		/></noscript>
+		<noscript
+			><img
+				height="1"
+				width="1"
+				style="display:none"
+				src="https://www.facebook.com/tr?id=1399493591830432&ev=PageView&noscript=1"
+			/></noscript
+		>
 		<!-- 1. Estilos del Chat de n8n
 		<link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
 		-->
@@ -150,8 +252,13 @@ const canonicalOgImage = ogImage
 	</head>
 	<body>
 		<!-- Google Tag Manager (noscript) -->
-		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MKTCXHCB"
-		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<noscript
+			><iframe
+				src="https://www.googletagmanager.com/ns.html?id=GTM-MKTCXHCB"
+				height="0"
+				width="0"
+				style="display:none;visibility:hidden"></iframe></noscript
+		>
 		<!-- End Google Tag Manager (noscript) -->
 		<div class="app-container">
 			<Header />
@@ -210,7 +317,7 @@ const canonicalOgImage = ogImage
 		--chat--color-primary-shade-50: #ff66cc !important;
 		--chat--header--background: #ff66cc !important;
 		--chat--header--color: #ffffff !important;
-		--chat--message--user--background: #6663FD !important;
+		--chat--message--user--background: #6663fd !important;
 		--chat--message--user--color: #ffffff !important;
 		--chat--toggle--background: #ff66cc !important;
 		--chat--toggle--hover--background: #ff66cc !important;
@@ -294,8 +401,8 @@ const canonicalOgImage = ogImage
 	#n8n-chat .chat-input-send-button svg,
 	#n8n-chat button[class*="send"] svg,
 	#n8n-chat button[class*="send"] svg path {
-		fill: #6663FD !important;
-		stroke: #6663FD !important;
+		fill: #6663fd !important;
+		stroke: #6663fd !important;
 	}
 
 	#n8n-chat .chat-input-send-button:hover,
@@ -319,7 +426,6 @@ const canonicalOgImage = ogImage
 		background: #ff66cc !important;
 		transform: scale(1.08) !important;
 	}
-
 
 	* {
 		box-sizing: border-box;
@@ -381,7 +487,9 @@ const canonicalOgImage = ogImage
 	.fade-in-section {
 		opacity: 0;
 		transform: translateY(40px);
-		transition: opacity 1s ease-out, transform 1s ease-out;
+		transition:
+			opacity 1s ease-out,
+			transform 1s ease-out;
 		will-change: opacity, transform;
 	}
 
