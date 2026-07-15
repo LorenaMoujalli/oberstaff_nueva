@@ -29,18 +29,23 @@ RUN npm run build
 FROM node:20-slim AS runtime
 WORKDIR /app
 
-# Instalar wget para el healthcheck
-RUN apt-get update && apt-get install -y wget && rm -rf /var/lib/apt/lists/*
+# Instalar Nginx y wget para el healthcheck
+RUN apt-get update && apt-get install -y nginx wget && rm -rf /var/lib/apt/lists/*
 
-# Copiar dependencias construidas y distribución de Astro
+# Copiar configuración personalizada de Nginx
+COPY nginx.conf /etc/nginx/sites-enabled/default
+
+# Copiar los archivos estáticos construidos a la ruta que sirve Nginx
+COPY --from=build /app/dist /usr/share/nginx/html
+
+# Copiar dependencias de Node, script de base de datos y script de inicio
 COPY --from=build /app/node_modules ./node_modules
 COPY --from=build /app/package*.json ./
-COPY --from=build /app/dist ./dist
+COPY server.js ./
+COPY start.sh ./
 
-# Variables de entorno para ejecutar Astro en Node
-ENV HOST=0.0.0.0
-ENV PORT=80
-ENV NODE_ENV=production
+# Dar permisos de ejecución al script de inicio
+RUN chmod +x start.sh
 
 EXPOSE 80
-CMD ["node", "./dist/server/entry.mjs"] 
+CMD ["./start.sh"]
