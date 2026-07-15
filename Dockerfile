@@ -13,6 +13,13 @@ RUN npm config set fetch-retries 5 && \
     npm config set fetch-retry-maxtimeout 120000 && \
     npm config set maxsockets 10
 
+# NUEVO: Instalar Python y compiladores necesarios para compilar better-sqlite3
+RUN apt-get update && apt-get install -y \
+    python3 \
+    make \
+    g++ \
+    && rm -rf /var/lib/apt/lists/*
+
 RUN npm ci
 
 COPY . .
@@ -36,4 +43,4 @@ ENV PORT=80
 ENV NODE_ENV=production
 
 EXPOSE 80
-CMD ["node", "./dist/server/entry.mjs"]
+CMD ["node", "./dist/server/entry.mjs"] 
