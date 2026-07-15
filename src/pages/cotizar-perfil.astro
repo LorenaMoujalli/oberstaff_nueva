@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oberstaff - Contratación de Talento LATAM</title>
+
+  <!-- ================= ESTILOS CSS ================= -->
+  <style>
+    /* ================= IMPORTACIÓN DE FUENTES ================= */
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Poppins:wght@400;500;600;700&display=swap');
+
+    /* ================= VARIABLES BASE ================= */
+    :root {
+      --bg-porcelain: #FEFFFA;
+      --bg-alternate: #FAFAFC;
+      --bg-white: #FFFFFF;
+      --text-dark: #1B1B1B;
+      --text-gray: #5A5A5A;
+      
+      --brand-pink: #FF66CC;   
+      --brand-purple: #6663FD; 
+      --brand-green: #66FF99;  
+      --brand-yellow: #CCFF66; 
+      
+      --font-heading: 'Montserrat', sans-serif;
+      --font-body: 'Poppins', sans-serif;
+    }
+
+    /* ================= RESET Y GLOBALES ================= */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); background-color: var(--bg-porcelain); color: var(--text-dark); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+    /* Utilidades de fondo */
+    .bg-porcelain { background-color: var(--bg-porcelain); }
+    .bg-alternate { background-color: var(--bg-alternate); }
+    .bg-white { background-color: var(--bg-white); }
+    .bg-dark-hero { background-color: #25262B; }
+    .text-white { color: #FFFFFF !important; }
+
+    /* ================= BLINDAJE DE MARCA ================= */
+    .brand-oberstaff { font-family: var(--font-heading) !important; font-weight: 900 !important; color: var(--text-dark) !important; }
+
+    /* Aquí añadimos .guarantee-section para que también se pinte de blanco */
+    .bg-dark-hero .brand-oberstaff, 
+    .guarantee-section .brand-oberstaff { 
+      color: #FFFFFF !important; 
+    }
+
+    .brand-dot { color: var(--brand-pink) !important; }
+
+    /* ================= TIPOGRAFÍA ================= */
+    .visual-h1-large { font-family: var(--font-heading); font-size: 46px; font-weight: 900; line-height: 1.15; margin-bottom: 20px; letter-spacing: -1px; }
+    .visual-section-title { font-family: var(--font-heading); font-size: 36px; font-weight: 800; color: var(--text-dark); line-height: 1.3; letter-spacing: -0.5px; }
+    .visual-section-title.text-left { text-align: left; }
+    .visual-h3-card-title { font-family: var(--font-heading); font-size: 20px; font-weight: 700; color: var(--text-dark); margin-bottom: 12px; }
+    .editorial-p { font-size: 16px; color: var(--text-gray); line-height: 1.7; margin-bottom: 15px; }
+
+    .seo-kicker { font-family: var(--font-heading); font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 20px; font-size: 14px; display: block; }
+    .text-gradient-pink { background: linear-gradient(90deg, var(--brand-pink), #FA3AB5); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 900; }
+
+    /* ================= BOTONES ================= */
+    .rounded-pill { display: inline-flex; align-items: center; justify-content: center; padding: 16px 32px; border-radius: 50px; font-weight: 700; transition: all 0.3s ease; cursor: pointer; border: none; font-size: 16px; width: 100%; font-family: var(--font-body); }
+    .btn-pink, .btn-primary { background-color: var(--brand-pink); color: #FFFFFF; border: 2px solid var(--brand-pink); }
+    .btn-pink:hover, .btn-primary:hover { background-color: transparent; color: var(--brand-pink); box-shadow: 0 5px 15px rgba(255, 102, 204, 0.3); }
+
+    /* ================= HERO & SPLIT LAYOUT ================= */
+    .hero-profile-container { display: flex; align-items: center; gap: 60px; position: relative; z-index: 2; }
+    .hero-profile-text { flex: 1.2; }
+    .hero-subtitle { font-size: 18px; margin-bottom: 30px; }
+    .hero-trust-bullets { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
+    .bullet-item { display: flex; align-items: center; gap: 10px; color: #FFFFFF; font-weight: 500; font-size: 15px; }
+    .bullet-item .check { color: var(--brand-green); font-weight: 900; }
+
+    .blur-glow { position: absolute; filter: blur(100px); opacity: 0.65; z-index: 1; border-radius: 50%; pointer-events: none; }
+    .pink-glow { top: -20%; left: -10%; width: 600px; height: 600px; background: linear-gradient(135deg, var(--brand-pink) 0%, rgba(255, 102, 204, 0.4) 100%); } 
+    .purple-glow { top: 10%; right: -15%; width: 500px; height: 700px; background: linear-gradient(135deg, var(--brand-purple) 0%, rgba(102, 99, 253, 0.4) 100%); }
+
+    .split-header-row { display: flex; align-items: center; gap: 60px; margin-bottom: 60px; }
+    .split-header-text { flex: 1.2; }
+    .split-header-visual { flex: 0.8; display: flex; justify-content: center; }
+
+    /* ================= FORMULARIOS MODERNOS ================= */
+    .hero-profile-form, .cta-form-side { flex: 0.8; }
+    .form-card { background: #FFFFFF; border-radius: 20px; padding: 40px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
+    .form-title { font-family: var(--font-heading); font-size: 22px; color: var(--text-dark); margin-bottom: 10px; text-align: center;}
+    .form-group { margin-bottom: 15px; }
+    .form-group input, .form-select { width: 100%; padding: 14px 18px; border: 1px solid #E0E0E0; border-radius: 8px; font-family: var(--font-body); font-size: 14px; background: #FAFAFC; outline: none; transition: all 0.3s; color: var(--text-dark); }
+    .form-group input:focus, .form-select:focus { border-color: var(--brand-purple); background: #FFFFFF; box-shadow: 0 0 0 4px rgba(102, 99, 253, 0.1); }
+    .rgpd-label { display: flex; gap: 8px; align-items: flex-start; font-size: 12px; color: var(--text-gray); margin-bottom: 15px; cursor: pointer; }
+    .rgpd-label input { margin-top: 3px; width: auto !important; }
+    .rgpd-label a { color: var(--brand-pink); font-weight: 600; }
+    .error-msg { display: none; font-size: 12px; color: #FF4D4D; margin-top: 4px; font-weight: 500; }
+    .campo.invalido input, .campo.invalido select { border-color: #FF4D4D; background: rgba(255, 77, 77, 0.05); }
+    .campo.invalido .error-msg { display: block; }
+    .micro-cta { display: block; text-align: center; font-size: 12px; color: var(--text-gray); margin-top: 10px; font-weight: 500; }
+    .form-desc {
+        text-align: center;
+        padding-bottom: 10px;
+
+    }
+
+    /* ================= TABLA SAAS ================= */
+    .table-responsive { width: 100%; overflow-x: auto; background: #FFFFFF; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.03); border: 1px solid rgba(0,0,0,0.05); }
+    .saas-comparison-table { width: 100%; min-width: 800px; border-collapse: separate; border-spacing: 0; text-align: left; }
+    .saas-comparison-table th, .saas-comparison-table td { padding: 20px 25px; border-bottom: 1px solid rgba(0,0,0,0.05); font-size: 14px; }
+    .saas-comparison-table th { font-family: var(--font-heading); font-size: 16px; color: var(--text-dark); background: #FAFAFC; }
+    .saas-comparison-table thead th:first-child { border-top-left-radius: 19px; }
+    .saas-comparison-table thead th:last-child { border-top-right-radius: 19px; }
+    .saas-comparison-table tbody tr:last-child td:first-child { border-bottom-left-radius: 19px; }
+    .saas-comparison-table tbody tr:last-child td:last-child { border-bottom-right-radius: 19px; }
+    .feature-col { font-weight: 600; color: var(--text-dark); width: 30%; background: #FAFAFC; }
+    .oberstaff-col { background-color: rgba(102, 99, 253, 0.03); border-left: 2px solid var(--brand-purple); border-right: 2px solid var(--brand-purple); font-weight: 600; color: var(--text-dark); }
+    .saas-comparison-table thead th.oberstaff-col { background-color: rgba(102, 99, 253, 0.08); border-top: 2px solid var(--brand-purple); }
+    .saas-comparison-table tbody tr:last-child .oberstaff-col { border-bottom: 2px solid var(--brand-purple); }
+    .check { color: var(--brand-green); font-weight: 900; margin-right: 5px; }
+    .cross { color: #FF4D4D; font-weight: 900; margin-right: 5px; }
+    .warn { color: #FFA500; font-weight: 900; margin-right: 5px; }
+
+    /* ================= CHIPS & LISTAS ================= */
+    .editorial-checklist { list-style: none; display: flex; flex-direction: column; gap: 15px; }
+    .editorial-checklist li { display: flex; align-items: flex-start; gap: 15px; }
+    .profiles-chips-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 15px; }
+    .chip-btn { background: #FFFFFF; border: 1.5px solid rgba(0,0,0,0.1); border-radius: 12px; padding: 16px; font-family: var(--font-body); font-weight: 600; font-size: 14px; color: var(--text-dark); cursor: pointer; transition: all 0.3s; text-align: center; }
+    .chip-btn:hover { border-color: var(--brand-pink); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(255, 102, 204, 0.1); color: var(--brand-pink); }
+
+    /* ================= PASOS Y MÉTRICAS ================= */
+    .steps-3-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+    .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; text-align: center; margin-top: 60px; }
+    .guarantee-box { background: linear-gradient(140deg, #1B1B1B, #25262B); border-radius: 24px; padding: 60px; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 50px; align-items: center; box-shadow: 0 30px 60px rgba(0,0,0,0.15); }
+
+    /* ================= GARANTÍA ================= */
+    .guarantee-item { background: rgba(255,255,255,0.1); padding: 15px 20px; border-radius: 12px; color: #FFFFFF; font-weight: 600; font-size: 15px; border: 1px solid rgba(255,255,255,0.1); }
+
+    /* ================= TESTIMONIOS ================= */
+    .testimonials-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
+    .testimonial-card { background: #FFFFFF; border: 1px solid rgba(0,0,0,0.06); border-radius: 16px; padding: 35px 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.02); }
+    .stars { color: #FFC107; font-size: 16px; letter-spacing: 2px; margin-bottom: 5px; }
+    .testimonial-quote { font-size: 15px; color: var(--text-dark); font-style: italic; margin-top: 15px; }
+
+    /* ================= FAQ ================= */
+    .faq-container { display: flex; align-items: flex-start; gap: 60px; }
+    .faq-sticky-side { flex: 0 0 35%; position: sticky; top: 40px; }
+    .faq-accordion-side { flex: 1; display: flex; flex-direction: column; gap: 15px; }
+    .faq-item { background: #FFFFFF; border: 1px solid rgba(0,0,0,0.05); border-radius: 12px; overflow: hidden; transition: all 0.3s; }
+    .faq-question { padding: 25px 30px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+    .faq-title { font-size: 16px; font-weight: 600; margin: 0; }
+    .faq-icon { font-size: 24px; color: var(--brand-purple); font-weight: 300; transition: transform 0.3s; }
+    .faq-answer-wrapper { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.3s; }
+    .faq-answer { overflow: hidden; }
+    .faq-answer p { padding: 0 30px 25px 30px; font-size: 14px; color: var(--text-gray); }
+    .faq-item.active { border-color: var(--brand-purple); box-shadow: 0 5px 20px rgba(102, 99, 253, 0.08); }
+    .faq-item.active .faq-answer-wrapper { grid-template-rows: 1fr; }
+    .faq-item.active .faq-icon { transform: rotate(45deg); color: var(--brand-pink); }
+
+    /* ================= RESPONSIVE ================= */
+    @media (max-width: 992px) {
+      .hero-profile-container, .split-header-row, .faq-container, .cta-form-container { flex-direction: column; text-align: center; gap: 40px; }
+      .visual-section-title.text-left, .editorial-checklist li { text-align: center; justify-content: center; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: 1fr; gap: 40px; }
+      .guarantee-section > div > div { grid-template-columns: 1fr !important; display: flex; flex-direction: column; }
+      .faq-sticky-side { position: relative; top: 0; }
+    }
+    
+    /* ================= ESPACIADO GLOBAL DE SECCIONES ================= */
+    section {
+      padding: 100px 0;
+    }
+
+    /* Reducimos un poco el espaciado en pantallas más pequeñas para móviles/tablets */
+    @media (max-width: 992px) {
+      .hero-profile-container, .split-header-row, .faq-container, .cta-form-container { flex-direction: column; text-align: center; gap: 40px; }
+      .visual-section-title.text-left, .editorial-checklist li { text-align: center; justify-content: center; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: 1fr; gap: 40px; }
+      .guarantee-section > div > div { grid-template-columns: 1fr !important; display: flex; flex-direction: column; }
+      .faq-sticky-side { position: relative; top: 0; }
+      .guarantee-box { grid-template-columns: 1fr; padding: 40px 20px; gap: 30px; }
+      section {
+        padding: 70px 0;
+      }
+    }
+    @media (max-width: 768px) {
+      .visual-h1-large { font-size: 32px !important; }
+      .visual-section-title { font-size: 26px !important; }
+      .form-card { padding: 25px 20px !important; }
+      .hero-subtitle { font-size: 16px !important; }
+      .bullet-item { font-size: 14px !important; text-align: left; }
+      .bullet-item p { text-align: left; }
+      .hero-profile-section { padding: 60px 0 80px !important; }
+      .steps-3-grid { grid-template-columns: 1fr; gap: 20px; }
+      .trust-bar-simple .container { flex-direction: column; gap: 15px; }
+    }
+    @media (max-width: 576px) {
+      .captcha-input-row { flex-wrap: wrap; }
+      .captcha-input { width: 100% !important; max-width: none !important; }
+      .captcha-canvas { width: 100% !important; max-width: 200px; }
+    }
+    :global(.iti) { display: block !important; width: 100% !important; }
+  </style>
+  <!-- intl-tel-input library -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.10/build/css/intlTelInput.css" />
+  <script is:inline src="https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.10/build/js/intlTelInput.min.js"></script>
+</head>
+<body>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section class="hero-profile-section bg-dark-hero" style="background: linear-gradient(to right, rgba(27, 27, 27, 0.95) 40%, rgba(27, 27, 27, 0.6) 100%), url('/hero-cotizar-perfil.webp') center/cover no-repeat; position: relative; padding: 100px 0 120px; overflow: hidden;">
+    <div class="blur-glow pink-glow"></div>
+    <div class="blur-glow purple-glow"></div>
+
+    <div class="container hero-profile-container">
+      <div class="hero-profile-text">
+        <span class="seo-kicker text-gradient-pink">Contratación Remota para España</span>
+        <h1 class="visual-h1-large text-white">Ahorra hasta un <span class="text-gradient-pink">70% en costes de personal</span> contratando talento LATAM desde 820 €/mes</h1>
+        
+        <p class="hero-subtitle text-white" style="opacity: 0.9;">
+          Profesionales evaluados, en tu misma franja horaria que España, con garantía legal y una única factura mensual. Sin permanencia.
+        </p>
+        
+        <div class="hero-trust-bullets">
+          <div class="bullet-item"><span class="check">✓</span> <p><strong>Incorporación en menos de 30 días</strong></p></div>
+          <div class="bullet-item"><span class="check">✓</span> <p><strong>Talento validado con pruebas técnicas y entrevista previa</strong></p></div>
+          <div class="bullet-item"><span class="check">✓</span> <p><strong><span class="brand-oberstaff">Oberstaff<span class="brand-dot">.</span></span> asume toda la gestión laboral y legal</strong></p></div>
+          <div class="bullet-item"><span class="check">✓</span> <p><strong>Más de 500 empresas ya confían en nosotros</strong></p></div>
+        </div>
+      </div>
+
+      <!-- Zona de captación inicial -->
+      <div class="hero-profile-form" id="cotizar-hero">
+        <div class="form-card">
+          <h3 class="form-title">Cotiza tu perfil sin compromiso</h3>
+          <p class="form-desc" style="font-size: 13px;">1 minuto. Recibe tu propuesta de ahorro en menos de 24 horas.</p>
+          <form class="modern-form form-lead" action="#" method="POST">
+            <div class="honeypot" aria-hidden="true" style="display:none;"><input type="text" name="empresa_web" tabindex="-1" autocomplete="off"></div>
+            
+            <div class="form-group light-mode campo">
+              <input type="text" name="nombre" required placeholder="Nombre y apellido *">
+            </div>
+            <div class="form-group light-mode campo">
+              <input type="email" name="email" required placeholder="Email corporativo *">
+            </div>
+            <div class="form-group light-mode campo">
+              <input type="tel" name="telefono" required placeholder="Teléfono *" data-phone="true" style="width: 100%; box-sizing: border-box;" oninput="this.value = this.value.replace(/[^0-9 ]/g, '')">
+            </div>
+            <div class="form-group light-mode campo">
+              <select name="perfil" required class="form-select">
+                <option value="" selected disabled>¿Qué perfil necesitas? *</option>
+                <option>Community Manager</option>
+                <option>Copywriter</option>
+                <option>Editor de Vídeo</option>
+                <option>Diseñador Gráfico</option>
+                <option>Especialista SEO</option>
+                <option>Especialista Meta Ads</option>
+                <option>Especialista Google Ads</option>
+                <option>Asistente Virtual</option>
+                <option>Contable</option>
+                <option>Closer de Ventas</option>
+                <option>Desarrollador</option>
+                <option>Otro perfil</option>
+              </select>
+            </div>
+            <div class="form-group light-mode campo">
+              <select name="tamano" required class="form-select">
+                <option value="" selected disabled>Tamaño de tu empresa *</option>
+                <option>1–10 empleados</option>
+                <option>11–50 empleados</option>
+                <option>51–200 empleados</option>
+                <option>Más de 200 empleados</option>
+              </select>
+            </div>
+            <div class="form-group campo">
+              <label class="rgpd-label">
+                <input type="checkbox" name="rgpd" required>
+                <span>Acepto la <a href="/politica-de-privacidad-y-cookies-de-oberstaff" target="_blank">política de privacidad</a>.</span>
+              </label>
+            </div>
+            
+            <!-- CAPTCHA Verification -->
+            <div class="form-group captcha-group campo" style="margin-bottom: 20px; text-align: left;">
+                <label class="captcha-label" style="font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 600; color: #1B1B1B; display: block; margin-bottom: 4px;">Código de verificación <span class="required-star" style="color: #ef4444; font-weight: 700; margin-left: 2px;">*</span></label>
+                <p class="captcha-hint" style="font-family: 'Poppins', sans-serif; font-size: 12px; color: #888; margin: 0 0 8px 0;">Ingresa el texto que ves en la imagen</p>
+                <div class="captcha-input-row" style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
+                    <input
+                        type="text"
+                        class="captcha-input"
+                        placeholder="Escribe el código"
+                        autocomplete="off"
+                        maxlength="8"
+                        required
+                        style="font-family: 'Poppins', sans-serif; background-color: #FAFAFC; border: 1px solid #E0E0E0; padding: 10px 14px; border-radius: 8px; font-size: 15px; outline: none; transition: border-color 0.3s ease, box-shadow 0.3s ease; width: 200px; color: #1B1B1B; letter-spacing: 2px;"
+                    />
+                    <button type="button" class="captcha-refresh-btn" title="Nuevo código" aria-label="Generar nuevo código" style="background: none; border: 1.5px solid #6663FD; border-radius: 6px; color: #6663FD; font-size: 18px; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s, color 0.2s; padding: 0; flex-shrink: 0;">
+                        &#x21bb;
+                    </button>
+                </div>
+                <canvas class="captcha-canvas" width="200" height="60" aria-label="Código de verificación visual" style="display: block; border-radius: 8px; border: 1px solid #ddd; background: #f4f4f8; user-select: none; pointer-events: none;"></canvas>
+            </div>
+
+            <button type="submit" class="btn-pink rounded-pill btn-submit">Cotizar perfil</button>
+            <span class="micro-cta">Gratis · Sin permanencia · Respuesta en &lt;24 h</span>
+          </form>
+          <div class="form-exito" style="display: none; text-align: center;">
+            <div class="check-icon" style="font-size: 40px; color: #1F9E4B; text-align: center;">✓</div>
+            <h4 style="font-family: var(--font-heading); font-size: 20px; color: var(--text-dark); margin: 10px 0;">¡Solicitud recibida!</h4>
+            <p style="color: var(--text-gray); font-size: 14px;">Un especialista te contactará en menos de 24 horas con tu propuesta de ahorro personalizada.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= BARRA DE CONFIANZA ================= -->
+  <div class="trust-bar-simple bg-white" style="padding: 30px 0; border-bottom: 1px solid rgba(0,0,0,0.05);">
+    <div class="container" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; text-align: center;">
+      <div style="flex: 1; font-weight: 700; color: var(--text-dark); font-size: 15px;">🏢 +500 empresas confían en nosotros</div>
+      <div style="flex: 1; font-weight: 700; color: var(--text-dark); font-size: 15px;">🛡️ Contratación 100% legal</div>
+      <div style="flex: 1; font-weight: 700; color: var(--text-dark); font-size: 15px;">🕐 Misma franja horaria que España</div>
+      <div style="flex: 1; font-weight: 700; color: var(--text-dark); font-size: 15px;">📅 Sin permanencia ni costes ocultos</div>
+    </div>
+  </div>
+
+  <!-- ================= COMPARATIVA DE COSTES ================= -->
+  <section class="comparison-table-section bg-alternate">
+    <div class="container">
+      <div class="comparison-header" style="text-align: center; margin-bottom: 50px;">
+        <h2 class="visual-section-title">¿Cuánto te cuesta hoy cada contratación en España?</h2>
+        <p class="editorial-p" style="max-width: 800px; margin: 15px auto 0;">Mismo perfil, mismo horario, misma calidad. La diferencia está en el coste.</p>
+      </div>
+
+      <div class="table-responsive">
+        <table class="saas-comparison-table">
+          <thead>
+            <tr>
+              <th class="feature-col">Concepto</th>
+              <th>Contratación local en España</th>
+              <th class="oberstaff-col">Con <span class="brand-oberstaff">Oberstaff<span class="brand-dot">.</span></span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="feature-col">Coste mensual del puesto</td>
+              <td><span class="cross">✕</span> 2.400 – 3.200 € (salario + Seguridad Social)*</td>
+              <td class="oberstaff-col"><span class="check">✓</span> Desde 820 €/mes, todo incluido</td>
+            </tr>
+            <tr>
+              <td class="feature-col">Gestión laboral y legal</td>
+              <td><span class="warn">⚠</span> Gestoría, contratos, riesgos laborales</td>
+              <td class="oberstaff-col"><span class="check">✓</span> Incluida, con garantía legal</td>
+            </tr>
+            <tr>
+              <td class="feature-col">Tiempo de incorporación</td>
+              <td><span class="cross">✕</span> 4 – 8 semanas</td>
+              <td class="oberstaff-col"><span class="check">✓</span> Menos de 30 días, talento ya evaluado</td>
+            </tr>
+            <tr>
+              <td class="feature-col">Compromiso</td>
+              <td><span class="warn">⚠</span> Indemnizaciones y permanencia</td>
+              <td class="oberstaff-col"><span class="check">✓</span> Sin permanencia, cancela cuando quieras</td>
+            </tr>
+            <tr>
+              <td class="feature-col">Facturación</td>
+              <td><span class="warn">⚠</span> Nóminas + seguros + gestoría</td>
+              <td class="oberstaff-col"><span class="check">✓</span> Una única factura mensual en euros</td>
+            </tr>
+            <tr style="background: rgba(102, 99, 253, 0.05);">
+              <td class="feature-col" style="font-weight: 800;">Ahorro anual estimado</td>
+              <td style="font-weight: 800;">—</td>
+              <td class="oberstaff-col" style="font-weight: 900; color: var(--brand-pink); font-size: 18px;">Hasta un 70% de ahorro</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="text-align: center; font-size: 13px; color: var(--text-gray); margin-top: 20px;">*Coste medio estimado de empresa para perfiles cualificados de marketing y operaciones en España.</p>
+    </div>
+  </section>
+
+  <!-- ================= DOLOR -> SOLUCIÓN (SPLIT LAYOUT) ================= -->
+  <section class="advantages-section bg-porcelain">
+    <div class="container">
+      <div class="split-header-row">
+        <div class="split-header-text">
+          <h2 class="visual-section-title text-left">Sabemos por qué no has contratado todavía</h2>
+          <p class="editorial-p">Y por eso más de 500 empresas españolas resolvieron estas tres fricciones con <span class="brand-oberstaff">Oberstaff<span class="brand-dot">.</span></span></p>
+          
+          <ul class="editorial-checklist" style="margin-top: 30px;">
+            <li>
+              <span class="icon" style="font-size: 24px;">💸</span> 
+              <div>
+                <p style="color: var(--text-dark); font-weight: 700; margin-bottom: 4px;">«Contratar en España se ha vuelto inasumible»</p>
+                <p style="font-size: 14px;">Accede al mismo talento por hasta un 70% menos, con contratación legal certificada y sin gastos de estructura.</p>
+              </div>
+            </li>
+            <li style="margin-top: 20px;">
+              <span class="icon" style="font-size: 24px;">👻</span> 
+              <div>
+                <p style="color: var(--text-dark); font-weight: 700; margin-bottom: 4px;">«Los freelance desaparecen y las agencias no se implican»</p>
+                <p style="font-size: 14px;">Profesionales dedicados a tu empresa, en tu horario, con seguimiento continuo de nuestro equipo.</p>
+              </div>
+            </li>
+            <li style="margin-top: 20px;">
+              <span class="icon" style="font-size: 24px;">⚖️</span> 
+              <div>
+                <p style="color: var(--text-dark); font-weight: 700; margin-bottom: 4px;">«Me preocupa la parte legal de contratar fuera»</p>
+                <p style="font-size: 14px;"><span class="brand-oberstaff">Oberstaff<span class="brand-dot">.</span></span> asume toda la estructura legal y laboral. Tú solo recibes una factura mensual en euros.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="split-header-visual">
+          <img src="/img2-cotizar-perfil.webp" alt="Profesional enfocada trabajando" style="width: 100%; height: auto; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.15); border: 1px solid rgba(0,0,0,0.05); object-fit: cover;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PASOS ================= -->
+  <section class="process-section bg-white" style="padding: 100px 0;">
+    <div class="container">
+      <div class="process-header" style="text-align: center; margin-bottom: 60px;">
+        <h2 class="visual-section-title">Empieza a ahorrar en 3 pasos</h2>
+        <p class="editorial-p" style="max-width: 600px; margin: 15px auto 0;">Un equipo dedicado gestiona todo el proceso por ti, de principio a fin.</p>
+      </div>
+
+      <div class="steps-3-grid">
+        <div class="step-card" style="text-align: center; padding: 40px 30px; background: #FAFAFC; border-radius: 20px; border: 1px solid rgba(0,0,0,0.05);">
+          <div class="step-number" style="width: 50px; height: 50px; background: var(--brand-pink); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-size: 20px; font-weight: 800; margin: 0 auto 20px;">1</div>
+          <h3 class="visual-h3-card-title">Cotiza tu perfil</h3>
+          <p class="editorial-p" style="font-size: 14px;">Cuéntanos qué perfil necesitas. En menos de 24 horas recibes tu propuesta de ahorro personalizada.</p>
+          <span style="display: inline-block; margin-top: 15px; background: rgba(255, 102, 204, 0.1); color: var(--brand-pink); font-size: 12px; font-weight: 700; padding: 6px 14px; border-radius: 50px;">Gratis · Sin compromiso</span>
+        </div>
+        <div class="step-card" style="text-align: center; padding: 40px 30px; background: #FAFAFC; border-radius: 20px; border: 1px solid rgba(0,0,0,0.05);">
+          <div class="step-number" style="width: 50px; height: 50px; background: var(--brand-purple); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-size: 20px; font-weight: 800; margin: 0 auto 20px;">2</div>
+          <h3 class="visual-h3-card-title">Recibe candidatos evaluados</h3>
+          <p class="editorial-p" style="font-size: 14px;">Preseleccionamos talento con pruebas psicométricas, técnicas y entrevista previa. Tú decides con quién trabajar.</p>
+          <span style="display: inline-block; margin-top: 15px; background: rgba(102, 99, 253, 0.1); color: var(--brand-purple); font-size: 12px; font-weight: 700; padding: 6px 14px; border-radius: 50px;">Sin permanencia</span>
+        </div>
+        <div class="step-card" style="text-align: center; padding: 40px 30px; background: #FAFAFC; border-radius: 20px; border: 1px solid rgba(0,0,0,0.05);">
+          <div class="step-number" style="width: 50px; height: 50px; background: var(--brand-green); color: var(--text-dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-size: 20px; font-weight: 800; margin: 0 auto 20px;">3</div>
+          <h3 class="visual-h3-card-title">Incorpora y ahorra</h3>
+          <p class="editorial-p" style="font-size: 14px;">Tu nuevo profesional se integra en tu misma zona horaria. Nosotros gestionamos contratos, pagos y cumplimiento.</p>
+          <span style="display: inline-block; margin-top: 15px; background: rgba(102, 255, 153, 0.2); color: #1F9E4B; font-size: 12px; font-weight: 700; padding: 6px 14px; border-radius: 50px;">En &lt;30 días</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PERFILES (CHIPS) ================= -->
+  <section class="profiles-types-section bg-alternate" style="padding: 80px 0;">
+    <div class="container">
+      <div class="profiles-header" style="text-align: center; margin-bottom: 50px;">
+        <h2 class="visual-section-title">Perfiles disponibles listos para incorporar</h2>
+        <p class="editorial-p">Selecciona el perfil que necesitas y cotízalo en un minuto.</p>
+      </div>
+
+      <div class="profiles-chips-grid">
+        <button class="chip-btn" data-perfil="Community Manager">📱 Community Manager</button>
+        <button class="chip-btn" data-perfil="Copywriter">✍️ Copywriter</button>
+        <button class="chip-btn" data-perfil="Editor de Vídeo">🎬 Editor de Vídeo</button>
+        <button class="chip-btn" data-perfil="Diseñador Gráfico">🎨 Diseñador Gráfico</button>
+        <button class="chip-btn" data-perfil="Especialista SEO">🔍 Especialista SEO</button>
+        <button class="chip-btn" data-perfil="Especialista Meta Ads">📣 Especialista Meta Ads</button>
+        <button class="chip-btn" data-perfil="Especialista Google Ads">📈 Especialista Google Ads</button>
+        <button class="chip-btn" data-perfil="Asistente Virtual">🗂️ Asistente Virtual</button>
+        <button class="chip-btn" data-perfil="Contable">🧮 Contable</button>
+        <button class="chip-btn" data-perfil="Closer de Ventas">🤝 Closer de Ventas</button>
+        <button class="chip-btn" data-perfil="Desarrollador">⚙️ Desarrollador</button>
+        <button class="chip-btn" data-perfil="Otro perfil">➕ Otro perfil</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= GARANTÍA LEGAL ================= -->
+  <section class="guarantee-section" style="padding: 80px 0; background: var(--bg-porcelain);">
+    <div class="container">
+      <div class="guarantee-box">
+        <div>
+          <h2 class="visual-section-title text-left text-white" style="margin-bottom: 20px;">Talento remoto certificado, con toda la <span class="text-gradient-pink">garantía legal</span></h2>
+          <p class="editorial-p text-white" style="opacity: 0.9; margin-bottom: 15px;">
+            <span class="brand-oberstaff">Oberstaff<span class="brand-dot">.</span></span> gestiona contratos, cumplimiento normativo y pagos en cada país. Tu empresa contrata un servicio con una única factura mensual en euros: sin riesgos laborales, sin trámites internacionales y sin sorpresas.
+          </p>
+          <p class="editorial-p text-white" style="opacity: 0.9;">
+            Operamos en los principales mercados de talento de Latinoamérica: Colombia, Argentina, México, Venezuela, Chile, Perú y Uruguay — todos compatibles con el horario de España.
+          </p>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 15px;">
+          <div class="guarantee-item">🛡️ Contratación certificada y sin riesgo legal</div>
+          <div class="guarantee-item">💶 Factura única mensual, deducible y en euros</div>
+          <div class="guarantee-item">📄 Cumplimiento normativo gestionado</div>
+          <div class="guarantee-item">🔄 Garantía de reemplazo si no encaja</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TESTIMONIOS Y CIFRAS ================= -->
+  <section class="testimonials-section bg-alternate" style="padding: 100px 0;">
+    <div class="container">
+      <div class="testimonials-header" style="text-align: center; margin-bottom: 50px;">
+        <h2 class="visual-section-title">Empresas españolas que ya ahorran con <span class="brand-oberstaff">Oberstaff<span class="brand-dot">.</span></span></h2>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-top">
+            <div class="testimonial-info">
+              <div class="stars">★★★★★</div>
+              <p><strong>Shadai Iborra</strong></p>
+              <p class="testimonial-role">CEO · @amediastory — Barcelona, España</p>
+            </div>
+          </div>
+          <p class="testimonial-quote">«Con <span class="brand-oberstaff">Oberstaff<span class="brand-dot">.</span></span> pude dar trabajo a dos personas a tiempo completo, ahorrando costes de reclutamiento, oficina y salario frente a hacerlo en España. Lo mejor: todo incluido en una misma factura.»</p>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-top">
+            <div class="testimonial-info">
+              <div class="stars">★★★★★</div>
+              <p><strong>Fernando Calderón</strong></p>
+              <p class="testimonial-role">CEO · bybeautypro.com — Madrid, España</p>
+            </div>
+          </div>
+          <p class="testimonial-quote">«Buscaba talento remoto especializado y, tras varias búsquedas sin éxito, encontré <span class="brand-oberstaff">Oberstaff<span class="brand-dot">.</span></span> Su profesionalidad me impresionó desde la primera llamada. Ya he ampliado mi contrato para incluir más personal.»</p>
+        </div>
+      </div>
+
+      <div class="stats-grid">
+        <div>
+          <div style="font-family: var(--font-heading); font-size: 48px; font-weight: 900; color: var(--brand-pink); line-height: 1;">70%</div>
+          <p style="font-size: 14px; color: var(--text-gray); margin-top: 10px; font-weight: 600;">de ahorro frente a la contratación local en España</p>
+        </div>
+        <div>
+          <div style="font-family: var(--font-heading); font-size: 48px; font-weight: 900; color: var(--brand-purple); line-height: 1;">&lt;30</div>
+          <p style="font-size: 14px; color: var(--text-gray); margin-top: 10px; font-weight: 600;">días hasta incorporar a tu candidato a la operación</p>
+        </div>
+        <div>
+          <div style="font-family: var(--font-heading); font-size: 48px; font-weight: 900; color: var(--brand-green); line-height: 1;">+500</div>
+          <p style="font-size: 14px; color: var(--text-gray); margin-top: 10px; font-weight: 600;">empresas ya confían en <span class="brand-oberstaff">Oberstaff<span class="brand-dot">.</span></span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PREGUNTAS FRECUENTES ================= -->
+  <section class="faq-section bg-porcelain" style="padding: 100px 0;">
+    <div class="container faq-container">
+      <div class="faq-sticky-side">
+        <h2 class="visual-section-title text-left">Preguntas frecuentes antes de cotizar tu perfil</h2>
+        <p class="editorial-p">Todo lo que necesitas saber antes de contratar talento en LATAM.</p>
+      </div>
+
+      <div class="faq-accordion-side">
+        <div class="faq-item">
+          <div class="faq-question"><h3 class="faq-title">¿Es legal contratar talento en LATAM desde España?</h3><span class="faq-icon">+</span></div>
+          <div class="faq-answer-wrapper"><div class="faq-answer"><p>Sí, siempre que el modelo de contratación esté bien estructurado. <span class="brand-oberstaff">Oberstaff<span class="brand-dot">.</span></span> gestiona toda la estructura legal y operativa, para que tú solo dirijas el trabajo mientras cumples la normativa vigente para empresas españolas.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question"><h3 class="faq-title">¿Qué incluye la tarifa desde 820 €/mes?</h3><span class="faq-icon">+</span></div>
+          <div class="faq-answer-wrapper"><div class="faq-answer"><p>El coste del profesional a tiempo completo, la gestión de contratos, pagos y cumplimiento normativo, y el acompañamiento de <span class="brand-oberstaff">Oberstaff<span class="brand-dot">.</span></span> Todo en una única factura mensual en euros. La cifra final depende del perfil y del país; la recibes exacta en tu cotización.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question"><h3 class="faq-title">¿Trabajan en horario de España?</h3><span class="faq-icon">+</span></div>
+          <div class="faq-answer-wrapper"><div class="faq-answer"><p>Sí. Todos los mercados en los que opera <span class="brand-oberstaff">Oberstaff<span class="brand-dot">.</span></span> tienen husos horarios compatibles con España, lo que permite reuniones, seguimiento y coordinación diaria en tiempo real.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question"><h3 class="faq-title">¿Cuánto tarda la incorporación?</h3><span class="faq-icon">+</span></div>
+          <div class="faq-answer-wrapper"><div class="faq-answer"><p>Normalmente entre 2 semanas y 1 mes, gracias a nuestro pool de perfiles preseleccionado con pruebas técnicas y entrevista previa.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question"><h3 class="faq-title">¿Qué pasa si el profesional no encaja?</h3><span class="faq-icon">+</span></div>
+          <div class="faq-answer-wrapper"><div class="faq-answer"><p>Aplicamos la garantía de reemplazo: buscamos un nuevo candidato sin coste adicional de selección. Además, no hay permanencia, así que mantienes flexibilidad total.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question"><h3 class="faq-title">¿Hay permanencia o costes ocultos?</h3><span class="faq-icon">+</span></div>
+          <div class="faq-answer-wrapper"><div class="faq-answer"><p>No. Puedes ajustar o cancelar el servicio según las necesidades reales de tu negocio, sin penalizaciones. Recibes una única factura mensual con todo incluido.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CTA FINAL ================= -->
+  <section class="cta-form-section bg-white" style="padding: 100px 0;">
+    <div class="container cta-form-container">
+      <div class="cta-text-side">
+        <h2 class="visual-section-title text-left">Empieza a ahorrar hasta un 70% <span class="text-gradient-pink">este mismo mes</span></h2>
+        <p class="cta-description" style="margin-bottom: 20px;">Cuéntanos qué perfil necesitas y recibe una propuesta de ahorro personalizada en menos de 24 horas. Gratis, sin permanencia y sin compromiso.</p>
+      </div>
+
+      <div class="cta-form-side">
+        <form class="modern-form form-lead" action="#" method="POST">
+          <div class="honeypot" aria-hidden="true" style="display:none;"><input type="text" name="empresa_web" tabindex="-1" autocomplete="off"></div>
+          <div class="form-group campo">
+            <input type="text" name="nombre" required placeholder="Nombre y apellido *">
+          </div>
+          <div class="form-group campo">
+            <input type="email" name="email" required placeholder="Email corporativo *">
+          </div>
+          <div class="form-group campo">
+            <input type="tel" name="telefono" required placeholder="Teléfono *" data-phone="true" style="width: 100%; box-sizing: border-box;" oninput="this.value = this.value.replace(/[^0-9 ]/g, '')">
+          </div>
+          <div class="form-group campo">
+            <select name="perfil" required class="form-select">
+              <option value="" selected disabled>¿Qué perfil necesitas? *</option>
+              <option>Community Manager</option>
+              <option>Copywriter</option>
+              <option>Editor de Vídeo</option>
+              <option>Diseñador Gráfico</option>
+              <option>Especialista SEO</option>
+              <option>Especialista Meta Ads</option>
+              <option>Especialista Google Ads</option>
+              <option>Asistente Virtual</option>
+              <option>Contable</option>
+              <option>Closer de Ventas</option>
+              <option>Desarrollador</option>
+              <option>Otro perfil</option>
+            </select>
+          </div>
+          <div class="form-group campo">
+            <select name="tamano" required class="form-select">
+              <option value="" selected disabled>Tamaño de tu empresa *</option>
+              <option>1–10 empleados</option>
+              <option>11–50 empleados</option>
+              <option>51–200 empleados</option>
+              <option>Más de 200 empleados</option>
+            </select>
+          </div>
+          <div class="form-group campo">
+            <label class="rgpd-label">
+              <input type="checkbox" name="rgpd" required>
+              <span>Acepto la <a href="/politica-de-privacidad-y-cookies-de-oberstaff" target="_blank">política de privacidad</a>.</span>
+            </label>
+          </div>
+
+          <!-- CAPTCHA Verification -->
+          <div class="form-group captcha-group campo" style="margin-bottom: 20px; text-align: left;">
+              <label class="captcha-label" style="font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 600; color: #1B1B1B; display: block; margin-bottom: 4px;">Código de verificación <span class="required-star" style="color: #ef4444; font-weight: 700; margin-left: 2px;">*</span></label>
+              <p class="captcha-hint" style="font-family: 'Poppins', sans-serif; font-size: 12px; color: #888; margin: 0 0 8px 0;">Ingresa el texto que ves en la imagen</p>
+              <div class="captcha-input-row" style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
+                  <input
+                      type="text"
+                      class="captcha-input"
+                      placeholder="Escribe el código"
+                      autocomplete="off"
+                      maxlength="8"
+                      required
+                      style="font-family: 'Poppins', sans-serif; background-color: #FAFAFC; border: 1px solid #E0E0E0; padding: 10px 14px; border-radius: 8px; font-size: 15px; outline: none; transition: border-color 0.3s ease, box-shadow 0.3s ease; width: 200px; color: #1B1B1B; letter-spacing: 2px;"
+                  />
+                  <button type="button" class="captcha-refresh-btn" title="Nuevo código" aria-label="Generar nuevo código" style="background: none; border: 1.5px solid #6663FD; border-radius: 6px; color: #6663FD; font-size: 18px; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s, color 0.2s; padding: 0; flex-shrink: 0;">
+                      &#x21bb;
+                  </button>
+              </div>
+              <canvas class="captcha-canvas" width="200" height="60" aria-label="Código de verificación visual" style="display: block; border-radius: 8px; border: 1px solid #ddd; background: #f4f4f8; user-select: none; pointer-events: none;"></canvas>
+          </div>
+
+          <button type="submit" class="btn-primary rounded-pill btn-submit">Cotizar perfil</button>
+          <span class="micro-cta">Gratis · Sin permanencia · Respuesta en &lt;24 h</span>
+        </form>
+        <div class="form-exito" style="display: none; text-align: center;">
+          <div class="check-icon" style="font-size: 40px; color: #1F9E4B; text-align: center;">✓</div>
+          <h4 style="font-family: var(--font-heading); font-size: 20px; color: var(--text-dark); margin: 10px 0;">¡Solicitud recibida!</h4>
+          <p style="color: var(--text-gray); font-size: 14px;">Un especialista te contactará en menos de 24 horas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= JAVASCRIPT ================= -->
+  <script>
+    // ── CAPTCHA Generator ──────────────────────────────────────────
+    const CAPTCHA_CHARS = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+
+    function generateCaptchaCode(length = 6): string {
+        let code = '';
+        for (let i = 0; i < length; i++) {
+            code += CAPTCHA_CHARS[Math.floor(Math.random() * CAPTCHA_CHARS.length)];
+        }
+        return code;
+    }
+
+    function drawCaptcha(canvas: HTMLCanvasElement, code: string) {
+        const ctx = canvas.getContext('2d')!;
+        const w = canvas.width;
+        const h = canvas.height;
+
+        // Background
+        ctx.clearRect(0, 0, w, h);
+        ctx.fillStyle = '#f0f0f6';
+        ctx.fillRect(0, 0, w, h);
+
+        // Noise lines
+        for (let i = 0; i < 6; i++) {
+            ctx.strokeStyle = `hsl(${Math.random() * 360}, 40%, 70%)`;
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(Math.random() * w, Math.random() * h);
+            ctx.lineTo(Math.random() * w, Math.random() * h);
+            ctx.stroke();
+        }
+
+        // Noise dots
+        for (let i = 0; i < 40; i++) {
+            ctx.fillStyle = `hsl(${Math.random() * 360}, 40%, 65%)`;
+            ctx.beginPath();
+            ctx.arc(Math.random() * w, Math.random() * h, 1, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        // Draw characters
+        const charW = w / (code.length + 1);
+        for (let i = 0; i < code.length; i++) {
+            ctx.save();
+            const x = charW * (i + 0.9);
+            const y = h / 2 + 8;
+            const angle = (Math.random() - 0.5) * 0.4;
+            ctx.translate(x, y);
+            ctx.rotate(angle);
+            ctx.font = `bold ${20 + Math.random() * 6}px monospace`;
+            ctx.fillStyle = `hsl(${240 + Math.random() * 60}, 55%, 35%)`;
+            ctx.strokeStyle = `hsl(${240 + Math.random() * 60}, 40%, 60%)`;
+            ctx.lineWidth = 0.5;
+            ctx.strokeText(code[i], 0, 0);
+            ctx.fillText(code[i], 0, 0);
+            ctx.restore();
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      
+      /* ================= VALIDACIÓN Y ENVÍO DE FORMULARIOS ================= */
+      document.querySelectorAll('.form-lead').forEach((el, index) => {
+        const form = el as HTMLFormElement;
+        const isFirstForm = index === 0;
+        
+        // Inicializar intl-tel-input
+        const phoneInput = form.querySelector('input[data-phone="true"]') as HTMLInputElement;
+        let iti: any = null;
+        if (phoneInput && (window as any).intlTelInput) {
+          iti = (window as any).intlTelInput(phoneInput, {
+            initialCountry: "es",
+            separateDialCode: true,
+            preferredCountries: ["es", "co", "ar", "mx", "cl", "pe", "ve"],
+            utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.10/build/js/utils.js",
+          });
+        }
+
+        // Inicializar CAPTCHA
+        let currentCode = '';
+        const canvas = form.querySelector('.captcha-canvas') as HTMLCanvasElement;
+        const captchaInput = form.querySelector('.captcha-input') as HTMLInputElement;
+        const captchaRefresh = form.querySelector('.captcha-refresh-btn') as HTMLButtonElement;
+        const captchaError = form.querySelector('.captcha-error') as HTMLElement;
+
+        function refreshCaptcha() {
+            currentCode = generateCaptchaCode();
+            if (canvas) {
+              drawCaptcha(canvas, currentCode);
+            }
+            if (captchaInput) {
+              captchaInput.value = '';
+            }
+            const captchaCampo = form.querySelector('.captcha-group') as HTMLElement | null;
+            if (captchaCampo) {
+              captchaCampo.classList.remove('invalido');
+            }
+            if (captchaError) {
+              captchaError.textContent = '';
+            }
+        }
+
+        if (canvas) {
+          refreshCaptcha();
+          captchaRefresh?.addEventListener('click', refreshCaptcha);
+          captchaInput?.addEventListener('input', () => {
+            const captchaCampo = form.querySelector('.captcha-group') as HTMLElement | null;
+            if (captchaCampo) {
+              captchaCampo.classList.remove('invalido');
+            }
+            if (captchaError) {
+              captchaError.textContent = '';
+            }
+          });
+        }
+
+        form.addEventListener('submit', function(e) {
+          // 1. Validar CAPTCHA personalizado usando setCustomValidity y reportValidity
+          const userCode = captchaInput?.value.trim().toUpperCase();
+          if (captchaInput) {
+            if (!userCode) {
+              captchaInput.setCustomValidity('Indica el código de verificación.');
+              captchaInput.reportValidity();
+              e.preventDefault();
+              return;
+            } else if (userCode !== currentCode) {
+              captchaInput.setCustomValidity('Código incorrecto. Inténtalo de nuevo.');
+              captchaInput.reportValidity();
+              refreshCaptcha();
+              e.preventDefault();
+              return;
+            } else {
+              captchaInput.setCustomValidity('');
+            }
+          }
+
+          // 2. Si el resto del formulario no es válido por el navegador, no hacer nada (dejar que el navegador muestre sus burbujas)
+          if (!form.checkValidity()) {
+            return;
+          }
+
+          // 3. Prevenir el envío si es válido para simular el éxito
+          e.preventDefault();
+
+          // Honeypot antispam
+          const honeypot = form.querySelector('.honeypot input') as HTMLInputElement | null;
+          if (honeypot && honeypot.value !== '') return;
+
+          // Asignar el número completo al input antes de leer FormData
+          if (iti && phoneInput) {
+            phoneInput.value = iti.getNumber();
+          }
+
+          // Simulador de envío / Datos
+          const datos = Object.fromEntries(new FormData(form).entries());
+          console.log('Lead capturado:', datos);
+
+          // Enviar al webhook de Zapier según corresponda
+          const webhookUrl = isFirstForm 
+            ? 'https://hooks.zapier.com/hooks/catch/12433184/4ujlm5u/'
+            : 'https://hooks.zapier.com/hooks/catch/12433184/4ujecl6/';
+
+          fetch(webhookUrl, {
+            method: 'POST',
+            body: JSON.stringify(datos)
+          }).catch(err => console.error('Error al enviar webhook:', err));
+
+          // Mostrar mensaje de éxito
+          form.style.display = 'none';
+          const formExito = form.parentElement?.querySelector('.form-exito') as HTMLElement | null;
+          if (formExito) {
+            formExito.style.display = 'block';
+          }
+        });
+
+        if (captchaInput) {
+          captchaInput.addEventListener('input', () => {
+            captchaInput.setCustomValidity('');
+          });
+        }
+      });
+
+      /* ================= CHIPS DE PERFILES -> AUTO-SELECT ================= */
+      document.querySelectorAll('.chip-btn').forEach(chip => {
+        chip.addEventListener('click', () => {
+          const perfil = chip.getAttribute('data-perfil');
+          
+          // Busca los selects de todos los formularios de la página
+          document.querySelectorAll('select[name="perfil"]').forEach(elSel => {
+            const sel = elSel as HTMLSelectElement;
+            for (let i = 0; i < sel.options.length; i++) {
+              if (sel.options[i].text === perfil) { 
+                sel.selectedIndex = i; 
+                break; 
+              }
+            }
+          });
+          // Scroll suave hacia el formulario del Hero
+          document.getElementById('cotizar-hero')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+      });
+
+      /* ================= LÓGICA DE FAQ (ACORDEÓN) ================= */
+      const faqQuestions = document.querySelectorAll('.faq-question');
+      faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+          const parentItem = question.parentElement;
+          if (parentItem) {
+            const isActive = parentItem.classList.contains('active');
+              
+            document.querySelectorAll('.faq-item').forEach(item => {
+              item.classList.remove('active');
+            });
+              
+            if (!isActive) {
+              parentItem.classList.add('active');
+            }
+          }
+        });
+      });
+
+    }); 
+  </script>
+</body>
+</html>
