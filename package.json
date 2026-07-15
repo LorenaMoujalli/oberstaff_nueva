@@ -1,7 +1,7 @@
 {
   "name": "oberstaff-nueva",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
     "dev": "astro dev",
     "build": "node --max-old-space-size=1024 ./node_modules/astro/astro.js build",
@@ -11,7 +11,7 @@
   "dependencies": {
     "@astrojs/check": "^0.9.9",
     "@astrojs/node": "^9.5.5",
-    "astro": "^5.17.1",
+    "astro": "5.17.1",
     "better-sqlite3": "^12.11.1",
     "html2pdf.js": "^0.9.1",
     "typescript": "^5.9.3"
