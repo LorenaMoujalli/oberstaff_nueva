@@ -400,13 +400,25 @@ const { webhookUrl = "" } = Astro.props;
     };
 
     // Send lead to webhook asynchronously
-    const gateWebhookUrl = document.getElementById('report-download-form')?.dataset.webhookUrl || "";
-    fetch(gateWebhookUrl || "https://hooks.zapier.com/hooks/catch/12433184/4bye64r/", {
+    const gateWebhookUrl = document.getElementById('report-download-form')?.dataset.webhookUrl || "https://hooks.zapier.com/hooks/catch/12433184/4bye64r/";
+    // 1. Envío al webhook original (sin alterar)
+    fetch(gateWebhookUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
         mode: 'no-cors'
-    }).catch(err => console.error("Error sending lead:", err));
+    }).catch(err => console.error("Error al enviar webhook:", err));
+
+    // 2. Envío a la base de datos local
+    fetch('/api/guardar-lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            formId: 'report-download-form',
+            webhookUrl: gateWebhookUrl,
+            data: data
+        })
+    }).catch(err => console.error("Error al guardar en base de datos:", err));
 
     // Feedback visual en el botón (solo deshabilitar)
     btn.disabled = true;

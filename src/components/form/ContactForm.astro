@@ -562,12 +562,25 @@ const privacyPolicyUrl = isPrPage
             feedback.textContent = '';
 
             try {
-                await fetch(webhookUrl, {
+                // 1. Envío al webhook original (sin alterar)
+                fetch(webhookUrl, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data),
                     mode: 'no-cors'
-                });
+                }).catch(err => console.error('Error al enviar webhook:', err));
+
+                // 2. Envío a la base de datos local
+                fetch('/api/guardar-lead', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        formId: f.id || 'contact-form',
+                        webhookUrl: webhookUrl,
+                        data: data
+                    })
+                }).catch(err => console.error('Error al guardar en base de datos:', err));
+
                 f.reset();
                 refreshCaptcha();
                 showToast('¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.', 'success');

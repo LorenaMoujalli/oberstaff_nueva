@@ -19,17 +19,21 @@ COPY . .
 RUN npm run build
 
 # Etapa de producción
-FROM nginx:alpine AS runtime
+FROM node:20-slim AS runtime
+WORKDIR /app
 
-# Instalar wget para el healthcheck (si no está presente, aunque suele estarlo en alpine)
-RUN apk add --no-cache wget
+# Instalar wget para el healthcheck
+RUN apt-get update && apt-get install -y wget && rm -rf /var/lib/apt/lists/*
 
-# Copiar configuración personalizada de Nginx
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+# Copiar dependencias construidas y distribución de Astro
+COPY --from=build /app/node_modules ./node_modules
+COPY --from=build /app/package*.json ./
+COPY --from=build /app/dist ./dist
 
-# Limpiar y copiar los archivos construidos
-RUN rm -rf /usr/share/nginx/html/*
-COPY --from=build /app/dist /usr/share/nginx/html
+# Variables de entorno para ejecutar Astro en Node
+ENV HOST=0.0.0.0
+ENV PORT=80
+ENV NODE_ENV=production
 
 EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["node", "./dist/server/entry.mjs"]
