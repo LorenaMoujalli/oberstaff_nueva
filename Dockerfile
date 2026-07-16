@@ -36,7 +36,7 @@ RUN apt-get update && apt-get install -y nginx wget && rm -rf /var/lib/apt/lists
 COPY nginx.conf /etc/nginx/sites-enabled/default
 
 # Copiar los archivos estáticos construidos a la ruta que sirve Nginx
-COPY --from=build /app/dist /usr/share/nginx/html
+COPY --from=build /app/dist ./dist
 
 # Copiar dependencias de Node, script de base de datos y script de inicio
 COPY --from=build /app/node_modules ./node_modules
