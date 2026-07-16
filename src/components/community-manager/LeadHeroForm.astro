@@ -37,9 +37,11 @@ const {
     pais = "",
 } = Astro.props;
 
+const isPrPage = Astro.url.pathname.includes('/pr');
+const finalPais = pais || (isPrPage ? "Puerto Rico" : "España");
+
 const CardTitleTag = cardTitleTag as any;
 
-const isPrPage = Astro.url.pathname.includes('/pr');
 const privacyPolicyUrl = isPrPage 
   ? "/pr/politica-de-privacidad-y-cookies-de-oberstaff" 
   : "/politica-de-privacidad-y-cookies-de-oberstaff";
@@ -50,7 +52,7 @@ const privacyPolicyUrl = isPrPage
 <script is:inline src="https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.10/build/js/intlTelInput.min.js"></script>
 
 <div class="lead-form-wrapper">
-    <form class="lead-form" data-webhook-url={webhookUrl} data-is-pr={isPrPage ? "true" : "false"} data-form-name={formName} data-pais={pais}>
+    <form class="lead-form" data-webhook-url={webhookUrl} data-is-pr={isPrPage ? "true" : "false"} data-form-name={formName} data-pais={finalPais}>
         <div class="lead-form-header">
             <CardTitleTag class="lead-form-title">{cardTitle}</CardTitleTag>
             {cardSubtitle && <p class="card-subtitle">{cardSubtitle}</p>}

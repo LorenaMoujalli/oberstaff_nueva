@@ -1,71 +1,94 @@
-const http = require('http');
-const Database = require('better-sqlite3');
-const path = require('path');
+import http from 'http';
+import Database from 'better-sqlite3';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-// Connect to SQLite database
-const dbPath = path.resolve(process.cwd(), 'leads.db');
+// ──────────────────────────────────────────────
+// Database setup — esquema limpio sin webhook_url
+// Columnas: id, timestamp, form_name, pais, data
+// ──────────────────────────────────────────────
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const dbPath = path.resolve(__dirname, 'leads.db');
 const db = new Database(dbPath);
 
-// Initialize DB table if it doesn't exist
+// Forzar UTF-8 para soporte completo de ñ y caracteres especiales
+db.pragma('encoding = "UTF-8"');
+
 db.exec(`
   CREATE TABLE IF NOT EXISTS leads (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    timestamp TEXT DEFAULT (datetime('now', 'localtime')),
-    webhook_url TEXT,
-    data TEXT
+    id        INTEGER PRIMARY KEY AUTOINCREMENT,
+    timestamp TEXT    DEFAULT (strftime('%Y-%m-%d %H:%M:%S', 'now', 'localtime')),
+    form_name TEXT,
+    pais      TEXT,
+    data      TEXT
   )
 `);
 
-const server = http.createServer((req, res) => {
-  res.setHeader('Content-Type', 'application/json');
+// ──────────────────────────────────────────────
+// HTTP Server (API only — statics served by nginx)
+// ──────────────────────────────────────────────
+const CORS_HEADERS = {
+  'Content-Type': 'application/json; charset=utf-8',
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': 'POST, GET, OPTIONS',
+  'Access-Control-Allow-Headers': 'Content-Type',
+};
 
+const server = http.createServer((req, res) => {
+  // CORS preflight
+  if (req.method === 'OPTIONS') {
+    res.writeHead(204, CORS_HEADERS);
+    res.end();
+    return;
+  }
+
+  // ── POST /api/guardar-lead ──────────────────
   if (req.method === 'POST' && req.url === '/api/guardar-lead') {
     let body = '';
-    req.on('data', chunk => {
-      body += chunk.toString();
-    });
-
+    req.on('data', chunk => { body += chunk.toString('utf8'); });
     req.on('end', () => {
       try {
-        const parsed = JSON.parse(body);
-        const { webhookUrl, data, formName, pais } = parsed;
+        const payload = JSON.parse(body);
+        const formName = payload.formName ?? null;
+        const pais     = payload.pais     ?? null;
+        const data     = payload.data     ?? {};
 
-        if (!webhookUrl) {
-          res.statusCode = 400;
-          res.end(JSON.stringify({ error: 'Falta la URL del webhook' }));
-          return;
-        }
+        db.prepare(`
+          INSERT INTO leads (form_name, pais, data)
+          VALUES (?, ?, ?)
+        `).run(formName, pais, JSON.stringify(data));
 
-        // Add formName and pais to data if present so it stores inside the JSON data field in DB
-        const finalData = { ...data };
-        if (formName) {
-          finalData['Origen Formulario'] = formName;
-        }
-        if (pais) {
-          finalData['Pais'] = pais;
-        }
-
-        const stmt = db.prepare(`
-          INSERT INTO leads (webhook_url, data)
-          VALUES (?, ?)
-        `);
-        stmt.run(webhookUrl, JSON.stringify(finalData));
-
-        res.statusCode = 200;
-        res.end(JSON.stringify({ success: true, sqlite: true }));
+        res.writeHead(200, CORS_HEADERS);
+        res.end(JSON.stringify({ success: true }));
       } catch (err) {
-        console.error('Error procesando lead en el backend:', err);
-        res.statusCode = 500;
-        res.end(JSON.stringify({ error: 'Error interno de base de datos' }));
+        console.error('[guardar-lead] Error:', err.message);
+        res.writeHead(500, CORS_HEADERS);
+        res.end(JSON.stringify({ error: 'Error interno' }));
       }
     });
-  } else {
-    res.statusCode = 404;
-    res.end(JSON.stringify({ error: 'Not Found' }));
+    return;
   }
+
+  // ── GET /api/leads (listado para debug) ────
+  if (req.method === 'GET' && req.url === '/api/leads') {
+    try {
+      const rows = db.prepare('SELECT * FROM leads ORDER BY id DESC LIMIT 50').all();
+      res.writeHead(200, CORS_HEADERS);
+      res.end(JSON.stringify(rows));
+    } catch (err) {
+      console.error('[leads] Error:', err.message);
+      res.writeHead(500, CORS_HEADERS);
+      res.end(JSON.stringify({ error: 'Error interno' }));
+    }
+    return;
+  }
+
+  res.writeHead(404, CORS_HEADERS);
+  res.end(JSON.stringify({ error: 'Not found' }));
 });
 
-const PORT = 3000;
+const PORT = process.env.API_PORT || 3001;
 server.listen(PORT, '127.0.0.1', () => {
-  console.log(`[Backend Daemon] Escuchando en http://127.0.0.1:${PORT}`);
+  console.log(`[API Server] Escuchando en http://127.0.0.1:${PORT}`);
+  console.log(`[API Server] DB: ${dbPath}`);
 });

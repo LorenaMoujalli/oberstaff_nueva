@@ -9,6 +9,8 @@ interface Props {
 }
 
 const { webhookUrl = "", formName = "", pais = "" } = Astro.props;
+const isPrPage = Astro.url.pathname.includes('/pr');
+const finalPais = pais || (isPrPage ? "Puerto Rico" : "España");
 ---
 
 <!-- Cargar html2pdf.js desde CDN para evitar problemas de optimización/pre-bundling de Vite -->
@@ -21,7 +23,7 @@ const { webhookUrl = "", formName = "", pais = "" } = Astro.props;
   <InformePdf />
 </div>
 
-<form class="modern-form" id="report-download-form" data-webhook-url={webhookUrl} data-form-name={formName} data-pais={pais}>
+<form class="modern-form" id="report-download-form" data-webhook-url={webhookUrl} data-form-name={formName} data-pais={finalPais}>
   <div class="form-group">
     <input
       type="text"

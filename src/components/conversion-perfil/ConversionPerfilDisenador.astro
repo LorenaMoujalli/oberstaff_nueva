@@ -24,6 +24,7 @@ const {
 } = Astro.props;
 
 const isPrPage = Astro.url.pathname.includes('/pr');
+const finalPais = pais || (isPrPage ? "Puerto Rico" : "España");
 const privacyPolicyUrl = isPrPage 
   ? "/pr/politica-de-privacidad-y-cookies-de-oberstaff" 
   : "/politica-de-privacidad-y-cookies-de-oberstaff";
@@ -235,7 +236,7 @@ const privacyPolicyUrl = isPrPage
 
         <!-- Columna derecha: formulario -->
         <div class="conv-d-card">
-            <form class="conv-d-form" data-webhook-url={webhookUrl} data-is-pr={isPrPage ? "true" : "false"} data-form-name={formName} data-pais={pais}>
+            <form class="conv-d-form" data-webhook-url={webhookUrl} data-is-pr={isPrPage ? "true" : "false"} data-form-name={formName} data-pais={finalPais}>
                 <input type="text" placeholder="Nombre completo *" required />
                 <input type="text" placeholder="Nombre de la empresa *" required />
                 <div class="conv-d-row">

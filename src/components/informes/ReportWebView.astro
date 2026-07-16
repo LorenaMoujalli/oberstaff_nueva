@@ -7,6 +7,8 @@ interface Props {
 }
 
 const { webhookUrl = "", formName = "", pais = "" } = Astro.props;
+const isPrPage = Astro.url.pathname.includes('/pr');
+const finalPais = pais || (isPrPage ? "Puerto Rico" : "España");
 ---
 
 <div id="mainReportContent" class="locked-content">
@@ -256,7 +258,7 @@ const { webhookUrl = "", formName = "", pais = "" } = Astro.props;
           action="#"
           data-webhook-url={webhookUrl}
           data-form-name={formName}
-          data-pais={pais}
+          data-pais={finalPais}
         >
           <input type="text" placeholder="Nombre Completo *" required />
           <input type="email" placeholder="Email Corporativo *" required />
