@@ -24,11 +24,11 @@ const server = http.createServer((req, res) => {
     req.on('data', chunk => {
       body += chunk.toString();
     });
-    
+
     req.on('end', () => {
       try {
         const parsed = JSON.parse(body);
-        const { webhookUrl, data } = parsed;
+        const { webhookUrl, data, formName, pais } = parsed;
 
         if (!webhookUrl) {
           res.statusCode = 400;
@@ -36,11 +36,20 @@ const server = http.createServer((req, res) => {
           return;
         }
 
+        // Add formName and pais to data if present so it stores inside the JSON data field in DB
+        const finalData = { ...data };
+        if (formName) {
+          finalData['Origen Formulario'] = formName;
+        }
+        if (pais) {
+          finalData['Pais'] = pais;
+        }
+
         const stmt = db.prepare(`
           INSERT INTO leads (webhook_url, data)
           VALUES (?, ?)
         `);
-        stmt.run(webhookUrl, JSON.stringify(data || {}));
+        stmt.run(webhookUrl, JSON.stringify(finalData));
 
         res.statusCode = 200;
         res.end(JSON.stringify({ success: true, sqlite: true }));

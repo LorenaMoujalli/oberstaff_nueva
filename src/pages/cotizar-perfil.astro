@@ -246,7 +246,7 @@
         <div class="form-card">
           <h3 class="form-title">Cotiza tu perfil sin compromiso</h3>
           <p class="form-desc" style="font-size: 13px;">1 minuto. Recibe tu propuesta de ahorro en menos de 24 horas.</p>
-          <form class="modern-form form-lead" action="#" method="POST">
+          <form class="modern-form form-lead" action="#" method="POST" data-form-name="Cotizar Perfil España" data-pais="España">
             <div class="honeypot" aria-hidden="true" style="display:none;"><input type="text" name="empresa_web" tabindex="-1" autocomplete="off"></div>
             
             <div class="form-group light-mode campo">
@@ -603,7 +603,7 @@
       </div>
 
       <div class="cta-form-side">
-        <form class="modern-form form-lead" action="#" method="POST">
+        <form class="modern-form form-lead" action="#" method="POST" data-form-name="Cotizar Perfil España" data-pais="España">
           <div class="honeypot" aria-hidden="true" style="display:none;"><input type="text" name="empresa_web" tabindex="-1" autocomplete="off"></div>
           <div class="form-group campo">
             <input type="text" name="nombre" required placeholder="Nombre y apellido *">
@@ -836,6 +836,14 @@
 
           // Simulador de envío / Datos
           const datos = Object.fromEntries(new FormData(form).entries());
+          const formName = form.dataset.formName || "";
+          const pais = form.dataset.pais || "";
+          if (formName) {
+            datos["Origen Formulario"] = formName;
+          }
+          if (pais) {
+            datos["Pais"] = pais;
+          }
           console.log('Lead capturado:', datos);
 
           // Enviar al webhook de Zapier según corresponda
@@ -855,6 +863,8 @@
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
               formId: form.id || (isFirstForm ? 'cotizar-primer-form' : 'cotizar-segundo-form'),
+              formName: formName || undefined,
+              pais: pais || undefined,
               webhookUrl: webhookUrl,
               data: datos
             })

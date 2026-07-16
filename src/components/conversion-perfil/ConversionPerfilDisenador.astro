@@ -7,6 +7,8 @@ interface Props {
     extraTitle?: string;
     webhookUrl?: string;
     isCommunityPR?: boolean;
+    formName?: string;
+    pais?: string;
 }
 
 const {
@@ -17,6 +19,8 @@ const {
     extraTitle = "",
     webhookUrl = "",
     isCommunityPR = false,
+    formName = "",
+    pais = "",
 } = Astro.props;
 
 const isPrPage = Astro.url.pathname.includes('/pr');
@@ -231,7 +235,7 @@ const privacyPolicyUrl = isPrPage
 
         <!-- Columna derecha: formulario -->
         <div class="conv-d-card">
-            <form class="conv-d-form" data-webhook-url={webhookUrl} data-is-pr={isPrPage ? "true" : "false"}>
+            <form class="conv-d-form" data-webhook-url={webhookUrl} data-is-pr={isPrPage ? "true" : "false"} data-form-name={formName} data-pais={pais}>
                 <input type="text" placeholder="Nombre completo *" required />
                 <input type="text" placeholder="Nombre de la empresa *" required />
                 <div class="conv-d-row">
@@ -542,6 +546,7 @@ const privacyPolicyUrl = isPrPage
             // ── Collect data ──
             const fields = f.querySelectorAll('input:not([type="checkbox"]):not(#captcha-input), textarea');
             const data: Record<string, string> = {};
+            const formName = f.dataset.formName || "";
             fields.forEach((el) => {
                 const field = el as HTMLInputElement | HTMLTextAreaElement;
                 const placeholder = field.getAttribute('placeholder') || '';
@@ -557,6 +562,13 @@ const privacyPolicyUrl = isPrPage
                 }
             });
             data['Consentimiento SMS'] = 'Aceptado';
+            const pais = f.dataset.pais || "";
+            if (formName) {
+                data['Origen Formulario'] = formName;
+            }
+            if (pais) {
+                data['Pais'] = pais;
+            }
 
             btn.disabled = true;
             btn.innerHTML = 'Enviando...';
@@ -580,6 +592,8 @@ const privacyPolicyUrl = isPrPage
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
                         formId: f.id || 'conversion-perfil-disenador',
+                        formName: formName || undefined,
+                        pais: pais || undefined,
                         webhookUrl: webhookUrl,
                         data: data
                     })

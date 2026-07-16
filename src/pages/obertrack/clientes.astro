@@ -341,7 +341,7 @@ const webhookUrlFooter = "https://hooks.zapier.com/hooks/catch/12433184/42r7nb6/
           <div class="hero-form-col">
             <div class="form-wrapper">
               <h3>Solicita tu acceso gratis</h3>
-              <form class="hero-form" id="heroForm" data-webhook-url={webhookUrlHero}>
+              <form class="hero-form" id="heroForm" data-webhook-url={webhookUrlHero} data-form-name="Obertrack Clientes" data-pais="España">
                 <input type="text" name="nombre" placeholder="Tu nombre completo *" required>
                 <input type="email" name="correo" placeholder="Tu correo electrónico *" required>
                 <div class="input-group" style="width: 100%;">
@@ -552,7 +552,7 @@ const webhookUrlFooter = "https://hooks.zapier.com/hooks/catch/12433184/42r7nb6/
       <p class="subtitle">Déjanos tus datos y empieza a tener visibilidad total en menos de 5 minutos.</p>
 
       <div class="footer-form-container">
-        <form class="hero-form" id="footerForm" data-webhook-url={webhookUrlFooter}>
+        <form class="hero-form" id="footerForm" data-webhook-url={webhookUrlFooter} data-form-name="Obertrack Clientes" data-pais="España">
           <input type="text" name="nombre" placeholder="Tu nombre completo *" required>
           <input type="email" name="correo" placeholder="Tu correo electrónico *" required>
           <div class="input-group" style="width: 100%;">
@@ -781,18 +781,26 @@ const webhookUrlFooter = "https://hooks.zapier.com/hooks/catch/12433184/42r7nb6/
           const nombre   = (form.querySelector('input[name="nombre"]') as HTMLInputElement).value.trim();
           const correo   = (form.querySelector('input[name="correo"]') as HTMLInputElement).value.trim();
           const telefono = phoneInput ? phoneInput.value.trim() : '';
+          const formName = form.dataset.formName || "";
+          const pais = form.dataset.pais || "";
           const webhookUrl = form.dataset.webhookUrl;
 
           // Format phone number with country dial code
           const formattedTelefono = (iti && telefono) ? iti.getNumber() : telefono;
 
-          const data = {
+          const data: Record<string, any> = {
             nombre,
             correo,
             telefono: formattedTelefono,
             origen: "Obertrack Clientes - " + form.id,
             fecha: new Date().toISOString()
           };
+          if (formName) {
+            data["Origen Formulario"] = formName;
+          }
+          if (pais) {
+            data["Pais"] = pais;
+          }
 
           try {
             if (btn) {
@@ -815,6 +823,8 @@ const webhookUrlFooter = "https://hooks.zapier.com/hooks/catch/12433184/42r7nb6/
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
                   formId: form.id || 'obertrack-clientes',
+                  formName: formName || undefined,
+                  pais: pais || undefined,
                   webhookUrl: webhookUrl,
                   data: data
                 })

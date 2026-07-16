@@ -15,6 +15,8 @@ interface Props {
     placeholderEmail?: string;
     placeholderCompany?: string;
     placeholderPhone?: string;
+    formName?: string;
+    pais?: string;
 }
 
 const {
@@ -31,6 +33,8 @@ const {
     placeholderEmail = "Email corporativo *",
     placeholderCompany = "Empresa *",
     placeholderPhone = "Teléfono *",
+    formName = "",
+    pais = "",
 } = Astro.props;
 
 const CardTitleTag = cardTitleTag as any;
@@ -46,7 +50,7 @@ const privacyPolicyUrl = isPrPage
 <script is:inline src="https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.10/build/js/intlTelInput.min.js"></script>
 
 <div class="lead-form-wrapper">
-    <form class="lead-form" data-webhook-url={webhookUrl} data-is-pr={isPrPage ? "true" : "false"}>
+    <form class="lead-form" data-webhook-url={webhookUrl} data-is-pr={isPrPage ? "true" : "false"} data-form-name={formName} data-pais={pais}>
         <div class="lead-form-header">
             <CardTitleTag class="lead-form-title">{cardTitle}</CardTitleTag>
             {cardSubtitle && <p class="card-subtitle">{cardSubtitle}</p>}
@@ -526,6 +530,14 @@ const privacyPolicyUrl = isPrPage
                 }
             });
             data["Consentimiento SMS"] = "Aceptado";
+            const formName = f.dataset.formName || "";
+            const pais = f.dataset.pais || "";
+            if (formName) {
+                data["Origen Formulario"] = formName;
+            }
+            if (pais) {
+                data["Pais"] = pais;
+            }
 
             btn.disabled = true;
             btn.innerHTML = "Enviando...";
@@ -549,6 +561,8 @@ const privacyPolicyUrl = isPrPage
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({
                         formId: f.id || 'lead-hero-form',
+                        formName: formName || undefined,
+                        pais: pais || undefined,
                         webhookUrl: webhookUrl,
                         data: data
                     })

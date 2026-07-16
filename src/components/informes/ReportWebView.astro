@@ -2,9 +2,11 @@
 // src/components/informes/ReportWebView.astro
 interface Props {
   webhookUrl?: string;
+  formName?: string;
+  pais?: string;
 }
 
-const { webhookUrl = "" } = Astro.props;
+const { webhookUrl = "", formName = "", pais = "" } = Astro.props;
 ---
 
 <div id="mainReportContent" class="locked-content">
@@ -253,6 +255,8 @@ const { webhookUrl = "" } = Astro.props;
           class="modern-form-light"
           action="#"
           data-webhook-url={webhookUrl}
+          data-form-name={formName}
+          data-pais={pais}
         >
           <input type="text" placeholder="Nombre Completo *" required />
           <input type="email" placeholder="Email Corporativo *" required />
@@ -1089,6 +1093,7 @@ const { webhookUrl = "" } = Astro.props;
 
             if (hasError) return;
 
+      const formName = f.dataset.formName || "";
       // ── Collect data ──
       const inputs = f.querySelectorAll(
         'input:not([type="checkbox"]):not(.captcha-input), textarea',
@@ -1104,6 +1109,13 @@ const { webhookUrl = "" } = Astro.props;
         }
       });
       data["Consentimiento SMS"] = "Aceptado";
+      const pais = f.dataset.pais || "";
+      if (formName) {
+        data["Origen Formulario"] = formName;
+      }
+      if (pais) {
+        data["Pais"] = pais;
+      }
 
       btn.disabled = true;
       btn.innerHTML = "Enviando...";
@@ -1127,6 +1139,8 @@ const { webhookUrl = "" } = Astro.props;
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             formId: f.id || 'report-webview-form',
+            formName: formName || undefined,
+            pais: pais || undefined,
             webhookUrl: webhookUrl,
             data: data
           }),
