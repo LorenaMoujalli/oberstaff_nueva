@@ -68,26 +68,27 @@ const webhookUrlFooter = "https://hooks.zapier.com/hooks/catch/12433184/42r7nb6/
     .dark-section { background-color: var(--prussian-blue); color: var(--white); }
 
     /* HERO SECTION */
-    .hero { padding: 30px 40px 80px 40px; border-radius: 0 0 40px 40px; }
-    .hero-inner-container { max-width: 1400px; margin: 0 auto; width: 100%; }
-    .logo-container { width: 100%; margin-bottom: 25px; text-align: left; }
+    .hero { padding: 20px 40px 60px 40px; border-radius: 0 0 40px 40px; }
+    .hero-inner-container { max-width: 1100px; margin: 0 auto; width: 100%; }
+    .logo-container { width: 100%; margin-bottom: 20px; text-align: left; margin-left: -150px; }
     .logo { max-width: 210px; height: auto; }
 
-    /* FILA SUPERIOR: TEXTOS + FORMULARIO */
+    /* FILA SUPERIOR: TEXTOS CENTRADOS */
     .hero-top-row {
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
+      justify-content: center;
       align-items: flex-start;
-      gap: 60px;
+      gap: 0;
       width: 100%;
-      margin-bottom: 60px; /* Espacio antes de la imagen */
+      margin-bottom: 40px;
     }
 
     .hero-text-col {
       flex: 1;
-      text-align: left;
-      padding-top: 120px;
+      text-align: center;
+      padding-top: 20px;
+      max-width: 800px;
     }
 
     .hero-form-col {
@@ -110,7 +111,7 @@ const webhookUrlFooter = "https://hooks.zapier.com/hooks/catch/12433184/42r7nb6/
     }
 
     /* EYEBROW Y TEXTOS DEL HERO */
-    .eyebrow-container { margin-bottom: 24px; }
+    .eyebrow-container { margin-bottom: 24px; display: flex; justify-content: center; }
     .eyebrow {
       display: inline-block; 
       background-color: rgba(255, 255, 255, 0.08); 
@@ -122,7 +123,7 @@ const webhookUrlFooter = "https://hooks.zapier.com/hooks/catch/12433184/42r7nb6/
       letter-spacing: 0.5px; 
     }
     .hero h1 { font-size: 3.2rem; margin: 0 0 24px 0; color: var(--white); }
-    .hero .subtitle { font-size: 1.15rem; margin: 0 0 0 0; opacity: 0.9; color: var(--white); max-width: 800px; }
+    .hero .subtitle { font-size: 1.15rem; margin: 0 auto; opacity: 0.9; color: var(--white); max-width: 650px; }
 
     /* TARJETA DEL FORMULARIO */
     .form-wrapper {
@@ -173,8 +174,8 @@ const webhookUrlFooter = "https://hooks.zapier.com/hooks/catch/12433184/42r7nb6/
 
     .features-section { padding: 60px 40px; max-width: 1400px; margin: 0 auto; }
     .features-section h2 { font-size: 2.1rem; margin-bottom: 60px; text-align: center; }
-    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-    .feature-card { background: var(--white); padding: 30px; border-radius: 24px; box-shadow: 0 10px 30px rgba(6, 11, 35, 0.05); text-align: left; }
+    .features-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
+    .feature-card { background: var(--white); padding: 30px; border-radius: 24px; box-shadow: 0 10px 30px rgba(6, 11, 35, 0.05); text-align: left; width: calc(25% - 22.5px); min-width: 280px; }
     .feature-icon { font-size: 2.5rem; margin-bottom: 20px; }
     .feature-card h3 { font-size: 1.35rem; margin-bottom: 16px; color: var(--blue-violet); }
 
@@ -195,17 +196,17 @@ const webhookUrlFooter = "https://hooks.zapier.com/hooks/catch/12433184/42r7nb6/
     .smart-blue-bg { background-color: var(--smart-blue); }
     .eco-connector { font-size: 2rem; font-weight: 800; color: var(--prussian-blue); text-align: center; }
 
-    .faq-section { padding: 60px 40px; max-width: 1200px; margin: 0 auto; }
+    .faq-section { padding: 30px 40px 100px 40px; max-width: 1200px; margin: 0 auto; }
     .faq-section h2 { font-size: 2.4rem; margin-bottom: 50px; text-align: center;}
-    .faq-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+    .faq-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; align-items: start; }
     .faq-card { padding: 30px; border-radius: 24px; color: var(--white); cursor: pointer; position: relative; display: flex; flex-direction: column; justify-content: space-between; min-height: 180px; text-align: left; }
     .bg-blue-violet { background-color: var(--blue-violet); }
     .bg-smart-blue { background-color: var(--smart-blue); }
     .bg-fresh-sky { background-color: var(--fresh-sky); color: var(--prussian-blue); }
     .bg-prussian { background-color: var(--prussian-blue); }
     .faq-card h4 { font-size: 1.2rem; margin-bottom: 20px; padding-right: 40px; }
-    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.25s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease-out; opacity: 0; }
-    .faq-card.active .faq-answer { max-height: 120px; opacity: 1; margin-bottom: 20px; }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.25s ease; opacity: 0; }
+    .faq-card.active .faq-answer { max-height: 150px; opacity: 1; margin-bottom: 40px; }
     .expand-btn { background: var(--white); color: var(--prussian-blue); border: none; width: 40px; height: 40px; border-radius: 50%; font-size: 1.5rem; font-weight: 800; display: flex; align-items: center; justify-content: center; position: absolute; bottom: 30px; right: 30px; transition: transform 0.3s; }
     .faq-card.active .expand-btn { transform: rotate(45deg); }
 
@@ -218,7 +219,7 @@ const webhookUrlFooter = "https://hooks.zapier.com/hooks/catch/12433184/42r7nb6/
       /* Apila de arriba abajo: Textos, luego Formulario, luego Imagen */
       .hero-top-row { flex-direction: column; gap: 50px; text-align: center; margin-bottom: 40px; }
       .hero-text-col { text-align: center; }
-      .logo-container { text-align: center; }
+      .logo-container { text-align: center; margin-left: 0; }
       
       .hero-form-col { width: 100%; max-width: 500px; margin: 0 auto; }
       .hero h1 { font-size: 3rem; }
@@ -241,9 +242,9 @@ const webhookUrlFooter = "https://hooks.zapier.com/hooks/catch/12433184/42r7nb6/
 
       .features-section { padding: 60px 16px; }
       .features-section h2 { font-size: 2rem; margin-bottom: 40px; }
-      .feature-card { padding: 24px; }
+      .feature-card { padding: 24px; width: 100%; }
       .feature-icon { font-size: 2rem; margin-bottom: 12px; }
-      .features-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+      .features-grid { gap: 20px; }
 
       .steps-section { margin: 0 16px; padding: 40px 20px; }
       .steps-section h2 { font-size: 2rem; margin-bottom: 50px; }
@@ -338,6 +339,7 @@ const webhookUrlFooter = "https://hooks.zapier.com/hooks/catch/12433184/42r7nb6/
             </p>
           </div>
 
+          <!-- FORMULARIO HERO COMENTADO TEMPORALMENTE
           <div class="hero-form-col">
             <div class="form-wrapper">
               <h3>Solicita tu acceso gratis</h3>
@@ -356,7 +358,7 @@ const webhookUrlFooter = "https://hooks.zapier.com/hooks/catch/12433184/42r7nb6/
                   />
                 </div>
 
-                <!-- SMS Consent Checkbox -->
+                <!\-\- SMS Consent Checkbox -\->
                 <div class="form-group full-width consent-group" style="margin: 15px 0; text-align: left;">
                   <label class="consent-label" style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer;">
                     <input
@@ -374,7 +376,7 @@ const webhookUrlFooter = "https://hooks.zapier.com/hooks/catch/12433184/42r7nb6/
                   <p class="consent-error" style="font-size: 12px; color: #ef4444; margin-top: 4px; min-height: 1em; text-align: left;"></p>
                 </div>
 
-                <!-- CAPTCHA Verification -->
+                <!\-\- CAPTCHA Verification -\->
                 <div class="form-group full-width captcha-group" style="margin-bottom: 20px; text-align: left;">
                   <label class="captcha-label" style="font-size: 14px; font-weight: 600; color: var(--white); display: block; margin-bottom: 4px;">
                     Código de verificación <span class="required-star" style="color: #ef4444; font-weight: 700; margin-left: 2px;">*</span>
@@ -414,6 +416,7 @@ const webhookUrlFooter = "https://hooks.zapier.com/hooks/catch/12433184/42r7nb6/
               <p class="support-text">Solo disponible para clientes activos de <span class="ob">Oberstaff</span> Sin tarjeta de crédito.</p>
             </div>
           </div>
+          FIN FORMULARIO HERO -->
         </div>
 
         <div class="hero-bottom-row">
@@ -540,13 +543,14 @@ const webhookUrlFooter = "https://hooks.zapier.com/hooks/catch/12433184/42r7nb6/
         <div class="faq-card bg-prussian">
           <h4>¿Mis datos están seguros?</h4>
           <div class="faq-answer">
-            <p>Obertrack es operado por <span class="ob">Oberstaff</span> Tu información está bajo los mismos estándares de privacidad de siempre.</p>
+            <p>Obertrack es operado por <span class="ob" style="color: var(--white) !important;">Oberstaff</span> Tu información está bajo los mismos estándares de privacidad de siempre.</p>
           </div>
           <button class="expand-btn">+</button>
         </div>
       </div>
     </section>
 
+    <!-- SECCIÓN FOOTER CTA CON FORMULARIO COMENTADA TEMPORALMENTE
     <section class="final-cta-section dark-section">
       <h2>Tu equipo remoto te está esperando en <span class="accent-text">Obertrack.</span></h2>
       <p class="subtitle">Déjanos tus datos y empieza a tener visibilidad total en menos de 5 minutos.</p>
@@ -567,7 +571,7 @@ const webhookUrlFooter = "https://hooks.zapier.com/hooks/catch/12433184/42r7nb6/
             />
           </div>
 
-          <!-- SMS Consent Checkbox -->
+          <!\-\- SMS Consent Checkbox -\->
           <div class="form-group full-width consent-group" style="margin: 15px 0; text-align: left;">
             <label class="consent-label" style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer;">
               <input
@@ -585,7 +589,7 @@ const webhookUrlFooter = "https://hooks.zapier.com/hooks/catch/12433184/42r7nb6/
             <p class="consent-error" style="font-size: 12px; color: #ef4444; margin-top: 4px; min-height: 1em; text-align: left;"></p>
           </div>
 
-          <!-- CAPTCHA Verification -->
+          <!\-\- CAPTCHA Verification -\->
           <div class="form-group full-width captcha-group" style="margin-bottom: 20px; text-align: left;">
             <label class="captcha-label" style="font-size: 14px; font-weight: 600; color: var(--white); display: block; margin-bottom: 4px;">
               Código de verificación <span class="required-star" style="color: #ef4444; font-weight: 700; margin-left: 2px;">*</span>
@@ -626,6 +630,7 @@ const webhookUrlFooter = "https://hooks.zapier.com/hooks/catch/12433184/42r7nb6/
 
       <p class="support-text">¿Tienes dudas? Escríbenos a soporte@oberstaff.com y te ayudamos en el día.</p>
     </section>
+    FIN SECCIÓN FOOTER CTA -->
 
   </main>
 
