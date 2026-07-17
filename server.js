@@ -83,6 +83,20 @@ const server = http.createServer((req, res) => {
     return;
   }
 
+  // ── GET /api/leads-dashboard (todos los leads para el dashboard) ────
+  if (req.method === 'GET' && req.url === '/api/leads-dashboard') {
+    try {
+      const rows = db.prepare('SELECT * FROM leads ORDER BY id DESC').all();
+      res.writeHead(200, CORS_HEADERS);
+      res.end(JSON.stringify(rows));
+    } catch (err) {
+      console.error('[leads-dashboard] Error:', err.message);
+      res.writeHead(500, CORS_HEADERS);
+      res.end(JSON.stringify({ error: 'Error interno' }));
+    }
+    return;
+  }
+
   res.writeHead(404, CORS_HEADERS);
   res.end(JSON.stringify({ error: 'Not found' }));
 });

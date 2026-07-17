@@ -1,0 +1,1063 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Administración de Leads | Oberstaff">
+  <div class="dashboard-container">
+    <!-- Title Area (without tabs) -->
+    <div class="dashboard-title-area">
+      <div class="title-left">
+        <h1>Panel de Administración</h1>
+        <p class="subtitle">Gestiona los leads de la plataforma.</p>
+      </div>
+    </div>
+
+    <!-- Search & Actions Bar (without export button) -->
+    <div class="controls-bar">
+      <div class="search-input-wrapper">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="search-icon"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" id="filter-search" placeholder="Buscar por nombre o correo..." />
+      </div>
+      
+      <div class="controls-actions">
+        <!-- Hidden but functional selects to keep the filtering logic working behind the scenes -->
+        <select id="filter-form" style="display:none;"><option value="all"></option></select>
+        <select id="filter-country" style="display:none;"><option value="all"></option></select>
+      </div>
+    </div>
+
+    <!-- Table Card -->
+    <section class="table-card">
+      <div class="table-responsive">
+        <table class="leads-table">
+          <thead>
+            <tr>
+              <th>FECHA Y HORA DE REGISTRO</th>
+              <th>FORMULARIO</th>
+              <th>PAÍS</th>
+              <th>DATOS</th>
+              <th class="actions-col">ACCIONES</th>
+            </tr>
+          </thead>
+          <tbody id="leads-tbody">
+            <tr>
+              <td colspan="6" class="text-center py-8">
+                <div class="spinner"></div>
+                <p class="mt-2 text-muted">Cargando base de datos de leads...</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- Pagination -->
+      <div class="pagination">
+        <button id="btn-prev" class="btn-page" disabled>Anterior</button>
+        <span id="page-info">Página 1 de 1</span>
+        <button id="btn-next" class="btn-page" disabled>Siguiente</button>
+      </div>
+    </div>
+
+    <!-- Hidden Stats Elements to prevent script crashes -->
+    <div style="display:none;">
+      <span id="table-showing-text"></span>
+      <span id="stat-total"></span>
+      <span id="stat-recent"></span>
+      <span id="stat-countries"></span>
+      <span id="stat-forms"></span>
+      <button id="btn-refresh"></button>
+      <button id="btn-export"></button>
+    </div>
+  </div>
+
+  <!-- Detail Modal -->
+  <div id="detail-modal" class="modal-overlay">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h2>Detalle del Lead #<span id="modal-lead-id">-</span></h2>
+        <button id="modal-close" class="modal-close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="lead-meta-info">
+          <div class="meta-item">
+            <strong>Fecha de Registro:</strong>
+            <span id="modal-lead-date">-</span>
+          </div>
+          <div class="meta-item">
+            <strong>Origen / Formulario:</strong>
+            <span id="modal-lead-form" class="badge">-</span>
+          </div>
+          <div class="meta-item">
+            <strong>País:</strong>
+            <span id="modal-lead-country" class="badge">-</span>
+          </div>
+        </div>
+        
+        <h3>Datos Enviados</h3>
+        <div id="modal-lead-fields" class="details-fields-grid">
+          <!-- Dinámico -->
+        </div>
+
+        <h3 class="mt-6">JSON Completo</h3>
+        <div class="json-wrapper">
+          <button id="btn-copy-json" class="btn-copy">Copiar JSON</button>
+          <pre><code id="modal-lead-json">-</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style is:global>
+  /* Réplica exacta del diseño limpio y elegante de la captura de pantalla */
+  body {
+    background-color: #f8fafc !important;
+    background-image: none !important;
+    color: #1e293b !important;
+    margin: 0;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  /* Top Nav Bar */
+  .top-nav {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 0.75rem 2rem;
+  }
+  .nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .nav-logos {
+    display: flex;
+    align-items: center;
+  }
+  .logo-txt-accent {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: #f43f5e;
+    letter-spacing: -0.03em;
+    background: linear-gradient(135deg, #f59e0b, #e11d48);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .logo-sep {
+    width: 1px;
+    height: 28px;
+    background-color: #e2e8f0;
+    margin: 0 1rem;
+  }
+  .secondary-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #334155;
+  }
+  .nav-logo-icon {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+  }
+  .nav-user-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .action-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #475569;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .action-pill.active {
+    background-color: #eff6ff;
+    color: #1d4ed8;
+  }
+  .action-pill:hover:not(.active) {
+    background-color: #f1f5f9;
+    color: #0f172a;
+  }
+  .action-link {
+    background: none;
+    border: none;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #475569;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+  }
+  .action-link:hover {
+    color: #0f172a;
+  }
+
+  /* Main Container */
+  .dashboard-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  /* Back Link */
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #64748b;
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-decoration: none;
+    margin-bottom: 2rem;
+    transition: color 0.15s ease;
+  }
+  .back-link:hover {
+    color: #1e293b;
+  }
+
+  /* Title Area & Tabs */
+  .dashboard-title-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  .title-left h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #1e293b;
+    margin: 0 0 0.5rem 0;
+    letter-spacing: -0.03em;
+  }
+  .title-left .subtitle {
+    font-size: 0.9375rem;
+    color: #64748b;
+    margin: 0;
+  }
+  .title-tabs {
+    display: flex;
+    background-color: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    padding: 0.25rem;
+    border-radius: 8px;
+    gap: 0.25rem;
+  }
+  .title-tab {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #64748b;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .title-tab.active {
+    background-color: #ffffff;
+    color: #1e293b;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+  .title-tab:hover:not(.active) {
+    color: #1e293b;
+  }
+
+  /* Controls Bar */
+  .controls-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .controls-bar .search-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex: 1;
+    max-width: 400px;
+    min-width: 280px;
+  }
+  .controls-bar .search-icon {
+    position: absolute;
+    left: 12px;
+    color: #94a3b8;
+  }
+  .controls-bar input {
+    width: 100%;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 0.625rem 1rem 0.625rem 2.5rem;
+    color: #1e293b;
+    font-size: 0.875rem;
+    outline: none;
+    transition: all 0.2s ease;
+  }
+  .controls-bar input:focus {
+    border-color: #cbd5e1;
+    box-shadow: 0 0 0 2px rgba(0,0,0,0.02);
+  }
+  .btn-red {
+    background-color: #d9261c;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.875rem;
+    padding: 0.625rem 1.25rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background-color 0.2s ease;
+  }
+  .btn-red:hover {
+    background-color: #b81e16;
+  }
+
+  /* ===== Elegant Table Layout ===== */
+  .table-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+  }
+  .table-responsive {
+    overflow-x: auto;
+  }
+  .leads-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    table-layout: auto;
+  }
+
+  /* Separadores verticales entre columnas */
+  .leads-table th,
+  .leads-table td {
+    padding: 1.25rem 2rem;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 0.875rem;
+    vertical-align: top;
+    border-right: 1px solid #f1f5f9;
+  }
+  .leads-table th:last-child,
+  .leads-table td:last-child {
+    border-right: none;
+  }
+
+  /* Primera y última columna con más respiración */
+  .leads-table th:first-child,
+  .leads-table td:first-child {
+    padding-left: 2.5rem;
+  }
+  .leads-table th:last-child,
+  .leads-table td:last-child {
+    padding-right: 2.5rem;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  /* Anchos de columna */
+  .leads-table th:nth-child(1),
+  .leads-table td:nth-child(1) { width: 200px; white-space: nowrap; }
+  .leads-table th:nth-child(2),
+  .leads-table td:nth-child(2) { width: 230px; }
+  .leads-table th:nth-child(3),
+  .leads-table td:nth-child(3) { width: 160px; }
+  .leads-table th:nth-child(4),
+  .leads-table td:nth-child(4) { min-width: 380px; }
+  .leads-table th:nth-child(5),
+  .leads-table td:nth-child(5) { width: 110px; }
+
+  /* Header de la tabla */
+  .leads-table thead th {
+    font-weight: 700;
+    color: #94a3b8;
+    background-color: #f8fafc;
+    text-transform: uppercase;
+    font-size: 0.6875rem;
+    letter-spacing: 0.08em;
+    border-bottom: 2px solid #e2e8f0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    vertical-align: middle;
+  }
+
+  .leads-table tbody tr {
+    transition: background-color 0.15s ease;
+  }
+  .leads-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+  .leads-table tbody tr:hover {
+    background-color: #fafbfc;
+  }
+
+  /* Timestamp bold */
+  .leads-table td strong {
+    font-weight: 700;
+    color: #0f172a;
+    font-size: 0.875rem;
+  }
+
+  /* ===== Data summary inline list ===== */
+  .lead-summary-data {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+  .data-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    font-size: 0.8125rem;
+    line-height: 1.4;
+  }
+  .data-key {
+    font-weight: 700;
+    color: #475569;
+    white-space: nowrap;
+    flex-shrink: 0;
+    min-width: 130px;
+  }
+  .data-colon {
+    color: #94a3b8;
+    font-weight: 600;
+  }
+  .data-val {
+    color: #1e293b;
+    font-weight: 500;
+    word-break: break-word;
+  }
+
+  /* Custom badges to match image */
+  .badge-blue {
+    background-color: #eff6ff;
+    color: #1e40af;
+    border: 1px solid #bfdbfe;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    display: inline-block;
+  }
+  .badge-gray {
+    background-color: #f1f5f9;
+    color: #475569;
+    border: 1px solid #e2e8f0;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    display: inline-block;
+  }
+  
+  /* Expiration pill styling */
+  .expiration-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    color: #64748b;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.8125rem;
+    font-weight: 500;
+  }
+  .expiration-pill.warning {
+    background-color: #fef2f2;
+    border-color: #fee2e2;
+    color: #ef4444;
+  }
+
+  /* Action Buttons Box */
+  .action-btn-box {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .action-btn-box button,
+  .action-btn-box a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: 1px solid #cbd5e1;
+    color: #475569;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .action-btn-box button:hover,
+  .action-btn-box a:hover {
+    background-color: #f1f5f9;
+    border-color: #94a3b8;
+    color: #0f172a;
+  }
+
+  /* Pagination */
+  .pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 2.5rem;
+    background-color: #ffffff;
+    border-top: 1px solid #f1f5f9;
+  }
+  .btn-page {
+    background-color: #ffffff;
+    border: 1px solid #cbd5e1;
+    color: #475569;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .btn-page:hover:not(:disabled) {
+    background-color: #f8fafc;
+  }
+  .btn-page:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  .spinner {
+    width: 24px;
+    height: 24px;
+    border: 3px solid rgba(0,0,0,0.05);
+    border-radius: 50%;
+    border-top-color: #1e293b;
+    animation: spin 0.8s linear infinite;
+    margin: 0 auto;
+  }
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+
+  /* Modales */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(15, 23, 42, 0.3);
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .modal-overlay.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .modal-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 650px;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+  }
+  .modal-overlay.open .modal-card {
+    transform: scale(1);
+  }
+  .modal-close-btn {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    font-size: 1.75rem;
+    cursor: pointer;
+    line-height: 1;
+  }
+  .modal-close-btn:hover {
+    color: #0f172a;
+  }
+  .btn-copy:hover {
+    background-color: #6663FD;
+    border-color: #6663FD;
+  }
+  .mt-6 { margin-top: 1.5rem; }
+  .text-center { text-align: center; }
+  .py-8 { padding: 2rem 0; }
+  .mt-2 { margin-top: 0.5rem; }
+</style>
+
+<script>
+  // Dashboard Logic
+  interface Lead {
+    id: number;
+    timestamp: string;
+    form_name: string;
+    pais: string;
+    data: any;
+    parsedData: any;
+  }
+
+  let allLeads: Lead[] = [];
+  let filteredLeads: Lead[] = [];
+  
+  // Pagination State
+  let currentPage = 1;
+  const itemsPerPage = 10;
+
+  // DOM Elements
+  const tbody = document.getElementById('leads-tbody') as HTMLElement;
+  const tableShowingText = document.getElementById('table-showing-text') as HTMLElement;
+  
+  const statTotal = document.getElementById('stat-total') as HTMLElement;
+  const statRecent = document.getElementById('stat-recent') as HTMLElement;
+  const statCountries = document.getElementById('stat-countries') as HTMLElement;
+  const statForms = document.getElementById('stat-forms') as HTMLElement;
+
+  const filterSearch = document.getElementById('filter-search') as HTMLInputElement;
+  const filterForm = document.getElementById('filter-form') as HTMLSelectElement;
+  const filterCountry = document.getElementById('filter-country') as HTMLSelectElement;
+
+  const btnRefresh = document.getElementById('btn-refresh') as HTMLButtonElement;
+  const btnExport = document.getElementById('btn-export') as HTMLButtonElement;
+  
+  const btnPrev = document.getElementById('btn-prev') as HTMLButtonElement;
+  const btnNext = document.getElementById('btn-next') as HTMLButtonElement;
+  const pageInfo = document.getElementById('page-info') as HTMLElement;
+
+  const detailModal = document.getElementById('detail-modal') as HTMLElement;
+  const modalClose = document.getElementById('modal-close') as HTMLButtonElement;
+  const modalLeadId = document.getElementById('modal-lead-id') as HTMLElement;
+  const modalLeadDate = document.getElementById('modal-lead-date') as HTMLElement;
+  const modalLeadForm = document.getElementById('modal-lead-form') as HTMLElement;
+  const modalLeadCountry = document.getElementById('modal-lead-country') as HTMLElement;
+  const modalLeadFields = document.getElementById('modal-lead-fields') as HTMLElement;
+  const modalLeadJson = document.getElementById('modal-lead-json') as HTMLElement;
+  const btnCopyJson = document.getElementById('btn-copy-json') as HTMLButtonElement;
+
+  // Load leads from internal API with real-time support
+  async function fetchLeads(silent = false) {
+    if (!silent) showTableLoading();
+    try {
+      const response = await fetch('/api/leads-dashboard');
+      if (!response.ok) throw new Error('Error al cargar leads');
+      const data = await response.json();
+      
+      // Parse JSON data property if it is a string
+      const newLeads = data.map((lead: any) => {
+        let parsedData = {};
+        if (typeof lead.data === 'string') {
+          try {
+            parsedData = JSON.parse(lead.data);
+          } catch(e) {
+            parsedData = {};
+          }
+        } else {
+          parsedData = lead.data || {};
+        }
+        return {
+          ...lead,
+          parsedData
+        };
+      });
+
+      // Optimized check: only re-render table if data actually changed
+      const hasChanged = allLeads.length !== newLeads.length || 
+                         JSON.stringify(allLeads[0]) !== JSON.stringify(newLeads[0]);
+
+      if (hasChanged || !silent) {
+        allLeads = newLeads;
+        populateFilterOptions();
+        applyFilters();
+        updateStats();
+      }
+    } catch (error) {
+      console.error(error);
+      if (!silent) {
+        tbody.innerHTML = `
+          <tr>
+            <td colspan="6" class="text-center py-8 text-muted">
+              <p>⚠️ No se pudieron obtener los datos. Asegúrate de que el servidor API esté corriendo.</p>
+            </td>
+          </tr>
+        `;
+      }
+    }
+  }
+
+  function showTableLoading() {
+    tbody.innerHTML = `
+      <tr>
+        <td colspan="6" class="text-center py-8">
+          <div class="spinner"></div>
+          <p class="mt-2 text-muted">Cargando base de datos de leads...</p>
+        </td>
+      </tr>
+    `;
+  }
+
+  // Populate Filter Dropdowns dynamically
+  function populateFilterOptions() {
+    // Keep standard options
+    filterForm.innerHTML = '<option value="all">Todos los formularios</option>';
+    filterCountry.innerHTML = '<option value="all">Todos los países</option>';
+
+    const forms = new Set<string>();
+    const countries = new Set<string>();
+
+    allLeads.forEach(lead => {
+      if (lead.form_name) forms.add(lead.form_name);
+      if (lead.pais) countries.add(lead.pais);
+    });
+
+    forms.forEach(form => {
+      const opt = document.createElement('option');
+      opt.value = form;
+      opt.textContent = form;
+      filterForm.appendChild(opt);
+    });
+
+    countries.forEach(country => {
+      const opt = document.createElement('option');
+      opt.value = country;
+      opt.textContent = country;
+      filterCountry.appendChild(opt);
+    });
+  }
+
+  // Calculate and display quick stats
+  function updateStats() {
+    statTotal.textContent = allLeads.length.toString();
+
+    // Recent in last 7 days
+    const sevenDaysAgo = new Date();
+    sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+    const recentLeads = allLeads.filter(lead => {
+      if (!lead.timestamp) return false;
+      const leadDate = new Date(lead.timestamp.replace(/-/g, '/')); // simple replace for browser compatibility
+      return leadDate >= sevenDaysAgo;
+    });
+    statRecent.textContent = recentLeads.length.toString();
+
+    // Unique countries
+    const countries = new Set(allLeads.map(l => l.pais).filter(Boolean));
+    statCountries.textContent = countries.size.toString();
+
+    // Unique forms
+    const forms = new Set(allLeads.map(l => l.form_name).filter(Boolean));
+    statForms.textContent = forms.size.toString();
+  }
+
+  // Apply filters and updates Table
+  function applyFilters() {
+    const searchText = filterSearch.value.toLowerCase().trim();
+    const selectedForm = filterForm.value;
+    const selectedCountry = filterCountry.value;
+
+    filteredLeads = allLeads.filter(lead => {
+      // Search text match
+      let matchesSearch = true;
+      if (searchText) {
+        // Stringify details to search globally in details
+        const detailsString = JSON.stringify(lead.parsedData).toLowerCase();
+        const mainString = `${lead.id} ${lead.timestamp || ''} ${lead.form_name || ''} ${lead.pais || ''}`.toLowerCase();
+        matchesSearch = mainString.includes(searchText) || detailsString.includes(searchText);
+      }
+
+      // Form filter match
+      const matchesForm = selectedForm === 'all' || lead.form_name === selectedForm;
+
+      // Country filter match
+      const matchesCountry = selectedCountry === 'all' || lead.pais === selectedCountry;
+
+      return matchesSearch && matchesForm && matchesCountry;
+    });
+
+    currentPage = 1;
+    renderTable();
+  }
+
+  // Friendly date formatter
+  function formatDateFriendly(dateStr: string) {
+    if (!dateStr) return 'N/A';
+    try {
+      const parts = dateStr.split(' ');
+      const dateParts = parts[0].split('-');
+      const year = dateParts[0];
+      const monthNum = parseInt(dateParts[1]) - 1;
+      const day = dateParts[2];
+      const months = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
+      return `${parseInt(day)} ${months[monthNum]} ${year}`;
+    } catch (e) {
+      return dateStr;
+    }
+  }
+
+  // Render rows based on filters and pagination
+  function renderTable() {
+    tbody.innerHTML = '';
+    
+    if (filteredLeads.length === 0) {
+      tbody.innerHTML = `
+        <tr>
+          <td colspan="6" class="text-center py-8 text-muted">
+            No se encontraron leads con los filtros actuales.
+          </td>
+        </tr>
+      `;
+      tableShowingText.textContent = 'Mostrando 0 de 0 leads';
+      updatePaginationControls(0);
+      return;
+    }
+
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = Math.min(startIndex + itemsPerPage, filteredLeads.length);
+    const paginatedItems = filteredLeads.slice(startIndex, endIndex);
+
+    tableShowingText.textContent = `Mostrando ${startIndex + 1}-${endIndex} de ${filteredLeads.length} leads`;
+
+    paginatedItems.forEach(lead => {
+      const tr = document.createElement('tr');
+      
+      const data = lead.parsedData;
+
+      // Form name badge
+      const formName = lead.form_name || 'LEAD';
+      const badgeClass = formName.toUpperCase() === 'ADMIN' ? 'badge-blue' : 'badge-gray';
+
+      // Date & Time (timestamp)
+      const timestampText = lead.timestamp || 'N/A';
+
+      // Expiration look for Country (Pais)
+      let countryHtml = '';
+      if (lead.pais) {
+        countryHtml = `<span class="expiration-pill"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>${lead.pais}</span>`;
+      } else {
+        countryHtml = `<span class="expiration-pill"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>No especificado</span>`;
+      }
+
+      // Dynamic Data listing — Key: Value rows
+      let dataSummary = '';
+      Object.keys(data).forEach(key => {
+        const val = data[key];
+        if (val !== undefined && val !== null && val !== '') {
+          dataSummary += `
+            <div class="data-row">
+              <span class="data-key">${key}</span><span class="data-colon">:</span>
+              <span class="data-val">${typeof val === 'object' ? JSON.stringify(val) : val}</span>
+            </div>`;
+        }
+      });
+      if (!dataSummary) {
+        dataSummary = '<span class="text-muted">Sin datos</span>';
+      }
+
+      tr.innerHTML = `
+        <td><strong>${timestampText}</strong></td>
+        <td><span class="${badgeClass}">${formName}</span></td>
+        <td>${countryHtml}</td>
+        <td>
+          <div class="lead-summary-data">
+            ${dataSummary}
+          </div>
+        </td>
+        <td class="actions-col">
+          <div class="action-btn-box">
+            <button class="btn-view-detail" data-id="${lead.id}" title="Ver Detalle">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4z"></path></svg>
+            </button>
+            <button class="btn-delete" style="opacity: 0.5; cursor: not-allowed;" title="No eliminable">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+            </button>
+          </div>
+        </td>
+      `;
+
+      tbody.appendChild(tr);
+    });
+
+    // Attach click events to details buttons
+    document.querySelectorAll('.btn-view-detail').forEach(button => {
+      button.addEventListener('click', () => {
+        const leadId = parseInt(button.getAttribute('data-id') || '0');
+        const lead = allLeads.find(l => l.id === leadId);
+        if (lead) showDetailModal(lead);
+      });
+    });
+
+    updatePaginationControls(filteredLeads.length);
+  }
+
+  function updatePaginationControls(totalItems: number) {
+    const totalPages = Math.ceil(totalItems / itemsPerPage) || 1;
+    pageInfo.textContent = `Página ${currentPage} de ${totalPages}`;
+    btnPrev.disabled = currentPage === 1;
+    btnNext.disabled = currentPage === totalPages || totalItems === 0;
+  }
+
+  // Detail Modal Logic
+  function showDetailModal(lead: Lead) {
+    modalLeadId.textContent = lead.id.toString();
+    modalLeadDate.textContent = lead.timestamp || 'N/A';
+    modalLeadForm.textContent = lead.form_name || 'N/A';
+    modalLeadCountry.textContent = lead.pais || 'N/A';
+
+    modalLeadFields.innerHTML = '';
+    const fields = lead.parsedData;
+    
+    Object.keys(fields).forEach(key => {
+      const val = fields[key];
+      const box = document.createElement('div');
+      box.className = 'detail-field-box';
+      box.innerHTML = `
+        <div class="field-label">${key}</div>
+        <div class="field-value">${typeof val === 'object' ? JSON.stringify(val) : val}</div>
+      `;
+      modalLeadFields.appendChild(box);
+    });
+
+    // Handle empty data
+    if (Object.keys(fields).length === 0) {
+      modalLeadFields.innerHTML = '<div class="text-muted">No hay datos adjuntos en este registro.</div>';
+    }
+
+    modalLeadJson.textContent = JSON.stringify(fields, null, 2);
+    detailModal.classList.add('open');
+  }
+
+  function closeDetailModal() {
+    detailModal.classList.remove('open');
+  }
+
+  // Export filtered leads to CSV
+  function exportToCSV() {
+    if (filteredLeads.length === 0) {
+      alert('No hay leads para exportar');
+      return;
+    }
+
+    // Determine all unique keys in data
+    const allDataKeys = new Set<string>();
+    filteredLeads.forEach(lead => {
+      Object.keys(lead.parsedData).forEach(key => allDataKeys.add(key));
+    });
+    const dataKeysArray = Array.from(allDataKeys);
+
+    // Header row
+    const headers = ['ID', 'Fecha / Hora', 'Formulario', 'Pais', ...dataKeysArray];
+    
+    const csvRows = [headers.join(',')];
+
+    filteredLeads.forEach(lead => {
+      const row = [
+        lead.id,
+        `"${(lead.timestamp || '').replace(/"/g, '""')}"`,
+        `"${(lead.form_name || '').replace(/"/g, '""')}"`,
+        `"${(lead.pais || '').replace(/"/g, '""')}"`
+      ];
+
+      // Match values for dynamic data keys
+      dataKeysArray.forEach(key => {
+        const val = lead.parsedData[key] !== undefined ? lead.parsedData[key] : '';
+        const stringVal = typeof val === 'object' ? JSON.stringify(val) : String(val);
+        row.push(`"${stringVal.replace(/"/g, '""')}"`);
+      });
+
+      csvRows.push(row.join(','));
+    });
+
+    // Create file and download
+    const blob = new Blob([new Uint8Array([0xEF, 0xBB, 0xBF]), csvRows.join('\n')], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.setAttribute('href', url);
+    link.setAttribute('download', `leads_oberstaff_${new Date().toISOString().split('T')[0]}.csv`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
+  // Event Listeners
+  filterSearch.addEventListener('input', () => applyFilters());
+  filterForm.addEventListener('change', () => applyFilters());
+  filterCountry.addEventListener('change', () => applyFilters());
+
+  btnRefresh.addEventListener('click', () => fetchLeads());
+  btnExport.addEventListener('click', () => exportToCSV());
+
+  btnPrev.addEventListener('click', () => {
+    if (currentPage > 1) {
+      currentPage--;
+      renderTable();
+    }
+  });
+
+  btnNext.addEventListener('click', () => {
+    const totalPages = Math.ceil(filteredLeads.length / itemsPerPage);
+    if (currentPage < totalPages) {
+      currentPage++;
+      renderTable();
+    }
+  });
+
+  modalClose.addEventListener('click', closeDetailModal);
+  detailModal.addEventListener('click', (e) => {
+    if (e.target === detailModal) closeDetailModal();
+  });
+
+  btnCopyJson.addEventListener('click', () => {
+    const text = modalLeadJson.textContent || '';
+    navigator.clipboard.writeText(text)
+      .then(() => {
+        btnCopyJson.textContent = '¡Copiado!';
+        btnCopyJson.style.backgroundColor = '#10b981';
+        setTimeout(() => {
+          btnCopyJson.textContent = 'Copiar JSON';
+          btnCopyJson.style.backgroundColor = '';
+        }, 2000);
+      })
+      .catch(err => {
+        console.error('Error al copiar: ', err);
+      });
+  });
+
+  // Initial Fetch & Real-time polling (every 5 seconds)
+  fetchLeads();
+  setInterval(() => {
+    fetchLeads(true);
+  }, 5000);
+</script>
