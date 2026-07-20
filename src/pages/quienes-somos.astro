@@ -8,10 +8,10 @@ import QueEsServicioSection from "../components/QueEsServicio/QueEsServicioSecti
 import VisionMisionSection from "../components/vision-mision-contacto/VisionMisionSection.astro";
 import VisionMisionCard from "../components/vision-mision-contacto/VisionMisionCard.astro";
 import FAQSection from "../components/faq-servicios/FAQSection-quienes-somos.astro";
-const ogImage = "Quienes somos Oberstaff.webp";
+const ogImage = "Quienes-somos-Oberstaff.webp";
 ---
 
-<DashboardLayoutContacto
+<DashboardLayoutContacto 
     ogImage={ogImage}
     title="Conoce Oberstaff | Un puente de talento"
     description="Descubre el propósito de Oberstaff y la visión que nos mueve: conectar empresas españolas con profesionales de LATAM mediante trabajo remoto estructurado."
@@ -287,6 +287,8 @@ const ogImage = "Quienes somos Oberstaff.webp";
         badgesClass="community-badges"
         cardTitleTag="p"
         webhookUrl="https://hooks.zapier.com/hooks/catch/12433184/4byala1/"
+        formName="Quiénes Somos España"
+        pais="España"
     >
         <Fragment slot="description">
             Nacimos para construir una forma de trabajo remoto más clara,

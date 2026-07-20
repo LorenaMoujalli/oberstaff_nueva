@@ -7,6 +7,8 @@ interface Props {
     buttonText?: string;
     microcopy?: string;
     webhookUrl?: string;
+    formName?: string;
+    pais?: string;
 }
 
 const {
@@ -14,10 +16,13 @@ const {
     description = "Completa el formulario y un especialista de <strong style=\"font-weight: 800;\"><span style=\"color: #1B1B1B;\">Oberstaff</span><span style=\"color: #FF66CC;\">.</span></strong> te orientará sobre la estructura más conveniente. No necesitas tener todo definido: podemos ayudarte a aclarar el perfil, el nivel de seniority, el modelo y los próximos pasos.",
     buttonText = "Solicitar llamada gratuita →",
     microcopy = "↳ Sin compromiso · te contactaremos en menos de 24 horas para entender tu necesidad y explicarte los siguientes pasos.",
-    webhookUrl = ""
+    webhookUrl = "",
+    formName = "",
+    pais = ""
 } = Astro.props;
-
+ 
 const isPrPage = Astro.url.pathname.includes('/pr');
+const finalPais = pais || (isPrPage ? "Puerto Rico" : "España");
 const privacyPolicyUrl = isPrPage 
   ? "/pr/politica-de-privacidad-y-cookies-de-oberstaff" 
   : "/politica-de-privacidad-y-cookies-de-oberstaff";
@@ -31,7 +36,7 @@ const privacyPolicyUrl = isPrPage
     <h2 set:html={title} />
     <p class="intro-text" set:html={description} />
 
-    <form class="modern-form" data-webhook-url={webhookUrl} data-is-pr={isPrPage ? "true" : "false"}>
+    <form class="modern-form" data-webhook-url={webhookUrl} data-is-pr={isPrPage ? "true" : "false"} data-form-name={formName} data-pais={finalPais}>
         <input type="text" placeholder="Nombre completo *" required />
         <input type="text" placeholder="Nombre de la empresa *" required />
         
@@ -371,6 +376,7 @@ const privacyPolicyUrl = isPrPage
             // ── Collect data ──
             const inputs = f.querySelectorAll('input:not([type="checkbox"]):not(#captcha-input), textarea');
             const data: Record<string, string> = {};
+            const formName = f.dataset.formName || "";
             inputs.forEach((el) => {
                 const input = el as HTMLInputElement | HTMLTextAreaElement;
                 const placeholder = input.getAttribute('placeholder') || '';
@@ -385,6 +391,13 @@ const privacyPolicyUrl = isPrPage
                 }
             });
             data['Consentimiento SMS'] = 'Aceptado';
+            const pais = f.dataset.pais || "";
+            if (formName) {
+                data['Origen Formulario'] = formName;
+            }
+            if (pais) {
+                data['Pais'] = pais;
+            }
 
             btn.disabled = true;
             btn.innerHTML = 'Enviando...';
@@ -394,12 +407,27 @@ const privacyPolicyUrl = isPrPage
             }
 
             try {
-                await fetch(webhookUrl, {
+                // 1. Envío al webhook original (sin alterar)
+                fetch(webhookUrl, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data),
                     mode: 'no-cors'
-                });
+                }).catch(err => console.error('Error al enviar webhook:', err));
+
+                // 2. Envío a la base de datos local
+                fetch('/api/guardar-lead', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        formId: f.id || 'contact-form-card',
+                        formName: formName || undefined,
+                        pais: pais || undefined,
+                        webhookUrl: webhookUrl,
+                        data: data
+                    })
+                }).catch(err => console.error('Error al guardar en base de datos:', err));
+
                 f.reset();
                 refreshCaptcha();
                 showToast('¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.', 'success');

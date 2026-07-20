@@ -210,7 +210,6 @@
     }
     :global(.iti) { display: block !important; width: 100% !important; }
   </style>
-  <!-- intl-tel-input library -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.10/build/css/intlTelInput.css" />
   <script is:inline src="https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.10/build/js/intlTelInput.min.js"></script>
 </head>
@@ -247,7 +246,7 @@
         <div class="form-card">
           <h3 class="form-title">Cotiza tu perfil sin compromiso</h3>
           <p class="form-desc" style="font-size: 13px;">1 minuto. Recibe tu propuesta de ahorro en menos de 24 horas.</p>
-          <form class="modern-form form-lead" action="#" method="POST">
+          <form class="modern-form form-lead" action="#" method="POST" data-form-name="Cotizar Perfil España" data-pais="España">
             <div class="honeypot" aria-hidden="true" style="display:none;"><input type="text" name="empresa_web" tabindex="-1" autocomplete="off"></div>
             
             <div class="form-group light-mode campo">
@@ -604,7 +603,7 @@
       </div>
 
       <div class="cta-form-side">
-        <form class="modern-form form-lead" action="#" method="POST">
+        <form class="modern-form form-lead" action="#" method="POST" data-form-name="Cotizar Perfil España" data-pais="España">
           <div class="honeypot" aria-hidden="true" style="display:none;"><input type="text" name="empresa_web" tabindex="-1" autocomplete="off"></div>
           <div class="form-group campo">
             <input type="text" name="nombre" required placeholder="Nombre y apellido *">
@@ -837,6 +836,14 @@
 
           // Simulador de envío / Datos
           const datos = Object.fromEntries(new FormData(form).entries());
+          const formName = form.dataset.formName || "";
+          const pais = form.dataset.pais || "";
+          if (formName) {
+            datos["Origen Formulario"] = formName;
+          }
+          if (pais) {
+            datos["Pais"] = pais;
+          }
           console.log('Lead capturado:', datos);
 
           // Enviar al webhook de Zapier según corresponda
@@ -844,10 +851,24 @@
             ? 'https://hooks.zapier.com/hooks/catch/12433184/4ujlm5u/'
             : 'https://hooks.zapier.com/hooks/catch/12433184/4ujecl6/';
 
+          // 1. Envío al webhook original (sin alterar)
           fetch(webhookUrl, {
             method: 'POST',
             body: JSON.stringify(datos)
           }).catch(err => console.error('Error al enviar webhook:', err));
+
+          // 2. Envío a la base de datos local
+          fetch('/api/guardar-lead', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              formId: form.id || (isFirstForm ? 'cotizar-primer-form' : 'cotizar-segundo-form'),
+              formName: formName || undefined,
+              pais: pais || undefined,
+              webhookUrl: webhookUrl,
+              data: datos
+            })
+          }).catch(err => console.error('Error al guardar en base de datos:', err));
 
           // Mostrar mensaje de éxito
           form.style.display = 'none';

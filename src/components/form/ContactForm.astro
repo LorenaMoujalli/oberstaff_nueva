@@ -22,6 +22,8 @@ interface Props {
         comments?: string;
     };
     customClass?: string;
+    formName?: string;
+    pais?: string;
 }
 
 const {
@@ -44,10 +46,13 @@ const {
         phone: "+34 XXX XXX XXX",
         comments: "¿Qué tipo de profesional estás buscando?"
     },
-    customClass = ""
+    customClass = "",
+    formName = "",
+    pais = "",
 } = Astro.props;
 
 const isPrPage = Astro.url.pathname.includes('/pr');
+const finalPais = pais || (isPrPage ? "Puerto Rico" : "España");
 const privacyPolicyUrl = isPrPage 
   ? "/pr/politica-de-privacidad-y-cookies-de-oberstaff" 
   : "/politica-de-privacidad-y-cookies-de-oberstaff";
@@ -59,7 +64,7 @@ const privacyPolicyUrl = isPrPage
 
 <div class={`form-card ${customClass}`}>
     {formTitle && <p class="form-title">{formTitle}</p>}
-    <form action="#" method="POST" class="form-grid" data-webhook-url={webhookUrl} data-is-pr={isPrPage ? "true" : "false"}>
+    <form action="#" method="POST" class="form-grid" data-webhook-url={webhookUrl} data-is-pr={isPrPage ? "true" : "false"} data-form-name={formName} data-pais={finalPais}>
         <div class="form-group half-width">
             <label>{labels.name}</label>
             <input
@@ -542,6 +547,7 @@ const privacyPolicyUrl = isPrPage
             // ── Collect data ──
             const inputs = f.querySelectorAll('input:not([type="checkbox"]):not(#captcha-input), textarea');
             const data: Record<string, string> = {};
+            const formName = f.dataset.formName || "";
             inputs.forEach((el) => {
                 const input = el as HTMLInputElement | HTMLTextAreaElement;
                 const label = input.closest('.form-group')?.querySelector('label')?.textContent?.replace(/ \*/g, '').trim() ?? input.type;
@@ -555,6 +561,13 @@ const privacyPolicyUrl = isPrPage
                 }
             });
             data['Consentimiento SMS'] = 'Aceptado';
+            const pais = f.dataset.pais || "";
+            if (formName) {
+                data['Origen Formulario'] = formName;
+            }
+            if (pais) {
+                data['Pais'] = pais;
+            }
 
             btn.disabled = true;
             btn.textContent = 'Enviando...';
@@ -562,12 +575,27 @@ const privacyPolicyUrl = isPrPage
             feedback.textContent = '';
 
             try {
-                await fetch(webhookUrl, {
+                // 1. Envío al webhook original (sin alterar)
+                fetch(webhookUrl, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data),
                     mode: 'no-cors'
-                });
+                }).catch(err => console.error('Error al enviar webhook:', err));
+
+                // 2. Envío a la base de datos local
+                fetch('/api/guardar-lead', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        formId: f.id || 'contact-form',
+                        formName: formName || undefined,
+                        pais: pais || undefined,
+                        webhookUrl: webhookUrl,
+                        data: data
+                    })
+                }).catch(err => console.error('Error al guardar en base de datos:', err));
+
                 f.reset();
                 refreshCaptcha();
                 showToast('¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.', 'success');

@@ -1,20 +1,26 @@
 {
   "name": "oberstaff-nueva",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
     "dev": "astro dev",
+    "dev:api": "node server.js",
     "build": "node --max-old-space-size=1024 ./node_modules/astro/astro.js build",
     "preview": "astro preview",
+    "start": "node server.js",
     "astro": "astro"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.9",
-    "astro": "^5.17.1",
+    "@astrojs/node": "^9.5.5",
+    "astro": "^5.17.3",
+    "better-sqlite3": "^12.11.1",
     "html2pdf.js": "^0.9.1",
     "typescript": "^5.9.3"
   },
   "devDependencies": {
-    "@astrojs/language-server": "^2.16.6"
+    "@astrojs/language-server": "^2.16.6",
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^26.1.1"
   }
 }

@@ -13,23 +13,39 @@ RUN npm config set fetch-retries 5 && \
     npm config set fetch-retry-maxtimeout 120000 && \
     npm config set maxsockets 10
 
+# NUEVO: Instalar Python y compiladores necesarios para compilar better-sqlite3
+RUN apt-get update && apt-get install -y \
+    python3 \
+    make \
+    g++ \
+    && rm -rf /var/lib/apt/lists/*
+
 RUN npm ci
 
 COPY . .
 RUN npm run build
 
 # Etapa de producción
-FROM nginx:alpine AS runtime
+FROM node:20-slim AS runtime
+WORKDIR /app
 
-# Instalar wget para el healthcheck (si no está presente, aunque suele estarlo en alpine)
-RUN apk add --no-cache wget
+# Instalar Nginx y wget para el healthcheck
+RUN apt-get update && apt-get install -y nginx wget && rm -rf /var/lib/apt/lists/*
 
 # Copiar configuración personalizada de Nginx
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY nginx.conf /etc/nginx/sites-enabled/default
 
-# Limpiar y copiar los archivos construidos
-RUN rm -rf /usr/share/nginx/html/*
-COPY --from=build /app/dist /usr/share/nginx/html
+# Copiar los archivos estáticos construidos a la ruta que sirve Nginx
+COPY --from=build /app/dist ./dist
+
+# Copiar dependencias de Node, script de base de datos y script de inicio
+COPY --from=build /app/node_modules ./node_modules
+COPY --from=build /app/package*.json ./
+COPY server.js ./
+COPY start.sh ./
+
+# Dar permisos de ejecución al script de inicio
+RUN chmod +x start.sh
 
 EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["./start.sh"]

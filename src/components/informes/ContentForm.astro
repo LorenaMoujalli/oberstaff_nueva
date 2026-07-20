@@ -4,9 +4,13 @@ import InformePdf from "./informe-pdf.astro";
 
 interface Props {
   webhookUrl?: string;
+  formName?: string;
+  pais?: string;
 }
 
-const { webhookUrl = "" } = Astro.props;
+const { webhookUrl = "", formName = "", pais = "" } = Astro.props;
+const isPrPage = Astro.url.pathname.includes('/pr');
+const finalPais = pais || (isPrPage ? "Puerto Rico" : "España");
 ---
 
 <!-- Cargar html2pdf.js desde CDN para evitar problemas de optimización/pre-bundling de Vite -->
@@ -19,7 +23,7 @@ const { webhookUrl = "" } = Astro.props;
   <InformePdf />
 </div>
 
-<form class="modern-form" id="report-download-form" data-webhook-url={webhookUrl}>
+<form class="modern-form" id="report-download-form" data-webhook-url={webhookUrl} data-form-name={formName} data-pais={finalPais}>
   <div class="form-group">
     <input
       type="text"
@@ -391,6 +395,7 @@ const { webhookUrl = "" } = Astro.props;
 
       if (hasError) return;
 
+    const formName = form.dataset.formName || "";
     // Send the lead to Zapier
     const data: Record<string, string> = {
         Nombre: (document.getElementById('userName') as HTMLInputElement)?.value || '',
@@ -398,15 +403,36 @@ const { webhookUrl = "" } = Astro.props;
         Cargo: (form.querySelector('select[name="role"]') as HTMLSelectElement)?.value || '',
         'Consentimiento SMS': 'Aceptado'
     };
+    const pais = form.dataset.pais || "";
+    if (formName) {
+        data['Origen Formulario'] = formName;
+    }
+    if (pais) {
+        data['Pais'] = pais;
+    }
 
     // Send lead to webhook asynchronously
-    const gateWebhookUrl = document.getElementById('report-download-form')?.dataset.webhookUrl || "";
-    fetch(gateWebhookUrl || "https://hooks.zapier.com/hooks/catch/12433184/4bye64r/", {
+    const gateWebhookUrl = document.getElementById('report-download-form')?.dataset.webhookUrl || "https://hooks.zapier.com/hooks/catch/12433184/4bye64r/";
+    // 1. Envío al webhook original (sin alterar)
+    fetch(gateWebhookUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
         mode: 'no-cors'
-    }).catch(err => console.error("Error sending lead:", err));
+    }).catch(err => console.error("Error al enviar webhook:", err));
+
+    // 2. Envío a la base de datos local
+    fetch('/api/guardar-lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            formId: 'report-download-form',
+            formName: formName || undefined,
+            pais: pais || undefined,
+            webhookUrl: gateWebhookUrl,
+            data: data
+        })
+    }).catch(err => console.error("Error al guardar en base de datos:", err));
 
     // Feedback visual en el botón (solo deshabilitar)
     btn.disabled = true;

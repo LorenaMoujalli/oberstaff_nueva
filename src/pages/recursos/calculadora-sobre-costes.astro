@@ -219,6 +219,8 @@ const webhookUrl = "https://hooks.zapier.com/hooks/catch/12433184/4bfk2q7/";
             id="calculator-lead-form"
             class="modern-form"
             data-webhook-url={webhookUrl}
+            data-form-name="Calculadora España"
+            data-pais="España"
             style="max-width: 400px; width: 100%; margin: 0 auto; text-align: left; box-sizing: border-box;"
           >
             <div class="form-group" style="margin-bottom: 15px;">
@@ -560,21 +562,44 @@ const webhookUrl = "https://hooks.zapier.com/hooks/catch/12433184/4bfk2q7/";
       }).format(fugaTotal);
 
       const urlWebhook = leadForm.dataset.webhookUrl || "";
+      const formName = leadForm.dataset.formName || "";
+      const pais = leadForm.dataset.pais || "";
+      const webhookPayload: Record<string, any> = {
+        Nombre: nombre,
+        Email: email,
+        "Tamaño plantilla": responseQ1,
+        "Salario mensual": responseQ2,
+        "Rotación anual": responseQ3,
+        "Área de interés": responseQ4,
+        "Fuga anual aproximada": formatoEuros,
+      };
+      if (formName) {
+        webhookPayload["Origen Formulario"] = formName;
+      }
+      if (pais) {
+        webhookPayload["Pais"] = pais;
+      }
+
       if (urlWebhook) {
         fetch(urlWebhook, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            Nombre: nombre,
-            Email: email,
-            "Tamaño plantilla": responseQ1,
-            "Salario mensual": responseQ2,
-            "Rotación anual": responseQ3,
-            "Área de interés": responseQ4,
-            "Fuga anual aproximada": formatoEuros,
-          }),
+          body: JSON.stringify(webhookPayload),
           mode: "no-cors",
         }).catch((err) => console.error("Error sending lead to webhook:", err));
+
+        // 2. Envío a la base de datos local
+        fetch('/api/guardar-lead', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            formId: 'calculator-lead-form',
+            formName: formName || undefined,
+            pais: pais || undefined,
+            webhookUrl: urlWebhook,
+            data: webhookPayload
+          })
+        }).catch(err => console.error("Error al guardar en base de datos:", err));
       }
 
       // Clear consent error on check
