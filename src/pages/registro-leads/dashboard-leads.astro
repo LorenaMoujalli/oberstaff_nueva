@@ -114,6 +114,7 @@ import Layout from "../../layouts/Layout.astro";
     color: #1e293b !important;
     margin: 0;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
   }
 
   /* Top Nav Bar */
@@ -489,42 +490,47 @@ import Layout from "../../layouts/Layout.astro";
 
   /* Separadores verticales entre columnas */
   /* Separadores verticales entre columnas (oscurecidos) */
+  /* Estilos generales de celdas */
   .leads-table th,
   .leads-table td {
-    padding: 1.25rem 2rem;
-    border-bottom: 1px solid #cbd5e1;
+    padding: 1rem;
     font-size: 0.875rem;
     vertical-align: top;
-    border-right: 1px solid #cbd5e1;
-  }
-  .leads-table th:last-child,
-  .leads-table td:last-child {
-    border-right: none;
-    text-align: center;
-    vertical-align: middle;
   }
 
-  /* Primera y última columna con más respiración */
-  .leads-table th:first-child,
-  .leads-table td:first-child {
-    padding-left: 2.5rem;
+  /* Separadores verticales entre columnas (oscurecidos) y anchos - Solo Escritorio */
+  @media (min-width: 769px) {
+    .leads-table th,
+    .leads-table td {
+      padding: 1.25rem 2rem;
+      border-bottom: 1px solid #cbd5e1;
+      border-right: 1px solid #cbd5e1;
+    }
+    .leads-table th:last-child,
+    .leads-table td:last-child {
+      border-right: none;
+      text-align: center;
+      vertical-align: middle;
+    }
+    .leads-table th:first-child,
+    .leads-table td:first-child {
+      padding-left: 2.5rem;
+    }
+    .leads-table th:last-child,
+    .leads-table td:last-child {
+      padding-right: 2.5rem;
+    }
+    .leads-table th:nth-child(1),
+    .leads-table td:nth-child(1) { width: 190px; white-space: nowrap; }
+    .leads-table th:nth-child(2),
+    .leads-table td:nth-child(2) { width: 230px; }
+    .leads-table th:nth-child(3),
+    .leads-table td:nth-child(3) { width: 170px; }
+    .leads-table th:nth-child(4),
+    .leads-table td:nth-child(4) { min-width: 350px; }
+    .leads-table th:nth-child(5),
+    .leads-table td:nth-child(5) { width: 100px; }
   }
-  .leads-table th:last-child,
-  .leads-table td:last-child {
-    padding-right: 2.5rem;
-  }
-
-  /* Anchos de columna actualizados para 5 columnas */
-  .leads-table th:nth-child(1),
-  .leads-table td:nth-child(1) { width: 190px; white-space: nowrap; }
-  .leads-table th:nth-child(2),
-  .leads-table td:nth-child(2) { width: 230px; }
-  .leads-table th:nth-child(3),
-  .leads-table td:nth-child(3) { width: 170px; }
-  .leads-table th:nth-child(4),
-  .leads-table td:nth-child(4) { min-width: 350px; }
-  .leads-table th:nth-child(5),
-  .leads-table td:nth-child(5) { width: 100px; }
 
   /* Botón de eliminar registro */
   .btn-delete-row {
@@ -705,8 +711,174 @@ import Layout from "../../layouts/Layout.astro";
   .py-8 { padding: 2rem 0; }
   .mt-2 { margin-top: 0.5rem; }
 
-  /* Responsive styling for controls */
-  @media (max-width: 1024px) {
+  /* Adaptación Responsiva para móviles y tablets */
+  @media (max-width: 768px) {
+    .dashboard-container {
+      padding: 1rem;
+    }
+
+    .dashboard-header {
+      padding: 1rem;
+    }
+
+    .dashboard-title-area {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .title-right {
+      width: 100%;
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .title-right .btn-export {
+      flex: 1;
+      justify-content: center;
+      font-size: 0.8125rem;
+      padding: 0.5rem;
+    }
+
+    .controls-bar {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0.75rem;
+      width: 100%;
+    }
+
+    .controls-bar .search-input-wrapper {
+      width: 100%;
+      min-width: 0;
+    }
+
+    .controls-filters {
+      flex-direction: column;
+      align-items: stretch;
+      width: 100%;
+      gap: 0.75rem;
+    }
+
+    .controls-filters input[type="date"],
+    .btn-clear-filters,
+    .custom-select-wrapper {
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    /* Convertir Tabla en Tarjetas */
+    .leads-table thead {
+      display: none; /* Ocultar cabeceras en móvil */
+    }
+
+    .leads-table, 
+    .leads-table tbody, 
+    .leads-table tr, 
+    .leads-table td {
+      display: block;
+      width: 100% !important;
+      box-sizing: border-box;
+    }
+
+    .leads-table tbody tr {
+      background-color: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .leads-table td {
+      padding: 0 !important;
+      border: none !important;
+    }
+
+    /* Fila 1: Fecha */
+    .leads-table td:nth-child(1) {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.25rem;
+      border-bottom: 1px solid #f1f5f9 !important;
+      padding-bottom: 0.5rem !important;
+      font-size: 0.8125rem;
+    }
+    .leads-table td:nth-child(1)::before {
+      content: "Fecha y hora:";
+      font-weight: 700;
+      color: #475569;
+    }
+
+    /* Fila 2: Formulario */
+    .leads-table td:nth-child(2) {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.25rem;
+      border-bottom: 1px solid #f1f5f9 !important;
+      padding-bottom: 0.5rem !important;
+    }
+    .leads-table td:nth-child(2)::before {
+      content: "Formulario:";
+      font-weight: 700;
+      color: #475569;
+      font-size: 0.8125rem;
+    }
+
+    /* Fila 3: País */
+    .leads-table td:nth-child(3) {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.25rem;
+      border-bottom: 1px solid #f1f5f9 !important;
+      padding-bottom: 0.5rem !important;
+    }
+    .leads-table td:nth-child(3)::before {
+      content: "País:";
+      font-weight: 700;
+      color: #475569;
+      font-size: 0.8125rem;
+    }
+
+    /* Fila 4: Datos */
+    .leads-table td:nth-child(4) {
+      padding-top: 0.25rem !important;
+      padding-bottom: 0.5rem !important;
+    }
+
+    /* Fila 5: Acción */
+    .leads-table td:nth-child(5) {
+      display: flex;
+      justify-content: flex-end;
+      border-top: 1px solid #f1f5f9 !important;
+      padding-top: 0.75rem !important;
+    }
+
+    /* Paginación */
+    .pagination {
+      padding: 1rem;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+    }
+    #page-info {
+      order: -1;
+      width: 100%;
+      text-align: center;
+    }
+    .btn-page {
+      flex: 1;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 1024px) and (min-width: 769px) {
     .controls-bar {
       flex-wrap: wrap;
     }
@@ -1243,12 +1415,14 @@ import Layout from "../../layouts/Layout.astro";
 
     let formOptions = '<option value="all">Todos los formularios</option>';
     uniqueForms.forEach(f => {
-      formOptions += `<option value="${f}">${f}</option>`;
+      const displayForm = f.length > 28 ? f.substring(0, 25) + '...' : f;
+      formOptions += `<option value="${f}">${displayForm}</option>`;
     });
 
     let countryOptions = '<option value="all">Todos los países</option>';
     uniqueCountries.forEach(c => {
-      countryOptions += `<option value="${c}">${c}</option>`;
+      const displayCountry = c.length > 28 ? c.substring(0, 25) + '...' : c;
+      countryOptions += `<option value="${c}">${displayCountry}</option>`;
     });
 
     Swal.fire({
@@ -1357,11 +1531,10 @@ import Layout from "../../layouts/Layout.astro";
     }
   });
 
-
-
   // Initial Fetch & Real-time polling (every 5 seconds)
   fetchLeads();
   setInterval(() => {
     fetchLeads(true);
   }, 5000);
 </script>
+

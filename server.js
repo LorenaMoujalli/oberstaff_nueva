@@ -180,3 +180,66 @@ server.listen(PORT, '127.0.0.1', () => {
   console.log(`[API Server] Escuchando en http://127.0.0.1:${PORT}`);
   console.log(`[API Server] DB: ${dbPath}`);
 });
+
+// ──────────────────────────────────────────────
+// Monitoreo Automático de WordPress en Segundo Plano
+// ──────────────────────────────────────────────
+import { exec } from 'child_process';
+
+let lastPostId = null;
+let lastPostModified = null;
+let isBuilding = false;
+
+const WP_API_URL = "http://wordpress-efas5wlyxu4ne04hxofezoa9.109.199.104.87.nip.io/wp-json/wp/v2/posts?per_page=1&_fields=id,modified";
+
+async function checkWordPressUpdate() {
+  if (isBuilding) return;
+  try {
+    const response = await fetch(WP_API_URL);
+    if (!response.ok) {
+      console.error(`[WP Monitor] Error fetching WordPress API: ${response.statusText}`);
+      return;
+    }
+    const data = await response.json();
+    if (!Array.isArray(data) || data.length === 0) return;
+
+    const latestPost = data[0];
+    const currentId = latestPost.id;
+    const currentModified = latestPost.modified;
+
+    // First execution: set baseline
+    if (lastPostId === null && lastPostModified === null) {
+      lastPostId = currentId;
+      lastPostModified = currentModified;
+      console.log(`[WP Monitor] Baseline set. Latest post ID: ${currentId}, modified: ${currentModified}`);
+      return;
+    }
+
+    // Check for modifications or new posts
+    if (currentId !== lastPostId || currentModified !== lastPostModified) {
+      console.log(`[WP Monitor] Change detected! Post ID: ${lastPostId} -> ${currentId}, Modified: ${lastPostModified} -> ${currentModified}`);
+      console.log(`[WP Monitor] Triggering automatic build...`);
+      isBuilding = true;
+
+      exec('npm run build', (error, stdout, stderr) => {
+        isBuilding = false;
+        if (error) {
+          console.error(`[WP Monitor] Build error:`, error);
+          return;
+        }
+        console.log(`[WP Monitor] Build completed successfully.`);
+        lastPostId = currentId;
+        lastPostModified = currentModified;
+      });
+    }
+  } catch (err) {
+    console.error(`[WP Monitor] Error in monitoring cycle:`, err.message);
+  }
+}
+
+// Start polling every 5 minutes (300000 ms)
+setInterval(checkWordPressUpdate, 300000);
+
+// Run initial check 10 seconds after server start
+setTimeout(checkWordPressUpdate, 10000);
+
