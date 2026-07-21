@@ -1,11 +1,12 @@
 ---
 import DashboardLayout from "../layouts/DashboardLayout.astro";
+import "../styles/blog-post.css";
 
 const API_URL = "http://wordpress-efas5wlyxu4ne04hxofezoa9.109.199.104.87.nip.io/wp-json/wp/v2/posts?_embed&per_page=100";
 let posts: any[] = [];
 
 const isDev = import.meta.env.DEV;
-const cacheTTL = 5 * 60 * 1000; // 5 minutes
+const cacheTTL = isDev ? 5000 : 1 * 60 * 1000; // 5 seconds in dev, 1 minute in prod
 const now = Date.now();
 
 const shouldFetch = 
@@ -94,13 +95,21 @@ function getFeaturedImage(post: any) {
     <link rel="canonical" href="https://oberstaff.com/blog/" slot="head" />
     <div class="blog-main-content">
         <div class="blog-container">
-            {posts.length === 0 ? (
-                <div class="no-posts">
-                    <p>No se encontraron artículos publicados en este momento.</p>
-                </div>
-            ) : (
+            <!-- Skeleton Loader -->
+            <div id="blog-skeleton-loader">
+                <div class="skeleton-card"></div>
+                <div class="skeleton-card"></div>
+                <div class="skeleton-card"></div>
+            </div>
+
+            <!-- Single Post View Container (dynamic) -->
+            <div id="blog-single-view" style="display: none;"></div>
+
+            <!-- Blog List View Container -->
+            <div id="blog-list-view" style="display: none;">
                 <div class="articles-list" id="articles-list">
-                    {posts.map((post: any) => {
+                    <!-- Artículos renderizados estáticamente por fallback (SEO) -->
+                    {posts.length > 0 && posts.map((post: any) => {
                         const image = getFeaturedImage(post);
                         const title = cleanHTML(post.title?.rendered);
                         const rawExcerpt = cleanHTML(post.excerpt?.rendered);
@@ -140,13 +149,47 @@ function getFeaturedImage(post: any) {
                         <span>Siguiente</span>
                         <iconify-icon icon="solar:alt-arrow-right-linear"></iconify-icon>
                     </button>
-                </div>
-            )}
-        </div>
     </div>
 </DashboardLayout>
 
 <script>
+    const API_URL = "/api/wordpress-proxy?url=" + encodeURIComponent("http://wordpress-efas5wlyxu4ne04hxofezoa9.109.199.104.87.nip.io/wp-json/wp/v2/posts?_embed&per_page=100");
+
+    function cleanHTML(htmlString: string): string {
+        if (!htmlString) return "";
+        let clean = htmlString.replace(/<\/?[^>]+(>|$)/g, "");
+        const entities: Record<string, string> = {
+            "&nbsp;": " ", "&#8211;": "—", "&#8216;": "‘", "&#8217;": "’",
+            "&#8220;": "“", "&#8221;": "”", "&amp;": "&", "&lt;": "<",
+            "&gt;": ">", "&quot;": '"', "&#039;": "'", "&aacute;": "á",
+            "&eacute;": "é", "&iacute;": "í", "&oacute;": "ó", "&uacute;": "ú",
+            "&Ntilde;": "Ñ", "&ntilde;": "ñ", "&iquest;": "¿", "&iexcl;": "¡",
+            "&#8230;": "..."
+        };
+        Object.keys(entities).forEach((entity: string) => {
+            clean = clean.replace(new RegExp(entity, "g"), entities[entity]);
+        });
+        clean = clean.replace(/&[a-zA-Z0-9#]+;/g, "");
+        return clean.trim();
+    }
+
+    function formatDate(dateString: string): string {
+        if (!dateString) return "";
+        const date = new Date(dateString);
+        return date.toLocaleDateString("es-ES", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+        });
+    }
+
+    function getFeaturedImage(post: any): string {
+        if (post._embedded && post._embedded["wp:featuredmedia"] && post._embedded["wp:featuredmedia"][0]) {
+            return post._embedded["wp:featuredmedia"][0].source_url || "/Portada-de-blog.webp";
+        }
+        return "/Portada-de-blog.webp";
+    }
+
     function initPagination() {
         const postsPerPage = 5;
         const articles = Array.from(document.querySelectorAll('.article-card'));
@@ -160,7 +203,6 @@ function getFeaturedImage(post: any) {
         const nextBtn = document.getElementById('next-page-btn');
         const pagesList = document.getElementById('pagination-pages-list');
 
-        // Leer página desde la URL si existe (ej: ?page=2)
         const urlParams = new URLSearchParams(window.location.search);
         const pageParam = parseInt(urlParams.get('page') || '1');
         if (pageParam && pageParam >= 1 && pageParam <= totalPages) {
@@ -169,13 +211,10 @@ function getFeaturedImage(post: any) {
 
         function updatePage(pageNum: number, isInitial = false) {
             currentPage = pageNum;
-            
-            // Actualizar URL sin recargar la página
             const newUrl = new URL(window.location.href);
             newUrl.searchParams.set('page', currentPage.toString());
             window.history.pushState({ page: currentPage }, '', newUrl.toString());
 
-            // Mostrar/Ocultar artículos correspondientes
             const startIndex = (currentPage - 1) * postsPerPage;
             const endIndex = startIndex + postsPerPage;
 
@@ -188,11 +227,10 @@ function getFeaturedImage(post: any) {
                 }
             });
 
-            // Desplazar arriba con suavidad solo si no es la carga inicial
             if (!isInitial) {
                 const articlesList = document.getElementById('articles-list');
                 if (articlesList) {
-                    const yOffset = -120; // Compensación por el menú flotante
+                    const yOffset = -120;
                     const y = articlesList.getBoundingClientRect().top + window.pageYOffset + yOffset;
                     window.scrollTo({ top: y, behavior: 'smooth' });
                 } else {
@@ -207,7 +245,6 @@ function getFeaturedImage(post: any) {
             if (!pagesList) return;
             pagesList.innerHTML = '';
 
-            // Habilitar/Deshabilitar anterior/siguiente
             if (prevBtn) {
                 if (currentPage === 1) {
                     prevBtn.setAttribute('disabled', 'true');
@@ -224,7 +261,6 @@ function getFeaturedImage(post: any) {
                 }
             }
 
-            // Generar botones numéricos
             for (let i = 1; i <= totalPages; i++) {
                 const btn = document.createElement('button');
                 btn.className = `page-num-btn ${i === currentPage ? 'active' : ''}`;
@@ -234,29 +270,316 @@ function getFeaturedImage(post: any) {
             }
         }
 
-        // Listeners de botones
         prevBtn?.addEventListener('click', () => {
-            if (currentPage > 1) {
-                updatePage(currentPage - 1);
-            }
+            if (currentPage > 1) updatePage(currentPage - 1);
         });
 
         nextBtn?.addEventListener('click', () => {
-            if (currentPage < totalPages) {
-                updatePage(currentPage + 1);
-            }
+            if (currentPage < totalPages) updatePage(currentPage + 1);
         });
 
-        // Inicializar
         updatePage(currentPage, true);
     }
 
-    // Inicializar con eventos de Astro o carga tradicional
-    document.addEventListener('astro:page-load', initPagination);
-    document.addEventListener('DOMContentLoaded', initPagination);
+    function renderPostList(posts: any[]) {
+        const listContainer = document.getElementById("articles-list");
+        if (!listContainer) return;
+
+        const isPr = window.location.pathname.startsWith('/pr');
+        const prefix = isPr ? '/pr' : '';
+
+        listContainer.innerHTML = posts.map((post: any) => {
+            const image = getFeaturedImage(post);
+            const title = cleanHTML(post.title?.rendered);
+            const rawExcerpt = cleanHTML(post.excerpt?.rendered);
+            const excerpt = rawExcerpt.length > 180 ? rawExcerpt.substring(0, 180) + "..." : rawExcerpt;
+            const date = formatDate(post.date);
+
+            return `
+                <article class="article-card" data-slug="${post.slug}">
+                    <div class="article-image-wrapper">
+                        <img src="${image}" alt="${title}" loading="lazy" />
+                    </div>
+                    <div class="article-info">
+                        <div class="article-meta">
+                            <time datetime="${post.date}">${date}</time>
+                        </div>
+                        <h2 class="article-title">${title}</h2>
+                        <p class="article-excerpt">${excerpt}</p>
+                        <a href="${prefix}/blog/${post.slug}" class="read-more-btn">
+                            ${isPr ? 'Leer artículo' : 'Leer artículo'}
+                            <iconify-icon icon="solar:arrow-right-linear" class="arrow-icon"></iconify-icon>
+                        </a>
+                    </div>
+                </article>
+            `;
+        }).join("");
+
+        initPagination();
+    }
+
+    function renderSinglePost(post: any) {
+        const title = cleanHTML(post.title?.rendered);
+        const content = post.content?.rendered || "";
+        const ogImage = getFeaturedImage(post);
+        
+        let authorName = "Equipo Editorial Oberstaff";
+        if (post._embedded && post._embedded.author && post._embedded.author[0]) {
+            authorName = post._embedded.author[0].name || "Equipo Editorial Oberstaff";
+        }
+        let categoryName = "Artículo del Blog";
+        if (post._embedded && post._embedded["wp:term"] && post._embedded["wp:term"][0] && post._embedded["wp:term"][0][0]) {
+            categoryName = post._embedded["wp:term"][0][0].name || "Artículo del Blog";
+        }
+
+        const tocLinks: Array<{ href: string; text: string }> = [];
+        const navStart = content.indexOf("<nav>");
+        const navEnd = content.indexOf("</nav>");
+        if (navStart !== -1 && navEnd !== -1) {
+            const tocContent = content.substring(navStart + 5, navEnd);
+            const linkRegex = /<a\s+[^>]*href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/g;
+            let match: RegExpExecArray | null;
+            while ((match = linkRegex.exec(tocContent)) !== null) {
+                tocLinks.push({ href: match[1], text: match[2].replace(/<\/?[^>]+(>|$)/g, "").trim() });
+            }
+        }
+
+        let contentHtml = content;
+        const startTag = '<div class="os-main-content">';
+        const startIndex = content.indexOf(startTag);
+        if (startIndex !== -1) {
+            const contentStart = startIndex + startTag.length;
+            let depth = 1;
+            let currentIndex = contentStart;
+            while (depth > 0 && currentIndex < content.length) {
+                const nextOpen = content.indexOf("<div", currentIndex);
+                const nextClose = content.indexOf("</div>", currentIndex);
+                if (nextClose === -1) break;
+                if (nextOpen !== -1 && nextOpen < nextClose) {
+                    depth++;
+                    currentIndex = nextOpen + 4;
+                } else {
+                    depth--;
+                    if (depth === 0) {
+                        contentHtml = content.substring(contentStart, nextClose).trim();
+                        break;
+                    }
+                    currentIndex = nextClose + 6;
+                }
+            }
+        }
+
+        contentHtml = contentHtml
+            .replace(/class=["']os-highlight-box["']/g, 'class="os-box"')
+            .replace(/class=["']os-stack-table-wrap["']/g, 'class="os-table-wrap"')
+            .replace(/class=["']os-stack-table["']/g, 'class="os-table"')
+            .replace(/class=["']os-conclusion["']/g, 'class="os-cta"')
+            .replace(/class=["']os-editorial-link["']/g, 'class="os-editorial-link"')
+            .replace(/class=["']os-feature-image["']/g, 'class="os-feature-image"');
+
+        contentHtml = contentHtml.replace(/<table([\s\S]*?)>([\s\S]*?)<\/table>/gi, (match: string) => {
+            if (match.includes('class="os-table"')) return `<div class="os-table-wrap">${match}</div>`;
+            return `<div class="os-table-wrap"><table class="os-table" ${match.slice(6)}</div>`;
+        });
+
+        contentHtml = contentHtml.replace(/<a\s+([^>]*href=["']([^"']+)["'][^>]*)>([\s\S]*?)<\/a>/gi, (match: string, attrs: string, href: string, text: string) => {
+            const isCTA = /llamada|agenda|reun|contact|convers/i.test(href) || /llamada|agenda|reun|contact|convers/i.test(text);
+            if (isCTA) {
+                if (/class=["']/i.test(attrs)) {
+                    return `<a ${attrs.replace(/class=["']([^"']*)["']/i, 'class="$1 os-btn"')}>${text}</a>`;
+                } else {
+                    return `<a ${attrs} class="os-btn">${text}</a>`;
+                }
+            }
+            return match;
+        });
+
+        const container = document.getElementById("blog-single-view");
+        if (!container) return;
+
+        let tocHtml = "";
+        if (tocLinks.length > 0) {
+            tocHtml = `
+                <aside class="os-sidebar">
+                    <span class="os-sidebar-title">Contenido del Artículo</span>
+                    <nav class="os-nav">
+                        ${tocLinks.map(link => `
+                            <a href="${link.href}">
+                                <i class="fa-solid fa-angle-right" style="margin-right: 8px;"></i>
+                                ${link.text}
+                            </a>
+                        `).join("")}
+                    </nav>
+                </aside>
+            `;
+        }
+
+        container.innerHTML = `
+            <div id="os-isolated-scope">
+                <header class="os-hero">
+                    <div class="os-container">
+                        <div class="os-hero-content">
+                            <div class="os-hero-text">
+                                <span class="os-badge">${categoryName}</span>
+                                <h1>${title}</h1>
+                                <div class="os-author-bar">
+                                    <div class="os-author-avatar">OS</div>
+                                    <div style="font-size: 0.9rem;">
+                                        <strong>${authorName}</strong><br />
+                                        <span style="opacity: 0.7;">Lectura de 8 min</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="os-hero-img-desktop">
+                                <img src="${ogImage}" alt="${title}" />
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <main class="os-container">
+                    <div class="os-grid">
+                        <article class="os-article">${contentHtml}</article>
+                        ${tocHtml}
+                    </div>
+                    <div class="os-footer">
+                        <div class="os-footer-avatar">OS</div>
+                        <div style="max-width: 600px;">
+                            <h4 style="font-family: 'Montserrat', sans-serif; margin-bottom: 10px; color: var(--os-shark);">Sobre el Autor</h4>
+                            <p style="font-size: 0.95rem; color: #666; margin: 0;">
+                                <strong>${authorName}.</strong> Especialistas en outsourcing de talento remoto a través de modelos de Staff Augmentation y Employer of Record (EOR). Ayudamos a escalar equipos de forma eficiente.
+                            </p>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        `;
+
+        if (post.yoast_head_json) {
+            const metaTitle = post.yoast_head_json.title || title;
+            document.title = metaTitle;
+            const metaDesc = document.querySelector('meta[name="description"]');
+            if (metaDesc) metaDesc.setAttribute('content', post.yoast_head_json.description || "");
+        }
+    }
+
+    async function loadBlogData() {
+        const path = window.location.pathname.replace(/\/$/, "");
+        const isSinglePost = path !== "/blog" && path !== "/pr/blog";
+
+        const skeleton = document.getElementById("blog-skeleton-loader");
+        const listView = document.getElementById("blog-list-view");
+        const singleView = document.getElementById("blog-single-view");
+
+        if (skeleton) skeleton.style.display = "block";
+        if (listView) listView.style.display = "none";
+        if (singleView) singleView.style.display = "none";
+
+        const isPr = window.location.pathname.startsWith('/pr');
+        const cacheKey = isPr ? "wp_blog_cache_pr" : "wp_blog_cache";
+        const cachedString = sessionStorage.getItem(cacheKey);
+        let posts: any[] = [];
+
+        if (cachedString) {
+            try {
+                const cacheData = JSON.parse(cachedString);
+                if (Date.now() - cacheData.timestamp < 60000) {
+                    posts = cacheData.posts;
+                }
+            } catch(e) {}
+        }
+
+        if (posts.length === 0) {
+            try {
+                const response = await fetch(API_URL);
+                if (response.ok) {
+                    posts = await response.json();
+                    sessionStorage.setItem(cacheKey, JSON.stringify({
+                        timestamp: Date.now(),
+                        posts: posts
+                    }));
+                }
+            } catch(e) {
+                console.error("Error loading blog posts:", e);
+            }
+        }
+
+        if (posts.length === 0) {
+            if (skeleton) skeleton.style.display = "none";
+            if (listView) listView.style.display = "block";
+            return;
+        }
+
+        const publishedPosts = posts.filter((p: any) => p.status === "publish");
+
+        if (isSinglePost) {
+            const slug = path.split('/').pop();
+            const post = publishedPosts.find((p: any) => p.slug === slug);
+            if (post) {
+                renderSinglePost(post);
+                if (skeleton) skeleton.style.display = "none";
+                if (singleView) singleView.style.display = "block";
+            } else {
+                try {
+                    const rawUrl = `http://wordpress-efas5wlyxu4ne04hxofezoa9.109.199.104.87.nip.io/wp-json/wp/v2/posts?slug=${slug}&_embed`;
+                    const singleUrl = `/api/wordpress-proxy?url=` + encodeURIComponent(rawUrl);
+                    const response = await fetch(singleUrl);
+                    if (response.ok) {
+                        const directPosts = await response.json();
+                        if (directPosts.length > 0) {
+                            renderSinglePost(directPosts[0]);
+                            if (skeleton) skeleton.style.display = "none";
+                            if (singleView) singleView.style.display = "block";
+                            return;
+                        }
+                    }
+                } catch(e) {
+                    console.error("Error fetching single post by slug:", e);
+                }
+                if (skeleton) skeleton.style.display = "none";
+                if (singleView) {
+                    singleView.innerHTML = `<div style="text-align:center; padding: 100px 20px;"><h2>Artículo no encontrado</h2><a href="${isPr ? '/pr' : ''}/blog" class="os-btn">Volver al Blog</a></div>`;
+                    singleView.style.display = "block";
+                }
+            }
+        } else {
+            renderPostList(publishedPosts);
+            if (skeleton) skeleton.style.display = "none";
+            if (listView) listView.style.display = "block";
+        }
+    }
+
+    document.addEventListener('click', (e: any) => {
+        const link = e.target.closest('a');
+        if (link) {
+            try {
+                const url = new URL(link.href, window.location.href);
+                if (!url.pathname.startsWith('/blog') && !url.pathname.startsWith('/pr/blog')) {
+                    sessionStorage.removeItem('wp_blog_cache');
+                    sessionStorage.removeItem('wp_blog_cache_pr');
+                }
+            } catch(err) {}
+        }
+    });
+
+    document.addEventListener('astro:page-load', loadBlogData);
+    document.addEventListener('DOMContentLoaded', loadBlogData);
 </script>
 
-<style>
+<style is:global>
+    .skeleton-card {
+        background: #eef0f6;
+        border-radius: 20px;
+        height: 300px;
+        width: 100%;
+        margin-bottom: 40px;
+        animation: skeleton-pulse 1.5s infinite ease-in-out;
+    }
+    @keyframes skeleton-pulse {
+        0% { opacity: 0.6; }
+        50% { opacity: 1; }
+        100% { opacity: 0.6; }
+    }
+
     /* Hero section */
     .blog-hero {
         background: radial-gradient(circle at 10% 20%, rgba(102, 99, 253, 0.05) 0%, rgba(255, 102, 204, 0.05) 90.1%), #0d0d0d;

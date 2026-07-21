@@ -48,11 +48,41 @@ const CORS_HEADERS = {
   'Access-Control-Allow-Headers': 'Content-Type',
 };
 
-const server = http.createServer((req, res) => {
+const server = http.createServer(async (req, res) => {
   // CORS preflight
   if (req.method === 'OPTIONS') {
     res.writeHead(204, CORS_HEADERS);
     res.end();
+    return;
+  }
+
+  // ── GET /api/wordpress-proxy ─────────────────
+  if (req.method === 'GET' && req.url.startsWith('/api/wordpress-proxy')) {
+    try {
+      const parsedUrl = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
+      const wpUrl = parsedUrl.searchParams.get('url');
+      if (!wpUrl) {
+        res.writeHead(400, CORS_HEADERS);
+        res.end(JSON.stringify({ error: 'Falta parametro url' }));
+        return;
+      }
+
+      // Validar que sea la URL de wordpress para seguridad
+      if (!wpUrl.includes('wordpress-efas5wlyxu4ne04hxofezoa9.109.199.104.87.nip.io')) {
+        res.writeHead(400, CORS_HEADERS);
+        res.end(JSON.stringify({ error: 'URL no permitida' }));
+        return;
+      }
+
+      const wpRes = await fetch(wpUrl);
+      const data = await wpRes.json();
+      res.writeHead(wpRes.status, CORS_HEADERS);
+      res.end(JSON.stringify(data));
+    } catch (err) {
+      console.error('[wordpress-proxy] Error:', err.message);
+      res.writeHead(500, CORS_HEADERS);
+      res.end(JSON.stringify({ error: 'Error al conectar con WordPress' }));
+    }
     return;
   }
 
