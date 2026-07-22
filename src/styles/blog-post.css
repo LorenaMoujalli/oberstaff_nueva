@@ -189,6 +189,7 @@
     flex: 1;
     width: 100%;
     max-width: 100%;
+    min-width: 0;
     word-wrap: break-word;
     word-break: break-word;
     font-size: 1.125rem !important; /* 18px */
@@ -196,7 +197,15 @@
     color: #333;
 }
 
-#os-isolated-scope .os-article nav {
+#os-isolated-scope .os-article img {
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+#os-isolated-scope .os-article nav,
+#os-isolated-scope .os-article [class*="toc"],
+#os-isolated-scope .os-article [id*="toc"],
+#os-isolated-scope .os-article .ez-toc-container {
     display: none !important;
 }
 
@@ -517,8 +526,13 @@
         gap: 60px;
     }
 
+    #os-isolated-scope .os-article {
+        max-width: 750px;
+    }
+
     #os-isolated-scope .os-sidebar {
         width: 300px;
+        flex-shrink: 0;
         position: sticky;
         top: 120px;
     }

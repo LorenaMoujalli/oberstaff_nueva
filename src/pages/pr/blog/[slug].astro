@@ -107,17 +107,24 @@ function getTOCLinks(html: string) {
 }
 
 function getInnerHtmlOfMainContent(html: string) {
-    const startTag = '<div class="os-main-content">';
-    const startIndex = html.indexOf(startTag);
+    let startTag = '<div class="os-main-content">';
+    let startIndex = html.indexOf(startTag);
+    if (startIndex === -1) {
+        startTag = '<main class="os-main-content">';
+        startIndex = html.indexOf(startTag);
+    }
     if (startIndex === -1) return html; // Fallback to raw if tag not found
 
     const contentStart = startIndex + startTag.length;
     let depth = 1;
     let currentIndex = contentStart;
+    const isMain = startTag.startsWith('<main');
+    const openTag = isMain ? '<main' : '<div';
+    const closeTag = isMain ? '</main>' : '</div>';
 
     while (depth > 0 && currentIndex < html.length) {
-        const nextOpen = html.indexOf("<div", currentIndex);
-        const nextClose = html.indexOf("</div>", currentIndex);
+        const nextOpen = html.indexOf(openTag, currentIndex);
+        const nextClose = html.indexOf(closeTag, currentIndex);
 
         if (nextClose === -1) {
             break;
@@ -125,13 +132,13 @@ function getInnerHtmlOfMainContent(html: string) {
 
         if (nextOpen !== -1 && nextOpen < nextClose) {
             depth++;
-            currentIndex = nextOpen + 4;
+            currentIndex = nextOpen + openTag.length;
         } else {
             depth--;
             if (depth === 0) {
                 return html.substring(contentStart, nextClose).trim();
             }
-            currentIndex = nextClose + 6;
+            currentIndex = nextClose + closeTag.length;
         }
     }
     return html.substring(contentStart).trim();
@@ -351,26 +358,33 @@ const canonicalUrl = post.yoast_head_json?.canonical;
             }
 
             let contentHtml = content;
-            const startTag = '<div class="os-main-content">';
-            const startIndex = content.indexOf(startTag);
+            let startTag = '<div class="os-main-content">';
+            let startIndex = content.indexOf(startTag);
+            if (startIndex === -1) {
+                startTag = '<main class="os-main-content">';
+                startIndex = content.indexOf(startTag);
+            }
             if (startIndex !== -1) {
                 const contentStart = startIndex + startTag.length;
                 let depth = 1;
                 let currentIndex = contentStart;
+                const isMain = startTag.startsWith('<main');
+                const openTag = isMain ? '<main' : '<div';
+                const closeTag = isMain ? '</main>' : '</div>';
                 while (depth > 0 && currentIndex < content.length) {
-                    const nextOpen = content.indexOf("<div", currentIndex);
-                    const nextClose = content.indexOf("</div>", currentIndex);
+                    const nextOpen = content.indexOf(openTag, currentIndex);
+                    const nextClose = content.indexOf(closeTag, currentIndex);
                     if (nextClose === -1) break;
                     if (nextOpen !== -1 && nextOpen < nextClose) {
                         depth++;
-                        currentIndex = nextOpen + 4;
+                        currentIndex = nextOpen + openTag.length;
                     } else {
                         depth--;
                         if (depth === 0) {
                             contentHtml = content.substring(contentStart, nextClose).trim();
                             break;
                         }
-                        currentIndex = nextClose + 6;
+                        currentIndex = nextClose + closeTag.length;
                     }
                 }
             }
