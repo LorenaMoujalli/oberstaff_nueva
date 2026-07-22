@@ -44,7 +44,11 @@ import Layout from "../../layouts/Layout.astro";
       </div>
       
       <div class="controls-filters">
-        <input type="date" id="filter-date" title="Filtrar por fecha" />
+        <div class="date-range-wrapper">
+          <input type="date" id="filter-date-from" title="Desde fecha" placeholder="Desde" />
+          <span class="date-range-separator">Hasta</span>
+          <input type="date" id="filter-date-to" title="Hasta fecha" placeholder="Hasta" />
+        </div>
         
         <select id="filter-form">
           <option value="all">Todos los formularios</option>
@@ -401,9 +405,20 @@ import Layout from "../../layouts/Layout.astro";
     flex: 2;
     flex-wrap: nowrap;
   }
-  .controls-filters input[type="date"] {
-    width: 150px;
+  .date-range-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     flex-shrink: 0;
+  }
+  .controls-filters .date-range-wrapper input[type="date"] {
+    width: 155px;
+    flex-shrink: 0;
+  }
+  .date-range-separator {
+    font-size: 0.8125rem;
+    color: #64748b;
+    font-weight: 600;
   }
   .controls-filters select#filter-form {
     flex: 1.2;
@@ -761,10 +776,14 @@ import Layout from "../../layouts/Layout.astro";
     }
 
     .controls-filters input[type="date"],
+    .date-range-wrapper,
     .btn-clear-filters,
     .custom-select-wrapper {
       width: 100%;
       box-sizing: border-box;
+    }
+    .date-range-wrapper input[type="date"] {
+      width: 45% !important;
     }
 
     /* Convertir Tabla en Tarjetas */
@@ -935,7 +954,8 @@ import Layout from "../../layouts/Layout.astro";
   const statForms = document.getElementById('stat-forms') as HTMLElement;
 
   const filterSearch = document.getElementById('filter-search') as HTMLInputElement;
-  const filterDate = document.getElementById('filter-date') as HTMLInputElement;
+  const filterDateFrom = document.getElementById('filter-date-from') as HTMLInputElement;
+  const filterDateTo = document.getElementById('filter-date-to') as HTMLInputElement;
   const filterForm = document.getElementById('filter-form') as HTMLSelectElement;
   const filterCountry = document.getElementById('filter-country') as HTMLSelectElement;
   const btnClearFilters = document.getElementById('btn-clear-filters') as HTMLButtonElement;
@@ -1073,7 +1093,8 @@ import Layout from "../../layouts/Layout.astro";
     const searchText = filterSearch.value.toLowerCase().trim();
     const selectedForm = filterForm.value;
     const selectedCountry = filterCountry.value;
-    const selectedDate = filterDate.value; // Format: YYYY-MM-DD
+    const selectedDateFrom = filterDateFrom.value; // Format: YYYY-MM-DD
+    const selectedDateTo = filterDateTo.value; // Format: YYYY-MM-DD
 
     filteredLeads = allLeads.filter(lead => {
       // Search text match (ultra optimized using pre-computed searchableText string)
@@ -1082,10 +1103,20 @@ import Layout from "../../layouts/Layout.astro";
         matchesSearch = lead.searchableText ? lead.searchableText.includes(searchText) : false;
       }
 
-      // Date filter match (compares date part YYYY-MM-DD)
+      // Date range filter match
       let matchesDate = true;
-      if (selectedDate) {
-        matchesDate = lead.timestamp ? lead.timestamp.startsWith(selectedDate) : false;
+      if (selectedDateFrom || selectedDateTo) {
+        if (lead.timestamp) {
+          const leadDatePart = lead.timestamp.split(' ')[0];
+          if (selectedDateFrom && leadDatePart < selectedDateFrom) {
+            matchesDate = false;
+          }
+          if (selectedDateTo && leadDatePart > selectedDateTo) {
+            matchesDate = false;
+          }
+        } else {
+          matchesDate = false;
+        }
       }
 
       // Form filter match
@@ -1432,8 +1463,12 @@ import Layout from "../../layouts/Layout.astro";
           <p style="font-size: 13px; color: #64748b; margin-bottom: 16px; line-height: 1.4;">Filtra opcionalmente los datos que deseas incluir en el archivo de descarga. Deja en blanco o "Todos" para omitir el filtro.</p>
           
           <div style="margin-bottom: 12px;">
-            <label style="display: block; font-size: 12px; font-weight: bold; color: #475569; margin-bottom: 5px;">Filtrar por Fecha</label>
-            <input type="date" id="swal-export-date" style="width: 100%; box-sizing: border-box; padding: 8px 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 13px; color: #1e293b;" />
+            <label style="display: block; font-size: 12px; font-weight: bold; color: #475569; margin-bottom: 5px;">Filtrar por Rango de Fecha</label>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <input type="date" id="swal-export-date-from" style="flex: 1; box-sizing: border-box; padding: 8px 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 13px; color: #1e293b;" placeholder="Desde" />
+              <span style="font-size: 13px; color: #64748b; font-weight: 600;">Hasta</span>
+              <input type="date" id="swal-export-date-to" style="flex: 1; box-sizing: border-box; padding: 8px 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 13px; color: #1e293b;" placeholder="Hasta" />
+            </div>
           </div>
 
           <div style="margin-bottom: 12px;">
@@ -1460,7 +1495,8 @@ import Layout from "../../layouts/Layout.astro";
       color: '#1e293b',
       preConfirm: () => {
         return {
-          date: (document.getElementById('swal-export-date') as HTMLInputElement).value,
+          dateFrom: (document.getElementById('swal-export-date-from') as HTMLInputElement).value,
+          dateTo: (document.getElementById('swal-export-date-to') as HTMLInputElement).value,
           form: (document.getElementById('swal-export-form') as HTMLSelectElement).value,
           country: (document.getElementById('swal-export-country') as HTMLSelectElement).value,
         };
@@ -1472,8 +1508,18 @@ import Layout from "../../layouts/Layout.astro";
         // Apply filters only for export target
         const exportLeads = allLeads.filter(lead => {
           let matchesDate = true;
-          if (filters.date) {
-            matchesDate = lead.timestamp ? lead.timestamp.startsWith(filters.date) : false;
+          if (filters.dateFrom || filters.dateTo) {
+            if (lead.timestamp) {
+              const leadDatePart = lead.timestamp.split(' ')[0];
+              if (filters.dateFrom && leadDatePart < filters.dateFrom) {
+                matchesDate = false;
+              }
+              if (filters.dateTo && leadDatePart > filters.dateTo) {
+                matchesDate = false;
+              }
+            } else {
+              matchesDate = false;
+            }
           }
           const matchesForm = filters.form === 'all' || lead.form_name === filters.form;
           const matchesCountry = filters.country === 'all' || lead.pais === filters.country;
@@ -1496,13 +1542,15 @@ import Layout from "../../layouts/Layout.astro";
 
   // Event Listeners
   filterSearch.addEventListener('input', () => applyFilters());
-  filterDate.addEventListener('change', () => applyFilters());
+  filterDateFrom.addEventListener('change', () => applyFilters());
+  filterDateTo.addEventListener('change', () => applyFilters());
   filterForm.addEventListener('change', () => applyFilters());
   filterCountry.addEventListener('change', () => applyFilters());
   
   btnClearFilters.addEventListener('click', () => {
     filterSearch.value = '';
-    filterDate.value = '';
+    filterDateFrom.value = '';
+    filterDateTo.value = '';
     filterForm.value = 'all';
     filterCountry.value = 'all';
     applyFilters();

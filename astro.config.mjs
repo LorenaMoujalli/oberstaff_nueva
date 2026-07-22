@@ -2,6 +2,7 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://www.oberstaff.com',
   output: 'static',
   vite: {
     // In development: proxy /api requests to the standalone server.js
