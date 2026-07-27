@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oberstaff - Empleos Remotos</title>
+  
+  <!-- ================= IMPORTACIÓN DE FUENTES ================= -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ================= VARIABLES BASE ================= */
+    :root {
+      --bg-porcelain: #FEFFFA;
+      --bg-alternate: #FAFAFC;
+      --bg-white: #FFFFFF;
+      --text-dark: #1B1B1B;
+      --text-gray: #5A5A5A;
+      
+      --brand-pink: #FF66CC;   
+      --brand-purple: #6663FD; 
+      --brand-green: #66FF99;  
+      --brand-yellow: #CCFF66; 
+      
+      --font-heading: 'Montserrat', sans-serif;
+      --font-body: 'Poppins', sans-serif;
+    }
+
+    /* ================= GLOBALES Y RESET ================= */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body) !important; background-color: var(--bg-porcelain); color: var(--text-dark); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    section { padding: 100px 0; }
+
+    /* Utilidades */
+    .bg-porcelain { background-color: var(--bg-porcelain); }
+    .bg-alternate { background-color: var(--bg-alternate); }
+    .bg-white { background-color: var(--bg-white); }
+    .bg-dark-hero { background-color: #25262B; }
+    .text-white { color: #FFFFFF !important; }
+
+    /* ================= NAVEGACIÓN AISLADA ================= */
+    .talent-navbar { background: #FFFFFF; border-bottom: 1px solid rgba(0,0,0,0.05); padding: 15px 0; position: sticky; top: 0; z-index: 100; }
+    .talent-nav-container { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 24px; text-decoration: none; }
+    .nav-btn { padding: 10px 24px !important; font-size: 14px !important; }
+
+    /* ================= BLINDAJE DE MARCA ================= */
+    .brand-oberstaff { font-family: var(--font-heading) !important; font-weight: 900 !important; color: var(--text-dark) !important; }
+    .bg-dark-hero .brand-oberstaff { color: #FFFFFF !important; }
+    .brand-dot { color: var(--brand-pink) !important; }
+
+    /* ================= TIPOGRAFÍA ================= */
+    .visual-h1-large { font-family: var(--font-heading) !important; font-size: 46px; font-weight: 900 !important; line-height: 1.15 !important; letter-spacing: -1px; }
+    .visual-h2-large { font-family: var(--font-heading) !important; font-size: 38px; font-weight: 900 !important; line-height: 1.2 !important; }
+    .visual-section-title { font-family: var(--font-heading) !important; font-size: 36px; font-weight: 800 !important; color: var(--text-dark); line-height: 1.3; margin-bottom: 24px; }
+    .visual-section-title.text-left { text-align: left; }
+    .visual-h3-card-title { font-family: var(--font-heading) !important; font-size: 20px; font-weight: 700 !important; color: var(--text-dark); margin-bottom: 12px; }
+    .editorial-p { font-size: 16px; color: var(--text-gray); line-height: 1.7; font-family: var(--font-body) !important; margin-bottom: 15px; }
+
+    .seo-kicker { font-family: var(--font-heading) !important; font-weight: 800 !important; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 20px; font-size: 14px; display: inline-block; }
+    .text-gradient-pink { background: linear-gradient(90deg, var(--brand-pink), #FA3AB5); -webkit-background-clip: text; -webkit-text-fill-color: transparent; color: transparent; font-weight: 900; }
+
+    /* ================= BOTONES ================= */
+    .rounded-pill { display: inline-flex; align-items: center; justify-content: center; padding: 16px 32px; border-radius: 50px; font-weight: 700 !important; transition: all 0.3s ease; cursor: pointer; border: none; font-size: 16px; font-family: var(--font-body) !important; text-decoration: none; }
+    .btn-pink { background-color: var(--brand-pink) !important; color: #FFFFFF !important; border: 2px solid var(--brand-pink) !important; }
+    .btn-pink:hover { background-color: transparent !important; color: var(--brand-pink) !important; box-shadow: 0 5px 15px rgba(255, 102, 204, 0.3); }
+    .btn-primary { background-color: var(--brand-purple) !important; color: #FFFFFF !important; border: 2px solid var(--brand-purple) !important; }
+    .btn-primary:hover { background-color: transparent !important; color: var(--brand-purple) !important; box-shadow: 0 5px 15px rgba(102, 99, 253, 0.3); }
+    .btn-outline-white { background: transparent !important; color: #FFFFFF !important; border: 2px solid #FFFFFF !important; }
+    .btn-outline-white:hover { background: #FFFFFF !important; color: var(--text-dark) !important; }
+    .btn-outline-purple { background: transparent !important; color: var(--brand-purple) !important; border: 2px solid var(--brand-purple) !important; }
+    .btn-outline-purple:hover { background: var(--brand-purple) !important; color: #FFFFFF !important; }
+    .btn-outline-pink { background: transparent !important; color: var(--brand-pink) !important; border: 2px solid var(--brand-pink) !important; }
+    .btn-outline-pink:hover { background: var(--brand-pink) !important; color: #FFFFFF !important; }
+    .btn-white { background: #FFFFFF !important; color: var(--brand-purple) !important; border: 2px solid #FFFFFF !important; }
+    .btn-white:hover { box-shadow: 0 5px 15px rgba(255,255,255,0.3); transform: translateY(-2px); }
+
+    /* ================= LAYOUTS Y COMPONENTES ================= */
+    .blur-glow { position: absolute; filter: blur(100px); z-index: 1; border-radius: 50%; pointer-events: none; }
+    .pink-glow { top: -20%; left: -10%; width: 600px; height: 600px; background: linear-gradient(135deg, var(--brand-pink) 0%, rgba(255, 102, 204, 0.4) 100%); } 
+    .purple-glow { top: 10%; right: -15%; width: 500px; height: 700px; background: linear-gradient(135deg, var(--brand-purple) 0%, rgba(102, 99, 253, 0.4) 100%); }
+
+    /* Trust Bar */
+    .trust-bar-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; text-align: center; }
+    .trust-item { font-weight: 700; color: var(--text-dark); font-size: 14px; }
+
+    /* Grid S2 Posicionamiento */
+    .posicionamiento-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+
+    /* Split Row standard */
+    .split-header-row { display: flex; align-items: center; gap: 60px; margin-bottom: 20px; }
+    .split-header-row.split-reverse { flex-direction: row-reverse; }
+
+    /* Beneficios Grid */
+    .benefits-6-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
+    .b-card { background: #FFFFFF; border: 1px solid rgba(0,0,0,0.05); border-radius: 20px; padding: 40px 30px; transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s; flex: 1 1 calc(25% - 30px); min-width: 250px; text-align: left; }
+    .b-card:hover { transform: translateY(-5px); }
+    .b-title { font-family: var(--font-heading) !important; font-size: 18px; margin-bottom: 15px; color: var(--text-dark); font-weight: 800; }
+    .b-text { font-size: 14px; color: var(--text-gray); font-family: var(--font-body); }
+    .b-icon { font-size: 30px; margin-bottom: 20px; }
+    .b-card.hover-pink:hover { border-color: var(--brand-pink); box-shadow: 0 15px 40px rgba(255, 102, 204, 0.1); }
+    .b-card.hover-purple:hover { border-color: var(--brand-purple); box-shadow: 0 15px 40px rgba(102, 99, 253, 0.1); }
+    .b-card.hover-green:hover { border-color: var(--brand-green); box-shadow: 0 15px 40px rgba(102, 255, 153, 0.1); }
+    .b-card.hover-yellow:hover { border-color: var(--brand-yellow); box-shadow: 0 15px 40px rgba(204, 255, 102, 0.2); }
+
+    /* Áreas Grid */
+    .areas-cards-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
+    .area-card { background: #FFFFFF; border: 1px solid rgba(0,0,0,0.05); border-radius: 16px; padding: 30px; transition: transform 0.3s; }
+    .area-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.05); }
+
+    /* Checklist Izquierda */
+    .editorial-checklist-left { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 15px; text-align: left; }
+    .editorial-checklist-left li { display: flex; align-items: flex-start; gap: 15px; text-align: left; }
+    .editorial-checklist-left .icon { font-size: 20px; flex-shrink: 0; }
+    .editorial-checklist-left p { margin: 0; font-size: 15px; color: var(--text-gray); }
+
+    /* Países Compactos */
+    .countries-tags-compact { display: flex; flex-wrap: wrap; gap: 12px; justify-content: flex-start; margin-top: 20px; }
+    .country-tag { border: 1px solid rgba(255,255,255,0.4); padding: 8px 18px; border-radius: 50px; font-size: 14px; font-weight: 500; background: rgba(255,255,255,0.1); }
+
+    /* Testimonios */
+    .testimonials-grid { display: grid; gap: 30px; }
+    .testimonial-card { background: #FFFFFF; border: 1px solid rgba(0,0,0,0.06); border-radius: 16px; padding: 35px 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.02); }
+    .stars { color: #FFC107; font-size: 16px; letter-spacing: 2px; margin-bottom: 5px; }
+    .testimonial-quote { font-size: 15px; color: var(--text-dark); font-style: italic; margin-top: 15px; }
+
+    /* FAQ Acordeón */
+    .faq-container { display: flex; align-items: flex-start; gap: 60px; }
+    .faq-sticky-side { flex: 0 0 35%; position: sticky; top: 100px; }
+    .faq-accordion-side { flex: 1; display: flex; flex-direction: column; gap: 15px; }
+    .faq-item { background: #FFFFFF; border: 1px solid rgba(0,0,0,0.05); border-radius: 12px; overflow: hidden; transition: all 0.3s; }
+    .faq-question { padding: 25px 30px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+    .faq-title { font-size: 16px; font-weight: 600; margin: 0; font-family: var(--font-heading); }
+    .faq-icon { font-size: 24px; color: var(--brand-purple); font-weight: 300; transition: transform 0.3s; }
+    .faq-answer-wrapper { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.3s; }
+    .faq-answer { overflow: hidden; }
+    .faq-answer p { padding: 0 30px 25px 30px; font-size: 14px; color: var(--text-gray); margin: 0; }
+    .faq-item.active { border-color: var(--brand-purple); box-shadow: 0 5px 20px rgba(102, 99, 253, 0.08); }
+    .faq-item.active .faq-answer-wrapper { grid-template-rows: 1fr; }
+    .faq-item.active .faq-icon { transform: rotate(45deg); color: var(--brand-pink); }
+
+    /* ================= RESPONSIVE MEJORADO ================= */
+    @media (max-width: 992px) {
+      section { padding: 60px 0 !important; }
+      .posicionamiento-grid { grid-template-columns: 1fr; gap: 30px; text-align: center; }
+      .areas-cards-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+      .split-header-row, .faq-container { flex-direction: column; text-align: center; gap: 30px; }
+      .split-header-row.split-reverse { flex-direction: column; }
+      .visual-section-title.text-left { text-align: center; }
+      .editorial-checklist-left { align-items: flex-start; }
+      .editorial-checklist-left li { text-align: left; }
+      .countries-tags-compact { justify-content: center; }
+      .testimonials-grid { grid-template-columns: 1fr !important; }
+      .faq-sticky-side { position: relative; top: 0; }
+      .visual-h1-large { font-size: 34px !important; }
+      .visual-h2-large { font-size: 30px !important; }
+      .visual-section-title { font-size: 28px !important; }
+      .steps-4-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 20px !important; }
+    }
+
+    @media (max-width: 768px) {
+      .container { padding: 0 16px; }
+      .hero-profile-section { padding: 70px 0 50px !important; }
+      .visual-h1-large { font-size: 28px !important; line-height: 1.25 !important; }
+      .visual-h2-large { font-size: 24px !important; }
+      .visual-section-title { font-size: 24px !important; }
+      .trust-bar-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .areas-cards-grid { grid-template-columns: 1fr; gap: 15px; }
+      .steps-4-grid { grid-template-columns: 1fr !important; gap: 15px !important; }
+      .b-card { flex: 1 1 100%; min-width: 100%; padding: 30px 20px; }
+      .cta-mid-section { padding: 60px 0 !important; }
+    }
+
+    @media (max-width: 576px) {
+      .talent-nav-container { flex-direction: row; justify-content: space-between; align-items: center; gap: 10px; }
+      .logo { font-size: 20px; }
+      .nav-btn { width: auto !important; padding: 8px 14px !important; font-size: 12px !important; white-space: nowrap; text-align: center; }
+
+      section { padding: 45px 0 !important; }
+      .hero-profile-section { padding: 50px 0 35px !important; }
+      .visual-h1-large { font-size: 24px !important; }
+      .hero-subtitle { font-size: 15px !important; margin-bottom: 24px !important; }
+      
+      .hero-buttons { flex-direction: column; width: 100%; gap: 10px !important; }
+      
+      section .rounded-pill, .hero-buttons .rounded-pill, .cta-mid-section .rounded-pill { width: 100% !important; justify-content: center; text-align: center; padding: 13px 20px !important; font-size: 14px !important; }
+      
+      .trust-bar-grid { grid-template-columns: 1fr 1fr !important; column-gap: 24px; row-gap: 12px; text-align: center; max-width: 380px; margin: 0 auto; }
+      .trust-item { font-size: 12px; font-weight: 700; line-height: 1.35; text-align: center; }
+
+      .b-card { padding: 22px 18px; border-radius: 16px; }
+      .area-card { padding: 20px 16px; }
+      .step-card { padding: 20px 15px !important; }
+      .split-half { padding: 24px 18px !important; border-radius: 16px !important; }
+      
+      .visual-h3-card-title { font-size: 17px !important; }
+      .editorial-p { font-size: 14px !important; line-height: 1.6 !important; }
+      
+      .countries-tags-compact { gap: 8px; }
+      .country-tag { padding: 6px 12px; font-size: 12px; }
+
+      .faq-question { padding: 18px 16px; }
+      .faq-title { font-size: 14px; }
+      .faq-answer p { padding: 0 16px 18px 16px; font-size: 13px; }
+
+      .cta-mid-section { padding: 40px 0 !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ================= NAVEGADOR AISLADO (SOLO TALENTO) ================= -->
+  <header class="talent-navbar">
+    <div class="container talent-nav-container">
+      <a href="#" class="logo"><span class="brand-oberstaff">Oberstaff<span class="brand-dot">.</span></span></a>
+      <a href="https://zohosuite.oberstaff.com/careers" target="_blank" class="btn-outline-pink rounded-pill nav-btn">Ver vacantes disponibles</a>
+    </div>
+  </header>
+
+  <!-- ================= S1: HERO ================= -->
+  <section class="hero-profile-section bg-dark-hero" style="background: linear-gradient(to right, rgba(27, 27, 27, 0.95) 40%, rgba(27, 27, 27, 0.6) 100%), url('/hero-vacantes.webp') center/cover no-repeat; position: relative; padding: 120px 0 80px; overflow: hidden;">
+    <div class="blur-glow pink-glow"></div>
+    <div class="blur-glow purple-glow"></div>
+
+    <div class="container hero-profile-container" style="position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; text-align: center; max-width: 900px; margin: 0 auto;">
+      <h1 class="visual-h1-large text-white" style="margin-bottom: 24px;">Empleos remotos para trabajar con empresas de España y Puerto Rico</h1>
+      
+      <p class="hero-subtitle text-white" style="opacity: 0.9; font-size: 18px; margin-bottom: 35px; max-width: 750px;">
+        Talento de Latinoamérica: trabaja en remoto para empresas de España y Puerto Rico, cobra en dólares y crece con estabilidad.
+      </p>
+      
+      <div class="hero-buttons" style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: center;">
+        <a href="https://zohosuite.oberstaff.com/careers" target="_blank" class="btn-pink rounded-pill">Ver vacantes disponibles &rarr;</a>
+        <a href="#como-postularte" class="btn-outline-white rounded-pill smooth-scroll">Conoce cómo trabajamos &darr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TRUST BAR ================= -->
+  <div class="trust-bar-simple bg-white" style="padding: 30px 0; border-bottom: 1px solid rgba(0,0,0,0.05);">
+    <div class="container trust-bar-grid">
+      <div class="trust-item">🌎 Empleos 100% remotos desde tu país</div>
+      <div class="trust-item">💵 Pagos en dólares estadounidenses</div>
+      <div class="trust-item">🤝 Contrato formal, no tareas sueltas</div>
+      <div class="trust-item">🕐 Horario compatible con tu cliente</div>
+    </div>
+  </div>
+
+  <!-- ================= S2: POSICIONAMIENTO ================= -->
+  <section class="advantages-section bg-porcelain">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 40px;">
+        <h2 class="visual-section-title">Trabajo remoto en dólares desde Latinoamérica</h2>
+      </div>
+      <div class="posicionamiento-grid">
+        <div class="posicionamiento-text">
+          <p class="editorial-p"><span class="brand-oberstaff">Oberstaff<span class="brand-dot">.</span></span> conecta a profesionales de Latinoamérica con empresas de España y Puerto Rico que contratan talento remoto a tiempo completo. No es freelancing por tareas: es una relación laboral estable, con un solo cliente y en tu área de especialidad.</p>
+          <p class="editorial-p">Si tu meta es trabajar online para España o encontrar trabajo remoto en dólares, aquí no compites por proyectos sueltos: aplicas a una vacante concreta, con proceso claro y contratación formal.</p>
+          <div style="margin-top: 30px;">
+            <a href="https://zohosuite.oberstaff.com/careers" target="_blank" class="btn-primary rounded-pill">Explorar empleos remotos &rarr;</a>
+          </div>
+        </div>
+        <div class="posicionamiento-visual">
+          <img src="/img2-vacantes.webp" alt="Profesional remoto trabajando" style="width: 100%; height: auto; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.15);">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= S3: BENEFICIOS ================= -->
+  <section class="benefits-grid-section bg-alternate">
+    <div class="container">
+      <div class="benefits-grid-header" style="text-align: center; margin-bottom: 50px;">
+        <h2 class="visual-section-title" style="margin-bottom: 20px;">Por qué trabajar en remoto con <span class="brand-oberstaff">Oberstaff<span class="brand-dot">.</span></span></h2>
+        <p class="editorial-p" style="max-width: 700px; margin: 0 auto;">Trabajar para empresas de España y Puerto Rico, sin salir de tu país, con las condiciones que el mercado local rara vez ofrece.</p>
+      </div>
+
+      <div class="benefits-6-grid">
+        <div class="b-card hover-pink" style="text-align: left;">
+          <div class="b-icon">💵</div>
+          <h3 class="b-title">Ingresos en dólares (USD)</h3>
+          <p class="b-text">Accede a trabajo remoto en dólares, con una remuneración competitiva frente al mercado local de tu país.</p>
+        </div>
+        <div class="b-card hover-purple" style="text-align: left;">
+          <div class="b-icon">🤝</div>
+          <h3 class="b-title">Estabilidad a largo plazo</h3>
+          <p class="b-text">Contratación formal y dedicación a un solo cliente, sin perseguir proyectos cortos en plataformas de freelance.</p>
+        </div>
+        <div class="b-card hover-green" style="text-align: left;">
+          <div class="b-icon">🏠</div>
+          <h3 class="b-title">Trabajo 100% remoto real</h3>
+          <p class="b-text">Trabajas desde casa, en una zona horaria compatible con tu empresa cliente, sin reubicarte ni tener que viajar.</p>
+        </div>
+        <div class="b-card hover-yellow" style="text-align: left;">
+          <div class="b-icon">🚀</div>
+          <h3 class="b-title">Crecimiento profesional</h3>
+          <p class="b-text">Te integras al equipo del cliente como uno más, con continuidad, aprendizaje y proyección a largo plazo.</p>
+        </div>
+      </div>
+      
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="https://zohosuite.oberstaff.com/careers" target="_blank" class="btn-outline-purple rounded-pill">Ver vacantes abiertas &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= S4: ÁREAS Y VACANTES ================= -->
+  <section class="areas-section bg-porcelain">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 50px;">
+        <h2 class="visual-section-title" style="margin-bottom: 20px;">Áreas en las que publicamos vacantes remotas</h2>
+        <p class="editorial-p" style="max-width: 800px; margin: 0 auto;">En Oberstaff Vacantes se abren posiciones nuevas cada semana. Estas son las áreas en las que buscamos talento con más frecuencia:</p>
+      </div>
+      
+      <div class="areas-cards-grid">
+        <div class="area-card">
+          <h3 class="visual-h3-card-title">📱 Marketing y contenidos</h3>
+          <p class="editorial-p" style="font-size: 14px;">Community managers, especialistas en Google Ads y Meta Ads, expertos SEO, copywriters y editores de video.</p>
+        </div>
+        <div class="area-card">
+          <h3 class="visual-h3-card-title">🎯 Ventas y atención al cliente</h3>
+          <p class="editorial-p" style="font-size: 14px;">Closers de ventas, SDR, setters, soporte al cliente y perfiles de éxito del cliente para equipos comerciales.</p>
+        </div>
+        <div class="area-card">
+          <h3 class="visual-h3-card-title">📊 Administración y finanzas</h3>
+          <p class="editorial-p" style="font-size: 14px;">Asistentes virtuales, asistentes administrativos, contables remotos y perfiles de back-office contable.</p>
+        </div>
+        <div class="area-card">
+          <h3 class="visual-h3-card-title">💻 Tecnología y producto</h3>
+          <p class="editorial-p" style="font-size: 14px;">Desarrolladores full stack y mobile, perfiles QA, DevOps, data y diseñadores de producto UX/UI.</p>
+        </div>
+      </div>
+      
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="https://zohosuite.oberstaff.com/careers" target="_blank" class="btn-primary rounded-pill">Ver todas las vacantes &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= S5: CÓMO POSTULARTE ================= -->
+  <section id="como-postularte" class="process-section bg-white">
+    <div class="container">
+      <div class="process-header" style="text-align: center; margin-bottom: 60px;">
+        <h2 class="visual-section-title" style="margin-bottom: 20px;">Cómo postularte a una vacante paso a paso</h2>
+        <p class="editorial-p" style="max-width: 700px; margin: 0 auto;">Todas nuestras búsquedas se gestionan en un único sitio: el portal Oberstaff Empleo. Tú aplicas, nosotros validamos tu perfil y te presentamos a la empresa.</p>
+      </div>
+
+      <div class="steps-4-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px;">
+        <div class="step-card" style="text-align: center; padding: 30px 20px; background: var(--bg-alternate); border-radius: 16px;">
+          <div class="step-number" style="width: 40px; height: 40px; background: var(--brand-pink); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; margin: 0 auto 15px;">01</div>
+          <h3 class="visual-h3-card-title" style="font-size: 16px;">Explora las vacantes</h3>
+          <p class="editorial-p" style="font-size: 13px;">Entra al portal oficial y filtra las posiciones por área, nivel de experiencia y tipo de jornada.</p>
+        </div>
+        <div class="step-card" style="text-align: center; padding: 30px 20px; background: var(--bg-alternate); border-radius: 16px;">
+          <div class="step-number" style="width: 40px; height: 40px; background: var(--brand-purple); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; margin: 0 auto 15px;">02</div>
+          <h3 class="visual-h3-card-title" style="font-size: 16px;">Postúlate en el portal</h3>
+          <p class="editorial-p" style="font-size: 13px;">Envía tu aplicación con CV y portafolio. Toda postulación se realiza solo en el portal oficial.</p>
+        </div>
+        <div class="step-card" style="text-align: center; padding: 30px 20px; background: var(--bg-alternate); border-radius: 16px;">
+          <div class="step-number" style="width: 40px; height: 40px; background: var(--brand-green); color: var(--text-dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; margin: 0 auto 15px;">03</div>
+          <h3 class="visual-h3-card-title" style="font-size: 16px;">Evaluación y entrevistas</h3>
+          <p class="editorial-p" style="font-size: 13px;">Validamos tu experiencia y tu comunicación. Según el rol, harás pruebas técnicas o entrevistas.</p>
+        </div>
+        <div class="step-card" style="text-align: center; padding: 30px 20px; background: var(--bg-alternate); border-radius: 16px;">
+          <div class="step-number" style="width: 40px; height: 40px; background: var(--text-dark); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; margin: 0 auto 15px;">04</div>
+          <h3 class="visual-h3-card-title" style="font-size: 16px;">Contratación e ingreso</h3>
+          <p class="editorial-p" style="font-size: 13px;">Si te seleccionan, formalizamos el contrato y te integras al equipo de la empresa cliente.</p>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="https://zohosuite.oberstaff.com/careers" target="_blank" class="btn-pink rounded-pill">Postúlate ahora &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= S6 & S7: REQUISITOS Y PAÍSES ================= -->
+  <section class="requirements-section bg-alternate">
+    <div class="container">
+      <div class="split-header-row">
+        <!-- S6: Requisitos -->
+        <div class="split-half" style="flex: 1; background: #FFFFFF; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+          <h2 class="visual-h3-card-title" style="font-size: 24px; margin-bottom: 20px;">A quién buscamos para nuestras vacantes</h2>
+          <p class="editorial-p">No pedimos un perfil rígido, pero sí talento comprometido y listo para trabajar en remoto con empresas internacionales.</p>
+          <ul class="editorial-checklist-left" style="margin-top: 25px;">
+            <li><span class="icon">✅</span> <p>Experiencia demostrable en tu área y ganas de crecer con un solo cliente.</p></li>
+            <li><span class="icon">✅</span> <p>Buena comunicación en español; el inglés suma según cada vacante.</p></li>
+            <li><span class="icon">✅</span> <p>Disponibilidad para cubrir el horario laboral de la empresa cliente.</p></li>
+            <li><span class="icon">✅</span> <p>Equipo propio y conexión a internet estable para el trabajo remoto.</p></li>
+            <li><span class="icon">✅</span> <p>Autonomía, responsabilidad y una clara orientación a resultados.</p></li>
+          </ul>
+          <a href="https://zohosuite.oberstaff.com/careers" target="_blank" class="btn-outline-purple rounded-pill" style="margin-top: 30px; display: inline-flex;">Aplica a una vacante</a>
+        </div>
+
+        <!-- S7: Países -->
+        <div class="split-half" style="flex: 1; background: linear-gradient(135deg, #6663FD 0%, #8A88FF 100%); color: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(102, 99, 253, 0.2); display: flex; flex-direction: column; justify-content: center;">
+          <h2 class="visual-h3-card-title text-white" style="font-size: 24px; margin-bottom: 20px;">Empleos remotos para toda Latinoamérica</h2>
+          <p class="editorial-p text-white" style="opacity: 0.9;">Contratamos talento en toda la región para trabajar con empresas de España y Puerto Rico. Postúlate desde tu país:</p>
+          
+          <div class="countries-tags-compact">
+            <span class="country-tag">Colombia</span>
+            <span class="country-tag">México</span>
+            <span class="country-tag">Argentina</span>
+            <span class="country-tag">Perú</span>
+            <span class="country-tag">Chile</span>
+            <span class="country-tag">Venezuela</span>
+            <span class="country-tag">Ecuador</span>
+            <span class="country-tag">Uruguay</span>
+            <span class="country-tag">Paraguay</span>
+            <span class="country-tag">Bolivia</span>
+            <span class="country-tag">Panamá</span>
+            <span class="country-tag">Costa Rica</span>
+            <span class="country-tag">Guatemala</span>
+            <span class="country-tag">Rep. Dominicana</span>
+          </div>
+          <div style="margin-top: 40px;">
+            <a href="https://zohosuite.oberstaff.com/careers" target="_blank" class="btn-white rounded-pill" style="color: var(--brand-purple); background: white;">Ver vacantes para tu país &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= S8: TESTIMONIOS ================= -->
+  <!--
+  <section class="testimonials-section bg-porcelain">
+    <div class="container">
+      <div class="testimonials-header" style="text-align: center; margin-bottom: 50px;">
+        <h2 class="visual-section-title">Profesionales que ya trabajan con <span class="brand-oberstaff">Oberstaff<span class="brand-dot">.</span></span></h2>
+      </div>
+
+      <-- NOTA: Espacio reservado para testimonios reales de talento --
+      <div class="testimonials-grid" style="grid-template-columns: repeat(3, 1fr);">
+        <div class="testimonial-card">
+          <div class="testimonial-top">
+            <div class="testimonial-info">
+              <div class="stars">★★★★★</div>
+              <p><strong>[Nombre del Talento]</strong></p>
+              <p class="testimonial-role">[Rol] · [País]</p>
+            </div>
+          </div>
+          <p class="testimonial-quote">"[Frase sobre la experiencia trabajando en remoto, la estabilidad y los pagos a tiempo con Oberstaff.]"</p>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-top">
+            <div class="testimonial-info">
+              <div class="stars">★★★★★</div>
+              <p><strong>[Nombre del Talento]</strong></p>
+              <p class="testimonial-role">[Rol] · [País]</p>
+            </div>
+          </div>
+          <p class="testimonial-quote">"[Frase sobre la integración con el cliente internacional y el crecimiento profesional.]"</p>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-top">
+            <div class="testimonial-info">
+              <div class="stars">★★★★★</div>
+              <p><strong>[Nombre del Talento]</strong></p>
+              <p class="testimonial-role">[Rol] · [País]</p>
+            </div>
+          </div>
+          <p class="testimonial-quote">"[Frase sobre el proceso de onboarding y el soporte recibido por el equipo de Oberstaff.]"</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  -->
+
+  <!-- ================= S9: PREGUNTAS FRECUENTES ================= -->
+  <section class="faq-section bg-white">
+    <div class="container faq-container">
+      <div class="faq-sticky-side">
+        <h2 class="visual-section-title text-left" style="margin-bottom: 20px;">Preguntas frecuentes sobre nuestras vacantes</h2>
+        <div class="faq-cta-box" style="margin-top: 30px;">
+          <a href="https://zohosuite.oberstaff.com/careers" target="_blank" class="btn-primary rounded-pill">Resuelve tu duda postulándote &rarr;</a>
+        </div>
+      </div>
+
+      <div class="faq-accordion-side">
+        <div class="faq-item">
+          <div class="faq-question"><h3 class="faq-title">¿Cómo y dónde me postulo a una vacante?</h3><span class="faq-icon">+</span></div>
+          <div class="faq-answer-wrapper"><div class="faq-answer"><p>Todas las postulaciones se hacen en el portal oficial. Elige la vacante que encaje con tu perfil y aplica desde ahí en pocos minutos.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question"><h3 class="faq-title">¿En qué moneda se paga cada vacante?</h3><span class="faq-icon">+</span></div>
+          <div class="faq-answer-wrapper"><div class="faq-answer"><p>El pago es siempre en dólares (USD), con una remuneración competitiva frente a lo que ofrece el mercado laboral local de tu país.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question"><h3 class="faq-title">¿Cómo funciona el portal Oberstaff Empleo?</h3><span class="faq-icon">+</span></div>
+          <div class="faq-answer-wrapper"><div class="faq-answer"><p>Es el sitio donde publicamos todas las posiciones abiertas. Puedes filtrar por área, revisar los requisitos de cada rol y aplicar directamente.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question"><h3 class="faq-title">¿Desde qué países puedo postularme?</h3><span class="faq-icon">+</span></div>
+          <div class="faq-answer-wrapper"><div class="faq-answer"><p>Desde cualquier país de Latinoamérica. Buscamos talento en toda la región para cubrir las posiciones de nuestras empresas cliente.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question"><h3 class="faq-title">¿Todas las vacantes son 100% remotas?</h3><span class="faq-icon">+</span></div>
+          <div class="faq-answer-wrapper"><div class="faq-answer"><p>Sí. Todas nuestras posiciones son remotas: trabajas desde tu país, en el horario acordado con la empresa cliente, sin reubicarte.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question"><h3 class="faq-title">¿Postularme tiene algún costo?</h3><span class="faq-icon">+</span></div>
+          <div class="faq-answer-wrapper"><div class="faq-answer"><p>No. Postularte es gratis. <span class="brand-oberstaff">Oberstaff<span class="brand-dot">.</span></span> nunca te pedirá dinero para aplicar, entrevistarte o firmar un contrato de trabajo.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question"><h3 class="faq-title">¿Qué los diferencia de una plataforma freelance?</h3><span class="faq-icon">+</span></div>
+          <div class="faq-answer-wrapper"><div class="faq-answer"><p>No vendemos tareas sueltas. Te integramos a un solo cliente con contrato formal, continuidad y trabajo estable a largo plazo.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= S10: CTA FINAL ================= -->
+  <section class="cta-mid-section" style="background: var(--text-dark); padding: 100px 0; text-align: center;">
+    <div class="container">
+      <h2 class="visual-h2-large text-white" style="margin-bottom: 24px;">Tu próximo empleo remoto empieza aquí</h2>
+      <p class="editorial-p text-white" style="opacity: 0.8; max-width: 700px; margin: 0 auto 40px;">Deja de buscar proyectos sueltos y trabaja en remoto con estabilidad e ingresos en dólares. Revisa las vacantes abiertas y postúlate hoy.</p>
+      <a href="https://zohosuite.oberstaff.com/careers" target="_blank" class="btn-pink rounded-pill" style="font-size: 18px; padding: 20px 40px;">Ver vacantes y postularme &rarr;</a>
+    </div>
+  </section>
+
+  <!-- ================= LÓGICA JAVASCRIPT ================= -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      
+      /* ================= LÓGICA DE FAQ (ACORDEÓN) ================= */
+      const faqQuestions = document.querySelectorAll('.faq-question');
+      faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+          const parentItem = question.parentElement;
+          if (!parentItem) return;
+
+          const isActive = parentItem.classList.contains('active');
+            
+          // Cierra todos los demás
+          document.querySelectorAll('.faq-item').forEach(item => {
+            item.classList.remove('active');
+          });
+            
+          // Abre el seleccionado si no estaba activo
+          if (!isActive) {
+            parentItem.classList.add('active');
+          }
+        });
+      });
+
+      /* ================= SCROLL SUAVE PARA ANCLAS ================= */
+      const smoothScrollLinks = document.querySelectorAll<HTMLAnchorElement>('.smooth-scroll');
+      smoothScrollLinks.forEach(link => {
+        link.addEventListener('click', (e: Event) => {
+          e.preventDefault();
+          const href = link.getAttribute('href');
+          if (!href) return;
+
+          const targetId = href.substring(1);
+          const targetElement = document.getElementById(targetId);
+          
+          if (targetElement) {
+            const offset = 80; 
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - offset;
+      
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: "smooth"
+            });
+          }
+        });
+      });
+
+    });
+  </script>
+</body>
+</html>

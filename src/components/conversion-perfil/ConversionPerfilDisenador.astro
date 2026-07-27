@@ -23,11 +23,11 @@ const {
     pais = "",
 } = Astro.props;
 
-const isPrPage = Astro.url.pathname.includes('/pr');
+const isPrPage = Astro.url.pathname.includes("/pr");
 const finalPais = pais || (isPrPage ? "Puerto Rico" : "España");
-const privacyPolicyUrl = isPrPage 
-  ? "/pr/politica-de-privacidad-y-cookies-de-oberstaff" 
-  : "/politica-de-privacidad-y-cookies-de-oberstaff";
+const privacyPolicyUrl = isPrPage
+    ? "/pr/politica-de-privacidad-y-cookies-de-oberstaff"
+    : "/politica-de-privacidad-y-cookies-de-oberstaff";
 ---
 
 <style>
@@ -48,46 +48,45 @@ const privacyPolicyUrl = isPrPage
 
     /* ── Left column ── */
     .conv-d-left h2 {
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-size: 32px;
         font-weight: 700;
         line-height: 1.25;
-        color: #1B1B1B;
+        color: #1b1b1b;
         margin: 0 0 20px 0;
         letter-spacing: -0.5px;
     }
 
     .conv-d-left h2 :global(strong) {
-        color: #6663FD;
+        color: #6663fd;
         font-weight: 900;
     }
 
     .conv-d-left p {
-        font-family: 'Poppins', sans-serif;
+        font-family: "Poppins", sans-serif;
         font-size: 18px;
         font-weight: 400;
-        color: #5A5A5A;
+        color: #5a5a5a;
         line-height: 1.7;
         margin: 0;
     }
 
     .conv-d-left .conv-d-extra-title {
-        font-family: 'Poppins', sans-serif;
+        font-family: "Poppins", sans-serif;
         font-size: 18px;
         font-weight: 700;
         color: #5a5a5a;
         margin-top: 35px;
         text-transform: uppercase;
-      
     }
 
     /* ── Right column: card ── */
     .conv-d-card {
-           background: #ffffff;
-    border: 1px solid rgba(0, 0, 0, 0.06);
-    border-radius: 20px;
-    padding: 40px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.06);
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
     }
 
     .conv-d-form {
@@ -99,13 +98,13 @@ const privacyPolicyUrl = isPrPage
     .conv-d-form input,
     .conv-d-form textarea {
         width: 100%;
-        border: 1px solid #E0E0E0;
+        border: 1px solid #e0e0e0;
         border-radius: 8px;
         padding: 14px 18px;
-        font-family: 'Poppins', sans-serif;
+        font-family: "Poppins", sans-serif;
         font-size: 14px;
-        color: #1B1B1B;
-        background-color: #FAFAFC;
+        color: #1b1b1b;
+        background-color: #fafafc;
         transition: all 0.3s ease;
         box-sizing: border-box;
     }
@@ -117,12 +116,12 @@ const privacyPolicyUrl = isPrPage
 
     .conv-d-form input::placeholder,
     .conv-d-form textarea::placeholder {
-        color: #AAAAAA;
+        color: #aaaaaa;
     }
 
     .conv-d-form input:focus,
     .conv-d-form textarea:focus {
-        border-color: #6663FD;
+        border-color: #6663fd;
         outline: none;
         box-shadow: 0 0 0 3px rgba(102, 99, 253, 0.1);
     }
@@ -134,31 +133,34 @@ const privacyPolicyUrl = isPrPage
     }
 
     .conv-d-btn {
-        font-family: 'Poppins', sans-serif;
+        font-family: "Poppins", sans-serif;
         width: 100%;
-        background: #6663FD;
+        background: #6663fd;
         color: #ffffff;
         border: 2px solid transparent;
         border-radius: 50px;
         padding: 10px;
-        font-family: 'Poppins', sans-serif;
+        font-family: "Poppins", sans-serif;
         font-weight: 600;
         font-size: 13px;
         cursor: pointer;
-        transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        transition:
+            background 0.3s ease,
+            color 0.3s ease,
+            border-color 0.3s ease;
         margin-top: 4px;
     }
 
     .conv-d-btn:hover {
         background: transparent;
-        color: #6663FD;
-        border: 2px solid #6663FD;
+        color: #6663fd;
+        border: 2px solid #6663fd;
     }
 
     .conv-d-note {
-        font-family: 'Poppins', sans-serif;
+        font-family: "Poppins", sans-serif;
         font-size: 12px;
-        color: #5A5A5A;
+        color: #5a5a5a;
         text-align: center;
         margin: 0;
     }
@@ -206,11 +208,11 @@ const privacyPolicyUrl = isPrPage
 
     .form-feedback {
         text-align: center;
-     
+
         font-size: 0.9rem;
         font-weight: 500;
         min-height: 1.2em;
-        font-family: 'Poppins', sans-serif;
+        font-family: "Poppins", sans-serif;
     }
     .form-feedback.success {
         color: #22c55e;
@@ -222,34 +224,72 @@ const privacyPolicyUrl = isPrPage
 
 <section class="conv-d-section" id="formulario-perfil">
     <div class="conv-d-container">
-
         <!-- Columna izquierda: texto -->
         <div class="conv-d-left">
             <h2 set:html={title} />
             <p set:html={subtitle} />
-            {extraTitle && <p class="conv-d-extra-title" set:html={extraTitle} />}
+            {
+                extraTitle && (
+                    <p class="conv-d-extra-title" set:html={extraTitle} />
+                )
+            }
         </div>
 
-<!-- intl-tel-input library -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.10/build/css/intlTelInput.css" />
-<script is:inline src="https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.10/build/js/intlTelInput.min.js"></script>
+        <!-- intl-tel-input library -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.10/build/css/intlTelInput.css"
+        />
+        <script
+            is:inline
+            src="https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.10/build/js/intlTelInput.min.js"
+        ></script>
 
         <!-- Columna derecha: formulario -->
         <div class="conv-d-card">
-            <form class="conv-d-form" data-webhook-url={webhookUrl} data-is-pr={isPrPage ? "true" : "false"} data-form-name={formName} data-pais={finalPais}>
+            <form
+                class="conv-d-form"
+                data-webhook-url={webhookUrl}
+                data-is-pr={isPrPage ? "true" : "false"}
+                data-form-name={formName}
+                data-pais={finalPais}
+            >
                 <input type="text" placeholder="Nombre completo *" required />
-                <input type="text" placeholder="Nombre de la empresa *" required />
+                <input
+                    type="text"
+                    placeholder="Nombre de la empresa *"
+                    required
+                />
                 <div class="conv-d-row">
                     <input type="email" placeholder="Email *" required />
-                    <input type="tel" placeholder="Teléfono *" required style="width: 100%; box-sizing: border-box;" oninput="this.value = this.value.replace(/[^0-9 ]/g, '')" data-phone="true" />
+                    <input
+                        type="tel"
+                        placeholder="Teléfono *"
+                        required
+                        style="width: 100%; box-sizing: border-box;"
+                        oninput="this.value = this.value.replace(/[^0-9 ]/g, '')"
+                        data-phone="true"
+                    />
                 </div>
-                {isCommunityPR && (
-                    <textarea name="Necesidad principal" placeholder="Necesidad principal: redes sociales, contenido, atención de comunidad, social commerce o LinkedIn B2B..." required></textarea>
-                )}
+                {
+                    isCommunityPR && (
+                        <textarea
+                            name="Necesidad principal"
+                            placeholder="Necesidad principal: redes sociales, contenido, atención de comunidad, social commerce o LinkedIn B2B..."
+                            required
+                        />
+                    )
+                }
 
                 <!-- SMS Consent Checkbox -->
-                <div class="form-group full-width consent-group" style="margin-bottom: 15px;">
-                    <label class="consent-label" style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer; text-align: left;">
+                <div
+                    class="form-group full-width consent-group"
+                    style="margin-bottom: 15px;"
+                >
+                    <label
+                        class="consent-label"
+                        style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer; text-align: left;"
+                    >
                         <input
                             type="checkbox"
                             id="sms-consent"
@@ -257,22 +297,61 @@ const privacyPolicyUrl = isPrPage
                             required
                             style="flex-shrink: 0; width: 18px; height: 18px; margin-top: 3px; accent-color: #6663FD; cursor: pointer;"
                         />
-                        <span class="consent-text" style="font-family: 'Poppins', sans-serif; font-size: 10px; line-height: 1.6; color: #4a4a4a;">
-                            <strong>Al facilitar su número de teléfono</strong>, aceptas recibir mensajes SMS relacionados con atención al cliente de <strong>Oberstaff<span style="color: #FF66CC;">.</span></strong>
-                            La frecuencia de los mensajes puede variar. Pueden aplicarse tarifas estándar de mensajes y datos.
-                            Responde STOP para cancelar la suscripción. Responde Help para obtener ayuda.
-                            <a href={privacyPolicyUrl} target="_blank" class="consent-link" style="color: #6663FD; text-decoration: underline;">Política de privacidad y uso de cookies.</a>
-                           
+                        <span
+                            class="consent-text"
+                            style="font-family: 'Poppins', sans-serif; font-size: 10px; line-height: 1.6; color: #4a4a4a;"
+                        >
+                            <strong>Al facilitar su número de teléfono</strong>,
+                            aceptas recibir mensajes SMS relacionados con
+                            atención al cliente de <strong
+                                >Oberstaff<span style="color: #FF66CC;">.</span
+                                ></strong
+                            >
+                            La frecuencia de los mensajes puede variar. Pueden aplicarse
+                            tarifas estándar de mensajes y datos. Responde STOP para
+                            cancelar la suscripción. Responde Help para obtener ayuda.
+                            <a
+                                href={privacyPolicyUrl}
+                                target="_blank"
+                                class="consent-link"
+                                style="color: #6663FD; text-decoration: underline;"
+                                >Política de privacidad y uso de cookies.</a
+                            >
                         </span>
                     </label>
-                    <p class="consent-error" id="consent-error" aria-live="polite" style="font-size: 12px; color: #ef4444; margin-top: 4px; min-height: 1em; text-align: left;"></p>
+                    <p
+                        class="consent-error"
+                        id="consent-error"
+                        aria-live="polite"
+                        style="font-size: 12px; color: #ef4444; margin-top: 4px; min-height: 1em; text-align: left;"
+                    >
+                    </p>
                 </div>
 
                 <!-- CAPTCHA Verification -->
-                <div class="form-group full-width captcha-group" style="margin-bottom: 20px; text-align: left;">
-                    <label class="captcha-label" style="font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 600; color: #1B1B1B; display: block; margin-bottom: 4px;">Código de verificación <span class="required-star" style="color: #ef4444; font-weight: 700; margin-left: 2px;">*</span></label>
-                    <p class="captcha-hint" style="font-family: 'Poppins', sans-serif; font-size: 12px; color: #888; margin: 0 0 8px 0;">Ingresa el texto que ves en la imagen</p>
-                    <div class="captcha-input-row" style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
+                <div
+                    class="form-group full-width captcha-group"
+                    style="margin-bottom: 20px; text-align: left;"
+                >
+                    <label
+                        class="captcha-label"
+                        style="font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 600; color: #1B1B1B; display: block; margin-bottom: 4px;"
+                        >Código de verificación <span
+                            class="required-star"
+                            style="color: #ef4444; font-weight: 700; margin-left: 2px;"
+                            >*</span
+                        ></label
+                    >
+                    <p
+                        class="captcha-hint"
+                        style="font-family: 'Poppins', sans-serif; font-size: 12px; color: #888; margin: 0 0 8px 0;"
+                    >
+                        Ingresa el texto que ves en la imagen
+                    </p>
+                    <div
+                        class="captcha-input-row"
+                        style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;"
+                    >
                         <input
                             type="text"
                             id="captcha-input"
@@ -283,12 +362,32 @@ const privacyPolicyUrl = isPrPage
                             required
                             style="font-family: 'Poppins', sans-serif; background-color: #FAFAFC; border: 1px solid #E0E0E0; padding: 10px 14px; border-radius: 8px; font-size: 15px; outline: none; transition: border-color 0.3s ease, box-shadow 0.3s ease; width: 200px; color: #1B1B1B; letter-spacing: 2px;"
                         />
-                        <button type="button" id="captcha-refresh" class="captcha-refresh-btn" title="Nuevo código" aria-label="Generar nuevo código" style="background: none; border: 1.5px solid #6663FD; border-radius: 6px; color: #6663FD; font-size: 18px; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s, color 0.2s; padding: 0; flex-shrink: 0;">
+                        <button
+                            type="button"
+                            id="captcha-refresh"
+                            class="captcha-refresh-btn"
+                            title="Nuevo código"
+                            aria-label="Generar nuevo código"
+                            style="background: none; border: 1.5px solid #6663FD; border-radius: 6px; color: #6663FD; font-size: 18px; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s, color 0.2s; padding: 0; flex-shrink: 0;"
+                        >
                             &#x21bb;
                         </button>
                     </div>
-                    <canvas id="captcha-canvas" class="captcha-canvas" width="200" height="60" aria-label="Código de verificación visual" style="display: block; border-radius: 8px; border: 1px solid #ddd; background: #f4f4f8; user-select: none; pointer-events: none;"></canvas>
-                    <p class="captcha-error" id="captcha-error" aria-live="polite" style="font-size: 12px; color: #ef4444; margin-top: 4px; min-height: 1em;"></p>
+                    <canvas
+                        id="captcha-canvas"
+                        class="captcha-canvas"
+                        width="200"
+                        height="60"
+                        aria-label="Código de verificación visual"
+                        style="display: block; border-radius: 8px; border: 1px solid #ddd; background: #f4f4f8; user-select: none; pointer-events: none;"
+                    ></canvas>
+                    <p
+                        class="captcha-error"
+                        id="captcha-error"
+                        aria-live="polite"
+                        style="font-size: 12px; color: #ef4444; margin-top: 4px; min-height: 1em;"
+                    >
+                    </p>
                 </div>
 
                 <button type="submit" class="conv-d-btn">{buttonText}</button>
@@ -296,7 +395,6 @@ const privacyPolicyUrl = isPrPage
                 <p class="conv-d-note">{noteText}</p>
             </form>
         </div>
-
     </div>
 </section>
 
@@ -306,7 +404,7 @@ const privacyPolicyUrl = isPrPage
         box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.12) !important;
     }
     .captcha-refresh-btn:hover {
-        background: #6663FD !important;
+        background: #6663fd !important;
         color: #fff !important;
     }
 </style>
@@ -323,15 +421,17 @@ const privacyPolicyUrl = isPrPage
         gap: 12px;
         padding: 16px 20px;
         border-radius: 14px;
-        box-shadow: 0 8px 32px rgba(0,0,0,0.18);
-        font-family: 'Poppins', sans-serif;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+        font-family: "Poppins", sans-serif;
         font-size: 14px;
         font-weight: 500;
         max-width: 420px;
         min-width: 280px;
         opacity: 0;
         transform: translateY(24px);
-        transition: opacity 0.35s ease, transform 0.35s ease;
+        transition:
+            opacity 0.35s ease,
+            transform 0.35s ease;
         pointer-events: auto;
     }
     .form-toast--visible {
@@ -383,49 +483,50 @@ const privacyPolicyUrl = isPrPage
 
 <script>
     // ── Toast Notification ─────────────────────────────────────────
-    function showToast(message: string, type: 'success' | 'error' = 'success') {
-        const existing = document.getElementById('form-toast');
+    function showToast(message: string, type: "success" | "error" = "success") {
+        const existing = document.getElementById("form-toast");
         if (existing) existing.remove();
 
-        const toast = document.createElement('div');
-        toast.id = 'form-toast';
-        toast.setAttribute('role', 'alert');
-        toast.setAttribute('aria-live', 'assertive');
-        toast.innerHTML = `<span class="toast-icon">${type === 'success' ? '✅' : '❌'}</span><span class="toast-msg">${message}</span><button class="toast-close" aria-label="Cerrar">✕</button>`;
+        const toast = document.createElement("div");
+        toast.id = "form-toast";
+        toast.setAttribute("role", "alert");
+        toast.setAttribute("aria-live", "assertive");
+        toast.innerHTML = `<span class="toast-icon">${type === "success" ? "✅" : "❌"}</span><span class="toast-msg">${message}</span><button class="toast-close" aria-label="Cerrar">✕</button>`;
         toast.className = `form-toast form-toast--${type}`;
         document.body.appendChild(toast);
 
         // Force reflow for animation
         void toast.offsetHeight;
-        toast.classList.add('form-toast--visible');
+        toast.classList.add("form-toast--visible");
 
         const dismiss = () => {
-            toast.classList.remove('form-toast--visible');
+            toast.classList.remove("form-toast--visible");
             setTimeout(() => toast.remove(), 400);
         };
-        toast.querySelector('.toast-close')?.addEventListener('click', dismiss);
+        toast.querySelector(".toast-close")?.addEventListener("click", dismiss);
         setTimeout(dismiss, 6000);
     }
 
     // ── CAPTCHA Generator ──────────────────────────────────────────
-    const CAPTCHA_CHARS = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+    const CAPTCHA_CHARS = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
 
     function generateCaptchaCode(length = 6): string {
-        let code = '';
+        let code = "";
         for (let i = 0; i < length; i++) {
-            code += CAPTCHA_CHARS[Math.floor(Math.random() * CAPTCHA_CHARS.length)];
+            code +=
+                CAPTCHA_CHARS[Math.floor(Math.random() * CAPTCHA_CHARS.length)];
         }
         return code;
     }
 
     function drawCaptcha(canvas: HTMLCanvasElement, code: string) {
-        const ctx = canvas.getContext('2d')!;
+        const ctx = canvas.getContext("2d")!;
         const w = canvas.width;
         const h = canvas.height;
 
         // Background
         ctx.clearRect(0, 0, w, h);
-        ctx.fillStyle = '#f0f0f6';
+        ctx.fillStyle = "#f0f0f6";
         ctx.fillRect(0, 0, w, h);
 
         // Noise lines
@@ -465,164 +566,211 @@ const privacyPolicyUrl = isPrPage
         }
     }
 
-    document.querySelectorAll('form[data-webhook-url].conv-d-form').forEach((form) => {
-        const f = form as HTMLFormElement;
-        const webhookUrl = f.dataset.webhookUrl;
-        if (!webhookUrl) return;
+    document
+        .querySelectorAll("form[data-webhook-url].conv-d-form")
+        .forEach((form) => {
+            const f = form as HTMLFormElement;
+            const webhookUrl = f.dataset.webhookUrl;
+            if (!webhookUrl) return;
 
-        if (f.dataset.listenerAdded) return;
-        f.dataset.listenerAdded = 'true';
+            if (f.dataset.listenerAdded) return;
+            f.dataset.listenerAdded = "true";
 
-        const phoneInput = f.querySelector('input[data-phone="true"]') as HTMLInputElement;
-        let iti: any = null;
-        if (phoneInput && (window as any).intlTelInput) {
-            const isPr = f.dataset.isPr === 'true';
-            iti = (window as any).intlTelInput(phoneInput, {
-                initialCountry: isPr ? "pr" : "es",
-                separateDialCode: true,
-                preferredCountries: isPr
-                    ? ["pr", "co", "ar", "mx", "cl", "pe", "ve"]
-                    : ["es", "co", "ar", "mx", "cl", "pe", "ve"],
-                utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.10/build/js/utils.js",
-            });
-        }
-
-        // CAPTCHA state
-        let currentCode = '';
-        const canvas = f.querySelector('#captcha-canvas') as HTMLCanvasElement;
-        const captchaInput = f.querySelector('#captcha-input') as HTMLInputElement;
-        const captchaRefresh = f.querySelector('#captcha-refresh') as HTMLButtonElement;
-        const captchaError = f.querySelector('#captcha-error') as HTMLElement;
-
-        function refreshCaptcha() {
-            currentCode = generateCaptchaCode();
-            drawCaptcha(canvas, currentCode);
-            captchaInput.value = '';
-            captchaInput.classList.remove('invalid');
-            if (captchaError) captchaError.textContent = '';
-        }
-
-        refreshCaptcha();
-        captchaRefresh?.addEventListener('click', refreshCaptcha);
-
-        // Consent elements
-        const consentCheckbox = f.querySelector('#sms-consent') as HTMLInputElement;
-        const consentError = f.querySelector('#consent-error') as HTMLElement;
-
-        // Save original button text
-        const btn = f.querySelector('button[type="submit"]') as HTMLButtonElement;
-        if (btn) btn.dataset.originalHtml = btn.innerHTML ?? '';
-
-        f.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const feedback = f.querySelector('.form-feedback') as HTMLElement;
-
-            // ── Validate consent ──
-            let hasError = false;
-            if (!consentCheckbox?.checked) {
-                if (consentError) consentError.textContent = '⚠ Debes aceptar el consentimiento para continuar.';
-                hasError = true;
-            } else {
-                if (consentError) consentError.textContent = '';
+            const phoneInput = f.querySelector(
+                'input[data-phone="true"]',
+            ) as HTMLInputElement;
+            let iti: any = null;
+            if (phoneInput && (window as any).intlTelInput) {
+                const isPr = f.dataset.isPr === "true";
+                iti = (window as any).intlTelInput(phoneInput, {
+                    initialCountry: isPr ? "pr" : "es",
+                    separateDialCode: true,
+                    preferredCountries: isPr
+                        ? ["pr", "co", "ar", "mx", "cl", "pe", "ve"]
+                        : ["es", "co", "ar", "mx", "cl", "pe", "ve"],
+                    utilsScript:
+                        "https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.10/build/js/utils.js",
+                });
             }
 
-            // ── Validate CAPTCHA ──
-            const userCode = captchaInput?.value.trim().toUpperCase();
-            if (!userCode) {
-                if (captchaError) captchaError.textContent = '⚠ Este campo es obligatorio. Ingresa el código de la imagen.';
-                captchaInput?.classList.add('invalid');
-                hasError = true;
-            } else if (userCode !== currentCode) {
-                refreshCaptcha();
-                if (captchaError) captchaError.textContent = '❌ El código ingresado es incorrecto. Se generó un nuevo código, inténtalo de nuevo.';
-                captchaInput?.classList.add('invalid');
-                hasError = true;
-            } else {
-                if (captchaError) captchaError.textContent = '';
-                captchaInput?.classList.remove('invalid');
+            // CAPTCHA state
+            let currentCode = "";
+            const canvas = f.querySelector(
+                "#captcha-canvas",
+            ) as HTMLCanvasElement;
+            const captchaInput = f.querySelector(
+                "#captcha-input",
+            ) as HTMLInputElement;
+            const captchaRefresh = f.querySelector(
+                "#captcha-refresh",
+            ) as HTMLButtonElement;
+            const captchaError = f.querySelector(
+                "#captcha-error",
+            ) as HTMLElement;
+
+            function refreshCaptcha() {
+                currentCode = generateCaptchaCode();
+                drawCaptcha(canvas, currentCode);
+                captchaInput.value = "";
+                captchaInput.classList.remove("invalid");
+                if (captchaError) captchaError.textContent = "";
             }
 
-            if (hasError) return;
+            refreshCaptcha();
+            captchaRefresh?.addEventListener("click", refreshCaptcha);
 
-            // ── Collect data ──
-            const fields = f.querySelectorAll('input:not([type="checkbox"]):not(#captcha-input), textarea');
-            const data: Record<string, string> = {};
-            const formName = f.dataset.formName || "";
-            fields.forEach((el) => {
-                const field = el as HTMLInputElement | HTMLTextAreaElement;
-                const placeholder = field.getAttribute('placeholder') || '';
-                const nameAttr = field.getAttribute('name') || '';
-                const key = nameAttr || placeholder.replace(' *', '').trim() || field.type;
-                const isPhone = field.type === 'tel' || field.dataset.phone === 'true';
-                if (key) {
-                    if (isPhone && iti) {
-                        data[key] = iti.getNumber();
-                    } else {
-                        data[key] = field.value;
+            // Consent elements
+            const consentCheckbox = f.querySelector(
+                "#sms-consent",
+            ) as HTMLInputElement;
+            const consentError = f.querySelector(
+                "#consent-error",
+            ) as HTMLElement;
+
+            // Save original button text
+            const btn = f.querySelector(
+                'button[type="submit"]',
+            ) as HTMLButtonElement;
+            if (btn) btn.dataset.originalHtml = btn.innerHTML ?? "";
+
+            f.addEventListener("submit", async (e) => {
+                e.preventDefault();
+                const feedback = f.querySelector(
+                    ".form-feedback",
+                ) as HTMLElement;
+
+                // ── Validate consent ──
+                let hasError = false;
+                if (!consentCheckbox?.checked) {
+                    if (consentError)
+                        consentError.textContent =
+                            "⚠ Debes aceptar el consentimiento para continuar.";
+                    hasError = true;
+                } else {
+                    if (consentError) consentError.textContent = "";
+                }
+
+                // ── Validate CAPTCHA ──
+                const userCode = captchaInput?.value.trim().toUpperCase();
+                if (!userCode) {
+                    if (captchaError)
+                        captchaError.textContent =
+                            "⚠ Este campo es obligatorio. Ingresa el código de la imagen.";
+                    captchaInput?.classList.add("invalid");
+                    hasError = true;
+                } else if (userCode !== currentCode) {
+                    refreshCaptcha();
+                    if (captchaError)
+                        captchaError.textContent =
+                            "❌ El código ingresado es incorrecto. Se generó un nuevo código, inténtalo de nuevo.";
+                    captchaInput?.classList.add("invalid");
+                    hasError = true;
+                } else {
+                    if (captchaError) captchaError.textContent = "";
+                    captchaInput?.classList.remove("invalid");
+                }
+
+                if (hasError) return;
+
+                // ── Collect data ──
+                const fields = f.querySelectorAll(
+                    'input:not([type="checkbox"]):not(#captcha-input), textarea',
+                );
+                const data: Record<string, string> = {};
+                const formName = f.dataset.formName || "";
+                fields.forEach((el) => {
+                    const field = el as HTMLInputElement | HTMLTextAreaElement;
+                    const placeholder = field.getAttribute("placeholder") || "";
+                    const nameAttr = field.getAttribute("name") || "";
+                    const key =
+                        nameAttr ||
+                        placeholder.replace(" *", "").trim() ||
+                        field.type;
+                    const isPhone =
+                        field.type === "tel" || field.dataset.phone === "true";
+                    if (key) {
+                        if (isPhone && iti) {
+                            data[key] = iti.getNumber();
+                        } else {
+                            data[key] = field.value;
+                        }
                     }
+                });
+                data["Consentimiento SMS"] = "Aceptado";
+                const pais = f.dataset.pais || "";
+                if (formName) {
+                    data["Origen Formulario"] = formName;
+                }
+                if (pais) {
+                    data["Pais"] = pais;
+                }
+
+                btn.disabled = true;
+                btn.innerHTML = "Enviando...";
+                if (feedback) {
+                    feedback.className = "form-feedback";
+                    feedback.textContent = "";
+                }
+
+                try {
+                    // 1. Envío al webhook original (sin alterar)
+                    fetch(webhookUrl, {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify(data),
+                        mode: "no-cors",
+                    }).catch((err) =>
+                        console.error("Error al enviar webhook:", err),
+                    );
+
+                    // 2. Envío a la base de datos local
+                    fetch("/api/guardar-lead", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                            formId: f.id || "conversion-perfil-disenador",
+                            formName: formName || undefined,
+                            pais: pais || undefined,
+                            webhookUrl: webhookUrl,
+                            data: data,
+                        }),
+                    }).catch((err) =>
+                        console.error(
+                            "Error al guardar en base de datos:",
+                            err,
+                        ),
+                    );
+
+                    f.reset();
+                    refreshCaptcha();
+                    showToast(
+                        "¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.",
+                        "success",
+                    );
+                } catch {
+                    if (feedback) {
+                        feedback.className = "form-feedback error";
+                        feedback.textContent =
+                            "❌ Error al enviar. Por favor inténtalo de nuevo.";
+                    }
+                } finally {
+                    btn.disabled = false;
+                    btn.innerHTML =
+                        btn.dataset.originalHtml ??
+                        "Solicitar propuesta gratuita →";
                 }
             });
-            data['Consentimiento SMS'] = 'Aceptado';
-            const pais = f.dataset.pais || "";
-            if (formName) {
-                data['Origen Formulario'] = formName;
-            }
-            if (pais) {
-                data['Pais'] = pais;
-            }
 
-            btn.disabled = true;
-            btn.innerHTML = 'Enviando...';
-            if (feedback) {
-                feedback.className = 'form-feedback';
-                feedback.textContent = '';
-            }
+            // Clear captcha error on input
+            captchaInput?.addEventListener("input", () => {
+                captchaInput.classList.remove("invalid");
+                if (captchaError) captchaError.textContent = "";
+            });
 
-            try {
-                // 1. Envío al webhook original (sin alterar)
-                fetch(webhookUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(data),
-                    mode: 'no-cors'
-                }).catch(err => console.error('Error al enviar webhook:', err));
-
-                // 2. Envío a la base de datos local
-                fetch('/api/guardar-lead', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        formId: f.id || 'conversion-perfil-disenador',
-                        formName: formName || undefined,
-                        pais: pais || undefined,
-                        webhookUrl: webhookUrl,
-                        data: data
-                    })
-                }).catch(err => console.error('Error al guardar en base de datos:', err));
-
-                f.reset();
-                refreshCaptcha();
-                showToast('¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.', 'success');
-            } catch {
-                if (feedback) {
-                    feedback.className = 'form-feedback error';
-                    feedback.textContent = '❌ Error al enviar. Por favor inténtalo de nuevo.';
-                }
-            } finally {
-                btn.disabled = false;
-                btn.innerHTML = btn.dataset.originalHtml ?? 'Solicitar propuesta gratuita →';
-            }
+            // Clear consent error on check
+            consentCheckbox?.addEventListener("change", () => {
+                if (consentCheckbox.checked && consentError)
+                    consentError.textContent = "";
+            });
         });
-
-        // Clear captcha error on input
-        captchaInput?.addEventListener('input', () => {
-            captchaInput.classList.remove('invalid');
-            if (captchaError) captchaError.textContent = '';
-        });
-
-        // Clear consent error on check
-        consentCheckbox?.addEventListener('change', () => {
-            if (consentCheckbox.checked && consentError) consentError.textContent = '';
-        });
-    });
 </script>

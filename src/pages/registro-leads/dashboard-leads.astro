@@ -9,9 +9,27 @@ import Layout from "../../layouts/Layout.astro";
   <!-- Menú superior de navegación -->
   <header class="dashboard-header">
     <div class="header-container">
-      <img src="/logo-oberstaff.webp" alt="Oberstaff Logo" class="header-logo" />
+      <img
+        src="/logo-oberstaff.webp"
+        alt="Oberstaff Logo"
+        class="header-logo"
+      />
       <button id="btn-logout" class="btn-logout">
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          style="margin-right: 6px;"
+          ><path
+            d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"
+          ></path></svg
+        >
         Cerrar sesión
       </button>
     </div>
@@ -25,12 +43,52 @@ import Layout from "../../layouts/Layout.astro";
         <p class="subtitle">Gestiona los leads de la plataforma.</p>
       </div>
       <div class="title-right">
-        <button id="btn-export-pdf" class="btn-export btn-pdf" title="Exportar a PDF">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+        <button
+          id="btn-export-pdf"
+          class="btn-export btn-pdf"
+          title="Exportar a PDF"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            style="margin-right: 6px;"
+            ><path
+              d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+            ></path><polyline points="14 2 14 8 20 8"></polyline><line
+              x1="16"
+              y1="13"
+              x2="8"
+              y2="13"></line><line x1="16" y1="17" x2="8" y2="17"
+            ></line><polyline points="10 9 9 9 8 9"></polyline></svg
+          >
           Exportar PDF
         </button>
-        <button id="btn-export-excel" class="btn-export btn-excel" title="Exportar a Excel">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;"><path d="M14 3h7v7h-7zM3 14h7v7H3zM3 3h7v7H3zM14 14h7v7h-7z"/></svg>
+        <button
+          id="btn-export-excel"
+          class="btn-export btn-excel"
+          title="Exportar a Excel"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            style="margin-right: 6px;"
+            ><path d="M14 3h7v7h-7zM3 14h7v7H3zM3 3h7v7H3zM14 14h7v7h-7z"
+            ></path></svg
+          >
           Exportar Excel
         </button>
       </div>
@@ -39,27 +97,75 @@ import Layout from "../../layouts/Layout.astro";
     <!-- Search & Filters Bar -->
     <div class="controls-bar">
       <div class="search-input-wrapper">
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="search-icon"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-        <input type="text" id="filter-search" placeholder="Buscar por fecha, formulario, país o datos..." />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="search-icon"
+          ><circle cx="11" cy="11" r="8"></circle><line
+            x1="21"
+            y1="21"
+            x2="16.65"
+            y2="16.65"></line></svg
+        >
+        <input
+          type="text"
+          id="filter-search"
+          placeholder="Buscar por fecha, formulario, país o datos..."
+        />
       </div>
-      
+
       <div class="controls-filters">
         <div class="date-range-wrapper">
-          <input type="date" id="filter-date-from" title="Desde fecha" placeholder="Desde" />
+          <input
+            type="date"
+            id="filter-date-from"
+            title="Desde fecha"
+            placeholder="Desde"
+          />
           <span class="date-range-separator">Hasta</span>
-          <input type="date" id="filter-date-to" title="Hasta fecha" placeholder="Hasta" />
+          <input
+            type="date"
+            id="filter-date-to"
+            title="Hasta fecha"
+            placeholder="Hasta"
+          />
         </div>
-        
+
         <select id="filter-form">
           <option value="all">Todos los formularios</option>
         </select>
-        
+
         <select id="filter-country">
           <option value="all">Todos los países</option>
         </select>
 
-        <button id="btn-clear-filters" class="btn-clear-filters" title="Limpiar Filtros">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 4px;"><path d="M2.5 2v6h6M21.5 22v-6h-6"/><path d="M22 11.5A10 10 0 0 0 7.9 4l-5.4 5.4M2 12.5a10 10 0 0 0 14.1 7.5l5.4-5.4"/></svg>
+        <button
+          id="btn-clear-filters"
+          class="btn-clear-filters"
+          title="Limpiar Filtros"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            style="margin-right: 4px;"
+            ><path d="M2.5 2v6h6M21.5 22v-6h-6"></path><path
+              d="M22 11.5A10 10 0 0 0 7.9 4l-5.4 5.4M2 12.5a10 10 0 0 0 14.1 7.5l5.4-5.4"
+            ></path></svg
+          >
           Limpiar filtros
         </button>
       </div>
@@ -82,7 +188,9 @@ import Layout from "../../layouts/Layout.astro";
             <tr>
               <td colspan="5" class="text-center py-8">
                 <div class="spinner"></div>
-                <p class="mt-2 text-muted">Cargando base de datos de leads...</p>
+                <p class="mt-2 text-muted">
+                  Cargando base de datos de leads...
+                </p>
               </td>
             </tr>
           </tbody>
@@ -94,7 +202,7 @@ import Layout from "../../layouts/Layout.astro";
         <span id="page-info">Página 1 de 1</span>
         <button id="btn-next" class="btn-page" disabled>Siguiente</button>
       </div>
-    </div>
+    </section>
 
     <!-- Hidden Stats Elements to prevent script crashes -->
     <div style="display:none;">
@@ -107,12 +215,13 @@ import Layout from "../../layouts/Layout.astro";
       <button id="btn-export"></button>
     </div>
   </div>
-
 </Layout>
 
 <style is:global>
   /* Réplica exacta del diseño limpio y elegante de la captura de pantalla */
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     box-sizing: border-box;
   }
 
@@ -121,7 +230,11 @@ import Layout from "../../layouts/Layout.astro";
     background-image: none !important;
     color: #1e293b !important;
     margin: 0;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-family:
+      "Inter",
+      system-ui,
+      -apple-system,
+      sans-serif;
     overflow-x: hidden;
   }
 
@@ -145,7 +258,7 @@ import Layout from "../../layouts/Layout.astro";
     align-items: center;
   }
   .logo-txt-accent {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     font-weight: 800;
     font-size: 1.5rem;
     color: #f43f5e;
@@ -359,7 +472,7 @@ import Layout from "../../layouts/Layout.astro";
   .title-tab.active {
     background-color: #ffffff;
     color: #1e293b;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   }
   .title-tab:hover:not(.active) {
     color: #1e293b;
@@ -400,7 +513,7 @@ import Layout from "../../layouts/Layout.astro";
   }
   .controls-bar input:focus {
     border-color: #cbd5e1;
-    box-shadow: 0 0 0 2px rgba(0,0,0,0.02);
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.02);
   }
   .controls-filters {
     display: flex;
@@ -448,7 +561,7 @@ import Layout from "../../layouts/Layout.astro";
   .controls-filters select:focus,
   .controls-filters input[type="date"]:focus {
     border-color: #cbd5e1;
-    box-shadow: 0 0 0 2px rgba(0,0,0,0.02);
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.02);
   }
   .btn-clear-filters {
     display: inline-flex;
@@ -540,15 +653,26 @@ import Layout from "../../layouts/Layout.astro";
       padding-right: 2.5rem;
     }
     .leads-table th:nth-child(1),
-    .leads-table td:nth-child(1) { width: 190px; white-space: nowrap; }
+    .leads-table td:nth-child(1) {
+      width: 190px;
+      white-space: nowrap;
+    }
     .leads-table th:nth-child(2),
-    .leads-table td:nth-child(2) { width: 230px; }
+    .leads-table td:nth-child(2) {
+      width: 230px;
+    }
     .leads-table th:nth-child(3),
-    .leads-table td:nth-child(3) { width: 170px; }
+    .leads-table td:nth-child(3) {
+      width: 170px;
+    }
     .leads-table th:nth-child(4),
-    .leads-table td:nth-child(4) { min-width: 350px; }
+    .leads-table td:nth-child(4) {
+      min-width: 350px;
+    }
     .leads-table th:nth-child(5),
-    .leads-table td:nth-child(5) { width: 100px; }
+    .leads-table td:nth-child(5) {
+      width: 100px;
+    }
   }
 
   /* Botón de eliminar registro */
@@ -643,7 +767,7 @@ import Layout from "../../layouts/Layout.astro";
     letter-spacing: 0.02em;
     display: inline-block;
   }
-  
+
   /* Expiration pill flat (sin fondo ni borde) */
   .expiration-pill {
     display: inline-flex;
@@ -716,20 +840,27 @@ import Layout from "../../layouts/Layout.astro";
   .spinner {
     width: 24px;
     height: 24px;
-    border: 3px solid rgba(0,0,0,0.05);
+    border: 3px solid rgba(0, 0, 0, 0.05);
     border-radius: 50%;
     border-top-color: #1e293b;
     animation: spin 0.8s linear infinite;
     margin: 0 auto;
   }
   @keyframes spin {
-    to { transform: rotate(360deg); }
+    to {
+      transform: rotate(360deg);
+    }
   }
 
-
-  .text-center { text-align: center; }
-  .py-8 { padding: 2rem 0; }
-  .mt-2 { margin-top: 0.5rem; }
+  .text-center {
+    text-align: center;
+  }
+  .py-8 {
+    padding: 2rem 0;
+  }
+  .mt-2 {
+    margin-top: 0.5rem;
+  }
 
   /* Adaptación Responsiva para móviles y tablets */
   @media (max-width: 768px) {
@@ -826,9 +957,9 @@ import Layout from "../../layouts/Layout.astro";
       display: none; /* Ocultar cabeceras en móvil */
     }
 
-    .leads-table, 
-    .leads-table tbody, 
-    .leads-table tr, 
+    .leads-table,
+    .leads-table tbody,
+    .leads-table tr,
     .leads-table td {
       display: block;
       width: 100% !important;
@@ -953,12 +1084,12 @@ import Layout from "../../layouts/Layout.astro";
 
 <script>
   // Validación de seguridad antes de cargar el resto de la lógica
-  if (sessionStorage.getItem('isAdminLoggedIn') !== 'true') {
-    window.location.href = '/registro-leads/login';
+  if (sessionStorage.getItem("isAdminLoggedIn") !== "true") {
+    window.location.href = "/registro-leads/login";
   }
 
   // @ts-ignore
-  import html2pdf from 'html2pdf.js';
+  import html2pdf from "html2pdf.js";
   declare let Swal: any;
 
   // Dashboard Logic
@@ -974,71 +1105,91 @@ import Layout from "../../layouts/Layout.astro";
 
   let allLeads: Lead[] = [];
   let filteredLeads: Lead[] = [];
-  
+
   // Pagination State
   let currentPage = 1;
   const itemsPerPage = 5;
 
   // DOM Elements
-  const tbody = document.getElementById('leads-tbody') as HTMLElement;
-  const tableShowingText = document.getElementById('table-showing-text') as HTMLElement;
-  
-  const statTotal = document.getElementById('stat-total') as HTMLElement;
-  const statRecent = document.getElementById('stat-recent') as HTMLElement;
-  const statCountries = document.getElementById('stat-countries') as HTMLElement;
-  const statForms = document.getElementById('stat-forms') as HTMLElement;
+  const tbody = document.getElementById("leads-tbody") as HTMLElement;
+  const tableShowingText = document.getElementById(
+    "table-showing-text",
+  ) as HTMLElement;
 
-  const filterSearch = document.getElementById('filter-search') as HTMLInputElement;
-  const filterDateFrom = document.getElementById('filter-date-from') as HTMLInputElement;
-  const filterDateTo = document.getElementById('filter-date-to') as HTMLInputElement;
-  const filterForm = document.getElementById('filter-form') as HTMLSelectElement;
-  const filterCountry = document.getElementById('filter-country') as HTMLSelectElement;
-  const btnClearFilters = document.getElementById('btn-clear-filters') as HTMLButtonElement;
+  const statTotal = document.getElementById("stat-total") as HTMLElement;
+  const statRecent = document.getElementById("stat-recent") as HTMLElement;
+  const statCountries = document.getElementById(
+    "stat-countries",
+  ) as HTMLElement;
+  const statForms = document.getElementById("stat-forms") as HTMLElement;
 
-  const btnExportPDF = document.getElementById('btn-export-pdf') as HTMLButtonElement;
-  const btnExportExcel = document.getElementById('btn-export-excel') as HTMLButtonElement;
-  const btnLogout = document.getElementById('btn-logout') as HTMLButtonElement;
-  
-  const btnPrev = document.getElementById('btn-prev') as HTMLButtonElement;
-  const btnNext = document.getElementById('btn-next') as HTMLButtonElement;
-  const pageInfo = document.getElementById('page-info') as HTMLElement;
+  const filterSearch = document.getElementById(
+    "filter-search",
+  ) as HTMLInputElement;
+  const filterDateFrom = document.getElementById(
+    "filter-date-from",
+  ) as HTMLInputElement;
+  const filterDateTo = document.getElementById(
+    "filter-date-to",
+  ) as HTMLInputElement;
+  const filterForm = document.getElementById(
+    "filter-form",
+  ) as HTMLSelectElement;
+  const filterCountry = document.getElementById(
+    "filter-country",
+  ) as HTMLSelectElement;
+  const btnClearFilters = document.getElementById(
+    "btn-clear-filters",
+  ) as HTMLButtonElement;
 
+  const btnExportPDF = document.getElementById(
+    "btn-export-pdf",
+  ) as HTMLButtonElement;
+  const btnExportExcel = document.getElementById(
+    "btn-export-excel",
+  ) as HTMLButtonElement;
+  const btnLogout = document.getElementById("btn-logout") as HTMLButtonElement;
 
+  const btnPrev = document.getElementById("btn-prev") as HTMLButtonElement;
+  const btnNext = document.getElementById("btn-next") as HTMLButtonElement;
+  const pageInfo = document.getElementById("page-info") as HTMLElement;
 
   // Load leads from internal API with real-time support
   async function fetchLeads(silent = false) {
     if (!silent) showTableLoading();
     try {
-      const response = await fetch('/api/leads-dashboard');
-      if (!response.ok) throw new Error('Error al cargar leads');
+      const response = await fetch("/api/leads-dashboard");
+      if (!response.ok) throw new Error("Error al cargar leads");
       const data = await response.json();
-      
+
       // Parse JSON data property if it is a string and compute search string
       const newLeads = data.map((lead: any) => {
         let parsedData: any = {};
-        if (typeof lead.data === 'string') {
+        if (typeof lead.data === "string") {
           try {
             parsedData = JSON.parse(lead.data);
-          } catch(e) {
+          } catch (e) {
             parsedData = {};
           }
         } else {
           parsedData = lead.data || {};
         }
-        
+
         // Dynamic search string pre-compiled in lowercase
-        const searchableText = `${lead.id} ${lead.timestamp || ''} ${lead.form_name || ''} ${lead.pais || ''} ${JSON.stringify(parsedData)}`.toLowerCase();
-        
+        const searchableText =
+          `${lead.id} ${lead.timestamp || ""} ${lead.form_name || ""} ${lead.pais || ""} ${JSON.stringify(parsedData)}`.toLowerCase();
+
         return {
           ...lead,
           parsedData,
-          searchableText
+          searchableText,
         };
       });
 
       // Optimized check: only re-render table if data actually changed
-      const hasChanged = allLeads.length !== newLeads.length || 
-                         JSON.stringify(allLeads[0]) !== JSON.stringify(newLeads[0]);
+      const hasChanged =
+        allLeads.length !== newLeads.length ||
+        JSON.stringify(allLeads[0]) !== JSON.stringify(newLeads[0]);
 
       if (hasChanged || !silent) {
         allLeads = newLeads;
@@ -1080,20 +1231,20 @@ import Layout from "../../layouts/Layout.astro";
     const forms = new Set<string>();
     const countries = new Set<string>();
 
-    allLeads.forEach(lead => {
+    allLeads.forEach((lead) => {
       if (lead.form_name) forms.add(lead.form_name);
       if (lead.pais) countries.add(lead.pais);
     });
 
-    forms.forEach(form => {
-      const opt = document.createElement('option');
+    forms.forEach((form) => {
+      const opt = document.createElement("option");
       opt.value = form;
       opt.textContent = form;
       filterForm.appendChild(opt);
     });
 
-    countries.forEach(country => {
-      const opt = document.createElement('option');
+    countries.forEach((country) => {
+      const opt = document.createElement("option");
       opt.value = country;
       opt.textContent = country;
       filterCountry.appendChild(opt);
@@ -1107,19 +1258,19 @@ import Layout from "../../layouts/Layout.astro";
     // Recent in last 7 days
     const sevenDaysAgo = new Date();
     sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
-    const recentLeads = allLeads.filter(lead => {
+    const recentLeads = allLeads.filter((lead) => {
       if (!lead.timestamp) return false;
-      const leadDate = new Date(lead.timestamp.replace(/-/g, '/')); // simple replace for browser compatibility
+      const leadDate = new Date(lead.timestamp.replace(/-/g, "/")); // simple replace for browser compatibility
       return leadDate >= sevenDaysAgo;
     });
     statRecent.textContent = recentLeads.length.toString();
 
     // Unique countries
-    const countries = new Set(allLeads.map(l => l.pais).filter(Boolean));
+    const countries = new Set(allLeads.map((l) => l.pais).filter(Boolean));
     statCountries.textContent = countries.size.toString();
 
     // Unique forms
-    const forms = new Set(allLeads.map(l => l.form_name).filter(Boolean));
+    const forms = new Set(allLeads.map((l) => l.form_name).filter(Boolean));
     statForms.textContent = forms.size.toString();
   }
 
@@ -1131,18 +1282,20 @@ import Layout from "../../layouts/Layout.astro";
     const selectedDateFrom = filterDateFrom.value; // Format: YYYY-MM-DD
     const selectedDateTo = filterDateTo.value; // Format: YYYY-MM-DD
 
-    filteredLeads = allLeads.filter(lead => {
+    filteredLeads = allLeads.filter((lead) => {
       // Search text match (ultra optimized using pre-computed searchableText string)
       let matchesSearch = true;
       if (searchText) {
-        matchesSearch = lead.searchableText ? lead.searchableText.includes(searchText) : false;
+        matchesSearch = lead.searchableText
+          ? lead.searchableText.includes(searchText)
+          : false;
       }
 
       // Date range filter match
       let matchesDate = true;
       if (selectedDateFrom || selectedDateTo) {
         if (lead.timestamp) {
-          const leadDatePart = lead.timestamp.split(' ')[0];
+          const leadDatePart = lead.timestamp.split(" ")[0];
           if (selectedDateFrom && leadDatePart < selectedDateFrom) {
             matchesDate = false;
           }
@@ -1155,10 +1308,12 @@ import Layout from "../../layouts/Layout.astro";
       }
 
       // Form filter match
-      const matchesForm = selectedForm === 'all' || lead.form_name === selectedForm;
+      const matchesForm =
+        selectedForm === "all" || lead.form_name === selectedForm;
 
       // Country filter match
-      const matchesCountry = selectedCountry === 'all' || lead.pais === selectedCountry;
+      const matchesCountry =
+        selectedCountry === "all" || lead.pais === selectedCountry;
 
       return matchesSearch && matchesDate && matchesForm && matchesCountry;
     });
@@ -1169,14 +1324,27 @@ import Layout from "../../layouts/Layout.astro";
 
   // Friendly date formatter
   function formatDateFriendly(dateStr: string) {
-    if (!dateStr) return 'N/A';
+    if (!dateStr) return "N/A";
     try {
-      const parts = dateStr.split(' ');
-      const dateParts = parts[0].split('-');
+      const parts = dateStr.split(" ");
+      const dateParts = parts[0].split("-");
       const year = dateParts[0];
       const monthNum = parseInt(dateParts[1]) - 1;
       const day = dateParts[2];
-      const months = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
+      const months = [
+        "ene",
+        "feb",
+        "mar",
+        "abr",
+        "may",
+        "jun",
+        "jul",
+        "ago",
+        "sep",
+        "oct",
+        "nov",
+        "dic",
+      ];
       return `${parseInt(day)} ${months[monthNum]} ${year}`;
     } catch (e) {
       return dateStr;
@@ -1185,8 +1353,8 @@ import Layout from "../../layouts/Layout.astro";
 
   // Render rows based on filters and pagination
   function renderTable() {
-    tbody.innerHTML = '';
-    
+    tbody.innerHTML = "";
+
     if (filteredLeads.length === 0) {
       tbody.innerHTML = `
         <tr>
@@ -1195,7 +1363,7 @@ import Layout from "../../layouts/Layout.astro";
           </td>
         </tr>
       `;
-      tableShowingText.textContent = 'Mostrando 0 de 0 leads';
+      tableShowingText.textContent = "Mostrando 0 de 0 leads";
       updatePaginationControls(0);
       return;
     }
@@ -1206,20 +1374,21 @@ import Layout from "../../layouts/Layout.astro";
 
     tableShowingText.textContent = `Mostrando ${startIndex + 1}-${endIndex} de ${filteredLeads.length} leads`;
 
-    paginatedItems.forEach(lead => {
-      const tr = document.createElement('tr');
-      
+    paginatedItems.forEach((lead) => {
+      const tr = document.createElement("tr");
+
       const data = lead.parsedData;
 
       // Form name badge
-      const formName = lead.form_name || 'LEAD';
-      const badgeClass = formName.toUpperCase() === 'ADMIN' ? 'badge-blue' : 'badge-gray';
+      const formName = lead.form_name || "LEAD";
+      const badgeClass =
+        formName.toUpperCase() === "ADMIN" ? "badge-blue" : "badge-gray";
 
       // Date & Time (timestamp)
-      const timestampText = lead.timestamp || 'N/A';
+      const timestampText = lead.timestamp || "N/A";
 
       // Expiration look for Country (Pais)
-      let countryHtml = '';
+      let countryHtml = "";
       if (lead.pais) {
         countryHtml = `<span class="expiration-pill">${lead.pais}</span>`;
       } else {
@@ -1227,23 +1396,23 @@ import Layout from "../../layouts/Layout.astro";
       }
 
       // Dynamic Data listing — Key: Value rows
-      let dataSummary = '';
-      Object.keys(data).forEach(key => {
+      let dataSummary = "";
+      Object.keys(data).forEach((key) => {
         const val = data[key];
         const lowerKey = key.toLowerCase().trim();
         if (
-          lowerKey === 'consentimiento sms' || 
-          lowerKey === 'search' || 
-          lowerKey === 'pais' || 
-          lowerKey === 'origen formulario'
+          lowerKey === "consentimiento sms" ||
+          lowerKey === "search" ||
+          lowerKey === "pais" ||
+          lowerKey === "origen formulario"
         ) {
           return;
         }
-        if (val !== undefined && val !== null && val !== '') {
+        if (val !== undefined && val !== null && val !== "") {
           dataSummary += `
             <div class="data-row">
               <span class="data-key">${key}:</span>
-              <span class="data-val">${typeof val === 'object' ? JSON.stringify(val) : val}</span>
+              <span class="data-val">${typeof val === "object" ? JSON.stringify(val) : val}</span>
             </div>`;
         }
       });
@@ -1270,47 +1439,51 @@ import Layout from "../../layouts/Layout.astro";
       tbody.appendChild(tr);
     });
 
-    document.querySelectorAll('.btn-delete-row').forEach(button => {
-      button.addEventListener('click', (e) => {
+    document.querySelectorAll(".btn-delete-row").forEach((button) => {
+      button.addEventListener("click", (e) => {
         e.stopPropagation();
-        const id = button.getAttribute('data-id');
+        const id = button.getAttribute("data-id");
         if (!id) return;
 
         Swal.fire({
-          title: '¿Estás seguro?',
+          title: "¿Estás seguro?",
           text: "Esta acción eliminará el registro de forma permanente de la base de datos.",
-          icon: 'warning',
+          icon: "warning",
           showCancelButton: true,
-          confirmButtonColor: '#ef4444',
-          cancelButtonColor: '#475569',
-          confirmButtonText: 'Sí, eliminar',
-          cancelButtonText: 'Cancelar',
-          background: '#ffffff',
-          color: '#1e293b'
+          confirmButtonColor: "#ef4444",
+          cancelButtonColor: "#475569",
+          confirmButtonText: "Sí, eliminar",
+          cancelButtonText: "Cancelar",
+          background: "#ffffff",
+          color: "#1e293b",
         }).then(async (result: any) => {
           if (result.isConfirmed) {
             try {
-              const res = await fetch('/api/eliminar-lead', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ id: parseInt(id) })
+              const res = await fetch("/api/eliminar-lead", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ id: parseInt(id) }),
               });
               const data = await res.json();
               if (data.success) {
                 Swal.fire({
-                  title: '¡Eliminado!',
-                  text: 'El registro ha sido borrado.',
-                  icon: 'success',
+                  title: "¡Eliminado!",
+                  text: "El registro ha sido borrado.",
+                  icon: "success",
                   timer: 1500,
-                  showConfirmButton: false
+                  showConfirmButton: false,
                 });
                 await fetchLeads();
               } else {
-                Swal.fire('Error', 'No se pudo eliminar el registro.', 'error');
+                Swal.fire("Error", "No se pudo eliminar el registro.", "error");
               }
             } catch (err) {
-              console.error('Error al borrar:', err);
-              Swal.fire('Error', 'Hubo un error de conexión al procesar la solicitud.', 'error');
+              console.error("Error al borrar:", err);
+              Swal.fire(
+                "Error",
+                "Hubo un error de conexión al procesar la solicitud.",
+                "error",
+              );
             }
           }
         });
@@ -1328,7 +1501,6 @@ import Layout from "../../layouts/Layout.astro";
   }
 
   // Detail Modal Logic
-
 
   // Generate Excel (.xls HTML table wrapper) with custom filtered leads list
   function generateExcel(leadsList: Lead[]) {
@@ -1351,31 +1523,31 @@ import Layout from "../../layouts/Layout.astro";
           <tbody>
     `;
 
-    leadsList.forEach(lead => {
-      let dataText = '';
+    leadsList.forEach((lead) => {
+      let dataText = "";
       const data = lead.parsedData;
-      Object.keys(data).forEach(key => {
+      Object.keys(data).forEach((key) => {
         const val = data[key];
         const lowerKey = key.toLowerCase().trim();
         if (
-          lowerKey === 'consentimiento sms' || 
-          lowerKey === 'search' || 
-          lowerKey === 'pais' || 
-          lowerKey === 'origen formulario'
+          lowerKey === "consentimiento sms" ||
+          lowerKey === "search" ||
+          lowerKey === "pais" ||
+          lowerKey === "origen formulario"
         ) {
           return;
         }
-        if (val !== undefined && val !== null && val !== '') {
-          dataText += `${key}: ${typeof val === 'object' ? JSON.stringify(val) : val}\n`;
+        if (val !== undefined && val !== null && val !== "") {
+          dataText += `${key}: ${typeof val === "object" ? JSON.stringify(val) : val}\n`;
         }
       });
 
       html += `
         <tr>
-          <td>${lead.timestamp || 'N/A'}</td>
-          <td>${lead.form_name || 'LEAD'}</td>
-          <td>${lead.pais || 'No especificado'}</td>
-          <td style="white-space: pre-wrap; vertical-align: top;">${dataText || 'Sin datos'}</td>
+          <td>${lead.timestamp || "N/A"}</td>
+          <td>${lead.form_name || "LEAD"}</td>
+          <td>${lead.pais || "No especificado"}</td>
+          <td style="white-space: pre-wrap; vertical-align: top;">${dataText || "Sin datos"}</td>
         </tr>
       `;
     });
@@ -1387,11 +1559,13 @@ import Layout from "../../layouts/Layout.astro";
       </html>
     `;
 
-    const blob = new Blob([html], { type: 'application/vnd.ms-excel;charset=utf-8;' });
+    const blob = new Blob([html], {
+      type: "application/vnd.ms-excel;charset=utf-8;",
+    });
     const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
+    const link = document.createElement("a");
     link.href = url;
-    link.download = `leads_oberstaff_${new Date().toISOString().split('T')[0]}.xls`;
+    link.download = `leads_oberstaff_${new Date().toISOString().split("T")[0]}.xls`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -1399,37 +1573,37 @@ import Layout from "../../layouts/Layout.astro";
 
   // Generate PDF using html2pdf with custom filtered leads list
   function generatePDF(leadsList: Lead[]) {
-    const element = document.createElement('div');
-    element.style.padding = '35px';
+    const element = document.createElement("div");
+    element.style.padding = "35px";
     element.style.fontFamily = "'Plus Jakarta Sans', sans-serif";
-    element.style.color = '#1e293b';
+    element.style.color = "#1e293b";
 
-    let rowsHtml = '';
-    leadsList.forEach(lead => {
-      let dataText = '';
+    let rowsHtml = "";
+    leadsList.forEach((lead) => {
+      let dataText = "";
       const data = lead.parsedData;
-      Object.keys(data).forEach(key => {
+      Object.keys(data).forEach((key) => {
         const val = data[key];
         const lowerKey = key.toLowerCase().trim();
         if (
-          lowerKey === 'consentimiento sms' || 
-          lowerKey === 'search' || 
-          lowerKey === 'pais' || 
-          lowerKey === 'origen formulario'
+          lowerKey === "consentimiento sms" ||
+          lowerKey === "search" ||
+          lowerKey === "pais" ||
+          lowerKey === "origen formulario"
         ) {
           return;
         }
-        if (val !== undefined && val !== null && val !== '') {
-          dataText += `<div style="margin-bottom: 2px;"><strong>${key}:</strong> ${typeof val === 'object' ? JSON.stringify(val) : val}</div>`;
+        if (val !== undefined && val !== null && val !== "") {
+          dataText += `<div style="margin-bottom: 2px;"><strong>${key}:</strong> ${typeof val === "object" ? JSON.stringify(val) : val}</div>`;
         }
       });
 
       rowsHtml += `
         <tr style="border-bottom: 1px solid #cbd5e1; font-size: 11px; page-break-inside: avoid;">
-          <td style="padding: 10px; border-right: 1px solid #cbd5e1; vertical-align: top;">${lead.timestamp || 'N/A'}</td>
-          <td style="padding: 10px; border-right: 1px solid #cbd5e1; vertical-align: top; font-weight: 600; color: #1e293b;">${lead.form_name || 'LEAD'}</td>
-          <td style="padding: 10px; border-right: 1px solid #cbd5e1; vertical-align: top;">${lead.pais || 'No especificado'}</td>
-          <td style="padding: 10px; vertical-align: top; line-height: 1.4;">${dataText || 'Sin datos'}</td>
+          <td style="padding: 10px; border-right: 1px solid #cbd5e1; vertical-align: top;">${lead.timestamp || "N/A"}</td>
+          <td style="padding: 10px; border-right: 1px solid #cbd5e1; vertical-align: top; font-weight: 600; color: #1e293b;">${lead.form_name || "LEAD"}</td>
+          <td style="padding: 10px; border-right: 1px solid #cbd5e1; vertical-align: top;">${lead.pais || "No especificado"}</td>
+          <td style="padding: 10px; vertical-align: top; line-height: 1.4;">${dataText || "Sin datos"}</td>
         </tr>
       `;
     });
@@ -1437,7 +1611,7 @@ import Layout from "../../layouts/Layout.astro";
     element.innerHTML = `
       <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #cbd5e1; padding-bottom: 15px; margin-bottom: 20px;">
         <img src="/logo-oberstaff.webp" style="height: 38px; width: auto;" />
-        <span style="font-size: 12px; color: #475569; font-weight: 600;">Generado el: ${new Date().toLocaleString('es-ES')}</span>
+        <span style="font-size: 12px; color: #475569; font-weight: 600;">Generado el: ${new Date().toLocaleString("es-ES")}</span>
       </div>
       <div style="display: flex; justify-content: space-between; font-size: 16px; color: #0f172a; margin-bottom: 20px; font-weight: 800; letter-spacing: -0.02em;">
         <span>Registro de leads</span>
@@ -1459,35 +1633,43 @@ import Layout from "../../layouts/Layout.astro";
 
     const opt = {
       margin: [10, 10],
-      filename: `leads_oberstaff_${new Date().toISOString().split('T')[0]}.pdf`,
-      image: { type: 'jpeg', quality: 0.98 },
+      filename: `leads_oberstaff_${new Date().toISOString().split("T")[0]}.pdf`,
+      image: { type: "jpeg", quality: 0.98 },
       html2canvas: { scale: 2, useCORS: true },
-      jsPDF: { unit: 'mm', format: 'a4', orientation: 'landscape' }
+      jsPDF: { unit: "mm", format: "a4", orientation: "landscape" },
     };
 
     html2pdf().from(element).set(opt).save();
   }
 
   // Show SweetAlert2 Modal to dynamically select filters for export
-  function showExportModal(type: 'pdf' | 'excel') {
+  function showExportModal(type: "pdf" | "excel") {
     if (allLeads.length === 0) {
-      Swal.fire('Atención', 'No hay registros en la base de datos para exportar.', 'info');
+      Swal.fire(
+        "Atención",
+        "No hay registros en la base de datos para exportar.",
+        "info",
+      );
       return;
     }
 
     // Get unique forms and countries dynamically from allLeads
-    const uniqueForms = Array.from(new Set(allLeads.map(l => l.form_name).filter(Boolean))).sort();
-    const uniqueCountries = Array.from(new Set(allLeads.map(l => l.pais).filter(Boolean))).sort();
+    const uniqueForms = Array.from(
+      new Set(allLeads.map((l) => l.form_name).filter(Boolean)),
+    ).sort();
+    const uniqueCountries = Array.from(
+      new Set(allLeads.map((l) => l.pais).filter(Boolean)),
+    ).sort();
 
     let formOptions = '<option value="all">Todos los formularios</option>';
-    uniqueForms.forEach(f => {
-      const displayForm = f.length > 28 ? f.substring(0, 25) + '...' : f;
+    uniqueForms.forEach((f) => {
+      const displayForm = f.length > 28 ? f.substring(0, 25) + "..." : f;
       formOptions += `<option value="${f}">${displayForm}</option>`;
     });
 
     let countryOptions = '<option value="all">Todos los países</option>';
-    uniqueCountries.forEach(c => {
-      const displayCountry = c.length > 28 ? c.substring(0, 25) + '...' : c;
+    uniqueCountries.forEach((c) => {
+      const displayCountry = c.length > 28 ? c.substring(0, 25) + "..." : c;
       countryOptions += `<option value="${c}">${displayCountry}</option>`;
     });
 
@@ -1522,30 +1704,38 @@ import Layout from "../../layouts/Layout.astro";
         </div>
       `,
       showCancelButton: true,
-      confirmButtonText: 'Descargar archivo',
-      cancelButtonText: 'Cancelar',
-      confirmButtonColor: type === 'pdf' ? '#d9261c' : '#16a34a',
-      cancelButtonColor: '#475569',
-      background: '#ffffff',
-      color: '#1e293b',
+      confirmButtonText: "Descargar archivo",
+      cancelButtonText: "Cancelar",
+      confirmButtonColor: type === "pdf" ? "#d9261c" : "#16a34a",
+      cancelButtonColor: "#475569",
+      background: "#ffffff",
+      color: "#1e293b",
       preConfirm: () => {
         return {
-          dateFrom: (document.getElementById('swal-export-date-from') as HTMLInputElement).value,
-          dateTo: (document.getElementById('swal-export-date-to') as HTMLInputElement).value,
-          form: (document.getElementById('swal-export-form') as HTMLSelectElement).value,
-          country: (document.getElementById('swal-export-country') as HTMLSelectElement).value,
+          dateFrom: (
+            document.getElementById("swal-export-date-from") as HTMLInputElement
+          ).value,
+          dateTo: (
+            document.getElementById("swal-export-date-to") as HTMLInputElement
+          ).value,
+          form: (
+            document.getElementById("swal-export-form") as HTMLSelectElement
+          ).value,
+          country: (
+            document.getElementById("swal-export-country") as HTMLSelectElement
+          ).value,
         };
-      }
+      },
     }).then((result: any) => {
       if (result.isConfirmed) {
         const filters = result.value;
 
         // Apply filters only for export target
-        const exportLeads = allLeads.filter(lead => {
+        const exportLeads = allLeads.filter((lead) => {
           let matchesDate = true;
           if (filters.dateFrom || filters.dateTo) {
             if (lead.timestamp) {
-              const leadDatePart = lead.timestamp.split(' ')[0];
+              const leadDatePart = lead.timestamp.split(" ")[0];
               if (filters.dateFrom && leadDatePart < filters.dateFrom) {
                 matchesDate = false;
               }
@@ -1556,17 +1746,23 @@ import Layout from "../../layouts/Layout.astro";
               matchesDate = false;
             }
           }
-          const matchesForm = filters.form === 'all' || lead.form_name === filters.form;
-          const matchesCountry = filters.country === 'all' || lead.pais === filters.country;
+          const matchesForm =
+            filters.form === "all" || lead.form_name === filters.form;
+          const matchesCountry =
+            filters.country === "all" || lead.pais === filters.country;
           return matchesDate && matchesForm && matchesCountry;
         });
 
         if (exportLeads.length === 0) {
-          Swal.fire('Atención', 'No hay registros que coincidan con los filtros seleccionados.', 'info');
+          Swal.fire(
+            "Atención",
+            "No hay registros que coincidan con los filtros seleccionados.",
+            "info",
+          );
           return;
         }
 
-        if (type === 'pdf') {
+        if (type === "pdf") {
           generatePDF(exportLeads);
         } else {
           generateExcel(exportLeads);
@@ -1576,37 +1772,37 @@ import Layout from "../../layouts/Layout.astro";
   }
 
   // Event Listeners
-  filterSearch.addEventListener('input', () => applyFilters());
-  filterDateFrom.addEventListener('change', () => applyFilters());
-  filterDateTo.addEventListener('change', () => applyFilters());
-  filterForm.addEventListener('change', () => applyFilters());
-  filterCountry.addEventListener('change', () => applyFilters());
-  
-  btnClearFilters.addEventListener('click', () => {
-    filterSearch.value = '';
-    filterDateFrom.value = '';
-    filterDateTo.value = '';
-    filterForm.value = 'all';
-    filterCountry.value = 'all';
+  filterSearch.addEventListener("input", () => applyFilters());
+  filterDateFrom.addEventListener("change", () => applyFilters());
+  filterDateTo.addEventListener("change", () => applyFilters());
+  filterForm.addEventListener("change", () => applyFilters());
+  filterCountry.addEventListener("change", () => applyFilters());
+
+  btnClearFilters.addEventListener("click", () => {
+    filterSearch.value = "";
+    filterDateFrom.value = "";
+    filterDateTo.value = "";
+    filterForm.value = "all";
+    filterCountry.value = "all";
     applyFilters();
   });
 
-  btnExportPDF.addEventListener('click', () => showExportModal('pdf'));
-  btnExportExcel.addEventListener('click', () => showExportModal('excel'));
+  btnExportPDF.addEventListener("click", () => showExportModal("pdf"));
+  btnExportExcel.addEventListener("click", () => showExportModal("excel"));
 
-  btnLogout.addEventListener('click', () => {
-    sessionStorage.removeItem('isAdminLoggedIn');
-    window.location.replace('/registro-leads/login');
+  btnLogout.addEventListener("click", () => {
+    sessionStorage.removeItem("isAdminLoggedIn");
+    window.location.replace("/registro-leads/login");
   });
 
-  btnPrev.addEventListener('click', () => {
+  btnPrev.addEventListener("click", () => {
     if (currentPage > 1) {
       currentPage--;
       renderTable();
     }
   });
 
-  btnNext.addEventListener('click', () => {
+  btnNext.addEventListener("click", () => {
     const totalPages = Math.ceil(filteredLeads.length / itemsPerPage);
     if (currentPage < totalPages) {
       currentPage++;
@@ -1620,4 +1816,3 @@ import Layout from "../../layouts/Layout.astro";
     fetchLeads(true);
   }, 5000);
 </script>
-
