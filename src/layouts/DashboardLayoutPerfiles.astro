@@ -47,8 +47,6 @@ const canonicalOgImage = ogImage
 		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 		})(window,document,'script','dataLayer','GTM-MKTCXHCB');</script>
 		<!-- End Google Tag Manager -->
-
-		
 		<!-- Geo-Redirección: Loader Anti-Flash -->
 		<style id="geo-loader-style" is:inline>
 			html.geo-loading { overflow: hidden !important; }
@@ -85,8 +83,8 @@ const canonicalOgImage = ogImage
 				var st = document.getElementById("geo-loader-style");
 				if (st) st.parentNode.removeChild(st);
 			}
-			setTimeout(removeLoader, 2500);
-			document.addEventListener("DOMContentLoaded", function () { setTimeout(removeLoader, 500); });
+			setTimeout(removeLoader, 2000);
+
 
 			var userAgent = navigator.userAgent || "";
 			var isBot = /bot|googlebot|crawler|spider|robot|crawling/i.test(userAgent);
@@ -141,6 +139,8 @@ const canonicalOgImage = ogImage
 		})();
 		</script>
 		<!-- Fin Geo-Redirección -->
+
+		
 
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />

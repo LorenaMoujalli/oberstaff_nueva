@@ -74,8 +74,8 @@ const canonicalOgImage = ogImage
 				var st = document.getElementById("geo-loader-style");
 				if (st) st.parentNode.removeChild(st);
 			}
-			setTimeout(removeLoader, 2500);
-			document.addEventListener("DOMContentLoaded", function () { setTimeout(removeLoader, 500); });
+			setTimeout(removeLoader, 2000);
+
 
 			var userAgent = navigator.userAgent || "";
 			var isBot = /bot|googlebot|crawler|spider|robot|crawling/i.test(userAgent);
