@@ -60,6 +60,13 @@ const canonicalOgImage = ogImage
 		<!-- Geo-Redirección Unificada -->
 		<script is:inline>
 			(function () {
+				// Detección de rastreadores / bots de búsqueda para SEO
+				var userAgent = navigator.userAgent || "";
+				var isBot = /bot|googlebot|crawler|spider|robot|crawling/i.test(userAgent);
+				if (isBot) {
+					return;
+				}
+
 				var path = window.location.pathname;
 				var isPR = path === "/pr" || path.indexOf("/pr/") === 0;
 
