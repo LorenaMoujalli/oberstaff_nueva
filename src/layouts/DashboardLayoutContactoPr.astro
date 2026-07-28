@@ -51,22 +51,44 @@ const canonicalOgImage = ogImage
 			var path = window.location.pathname;
 			var isPR = (path === '/pr' || path.indexOf('/pr/') === 0);
 
-			var AMERICAS = [
-				'AG','AI','AN','AR','AW','BB','BL','BM','BO','BQ','BR','BS','BZ',
-				'CA','CL','CO','CR','CU','CW','DM','DO','EC','FK','GD','GF','GL',
-				'GP','GT','GY','HN','HT','JM','KN','KY','LC','MF','MQ','MS','MX',
-				'NI','PA','PE','PM','PR','PY','SR','SV','SX','TC','TT','US','UY',
-				'VC','VE','VG','VI'
+			// Países de Sudamérica -> Redirección a /vacantes
+			var SOUTH_AMERICA = [
+				'AR', 'BO', 'BR', 'CL', 'CO', 'EC', 'FK', 'GF', 'GY', 'PE', 'PY', 'SR', 'UY', 'VE'
+			];
+
+			// Resto de países de América -> Redirección a la versión /pr/
+			var AMERICAS_OTHER = [
+				'AG','AI','AN','AW','BB','BL','BM','BQ','BS','BZ',
+				'CA','CR','CU','CW','DM','DO','GD','GL','GP','GT',
+				'HN','HT','JM','KN','KY','LC','MF','MQ','MS','MX',
+				'NI','PA','PM','PR','SV','SX','TC','TT','US','VC',
+				'VG','VI'
 			];
 
 			function handleCountry(country) {
-				var isAmerica = AMERICAS.indexOf(country) !== -1;
-				if (isAmerica && !isPR) {
-					var targetPath = path === '/' ? '/pr/' : '/pr' + path;
-					window.location.replace(targetPath);
-				} else if (!isAmerica && isPR) {
-					var targetPath = path === '/pr' ? '/' : '/' + path.substring(4);
-					window.location.replace(targetPath);
+				var isSouthAmerica = SOUTH_AMERICA.indexOf(country) !== -1;
+				var isAmericasOther = AMERICAS_OTHER.indexOf(country) !== -1;
+
+				// 1. Sudamérica -> Forzar siempre la versión limpia de /vacantes
+				if (isSouthAmerica) {
+					if (path !== "/vacantes" && path !== "/vacantes/") {
+						window.location.replace("/vacantes");
+					}
+				}
+				// 2. Resto de América -> Mandar a /pr/ (salvo que ya esté en /pr o en /vacantes)
+				else if (isAmericasOther) {
+					var isVacantes = path === "/vacantes" || path.indexOf("/vacantes") === 0;
+					if (!isPR && !isVacantes) {
+						var targetPath = path === "/" ? "/pr/" : "/pr" + path;
+						window.location.replace(targetPath);
+					}
+				}
+				// 3. Fuera de América (España, etc.) -> Si está en /pr/, devolverlo a la raíz
+				else {
+					if (isPR) {
+						var targetPath = path === "/pr" ? "/" : "/" + path.substring(4);
+						window.location.replace(targetPath);
+					}
 				}
 			}
 
