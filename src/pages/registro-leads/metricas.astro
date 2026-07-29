@@ -270,7 +270,10 @@ import Layout from "../../layouts/Layout.astro";
             <div class="chart-card chart-card-full">
                 <div class="chart-header-row">
                     <h2 class="chart-title">Distribución de Formularios</h2>
-                    <div class="chart-actions-wrapper" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                    <div
+                        class="chart-actions-wrapper"
+                        style="display: flex; gap: 0.5rem; flex-wrap: wrap;"
+                    >
                         <select id="chart-country-select" class="chart-select">
                             <option value="pr">Puerto Rico</option>
                             <option value="es">España</option>
@@ -861,7 +864,10 @@ import Layout from "../../layouts/Layout.astro";
         }
 
         // Lógica para filtrar y dibujar la distribución de formularios
-        function updateFormsChart(filteredLeadsList?: Lead[], skipDropdownRebuild = false) {
+        function updateFormsChart(
+            filteredLeadsList?: Lead[],
+            skipDropdownRebuild = false,
+        ) {
             const leadsToProcess = filteredLeadsList || getFilteredLeads();
             const countrySelected = chartCountrySelect.value; // "pr" o "es"
 
@@ -882,13 +888,18 @@ import Layout from "../../layouts/Layout.astro";
             // 2. Poblar selector de formularios si no se ha pedido omitir
             if (!skipDropdownRebuild && chartFormSelect) {
                 const uniqueFormNames = Array.from(
-                    new Set(filteredForForms.map((lead) => lead.form_name || "Desconocido"))
+                    new Set(
+                        filteredForForms.map(
+                            (lead) => lead.form_name || "Desconocido",
+                        ),
+                    ),
                 ).sort();
 
                 const currentSelectedForm = chartFormSelect.value;
 
                 // Limpiar excepto la primera opción
-                chartFormSelect.innerHTML = '<option value="all">Todos los formularios</option>';
+                chartFormSelect.innerHTML =
+                    '<option value="all">Todos los formularios</option>';
 
                 uniqueFormNames.forEach((form) => {
                     const option = document.createElement("option");
@@ -911,10 +922,17 @@ import Layout from "../../layouts/Layout.astro";
             }
 
             // 3. Filtrar por el formulario seleccionado (si no es "all")
-            const finalSelectedForm = chartFormSelect ? chartFormSelect.value : "all";
-            const finalFiltered = finalSelectedForm === "all"
-                ? filteredForForms
-                : filteredForForms.filter((lead) => (lead.form_name || "Desconocido") === finalSelectedForm);
+            const finalSelectedForm = chartFormSelect
+                ? chartFormSelect.value
+                : "all";
+            const finalFiltered =
+                finalSelectedForm === "all"
+                    ? filteredForForms
+                    : filteredForForms.filter(
+                          (lead) =>
+                              (lead.form_name || "Desconocido") ===
+                              finalSelectedForm,
+                      );
 
             // 4. Contar y agrupar
             const formCounts: { [key: string]: number } = {};
