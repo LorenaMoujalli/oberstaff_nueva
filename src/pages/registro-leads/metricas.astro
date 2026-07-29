@@ -3,906 +3,1317 @@ import Layout from "../../layouts/Layout.astro";
 ---
 
 <Layout title="Métricas de Leads | Oberstaff">
-  <!-- Menú superior de navegación -->
-  <header class="dashboard-header">
-    <div class="header-container">
-      <img
-        src="/logo-oberstaff.webp"
-        alt="Oberstaff Logo"
-        class="header-logo"
-      />
-      <div class="header-actions">
-        <a href="/registro-leads/dashboard-leads" class="btn-nav">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="14"
-            height="14"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            style="margin-right: 6px;"
-          >
-            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-            <polyline points="9 22 9 12 15 12 15 22"></polyline>
-          </svg>
-          Dashboard
-        </a>
-        <a href="/registro-leads/metricas" class="btn-nav active">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="14"
-            height="14"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            style="margin-right: 6px;"
-          >
-            <path d="M18 20V10M12 20V4M6 20v-6"></path>
-          </svg>
-          Métricas
-        </a>
-        <button id="btn-logout" class="btn-logout">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="14"
-            height="14"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            style="margin-right: 6px;"
-            ><path
-              d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"
-            ></path></svg
-          >
-          Cerrar sesión
-        </button>
-      </div>
-    </div>
-  </header>
+    <!-- Menú superior de navegación -->
+    <header class="dashboard-header">
+        <div class="header-container">
+            <img
+                src="/logo-oberstaff.webp"
+                alt="Oberstaff Logo"
+                class="header-logo"
+            />
+            <div class="header-actions">
+                <a href="/registro-leads/dashboard-leads" class="btn-nav">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        style="margin-right: 6px;"
+                    >
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+                        ></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                    Dashboard
+                </a>
+                <a href="/registro-leads/metricas" class="btn-nav active">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        style="margin-right: 6px;"
+                    >
+                        <path d="M18 20V10M12 20V4M6 20v-6"></path>
+                    </svg>
+                    Métricas
+                </a>
+                <button id="btn-logout" class="btn-logout">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        style="margin-right: 6px;"
+                        ><path
+                            d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"
+                        ></path></svg
+                    >
+                    Cerrar sesión
+                </button>
+            </div>
 
-  <div class="dashboard-container">
-    <div class="dashboard-title-area">
-      <div class="title-left">
-        <h1>Métricas</h1>
-        <p class="subtitle">Análisis visual de los datos de leads.</p>
-      </div>
-
-      <div class="title-right">
-        <div class="metric-card">
-          <div class="metric-icon-wrapper">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="#2563eb"
-              stroke-width="2.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+            <!-- Botón de Menú Hamburguesa para Móvil -->
+            <button
+                id="btn-menu-toggle"
+                class="btn-menu-toggle"
+                aria-label="Abrir menú"
             >
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-              <circle cx="9" cy="7" r="4"></circle>
-              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-            </svg>
-          </div>
-          <div class="metric-content">
-            <span class="metric-label">Total de leads</span>
-            <span class="metric-value" id="stat-total-leads">--</span>
-          </div>
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
         </div>
-      </div>
+    </header>
+
+    <div class="dashboard-container">
+        <div class="dashboard-title-area">
+            <div class="title-left">
+                <h1>Métricas</h1>
+                <p class="subtitle">Análisis visual de los datos de leads.</p>
+            </div>
+
+            <div class="title-right">
+                <div class="metrics-summary-container">
+                    <!-- Card 1: Total Leads -->
+                    <div class="metric-card">
+                        <div class="metric-icon-wrapper blue-icon">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                ><path
+                                    d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
+                                ></path><circle cx="9" cy="7" r="4"
+                                ></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"
+                                ></path><path d="M16 3.13a4 4 0 0 1 0 7.75"
+                                ></path></svg
+                            >
+                        </div>
+                        <div class="metric-content">
+                            <span class="metric-label">Total de leads</span>
+                            <span class="metric-value" id="stat-total-leads"
+                                >--</span
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Promedio Diario -->
+                    <div class="metric-card">
+                        <div class="metric-icon-wrapper amber-icon">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                ><rect
+                                    x="3"
+                                    y="4"
+                                    width="18"
+                                    height="18"
+                                    rx="2"
+                                    ry="2"></rect><line
+                                    x1="16"
+                                    y1="2"
+                                    x2="16"
+                                    y2="6"></line><line
+                                    x1="8"
+                                    y1="2"
+                                    x2="8"
+                                    y2="6"></line><line
+                                    x1="3"
+                                    y1="10"
+                                    x2="21"
+                                    y2="10"></line></svg
+                            >
+                        </div>
+                        <div class="metric-content">
+                            <span class="metric-label">Promedio diario</span>
+                            <span class="metric-value" id="stat-avg-leads"
+                                >--</span
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Card 3: País Líder -->
+                    <div class="metric-card">
+                        <div class="metric-icon-wrapper purple-icon">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                ><circle cx="12" cy="12" r="10"></circle><line
+                                    x1="2"
+                                    y1="12"
+                                    x2="22"
+                                    y2="12"></line><path
+                                    d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                                ></path></svg
+                            >
+                        </div>
+                        <div class="metric-content">
+                            <span class="metric-label">País Líder</span>
+                            <span class="metric-value" id="stat-leader-country"
+                                >--</span
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Barra de Filtros de Fecha -->
+        <div class="controls-bar">
+            <div class="controls-filters">
+                <div class="date-range-wrapper">
+                    <input
+                        type="date"
+                        id="filter-date-from"
+                        title="Desde fecha"
+                        placeholder="Desde"
+                    />
+                    <span class="date-range-separator">Hasta</span>
+                    <input
+                        type="date"
+                        id="filter-date-to"
+                        title="Hasta fecha"
+                        placeholder="Hasta"
+                    />
+                </div>
+
+                <button
+                    id="btn-clear-filters"
+                    class="btn-clear-filters"
+                    title="Limpiar Filtros"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        style="margin-right: 4px;"
+                        ><path d="M2.5 2v6h6M21.5 22v-6h-6"></path><path
+                            d="M22 11.5A10 10 0 0 0 7.9 4l-5.4 5.4M2 12.5a10 10 0 0 0 14.1 7.5l5.4-5.4"
+                        ></path></svg
+                    >
+                    Limpiar filtros
+                </button>
+            </div>
+        </div>
+
+        <!-- Área de los gráficos -->
+        <div id="charts-container">
+            <div class="chart-card">
+                <h2 class="chart-title">Evolución de Leads en el Tiempo</h2>
+                <div class="chart-wrapper">
+                    <canvas id="leads-evolution-chart"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-card">
+                <h2 class="chart-title">Distribución por País</h2>
+                <div class="chart-wrapper doughnut-wrapper">
+                    <canvas id="leads-country-chart"></canvas>
+                </div>
+            </div>
+
+            <!-- Gráfico de Distribución de Formularios con filtro de país -->
+            <div class="chart-card chart-card-full">
+                <div class="chart-header-row">
+                    <h2 class="chart-title">Distribución de Formularios</h2>
+                    <div class="chart-actions-wrapper" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                        <select id="chart-country-select" class="chart-select">
+                            <option value="pr">Puerto Rico</option>
+                            <option value="es">España</option>
+                        </select>
+                        <select id="chart-form-select" class="chart-select">
+                            <option value="all">Todos los formularios</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="chart-wrapper forms-chart-wrapper">
+                    <canvas id="leads-forms-chart"></canvas>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <!-- Barra de Filtros de Fecha -->
-    <div class="controls-bar">
-      <div class="controls-filters">
-        <div class="date-range-wrapper">
-          <input
-            type="date"
-            id="filter-date-from"
-            title="Desde fecha"
-            placeholder="Desde"
-          />
-          <span class="date-range-separator">Hasta</span>
-          <input
-            type="date"
-            id="filter-date-to"
-            title="Hasta fecha"
-            placeholder="Hasta"
-          />
-        </div>
-
-        <button
-          id="btn-clear-filters"
-          class="btn-clear-filters"
-          title="Limpiar Filtros"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="14"
-            height="14"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            style="margin-right: 4px;"
-            ><path d="M2.5 2v6h6M21.5 22v-6h-6"></path><path
-              d="M22 11.5A10 10 0 0 0 7.9 4l-5.4 5.4M2 12.5a10 10 0 0 0 14.1 7.5l5.4-5.4"
-            ></path></svg
-          >
-          Limpiar filtros
-        </button>
-      </div>
-    </div>
-    
-    <!-- Área de los gráficos -->
-    <div id="charts-container">
-      <div class="chart-card">
-        <h2 class="chart-title">Evolución de Leads en el Tiempo</h2>
-        <div class="chart-wrapper">
-          <canvas id="leads-evolution-chart"></canvas>
-        </div>
-      </div>
-
-      <div class="chart-card">
-        <h2 class="chart-title">Distribución por País</h2>
-        <div class="chart-wrapper doughnut-wrapper">
-          <canvas id="leads-country-chart"></canvas>
-        </div>
-      </div>
-
-      <!-- Gráfico de Distribución de Formularios con filtro de país -->
-      <div class="chart-card chart-card-full">
-        <div class="chart-header-row">
-          <h2 class="chart-title">Distribución de Formularios</h2>
-          <div class="chart-actions-wrapper">
-            <select id="chart-country-select" class="chart-select">
-              <option value="pr">Puerto Rico</option>
-              <option value="es">España</option>
-            </select>
-          </div>
-        </div>
-        <div class="chart-wrapper">
-          <canvas id="leads-forms-chart"></canvas>
-        </div>
-      </div>
-    </div>
-  </div>
 </Layout>
 
 <style is:global>
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-  }
-
-  body {
-    background-color: #f8fafc !important;
-    background-image: none !important;
-    color: #1e293b !important;
-    margin: 0;
-    font-family: "Inter", system-ui, -apple-system, sans-serif;
-    overflow-x: hidden;
-  }
-
-  /* Navigation Header Bar */
-  .dashboard-header {
-    background-color: #ffffff;
-    border-bottom: 1px solid #e2e8f0;
-    padding: 1rem 2rem;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-  .header-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-  }
-  .header-actions {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-  .header-logo {
-    height: 32px;
-    width: auto;
-  }
-  .btn-logout, .btn-nav {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f8fafc;
-    border: 1px solid #cbd5e1;
-    border-radius: 6px;
-    padding: 0.5rem 1rem;
-    color: #475569;
-    font-weight: 700;
-    font-size: 0.8125rem;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    text-decoration: none;
-  }
-  .btn-logout:hover, .btn-nav:hover {
-    background-color: #f1f5f9;
-    color: #0f172a;
-    border-color: #94a3b8;
-  }
-  .btn-nav.active {
-    background-color: #eff6ff;
-    color: #1d4ed8;
-    border-color: #bfdbfe;
-  }
-
-  /* Main Container */
-  .dashboard-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 2rem;
-    width: 100%;
-  }
-
-  /* Title Area */
-  .dashboard-title-area {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2.5rem;
-    width: 100%;
-  }
-  .title-left {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .title-right {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-  }
-  .title-left h1 {
-    font-size: 2.25rem;
-    font-weight: 800;
-    color: #0f172a;
-    margin: 0 0 0.5rem 0;
-    letter-spacing: -0.035em;
-  }
-  .title-left .subtitle {
-    font-size: 0.9375rem;
-    color: #64748b;
-    margin: 0;
-  }
-
-  /* Metric Card Style matching the dashboard aesthetic */
-  .metric-card {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 12px;
-    padding: 0.75rem 1.25rem;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.03);
-    min-width: 200px;
-  }
-  .metric-icon-wrapper {
-    width: 40px;
-    height: 40px;
-    border-radius: 8px;
-    background-color: #eff6ff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-  .metric-content {
-    display: flex;
-    flex-direction: column;
-    gap: 0.125rem;
-  }
-  .metric-label {
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: #64748b;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-  .metric-value {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: #0f172a;
-    line-height: 1.2;
-    letter-spacing: -0.02em;
-  }
-
-  /* Controls Bar and Date filters */
-  .controls-bar {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin-bottom: 2rem;
-    width: 100%;
-  }
-  .controls-filters {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-  }
-  .date-range-wrapper {
-    display: inline-flex;
-    align-items: center;
-    background-color: #ffffff;
-    border: 1px solid #cbd5e1;
-    border-radius: 6px;
-    padding: 0.25rem 0.75rem;
-    gap: 0.5rem;
-    height: 38px;
-  }
-  .date-range-wrapper input[type="date"] {
-    border: none;
-    outline: none;
-    font-size: 0.8125rem;
-    font-weight: 600;
-    color: #334155;
-    background: transparent;
-    cursor: pointer;
-  }
-  .date-range-separator {
-    font-size: 0.75rem;
-    color: #94a3b8;
-    font-weight: 700;
-    text-transform: uppercase;
-  }
-  .btn-clear-filters {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #ffffff;
-    border: 1px solid #cbd5e1;
-    border-radius: 6px;
-    padding: 0.5rem 1rem;
-    color: #475569;
-    font-weight: 700;
-    font-size: 0.8125rem;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    height: 38px;
-  }
-  .btn-clear-filters:hover {
-    background-color: #f8fafc;
-    color: #0f172a;
-    border-color: #94a3b8;
-  }
-
-  /* Chart Layout */
-  #charts-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    width: 100%;
-  }
-  @media (min-width: 1024px) {
-    #charts-container {
-      grid-template-columns: repeat(2, 1fr);
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
     }
-    .chart-card-full {
-      grid-column: span 2;
+
+    body {
+        background-color: #f8fafc !important;
+        background-image: none !important;
+        color: #1e293b !important;
+        margin: 0;
+        font-family:
+            "Inter",
+            system-ui,
+            -apple-system,
+            sans-serif;
+        overflow-x: hidden;
     }
-  }
 
-  .chart-card {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 16px;
-    padding: 1.5rem;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
-    display: flex;
-    flex-direction: column;
-  }
-  .chart-title {
-    font-size: 1.125rem;
-    font-weight: 700;
-    color: #0f172a;
-    margin: 0 0 1.5rem 0;
-  }
-  
-  /* Header para el gráfico con filtro */
-  .chart-header-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1.5rem;
-    width: 100%;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-  .chart-header-row .chart-title {
-    margin: 0;
-  }
-  .chart-select {
-    background-color: #ffffff;
-    border: 1px solid #cbd5e1;
-    border-radius: 6px;
-    padding: 0.35rem 0.75rem;
-    font-size: 0.8125rem;
-    font-weight: 600;
-    color: #334155;
-    cursor: pointer;
-    outline: none;
-    height: 32px;
-  }
-  .chart-select:hover {
-    border-color: #94a3b8;
-  }
+    /* Navigation Header Bar */
+    .dashboard-header {
+        background-color: #ffffff;
+        border-bottom: 1px solid #e2e8f0;
+        padding: 1rem 2rem;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+    .header-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+    .header-actions {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    .btn-menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        color: #475569;
+        cursor: pointer;
+        padding: 0.5rem;
+        align-items: center;
+        justify-content: center;
+    }
+    .btn-menu-toggle:hover {
+        color: #0f172a;
+    }
+    .header-logo {
+        height: 32px;
+        width: auto;
+    }
+    .btn-logout,
+    .btn-nav {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f8fafc;
+        border: 1px solid #cbd5e1;
+        border-radius: 6px;
+        padding: 0.5rem 1rem;
+        color: #475569;
+        font-weight: 700;
+        font-size: 0.8125rem;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        text-decoration: none;
+    }
+    .btn-logout:hover,
+    .btn-nav:hover {
+        background-color: #f1f5f9;
+        color: #0f172a;
+        border-color: #94a3b8;
+    }
+    .btn-nav.active {
+        background-color: #eff6ff;
+        color: #1d4ed8;
+        border-color: #bfdbfe;
+    }
 
-  .chart-wrapper {
-    position: relative;
-    width: 100%;
-    height: 260px;
-    flex: 1;
-  }
-  .doughnut-wrapper {
-    max-width: 240px;
-    margin: 0 auto;
-    height: 240px;
-  }
+    /* Main Container */
+    .dashboard-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 2rem;
+        width: 100%;
+    }
 
-  /* Responsive */
-  @media (max-width: 768px) {
+    /* Title Area */
     .dashboard-title-area {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 1.25rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2.5rem;
+        width: 100%;
+    }
+    .title-left {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
     }
     .title-right {
-      width: 100%;
-      justify-content: flex-start;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    .title-left h1 {
+        font-size: 2.25rem;
+        font-weight: 800;
+        color: #0f172a;
+        margin: 0 0 0.5rem 0;
+        letter-spacing: -0.035em;
+    }
+    .title-left .subtitle {
+        font-size: 0.9375rem;
+        color: #64748b;
+        margin: 0;
+    }
+
+    /* Metric Card Style matching the dashboard aesthetic */
+    .metric-card {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 0.75rem 1.25rem;
+        box-shadow:
+            0 1px 3px 0 rgba(0, 0, 0, 0.05),
+            0 1px 2px 0 rgba(0, 0, 0, 0.03);
+        min-width: 200px;
+    }
+    .metric-icon-wrapper {
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        background-color: #eff6ff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+    .metrics-summary-container {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        width: 100%;
+    }
+    .blue-icon {
+        background-color: #eff6ff;
+        color: #2563eb;
+    }
+    .amber-icon {
+        background-color: #fffbeb;
+        color: #d97706;
+    }
+    .purple-icon {
+        background-color: #faf5ff;
+        color: #7c3aed;
+    }
+    .emerald-icon {
+        background-color: #ecfdf5;
+        color: #059669;
+    }
+    .metric-content {
+        display: flex;
+        flex-direction: column;
+        gap: 0.125rem;
+    }
+    .metric-label {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #64748b;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+    .metric-value {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: #0f172a;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+    }
+
+    /* Controls Bar and Date filters */
+    .controls-bar {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 2rem;
+        width: 100%;
     }
     .controls-filters {
-      width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        flex-wrap: wrap;
     }
     .date-range-wrapper {
-      width: 100%;
-      justify-content: space-between;
+        display: inline-flex;
+        align-items: center;
+        background-color: #ffffff;
+        border: 1px solid #cbd5e1;
+        border-radius: 6px;
+        padding: 0.25rem 0.75rem;
+        gap: 0.5rem;
+        height: 38px;
+    }
+    .date-range-wrapper input[type="date"] {
+        border: none;
+        outline: none;
+        font-size: 0.8125rem;
+        font-weight: 600;
+        color: #334155;
+        background: transparent;
+        cursor: pointer;
+    }
+    .date-range-separator {
+        font-size: 0.75rem;
+        color: #94a3b8;
+        font-weight: 700;
+        text-transform: uppercase;
     }
     .btn-clear-filters {
-      width: 100%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #ffffff;
+        border: 1px solid #cbd5e1;
+        border-radius: 6px;
+        padding: 0.5rem 1rem;
+        color: #475569;
+        font-weight: 700;
+        font-size: 0.8125rem;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        height: 38px;
     }
-  }
+    .btn-clear-filters:hover {
+        background-color: #f8fafc;
+        color: #0f172a;
+        border-color: #94a3b8;
+    }
+
+    /* Chart Layout */
+    #charts-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        width: 100%;
+    }
+    @media (min-width: 1024px) {
+        #charts-container {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .chart-card-full {
+            grid-column: span 2;
+        }
+    }
+
+    .chart-card {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 16px;
+        padding: 1.5rem;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+        display: flex;
+        flex-direction: column;
+    }
+    .chart-title {
+        font-size: 1.125rem;
+        font-weight: 700;
+        color: #0f172a;
+        margin: 0 0 1.5rem 0;
+    }
+
+    /* Header para el gráfico con filtro */
+    .chart-header-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.5rem;
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    .chart-header-row .chart-title {
+        margin: 0;
+    }
+    .chart-select {
+        background-color: #ffffff;
+        border: 1px solid #cbd5e1;
+        border-radius: 6px;
+        padding: 0.35rem 0.75rem;
+        font-size: 0.8125rem;
+        font-weight: 600;
+        color: #334155;
+        cursor: pointer;
+        outline: none;
+        height: 32px;
+    }
+    .chart-select:hover {
+        border-color: #94a3b8;
+    }
+
+    .chart-wrapper {
+        position: relative;
+        width: 100%;
+        height: 260px;
+        flex: 1;
+    }
+    .forms-chart-wrapper {
+        min-height: 300px;
+    }
+    .doughnut-wrapper {
+        max-width: 240px;
+        margin: 0 auto;
+        height: 240px;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+        .dashboard-title-area {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1.5rem;
+        }
+        .title-right {
+            width: 100%;
+            justify-content: flex-start;
+        }
+        .metrics-summary-container {
+            justify-content: flex-start;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .dashboard-container {
+            padding: 1rem;
+        }
+        .btn-menu-toggle {
+            display: inline-flex;
+        }
+        .header-actions {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            right: 1rem;
+            left: 1rem;
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1rem;
+            gap: 0.75rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            z-index: 101;
+        }
+        .header-actions.open {
+            display: flex;
+        }
+        .btn-logout,
+        .btn-nav {
+            width: 100%;
+            justify-content: flex-start;
+        }
+        .controls-filters {
+            width: 100%;
+        }
+        .date-range-wrapper {
+            width: 100%;
+            justify-content: space-between;
+        }
+        .btn-clear-filters {
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 640px) {
+        .metrics-summary-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            width: 100%;
+            gap: 0.75rem;
+        }
+        .metric-card {
+            min-width: 0;
+            width: 100%;
+        }
+        .chart-card {
+            padding: 1rem;
+        }
+        .chart-header-row {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+        .chart-select {
+            width: 100%;
+        }
+        .date-range-wrapper {
+            flex-direction: column;
+            height: auto;
+            gap: 0.5rem;
+            align-items: stretch;
+            padding: 0.5rem;
+        }
+        .date-range-separator {
+            text-align: center;
+        }
+    }
 </style>
 
 <script>
-  import Chart from "chart.js/auto";
+    import Chart from "chart.js/auto";
 
-  interface Lead {
-    id: number;
-    timestamp: string;
-    form_name: string;
-    pais: string;
-    data: any;
-  }
-
-  document.addEventListener("DOMContentLoaded", () => {
-    // Verificar si el usuario ha iniciado sesión
-    const isLoggedIn = sessionStorage.getItem("isAdminLoggedIn");
-    if (isLoggedIn !== "true") {
-      window.location.replace("/registro-leads/login");
-      return;
+    interface Lead {
+        id: number;
+        timestamp: string;
+        form_name: string;
+        pais: string;
+        data: any;
     }
 
-    // Funcionalidad de cerrar sesión
-    const btnLogout = document.getElementById("btn-logout");
-    if (btnLogout) {
-      btnLogout.addEventListener("click", () => {
-        sessionStorage.removeItem("isAdminLoggedIn");
-        window.location.replace("/registro-leads/login");
-      });
-    }
-
-    let allLeads: Lead[] = [];
-    let chartInstance: Chart | null = null;
-    let countryChartInstance: Chart | null = null;
-    let formsChartInstance: Chart | null = null;
-
-    // DOM Elements para filtros
-    const filterDateFrom = document.getElementById("filter-date-from") as HTMLInputElement;
-    const filterDateTo = document.getElementById("filter-date-to") as HTMLInputElement;
-    const btnClearFilters = document.getElementById("btn-clear-filters") as HTMLButtonElement;
-    const countElement = document.getElementById("stat-total-leads") as HTMLElement;
-    const chartCountrySelect = document.getElementById("chart-country-select") as HTMLSelectElement;
-
-    // Cargar leads de la API
-    async function loadData() {
-      try {
-        const response = await fetch("/api/leads-dashboard");
-        if (response.ok) {
-          allLeads = await response.json();
-          updateMetricsAndChart();
+    document.addEventListener("DOMContentLoaded", () => {
+        // Verificar si el usuario ha iniciado sesión
+        const isLoggedIn = sessionStorage.getItem("isAdminLoggedIn");
+        if (isLoggedIn !== "true") {
+            window.location.replace("/registro-leads/login");
+            return;
         }
-      } catch (error) {
-        console.error("Error al cargar los leads:", error);
-      }
-    }
 
-    // Filtrar y actualizar interfaz
-    function updateMetricsAndChart() {
-      const fromVal = filterDateFrom.value;
-      const toVal = filterDateTo.value;
-
-      // Filtrar
-      const filtered = allLeads.filter(lead => {
-        if (!lead.timestamp) return false;
-        const leadDate = lead.timestamp.split(" ")[0]; // YYYY-MM-DD
-        if (fromVal && leadDate < fromVal) return false;
-        if (toVal && leadDate > toVal) return false;
-        return true;
-      });
-
-      // Actualizar contador superior
-      if (countElement) {
-        countElement.textContent = filtered.length.toString();
-      }
-
-      // 1. Gráfico de Evolución (Agrupar por día)
-      const dateCounts: { [key: string]: number } = {};
-      filtered.forEach(lead => {
-        if (!lead.timestamp) return;
-        const date = lead.timestamp.split(" ")[0]; // YYYY-MM-DD
-        dateCounts[date] = (dateCounts[date] || 0) + 1;
-      });
-
-      const sortedDates = Object.keys(dateCounts).sort();
-      const labels = sortedDates.map(date => {
-        const [, m, d] = date.split("-");
-        return `${d}/${m}`; // Formato DD/MM
-      });
-      const dataPoints = sortedDates.map(date => dateCounts[date]);
-
-      renderChart(labels, dataPoints);
-
-      // 2. Gráfico de Países (Top ordenados de mayor a menor)
-      const countryCounts: { [key: string]: number } = {};
-      filtered.forEach(lead => {
-        const country = lead.pais || "No especificado";
-        countryCounts[country] = (countryCounts[country] || 0) + 1;
-      });
-
-      const sortedCountries = Object.keys(countryCounts).sort((a, b) => countryCounts[b] - countryCounts[a]);
-      const countryLabels = sortedCountries;
-      const countryDataPoints = sortedCountries.map(c => countryCounts[c]);
-
-      renderCountryChart(countryLabels, countryDataPoints);
-
-      // 3. Gráfico de Distribución de Formularios (con filtro de país)
-      updateFormsChart(filtered);
-    }
-
-    // Lógica para filtrar y dibujar la distribución de formularios
-    function updateFormsChart(filteredLeadsList?: Lead[]) {
-      const leadsToProcess = filteredLeadsList || getFilteredLeads();
-      const countrySelected = chartCountrySelect.value; // "pr" o "es"
-
-      const filteredForForms = leadsToProcess.filter(lead => {
-        const country = (lead.pais || "").toLowerCase().trim();
-        if (countrySelected === "pr") {
-          return country === "puerto rico" || country === "pr";
-        } else {
-          return country === "españa" || country === "espana" || country === "es";
+        // Funcionalidad de cerrar sesión
+        const btnLogout = document.getElementById("btn-logout");
+        if (btnLogout) {
+            btnLogout.addEventListener("click", () => {
+                sessionStorage.removeItem("isAdminLoggedIn");
+                window.location.replace("/registro-leads/login");
+            });
         }
-      });
 
-      const formCounts: { [key: string]: number } = {};
-      filteredForForms.forEach(lead => {
-        const name = lead.form_name || "Desconocido";
-        formCounts[name] = (formCounts[name] || 0) + 1;
-      });
+        let allLeads: Lead[] = [];
+        let chartInstance: Chart | null = null;
+        let countryChartInstance: Chart | null = null;
+        let formsChartInstance: Chart | null = null;
 
-      const sortedForms = Object.keys(formCounts).sort((a, b) => formCounts[b] - formCounts[a]);
-      const labels = sortedForms;
-      const dataPoints = sortedForms.map(f => formCounts[f]);
+        // DOM Elements para filtros
+        const filterDateFrom = document.getElementById(
+            "filter-date-from",
+        ) as HTMLInputElement;
+        const filterDateTo = document.getElementById(
+            "filter-date-to",
+        ) as HTMLInputElement;
+        const btnClearFilters = document.getElementById(
+            "btn-clear-filters",
+        ) as HTMLButtonElement;
+        const countElement = document.getElementById(
+            "stat-total-leads",
+        ) as HTMLElement;
+        const avgLeadsElement = document.getElementById(
+            "stat-avg-leads",
+        ) as HTMLElement;
+        const leaderCountryElement = document.getElementById(
+            "stat-leader-country",
+        ) as HTMLElement;
+        const chartCountrySelect = document.getElementById(
+            "chart-country-select",
+        ) as HTMLSelectElement;
+        const chartFormSelect = document.getElementById(
+            "chart-form-select",
+        ) as HTMLSelectElement;
 
-      const labelName = countrySelected === "pr" ? "Leads (PR)" : "Leads (España)";
-      const barColor = countrySelected === "pr" ? "#2563eb" : "#ef4444";
-
-      renderFormsChart(labels, dataPoints, labelName, barColor);
-    }
-
-    // Helper para obtener leads filtrados por fecha
-    function getFilteredLeads(): Lead[] {
-      const fromVal = filterDateFrom.value;
-      const toVal = filterDateTo.value;
-
-      return allLeads.filter(lead => {
-        if (!lead.timestamp) return false;
-        const leadDate = lead.timestamp.split(" ")[0];
-        if (fromVal && leadDate < fromVal) return false;
-        if (toVal && leadDate > toVal) return false;
-        return true;
-      });
-    }
-
-    // Configurar y renderizar Chart.js (Evolución de Leads)
-    function renderChart(labels: string[], dataPoints: number[]) {
-      const canvas = document.getElementById("leads-evolution-chart") as HTMLCanvasElement;
-      if (!canvas) return;
-
-      const ctx = canvas.getContext("2d");
-      if (!ctx) return;
-
-      if (chartInstance) {
-        chartInstance.destroy();
-      }
-
-      const gradient = ctx.createLinearGradient(0, 0, 0, 300);
-      gradient.addColorStop(0, "rgba(37, 99, 235, 0.25)");
-      gradient.addColorStop(1, "rgba(37, 99, 235, 0.00)");
-
-      chartInstance = new Chart(ctx, {
-        type: "line",
-        data: {
-          labels: labels,
-          datasets: [{
-            label: "Leads Registrados",
-            data: dataPoints,
-            borderColor: "#2563eb",
-            borderWidth: 3,
-            backgroundColor: gradient,
-            fill: true,
-            tension: 0.35,
-            pointBackgroundColor: "#2563eb",
-            pointBorderColor: "#ffffff",
-            pointBorderWidth: 2,
-            pointRadius: 4,
-            pointHoverRadius: 6,
-          }]
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          plugins: {
-            legend: {
-              display: false
-            },
-            tooltip: {
-              backgroundColor: "#1e293b",
-              titleColor: "#ffffff",
-              bodyColor: "#e2e8f0",
-              padding: 12,
-              cornerRadius: 8,
-              displayColors: false,
-              callbacks: {
-                label: function(context) {
-                  return `${context.parsed.y} leads`;
+        // Cargar leads de la API
+        async function loadData() {
+            try {
+                const response = await fetch("/api/leads-dashboard");
+                if (response.ok) {
+                    allLeads = await response.json();
+                    updateMetricsAndChart();
                 }
-              }
+            } catch (error) {
+                console.error("Error al cargar los leads:", error);
             }
-          },
-          scales: {
-            x: {
-              grid: {
-                display: false
-              },
-              ticks: {
-                color: "#64748b",
-                font: {
-                  family: "'Inter', sans-serif",
-                  size: 11
+        }
+
+        // Filtrar y actualizar interfaz
+        function updateMetricsAndChart() {
+            const fromVal = filterDateFrom.value;
+            const toVal = filterDateTo.value;
+
+            // Filtrar
+            const filtered = allLeads.filter((lead) => {
+                if (!lead.timestamp) return false;
+                const leadDate = lead.timestamp.split(" ")[0]; // YYYY-MM-DD
+                if (fromVal && leadDate < fromVal) return false;
+                if (toVal && leadDate > toVal) return false;
+                return true;
+            });
+
+            // Actualizar contador superior
+            if (countElement) {
+                countElement.textContent = filtered.length.toString();
+            }
+
+            // 1. Gráfico de Evolución (Agrupar por día)
+            const dateCounts: { [key: string]: number } = {};
+            filtered.forEach((lead) => {
+                if (!lead.timestamp) return;
+                const date = lead.timestamp.split(" ")[0]; // YYYY-MM-DD
+                dateCounts[date] = (dateCounts[date] || 0) + 1;
+            });
+
+            const sortedDates = Object.keys(dateCounts).sort();
+            const labels = sortedDates.map((date) => {
+                const [, m, d] = date.split("-");
+                return `${d}/${m}`; // Formato DD/MM
+            });
+            const dataPoints = sortedDates.map((date) => dateCounts[date]);
+
+            renderChart(labels, dataPoints);
+
+            // 2. Gráfico de Países (Top ordenados de mayor a menor)
+            const countryCounts: { [key: string]: number } = {};
+            filtered.forEach((lead) => {
+                const country = lead.pais || "No especificado";
+                countryCounts[country] = (countryCounts[country] || 0) + 1;
+            });
+
+            // Calcular País Líder
+            let leaderCountry = "--";
+            let maxCountryCount = 0;
+            for (const [country, count] of Object.entries(countryCounts)) {
+                if (count > maxCountryCount) {
+                    maxCountryCount = count;
+                    leaderCountry = country;
                 }
-              }
-            },
-            y: {
-              grid: {
-                color: "#f1f5f9"
-              },
-              ticks: {
-                color: "#64748b",
-                font: {
-                  family: "'Inter', sans-serif",
-                  size: 11
+            }
+            if (leaderCountryElement) {
+                leaderCountryElement.textContent = leaderCountry;
+            }
+
+            // Calcular Promedio Diario
+            const totalDays = Object.keys(dateCounts).length;
+            const avgLeads =
+                totalDays > 0 ? (filtered.length / totalDays).toFixed(1) : "0";
+            if (avgLeadsElement) {
+                avgLeadsElement.textContent = avgLeads;
+            }
+
+            const sortedCountries = Object.keys(countryCounts).sort(
+                (a, b) => countryCounts[b] - countryCounts[a],
+            );
+            const countryLabels = sortedCountries;
+            const countryDataPoints = sortedCountries.map(
+                (c) => countryCounts[c],
+            );
+
+            renderCountryChart(countryLabels, countryDataPoints);
+
+            // 3. Gráfico de Distribución de Formularios (con filtro de país)
+            updateFormsChart(filtered);
+        }
+
+        // Lógica para filtrar y dibujar la distribución de formularios
+        function updateFormsChart(filteredLeadsList?: Lead[], skipDropdownRebuild = false) {
+            const leadsToProcess = filteredLeadsList || getFilteredLeads();
+            const countrySelected = chartCountrySelect.value; // "pr" o "es"
+
+            // 1. Filtrar por país
+            const filteredForForms = leadsToProcess.filter((lead) => {
+                const country = (lead.pais || "").toLowerCase().trim();
+                if (countrySelected === "pr") {
+                    return country === "puerto rico" || country === "pr";
+                } else {
+                    return (
+                        country === "españa" ||
+                        country === "espana" ||
+                        country === "es"
+                    );
+                }
+            });
+
+            // 2. Poblar selector de formularios si no se ha pedido omitir
+            if (!skipDropdownRebuild && chartFormSelect) {
+                const uniqueFormNames = Array.from(
+                    new Set(filteredForForms.map((lead) => lead.form_name || "Desconocido"))
+                ).sort();
+
+                const currentSelectedForm = chartFormSelect.value;
+
+                // Limpiar excepto la primera opción
+                chartFormSelect.innerHTML = '<option value="all">Todos los formularios</option>';
+
+                uniqueFormNames.forEach((form) => {
+                    const option = document.createElement("option");
+                    option.value = form;
+                    // Nombre limpio para mostrar en la interfaz del select
+                    const cleanName = form
+                        .replace(/ Puerto Rico$/i, "")
+                        .replace(/ España$/i, "")
+                        .replace(/^Servicio\s+/i, "")
+                        .replace(/^Perfil\s+/i, "");
+                    option.textContent = cleanName;
+                    chartFormSelect.appendChild(option);
+                });
+
+                if (uniqueFormNames.includes(currentSelectedForm)) {
+                    chartFormSelect.value = currentSelectedForm;
+                } else {
+                    chartFormSelect.value = "all";
+                }
+            }
+
+            // 3. Filtrar por el formulario seleccionado (si no es "all")
+            const finalSelectedForm = chartFormSelect ? chartFormSelect.value : "all";
+            const finalFiltered = finalSelectedForm === "all"
+                ? filteredForForms
+                : filteredForForms.filter((lead) => (lead.form_name || "Desconocido") === finalSelectedForm);
+
+            // 4. Contar y agrupar
+            const formCounts: { [key: string]: number } = {};
+            finalFiltered.forEach((lead) => {
+                const name = lead.form_name || "Desconocido";
+                formCounts[name] = (formCounts[name] || 0) + 1;
+            });
+
+            const sortedForms = Object.keys(formCounts).sort(
+                (a, b) => formCounts[b] - formCounts[a],
+            );
+            // Quitar la coletilla del país y prefijos "Servicio" / "Perfil" solo para el gráfico (sin redundancia)
+            const labels = sortedForms.map((f) =>
+                f
+                    .replace(/ Puerto Rico$/i, "")
+                    .replace(/ España$/i, "")
+                    .replace(/^Servicio\s+/i, "")
+                    .replace(/^Perfil\s+/i, ""),
+            );
+            const dataPoints = sortedForms.map((f) => formCounts[f]);
+
+            const labelName =
+                countrySelected === "pr" ? "Leads (PR)" : "Leads (España)";
+            const barColor = countrySelected === "pr" ? "#2563eb" : "#ef4444";
+
+            renderFormsChart(labels, dataPoints, labelName, barColor);
+        }
+
+        // Helper para obtener leads filtrados por fecha
+        function getFilteredLeads(): Lead[] {
+            const fromVal = filterDateFrom.value;
+            const toVal = filterDateTo.value;
+
+            return allLeads.filter((lead) => {
+                if (!lead.timestamp) return false;
+                const leadDate = lead.timestamp.split(" ")[0];
+                if (fromVal && leadDate < fromVal) return false;
+                if (toVal && leadDate > toVal) return false;
+                return true;
+            });
+        }
+
+        // Configurar y renderizar Chart.js (Evolución de Leads)
+        function renderChart(labels: string[], dataPoints: number[]) {
+            const canvas = document.getElementById(
+                "leads-evolution-chart",
+            ) as HTMLCanvasElement;
+            if (!canvas) return;
+
+            const ctx = canvas.getContext("2d");
+            if (!ctx) return;
+
+            if (chartInstance) {
+                chartInstance.destroy();
+            }
+
+            const gradient = ctx.createLinearGradient(0, 0, 0, 300);
+            gradient.addColorStop(0, "rgba(37, 99, 235, 0.25)");
+            gradient.addColorStop(1, "rgba(37, 99, 235, 0.00)");
+
+            chartInstance = new Chart(ctx, {
+                type: "line",
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: "Leads Registrados",
+                            data: dataPoints,
+                            borderColor: "#2563eb",
+                            borderWidth: 3,
+                            backgroundColor: gradient,
+                            fill: true,
+                            tension: 0.35,
+                            pointBackgroundColor: "#2563eb",
+                            pointBorderColor: "#ffffff",
+                            pointBorderWidth: 2,
+                            pointRadius: 4,
+                            pointHoverRadius: 6,
+                        },
+                    ],
                 },
-                precision: 0
-              },
-              min: 0
-            }
-          }
-        }
-      });
-    }
-
-    // Configurar y renderizar Chart.js (Dona por País)
-    function renderCountryChart(labels: string[], dataPoints: number[]) {
-      const canvas = document.getElementById("leads-country-chart") as HTMLCanvasElement;
-      if (!canvas) return;
-
-      const ctx = canvas.getContext("2d");
-      if (!ctx) return;
-
-      if (countryChartInstance) {
-        countryChartInstance.destroy();
-      }
-
-      const colors = labels.map(label => {
-        const clean = label.toLowerCase().trim();
-        if (clean === "puerto rico" || clean === "pr") return "#2563eb";
-        if (clean === "españa" || clean === "espana" || clean === "es") return "#ef4444";
-        return "#cbd5e1";
-      });
-
-      countryChartInstance = new Chart(ctx, {
-        type: "doughnut",
-        data: {
-          labels: labels,
-          datasets: [{
-            data: dataPoints,
-            backgroundColor: colors.slice(0, labels.length),
-            borderWidth: 2,
-            borderColor: "#ffffff"
-          }]
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          plugins: {
-            legend: {
-              position: "bottom",
-              labels: {
-                boxWidth: 12,
-                font: {
-                  family: "'Inter', sans-serif",
-                  size: 12
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false,
+                        },
+                        tooltip: {
+                            backgroundColor: "#1e293b",
+                            titleColor: "#ffffff",
+                            bodyColor: "#e2e8f0",
+                            padding: 12,
+                            cornerRadius: 8,
+                            displayColors: false,
+                            callbacks: {
+                                label: function (context) {
+                                    return `${context.parsed.y} leads`;
+                                },
+                            },
+                        },
+                    },
+                    scales: {
+                        x: {
+                            grid: {
+                                display: false,
+                            },
+                            ticks: {
+                                color: "#64748b",
+                                font: {
+                                    family: "'Inter', sans-serif",
+                                    size: 11,
+                                },
+                            },
+                        },
+                        y: {
+                            grid: {
+                                color: "#f1f5f9",
+                            },
+                            ticks: {
+                                color: "#64748b",
+                                font: {
+                                    family: "'Inter', sans-serif",
+                                    size: 11,
+                                },
+                                precision: 0,
+                            },
+                            min: 0,
+                        },
+                    },
                 },
-                color: "#475569",
-                generateLabels: function(chart) {
-                  const data = chart.data;
-                  if (data.labels && data.labels.length && data.datasets.length) {
-                    const dataset = data.datasets[0];
-                    return data.labels.map((label, i) => {
-                      const value = dataset.data[i];
-                      const bg = Array.isArray(dataset.backgroundColor) ? dataset.backgroundColor[i] : dataset.backgroundColor;
-                      const stroke = Array.isArray(dataset.borderColor) ? dataset.borderColor[i] : dataset.borderColor;
-                      const bw = Array.isArray(dataset.borderWidth) ? dataset.borderWidth[i] : dataset.borderWidth;
-                      
-                      return {
-                        text: `${label} (${value})`,
-                        fillStyle: bg as string,
-                        strokeStyle: stroke as string,
-                        lineWidth: typeof bw === "number" ? bw : 2,
-                        hidden: isNaN(value as number) || !chart.getDataVisibility(i),
-                        index: i
-                      };
-                    });
-                  }
-                  return [];
-                }
-              }
-            },
-            tooltip: {
-              backgroundColor: "#1e293b",
-              titleColor: "#ffffff",
-              bodyColor: "#e2e8f0",
-              padding: 12,
-              cornerRadius: 8,
-              callbacks: {
-                label: function(context) {
-                  const value = context.raw as number;
-                  const total = context.dataset.data.reduce((a: any, b: any) => a + b, 0) as number;
-                  const percentage = Math.round((value / total) * 100);
-                  return ` ${value} leads (${percentage}%)`;
-                }
-              }
-            }
-          },
-          cutout: "70%"
+            });
         }
-      });
-    }
 
-    // Renderizar gráfico de barras horizontales/verticales (Distribución de Formularios)
-    function renderFormsChart(labels: string[], dataPoints: number[], datasetLabel: string, color: string) {
-      const canvas = document.getElementById("leads-forms-chart") as HTMLCanvasElement;
-      if (!canvas) return;
+        // Configurar y renderizar Chart.js (Dona por País)
+        function renderCountryChart(labels: string[], dataPoints: number[]) {
+            const canvas = document.getElementById(
+                "leads-country-chart",
+            ) as HTMLCanvasElement;
+            if (!canvas) return;
 
-      const ctx = canvas.getContext("2d");
-      if (!ctx) return;
+            const ctx = canvas.getContext("2d");
+            if (!ctx) return;
 
-      if (formsChartInstance) {
-        formsChartInstance.destroy();
-      }
-
-      formsChartInstance = new Chart(ctx, {
-        type: "bar",
-        data: {
-          labels: labels,
-          datasets: [{
-            label: datasetLabel,
-            data: dataPoints,
-            backgroundColor: color,
-            borderRadius: 6,
-            borderWidth: 0,
-            maxBarThickness: 45
-          }]
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          plugins: {
-            legend: {
-              display: false
-            },
-            tooltip: {
-              backgroundColor: "#1e293b",
-              titleColor: "#ffffff",
-              bodyColor: "#e2e8f0",
-              padding: 12,
-              cornerRadius: 8
+            if (countryChartInstance) {
+                countryChartInstance.destroy();
             }
-          },
-          scales: {
-            x: {
-              grid: {
-                display: false
-              },
-              ticks: {
-                color: "#64748b",
-                font: {
-                  family: "'Inter', sans-serif",
-                  size: 11
-                }
-              }
-            },
-            y: {
-              grid: {
-                color: "#f1f5f9"
-              },
-              ticks: {
-                color: "#64748b",
-                font: {
-                  family: "'Inter', sans-serif",
-                  size: 11
+
+            const colors = labels.map((label) => {
+                const clean = label.toLowerCase().trim();
+                if (clean === "puerto rico" || clean === "pr") return "#2563eb";
+                if (clean === "españa" || clean === "espana" || clean === "es")
+                    return "#ef4444";
+                return "#cbd5e1";
+            });
+
+            countryChartInstance = new Chart(ctx, {
+                type: "doughnut",
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            data: dataPoints,
+                            backgroundColor: colors.slice(0, labels.length),
+                            borderWidth: 2,
+                            borderColor: "#ffffff",
+                        },
+                    ],
                 },
-                precision: 0
-              },
-              min: 0
-            }
-          }
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: "bottom",
+                            labels: {
+                                boxWidth: 12,
+                                font: {
+                                    family: "'Inter', sans-serif",
+                                    size: 12,
+                                },
+                                color: "#475569",
+                                generateLabels: function (chart) {
+                                    const data = chart.data;
+                                    if (
+                                        data.labels &&
+                                        data.labels.length &&
+                                        data.datasets.length
+                                    ) {
+                                        const dataset = data.datasets[0];
+                                        return data.labels.map((label, i) => {
+                                            const value = dataset.data[i];
+                                            const bg = Array.isArray(
+                                                dataset.backgroundColor,
+                                            )
+                                                ? dataset.backgroundColor[i]
+                                                : dataset.backgroundColor;
+                                            const stroke = Array.isArray(
+                                                dataset.borderColor,
+                                            )
+                                                ? dataset.borderColor[i]
+                                                : dataset.borderColor;
+                                            const bw = Array.isArray(
+                                                dataset.borderWidth,
+                                            )
+                                                ? dataset.borderWidth[i]
+                                                : dataset.borderWidth;
+
+                                            return {
+                                                text: `${label} (${value})`,
+                                                fillStyle: bg as string,
+                                                strokeStyle: stroke as string,
+                                                lineWidth:
+                                                    typeof bw === "number"
+                                                        ? bw
+                                                        : 2,
+                                                hidden:
+                                                    isNaN(value as number) ||
+                                                    !chart.getDataVisibility(i),
+                                                index: i,
+                                            };
+                                        });
+                                    }
+                                    return [];
+                                },
+                            },
+                        },
+                        tooltip: {
+                            backgroundColor: "#1e293b",
+                            titleColor: "#ffffff",
+                            bodyColor: "#e2e8f0",
+                            padding: 12,
+                            cornerRadius: 8,
+                            callbacks: {
+                                label: function (context) {
+                                    const value = context.raw as number;
+                                    const total = context.dataset.data.reduce(
+                                        (a: any, b: any) => a + b,
+                                        0,
+                                    ) as number;
+                                    const percentage = Math.round(
+                                        (value / total) * 100,
+                                    );
+                                    return ` ${value} leads (${percentage}%)`;
+                                },
+                            },
+                        },
+                    },
+                    cutout: "70%",
+                },
+            });
         }
-      });
-    }
 
-    // Event Listeners para filtros
-    filterDateFrom.addEventListener("change", updateMetricsAndChart);
-    filterDateTo.addEventListener("change", updateMetricsAndChart);
+        // Renderizar gráfico de barras horizontales (Distribución de Formularios)
+        function renderFormsChart(
+            labels: string[],
+            dataPoints: number[],
+            datasetLabel: string,
+            color: string,
+        ) {
+            // Calcular la altura necesaria basada en la cantidad de formularios
+            const barHeight = 38;
+            const padding = 80;
+            const calculatedHeight = Math.max(
+                300,
+                labels.length * barHeight + padding,
+            );
 
-    btnClearFilters.addEventListener("click", () => {
-      filterDateFrom.value = "";
-      filterDateTo.value = "";
-      updateMetricsAndChart();
+            // 1. Actualizar wrapper PRIMERO
+            const wrapper = document.querySelector(
+                ".forms-chart-wrapper",
+            ) as HTMLElement;
+            if (wrapper) {
+                wrapper.style.height = `${calculatedHeight}px`;
+            }
+
+            // 2. Destruir instancia anterior
+            if (formsChartInstance) {
+                formsChartInstance.destroy();
+                formsChartInstance = null;
+            }
+
+            // 3. Reemplazar canvas con uno nuevo que tiene el height explícito
+            const oldCanvas = document.getElementById("leads-forms-chart");
+            if (!oldCanvas || !oldCanvas.parentNode) return;
+            const newCanvas = document.createElement("canvas");
+            newCanvas.id = "leads-forms-chart";
+            newCanvas.setAttribute("height", String(calculatedHeight));
+            oldCanvas.parentNode.replaceChild(newCanvas, oldCanvas);
+
+            const ctx = newCanvas.getContext("2d");
+            if (!ctx) return;
+
+            formsChartInstance = new Chart(ctx, {
+                type: "bar",
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: datasetLabel,
+                            data: dataPoints,
+                            backgroundColor: color,
+                            borderRadius: 4,
+                            borderWidth: 0,
+                            maxBarThickness: 22,
+                        },
+                    ],
+                },
+                options: {
+                    indexAxis: "y",
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false,
+                        },
+                        tooltip: {
+                            backgroundColor: "#1e293b",
+                            titleColor: "#ffffff",
+                            bodyColor: "#e2e8f0",
+                            padding: 12,
+                            cornerRadius: 8,
+                        },
+                    },
+                    scales: {
+                        x: {
+                            grid: {
+                                color: "#f1f5f9",
+                            },
+                            ticks: {
+                                color: "#64748b",
+                                font: {
+                                    family: "'Inter', sans-serif",
+                                    size: 11,
+                                },
+                                precision: 0,
+                            },
+                            min: 0,
+                        },
+                        y: {
+                            grid: {
+                                display: false,
+                            },
+                            ticks: {
+                                autoSkip: false,
+                                color: "#64748b",
+                                font: {
+                                    family: "'Inter', sans-serif",
+                                    size: 11,
+                                },
+                            },
+                        },
+                    },
+                },
+            });
+        }
+
+        // Event Listeners para filtros
+        filterDateFrom.addEventListener("change", updateMetricsAndChart);
+        filterDateTo.addEventListener("change", updateMetricsAndChart);
+
+        btnClearFilters.addEventListener("click", () => {
+            filterDateFrom.value = "";
+            filterDateTo.value = "";
+            updateMetricsAndChart();
+        });
+
+        // Event listener para el select de país en la distribución de formularios
+        chartCountrySelect.addEventListener("change", () => {
+            if (chartFormSelect) {
+                chartFormSelect.value = "all";
+            }
+            updateFormsChart();
+        });
+
+        // Event listener para el select de formulario en la distribución de formularios
+        chartFormSelect.addEventListener("change", () => {
+            updateFormsChart(undefined, true);
+        });
+
+        // Menú hamburguesa responsivo
+        const btnMenuToggle = document.getElementById("btn-menu-toggle");
+        const headerActions = document.querySelector(".header-actions");
+        if (btnMenuToggle && headerActions) {
+            btnMenuToggle.addEventListener("click", () => {
+                headerActions.classList.toggle("open");
+            });
+            // Cerrar al hacer clic afuera
+            document.addEventListener("click", (e) => {
+                if (
+                    !btnMenuToggle.contains(e.target as Node) &&
+                    !headerActions.contains(e.target as Node)
+                ) {
+                    headerActions.classList.remove("open");
+                }
+            });
+        }
+
+        // Carga inicial
+        loadData();
     });
-
-    // Event listener para el select de país en la distribución de formularios
-    chartCountrySelect.addEventListener("change", () => {
-      updateFormsChart();
-    });
-
-    // Carga inicial
-    loadData();
-  });
 </script>
