@@ -15,6 +15,7 @@
     "@astrojs/node": "^9.5.5",
     "astro": "^5.17.3",
     "better-sqlite3": "^12.11.1",
+    "chart.js": "^4.5.1",
     "html2pdf.js": "^0.9.1",
     "typescript": "^5.9.3"
   },
