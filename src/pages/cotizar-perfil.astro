@@ -797,7 +797,7 @@
           });
         }
 
-        form.addEventListener('submit', function(e) {
+        form.addEventListener('submit', async function(e) {
           // 1. Validar CAPTCHA personalizado usando setCustomValidity y reportValidity
           const userCode = captchaInput?.value.trim().toUpperCase();
           if (captchaInput) {
@@ -850,6 +850,32 @@
           const webhookUrl = isFirstForm 
             ? 'https://hooks.zapier.com/hooks/catch/12433184/4ujlm5u/'
             : 'https://hooks.zapier.com/hooks/catch/12433184/4ujecl6/';
+
+          // Verificar si el correo ya existe
+          const correo = datos['Email'] || datos['correo'] || datos['Correo'] || datos['email'];
+          if (correo) {
+              const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement | null;
+              if (btn) btn.disabled = true;
+              try {
+                  const checkRes = await fetch('/api/check-email', {
+                      method: 'POST',
+                      headers: { 'Content-Type': 'application/json' },
+                      body: JSON.stringify({ email: correo })
+                  });
+                  if (checkRes.ok) {
+                      const checkData = await checkRes.json();
+                      if (checkData.exists) {
+                          showToast('Ya hemos recibido una solicitud con este correo. Nos pondremos en contacto pronto.', 'success');
+                            (e.target as HTMLFormElement).reset();
+                          if (btn) btn.disabled = false;
+                          return;
+                      }
+                  }
+              } catch (err) {
+                  console.error("Error checking email duplicate:", err);
+              }
+              if (btn) btn.disabled = false;
+          }
 
           // 1. Envío al webhook original (sin alterar)
           fetch(webhookUrl, {
@@ -924,7 +950,93 @@
         });
       });
 
+      function showToast(message: string, type = 'success') {
+        const toast = document.createElement('div');
+        toast.className = `form-toast form-toast-${type}`;
+        toast.innerHTML = `
+          <div class="toast-icon">${type === 'success' ? '✓' : '⚠'}</div>
+          <div class="toast-message">${message}</div>
+          <button class="toast-close">&times;</button>
+        `;
+        document.body.appendChild(toast);
+        
+        requestAnimationFrame(() => toast.classList.add('show'));
+        
+        toast.querySelector('.toast-close')?.addEventListener('click', () => {
+          toast.classList.remove('show');
+          setTimeout(() => toast.remove(), 300);
+        });
+        
+        setTimeout(() => {
+          if (toast.parentElement) {
+            toast.classList.remove('show');
+            setTimeout(() => toast.remove(), 300);
+          }
+        }, 5000);
+      }
+
     }); 
   </script>
+
+  <style is:global>
+    /* ================= TOAST ================= */
+    .form-toast {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: white;
+      padding: 16px 24px;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      z-index: 99999;
+      pointer-events: none;
+      border-left: 4px solid #333;
+    }
+    .form-toast.show {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .form-toast-success { border-left-color: #10B981; }
+    .form-toast-error { border-left-color: #EF4444; }
+    
+    .toast-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 14px;
+    }
+    .form-toast-success .toast-icon { background: #10B981; }
+    .form-toast-error .toast-icon { background: #EF4444; }
+    
+    .toast-message {
+      font-family: var(--font-body, 'Inter', sans-serif);
+      font-size: 14px;
+      color: #333;
+      font-weight: 500;
+    }
+    .toast-close {
+      background: none;
+      border: none;
+      color: #999;
+      font-size: 20px;
+      cursor: pointer;
+      padding: 0 4px;
+      line-height: 1;
+      transition: color 0.2s;
+    }
+    .toast-close:hover { color: #333; }
+  </style>
 </body>
 </html>

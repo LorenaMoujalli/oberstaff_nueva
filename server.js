@@ -86,6 +86,40 @@ const server = http.createServer(async (req, res) => {
     return;
   }
 
+  // ── POST /api/check-email ──────────────────
+  if (req.method === 'POST' && req.url === '/api/check-email') {
+    let body = '';
+    req.on('data', chunk => { body += chunk.toString('utf8'); });
+    req.on('end', () => {
+      try {
+        const payload = JSON.parse(body);
+        const emailToCheck = (payload.email || '').trim().toLowerCase();
+
+        if (!emailToCheck) {
+          res.writeHead(400, CORS_HEADERS);
+          res.end(JSON.stringify({ exists: false, error: 'Email is required' }));
+          return;
+        }
+
+        const stmt = db.prepare(`
+          SELECT 1 FROM leads, json_each(leads.data)
+          WHERE (LOWER(json_each.key) LIKE '%email%' OR LOWER(json_each.key) LIKE '%correo%')
+            AND LOWER(json_each.value) = ?
+          LIMIT 1
+        `);
+        const result = stmt.get(emailToCheck);
+
+        res.writeHead(200, CORS_HEADERS);
+        res.end(JSON.stringify({ exists: !!result }));
+      } catch (err) {
+        console.error('[check-email] Error:', err.message);
+        res.writeHead(500, CORS_HEADERS);
+        res.end(JSON.stringify({ exists: false, error: 'Error interno' }));
+      }
+    });
+    return;
+  }
+
   // ── POST /api/guardar-lead ──────────────────
   if (req.method === 'POST' && req.url === '/api/guardar-lead') {
     let body = '';

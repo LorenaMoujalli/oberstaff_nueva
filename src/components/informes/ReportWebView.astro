@@ -1119,6 +1119,36 @@ const finalPais = pais || (isPrPage ? "Puerto Rico" : "España");
         data["Pais"] = pais;
       }
 
+      const emailInput = f.querySelector('input[type="email"]') as HTMLInputElement;
+      const correo = emailInput ? emailInput.value.trim() : '';
+
+      // Verificar si el correo ya existe
+      if (correo) {
+          btn.disabled = true;
+          btn.innerHTML = "Enviando...";
+          try {
+              const checkRes = await fetch('/api/check-email', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({ email: correo })
+              });
+              if (checkRes.ok) {
+                  const checkData = await checkRes.json();
+                  if (checkData.exists) {
+                      showToast('Ya hemos recibido una solicitud con este correo. Nos pondremos en contacto pronto.', 'success');
+                            (e.target as HTMLFormElement).reset();
+                      btn.disabled = false;
+                      btn.innerHTML = btn.dataset.originalHtml ?? "Descargar informe completo";
+                      return;
+                  }
+              }
+          } catch (err) {
+              console.error("Error checking email duplicate:", err);
+          }
+          btn.disabled = false;
+          btn.innerHTML = btn.dataset.originalHtml ?? "Descargar informe completo";
+      }
+
       btn.disabled = true;
       btn.innerHTML = "Enviando...";
       if (feedback) {

@@ -411,6 +411,33 @@ const finalPais = pais || (isPrPage ? "Puerto Rico" : "España");
         data['Pais'] = pais;
     }
 
+    // Verificar si el correo ya existe
+    if (data.Email) {
+        btn.disabled = true;
+        btn.innerHTML = "Enviando...";
+        try {
+            const checkRes = await fetch('/api/check-email', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email: data.Email })
+            });
+            if (checkRes.ok) {
+                const checkData = await checkRes.json();
+                if (checkData.exists) {
+                    showToast('Ya hemos recibido una solicitud con este correo. Nos pondremos en contacto pronto.', 'success');
+                            (e.target as HTMLFormElement).reset();
+                    btn.disabled = false;
+                    btn.innerHTML = "Descargar Informe (PDF)";
+                    return;
+                }
+            }
+        } catch (err) {
+            console.error("Error checking email duplicate:", err);
+        }
+        btn.disabled = false;
+        btn.innerHTML = "Descargar Informe (PDF)";
+    }
+
     // Send lead to webhook asynchronously
     const gateWebhookUrl = document.getElementById('report-download-form')?.dataset.webhookUrl || "https://hooks.zapier.com/hooks/catch/12433184/4bye64r/";
     // 1. Envío al webhook original (sin alterar)
