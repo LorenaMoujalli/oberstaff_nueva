@@ -458,6 +458,13 @@ const privacyPolicyUrl = isPrPage
                     })
                 }).catch(err => console.error('Error al guardar en base de datos:', err));
 
+                // 3. Disparar evento de conversión Pixel de ChatGPT (OpenAI)
+                if (typeof (window as any).oaiq === 'function') {
+                    (window as any).oaiq("measure", "registration_completed", {
+                        type: "customer_action"
+                    });
+                }
+
                 f.reset();
                 refreshCaptcha();
                 showToast('¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.', 'success');

@@ -136,6 +136,32 @@ const server = http.createServer(async (req, res) => {
           VALUES (?, ?, ?)
         `).run(formName, pais, JSON.stringify(data));
 
+        // Opcional: Enviar a ChatGPT Conversions API si existe una API Key en el entorno
+        if (process.env.CHATGPT_CONVERSIONS_API_KEY) {
+          fetch('https://bzr.openai.com/v1/events?pid=3Tw1ymwAfLywEGoSFwFnf3', {
+            method: 'POST',
+            headers: {
+              'Authorization': `Bearer ${process.env.CHATGPT_CONVERSIONS_API_KEY}`,
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              validate_only: false,
+              events: [
+                {
+                  id: `evt_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
+                  type: "registration_completed",
+                  timestamp_ms: Date.now(),
+                  source_url: req.headers.referer || "https://www.oberstaff.com",
+                  action_source: "web",
+                  data: {
+                    type: "customer_action"
+                  }
+                }
+              ]
+            })
+          }).catch(err => console.error('[ChatGPT CAPI] Error enviando evento:', err.message));
+        }
+
         res.writeHead(200, CORS_HEADERS);
         res.end(JSON.stringify({ success: true }));
       } catch (err) {
