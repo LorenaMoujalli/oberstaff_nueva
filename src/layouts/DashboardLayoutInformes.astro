@@ -29,11 +29,18 @@ const canonicalOgImage = ogImage
 <html lang="es">
   <head>
     <!-- Google Tag Manager -->
-    <script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-MKTCXHCB');</script>
+    <script is:inline>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-MKTCXHCB");
+    </script>
     <!-- End Google Tag Manager -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -55,50 +62,105 @@ const canonicalOgImage = ogImage
     <title>{title}</title>
     <slot name="head" />
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16507199657"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=AW-16507199657"></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-      gtag('config', 'AW-16507199657');
+      gtag("config", "AW-16507199657");
     </script>
     <!-- Meta Pixel Code -->
     <script is:inline>
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=f.fbq||function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '1399493591830432');
-      fbq('track', 'PageView');
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq =
+          f.fbq ||
+          function () {
+            n.callMethod
+              ? n.callMethod.apply(n, arguments)
+              : n.queue.push(arguments);
+          };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(
+        window,
+        document,
+        "script",
+        "https://connect.facebook.net/en_US/fbevents.js",
+      );
+      fbq("init", "1399493591830432");
+      fbq("track", "PageView");
     </script>
-    <noscript><img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=1399493591830432&ev=PageView&noscript=1"
-    /></noscript>
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display:none"
+        src="https://www.facebook.com/tr?id=1399493591830432&ev=PageView&noscript=1"
+      /></noscript
+    >
     <!-- 1. Estilos del Chat de n8n
     <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
     -->
     <!-- ChatGPT / OpenAI Pixel -->
     <script is:inline>
-      !function(w,d,s,u){if(w.oaiq)return;var q=function(){q.q.push(arguments)};q.q=[];w.oaiq=q;var j=d.createElement(s);j.async=1;j.src=u;var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j,f)}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");oaiq("init",{pixelId:"3Tw1ymwAfLywEGoSFwFnf3",debug:true});
+      !(function (w, d, s, u) {
+        if (w.oaiq) return;
+        var q = function () {
+          q.q.push(arguments);
+        };
+        q.q = [];
+        w.oaiq = q;
+        var j = d.createElement(s);
+        j.async = 1;
+        j.src = u;
+        var f = d.getElementsByTagName(s)[0];
+        f.parentNode.insertBefore(j, f);
+      })(
+        window,
+        document,
+        "script",
+        "https://bzrcdn.openai.com/sdk/oaiq.min.js",
+      );
+      oaiq("init", { pixelId: "3Tw1ymwAfLywEGoSFwFnf3", debug: true });
     </script>
-    <script is:inline type="text/javascript">(function(w,s){var e=document.createElement("script");e.type="text/javascript";e.async=true;e.src="https://cdn.pagesense.io/js/oberstaff/9fb39bbc53d24d899542ce44386cb030.js";var x=document.getElementsByTagName("script")[0];x.parentNode.insertBefore(e,x);})(window,"script");</script>
+    <script is:inline type="text/javascript">
+      (function (w, s) {
+        var e = document.createElement("script");
+        e.type = "text/javascript";
+        e.async = true;
+        e.src =
+          "https://cdn.pagesense.io/js/oberstaff/9fb39bbc53d24d899542ce44386cb030.js";
+        var x = document.getElementsByTagName("script")[0];
+        x.parentNode.insertBefore(e, x);
+      })(window, "script");
+    </script>
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MKTCXHCB"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-MKTCXHCB"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"></iframe></noscript
+    >
     <!-- End Google Tag Manager (noscript) -->
     <!-- Logo fijo en esquina superior izquierda -->
-    <a
-      href="/"
-      class="report-logo-link"
-      aria-label="Ir al inicio de Oberstaff"
-    >
+    <a href="/" class="report-logo-link" aria-label="Ir al inicio de Oberstaff">
       <img
         src="/logo-oberstaff-blanco.webp"
         alt="Oberstaff"
@@ -161,7 +223,7 @@ const canonicalOgImage = ogImage
     --chat--color-primary-shade-50: #ff66cc !important;
     --chat--header--background: #ff66cc !important;
     --chat--header--color: #ffffff !important;
-    --chat--message--user--background: #6663FD !important;
+    --chat--message--user--background: #6663fd !important;
     --chat--message--user--color: #ffffff !important;
     --chat--toggle--background: #ff66cc !important;
     --chat--toggle--hover--background: #ff66cc !important;
@@ -216,10 +278,10 @@ const canonicalOgImage = ogImage
   }
 
   /* Centrar títulos en el header de n8n chat */
-	#n8n-chat .chat-header p.chat-title-p {
-		font-size: 1.25rem !important;
-		font-weight: 700 !important;
-	}
+  #n8n-chat .chat-header p.chat-title-p {
+    font-size: 1.25rem !important;
+    font-weight: 700 !important;
+  }
 
   .chat-header,
   #n8n-chat .chat-header {
@@ -242,8 +304,8 @@ const canonicalOgImage = ogImage
   #n8n-chat .chat-input-send-button svg,
   #n8n-chat button[class*="send"] svg,
   #n8n-chat button[class*="send"] svg path {
-    fill: #6663FD !important;
-    stroke: #6663FD !important;
+    fill: #6663fd !important;
+    stroke: #6663fd !important;
   }
 
   #n8n-chat .chat-input-send-button:hover,
@@ -267,7 +329,6 @@ const canonicalOgImage = ogImage
     background: #ff66cc !important;
     transform: scale(1.08) !important;
   }
-
 
   * {
     box-sizing: border-box;

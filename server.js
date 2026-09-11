@@ -128,8 +128,8 @@ const server = http.createServer(async (req, res) => {
       try {
         const payload = JSON.parse(body);
         const formName = payload.formName ?? null;
-        const pais     = payload.pais     ?? null;
-        const data     = payload.data     ?? {};
+        const pais = payload.pais ?? null;
+        const data = payload.data ?? {};
 
         db.prepare(`
           INSERT INTO leads (form_name, pais, data)
