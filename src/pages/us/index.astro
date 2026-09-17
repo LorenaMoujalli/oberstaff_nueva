@@ -16,28 +16,28 @@ const ogImage = "home-pr.webp";
 
 // --- 1. HERO PROPS ---
 const heroProps = {
-	badge: "ESTADOS UNIDOS",
-	title: `Staffing agency para <br class="desktop-br"/>
-        contratar personal remoto<br class="desktop-br"/>
-       en Sudamérica <br class="desktop-br"/> desde Puerto Rico`,
-	description: `En <span class="brand-text">Oberstaff<span class="brand-dot">.</span></span> <span class="brand-text2">encontramos el mejor talento por menos, ¡mucho menos!</span> Somos la agencia de staffing especializada en reclutamiento remoto: contrata talento cualificado en América del Sur, reduce costos salariales y olvídate de los gastos de tener empleados en nómina.`,
-	socialProof: `Más de 500 empresas confían en <span class="brand-text">Oberstaff<span class="brand-dot">.</span></span>`,
-	buttonText: `Agendar llamada gratis`,
-	buttonHref: `#contacto`,
-	videoButtonText: `Ver cómo funciona`,
+	badge: "",
+	title: `Remote staffing agency <br class="desktop-br"/>
+        for U.S. companies`,
+	description: `At <span class="brand-text">Oberstaff<span class="brand-dot">.</span></span> we connect U.S. companies with highly qualified professionals in Latin America at a significantly lower cost. As a specialized remote staffing agency, we help you hire pre-vetted talent, reduce payroll costs, and simplify the administrative, contractual, and compliance responsibilities that come with building an international team.`,
+	socialProof: `Trusted by more than 500 companies.</span>`,
+	buttonText: `Book a free remote staffing consultation`,
+	buttonHref: `#contact`,
+	videoButtonText: `See How It Works`,
+	buttonHref2: "#how-it-works",
 	showPedro: false,
 };
 
 // --- 2. STATS PROPS ---
 const statsProps = {
-	title: `Nearshore staffing para reducir costos sin sacrificar <br/> calidad`,
-	description: `Si estás evaluando cómo reducir costos de nómina sin perder calidad ni sufrir desfases de zona horaria, Sudamérica es una vía eficiente para las empresas en la Isla.`,
+	title: `Remote staffing services built around your hiring goals`,
+	description: `Our remote staffing services give U.S. companies a practical way to add one specialist or an entire multi-role team. Oberstaff combines targeted recruiting, role-specific screening, flexible engagement models, centralized USD billing, and ongoing operational support.`,
 	stat1_number: "70%",
-	stat1_label: "Ahorro vs. contratación local.",
-	stat2_number: "-30",
-	stat2_label: "Días para tener tu talento operando.",
-	stat3_number: "100%",
-	stat3_label: "Profesionales en tu zona horaria AST y EST.",
+	stat1_label: "Average savings compared to local US hiring rates. ",
+	stat2_number: "< 30 Days",
+	stat2_label: "Average time-to-hire to get your remote professional fully operational.",
+	stat3_number: "100% Alignment",
+	stat3_label: "Professionals fully integrated into your native time zones (EST, CST, MST, PST).",
 };
 
 // --- 3. SERVICES PROPS ---
@@ -46,38 +46,38 @@ const servicesList = [
 		icon: "⚖️",
 		title: "Employer of Record (EOR)",
 		description:
-			"Contrata empleados en Sudamérica con contrato laboral formal, sin abrir una entidad propia en el extranjero. <span class='brand-text'>Oberstaff<span class='brand-dot'>.</span></span> actúa como empleador legal y gestiona nómina, cumplimiento laboral y administración local para que tu empresa pueda crecer con seguridad.",
-		linkText: "Conoce nuestro servicio de Employer of Record (EOR)",
+			"Hire full-time employees in South America legally and safely without setting up a foreign corporate entity. Oberstaff acts as the legal employer, managing international payroll, local labor law compliance, benefits, and local taxes, allowing your business to expand completely.",
+		linkText: "Learn more about our comprehensive Employer of Record (EOR) services.",
 		href: "",
 		colorClass: "purple-bg",
 		cardClass: "card-purple",
 	},
 	{
 		icon: "👥",
-		title: "Outsourcing de personal",
+		title: "Workforce Outsourcing & Managed Solutions",
 		description:
-			"Delega la selección, contratación y gestión mensual de equipos comerciales, administrativos y de soporte BPO. Reclutamiento de personal especializado para tu operación, procesos más ágiles y acompañamiento continuo sin asumir toda la carga operativa interna.",
-		linkText: "Conoce nuestro servicio de Outsourcing de personal",
+			"Delegate the absolute recruitment, screening, onboarding, and ongoing management of high-performing commercial, administrative, and BPO customer support teams. Leverage agile processes and hands-on operational support without expanding your internal administrative overhead.",
+		linkText: "Explore our customized Business Process Outsourcing and Staff Solutions.",
 		href: "",
 		colorClass: "pink-bg",
 		cardClass: "card-green",
 	},
 	{
 		icon: "💻",
-		title: "Staff Augmentation",
+		title: "Tech Staff Augmentation",
 		description:
-			"Refuerza tu equipo tecnológico con desarrolladores, QA, DevOps, analistas de datos y otros perfiles IT especializados. El talento remoto se integra a tu stack, procesos y metodología de trabajo para acelerar proyectos sin aumentar tu estructura fija.",
-		linkText: "Conoce nuestro servicio de Staff Augmentation",
+			"Supercharge your technical engineering squads with elite remote software developers, QA engineers, DevOps specialists, data analysts, and specialized IT profiles. Highly qualified tech talent seamlessly integrates into your existing tech stack, agile methodologies, and daily workflows to accelerate product roadmaps without adding heavy fixed payroll strain.",
+		linkText: "Discover how our Tech Staff Augmentation can accelerate your sprint goals.",
 		href: "",
 		colorClass: "orange-bg",
 		cardClass: "card-pink",
 	},
 	{
 		icon: "📋",
-		title: "Contractor of Record (CoR)",
+		title: "Contractor of Record (CoR) & Compliance",
 		description:
-			"Formaliza la relación con contratistas independientes y reduce riesgos por clasificación errónea ante el Departamento de Hacienda o el IRS. Este modelo es útil cuando necesitas flexibilidad, pagos centralizados y soporte para contratistas especializados.",
-		linkText: "Conoce nuestro servicio de Contractor of Record (CoR)",
+			"Formalize your professional agreements with independent overseas talent while eliminating 1099 misclassification risks before the IRS. This model provides complete operational flexibility, centralized automated invoices, legal shielding, and dedicated cross-border payment compliance for specialized contractors.",
+		linkText: "Protect your enterprise with our Contractor of Record compliance frameworks.",
 		href: "",
 		colorClass: "gray-bg",
 		cardClass: "card-lime",
@@ -88,31 +88,31 @@ const servicesList = [
 const processItems = [
 	{
 		label: "Selección",
-		badge: "Gratis · sin compromiso",
-		title: "1. Nos cuentas qué perfil necesitas",
+		badge: "Free Consultation – Zero Upfront Obligation",
+		title: "1. Define Your Ideal Candidate Profile",
 		description:
-			"Cuéntanos si buscas contratar personal administrativo, comercial, contable, tecnológico, de soporte o perfiles bilingües. Con nuestro proceso de reclutamiento de personal identificamos candidatos que encajen con tu empresa, tu cultura y tus objetivos de operación.",
+			"Tell us your specific needs—whether you are looking for executive virtual assistants, digital marketers, accountants, bilingual customer support representatives, or high-level tech developers. Our expert corporate recruiters target professionals who perfectly align with your company culture, workflow standards, and business goals.",
 	},
 	{
 		label: "Estructura",
-		badge: "Sin contratos forzosos a largo plazo",
-		title: "2. Te proponemos la estructura adecuada",
+		badge: "Flexible Engagements – No Rigid Long-Term Lock-Ins",
+		title: "2. Select the Ideal Compliance Framework",
 		description:
-			"Te orientamos sobre cuál es el modelo que blindará tu operación legalmente en toda contratación internacional.",
+			"We review your requirements and consult you on the exact operational structure (EOR, CoR, or Staff Augmentation) that fully legally safeguards your cross-border operations from regulatory risks.",
 	},
 	{
 		label: "Entrevistas",
-		badge: "Candidatos listos en menos de 30 días",
-		title: "3. Entrevistas y eliges a los mejores",
+		badge: "Vetted Candidates Ready to Start in Less Than 30 Days",
+		title: "3. Interview & Choose the Elite Top 1%",
 		description:
-			"Te presentamos talento remoto validado para que puedas entrevistarlo antes de decidir. Tú mantienes control sobre la elección del perfil, mientras <span class='brand-text'>Oberstaff<span class='brand-dot'>.</span></span> simplifica la búsqueda, la documentación y la operación mensual.",
+			"We present a curated shortlist of pre-vetted, interviewed candidates. You retain complete authority over final hiring decisions, while Oberstaff completely manages sourcing, technical testing, backgrounds, and documentation setup.",
 	},
 	{
 		label: "Integración",
-		badge: "Alineación horaria garantizada",
-		title: "4. Integramos el talento a tu operación",
+		badge: "Time Zone Alignment Guaranteed",
+		title: "4. Smooth Integration into Your Workflows",
 		description:
-			"El profesional se incorpora a tu equipo con horarios compatibles con Puerto Rico, procesos claros y facturación centralizada en dólares. Así puedes contratar empleados o contratistas de Sudamérica sin perder visibilidad sobre el desempeño.",
+			"Your new hire joins your team, working in lockstep with your US time zone. All international payroll, compliance, and multi-country operational variables are centralized into a single, straightforward monthly invoice in USD, keeping total transparency over daily production.",
 	},
 ];
 
@@ -120,11 +120,11 @@ const processItems = [
 const profilesList = [
 	{
 		icon: "📈",
-		title: "Estrategia comercial",
-		quote: "Más ventas, pipeline lleno y clientes que repiten",
+		title: "Sales & Business Development",
+		quote: "Drive hyper-growth, build a predictable pipeline, and maximize conversions.",
 		roles: [
 			{
-				label: "Closer de ventas",
+				label: "High-Ticket Sales Closers",
 				href: "",
 			},
 		],
@@ -132,23 +132,23 @@ const profilesList = [
 	},
 	{
 		icon: "📣",
-		title: "Marketing digital",
-		quote: "Tu marca visible donde están tus clientes",
+		title: "Growth & Digital Marketing",
+		quote: "Put your brand directly in front of buyers with data-driven strategies.  ",
 		roles: [
 			{
-				label: "Experto SEO",
+				label: "SEO Specialist",
 				href: "",
 			},
 			{
-				label: "Especialista en Google Ads",
+				label: "Google Ads Experts",
 				href: "",
 			},
 			{
-				label: "Especialista en Meta Ads",
+				label: "Paid Media (Meta) Specialists",
 				href: "",
 			},
 			{
-				label: "Community Manager",
+				label: "Data-Driven Community Managers",
 				href: "",
 			},
 		],
@@ -156,8 +156,8 @@ const profilesList = [
 	},
 	{
 		icon: "✍️",
-		title: "Redacción y copywriting",
-		quote: "Palabras que venden, contenido que posiciona",
+		title: "Content Writing & Copywriting",
+		quote: "Words that sell, content that ranks.",
 		roles: [
 			{ label: "Copywriter", href: "" },
 		],
@@ -165,24 +165,28 @@ const profilesList = [
 	},
 	{
 		icon: "🎨",
-		title: "Diseño",
-		quote: "Imagen profesional que genera confianza",
+		title: "Creative Design & UI/UX",
+		quote: "Premium brand aesthetics that build trust and drive engagement.",
 		roles: [
 			{
-				label: "Diseñador gráfico",
+				label: "Graphic Designers",
 				href: "",
 			},
-			{ label: "Diseñador web", href: "#" },
+			{ label: "Web and Product Designers", href: "#" },
+			{
+				label: "UI/UX Specialists",
+				href: "",
+			},
 		],
 		iconColorClass: "purple-text",
 	},
 	{
 		icon: "🎬",
-		title: "Vídeo",
-		quote: "Vídeos que paran el scroll y convierten",
+		title: "Video Editing",
+		quote: "High-impact videos designed for social media and optimized for higher click-through rates.",
 		roles: [
 			{
-				label: "Editor de vídeo",
+				label: "Video Editors",
 				href: "",
 			},
 		],
@@ -190,11 +194,11 @@ const profilesList = [
 	},
 	{
 		icon: "🗂️",
-		title: "Soporte administrativo",
-		quote: "Tu operación organizada; tú, enfocado en crecer.",
+		title: "Administrative Support",
+		quote: "Keep your operations organized while you scale the business.",
 		roles: [
 			{
-				label: "Asistente virtual",
+				label: "Virtual Assistants (VA)",
 				href: "",
 			},
 		],
@@ -202,18 +206,21 @@ const profilesList = [
 	},
 	{
 		icon: "🧮",
-		title: "Contabilidad",
-		quote: "Finanzas al día, sin sorpresas ni errores",
-		roles: [{ label: "Contable", href: "" }],
+		title: "Corporate Accounting & Finance",
+		quote: "Flawless financial books, automated reporting, and zero tax surprises.",
+		roles: [{ label: "Bilingual Bookkeepers", href: "" }],
 		iconColorClass: "blue-text",
 	},
 	{
 		icon: "⚙️",
-		title: "Tecnología y datos",
-		quote: "El talento tech que necesitas, sin el coste que no puedes asumir",
+		title: "Technology & Data",
+		quote: "The tech talent you need, without the high costs.",
 		roles: [
-			{ label: "Desarrollador WordPress", href: "#" },
-			{ label: "Desarrollador mobile", href: "#" },
+			{ label: "Full-Stack Developers", href: "#" },
+			{ label: "WordPress Specialists", href: "#" },
+			{ label: "iOS & Android", href: "#" },
+			{ label: "Mobile Engineers", href: "#" },
+			
 		],
 		iconColorClass: "purple-text",
 	},
@@ -223,140 +230,108 @@ const profilesList = [
 const benefitsList = [
 	{
 		id: "riesgo-legal",
-		shortTitle: "Menos carga de compliance",
+		shortTitle: "Eliminate Legal & Compliance Risks",
 		icon: "🛡️",
-		title: "Menos carga de compliance",
-		subtitle: "Sin riesgos contributivos o laborales.",
-		text: "<span class='brand-text'>Oberstaff<span class='brand-dot'>.</span></span> te ayuda a ordenar la contratación internacional y la documentación, alejando a tu empresa de problemas por clasificación errónea de contratistas.",
+		title: "Eliminate Legal & Compliance Risks",
+		subtitle: "We eliminate all international compliance burdens.",
+		text: "<span class='brand-text'>Oberstaff<span class='brand-dot'>.</span></span> handles the legal heavy lifting, safeguarding your US organization against misclassification penalties (IRS/DOL), labor audits, or cross-border payment issues.",
 		colorClass: "blue",
 	},
 	{
 		id: "menos-30-dias",
-		shortTitle: "Contratación rápida",
+		shortTitle: "Accelerated Corporate Hiring Pipelines",
 		icon: "⚡",
-		title: "Contratación de personal de forma más rápida",
-		subtitle: "Candidatos preseleccionados en menos tiempo.",
-		text: "Como staffing agency especializada, nuestro proceso evalúa y preselecciona candidatos en Sudamérica para que tú solo decidas con quién trabajar al contratar empleados.",
+		title: "Accelerated Corporate Hiring Pipelines",
+		subtitle: "Stop losing revenue to vacant seats.",
+		text: "Our proactive recruitment engine continuously screens and pre-vets specialized talent pools across South America, letting you hire the perfect fit rapidly.",
 		colorClass: "orange",
 	},
 	{
 		id: "zona-horaria",
-		shortTitle: "Alineación de zona horaria",
+		shortTitle: "Perfect Synchronous Real-Time Collaboration",
 		icon: "🕐",
-		title: "Alineación de zona horaria",
-		subtitle: "Trabajo en tiempo real con Puerto Rico.",
-		text: "Los profesionales remotos pueden operar en horarios compatibles con AST y EST, facilitando reuniones, seguimiento y productividad diaria.",
+		title: "Perfect Synchronous Real-Time Collaboration",
+		subtitle: "No midnight check-ins or delayed morning standups.",
+		text: "Our talent operates natively in your specific US time zone (EST, CST, MST, PST), guaranteeing instant communication and daily collaborative rhythm.",
 		colorClass: "gray",
 	},
 	{
 		id: "factura-unica",
-		shortTitle: "Facturación en USD",
+		shortTitle: "Streamlined USD Invoicing & Financial Simplicity",
 		icon: "💵",
-		title: "Facturación centralizada en USD",
-		subtitle: "Menos complejidad para tu contabilidad.",
-		text: "Recibes una factura mensual en dólares por el servicio, mientras <span class='brand-text'>Oberstaff<span class='brand-dot'>.</span></span> coordina las dispersiones, pagos locales y gestión operativa correspondiente.",
+		title: "Streamlined USD Invoicing & Financial Simplicity",
+		subtitle: "Forget navigating foreign banking laws.",
+		text: "You receive a standard, clean monthly corporate invoice in USD. Oberstaff handles localized global distributions, compliance filings, and benefits administration seamlessly.",
 		colorClass: "cyan",
 	},
 	{
 		id: "sin-permanencia",
-		shortTitle: "Flexibilidad operativa",
+		shortTitle: "Agile Operational Scalability",
 		icon: "📈",
-		title: "Flexibilidad para escalar o reducir equipo",
-		subtitle: "Ajusta tu operación según la demanda real.",
-		text: "Puedes sumar perfiles, cambiar prioridades o reducir estructura sin la rigidez de una contratación local tradicional.",
+		title: "Agile Operational Scalability",
+		subtitle: "Adapt your workforce to true market demand.",
+		text: "Seamlessly add new specialized seats, pivot project scopes, or adjust team sizes with a degree of flexibility that rigid, domestic full-time hiring simply cannot match.",
 		colorClass: "purple",
 	},
 	{
 		id: "talento-evaluado",
-		shortTitle: "Talento evaluado con rigor",
+		shortTitle: "Rigorous Top-Tier Assessment Process",
 		icon: "✅",
-		title: "Talento remoto evaluado con rigor",
-		subtitle: "Más seguridad antes de decidir.",
-		text: "Los candidatos pasan por filtros, entrevistas y validaciones para que puedas contratar personal con mayor confianza.",
+		title: "Rigorous Top-Tier Assessment Process",
+		subtitle: "Hire with absolute peace of mind.",
+		text: "Every single candidate must successfully pass strict English fluency evaluations and technical skill trials prior to ever meeting your executive team.",
 		colorClass: "green",
 	},
 ];
-const benefitsInfoText = `<span class="brand-text">Oberstaff<span class="brand-dot">.</span></span> <strong>combina agencia de staffing, reclutamiento de personal y soporte operativo</strong> para que las empresas en Puerto Rico accedan a talento internacional sin aumentar su carga administrativa.`;
+const benefitsInfoText = `<span class="brand-text">Oberstaff<span class="brand-dot">.</span></span> <strong>combines staffing agency services, recruitment, and operational support</strong> to help companies in Puerto Rico access international talent without increasing their administrative burden.`;
 
 // --- 7. FAQS PROPS ---
 const faqsList = [
 	{
 		question:
-			"¿Qué es una staffing agency y cómo funciona <span class='brand-text'>Oberstaff<span class='brand-dot'>.</span></span>?",
+			"What does a remote staffing agency do?",
 		answers: [
-			"Una staffing agency o agencia de staffing es una empresa especializada en reclutamiento de personal y gestión de contratación internacional. <span class='brand-text'>Oberstaff<span class='brand-dot'>.</span></span> actúa como tu socio estratégico: identifica, evalúa y gestiona la integración de profesionales en Sudamérica para que tú solo te concentres en hacer crecer tu negocio en Puerto Rico.",
+			"A remote staffing agency helps companies source, screen, hire, and support professionals who work remotely. Depending on the selected model, the provider may also coordinate local employment, contractor administration, onboarding, payments, billing, and ongoing operations.",
 		],
 	},
 	{
 		question:
-			"¿Es seguro contratar personal en Sudamérica desde Puerto Rico?",
+			"What are nearshore staffing services?",
 		answers: [
-			"Sí, siempre que el modelo esté bien estructurado. La contratación internacional requiere claridad sobre la relación de trabajo, la documentación, los pagos y el nivel de control que tendrá la empresa. <span class='brand-text'>Oberstaff<span class='brand-dot'>.</span></span> te orienta para escoger la estructura adecuada según el caso.",
+			"Nearshore staffing services help a company build remote capacity in nearby regions with meaningful time-zone and workday overlap. For U.S. businesses, Latin America offers access to professionals who can often collaborate during regular U.S. business hours.",
 		],
 	},
 	{
-		question: "¿Puedo contratar empleados o contratistas independientes?",
+		question: "Is it legally secure for US corporations to hire remote talent in South America?",
 		answers: [
-			"Sí. Dependiendo del perfil y del tipo de relación, puedes contratar empleados mediante EOR o trabajar con contratistas mediante Contractor of Record. La recomendación depende del nivel de supervisión, la duración del proyecto y el riesgo de clasificación.",
+			"Yes, absolutely—provided the compliance framework is properly structured. Cross-border hiring requires careful handling of independent contractor definitions, IP protection, and local employment laws. Oberstaff legally insulates your business by structuring the engagement under robust Employer of Record (EOR) or Contractor of Record (CoR) models, eliminating regulatory risks.",
 		],
 	},
 	{
-		question: "¿En qué países de América del Sur operan?",
+		question: "Which Latin American countries do you cover?",
 		answers: [
-			"<span class='brand-text'>Oberstaff<span class='brand-dot'>.</span></span> trabaja con ecosistemas de talento en Colombia, México, Argentina, Venezuela, Chile, Perú, Uruguay y otros mercados estratégicos de la región, según el perfil requerido.",
+			"<span class='brand-text'>Oberstaff<span class='brand-dot'>.</span></span> works across talent markets that may include Colombia, Mexico, Argentina, Venezuela, Chile, Peru, Uruguay, Panama, and other supported locations. The recommended country depends on the role, schedule, talent availability, and engagement structure.",
 		],
 	},
 	{
-		question: "¿Cuánto tiempo toma incorporar talento remoto?",
+		question: "How long does it take to onboard a remote professional into our workflows?",
 		answers: [
-			"El tiempo puede variar según el cargo, la especialización y el nivel de seniority. En la mayoría de los casos, el proceso avanza en menos de 30 días si el perfil, el presupuesto y el modelo de contratación están bien definidos desde el inicio.",
+			"Timelines vary slightly based on specific technical criteria and market demand. However, our typical cross-border pipeline delivers fully screened, interviewed, and operational professionals in less than 30 days from the initial profile definition.",
 		],
 	},
 	{
-		question: "¿Puedo cancelar el servicio cuando quiera?",
+		question: "How do I choose a remote staffing agency US companies can trust?",
 		answers: [
-			"Sí. Puedes cancelar el servicio con un aviso previo de 30 días, sin penalidades ni contratos de permanencia. Esta flexibilidad permite que tu empresa en Puerto Rico pueda ampliar, ajustar o reducir su equipo remoto según sus necesidades operacionales.",
+			"Look for transparent screening, clearly defined engagement models, U.S. business-hour coverage, centralized billing, and support after placement. The right provider should explain what it manages, what your company controls, and how each professional will be supported.",
 		],
 	},
 	{
-		question: "¿Tiene algún costo cancelar el servicio?",
+		question: "Are the professionals dedicated full-time?",
 		answers: [
-			"No aplicamos penalidades por cancelar el servicio. Nuestro modelo está diseñado para que puedas ajustar tu equipo remoto sin asumir cargos adicionales por cancelación ni procesos administrativos innecesarios.",
+			"Dedicated full-time arrangements are available, and other structures may be possible depending on the service. The expected schedule, exclusivity, responsibilities, and commercial terms are defined in the proposal.",
 		],
 	},
-	{
-		question:
-			"¿Tengo que pagar Seguro Social, nómina o beneficios laborales?",
-		answers: [
-			"No tienes que administrar directamente la nómina, el Seguro Social ni los beneficios laborales del profesional. Oberstaff centraliza la gestión administrativa correspondiente y tu empresa recibe una factura mensual por el servicio, lo que reduce trámites y carga operacional.",
-		],
-	},
-	{
-		question:
-			"¿Puedo entrevistar al profesional antes de contratar el servicio?",
-		answers: [
-			"Sí. Te presentamos candidatos previamente evaluados para que puedas entrevistarlos, validar su experiencia, conocer sus habilidades y determinar cuál se adapta mejor a la cultura y a las necesidades de tu empresa.",
-		],
-	},
-	{
-		question: "¿Cómo gestiono a un profesional remoto en el día a día?",
-		answers: [
-			"El profesional trabajará bajo la supervisión y las instrucciones de tu empresa. Desde Oberstaff te recomendamos herramientas tecnológicas, sistemas de seguimiento y métodos de trabajo para gestionar sus tareas y medir su desempeño. También ofrecemos soluciones de telefonía VOIP para que el profesional pueda contar con un número telefónico de empresa y atender llamadas relacionadas con tu negocio.",
-		],
-	},
-	{
-		question: "¿Cómo se realiza el pago del servicio?",
-		answers: [
-			"El pago se realiza mensualmente mediante cargo automático a una tarjeta de débito o crédito. Recibirás una única factura en dólares que simplifica la gestión administrativa de tu empresa, sin tener que procesar directamente nómina, Seguro Social ni otros trámites laborales.",
-		],
-	},
-	{
-		question:
-			"¿Cuánto cuesta contratar profesionales remotos con <strong class='brand-text'>Oberstaff<span class='brand-dot'>.</span></strong>?",
-		answers: [
-			"El costo depende del tipo de profesional, su experiencia, nivel de especialización, país de residencia y modalidad de contratación. Antes de comenzar el proceso, recibirás una propuesta detallada en dólares para que conozcas el costo total del servicio, sin cargos ocultos ni sorpresas.",
-		],
-	},
+	
 ];
 
 // --- 8. PRESS PROPS ---
@@ -380,8 +355,8 @@ const mentionsList = [
 
 <DashboardLayoutUs
 	ogImage={ogImage}
-	title="Staffing agency: Talento de Sudamérica para Puerto Rico "
-	description="Reduce costos sin perder calidad. Oberstaff es la staffing agency que conecta empresas con talento remoto de Sudamérica. Agenda una llamada gratis. "
+	title="Remote Staffing Agency for U.S. Companies | Oberstaff"
+	description="Cut your corporate overhead by up to 70% by leveraging a premier remote staffing agency that connects US companies with top South American talent."
 >
 	<link rel="canonical" href="" slot="head" />
 	<link
@@ -712,8 +687,8 @@ const mentionsList = [
 		<div class="fade-in-section">
 			<ServicesSection
 				cardTitleTag="h3"
-				title="Servicios de staffing, reclutamiento y contratación internacional para empresas en Puerto Rico"
-				description="No todas las empresas necesitan la misma estructura. Por eso, <span class='brand-text'>Oberstaff<span class='brand-dot'>.</span></span>, tu staffing agency en Puerto Rico, te orienta hacia el modelo más eficiente según el tipo de perfil, la relación de trabajo y el nivel de control que buscas."
+				title="Nearshore staffing services for every stage of growth"
+				description="Different operations require different structures. As your dedicated nearshore staffing agency, Oberstaff guides you toward the most compliant and cost-effective model depending on the specific profile, target workflow, and organizational control you require."
 				services={servicesList}
 				customClass="pr-services"
 			/>
@@ -723,7 +698,7 @@ const mentionsList = [
 			<ProcessOberstaff
 				id="como-funciona"
 				useH3ForTitle={true}
-				title="¿Cómo contratar personal en otros países de Sudamérica desde Puerto Rico con <span class='brand-text'>Oberstaff<span class='brand-dot'>.</span></span>?"
+				title="How our remote recruitment agency supports your hiring process"
 				items={processItems}
 				ctaDescription="Un equipo dedicado gestionará todo el proceso por ti."
 			/>
@@ -732,24 +707,24 @@ const mentionsList = [
 		<div class="fade-in-section">
 			<ProfilesSection
 				variant="grid"
-				title="Perfiles de talento remoto que puedes contratar con una staffing agency especializada"
-				description="<span class='brand-text'>Oberstaff<span class='brand-dot'>.</span></span> conecta a empresas en Puerto Rico con profesionales de Sudamérica en áreas clave para crecer, optimizar costos y resolver vacantes difíciles de cubrir localmente."
+				title="Hire Latin American talent across the roles your business needs"
+				description="<span class='brand-text'>Oberstaff<span class='brand-dot'>.</span></span> bridges the talent gap for US enterprises, providing immediate access to top-tier Latin American professionals across high-demand business verticals to optimize your budget and fill specialized vacant chairs."
 				profiles={profilesList}
 			/>
 		</div>
 
 		<div class="fade-in-section">
 			<EorCta
-				title="¿Quieres saber cuánto margen operativo puedes ganar al contratar talento remoto de Sudamérica?"
-				text="Te orientamos según tu corporación, el perfil que necesitas y el nivel de control que deseas mantener. En menos de 24 horas puedes tener claridad sobre si te conviene una solución de staffing agency, EOR, CoR, outsourcing de personal o nearshore staffing."
-				buttonText="Agenda una llamada gratuita →"
+				title="Need help choosing the right remote staffing services?"
+				text="Tell us the role, the working relationship you want, your timeline, and the level of day-to-day control your company needs. We will compare the available models and recommend the most practical next step for your operation."
+				buttonText="Talk with a staffing specialist"
 				buttonHref="#contacto"
 			/>
 		</div>
 
 		<div class="fade-in-section">
 			<BenefitsSection
-				title="Beneficios de contratar personal en Sudamérica con <span class='brand-text'>Oberstaff<span class='brand-dot'>.</span></span>"
+				title="What your U.S. team gains from a nearshore staffing agency"
 				benefits={benefitsList}
 				infoText={benefitsInfoText}
 			/>
@@ -762,31 +737,31 @@ const mentionsList = [
 		<div class="fade-in-section">
 			<TestimonialsSection
 				id="casos-de-exito"
-				title="Empresas que ya optimizan sus costos operativos con talento de Sudamérica"
+				title="Success Stories from Enterprises Scaling with Nearshore Talent"
 				testimonials={[
 					{
 						clientName: "Shadai Iborra",
 						clientMeta: "CEO · @amediastory",
 						clientImage: "/sha.webp",
-						quote: "\"Con <span style='font-weight: 700; color: #1B1B1B;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span> pude dar trabajo a dos personas a tiempo completo, ahorrando costes de reclutamiento, espacios de oficina y salario que tendría al hacerlo en España. Lo mejor de todo es que todo está incluido en una misma factura. Con <span style='font-weight: 700; color: #1B1B1B;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span> encontré la solución perfecta para mis necesidades de contratación remota y optimización de costes.\"",
+						quote: "\"With <span style='font-weight: 700; color: #1B1B1B;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span> I was able to add two full-time professionals while reducing recruiting costs, office expenses, and the payroll burden I would have faced by hiring locally. The best part is that the entire operation is consolidated into one monthly invoice. <span style='font-weight: 700; color: #1B1B1B;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span> gave us the right solution for remote hiring and cost optimization.”",
 						videoId: "_CxlPfluS7M",
-						altText: "Shadai Iborra, cliente de Oberstaff",
+						altText: "Shadai Iborra, Oberstaff Client",
 					},
 					{
 						clientName: "Fernando Calderón",
 						clientMeta: "CEO · bybeautypro.com",
 						clientImage: "/fernando.webp",
-						quote: "\"Estaba en busca de talento remoto especializado para mi empresa y después de varias búsquedas sin éxito, encontré a <span style='font-weight: 700; color: #1B1B1B;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span> en Instagram. Desde nuestra primera llamada, su profesionalismo y calidad de trabajo me dejaron impresionado. Ahora, gracias a su excelente servicio, he expandido mi contrato con ellos para incluir más personal.\"",
+						quote: "“I was looking for specialized remote talent and, after several unsuccessful local searches, I found <span style='font-weight: 700; color: #1B1B1B;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span> From the first call, I was impressed by their professionalism and the clarity of their operating structure. The service and time-zone alignment worked so well that I expanded the engagement to add more people to the team.”",
 						videoId: "24KxCAFGrDs",
-						altText: "Fernando Calderón, cliente de Oberstaff",
+						altText: "Fernando Calderón, Oberstaff Client",
 					},
 					{
 						clientName: "Kate McCaferty",
 						clientMeta: "CEO · KM Real Estate (EE. UU.)",
 						clientImage: "/Kate.webp",
-						quote: "\"Estaba en busca de talento remoto especializado para mi empresa y después de varias búsquedas sin éxito, encontré a <span style='font-weight: 700; color: #1B1B1B;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span> en Instagram. Desde nuestra primera llamada, su profesionalismo y calidad de trabajo me dejaron impresionado. Ahora, gracias a su excelente servicio, he expandido mi contrato con ellos para incluir más personal.\"",
+						quote: "“We’ve been working with <span style='font-weight: 700; color: #1B1B1B;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span> for nearly two years, and the experience has been excellent from day one. Their dedicated team has supported us throughout the entire process, reviewing thousands of candidates and presenting qualified professionals who fit our needs. The cost savings, operational efficiency, and overall quality of the service have exceeded our expectations.”",
 						videoId: "9RLgpEF-GVA",
-						altText: "Kate McCaferty, cliente de Oberstaff",
+						altText: "Kate McCaferty, Oberstaff Client",
 					},
 				]}
 			/>
@@ -794,48 +769,48 @@ const mentionsList = [
 
 		<div class="fade-in-section">
 			<FAQSection
-				title="Preguntas frecuentes sobre staffing agency y contratación internacional"
-				ctaText="¿Aún tienes dudas sobre cómo operar desde Puerto Rico?"
-				ctaButtonText="Agenda una llamada gratuita"
+				title="Frequently asked questions about remote staffing and Latin America hiring"
+				ctaText="Do you still have questions about how to operate from the U.S.?"
+				ctaButtonText="Schedule a free call"
 				faqs={faqsList}
 			/>
 		</div>
 
 		<div class="fade-in-section">
 			<ContactFormSection
-				title="¿Listo para escalar tu empresa en Puerto Rico con una staffing agency especializada en Sudamérica?"
-				subtitle="Cuéntanos qué perfil necesitas, qué objetivo buscas cubrir y qué nivel de control quieres tener sobre la operación. Con esa información te orientaremos hacia la estructura más eficiente para contratar personal y construir un equipo de nearshore staffing en América del Sur."
+				title="Ready to hire Latin American talent for your U.S. team?"
+				subtitle="Tell us which role you need, what the professional will own, your preferred working hours, and your target timeline. An Oberstaff specialist will help you evaluate the talent profile and the engagement model that best fits your company."
 				directLabel="Atención directa en Puerto Rico:"
-				buttonText="Enviar solicitud"
+				buttonText="Submit request"
 				webhookUrl=""
 				formName="Home Puerto Rico"
 				pais="Puerto Rico"
 				formLabels={{
-					name: "Nombre *",
-					lastName: "Apellido *",
-					company: "Nombre de la corporación / LLC *",
-					email: "Email corporativo *",
-					phone: "Teléfono *",
-					comments: "Comentarios sobre tu requerimiento de talento *",
+					name: "First Name *",
+					lastName: "Last Name *",
+					company: "Company Name / LLC *",
+					email: "Corporate Email *",
+					phone: "Phone Number *",
+					comments: "Tell us about your talent requirements (Role, Budget, or Stack) *",
 				}}
 				formPlaceholders={{
-					name: "Tu nombre",
-					lastName: "Tu apellido",
-					company: "Ej. Mi Empresa",
-					email: "nombre@tuempresa.com",
+					name: "Your first name",
+					lastName: "Your last name",
+					company: "Ex. My Company",
+					email: "name@company.com",
 					phone: "+1 787 XXX XXXX",
-					comments: "Comentarios",
+					comments: "Comments",
 				}}
 			/>
 		</div>
-
+<!-- 
     
 		<div class="fade-in-section">
 			<PressSection
 				title="Patrocinadores oficiales"
 				mentions={mentionsList}
 				trustBadgeText="✅ Solución integral para contratar personal en Sudamérica con soporte en reclutamiento, documentación, operación mensual y cumplimiento del modelo de contratación internacional."
-			/>
+			/> -->
 		</div>
 	</div>
 </DashboardLayoutUs>
@@ -909,4 +884,32 @@ const mentionsList = [
 		flex: 1 1 350px;
 		max-width: 380px;
 	}
+
+	.welcome-section .stats-container {
+		align-items: stretch;
+	}
+
+	.welcome-section .stat-card {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.welcome-section .stat-card .stat-label {
+		font-size: 14px;
+		line-height: 1.4;
+		width: 80%;
+	}
+
+	.welcome-section .stat-card .stat-number {
+		font-size: 40px;
+	}
+
+	.welcome-section .stats-description {
+	font-family: 'Poppins', sans-serif;
+	}
+
+	
 </style>
