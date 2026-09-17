@@ -1,0 +1,1192 @@
+---
+import DashboardProfilesUs from "../../../layouts/DashboardProfilesUs.astro";
+import LeadHeroSection from "../../../components/community-manager/LeadHeroSection.astro";
+import ComparisonPerfiles from "../../../components/comparison-perfiles/ComparisonPerfiles.astro";
+import PricingCardPerfil from "../../../components/pricing-perfil/PricingCardPerfil.astro";
+import BeneficiosPerfilDisenador from "../../../components/beneficios-perfil/BeneficiosPerfilDisenador.astro";
+import PressSection from "../../../components/press/PressSection.astro";
+import ConversionPerfilDisenador from "../../../components/conversion-perfil/ConversionPerfilDisenador.astro";
+import RolesPerfil from "../../../components/roles-del-perfil/RolesPerfil.astro";
+import QueEsServicioSection from "../../../components/QueEsServicio/QueEsServicioSection.astro";
+import ServicesSection from "../../../components/services-oberstaff/ServicesSection.astro";
+import EorStepsSection from "../../../components/eor-steps-servicios/EorStepsSection.astro";
+import EorCta from "../../../components/eor-cta-servicios/EorCta.astro";
+import CasosExitoSection from "../../../components/casos-exito-servicios/CasosExitoSection.astro";
+import FAQSection from "../../../components/faq-servicios/FAQSection-community.astro";
+import GuiaContratacion from "../../../components/guia-contratacion-perfiles/GuiaContratacion.astro";
+
+const ogImage = "Contratar-experto-seo.webp";
+
+const faqsList = [
+    {
+        question:
+            "¿Quién paga las licencias de herramientas como Ahrefs o Semrush?",
+        answers: [
+            "Lo ideal es que tu empresa provea el acceso a la cuenta corporativa de Ahrefs, Semrush, Screaming Frog o Sistrix. Esto asegura que el histórico de auditorías pertenezca a tu negocio.",
+        ],
+    },
+    {
+        question:
+            "¿En cuánto tiempo veré el retorno de inversión (ROI) orgánico al contratar experto SEO?",
+        answers: [
+            "El SEO no es magia, es arquitectura. Mientras que los errores técnicos graves (como desbloquear rastreadores) pueden generar rebotes positivos en semanas, una estrategia integral de contenido y backlinks madura entre los 3 y 6 meses posteriores a la implementación. La ventaja de un perfil in-house es que implementa la base fundacional trabajando de la mano directamente contigo.",
+        ],
+    },
+    {
+        question:
+            "¿El especialista implementa el código o necesita a mis desarrolladores?",
+        answers: [
+            "Depende del CMS. Si usas WordPress, Shopify o Webflow, un consultor SEO técnico puede aplicar cambios de on-page directamente. Para modificaciones profundas de servidor, tiempos de carga del servidor o renderizado JS en arquitecturas headless, tu experto redactará un briefing técnico exacto para guiar a tu equipo de desarrollo.",
+        ],
+    },
+    {
+        question: "¿Qué tipo de acceso le doy a mis perfiles de Google?",
+        answers: [
+            "Solo los necesarios para trabajar: acceso 'Restringido' o 'Total' (nunca propietario absoluto, para protegerte) en Google Search Console, Google Analytics 4 y Google Tag Manager. Todos sus movimientos están blindados por nuestros contratos de confidencialidad.",
+        ],
+    },
+    {
+        question:
+            "¿Qué pasa si el perfil propuesto no tiene la visión técnica adecuada?",
+        answers: [
+            "El éxito orgánico requiere alineación técnica. Si descubres que el perfil se queda corto en sus auditorías, puedes pausar el servicio notificándonos con 30 días de antelación sin asumir finiquitos, o podemos gestionar un cambio inmediato por un analista más senior.",
+        ],
+    },
+];
+---
+
+<DashboardProfilesUs 
+  ogImage={ogImage}
+  title="Contratar Experto SEO Remoto | Oberstaff"
+  description="Talento de LATAM exclusivo para tu empresa española. Con Oberstaff, contratar experto SEO es seguro, ágil y con zona horaria 100% compatible."
+  footerTitle="Roles relacionados"
+  footerLinks={[
+    {
+      text: "📈 Especialista en Google Ads",
+      href: "",
+    },
+    { text: "💻 Desarrollador web", href: "" },
+    { text: "🎨 Diseñador web", href: "" },
+  ]}
+>
+  <link
+    rel="canonical"
+    href=""
+    slot="head"
+  />
+  <link rel="alternate" hreflang="es-ES" href="" slot="head" />
+  <link rel="alternate" hreflang="es-PR" href="" slot="head" />
+  <link rel="alternate" hreflang="x-default" href="" slot="head" />
+  <script slot="head" type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "",
+          "url": "",
+          "name": "Contratar Experto SEO Remoto | Oberstaff",
+          "description": "Talento de LATAM exclusivo para tu empresa española. Con Oberstaff, contratar experto SEO es seguro, ágil y con zona horaria 100% compatible.",
+          "inLanguage": "es-ES",
+          "isPartOf": {
+            "@id": ""
+          },
+          "publisher": {
+            "@id": ""
+          },
+          "about": {
+            "@id": ""
+          },
+          "mainEntity": {
+            "@id": ""
+          },
+          "breadcrumb": {
+            "@id": ""
+          }
+        },
+        {
+          "@type": "Service",
+          "@id": "",
+          "name": "Contratar Experto SEO Remoto en LATAM para empresas españolas",
+          "alternateName": [
+            "Contratar experto SEO",
+            "Experto SEO remoto",
+            "Especialista SEO remoto",
+            "Consultor SEO remoto",
+            "Especialista en posicionamiento web",
+            "Consultor SEO técnico",
+            "Talento SEO de LATAM"
+          ],
+          "serviceType": "Contratación de experto SEO remoto",
+          "category": "Servicios de contratación de talento remoto para SEO y marketing digital",
+          "url": "",
+          "provider": {
+            "@id": ""
+          },
+          "description": "Servicio para empresas españolas que necesitan contratar un experto SEO remoto de LATAM con dedicación exclusiva, dominio de SEO técnico, auditorías, arquitectura web, keyword research, EEAT, link building, SEO local, GA4, Google Search Console, Semrush, Screaming Frog y horario compatible con España.",
+          "slogan": "Internaliza tu estrategia orgánica y domina las SERPs con talento dedicado.",
+          "audience": {
+            "@type": "BusinessAudience",
+            "audienceType": "Empresas españolas que necesitan contratar un experto SEO remoto en LATAM para mejorar tráfico orgánico, arquitectura web, posicionamiento, auditorías técnicas y estrategia de contenidos",
+            "geographicArea": {
+              "@type": "Country",
+              "name": "España"
+            }
+          },
+          "serviceAudience": {
+            "@type": "BusinessAudience",
+            "audienceType": "Pymes, startups, ecommerce, agencias y empresas españolas que buscan especialistas SEO remotos dedicados, evaluados técnicamente, con horario compatible con España y gestión laboral resuelta",
+            "geographicArea": {
+              "@type": "Country",
+              "name": "España"
+            }
+          },
+          "areaServed": [
+            {
+              "@type": "Country",
+              "name": "España"
+            },
+            {
+              "@type": "Country",
+              "name": "Colombia"
+            },
+            {
+              "@type": "Country",
+              "name": "Argentina"
+            },
+            {
+              "@type": "Country",
+              "name": "México"
+            },
+            {
+              "@type": "Country",
+              "name": "Venezuela"
+            },
+            {
+              "@type": "Country",
+              "name": "Chile"
+            },
+            {
+              "@type": "Country",
+              "name": "Perú"
+            },
+            {
+              "@type": "Country",
+              "name": "Ecuador"
+            },
+            {
+              "@type": "Country",
+              "name": "Uruguay"
+            },
+            {
+              "@type": "Country",
+              "name": "Panamá"
+            },
+            {
+              "@type": "Country",
+              "name": "Paraguay"
+            }
+          ],
+          "offers": {
+            "@type": "Offer",
+            "@id": "",
+            "name": "Experto SEO Remoto Dedicado",
+            "url": "",
+            "price": "950",
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/InStock",
+            "eligibleCustomerType": "http://purl.org/goodrelations/v1#Business",
+            "eligibleRegion": {
+              "@type": "Country",
+              "name": "España"
+            },
+            "description": "Contratación de experto SEO remoto desde 950€ al mes, dirigido a empresas españolas que necesitan SEO técnico, auditorías, estrategia de contenidos, link building, SEO local, analítica orgánica, reporting y una única factura mensual en euros.",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "950",
+              "priceCurrency": "EUR",
+              "unitText": "profesional por mes"
+            }
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "@id": "",
+            "name": "Qué puede ejecutar un experto SEO dedicado por tu dominio",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "name": "SEO técnico y auditoría",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "SEO técnico y auditoría",
+                  "description": "Detección de bucles de redirección, optimización de Core Web Vitals, configuración de robots.txt, etiquetas canonical, indexación y auditorías técnicas."
+                }
+              },
+              {
+                "@type": "Offer",
+                "name": "Estrategia de contenidos y EEAT",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Estrategia de contenidos y EEAT",
+                  "description": "Keyword research, arquitectura de la información, resolución de canibalización, curación de thin content y clústeres temáticos."
+                }
+              },
+              {
+                "@type": "Offer",
+                "name": "Link building y autoridad de dominio",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Link building y autoridad de dominio",
+                  "description": "Estrategias de backlinks, relaciones con medios digitales, digital PR y auditoría de enlaces tóxicos."
+                }
+              },
+              {
+                "@type": "Offer",
+                "name": "SEO local",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "SEO local",
+                  "description": "Optimización de Google Business Profile, datos NAP, gestión de reseñas y landings geolocalizadas."
+                }
+              },
+              {
+                "@type": "Offer",
+                "name": "Analítica orgánica avanzada",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Analítica orgánica avanzada",
+                  "description": "Configuración de conversiones en GA4, monitorización en Search Console, seguimiento de rankings y reporting orgánico."
+                }
+              },
+              {
+                "@type": "Offer",
+                "name": "Posicionamiento web para pymes",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Posicionamiento web para pymes",
+                  "description": "Estrategias SEO adaptadas a presupuestos de pymes españolas, con foco en keywords transaccionales y captación orgánica."
+                }
+              }
+            ]
+          }
+        },
+        {
+          "@type": "ItemList",
+          "@id": "",
+          "name": "Ventajas de contratar experto SEO remoto con Oberstaff",
+          "description": "Ventajas operativas y técnicas para empresas españolas que contratan expertos SEO remotos en LATAM.",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Experto SEO evaluado técnicamente",
+              "description": "Perfiles evaluados en web performance optimization, auditorías técnicas, indexación y resolución de caídas de tráfico."
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Reacción ante Core Updates",
+              "description": "Capacidad de reacción ante actualizaciones de Google durante una jornada laboral compatible con España."
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Protección de datos y accesos",
+              "description": "Accesos a Google Search Console, GA4 y herramientas SEO protegidos mediante acuerdos de confidencialidad."
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Tarifa plana B2B",
+              "description": "Permite escalar la captación orgánica sin altas comisiones de agencias tradicionales."
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "name": "Flexibilidad estructural",
+              "description": "Posibilidad de cancelar con preaviso o solicitar cambio de perfil si la estrategia no se ajusta a los objetivos."
+            }
+          ]
+        },
+        {
+          "@type": "ItemList",
+          "@id": "",
+          "name": "Proceso para contratar un experto SEO remoto",
+          "description": "Proceso de Oberstaff para conectar empresas españolas con expertos SEO remotos de LATAM.",
+          "numberOfItems": 4,
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Análisis de objetivos de posicionamiento",
+              "description": "La empresa define perfil requerido, especialidad SEO, herramientas del stack y objetivos de negocio."
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Filtrado de consultores SEO",
+              "description": "Oberstaff selecciona entre 3 y 5 expertos SEO evaluados que encajan con los requisitos técnicos y zona horaria."
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Entrevista y elección del perfil",
+              "description": "La empresa entrevista a los candidatos, valida su visión estratégica y decide qué especialista SEO incorporar."
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Onboarding e integración técnica",
+              "description": "El especialista se integra a herramientas como Google Search Console, GA4, Semrush o Screaming Frog y entrega un primer plan de trabajo."
+            }
+          ]
+        },
+        {
+          "@type": "ItemList",
+          "@id": "",
+          "name": "Tipos de expertos SEO disponibles",
+          "description": "Especialidades SEO que empresas españolas pueden contratar con Oberstaff.",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Especialista en SEO técnico",
+              "description": "Perfil para problemas de rastreo, indexación, rendimiento, arquitectura, migraciones y Core Web Vitals."
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Arquitecto de contenidos y EEAT",
+              "description": "Perfil para alinear contenidos con intención de búsqueda, arquitectura semántica, clusters temáticos y marcado Schema."
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Especialista en link building",
+              "description": "Perfil enfocado en captación de enlaces, anchor text, digital PR, auditoría de backlinks y autoridad de dominio."
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Experto SEO para ecommerce",
+              "description": "Perfil para resolver paginaciones, faceted navigation, categorías y fichas de producto orientadas a venta transaccional."
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "name": "Especialista SEO local",
+              "description": "Perfil orientado a Google Business Profile, reseñas, búsquedas geolocalizadas y landings locales."
+            },
+            {
+              "@type": "ListItem",
+              "position": 6,
+              "name": "Consultor SEO 360",
+              "description": "Perfil senior que combina SEO técnico, contenidos, autoridad, analítica y reporting."
+            }
+          ]
+        },
+        {
+          "@type": "ItemList",
+          "@id": "",
+          "name": "Comparativa para contratar experto SEO",
+          "description": "Comparación entre contratar experto SEO con Oberstaff, especialista SEO local en España, freelance o agencia.",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Oberstaff LATAM",
+              "description": "Desde 950€ al mes, tarifa plana, dedicación exclusiva, horario compatible con España e integración en herramientas SEO."
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Especialista SEO en España",
+              "description": "Coste orientativo entre 2.200€ y 3.500€ al mes más costes laborales y Seguridad Social."
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Freelance SEO",
+              "description": "Coste orientativo entre 1.500€ y 2.500€ al mes o pago por auditoría, normalmente con menor dedicación exclusiva."
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Agencia SEO",
+              "description": "Fee variable, atención por horas, procesos más lentos y posible competencia interna entre cuentas."
+            }
+          ]
+        },
+        {
+          "@type": "ItemList",
+          "@id": "",
+          "name": "Beneficios de contratar experto SEO con Oberstaff",
+          "description": "Beneficios para empresas españolas que incorporan expertos SEO remotos de LATAM con Oberstaff.",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Ejecución continua",
+              "description": "El experto SEO audita URLs, monitoriza caídas de tráfico y detecta oportunidades orgánicas de forma recurrente."
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Independencia del coste por clic",
+              "description": "El SEO permite estructurar un dominio que capta leads orgánicos sin depender únicamente de inversión publicitaria."
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Retención del conocimiento orgánico",
+              "description": "El keyword research, el etiquetado, la arquitectura y las estrategias de digital PR quedan bajo control de la empresa."
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Factura mensual en euros",
+              "description": "La empresa recibe una sola factura mensual por el servicio del especialista SEO remoto."
+            }
+          ]
+        },
+        {
+          "@type": "ItemList",
+          "@id": "",
+          "name": "Claves para contratar un especialista en posicionamiento web",
+          "description": "Guía para empresas españolas que quieren contratar un experto SEO remoto con criterio técnico y estratégico.",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Especialista SEO in-house vs consultor SEO local",
+              "description": "Comparación entre contratar un perfil local en España, un freelance y un especialista remoto de LATAM con dedicación exclusiva."
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Qué evaluar antes de contratar consultor SEO",
+              "description": "Definición de objetivos: tráfico orgánico, rankings, auditoría técnica, arquitectura, estrategia de contenidos o recuperación de visibilidad."
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "SEO e inteligencia artificial generativa",
+              "description": "Necesidad de estructurar datos, EEAT, marcado Schema y contenido útil para aparecer en nuevos entornos de búsqueda con IA."
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Dónde contratar SEO de confianza",
+              "description": "Comparación entre marketplaces, agencias y un modelo de talento dedicado con gestión laboral cubierta."
+            }
+          ]
+        },
+        {
+          "@type": "ItemList",
+          "@id": "",
+          "name": "Roles relacionados con experto SEO remoto",
+          "description": "Otros perfiles relacionados que empresas españolas pueden contratar mediante Oberstaff.",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Contratar especialista en Google Ads",
+              "url": ""
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Desarrollador web",
+              "url": ""
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Diseñador web",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "¿Quién paga las licencias de herramientas como Ahrefs o Semrush?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Lo ideal es que la empresa proporcione acceso a su cuenta corporativa de Ahrefs, Semrush, Screaming Frog o Sistrix. Esto permite que el histórico de auditorías y datos pertenezca al negocio."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿En cuánto tiempo veré el retorno de inversión orgánico al contratar experto SEO?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Depende del estado técnico del sitio. Algunos errores graves pueden mostrar mejoras en semanas, pero una estrategia integral de contenido y backlinks suele madurar entre 3 y 6 meses después de la implementación."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿El especialista implementa el código o necesita a mis desarrolladores?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Depende del CMS y del tipo de cambio. En WordPress, Shopify o Webflow puede aplicar cambios on-page directamente. Para cambios profundos de servidor, rendimiento o JavaScript, redactará briefings técnicos para el equipo de desarrollo."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Qué tipo de acceso le doy a mis perfiles de Google?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Solo los accesos necesarios para trabajar, como permisos restringidos o totales en Google Search Console, GA4 y Google Tag Manager, evitando entregar propiedad absoluta de las cuentas."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Qué pasa si el perfil propuesto no tiene la visión técnica adecuada?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Si el perfil no encaja técnicamente, puedes pausar el servicio con preaviso o solicitar un cambio por un analista SEO más senior."
+              }
+            }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Inicio",
+              "item": ""
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Contratar Experto SEO",
+              "item": ""
+            }
+          ]
+        }
+      ]
+    }
+  </script>
+
+  <div class="service-detail-container" id="inicio">
+    <LeadHeroSection
+      webhookUrl=""
+      formName="Perfil Experto SEO España"
+      pais="España"
+      topLabel="Posicionamiento web y tráfico orgánico"
+      topLabelInsideH1={false}
+      topLabelTag="p"
+      title="Contratar experto SEO: Internaliza tu estrategia orgánica y domina las SERPs con talento dedicado"
+      cardTitle="Encuentra a tu experto SEO hoy"
+      cardSubtitle="Accede a perfiles pre-evaluados listos para tu empresa."
+      buttonText="👉 Ver perfiles pre-evaluados y solicitar propuesta"
+      buttonIcon=""
+      buttonSubtext="↳ Tardarás menos de 1 minuto · sin compromiso"
+      footerLinkText="Ver cómo funciona el modelo EOR →"
+      footerLinkHref=""
+      badges={[
+        { text: "Dedicación exclusiva a tu tráfico", icon: "🎯" },
+        { text: "Expertos en Semrush y Screaming Frog", icon: "📋" },
+        { text: "Integración segura a tu Search Console", icon: "⚡" },
+        { text: "Resoluciones técnicas en horario España", icon: "🕒" },
+      ]}
+      badgesClass="community-badges"
+    >
+      <Fragment slot="description">
+        Deja de perder tráfico por errores de indexación y penalizaciones
+        algorítmicas. Domina las SERPs con talento in-house. Conecta tu proyecto
+        con un especialista en SEO, perfiles técnicos auditados en optimización
+        de arquitectura web, resolución de canibalizaciones y despliegue de
+        estrategias EEAT.
+      </Fragment>
+    </LeadHeroSection>
+
+    <div class="fade-in-section">
+      <QueEsServicioSection
+        title="El estratega que buscas para escalar posiciones en Google sin aumentar tu pasivo laboral local"
+        highlightWord="escalar posiciones en Google"
+        description="Integra expertos en posicionamiento SEO de Latinoamérica, perfiles técnicos capaces de auditar tu etiquetado semántico HTML, reestructurar tus silos de contenido y limpiar tu perfil de enlaces tóxicos, todo de forma 100% remota bajo tu dirección."
+        imageSrc="/img1-seo.webp"
+        imageAlt="Experto SEO remoto analizando tráfico orgánico"
+        badgeText="Tráfico orgánico"
+        quoteText=""
+        checklistTitle="Checklist de ventajas:"
+        checklistItems={[
+          "Contratar experto SEO evaluado en (Web Performance Optimization) y resolución de caídas de tráfico.",
+          "Reacción inmediata ante los Core Updates de Google durante tu misma jornada laboral.",
+          "Tus datos y contraseñas protegidos en Google Search Console y GA4. <span style='font-weight:800; '>Oberstaff<span style='color:#FF66CC;'>.</span></span> firma los acuerdos de confidencialidad.",
+          "Tarifa plana B2B: escala tu captación orgánica sin las altas comisiones de las agencias tradicionales.",
+          "Flexibilidad estructural: si la estrategia del consultor no mueve la aguja del tráfico Non-Brand, cancela con 30 días de preaviso, sin indemnizaciones complejas.",
+        ]}
+        ctaText="Solicitar propuesta de talento SEO →"
+        ctaHref="#formulario-perfil"
+        diffIcon=""
+        diffTitle=""
+        diffDescription=""
+      />
+    </div>
+
+    <div class="fade-in-section">
+      <ServicesSection
+        title="¿Qué ejecuta un experto SEO dedicado <strong>por tu dominio?</strong>"
+        cardTitleTag="h3"
+        description="Nuestros especialistas dominan la arquitectura web, el SEO de contenidos y la optimización de autoridad para que tu negocio escale en las SERPs de Google y sea mencionado en herramientas de IA generativa (SGE, ChatGPT, Gemini), capturando tráfico cualificado de forma recurrente."
+        customClass="employer-use-cases"
+        services={[
+          {
+            icon: "🔍",
+            title: "SEO técnico y auditoría",
+            description:
+              "Detección de bucles de redirección, optimización de Core Web Vitals, configuración del archivo robots.txt, uso correcto de etiquetas canonical. Ideal si estás valorando contratar auditoría SEO antes de escalar.",
+            linkText: "",
+            href: "",
+            customIconBg: "transparent",
+            cardClass: "card-green",
+          },
+          {
+            icon: "✍️",
+            title: "Estrategia de contenidos y EEAT",
+            description:
+              "Investigación de palabras clave (keyword research), arquitectura de la información, resolución de canibalización de palabras clave, curación de thin content y estructuración de clústeres temáticos.",
+            linkText: "",
+            href: "",
+            customIconBg: "transparent",
+            cardClass: "card-pink",
+          },
+          {
+            icon: "🔗",
+            title: "Link building y autoridad de dominio",
+            description:
+              "Estrategias de construcción de enlaces (backlinks), relaciones con medios digitales y digital PR para potenciar el PageRank. Auditoría de backlinks tóxicos para protegerte de penalizaciones manuales.",
+            linkText: "",
+            href: "",
+            customIconBg: "transparent",
+            cardClass: "card-lime",
+          },
+          {
+            icon: "📍",
+            title: "SEO local y dominio del Map Pack",
+            description:
+              "Estructuración de datos NAP, optimización del Google Business Profile, gestión de reseñas y creación de landings hiper-geolocalizadas para llegar a los clientes en tu ciudad.",
+            linkText: "",
+            href: "",
+            customIconBg: "transparent",
+            cardClass: "card-purple",
+          },
+          {
+            icon: "📊",
+            title: "Analítica Orgánica Avanzada",
+            description:
+              "Configuración de conversiones en GA4, monitorización en Search Console, seguimiento de rankings y cuadros de mando orgánicos orientados al negocio.",
+            linkText: "",
+            href: "",
+            customIconBg: "transparent",
+            cardClass: "card-green",
+          },
+          {
+            icon: "🚀",
+            title: "Posicionamiento web para pymes",
+            description:
+              "Estrategias adaptadas a presupuestos de pymes españolas. Foco en keywords transaccionales de alta conversión (Bottom of the Funnel).",
+            linkText: "",
+            href: "",
+            customIconBg: "transparent",
+            cardClass: "card-lime",
+          },
+        ]}
+      />
+    </div>
+
+    <div class="fade-in-section">
+      <EorStepsSection
+        title="Headhunting técnico: cómo filtramos <span style='color: #6663FD; font-weight: 800;'>al especialista en SEO</span> que protegerá tu dominio"
+        subtitle="Un error en el archivo robots.txt o una directiva noindex mal implementada puede desplomar meses de facturación orgánica en cuestión de horas. Por eso, en <span style='font-weight:800;'>Oberstaff<span style='color:#FF66CC;'>.</span></span> puedes contratar experto SEO con un proceso que te presenta candidatos con experiencia real en escenarios técnicos: desde la auditoría de JavaScript rendering hasta la recuperación de dominios afectados por Core Updates de Google."
+        steps={[
+          {
+            title: "Analizamos tus objetivos de posicionamiento",
+            lineColorClass: "line-black",
+            description:
+              "Explícanos en una llamada gratuita el perfil y la especialidad requerida (técnico, local, contenidos), herramientas del stack (Ahrefs, Screaming Frog) y objetivos de negocio.",
+            badge: "15 min · Sin compromiso",
+          },
+          {
+            title: "Filtrado de consultores SEO",
+            lineColorClass: "line-pink",
+            description:
+              "Nuestro equipo selecciona entre 3-5 expertos en posicionamiento SEO evaluados que hacen match con tus requisitos técnicos y zona horaria.",
+            badgeIcon: "📋",
+            badge: "Perfiles analíticos evaluados",
+          },
+          {
+            title: "Entrevista y eliges tú",
+            lineColorClass: "line-orange",
+            description:
+              "Pregúntales directamente cómo resolverían una indexación masiva de URLs o cómo estructuran sus prompts de contenido. Valida su visión estratégica.",
+            badge: "Tú decides siempre",
+          },
+          {
+            title: "Empieza a trabajar",
+            lineColorClass: "line-blue",
+            description:
+              "Una vez elegido el perfil, facilitamos el onboarding para que el especialista SEO se integre rápido a tus herramientas (GSC, GA4, Semrush), realice la auditoría inicial y entregue el primer plan en los primeros días.",
+            badge: "Integración técnica en días",
+          },
+        ]}
+      />
+    </div>
+
+    <div class="fade-in-section">
+      <EorCta
+        title="¿Quieres mayor visibilidad de tu marca en los buscadores?"
+        titleTag="h2"
+        text="Coméntanos cómo se encuentra actualmente tu dominio que problemas deseas mejorar: técnicos, contenido obsoleto o falta de autoridad y te enviaremos una terna de especialistas SEO habituados a recuperar visibilidad."
+        buttonText="👉 Quiero solicitar propuesta y perfiles SEO  "
+        buttonHref="#formulario-perfil"
+      />
+    </div>
+
+    <div class="fade-in-section">
+      <RolesPerfil
+        title="Domina el Crawl Budget y las SERPs con especialistas en posicionamiento <strong>web in-house</strong>"
+        subtitle="Encuentra el profesional de Search Engine Optimization que mejor encaja con el estado actual de tu web y los objetivos de posicionamiento de tu negocio."
+        layout="modern"
+        customClass="grid-seo"
+        footerText="💡 <span style='color: #6663FD; font-weight: 600;'>¿Buscas resultados inmediatos con publicidad de pago?</span> El SEO orgánico construye a largo plazo. Para campañas SEM/PPC "
+        footerLinkText="Ver perfil de Especialista en Google Ads →"
+        footerLinkHref=""
+        roles={[
+          {
+            title: "🔍 Especialista en SEO Técnico (Crawl & Index)",
+            description: "",
+            icon: "",
+            iconColor: "#FF66CC",
+            borderColorClass: "border-pink",
+            subtitle:
+              "Ideal para proyectos con problemas de rastreo, indexación, rendimiento, arquitectura o migraciones que requieren criterio técnico.",
+            techStack: ["Screaming Frog", "GSC", "Core Web Vitals", "Semrush"],
+            buttonText: "Solicitar perfil →",
+            buttonHref: "#formulario-perfil",
+          },
+          {
+            title: "✍️ Arquitecto de Contenidos y EEAT",
+            description: "",
+            icon: "",
+            iconColor: "#3b76f6",
+            borderColorClass: "border-blue",
+            subtitle:
+              "Pensado para marcas que necesitan alinear su blog con la intención de búsqueda y estructurar un marcado semántico impecable.",
+            techStack: ["Surfer SEO", "Ahrefs", "WordPress", "Schema Markup"],
+            buttonText: "Solicitar perfil →",
+            buttonHref: "#formulario-perfil",
+          },
+          {
+            title: "🔗 Especialista en Link Building (Off-Page)",
+            description: "",
+            icon: "",
+            iconColor: "#66FF99",
+            borderColorClass: "border-green",
+            subtitle:
+              "Enfocado en la captación de enlaces entrantes, auditoría de Anchor Texts y recuperación de PageRank perdido.",
+            techStack: [
+              "Moz",
+              "Ahrefs",
+              "Outreach",
+              "Digital PR",
+              "Disavow Tool",
+            ],
+            buttonText: "Solicitar perfil →",
+            buttonHref: "#formulario-perfil",
+          },
+          {
+            title: "📊 Consultor SEO 360º (Generalista)",
+            description: "",
+            icon: "",
+            iconColor: "#CCFF66",
+            borderColorClass: "border-yellow",
+            subtitle:
+              "Un perfil Senior que orquesta el balance perfecto entre estado técnico, volumen de publicación editorial y crecimiento de autoridad de dominio.",
+            techStack: ["Semrush", "GA4", "Search Console", "Looker Studio"],
+            buttonText: "Solicitar perfil → ",
+            buttonHref: "#formulario-perfil",
+          },
+          {
+            title: "🛒 Contratar experto SEO para eCommerce",
+            description: "",
+            icon: "",
+            iconColor: "#FF66CC",
+            borderColorClass: "border-pink",
+            subtitle:
+              "Resuelve paginaciones tóxicas, categorías, faceted navigation y optimización de fichas de producto orientadas a la venta transaccional.",
+            techStack: ["eCommerce", "taxonomías", "CRO", "tracking"],
+            buttonText: "Solicitar perfil →",
+            buttonHref: "#formulario-perfil",
+          },
+          {
+            title: "📍 Especialista SEO local",
+            description: "",
+            icon: "",
+            iconColor: "#3b76f6",
+            borderColorClass: "border-blue",
+            subtitle:
+              "Para negocios con presencia en ciudades o provincias españolas: Google Business Profile, reseñas y búsquedas geolocalizadas.",
+            techStack: ["GBP", "resenas", "landings geolocalizadas"],
+            buttonText: "Solicitar perfil →",
+            buttonHref: "#formulario-perfil",
+          },
+        ]}
+      />
+    </div>
+
+    <div class="fade-in-section">
+      <ComparisonPerfiles
+        title="Elimina el pasivo laboral local: la ventaja estructural de contratar  <span style='color: #6663FD; font-weight: 900;'> experto SEO remoto</span>"
+        subtitle="Evalúa el impacto económico, la dedicación en horas a tu proyecto y la rigidez laboral de cada modalidad de servicio SEO."
+        footerNote="Nota: Las tarifas fluctúan en base al nivel técnico (junior, mid, senior SEO), rama de especialidad y país de residencia."
+        oberstaffLabel="<span style='font-weight:800; color:#1B1B1B;'>Contratar SEO Oberstaff<span style='color:#FF66CC;'>.</span></span> <span style='color:#FF66CC; font-weight:700;'>(LATAM)</span>"
+        competitors={[
+          "Especialista en posicionamiento web en España", 
+          "FREELANCE",
+          "AGENCIA",
+        ]}
+        rows={[
+          {
+            label: "Estructura mensual",
+            oberstaffValue: "<strong> Desde 950 €/mes</strong>",
+            competitorValues: [
+              "2.200–3.500 €/mes + costes de Seguridad Social",
+              "1.500–2.500 €/mes (o pago por auditoría)",
+              " Fee variable",
+            ],
+          },
+          {
+            label: "Foco en tu Crawl Budget",
+            oberstaffValue:
+              "<span class='icon-check'>✓</span> Sí. Audita exclusivamente tu web a jornada completa",
+            competitorValues: [
+              "<span class='icon-check'>✓</span> Sí",
+              "Multicliente",
+              "Tu cuenta compite por horas de atención",
+            ],
+          },
+          {
+            label: "Velocidad de implementación",
+            oberstaffValue: "<span class='icon-check'>✓</span>  Muy alta",
+            competitorValues: [
+              "Muy alta",
+              "Media",
+              "Lenta, sujeta a tickets de soporte",
+            ],
+          },
+          {
+            label: "Horario de sincronía",
+            oberstaffValue:
+              "<span class='icon-check'>✓</span> Compatible con España",
+            competitorValues: [
+              "<span class='icon-check'>✓</span> Compatible",
+              "Depende de disponibilidad",
+              "Depende de carga",
+            ],
+          },
+          {
+            label: "Integración en herramientas",
+            oberstaffValue: "GSC, GA4, Semrush",
+            competitorValues: ["Alta", "Media", "Acceso parcial"],
+          },
+        ]}
+      />
+    </div>
+
+    <div class="fade-in-section">
+      <PricingCardPerfil
+        sectionTitle="Precio profesionales SEO con <span style='color:#1b1b1b; font-weight: 900;'>Oberstaff<span style='color:#FF66CC;'>.</span></span>"
+        sectionSubtitle="Tarifas transparentes para escalar tu visibilidad y tráfico orgánico."
+        cardTitle="Fee integral"
+        titleTag="p"
+        cardSubtitle="Jornada completa dedicada a tus SERPs · sin costes ocultos."
+        priceLabel="DESDE"
+        priceAmount="950 €"
+        pricePeriod="/ mes"
+        features={[
+          "SEO técnico · auditorías, Core Web Vitals y velocidad.",
+          "Investigación de keywords y arquitectura semántica HTML.",
+          "Link building · autoridad de dominio y digital PR.",
+          "SEO local · Google Business Profile y búsquedas geolocalizadas.",
+          "Analítica y reporting · GA4, Search Console y Semrush.",
+        ]}
+        ctaText="Solicitar presupuesto gratuito"
+        ctaHref="#formulario-perfil"
+        disclaimer="*La suscripción final fluctúa según la profundidad técnica y nivel del analista."
+      />
+    </div>
+
+    <div class="fade-in-section">
+      <BeneficiosPerfilDisenador
+        showInfoCard={false}
+        title="Sanea tu arquitectura web y domina las SERPs apoyándote en <span style='color:#6663FD; font-weight: 900;'>consultores SEO dedicados</span>"
+        subtitle="Combinamos el análisis milimétrico de un perfil in-house en tu web con la flexibilidad estructural, permitiéndote priorizar el aumento de tráfico sin la fricción del reclutamiento tradicional."
+        image="/img2-seo.webp"
+        imageAlt="Consultor SEO revisando arquitectura web"
+        features={[
+          {
+            icon: "🎯",
+            title: "Ejecución continua ",
+            description:
+              "Tu experto SEO audita tus URLs, monitoriza tus caídas de tráfico y detecta oportunidades de negocio diarias.",
+          },
+          {
+            icon: "⚡",
+            title: "Independencia del coste por clic (CPC)",
+            description:
+              "Tu experto SEO estructura un dominio con autoridad que capta leads a coste marginal cero sostenido en el tiempo.",
+          },
+          {
+            icon: "🛡️",
+            title: " Retención absoluta del conocimiento orgánico",
+            description:
+              "El keyword research, el etiquetado y el digital PR son 100% tuyos. Blindamos legalmente por contrato la propiedad intelectual de cada estrategia.",
+          },
+        ]}
+      >
+        <div class="meta-custom-notice">
+          Una sola factura mensual en euros. Ni altas en la Seguridad Social española ni retenciones complicadas.
+ Escala en visitas, no en
+          burocracia.
+        </div>
+      </BeneficiosPerfilDisenador>
+    </div>
+
+    <div class="fade-in-section">
+      <GuiaContratacion
+        titleTag="h2"
+        headerTitle="El checklist técnico para auditar el criterio de tus futuros <span style='color:#6663FD; font-weight: 900;'>especialistas en posicionamiento web</span>"
+        headerDescription="Factores determinantes antes de incorporar un especialista en posicionamiento web a tu estrategia."
+        cards={[
+          {
+            title: "Especialista en SEO in-house vs consultor SEO local",
+            description:
+              "Antes de decidir, compara bien las opciones. Un experto en SEO presencial en España puede superar los 3.000 €/mes en coste total; los profesionales SEO independientes te dan flexibilidad pero sin dedicación exclusiva. Un especialista remoto de Colombia, Argentina o Venezuela con <strong> Oberstaff<span style='color: #FF66CC;''>.</span></strong> combina lo mejor de ambos: jornada completa, exclusividad y desde 950 €/mes, sin que asumas ninguna relación laboral directa.",
+          },
+          {
+            title:
+              "Más allá del semáforo verde: qué evaluar técnicamente antes de contratar consultor SEO",
+            description:
+              "Antes de contratar especialista en posicionamiento web, es importante definir bien tus objetivos: ¿quieres aumentar tráfico orgánico, mejorar rankings para palabras clave concretas, hacer una auditoría o lanzar una estrategia de contenidos? Cuanto más concreto sea el briefing, más rápido adaptará el profesional la estrategia a los cambios del algoritmo de Google. En <strong> Oberstaff<span style='color: #FF66CC;''>.</span></strong> te ayudamos a definirlo en una llamada de 15 minutos.",
+          },
+          {
+            title:
+              "¿Cómo la IA generativa (SGE) exige talento dedicado, no tareas aisladas?",
+            description:
+              "Con la irrupción de las respuestas generadas por inteligencia artificial en los resultados (AI Overviews), el SEO de rellenar palabras clave ha muerto. El ecosistema latinoamericano aporta estrategas altamente actualizados que saben estructurar datos complejos (Schema Markup) y demostrar el EEAT (Experiencia, Autoridad y Confianza) necesario para que los nuevos algoritmos citen a tu empresa española como fuente de verdad en tu industria.",
+          },
+          {
+            title: "¿Dónde puedo contratar SEO de confianza?",
+            description:
+              "Existen varias plataformas para incorporar expertos en posicionamiento web, como marketplaces de freelancers o agencias. Sin embargo, <strong> Oberstaff<span style='color: #FF66CC;''>.</span></strong> ofrece un modelo diferente: talento dedicado en exclusiva a tu empresa, con contrato estable y toda la gestión laboral cubierta. Mayor compromiso, mejor integración y ausencia de riesgos legales para tu negocio.",
+          },
+        ]}
+      />
+    </div>
+
+    <div class="fade-in-section">
+      <CasosExitoSection
+        title="Proyectos españoles que ya escalan con el talento de  <span style='font-weight: 900; color: #1b1b1b;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span>"
+        subtitle=""
+        testimonials={[
+          {
+            stars: 5,
+            avatar: "/fernando.webp",
+            imageAlt: "Fernando Calderón, cliente de Oberstaff en Madrid",
+            text: "Estaba en busca de talento remoto especializado para mi empresa y después de varias búsquedas sin éxito, encontré a <strong>Oberstaff</strong> en Instagram. Desde nuestra primera llamada, su profesionalismo y calidad de trabajo me dejaron impresionado. Ahora, gracias a su excelente servicio, he expandido mi contrato con ellos para incluir más personal.",
+            author: "Fernando Calderón",
+            role: "CEO · BeautyPro",
+          },
+          {
+            stars: 5,
+            avatar: "/sha.webp",
+            imageAlt: "Shadai Iborra, cliente de Oberstaff en Barcelona",
+            text: "Con <strong>Oberstaff</strong> pude dar trabajo a dos personas a tiempo completo, ahorrando costes de reclutamiento, espacios de oficina y salario que tendría al hacerlo en España. Lo mejor de todo es que todo está incluido en una misma factura. Con <strong>Oberstaff</strong> encontré la solución perfecta para mis necesidades de contratación remota y optimización de costes.",
+            author: "Shadai Iborra",
+            role: "CEO · @amediastory",
+          },
+        ]}
+      />
+    </div>
+
+    <FAQSection
+      title="Resolviendo tus <strong>fricciones técnicas</strong> antes de escalar tu estrategia en buscadores"
+      ctaText="Antes de tocar tu arquitectura web, te aclaramos: propiedad de los datos, gestión de accesos en Search Console y cómo con nuestro modelo absorbes toda la contingencia legal al integrar talento orgánico."
+      ctaButtonText="Hablar con asesor →"
+      ctaButtonHref="#formulario-perfil"
+      faqs={faqsList}
+    />
+
+    <div class="fade-in-section">
+      <PressSection title="Prensa y menciones" />
+    </div>
+
+    <div class="fade-in-section">
+      <ConversionPerfilDisenador
+        webhookUrl=""
+        title="¿Listo para contratar <br> <strong>experto SEO </strong>y multiplicar las visitas a tu sitio web?"
+        subtitle="Completa el formulario en menos de un minuto, coméntanos lo que deseas escalar en tu dominio y te enviaremos una propuesta personalizada con potenciales perfiles técnicos capaces de estructurar tu crecimiento orgánico a largo plazo."
+        buttonText="Solicitar propuesta gratuita →"
+        noteText="Nota: Rellenarlo te lleva menos de 1 minuto"
+        formName="Perfil Experto SEO España"
+        pais="España"
+      />
+    </div>
+  </div>
+
+  <style>
+    .service-detail-container {
+    }
+
+    :global(.community-badges) {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      gap: 10px !important;
+    }
+
+    :global(.employer-use-cases-grid) {
+      grid-template-columns: repeat(3, 1fr) !important;
+    }
+
+    @media (max-width: 900px) {
+      :global(.employer-use-cases-grid) {
+        grid-template-columns: 1fr !important;
+      }
+    }
+
+    :global(.employer-use-cases-grid .icon-box) {
+      background-color: transparent !important;
+      border: none !important;
+      padding: 0 !important;
+      width: 100% !important;
+      height: auto !important;
+      margin-bottom: 25px !important;
+      justify-content: flex-start !important;
+    }
+
+    :global(.employer-use-cases-grid .icon-emoji-servicios-home) {
+      font-size: 35px !important;
+      padding: 0 !important;
+    }
+
+    @media (max-width: 768px) {
+      :global(.employer-use-cases-grid .icon-emoji-servicios-home) {
+        font-size: 30px !important;
+        padding: 0 !important;
+      }
+    }
+
+    /* Estilos específicos para QueEsServicioSection en esta página */
+    :global(.que-es-servicio-section .quote-blue-border) {
+      border-left: 4px solid #ff66cc !important;
+      color: #ff66cc !important;
+      font-size: 16px !important;
+      margin-top: 0 !important; /* Para alinear con el inicio de la imagen */
+      font-weight: 600 !important;
+    }
+
+    :global(.que-es-servicio-section .que-es-main-content) {
+      align-items: flex-start !important;
+    }
+
+    /* Fondo exclusivo para la sección de áreas del diseñador */
+    :global(section.employer-use-cases) {
+      background-color: #fafafc !important;
+    }
+
+    /* Fondo exclusivo para la sección de casos de éxito en esta página */
+    :global(.casos-exito) {
+      background-color: #fafafc !important;
+
+      padding-bottom: 80px !important;
+    }
+
+    /* Estilos específicos para la sección FAQ en esta página */
+    :global(.faq-disenador-custom .faq-columns) {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      text-align: center !important;
+    }
+
+    :global(.faq-disenador-custom .faq-left-column) {
+      position: static !important;
+      width: 100% !important;
+      max-width: 800px !important;
+      margin-bottom: 40px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      text-align: left !important;
+    }
+
+    :global(.faq-disenador-custom .faq-main-title) {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      text-align: left !important;
+    }
+
+    :global(.faq-disenador-custom .faq-right-column) {
+      display: none !important;
+    }
+
+    :global(.faq-disenador-custom .faq-cta-card) {
+      margin: 0 !important;
+      padding: 0 !important;
+      max-width: 600px !important;
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+      text-align: left !important;
+    }
+
+    :global(.faq-disenador-custom .faq-cta-card p) {
+      font-family: "Poppins", sans-serif !important;
+      font-size: 18px !important;
+      font-weight: 400 !important;
+      color: #5a5a5a !important;
+      line-height: 1.6 !important;
+      margin-bottom: 30px !important;
+    }
+
+    :global(.faq-disenador-custom .faq-cta-button) {
+      background-color: #6663fd !important;
+      border: 2px solid #6663fd !important;
+      color: #ffffff !important;
+      width: auto !important;
+      min-width: 220px !important;
+      padding: 14px 32px !important;
+      font-size: 15px !important;
+      display: inline-block !important;
+    }
+
+    :global(.faq-disenador-custom .faq-cta-button:hover) {
+      background-color: transparent !important;
+      border: 2px solid #6663fd !important;
+      color: #6663fd !important;
+    }
+
+    .meta-custom-notice {
+      font-family: "Poppins", sans-serif;
+      margin-top: 40px;
+      padding: 24px 30px;
+      background-color: #f7f8fc;
+      border-left: 4px solid #ff66cc;
+      color: #ff66cc;
+      font-family: "Montserrat", sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+  </style>
+</DashboardProfilesUs>

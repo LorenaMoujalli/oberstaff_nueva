@@ -1,0 +1,1000 @@
+---
+import DashboardProfilesUs from "../../../layouts/DashboardProfilesUs.astro";
+import LeadHeroSection from "../../../components/community-manager/LeadHeroSection.astro";
+import ComparisonPerfiles from "../../../components/comparison-perfiles/ComparisonPerfiles.astro";
+import PricingCardPerfil from "../../../components/pricing-perfil/PricingCardPerfil.astro";
+import BeneficiosPerfilDisenador from "../../../components/beneficios-perfil/BeneficiosPerfilDisenador.astro";
+import PressSection from "../../../components/press/PressSection.astro";
+import ConversionPerfilDisenador from "../../../components/conversion-perfil/ConversionPerfilDisenador.astro";
+import RolesPerfil from "../../../components/roles-del-perfil/RolesPerfil.astro";
+import QueEsServicioSection from "../../../components/QueEsServicio/QueEsServicioSection.astro";
+import ServicesSection from "../../../components/services-oberstaff/ServicesSection.astro";
+import EorStepsSection from "../../../components/eor-steps-servicios/EorStepsSection.astro";
+import EorCta from "../../../components/eor-cta-servicios/EorCta.astro";
+import CasosExitoSection from "../../../components/casos-exito-servicios/CasosExitoSection.astro";
+import FAQSection from "../../../components/faq-servicios/FAQSection-community.astro";
+import GuiaContratacion from "../../../components/guia-contratacion-perfiles/GuiaContratacion.astro";
+
+const ogImage = "Contratar-editor-de-videos.webp";
+
+const faqsList = [
+    {
+        question: "¿Quién paga las licencias de Premiere Pro, After Effects o Epidemic Sound?",
+        answers: ["El editor cuenta con su propio hardware de alto rendimiento. Sin embargo, para mantener la propiedad legal y operativa, recomendamos que la empresa española provea el asiento (seat) corporativo de Adobe Creative Cloud y los accesos a las bibliotecas de música de stock que utilicen (Epidemic Sound, Artlist, Envato)."]
+    },
+    {
+        question: "¿Qué ocurre si el ritmo de montaje del editor de video remoto no me gusta?",
+        answers: ["El montaje audiovisual es subjetivo. Si durante los primeros vídeos el editor no logra captar el pulso o la estética que buscas, no estás atado. Con solo 30 días de preaviso puedes cancelar el contrato sin indemnizaciones ni litigios, o solicitarnos un reemplazo inmediato con un perfil más afín."]
+    },
+    {
+        question: "¿El editor puede trabajar con Frame.io, Drive o nuestra plataforma en la nube?",
+        answers: ["Sí. Nuestros editores están acostumbrados a trabajar con herramientas en la nube: Frame.io, Google Drive, Dropbox, Notion, Slack. Se adaptan a tu pipeline desde el primer día."]
+    },
+    {
+        question: "¿Al contratar editor de videos con <span style='color: #1b1b1b; font-weight: 800;'> Oberstaff<span style='color: #ff66cc'>.</span></span> qué tipo de relación laboral tendré con el profesional?",
+        answers: ["Ninguna directa a nivel burocrático, tú le diriges creativamente, pero nosotros asumimos toda la responsabilidad contractual y fiscal. Tú solo contabilizas nuestra factura B2B."]
+    }
+];
+---
+
+<DashboardProfilesUs
+    ogImage={ogImage}
+    title="Contratar editor de videos remoto para empresas españolas"
+    description="Oberstaff te ayuda a contratar editor de videos de LATAM: perfiles evaluados, jornada completa, zona horaria española y factura en euros."
+    footerTitle="Roles relacionados"
+    footerLinks={[
+        { text: "🔍 Experto SEO", href: "" },
+        { text: "🎨 Diseñador gráfico", href: "" },
+        { text: "💻 Diseñador web", href: "" },
+        { text: "📱 Community Manager", href: "" },
+        { text: "✍️ Copywriter", href: "" },
+    ]}
+>
+    <link rel="canonical" href="" slot="head" />
+    <link rel="alternate" hreflang="es-ES" href="" slot="head" />
+    <link rel="alternate" hreflang="es-PR" href="" slot="head" />
+    <link rel="alternate" hreflang="x-default" href="" slot="head" />
+    <script slot="head" type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "",
+      "url": "",
+      "name": "Contratar editor de videos remoto para empresas españolas",
+      "description": "Oberstaff te ayuda a contratar editor de videos de LATAM: perfiles evaluados, jornada completa, zona horaria española y factura en euros.",
+      "inLanguage": "es-ES",
+      "isPartOf": {
+        "@id": ""
+      },
+      "publisher": {
+        "@id": ""
+      },
+      "about": {
+        "@id": ""
+      },
+      "mainEntity": {
+        "@id": ""
+      },
+      "breadcrumb": {
+        "@id": ""
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "",
+      "name": "Contratar editor de videos remoto en LATAM para empresas españolas",
+      "alternateName": [
+        "Contratar editor de videos",
+        "Editor de video remoto",
+        "Editor de vídeo remoto",
+        "Editor audiovisual remoto",
+        "Postproducción audiovisual remota",
+        "Editor de videos para YouTube",
+        "Editor de video para redes sociales"
+      ],
+      "serviceType": "Contratación de editor de videos remoto",
+      "category": "Servicios de contratación de talento remoto para producción audiovisual y marketing digital",
+      "url": "",
+      "provider": {
+        "@id": ""
+      },
+      "description": "Servicio para empresas españolas que necesitan contratar un editor de videos remoto de LATAM con dedicación exclusiva, dominio de montaje narrativo, edición para redes sociales, YouTube, anuncios, color grading, diseño sonoro, organización de media y horario compatible con España.",
+      "slogan": "Internaliza tu postproducción y escala tu maquinaria de contenidos in-house.",
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "España"
+        },
+        {
+          "@type": "Country",
+          "name": "Colombia"
+        },
+        {
+          "@type": "Country",
+          "name": "Argentina"
+        },
+        {
+          "@type": "Country",
+          "name": "México"
+        },
+        {
+          "@type": "Country",
+          "name": "Venezuela"
+        },
+        {
+          "@type": "Country",
+          "name": "Chile"
+        },
+        {
+          "@type": "Country",
+          "name": "Perú"
+        },
+        {
+          "@type": "Country",
+          "name": "Ecuador"
+        },
+        {
+          "@type": "Country",
+          "name": "Uruguay"
+        },
+        {
+          "@type": "Country",
+          "name": "Panamá"
+        },
+        {
+          "@type": "Country",
+          "name": "Paraguay"
+        }
+      ],
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Empresas españolas, agencias, ecommerce, startups, creadores B2B y equipos de marketing que necesitan producción audiovisual recurrente con talento remoto dedicado.",
+        "geographicArea": {
+          "@type": "Country",
+          "name": "España"
+        }
+      },
+      "offers": {
+        "@type": "Offer",
+        "@id": "",
+        "name": "Editor de video remoto dedicado",
+        "url": "",
+        "price": "950",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock",
+        "eligibleCustomerType": "http://purl.org/goodrelations/v1#Business",
+        "eligibleRegion": {
+          "@type": "Country",
+          "name": "España"
+        },
+        "description": "Contratación de editor de video remoto desde 950€ al mes, con dedicación completa, perfiles evaluados, horario compatible con España y una única factura mensual.",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "950",
+          "priceCurrency": "EUR",
+          "unitText": "profesional por mes"
+        }
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "@id": "",
+        "name": "Qué puede asumir un editor de video dedicado",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "name": "Edición ágil para redes sociales",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Edición de Reels, TikToks y Shorts",
+              "description": "Montaje de video vertical, subtitulado dinámico, keyframing, hooks visuales y adaptación a formatos sociales."
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Postproducción para YouTube",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Edición de videos para YouTube",
+              "description": "Estructura de episodios largos, B-roll, transiciones, ritmo de retención y exportación optimizada."
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Anuncios y publicidad en video",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Edición de UGC y ads",
+              "description": "Montaje orientado a conversión, iteraciones rápidas, tests A/B y adaptación para Meta Ads, TikTok Ads y YouTube Ads."
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Color grading y etalonaje",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Corrección de color audiovisual",
+              "description": "Gradación colorimétrica, LUTs personalizados, balance de blancos y consistencia visual de marca."
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Diseño sonoro y video-podcasts",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Limpieza y mezcla de audio",
+              "description": "Reducción de ruido, ecualización de voces, mezcla musical y efectos de sonido para piezas audiovisuales."
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Gestión de entregables",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Organización de proyectos audiovisuales",
+              "description": "Ingesta de material, proxies, nomenclatura, carpetas de entrega y orden de producción."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "",
+      "name": "Proceso para contratar editor de video remoto con Oberstaff",
+      "numberOfItems": 4,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Cuéntanos tu pipeline de producción",
+          "description": "Define formato de grabación, volumen de exportaciones y software principal."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Recibe talento audiovisual pre-evaluado",
+          "description": "Oberstaff preselecciona editores evaluados con prueba técnica, test psicométrico y entrevista."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Entrevista y decisión",
+          "description": "La empresa revisa portfolio, entrevista candidatos y elige el perfil más adecuado."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Integración al flujo de producción",
+          "description": "El editor se integra a Drive, Dropbox, Frame.io u otras herramientas y comienza con el primer montaje."
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "",
+      "name": "Tipos de editores de video disponibles",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Editor de video para YouTube y creadores"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Editor con postproducción visual"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Editor y colorista"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Editor de video corporativo"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Editor de video social y formato corto"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Editor de video publicitario"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Quién paga las licencias de Premiere Pro, After Effects o Epidemic Sound?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El editor cuenta con su propio hardware de alto rendimiento. Para mantener la propiedad legal y operativa, recomendamos que la empresa española provea el asiento corporativo de Adobe Creative Cloud y los accesos a bibliotecas de música de stock que utilice."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué ocurre si el ritmo de montaje del editor de video remoto no me gusta?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Si durante los primeros vídeos el editor no logra captar el pulso o la estética que buscas, puedes cancelar con 30 días de preaviso o solicitar un reemplazo con un perfil más afín."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿El editor puede trabajar con Frame.io, Drive o nuestra plataforma en la nube?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Los editores están acostumbrados a trabajar con Frame.io, Google Drive, Dropbox, Notion y Slack, adaptándose al pipeline del cliente desde el primer día."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Al contratar editor de videos con Oberstaff qué tipo de relación laboral tendré con el profesional?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No tendrás relación laboral directa a nivel burocrático. Tú diriges creativamente el trabajo y Oberstaff asume la responsabilidad contractual y fiscal mediante una factura B2B."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": ""
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Perfiles",
+          "item": ""
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Contratar editor de videos",
+          "item": ""
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+    <div class="service-detail-container" id="inicio">
+        <LeadHeroSection
+            webhookUrl="" 
+            formName="Perfil Editor de Videos España"
+            pais="España"
+            topLabel="Producción audiovisual"
+            topLabelInsideH1={false}
+            title="Contratar editor de videos: internaliza tu postproducción y escala tu maquinaria de contenidos in-house"
+            cardTitle="Encuentra a tu editor de video hoy"
+            cardSubtitle="Accede a portfolios evaluados listos para producir."
+            buttonText="👉 Ver perfiles pre-evaluados y solicitar propuesta"
+            buttonIcon=""
+            buttonSubtext="↳ Tardarás menos de 1 minuto · sin compromiso"
+            footerLinkText="Ver cómo funciona el modelo EOR →"
+            footerLinkHref="" 
+            badges={[
+                { text: "Dedicación exclusiva a tu timeline", icon: "🎯" },
+                { text: "Portfolios de video evaluados", icon: "🎬" },
+                { text: "Integración en tu flujo de montaje", icon: "⚡" },
+                { text: "Revisiones y exportaciones en horario de España", icon: "🕒" },
+            ]}
+            badgesClass="community-badges"
+        >
+            <Fragment slot="description">
+                Conecta tu negocio español con un editor de video remoto
+                especializado. Perfiles validados en montaje narrativo y
+                etalonaje (color grading). Recibe tus piezas renderizadas y
+                listas para publicar —en YouTube, Meta Ads o formato
+                corporativo— con dedicación exclusiva a tu timeline.
+            </Fragment>
+        </LeadHeroSection>
+
+        <div class="fade-in-section">
+            <QueEsServicioSection
+                title="Es el momento de escalar tu producción audiovisual"
+                highlightWord="producción audiovisual"
+                description="Con <span style='color: #1B1B1B; font-weight: 700;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 700;'>.</span> puedes contratar editor de videos in-house de Latinoamérica: profesionales que no solo cortan y pegan clips, sino que entienden de ritmo, retención de audiencia, gestión de proxies y adaptación nativa de cada exportación al canal donde va a vivir (16:9, 9:16, 4:5)."
+                imageSrc="/img1-videos.webp"
+                imageAlt="Editor de video remoto trabajando en postproducción"
+                badgeText="Postproducción de alto impacto"
+                quoteText=""
+                checklistTitle="Checklist de ventajas:"
+                checklistItems={[
+                    "Editor de vídeo evaluado con prueba técnica audiovisual y test psicométrico.",
+                    "Propiedad total: los archivos de proyecto (.prproj, .drp) y los brutos siempre pertenecen a tu empresa.",
+                    "Ahorro estructural: consolida tu departamento de postproducción con una única factura mensual.",
+                    "Cero fricción laboral: si el estilo de montaje no encaja con tu marca, solicita un reemplazo o cancela.",
+                ]}
+                ctaText="Solicitar perfiles de editor de video →"
+                ctaHref="#formulario-perfil"
+                diffIcon=""
+                diffTitle=""
+                diffDescription=""
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <ServicesSection
+                title="¿Qué asume un editor de video dedicado <strong>en tu operativa?</strong>"
+                cardTitleTag="h3"
+                description="Transforma tus gigabytes de material en bruto en activos digitales de alta retención listos para circular"
+                customClass="employer-use-cases"
+                services={[
+                    {
+                        icon: "▶️",
+                        title: "Edición ágil para Redes Sociales",
+                        description:
+                            "Montaje de Reels, TikToks y Shorts. Dominio del ritmo rápido, subtitulado dinámico, keyframing y hooks visuales diseñados para retener la atención en los primeros 3 segundos.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-green",
+                    },
+                    {
+                        icon: "✨ ",
+                        title: "Postproducción para YouTube",
+                        description:
+                            "Si buscas contratar editor de videos para YouTube, nuestros perfiles estructuran episodios largos, inserción de B-roll, transiciones fluidas y exportación optimizada.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-pink",
+                    },
+                    {
+                        icon: "📢",
+                        title: "Anuncios y publicidad en vídeo(UGC & Ads)",
+                        description:
+                            "Montaje orientado a conversión, creación de iteraciones rápidas, pruebas A/B de los primeros segundos y adaptación de aspect ratios para Meta y TikTok Ads.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-lime",
+                    },
+                    {
+                        icon: "🎨 ",
+                        title: "Color Grading y Etalonaje",
+                        description:
+                            "Gradación colorimétrica en DaVinci Resolve o Premiere Pro. Estilos cinematográficos y LUTs personalizados para mantener la identidad visual de la marca.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-purple",
+                    },
+                    {
+                        icon: "🎙️",
+                        title: "Diseño Sonoro y Video-Podcasts",
+                        description:
+                            "Limpieza de ruido de fondo, ecualización de voces, mezcla de música libre de derechos y efectos de sonido (SFX) para darle profundidad a cada pieza audiovisual.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-green",
+                    },
+                    {
+                        icon: "🏢",
+                        title: "Gestión de entregables y orden de producción",
+                        description:
+                            "Ingesta de material, creación de proxies para edición fluida, organización de carpetas y nomenclatura profesional para que tu archivo no se convierta en un caos.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-pink",
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <EorStepsSection
+                title="Contratar editor de vídeo con <span style='font-weight:800; color:#1B1B1B;'>Oberstaff<span style='color:#FF66CC;'>.</span></span> en  <span style='color: #6663FD; font-weight: 800;'>4 pasos</span>"
+                subtitle="Un proceso diseñado para que delegues el montaje pesado y te centres exclusivamente en dirigir y grabar."
+                steps={[
+                    {
+                        title: "Cuéntanos tu pipeline de producción",
+                        lineColorClass: "line-black",
+                        description:
+                            "Coméntanos si grabas en 4K, LOG o RAW, el volumen de exportaciones semanales y tu software principal (Premiere, Final Cut o DaVinci).",
+                        badge: "Sin compromiso",
+                    },
+                    {
+                        title: "Recibe talento audiovisual pre-evaluado",
+                        lineColorClass: "line-pink",
+                        description:
+                            "Preseleccionamos entre 3 y 5 editores de vídeo evaluados: prueba técnica audiovisual + test psicométrico + entrevista con nuestro equipo. Recibes perfiles con muestra de trabajo y resultados de la evaluación.",
+                        badgeIcon: "",
+                        badge: "Perfiles evaluados",
+                    },
+                    {
+                        title: "Entrevista y decisión",
+                        lineColorClass: "line-orange",
+                        description:
+                            "Entrevistas a los candidatos preseleccionados, revisas su portfolio audiovisual y decides a quién confiar tus proyectos.",
+                        badge: "Tú eliges",
+                    },
+                    {
+                        title: "Tu editor se integra en tu flujo de producción",
+                        lineColorClass: "line-blue",
+                        description:
+                            "Oberstaff asume los contratos de confidencialidad (NDA). Tu editor obtiene acceso a tu Google Drive, Dropbox o Frame.io y comienza a descargar el material para su primer montaje.",
+                        badge: "Sin burocracia",
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <EorCta
+                title="Multiplica tu ritmo de exportación semanal sin disparar tus costes estructurales"
+                titleTag="h2"
+                text="Cuéntanos el perfil de profesional audiovisual requieres y recibe una propuesta personalizada en menos de 24 horas. Sin compromiso."
+                buttonText="👉 Quiero solicitar propuesta personalizada"
+                buttonHref="#formulario-perfil"
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <RolesPerfil
+                title="Perfiles de editores de video para <strong>contratar e integrar en tu equipo</strong>"
+                subtitle="El montaje es un arte especializado. Integra al profesional que domine el formato exacto en el que compite tu marca."
+                layout="modern"
+                customClass="grid-seo"
+                footerText=""
+                footerLinkText=""
+                footerLinkHref="#formulario-perfil"
+                roles={[
+                    {
+                        title: "🎬 Contratar editor de video para YouTube y creadores",
+                        description: "",
+                        icon: "",
+                        iconColor: "#FF66CC",
+                        borderColorClass: "border-pink",
+                        subtitle:
+                            "Especialista en ritmo de retención, storytelling visual, cortes en J/L y diseño sonoro envolvente.",
+                        techStack: ["Premiere Pro", "Thumbnails", "Final Cut"],
+                        buttonText: "Solicitar más información →",
+                        buttonHref: "#formulario-perfil",
+                    },
+                    {
+                        title: "✨ Editor con postproducción visual",
+                        description: "",
+                        icon: "",
+                        iconColor: "#3b76f6",
+                        borderColorClass: "border-blue",
+                        subtitle:
+                            "Montaje enriquecido con animación 2D, trackeo de cámaras, rotoscopia y títulos dinámicos sobre vídeo real.",
+                        techStack: ["After Effects", "Cinema 4D", "Lottie"],
+                        buttonText: "Solicitar más información →",
+                        buttonHref: "#formulario-perfil",
+                    },
+                    {
+                        title: "🎨  Editor y colorista",
+                        description: "",
+                        icon: "",
+                        iconColor: "#66FF99",
+                        borderColorClass: "border-green",
+                        subtitle:
+                            "Especialista en lectura de scopes, balance de blancos, color matching multicámara y look cinematográfico.",
+                        techStack: ["DaVinci Resolve", "Lumetri", "LUTs"],
+                        buttonText: "Solicitar más información →",
+                        buttonHref: "#formulario-perfil",
+                    },
+                    {
+                        title: "🏢 Editor de video corporativo",
+                        description: "",
+                        icon: "",
+                        iconColor: "#CCFF66",
+                        borderColorClass: "border-yellow",
+                        subtitle:
+                            "Piezas institucionales, vídeos de formación interna, entrevistas a directivos y casos de éxito B2B con un tono sobrio.",
+                        techStack: [
+                            "Premiere Pro",
+                            "Explainers",
+                            "Brand video",
+                        ],
+                        buttonText: "Solicitar más información → ",
+                        buttonHref: "#formulario-perfil",
+                    },
+                    {
+                        title: "📱 Editor de video social y formato corto",
+                        description: "",
+                        icon: "",
+                        iconColor: "#FF66CC",
+                        borderColorClass: "border-pink",
+                        subtitle:
+                            "Dominio del vídeo vertical, tendencias de audio, zooms digitales rápidos y subtitulado.",
+                        techStack: [
+                            "TikTok",
+                            "CapCut Pro",
+                            "Instagram",
+                            "Premiere",
+                        ],
+                        buttonText: "Solicitar más información →",
+                        buttonHref: "#formulario-perfil",
+                    },
+                    {
+                        title: "📢 Editor de video publicitario",
+                        description: "",
+                        icon: "",
+                        iconColor: "#3b76f6",
+                        borderColorClass: "border-blue",
+                        subtitle:
+                            "Producción de piezas de alto rendimiento para campañas de paid media.",
+                        techStack: ["Meta Ads", "YouTube Ads", "A/B Testing"],
+                        buttonText: "Solicitar más información →",
+                        buttonHref: "#",
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <ComparisonPerfiles
+                title="Comparativa estructural: contratar editor de videos con <span style='color: #1B1B1B; font-weight: 900;'>Oberstaff<span style='color: #ff66cc; font-weight: 900;'>.</span></span> <br> vs otras alternativas"
+                subtitle="Compara el coste, la dedicación en horas de montaje y la carga operativa de cada opción audiovisual."
+                footerNote=""
+                oberstaffLabel="<span style='font-weight:800; color:#1B1B1B;'>Oberstaff<span style='color:#FF66CC;'>.</span></span> <span style='color:#FF66CC; font-weight:700;'>(Editor in-house LATAM)</span>"
+                competitors={[
+                    "Editor en plantilla España",
+                    "Editor freelance",
+                    "Agencia de edición externa",
+                ]}
+                rows={[
+                    {
+                        label: "Coste mensual",
+                        oberstaffValue: "<strong>Desde 950 €/mes</strong>",
+                        competitorValues: [
+                            "2.200–3.500 €/mes + costes laborales",
+                            "1.200–2.500 €/mes o pago por vídeo",
+                            "1.200–3.000 €/mes",
+                        ],
+                    },
+                    {
+                        label: "Límites de revisión y exportación",
+                        oberstaffValue:
+                            "Ilimitadas dentro de su jornada laboral",
+                        competitorValues: [
+                            "Ilimitadas",
+                            "Suelen cobrar por ronda de cambios extra",
+                            "Limitadas a un número estricto por contrato",
+                        ],
+                    },
+                    {
+                        label: "Propiedad de archivos de proyecto (.prproj)", 
+                        oberstaffValue: "100 % tuyos",
+                        competitorValues: [
+                            "100% tuyos",
+                            "Algunas veces se entrega el editable",
+                            "Coste adicional por pedir los proyectos fuente",
+                        ],
+                    },
+                    {
+                        label: "Horario y sincronía",
+                        oberstaffValue: "Totalmente compatible con España",
+                        competitorValues: [
+                            "Compatible",
+                            "Variable según sus propios clientes",
+                            "Tiempo según SLA",
+                        ],
+                    },
+                    {
+                        label: "Integración en tu flujo de producción",
+                        oberstaffValue: "Alta",
+                        competitorValues: ["Alta", "Media", "Media"],
+                    },
+                    {
+                        label: "Sin permanencia",
+                        oberstaffValue: "Sí",
+                        competitorValues: [
+                            "No siempre",
+                            "Según contrato",
+                            "No siempre",
+                        ],
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <PricingCardPerfil
+                sectionTitle="Un profesional audiovisual in-house por una fracción del <span style='color:#6663FD; font-weight: 900;'>coste tradicional</span>"
+                sectionSubtitle="Pagar por cada vídeo suelto o por cada pequeña corrección ahoga tu presupuesto. Con <span style='color:#1B1B1B; font-weight: 700;'>Oberstaff</span><span style='color:#FF66CC; font-weight: 700;'>.</span> accedes a una tarifa plana para escalar tu volumen de publicación."
+                cardTitle="Fee mensual único"
+                titleTag="p"
+                cardSubtitle="Jornada completa de edición · sin costes ocultos"
+                priceLabel="DESDE"
+                priceAmount="950 €"
+                pricePeriod="/ mes"
+                features={[
+                    "Revisiones y exportaciones ilimitadas en su jornada.",
+                    "Montaje dinámico para YouTube y redes sociales (Shorts/Reels).",
+                    "Corrección de color y aplicación de LUTs corporativos.",
+                    "Sincronización de audio y video-podcasts · limpieza vocal y multicámara.",
+                    "Organización de media, creación de proxies y gestión de entregables.",
+                    "Protección total de propiedad intelectual sobre el material bruto y editado.", 
+                ]}
+                ctaText="Solicitar propuesta"
+                ctaHref="#formulario-perfil"
+                disclaimer="*Precios orientativos según experiencia y dominio técnico."
+            />
+        </div>
+
+       <div class="fade-in-section">
+            <BeneficiosPerfilDisenador
+                showInfoCard={false}
+                title="Las ventajas operativas de contratar editor de videos con nosotros <span style='color:#6663FD; font-weight: 900;'> para escalar tus publicaciones</span>"
+                subtitle="Más control creativo que con una agencia audiovisual externa, menos fricción legal que una contratación in-house local."
+              image="/img2-videos.webp" 
+            imageAlt="Contratar editor de videos"
+                features={[
+                    {
+                        icon: "🎯",
+                        title: "Foco audiovisual exclusivo ",
+                        description:
+                            "Tu editor mantiene la atención enfocada en tus proxies, tus campañas y las prioridades de tu canal.",
+                    },
+                    {
+                        icon: "⚡",
+                        title: "Iteraciones sin fricción económica:",
+                        description:
+                            "¿Necesitas quitar un plano? Al tener un editor in-house, pides el cambio y recibes el nuevo renderizado en minutos.",
+                    },
+                    {
+                        icon: "🛡️",
+                        title: "Blindaje y propiedad",
+                        description:
+                            "Somos tu departamento legal. El talento firma contratos donde cede los derechos de edición a tu empresa; además, asumimos su nómina. ",
+                    },
+                ]}
+            >
+              <div class="meta-custom-notice">
+                   Una sola factura mensual en euros, escala tu posproducción audiovisual sin preocupaciones.
+                </div>
+             
+            </BeneficiosPerfilDisenador>
+        </div>
+
+           <div class="fade-in-section">
+            <GuiaContratacion
+                titleTag="h2"
+                headerTitle="Cómo elegir al profesional de <span style='color:#6663FD; font-weight: 900;'>postproducción audiovisual adecuado</span>"
+                headerDescription="Dar acceso a tus archivos en bruto (RAW) requiere un filtrado estricto. Así te aseguras de integrar a talento técnico de alto nivel."
+                cards={[
+                    {
+                        title: "Qué definir antes de contratar editor de videos",
+                        description:
+                            "Antes de contratar, define bien el tipo de contenido que necesitas: YouTube, redes sociales, anuncios, video corporativo o podcast. También conviene concretar volumen de piezas, estilo visual, tiempos de entrega y herramientas."
+                    },
+                    {
+                        title: "Expertos en edición de video: herramientas clave",
+                        description:
+                            "Valora la fluidez del candidato en el ecosistema Adobe (Premiere Pro, After Effects, Audition), o su destreza técnica en DaVinci Resolve para nodos de color. Para creadores de contenido rápido, el dominio avanzado de CapCut Pro y plugins de subtitulado animado marca la diferencia en los tiempos de entrega."
+                    },
+                    { 
+                       
+                        title: "Editores de video España - Latinoamérica: ¿funciona realmente ese modelo?",
+                     description:
+                        "LATAM es una región geográfica con talento audiovisual de gran nivel, por lo que podrías contar con profesionales con alta fluidez técnica en las herramientas de Adobe, DaVinci y flujos de trabajo con proxies, beneficiándote de un huso horario que permite tener los vídeos renderizados en total sincronía con tu equipo en España."
+                    },
+                    {
+                     
+                        title: "Curvas de retención: la métrica a evaluar al contratar editor de video YouTube",
+                     description:"Un montador tradicional busca estética; un estratega audiovisual busca retención. Al auditar a tu candidato, evalúa cómo estructura los primeros 30 segundos (el hook o gancho) para evitar la fuga inicial de espectadores. Debe dominar el uso de B-roll, saltos de escala (punch-ins) y diseño sonoro para mantener alta la Duración Media de Visualización (AVD)."
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <CasosExitoSection
+                title="Negocios españoles que ya trabajan con <span style='font-weight: 900; color: #1b1b1b;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span>"
+                subtitle=""
+                testimonials={[
+                    {
+                        stars: 5,
+                        avatar: "/fernando.webp",
+                        imageAlt: "Fernando Calderón, cliente de Oberstaff en Madrid",
+                        text: "Estaba en busca de talento remoto especializado para mi empresa y después de varias búsquedas sin éxito, encontré a <strong>Oberstaff<span style='color: #FF66CC;'></span></strong> en Instagram. Desde nuestra primera llamada, su profesionalismo y calidad de trabajo me dejaron impresionado. Ahora, gracias a su excelente servicio, he expandido mi contrato con ellos para incluir más personal.",
+                        author: "Fernando Calderón",
+                        role: "CEO · BeautyPro",
+                    },
+                    {
+                        stars: 5,
+                        avatar: "/sha.webp",
+                        imageAlt: "Shadai Iborra, cliente de Oberstaff en Barcelona",
+                        text: "Con <strong>Oberstaff<span style='color: #FF66CC;'></span></strong> pude dar trabajo a dos personas a tiempo completo, ahorrando costes de reclutamiento, espacios de oficina y salario que tendría al hacerlo en España. Lo mejor de todo es que todo está incluido en una misma factura. Con <strong>Oberstaff<span style='color: #FF66CC;'></span></strong> encontré la solución perfecta para mis necesidades de contratación remota y optimización de costes.",
+                        author: "Shadai Iborra",
+                        role: "CEO · @amediastory",
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <PressSection title="Prensa y menciones" />
+        </div>
+
+        <FAQSection
+            title="<strong>Dudas sobre la integración</strong> de un editor de video remoto en tu equipo"
+            ctaText="Resolvemos las dudas más frecuentes de empresas españolas que quieren incorporar postproducción audiovisual remota de forma estable."
+            ctaButtonText="Hablar con asesor →"
+            ctaButtonHref="#formulario-perfil"
+            faqs={faqsList}
+        />
+
+        <div class="fade-in-section">
+            <ConversionPerfilDisenador
+                webhookUrl=""
+                title="¿Quieres incorporar un <strong>editor de video remoto</strong> a tu <br> equipo?"
+                subtitle="Rellena el formulario (tardarás menos de 1 minuto) y en <24 horas recibirás de parte de nuestros especialistas una propuesta personalizada sin compromiso. Primera consulta gratuita."
+                buttonText="Solicitar propuesta gratuita →"
+                noteText="Nota: Rellenarlo te lleva menos de 1 minuto"
+                formName="Perfil Editor de Videos España"
+                pais="España"
+            />
+        </div>
+    </div>
+
+    <style>
+        .service-detail-container {
+        }
+
+        :global(.community-badges) {
+            display: flex !important;
+            flex-wrap: wrap !important;
+            gap: 10px !important;
+        }
+
+        :global(.employer-use-cases-grid) {
+            grid-template-columns: repeat(3, 1fr) !important;
+        }
+
+        @media (max-width: 900px) {
+            :global(.employer-use-cases-grid) {
+                grid-template-columns: 1fr !important;
+            }
+        }
+
+        :global(.employer-use-cases-grid .icon-box) {
+            background-color: transparent !important;
+            border: none !important;
+            padding: 0 !important;
+            width: 100% !important;
+            height: auto !important;
+            margin-bottom: 25px !important;
+            justify-content: flex-start !important;
+        }
+
+        :global(.employer-use-cases-grid .icon-emoji-servicios-home) {
+            font-size: 35px !important;
+            padding: 0 !important;
+        }
+
+        @media (max-width: 768px) {
+            :global(.employer-use-cases-grid .icon-emoji-servicios-home) {
+                font-size: 30px !important;
+                padding: 0 !important;
+            }
+        }
+
+        /* Estilos específicos para QueEsServicioSection en esta página */
+        :global(.que-es-servicio-section .quote-blue-border) {
+            border-left: 4px solid #ff66cc !important;
+            color: #ff66cc !important;
+            font-size: 16px !important;
+            margin-top: 0 !important; /* Para alinear con el inicio de la imagen */
+            font-weight: 600 !important;
+        }
+
+        :global(.que-es-servicio-section .que-es-main-content) {
+            align-items: flex-start !important;
+        }
+
+        /* Fondo exclusivo para la sección de áreas del diseñador */
+        :global(section.employer-use-cases) {
+            background-color: #fafafc !important;
+        }
+
+        /* Fondo exclusivo para la sección de casos de éxito en esta página */
+        :global(.casos-exito) {
+            background-color: #fafafc !important;
+
+            padding-bottom: 80px !important;
+        }
+
+        /* Estilos específicos para la sección FAQ en esta página */
+        :global(.faq-disenador-custom .faq-columns) {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            text-align: center !important;
+        }
+
+        :global(.faq-disenador-custom .faq-left-column) {
+            position: static !important;
+            width: 100% !important;
+            max-width: 800px !important;
+            margin-bottom: 40px !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            text-align: left !important;
+        }
+
+        :global(.faq-disenador-custom .faq-main-title) {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            text-align: left !important;
+        }
+
+        :global(.faq-disenador-custom .faq-right-column) {
+            display: none !important;
+        }
+
+        :global(.faq-disenador-custom .faq-cta-card) {
+            margin: 0 !important;
+            padding: 0 !important;
+            max-width: 600px !important;
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+            text-align: left !important;
+        }
+
+        :global(.faq-disenador-custom .faq-cta-card p) {
+            font-family: "Poppins", sans-serif !important;
+            font-size: 18px !important;
+            font-weight: 400 !important;
+            color: #5a5a5a !important;
+            line-height: 1.6 !important;
+            margin-bottom: 30px !important;
+        }
+
+        :global(.faq-disenador-custom .faq-cta-button) {
+            background-color: #6663fd !important;
+            border: 2px solid #6663fd !important;
+            color: #ffffff !important;
+            width: auto !important;
+            min-width: 220px !important;
+            padding: 14px 32px !important;
+            font-size: 15px !important;
+            display: inline-block !important;
+        }
+
+        :global(.faq-disenador-custom .faq-cta-button:hover) {
+            background-color: transparent !important;
+            border: 2px solid #6663fd !important;
+            color: #6663fd !important;
+        }
+
+        .meta-custom-notice {
+      font-family: "Poppins", sans-serif;
+      margin-top: 40px;
+      padding: 24px 30px;
+      background-color: #f7f8fc;
+      border-left: 4px solid #ff66cc;
+      color: #ff66cc;
+      font-family: "Montserrat", sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    </style>
+</DashboardProfilesUs>

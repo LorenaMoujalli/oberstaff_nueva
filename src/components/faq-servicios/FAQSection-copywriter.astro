@@ -4,23 +4,33 @@ import "../../styles/faq/faq-section.css";
 
 const faqs = [
     {
-        question: "¿Qué diferencia hay entre un copywriter y un redactor de contenidos o SEO?",
-        answers: ["El redactor suele centrarse en informar o posicionar temas; el copywriter trabaja para mover una acción concreta: convertir visitas, responder objeciones, aumentar respuestas o empujar un avance dentro del funnel. Ambas funciones pueden convivir, pero no persiguen exactamente el mismo resultado."]
+        question:
+            "¿Qué diferencia hay entre un copywriter y un redactor de contenidos o SEO?",
+        answers: [
+            "El redactor suele centrarse en informar o posicionar temas; el copywriter trabaja para mover una acción concreta: convertir visitas, responder objeciones, aumentar respuestas o empujar un avance dentro del funnel. Ambas funciones pueden convivir, pero no persiguen exactamente el mismo resultado.",
+        ],
     },
     {
-        question: "¿Puede el perfil adaptarse al tono del mercado español y a mi sector?", 
-        answers: ["Sí. En el proceso priorizamos profesionales con capacidad de modular registro, referencias, claridad y estilo según el público objetivo. Si has llegado buscando copywriting profesional España, ese ajuste cultural y comercial es precisamente parte del filtro."]
+        question:
+            "¿Puede el perfil adaptarse al tono del mercado español y a mi sector?",
+        answers: [
+            "Sí. En el proceso priorizamos profesionales con capacidad de modular registro, referencias, claridad y estilo según el público objetivo. Si has llegado buscando copywriting profesional España, ese ajuste cultural y comercial es precisamente parte del filtro.",
+        ],
     },
     {
         question: "¿Qué pasa si ya tengo diseñador, SEO, paid media o SDRs?",
-        answers: ["Mejor todavía. El copywriter puede integrarse con esos perfiles para mejorar la consistencia entre estrategia, diseño y captación. De hecho, el mejor copywriting orientado a conversiones España suele aparecer cuando mensaje, tráfico y creatividad trabajan en sincronía."]
+        answers: [
+            "Mejor todavía. El copywriter puede integrarse con esos perfiles para mejorar la consistencia entre estrategia, diseño y captación. De hecho, el mejor copywriting orientado a conversiones España suele aparecer cuando mensaje, tráfico y creatividad trabajan en sincronía.",
+        ],
     },
     {
-        question: "¿Qué ocurre si el estilo de redacción del copywriter no encaja con nuestra marca?",
-        answers: ["El encaje de voz (brand voice) es crítico en el copywriting. Si durante los primeros textos notas que el tono no se alinea con tu identidad de marca, puedes cancelar el servicio con solo 30 días de preaviso, sin litigios ni indemnizaciones por despido, o solicitarnos un reemplazo inmediato."]
-    }
-    
-]; 
+        question:
+            "¿Qué ocurre si el estilo de redacción del copywriter no encaja con nuestra marca?",
+        answers: [
+            "El encaje de voz (brand voice) es crítico en el copywriting. Si durante los primeros textos notas que el tono no se alinea con tu identidad de marca, puedes cancelar el servicio con solo 30 días de preaviso, sin litigios ni indemnizaciones por despido, o solicitarnos un reemplazo inmediato.",
+        ],
+    },
+];
 
 interface Props {
     title?: string;
@@ -33,13 +43,13 @@ const {
     title = "Todo lo que necesitas saber antes de su <strong>expansión en LATAM</strong>",
     ctaText = "¿No estás seguro de qué modelo necesitas? El staff augmentation es ideal para perfiles tech integrados en tu equipo. Pero dependiendo de tu operación, puede que necesites un servicio diferente o combinar varios.",
     ctaButtonText = "Agenda una llamada gratuita",
-    ctaButtonHref = "#"
+    ctaButtonHref = "#",
 } = Astro.props;
 ---
 
 <style>
     .faq-d-section {
-        background-color: #FAFAFC;
+        background-color: #fafafc;
         padding: 100px 20px;
     }
 
@@ -61,7 +71,7 @@ const {
     }
 
     .faq-d-title {
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-size: 32px;
         font-weight: 700;
         font-style: normal;
@@ -73,27 +83,27 @@ const {
 
     .faq-d-title :global(strong) {
         font-weight: 900;
-        color: #6663FD;
+        color: #6663fd;
     }
 
     .faq-d-text {
-        font-family: 'Poppins', sans-serif;
+        font-family: "Poppins", sans-serif;
         font-size: 16px;
         font-weight: 400;
-        color: #5A5A5A;
+        color: #5a5a5a;
         line-height: 1.6;
         margin-bottom: 28px;
     }
 
     .faq-d-btn {
         display: inline-block;
-        background-color: #6663FD;
+        background-color: #6663fd;
         color: #ffffff;
         padding: 14px 32px;
-        border: 2px solid #6663FD;
+        border: 2px solid #6663fd;
         border-radius: 50px;
         text-decoration: none;
-        font-family: 'Poppins', sans-serif;
+        font-family: "Poppins", sans-serif;
         font-weight: 600;
         font-size: 15px;
         transition: all 0.3s ease;
@@ -101,7 +111,7 @@ const {
 
     .faq-d-btn:hover {
         background-color: transparent;
-        color: #6663FD;
+        color: #6663fd;
     }
 
     /* Right column: FAQ accordion — sin scroll interno, altura libre */
@@ -138,10 +148,10 @@ const {
         }
 
         .faq-d-text {
-           text-align: center;
-           margin-left: auto;
-           margin-right: auto;
-           max-width: 400px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 400px;
         }
 
         .faq-d-text :global(br) {

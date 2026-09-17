@@ -1,0 +1,912 @@
+---
+import DashboardLayoutUs from "../../layouts/DashboardLayoutUs.astro";
+import Hero from "../../components/hero/Hero.astro";
+import StatsSection from "../../components/stats-oberstaff/StatsSection.astro";
+import ServicesSection from "../../components/services-oberstaff/ServicesSection.astro";
+import ProcessOberstaff from "../../components/process/ProcessOberstaff.astro";
+import ProfilesSection from "../../components/profiles/ProfilesSection.astro";
+import BenefitsSection from "../../components/benefits/BenefitsSection.astro";
+import TestimonialsSection from "../../components/testimonios/TestimonialsSection.astro";
+import FAQSection from "../../components/faq/FAQSection.astro";
+import ContactFormSection from "../../components/form/ContactFormSection.astro";
+import PressSection from "../../components/press/PressSection.astro";
+import EorCta from "../../components/eor-cta-servicios/EorCta.astro";
+
+const ogImage = "home-pr.webp";
+
+// --- 1. HERO PROPS ---
+const heroProps = {
+	badge: "ESTADOS UNIDOS",
+	title: `Staffing agency para <br class="desktop-br"/>
+        contratar personal remoto<br class="desktop-br"/>
+       en Sudamérica <br class="desktop-br"/> desde Puerto Rico`,
+	description: `En <span class="brand-text">Oberstaff<span class="brand-dot">.</span></span> <span class="brand-text2">encontramos el mejor talento por menos, ¡mucho menos!</span> Somos la agencia de staffing especializada en reclutamiento remoto: contrata talento cualificado en América del Sur, reduce costos salariales y olvídate de los gastos de tener empleados en nómina.`,
+	socialProof: `Más de 500 empresas confían en <span class="brand-text">Oberstaff<span class="brand-dot">.</span></span>`,
+	buttonText: `Agendar llamada gratis`,
+	buttonHref: `#contacto`,
+	videoButtonText: `Ver cómo funciona`,
+	showPedro: false,
+};
+
+// --- 2. STATS PROPS ---
+const statsProps = {
+	title: `Nearshore staffing para reducir costos sin sacrificar <br/> calidad`,
+	description: `Si estás evaluando cómo reducir costos de nómina sin perder calidad ni sufrir desfases de zona horaria, Sudamérica es una vía eficiente para las empresas en la Isla.`,
+	stat1_number: "70%",
+	stat1_label: "Ahorro vs. contratación local.",
+	stat2_number: "-30",
+	stat2_label: "Días para tener tu talento operando.",
+	stat3_number: "100%",
+	stat3_label: "Profesionales en tu zona horaria AST y EST.",
+};
+
+// --- 3. SERVICES PROPS ---
+const servicesList = [
+	{
+		icon: "⚖️",
+		title: "Employer of Record (EOR)",
+		description:
+			"Contrata empleados en Sudamérica con contrato laboral formal, sin abrir una entidad propia en el extranjero. <span class='brand-text'>Oberstaff<span class='brand-dot'>.</span></span> actúa como empleador legal y gestiona nómina, cumplimiento laboral y administración local para que tu empresa pueda crecer con seguridad.",
+		linkText: "Conoce nuestro servicio de Employer of Record (EOR)",
+		href: "",
+		colorClass: "purple-bg",
+		cardClass: "card-purple",
+	},
+	{
+		icon: "👥",
+		title: "Outsourcing de personal",
+		description:
+			"Delega la selección, contratación y gestión mensual de equipos comerciales, administrativos y de soporte BPO. Reclutamiento de personal especializado para tu operación, procesos más ágiles y acompañamiento continuo sin asumir toda la carga operativa interna.",
+		linkText: "Conoce nuestro servicio de Outsourcing de personal",
+		href: "",
+		colorClass: "pink-bg",
+		cardClass: "card-green",
+	},
+	{
+		icon: "💻",
+		title: "Staff Augmentation",
+		description:
+			"Refuerza tu equipo tecnológico con desarrolladores, QA, DevOps, analistas de datos y otros perfiles IT especializados. El talento remoto se integra a tu stack, procesos y metodología de trabajo para acelerar proyectos sin aumentar tu estructura fija.",
+		linkText: "Conoce nuestro servicio de Staff Augmentation",
+		href: "",
+		colorClass: "orange-bg",
+		cardClass: "card-pink",
+	},
+	{
+		icon: "📋",
+		title: "Contractor of Record (CoR)",
+		description:
+			"Formaliza la relación con contratistas independientes y reduce riesgos por clasificación errónea ante el Departamento de Hacienda o el IRS. Este modelo es útil cuando necesitas flexibilidad, pagos centralizados y soporte para contratistas especializados.",
+		linkText: "Conoce nuestro servicio de Contractor of Record (CoR)",
+		href: "",
+		colorClass: "gray-bg",
+		cardClass: "card-lime",
+	},
+];
+
+// --- 4. PROCESS PROPS ---
+const processItems = [
+	{
+		label: "Selección",
+		badge: "Gratis · sin compromiso",
+		title: "1. Nos cuentas qué perfil necesitas",
+		description:
+			"Cuéntanos si buscas contratar personal administrativo, comercial, contable, tecnológico, de soporte o perfiles bilingües. Con nuestro proceso de reclutamiento de personal identificamos candidatos que encajen con tu empresa, tu cultura y tus objetivos de operación.",
+	},
+	{
+		label: "Estructura",
+		badge: "Sin contratos forzosos a largo plazo",
+		title: "2. Te proponemos la estructura adecuada",
+		description:
+			"Te orientamos sobre cuál es el modelo que blindará tu operación legalmente en toda contratación internacional.",
+	},
+	{
+		label: "Entrevistas",
+		badge: "Candidatos listos en menos de 30 días",
+		title: "3. Entrevistas y eliges a los mejores",
+		description:
+			"Te presentamos talento remoto validado para que puedas entrevistarlo antes de decidir. Tú mantienes control sobre la elección del perfil, mientras <span class='brand-text'>Oberstaff<span class='brand-dot'>.</span></span> simplifica la búsqueda, la documentación y la operación mensual.",
+	},
+	{
+		label: "Integración",
+		badge: "Alineación horaria garantizada",
+		title: "4. Integramos el talento a tu operación",
+		description:
+			"El profesional se incorpora a tu equipo con horarios compatibles con Puerto Rico, procesos claros y facturación centralizada en dólares. Así puedes contratar empleados o contratistas de Sudamérica sin perder visibilidad sobre el desempeño.",
+	},
+];
+
+// --- 5. PROFILES PROPS ---
+const profilesList = [
+	{
+		icon: "📈",
+		title: "Estrategia comercial",
+		quote: "Más ventas, pipeline lleno y clientes que repiten",
+		roles: [
+			{
+				label: "Closer de ventas",
+				href: "",
+			},
+		],
+		iconColorClass: "purple-text",
+	},
+	{
+		icon: "📣",
+		title: "Marketing digital",
+		quote: "Tu marca visible donde están tus clientes",
+		roles: [
+			{
+				label: "Experto SEO",
+				href: "",
+			},
+			{
+				label: "Especialista en Google Ads",
+				href: "",
+			},
+			{
+				label: "Especialista en Meta Ads",
+				href: "",
+			},
+			{
+				label: "Community Manager",
+				href: "",
+			},
+		],
+		iconColorClass: "pink-text",
+	},
+	{
+		icon: "✍️",
+		title: "Redacción y copywriting",
+		quote: "Palabras que venden, contenido que posiciona",
+		roles: [
+			{ label: "Copywriter", href: "" },
+		],
+		iconColorClass: "orange-text",
+	},
+	{
+		icon: "🎨",
+		title: "Diseño",
+		quote: "Imagen profesional que genera confianza",
+		roles: [
+			{
+				label: "Diseñador gráfico",
+				href: "",
+			},
+			{ label: "Diseñador web", href: "#" },
+		],
+		iconColorClass: "purple-text",
+	},
+	{
+		icon: "🎬",
+		title: "Vídeo",
+		quote: "Vídeos que paran el scroll y convierten",
+		roles: [
+			{
+				label: "Editor de vídeo",
+				href: "",
+			},
+		],
+		iconColorClass: "pink-text",
+	},
+	{
+		icon: "🗂️",
+		title: "Soporte administrativo",
+		quote: "Tu operación organizada; tú, enfocado en crecer.",
+		roles: [
+			{
+				label: "Asistente virtual",
+				href: "",
+			},
+		],
+		iconColorClass: "orange-text",
+	},
+	{
+		icon: "🧮",
+		title: "Contabilidad",
+		quote: "Finanzas al día, sin sorpresas ni errores",
+		roles: [{ label: "Contable", href: "" }],
+		iconColorClass: "blue-text",
+	},
+	{
+		icon: "⚙️",
+		title: "Tecnología y datos",
+		quote: "El talento tech que necesitas, sin el coste que no puedes asumir",
+		roles: [
+			{ label: "Desarrollador WordPress", href: "#" },
+			{ label: "Desarrollador mobile", href: "#" },
+		],
+		iconColorClass: "purple-text",
+	},
+];
+
+// --- 6. BENEFITS PROPS ---
+const benefitsList = [
+	{
+		id: "riesgo-legal",
+		shortTitle: "Menos carga de compliance",
+		icon: "🛡️",
+		title: "Menos carga de compliance",
+		subtitle: "Sin riesgos contributivos o laborales.",
+		text: "<span class='brand-text'>Oberstaff<span class='brand-dot'>.</span></span> te ayuda a ordenar la contratación internacional y la documentación, alejando a tu empresa de problemas por clasificación errónea de contratistas.",
+		colorClass: "blue",
+	},
+	{
+		id: "menos-30-dias",
+		shortTitle: "Contratación rápida",
+		icon: "⚡",
+		title: "Contratación de personal de forma más rápida",
+		subtitle: "Candidatos preseleccionados en menos tiempo.",
+		text: "Como staffing agency especializada, nuestro proceso evalúa y preselecciona candidatos en Sudamérica para que tú solo decidas con quién trabajar al contratar empleados.",
+		colorClass: "orange",
+	},
+	{
+		id: "zona-horaria",
+		shortTitle: "Alineación de zona horaria",
+		icon: "🕐",
+		title: "Alineación de zona horaria",
+		subtitle: "Trabajo en tiempo real con Puerto Rico.",
+		text: "Los profesionales remotos pueden operar en horarios compatibles con AST y EST, facilitando reuniones, seguimiento y productividad diaria.",
+		colorClass: "gray",
+	},
+	{
+		id: "factura-unica",
+		shortTitle: "Facturación en USD",
+		icon: "💵",
+		title: "Facturación centralizada en USD",
+		subtitle: "Menos complejidad para tu contabilidad.",
+		text: "Recibes una factura mensual en dólares por el servicio, mientras <span class='brand-text'>Oberstaff<span class='brand-dot'>.</span></span> coordina las dispersiones, pagos locales y gestión operativa correspondiente.",
+		colorClass: "cyan",
+	},
+	{
+		id: "sin-permanencia",
+		shortTitle: "Flexibilidad operativa",
+		icon: "📈",
+		title: "Flexibilidad para escalar o reducir equipo",
+		subtitle: "Ajusta tu operación según la demanda real.",
+		text: "Puedes sumar perfiles, cambiar prioridades o reducir estructura sin la rigidez de una contratación local tradicional.",
+		colorClass: "purple",
+	},
+	{
+		id: "talento-evaluado",
+		shortTitle: "Talento evaluado con rigor",
+		icon: "✅",
+		title: "Talento remoto evaluado con rigor",
+		subtitle: "Más seguridad antes de decidir.",
+		text: "Los candidatos pasan por filtros, entrevistas y validaciones para que puedas contratar personal con mayor confianza.",
+		colorClass: "green",
+	},
+];
+const benefitsInfoText = `<span class="brand-text">Oberstaff<span class="brand-dot">.</span></span> <strong>combina agencia de staffing, reclutamiento de personal y soporte operativo</strong> para que las empresas en Puerto Rico accedan a talento internacional sin aumentar su carga administrativa.`;
+
+// --- 7. FAQS PROPS ---
+const faqsList = [
+	{
+		question:
+			"¿Qué es una staffing agency y cómo funciona <span class='brand-text'>Oberstaff<span class='brand-dot'>.</span></span>?",
+		answers: [
+			"Una staffing agency o agencia de staffing es una empresa especializada en reclutamiento de personal y gestión de contratación internacional. <span class='brand-text'>Oberstaff<span class='brand-dot'>.</span></span> actúa como tu socio estratégico: identifica, evalúa y gestiona la integración de profesionales en Sudamérica para que tú solo te concentres en hacer crecer tu negocio en Puerto Rico.",
+		],
+	},
+	{
+		question:
+			"¿Es seguro contratar personal en Sudamérica desde Puerto Rico?",
+		answers: [
+			"Sí, siempre que el modelo esté bien estructurado. La contratación internacional requiere claridad sobre la relación de trabajo, la documentación, los pagos y el nivel de control que tendrá la empresa. <span class='brand-text'>Oberstaff<span class='brand-dot'>.</span></span> te orienta para escoger la estructura adecuada según el caso.",
+		],
+	},
+	{
+		question: "¿Puedo contratar empleados o contratistas independientes?",
+		answers: [
+			"Sí. Dependiendo del perfil y del tipo de relación, puedes contratar empleados mediante EOR o trabajar con contratistas mediante Contractor of Record. La recomendación depende del nivel de supervisión, la duración del proyecto y el riesgo de clasificación.",
+		],
+	},
+	{
+		question: "¿En qué países de América del Sur operan?",
+		answers: [
+			"<span class='brand-text'>Oberstaff<span class='brand-dot'>.</span></span> trabaja con ecosistemas de talento en Colombia, México, Argentina, Venezuela, Chile, Perú, Uruguay y otros mercados estratégicos de la región, según el perfil requerido.",
+		],
+	},
+	{
+		question: "¿Cuánto tiempo toma incorporar talento remoto?",
+		answers: [
+			"El tiempo puede variar según el cargo, la especialización y el nivel de seniority. En la mayoría de los casos, el proceso avanza en menos de 30 días si el perfil, el presupuesto y el modelo de contratación están bien definidos desde el inicio.",
+		],
+	},
+	{
+		question: "¿Puedo cancelar el servicio cuando quiera?",
+		answers: [
+			"Sí. Puedes cancelar el servicio con un aviso previo de 30 días, sin penalidades ni contratos de permanencia. Esta flexibilidad permite que tu empresa en Puerto Rico pueda ampliar, ajustar o reducir su equipo remoto según sus necesidades operacionales.",
+		],
+	},
+	{
+		question: "¿Tiene algún costo cancelar el servicio?",
+		answers: [
+			"No aplicamos penalidades por cancelar el servicio. Nuestro modelo está diseñado para que puedas ajustar tu equipo remoto sin asumir cargos adicionales por cancelación ni procesos administrativos innecesarios.",
+		],
+	},
+	{
+		question:
+			"¿Tengo que pagar Seguro Social, nómina o beneficios laborales?",
+		answers: [
+			"No tienes que administrar directamente la nómina, el Seguro Social ni los beneficios laborales del profesional. Oberstaff centraliza la gestión administrativa correspondiente y tu empresa recibe una factura mensual por el servicio, lo que reduce trámites y carga operacional.",
+		],
+	},
+	{
+		question:
+			"¿Puedo entrevistar al profesional antes de contratar el servicio?",
+		answers: [
+			"Sí. Te presentamos candidatos previamente evaluados para que puedas entrevistarlos, validar su experiencia, conocer sus habilidades y determinar cuál se adapta mejor a la cultura y a las necesidades de tu empresa.",
+		],
+	},
+	{
+		question: "¿Cómo gestiono a un profesional remoto en el día a día?",
+		answers: [
+			"El profesional trabajará bajo la supervisión y las instrucciones de tu empresa. Desde Oberstaff te recomendamos herramientas tecnológicas, sistemas de seguimiento y métodos de trabajo para gestionar sus tareas y medir su desempeño. También ofrecemos soluciones de telefonía VOIP para que el profesional pueda contar con un número telefónico de empresa y atender llamadas relacionadas con tu negocio.",
+		],
+	},
+	{
+		question: "¿Cómo se realiza el pago del servicio?",
+		answers: [
+			"El pago se realiza mensualmente mediante cargo automático a una tarjeta de débito o crédito. Recibirás una única factura en dólares que simplifica la gestión administrativa de tu empresa, sin tener que procesar directamente nómina, Seguro Social ni otros trámites laborales.",
+		],
+	},
+	{
+		question:
+			"¿Cuánto cuesta contratar profesionales remotos con <strong class='brand-text'>Oberstaff<span class='brand-dot'>.</span></strong>?",
+		answers: [
+			"El costo depende del tipo de profesional, su experiencia, nivel de especialización, país de residencia y modalidad de contratación. Antes de comenzar el proceso, recibirás una propuesta detallada en dólares para que conozcas el costo total del servicio, sin cargos ocultos ni sorpresas.",
+		],
+	},
+];
+
+// --- 8. PRESS PROPS ---
+const mentionsList = [
+	{
+		name: "Cámara de Comercio",
+		className: "camara-comercio",
+		href: "",
+		logo: "/logo-camara-comercio-letras.webp",
+		alt: "Logo de Cámara de Comercio, patrocinador oficial de Oberstaff",
+	},
+	{
+		name: "One Planet",
+		className: "one-planet",
+		href: "#",
+		logo: "/logo-one-planet.webp",
+		alt: "Logo de One Planet, patrocinador oficial de Oberstaff",
+	},
+];
+---
+
+<DashboardLayoutUs
+	ogImage={ogImage}
+	title="Staffing agency: Talento de Sudamérica para Puerto Rico "
+	description="Reduce costos sin perder calidad. Oberstaff es la staffing agency que conecta empresas con talento remoto de Sudamérica. Agenda una llamada gratis. "
+>
+	<link rel="canonical" href="" slot="head" />
+	<link
+		rel="alternate"
+		hreflang="es-PR"
+		href=""
+		slot="head"
+	/>
+	<link
+		rel="alternate"
+		hreflang="es-ES"
+		href=""
+		slot="head"
+	/>
+	<link
+		rel="alternate"
+		hreflang="x-default"
+		href=""
+		slot="head"
+	/>
+	<script slot="head" type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@graph": [
+				{
+					"@type": "Organization",
+					"@id": "",
+					"name": "Oberstaff",
+					"url": "",
+					"description": "Oberstaff conecta empresas en Puerto Rico con talento remoto de Sudamérica mediante soluciones de staffing, reclutamiento, contratación internacional y soporte operativo.",
+					"contactPoint": [
+						{
+							"@type": "ContactPoint",
+							"telephone": "+17879864051",
+							"contactType": "sales",
+							"availableLanguage": ["Spanish", "English"],
+							"areaServed": {
+								"@type": "AdministrativeArea",
+								"name": "Puerto Rico"
+							}
+						}
+					],
+					"knowsAbout": [
+						"Staffing agency",
+						"Nearshore staffing",
+						"Reclutamiento remoto",
+						"Contratación internacional",
+						"Employer of Record",
+						"Outsourcing de personal",
+						"Staff Augmentation",
+						"Contractor of Record",
+						"Talento remoto en Sudamérica",
+						"Contratación de personal en Sudamérica"
+					]
+				},
+				{
+					"@type": "WebSite",
+					"@id": "",
+					"name": "Oberstaff",
+					"url": "",
+					"inLanguage": "es",
+					"publisher": {
+						"@id": ""
+					}
+				},
+				{
+					"@type": "WebPage",
+					"@id": "",
+					"url": "",
+					"name": "Staffing agency: Talento de Sudamérica para Puerto Rico",
+					"description": "Reduce costos sin perder calidad. Oberstaff es la staffing agency que conecta empresas en PR con talento remoto de Sudamérica. Agenda una llamada gratis.",
+					"inLanguage": "es-PR",
+					"isPartOf": {
+						"@id": ""
+					},
+					"about": {
+						"@id": ""
+					},
+					"publisher": {
+						"@id": ""
+					},
+					"mainEntity": {
+						"@id": ""
+					},
+					"audience": {
+						"@type": "BusinessAudience",
+						"audienceType": "Empresas, corporaciones y LLC en Puerto Rico que buscan contratar, externalizar o incorporar talento remoto en Sudamérica",
+						"geographicArea": {
+							"@type": "AdministrativeArea",
+							"name": "Puerto Rico"
+						}
+					},
+					"breadcrumb": {
+						"@id": ""
+					}
+				},
+				{
+					"@type": "Service",
+					"@id": "",
+					"name": "Staffing agency para contratar personal remoto en Sudamérica desde Puerto Rico",
+					"alternateName": [
+						"Nearshore staffing para Puerto Rico",
+						"Agencia de staffing para empresas en Puerto Rico",
+						"Reclutamiento remoto en Sudamérica"
+					],
+					"serviceType": "Staffing agency, reclutamiento de personal y contratación internacional",
+					"description": "Oberstaff ayuda a empresas en Puerto Rico a contratar talento remoto cualificado en Sudamérica, reducir costos operativos, centralizar pagos y estructurar modelos como Employer of Record, Contractor of Record, outsourcing de personal y staff augmentation.",
+					"provider": {
+						"@id": ""
+					},
+					"mainEntityOfPage": {
+						"@id": ""
+					},
+					"areaServed": {
+						"@type": "AdministrativeArea",
+						"name": "Puerto Rico"
+					},
+					"audience": {
+						"@type": "BusinessAudience",
+						"name": "Empresas, corporaciones y LLC en Puerto Rico"
+					},
+					"availableChannel": {
+						"@type": "ServiceChannel",
+						"serviceUrl": "",
+						"servicePhone": {
+							"@type": "ContactPoint",
+							"telephone": "+17879864051",
+							"contactType": "sales",
+							"areaServed": {
+								"@type": "AdministrativeArea",
+								"name": "Puerto Rico"
+							},
+							"availableLanguage": ["Spanish", "English"]
+						}
+					}
+				},
+				{
+					"@type": "ItemList",
+					"@id": "",
+					"name": "Servicios de staffing, reclutamiento y contratación internacional para empresas en Puerto Rico",
+					"description": "Modelos principales de Oberstaff para contratar, externalizar o incorporar talento remoto en Sudamérica desde Puerto Rico.",
+					"numberOfItems": 4,
+					"itemListElement": [
+						{
+							"@type": "ListItem",
+							"position": 1,
+							"item": {
+								"@type": "Service",
+								"@id": "",
+								"name": "Employer of Record (EOR)",
+								"url": "",
+								"description": "Servicio para contratar empleados en Sudamérica con contrato laboral formal, nómina, cumplimiento laboral y administración local, sin abrir una entidad propia en el extranjero."
+							}
+						},
+						{
+							"@type": "ListItem",
+							"position": 2,
+							"item": {
+								"@type": "Service",
+								"@id": "",
+								"name": "Outsourcing de personal",
+								"url": "",
+								"description": "Servicio para delegar la selección, contratación y gestión mensual de equipos comerciales, administrativos y de soporte BPO para empresas en Puerto Rico."
+							}
+						},
+						{
+							"@type": "ListItem",
+							"position": 3,
+							"item": {
+								"@type": "Service",
+								"@id": "",
+								"name": "Staff Augmentation",
+								"url": "",
+								"description": "Servicio para reforzar equipos tecnológicos con desarrolladores, QA, DevOps, analistas de datos y otros perfiles IT especializados integrados a la operación de la empresa."
+							}
+						},
+						{
+							"@type": "ListItem",
+							"position": 4,
+							"item": {
+								"@type": "Service",
+								"@id": "",
+								"name": "Contractor of Record (CoR)",
+								"url": "",
+								"description": "Servicio para formalizar la relación con contratistas independientes, centralizar pagos y reducir riesgos por clasificación errónea."
+							}
+						}
+					]
+				},
+				{
+					"@type": "ItemList",
+					"@id": "",
+					"name": "Perfiles de talento remoto que puedes contratar con Oberstaff",
+					"description": "Áreas de talento remoto disponibles para empresas en Puerto Rico que buscan profesionales de Sudamérica.",
+					"numberOfItems": 8,
+					"itemListElement": [
+						{
+							"@type": "ListItem",
+							"position": 1,
+							"name": "Estrategia comercial y ventas",
+							"description": "Ejecutivo de ventas, SDR y especialista en CRM."
+						},
+						{
+							"@type": "ListItem",
+							"position": 2,
+							"name": "Marketing digital",
+							"description": "Experto SEO, especialista en Google Ads, experto en Meta Ads y community manager."
+						},
+						{
+							"@type": "ListItem",
+							"position": 3,
+							"name": "Redacción y copywriting",
+							"description": "Copywriter para contenido comercial, persuasivo y orientado a conversión."
+						},
+						{
+							"@type": "ListItem",
+							"position": 4,
+							"name": "Diseño",
+							"description": "Diseñador gráfico y diseñador web."
+						},
+						{
+							"@type": "ListItem",
+							"position": 5,
+							"name": "Vídeo",
+							"description": "Editor de vídeo para contenidos digitales."
+						},
+						{
+							"@type": "ListItem",
+							"position": 6,
+							"name": "Soporte administrativo",
+							"description": "Asistente virtual para apoyar la operación diaria."
+						},
+						{
+							"@type": "ListItem",
+							"position": 7,
+							"name": "Contabilidad y finanzas",
+							"description": "Contable para apoyar la gestión financiera."
+						},
+						{
+							"@type": "ListItem",
+							"position": 8,
+							"name": "Tecnología y datos",
+							"description": "Desarrollador WordPress y desarrollador mobile."
+						}
+					]
+				},
+				{
+					"@type": "FAQPage",
+					"@id": "",
+					"inLanguage": "es-PR",
+					"isPartOf": {
+						"@id": ""
+					},
+					"mainEntity": [
+						{
+							"@type": "Question",
+							"name": "¿Qué es una staffing agency y cómo funciona Oberstaff?",
+							"acceptedAnswer": {
+								"@type": "Answer",
+								"text": "Una staffing agency o agencia de staffing es una empresa especializada en reclutamiento de personal y gestión de contratación internacional. Oberstaff actúa como socio estratégico: identifica, evalúa y gestiona la integración de profesionales en Sudamérica para que la empresa pueda concentrarse en hacer crecer su negocio en Puerto Rico."
+							}
+						},
+						{
+							"@type": "Question",
+							"name": "¿Es seguro contratar personal en Sudamérica desde Puerto Rico?",
+							"acceptedAnswer": {
+								"@type": "Answer",
+								"text": "Sí, siempre que el modelo esté bien estructurado. La contratación internacional requiere claridad sobre la relación de trabajo, la documentación, los pagos y el nivel de control que tendrá la empresa. Oberstaff orienta a cada empresa para escoger la estructura adecuada según el caso."
+							}
+						},
+						{
+							"@type": "Question",
+							"name": "¿Puedo contratar empleados o contratistas independientes?",
+							"acceptedAnswer": {
+								"@type": "Answer",
+								"text": "Sí. Dependiendo del perfil y del tipo de relación, puedes contratar empleados mediante Employer of Record o trabajar con contratistas mediante Contractor of Record. La recomendación depende del nivel de supervisión, la duración del proyecto y el riesgo de clasificación."
+							}
+						},
+						{
+							"@type": "Question",
+							"name": "¿En qué países de América del Sur operan?",
+							"acceptedAnswer": {
+								"@type": "Answer",
+								"text": "Oberstaff trabaja con ecosistemas de talento en Colombia, México, Argentina, Venezuela, Chile, Perú, Uruguay y otros mercados estratégicos de la región, según el perfil requerido."
+							}
+						},
+						{
+							"@type": "Question",
+							"name": "¿Cuánto tiempo toma incorporar talento remoto?",
+							"acceptedAnswer": {
+								"@type": "Answer",
+								"text": "El tiempo puede variar según el cargo, la especialización y el nivel de seniority. En la mayoría de los casos, el proceso avanza en menos de 30 días si el perfil, el presupuesto y el modelo de contratación están bien definidos desde el inicio."
+							}
+						}
+					]
+				},
+				{
+					"@type": "BreadcrumbList",
+					"@id": "",
+					"itemListElement": [
+						{
+							"@type": "ListItem",
+							"position": 1,
+							"name": "Inicio",
+							"item": ""
+						},
+						{
+							"@type": "ListItem",
+							"position": 2,
+							"name": "Puerto Rico",
+							"item": ""
+						}
+					]
+				}
+			]
+		}
+	</script>
+
+	<div class="welcome-section">
+		<div class="fade-in-section">
+			<Hero {...heroProps} />
+		</div>
+
+		<div class="fade-in-section">
+			<StatsSection {...statsProps} />
+		</div>
+
+		<div class="fade-in-section">
+			<ServicesSection
+				cardTitleTag="h3"
+				title="Servicios de staffing, reclutamiento y contratación internacional para empresas en Puerto Rico"
+				description="No todas las empresas necesitan la misma estructura. Por eso, <span class='brand-text'>Oberstaff<span class='brand-dot'>.</span></span>, tu staffing agency en Puerto Rico, te orienta hacia el modelo más eficiente según el tipo de perfil, la relación de trabajo y el nivel de control que buscas."
+				services={servicesList}
+				customClass="pr-services"
+			/>
+		</div>
+
+		<div class="fade-in-section">
+			<ProcessOberstaff
+				id="como-funciona"
+				useH3ForTitle={true}
+				title="¿Cómo contratar personal en otros países de Sudamérica desde Puerto Rico con <span class='brand-text'>Oberstaff<span class='brand-dot'>.</span></span>?"
+				items={processItems}
+				ctaDescription="Un equipo dedicado gestionará todo el proceso por ti."
+			/>
+		</div>
+
+		<div class="fade-in-section">
+			<ProfilesSection
+				variant="grid"
+				title="Perfiles de talento remoto que puedes contratar con una staffing agency especializada"
+				description="<span class='brand-text'>Oberstaff<span class='brand-dot'>.</span></span> conecta a empresas en Puerto Rico con profesionales de Sudamérica en áreas clave para crecer, optimizar costos y resolver vacantes difíciles de cubrir localmente."
+				profiles={profilesList}
+			/>
+		</div>
+
+		<div class="fade-in-section">
+			<EorCta
+				title="¿Quieres saber cuánto margen operativo puedes ganar al contratar talento remoto de Sudamérica?"
+				text="Te orientamos según tu corporación, el perfil que necesitas y el nivel de control que deseas mantener. En menos de 24 horas puedes tener claridad sobre si te conviene una solución de staffing agency, EOR, CoR, outsourcing de personal o nearshore staffing."
+				buttonText="Agenda una llamada gratuita →"
+				buttonHref="#contacto"
+			/>
+		</div>
+
+		<div class="fade-in-section">
+			<BenefitsSection
+				title="Beneficios de contratar personal en Sudamérica con <span class='brand-text'>Oberstaff<span class='brand-dot'>.</span></span>"
+				benefits={benefitsList}
+				infoText={benefitsInfoText}
+			/>
+		</div>
+
+
+
+
+
+		<div class="fade-in-section">
+			<TestimonialsSection
+				id="casos-de-exito"
+				title="Empresas que ya optimizan sus costos operativos con talento de Sudamérica"
+				testimonials={[
+					{
+						clientName: "Shadai Iborra",
+						clientMeta: "CEO · @amediastory",
+						clientImage: "/sha.webp",
+						quote: "\"Con <span style='font-weight: 700; color: #1B1B1B;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span> pude dar trabajo a dos personas a tiempo completo, ahorrando costes de reclutamiento, espacios de oficina y salario que tendría al hacerlo en España. Lo mejor de todo es que todo está incluido en una misma factura. Con <span style='font-weight: 700; color: #1B1B1B;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span> encontré la solución perfecta para mis necesidades de contratación remota y optimización de costes.\"",
+						videoId: "_CxlPfluS7M",
+						altText: "Shadai Iborra, cliente de Oberstaff",
+					},
+					{
+						clientName: "Fernando Calderón",
+						clientMeta: "CEO · bybeautypro.com",
+						clientImage: "/fernando.webp",
+						quote: "\"Estaba en busca de talento remoto especializado para mi empresa y después de varias búsquedas sin éxito, encontré a <span style='font-weight: 700; color: #1B1B1B;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span> en Instagram. Desde nuestra primera llamada, su profesionalismo y calidad de trabajo me dejaron impresionado. Ahora, gracias a su excelente servicio, he expandido mi contrato con ellos para incluir más personal.\"",
+						videoId: "24KxCAFGrDs",
+						altText: "Fernando Calderón, cliente de Oberstaff",
+					},
+					{
+						clientName: "Kate McCaferty",
+						clientMeta: "CEO · KM Real Estate (EE. UU.)",
+						clientImage: "/Kate.webp",
+						quote: "\"Estaba en busca de talento remoto especializado para mi empresa y después de varias búsquedas sin éxito, encontré a <span style='font-weight: 700; color: #1B1B1B;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span> en Instagram. Desde nuestra primera llamada, su profesionalismo y calidad de trabajo me dejaron impresionado. Ahora, gracias a su excelente servicio, he expandido mi contrato con ellos para incluir más personal.\"",
+						videoId: "9RLgpEF-GVA",
+						altText: "Kate McCaferty, cliente de Oberstaff",
+					},
+				]}
+			/>
+		</div>
+
+		<div class="fade-in-section">
+			<FAQSection
+				title="Preguntas frecuentes sobre staffing agency y contratación internacional"
+				ctaText="¿Aún tienes dudas sobre cómo operar desde Puerto Rico?"
+				ctaButtonText="Agenda una llamada gratuita"
+				faqs={faqsList}
+			/>
+		</div>
+
+		<div class="fade-in-section">
+			<ContactFormSection
+				title="¿Listo para escalar tu empresa en Puerto Rico con una staffing agency especializada en Sudamérica?"
+				subtitle="Cuéntanos qué perfil necesitas, qué objetivo buscas cubrir y qué nivel de control quieres tener sobre la operación. Con esa información te orientaremos hacia la estructura más eficiente para contratar personal y construir un equipo de nearshore staffing en América del Sur."
+				directLabel="Atención directa en Puerto Rico:"
+				buttonText="Enviar solicitud"
+				webhookUrl=""
+				formName="Home Puerto Rico"
+				pais="Puerto Rico"
+				formLabels={{
+					name: "Nombre *",
+					lastName: "Apellido *",
+					company: "Nombre de la corporación / LLC *",
+					email: "Email corporativo *",
+					phone: "Teléfono *",
+					comments: "Comentarios sobre tu requerimiento de talento *",
+				}}
+				formPlaceholders={{
+					name: "Tu nombre",
+					lastName: "Tu apellido",
+					company: "Ej. Mi Empresa",
+					email: "nombre@tuempresa.com",
+					phone: "+1 787 XXX XXXX",
+					comments: "Comentarios",
+				}}
+			/>
+		</div>
+
+    
+		<div class="fade-in-section">
+			<PressSection
+				title="Patrocinadores oficiales"
+				mentions={mentionsList}
+				trustBadgeText="✅ Solución integral para contratar personal en Sudamérica con soporte en reclutamiento, documentación, operación mensual y cumplimiento del modelo de contratación internacional."
+			/>
+		</div>
+	</div>
+</DashboardLayoutUs>
+
+<style>
+	.welcome-section {
+		/* Add any page-specific container styles here if needed */
+	}
+</style>
+
+<style is:global>
+	.welcome-section .benefits-info-box {
+		max-width: 900px;
+	}
+
+	.welcome-section .benefits-info-box strong {
+		color: #5a5a5a;
+		font-weight: 600;
+	}
+
+	.welcome-section .benefits-info-box p {
+		font-weight: 400;
+		color: #777777;
+	}
+
+	.welcome-section .benefits-info-box .brand-text {
+		font-weight: 800;
+		color: #5a5a5a;
+	}
+
+	.welcome-section .benefits-info-box .brand-dot {
+		color: #ff62c4;
+	}
+
+	.welcome-section .eor-contact-form {
+		background-color: #ffffff;
+		border-top: 1px solid #e6e6e6;
+	}
+
+	.welcome-section .press-trust-badge .badge-icon {
+		display: none !important;
+	}
+
+	.welcome-section .one-planet .press-logo {
+		max-height: 50px;
+	}
+
+	.welcome-section .camara-comercio .press-logo {
+		max-height: 80px;
+	}
+
+	.welcome-section .press-mentions {
+		background-color: #fafafc;
+	}
+
+	@media (min-width: 1025px) {
+		.welcome-section .variant-grid .profiles-grid {
+			grid-template-columns: repeat(4, 1fr);
+		}
+	}
+
+	#casos-de-exito .testimonials-grid {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 30px;
+		max-width: 1200px;
+	}
+
+	#casos-de-exito .testimonial-card {
+		flex: 1 1 350px;
+		max-width: 380px;
+	}
+</style>

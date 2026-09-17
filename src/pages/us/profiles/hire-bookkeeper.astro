@@ -1,0 +1,1133 @@
+---
+import DashboardProfilesUs from "../../../layouts/DashboardProfilesUs.astro";
+import LeadHeroSection from "../../../components/community-manager/LeadHeroSection.astro";
+import ComparisonPerfiles from "../../../components/comparison-perfiles/ComparisonPerfiles.astro";
+import PricingCardPerfil from "../../../components/pricing-perfil/PricingCardPerfil.astro";
+import BeneficiosPerfilDisenador from "../../../components/beneficios-perfil/BeneficiosPerfilDisenador.astro";
+import PressSection from "../../../components/press/PressSection.astro";
+import ConversionPerfilDisenador from "../../../components/conversion-perfil/ConversionPerfilDisenador.astro";
+import RolesPerfil from "../../../components/roles-del-perfil/RolesPerfil.astro";
+import QueEsServicioSection from "../../../components/QueEsServicio/QueEsServicioSection.astro";
+import ServicesSection from "../../../components/services-oberstaff/ServicesSection.astro";
+import EorStepsSection from "../../../components/eor-steps-servicios/EorStepsSection.astro";
+import EorCta from "../../../components/eor-cta-servicios/EorCta.astro";
+import CasosExitoSection from "../../../components/casos-exito-servicios/CasosExitoSection.astro";
+import FAQSection from "../../../components/faq-servicios/FAQSection-community.astro";
+import GuiaContratacion from "../../../components/guia-contratacion-perfiles/GuiaContratacion.astro";
+
+const ogImage = "Contratar-Contable.webp";
+
+const faqsList = [
+    {
+        question:
+            "¿Cómo elimina <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong> el riesgo de \"falso autónomo\"?",
+        answers: [
+            "Contratar directamente a un freelancer en LATAM que trabaje a jornada completa para ti expone a la empresa española a sanciones por falsa autonomía. Bajo nuestro modelo, nosotros contratamos al contable remoto legalmente en su país de origen. Tu empresa está jurídicamente aislada y solo paga una factura por servicios B2B, eliminando el riesgo de auditorías de la Seguridad Social.",
+        ],
+    },
+    {
+        question:
+            "¿Puede un contable de LATAM trabajar con el Plan General Contable (PGC) español?",
+        answers: [
+            "Sí, sin problema. La formación contable en Latinoamérica comparte los mismos fundamentos internacionales que el Plan General Contable español — principios de devengo, uniformidad, prudencia y la estructura de partida doble son universales. La adaptación a la terminología y los modelos fiscales españoles (IVA, IRPF, Sociedades) es rápida precisamente porque la base técnica ya está sólida.",
+        ],
+    },
+    {
+        question: "¿Quién gestiona las bajas o incidencias del profesional? ",
+        answers: [
+            "Nuestra infraestructura asume el 100 % de la carga administrativa. En caso de que el perfil deba ausentarse o no cumpla con los SLAs financieros exigidos por tu gerencia, ejecutamos un protocolo de reemplazo ágil sin costes de intermediación adicionales, garantizando que tus cierres contables no sufran interrupciones.",
+        ],
+    },
+    {
+        question:
+            "¿Qué confidencialidad existe sobre la facturación de mi empresa? ",
+        answers: [
+            "Total y auditable. Antes del inicio de la operativa, el contable firma acuerdos de confidencialidad (NDA) vinculantes. Además, toda la operativa se realiza bajo el entorno de licencias de tu propia empresa (tu dominio de email, tus accesos cloud), lo que te permite rastrear la actividad y revocar accesos en segundos si fuera necesario.",
+        ],
+    },
+    {
+        question: "¿De qué países de Latinoamérica son los contables?",
+        answers: [
+            "Reclutamos talento financiero de primer nivel operando principalmente desde Colombia, Argentina, México, Venezuela, Chile y Perú. Esto garantiza una sincronía perfecta con la zona horaria española y el acceso a mercados con excelente formación universitaria en contabilidad y finanzas.",
+        ],
+    },
+];
+---
+
+<DashboardProfilesUs
+    ogImage={ogImage}
+    title="Contratar contable remoto para tu empresa Española"
+    description="Reduce costes y suma un perfil exclusivo a jornada completa al contratar contable de Latinoamérica sin asumir cargas laborales."
+    footerTitle="Roles relacionados"
+    footerLinks={[
+        { text: "🗂️ Contratar asistente virtual", href: "" },
+        { text: "📱 Community Manager", href: "" },
+        { text: "🎨 Diseñador gráfico", href: "" },
+    ]}
+>
+    <link rel="canonical" href="" slot="head" />
+    <link rel="alternate" hreflang="es-ES" href="" slot="head" />
+    <link rel="alternate" hreflang="es-PR" href="" slot="head" />
+    <link rel="alternate" hreflang="x-default" href="" slot="head" />
+    <script slot="head" type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "WebPage",
+                    "@id": "",
+                    "url": "",
+                    "name": "Contratar contable remoto para tu empresa española | Oberstaff",
+                    "description": "Reduce costes y suma un perfil exclusivo a jornada completa al contratar contable de Latinoamérica sin asumir cargas laborales.",
+                    "inLanguage": "es-ES",
+                    "isPartOf": {
+                        "@id": ""
+                    },
+                    "publisher": {
+                        "@id": ""
+                    },
+                    "about": {
+                        "@id": ""
+                    },
+                    "mainEntity": {
+                        "@id": ""
+                    },
+                    "breadcrumb": {
+                        "@id": ""
+                    }
+                },
+                {
+                    "@type": "Service",
+                    "@id": "",
+                    "name": "Contratar contable Remoto en LATAM para empresas españolas",
+                    "alternateName": [
+                        "Contratar contable",
+                        "Contable remoto",
+                        "Contable remoto LATAM",
+                        "Auxiliar contable remoto",
+                        "Asistente contable remoto",
+                        "Contable virtual",
+                        "Bookkeeper remoto",
+                        "Asesor contable remoto"
+                    ],
+                    "serviceType": "Contratación de contable remoto",
+                    "category": "Servicios de contratación de talento financiero y contable remoto",
+                    "url": "",
+                    "provider": {
+                        "@id": ""
+                    },
+                    "description": "Servicio para empresas españolas que necesitan contratar un contable remoto de LATAM para contabilidad general, conciliación bancaria, cuentas por pagar y cobrar, reporting financiero, soporte fiscal, gestión de ERP y control diario del flujo de caja, con talento evaluado y gestión legal cubierta por Oberstaff.",
+                    "slogan": "Toma el control de tu flujo de caja y blinda el departamento financiero de tu empresa.",
+                    "audience": {
+                        "@type": "BusinessAudience",
+                        "audienceType": "Empresas españolas que necesitan contratar un contable remoto en LATAM para control financiero, conciliación bancaria, cuentas por pagar, cuentas por cobrar, reporting y gestión contable diaria",
+                        "geographicArea": {
+                            "@type": "Country",
+                            "name": "España"
+                        }
+                    },
+                    "serviceAudience": {
+                        "@type": "BusinessAudience",
+                        "audienceType": "Pymes, startups, ecommerce, equipos financieros y empresas españolas que buscan contables remotos dedicados, evaluados en herramientas contables, con horario compatible con España y gestión laboral resuelta",
+                        "geographicArea": {
+                            "@type": "Country",
+                            "name": "España"
+                        }
+                    },
+                    "areaServed": [
+                        {
+                            "@type": "Country",
+                            "name": "España"
+                        },
+                        {
+                            "@type": "Country",
+                            "name": "Colombia"
+                        },
+                        {
+                            "@type": "Country",
+                            "name": "Argentina"
+                        },
+                        {
+                            "@type": "Country",
+                            "name": "México"
+                        },
+                        {
+                            "@type": "Country",
+                            "name": "Venezuela"
+                        },
+                        {
+                            "@type": "Country",
+                            "name": "Chile"
+                        },
+                        {
+                            "@type": "Country",
+                            "name": "Perú"
+                        }
+                    ],
+                    "offers": {
+                        "@type": "Offer",
+                        "@id": "",
+                        "name": "Contable Remoto Dedicado",
+                        "url": "",
+                        "price": "950",
+                        "priceCurrency": "EUR",
+                        "availability": "https://schema.org/InStock",
+                        "eligibleCustomerType": "http://purl.org/goodrelations/v1#Business",
+                        "eligibleRegion": {
+                            "@type": "Country",
+                            "name": "España"
+                        },
+                        "description": "Contratación de contable remoto desde 950€ al mes, dirigido a empresas españolas que necesitan contabilidad general, conciliación bancaria, cuentas por pagar y cobrar, reporting financiero, integración en ERP y una única factura mensual en euros.",
+                        "priceSpecification": {
+                            "@type": "UnitPriceSpecification",
+                            "price": "950",
+                            "priceCurrency": "EUR",
+                            "unitText": "profesional por mes"
+                        }
+                    },
+                    "hasOfferCatalog": {
+                        "@type": "OfferCatalog",
+                        "@id": "",
+                        "name": "Qué puede hacer un contable remoto por tu empresa",
+                        "itemListElement": [
+                            {
+                                "@type": "Offer",
+                                "name": "Contabilidad general",
+                                "itemOffered": {
+                                    "@type": "Service",
+                                    "name": "Contabilidad general",
+                                    "description": "Registro de operaciones, asientos contables, cuentas anuales, adaptación al Plan General Contable, libros oficiales y balance de situación."
+                                }
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Cuentas por pagar y cuentas por cobrar",
+                                "itemOffered": {
+                                    "@type": "Service",
+                                    "name": "Cuentas por pagar y cuentas por cobrar",
+                                    "description": "Gestión de facturación, seguimiento de cobros, pagos, vencimientos y apoyo al control del flujo operativo."
+                                }
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Conciliación bancaria",
+                                "itemOffered": {
+                                    "@type": "Service",
+                                    "name": "Conciliación bancaria",
+                                    "description": "Cuadre de extractos, control de tesorería, gestión de pagos a proveedores y revisión de saldos."
+                                }
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Reporting financiero",
+                                "itemOffered": {
+                                    "@type": "Service",
+                                    "name": "Reporting financiero",
+                                    "description": "Informes de situación financiera, análisis de márgenes, cash flow y cuadros de mando contables."
+                                }
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Soporte a fiscalidad local",
+                                "itemOffered": {
+                                    "@type": "Service",
+                                    "name": "Soporte a fiscalidad local",
+                                    "description": "Organización del libro mayor y documentación contable para que la asesoría fiscal en España pueda liquidar impuestos con información limpia."
+                                }
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Gestión de ERP y software contable",
+                                "itemOffered": {
+                                    "@type": "Service",
+                                    "name": "Gestión de ERP y software contable",
+                                    "description": "Actualización y mantenimiento de la infraestructura financiera en herramientas como Holded, Odoo, A3, Xero, QuickBooks, Sage o SAP Business One."
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "@type": "ItemList",
+                    "@id": "",
+                    "name": "Ventajas de contratar contable remoto con Oberstaff",
+                    "description": "Ventajas operativas y financieras para empresas españolas que contratan contables remotos en LATAM.",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Perfiles auditados en contabilidad y ERPs",
+                            "description": "Talento evaluado en normativas contables, dominio avanzado de Excel, herramientas cloud y software financiero."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": "Facturación B2B mensual deducible",
+                            "description": "Factura internacional mensual por servicios profesionales, sin IRPF local ni Seguros Sociales asociados a contratación local."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 3,
+                            "name": "Escalabilidad financiera sin permanencia",
+                            "description": "Permite escalar el equipo de finanzas sin contratos rígidos, permanencias largas ni riesgos de indemnización."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 4,
+                            "name": "Control diario del cash flow",
+                            "description": "El contable remoto puede auditar movimientos bancarios, facturación y balances de forma recurrente para mejorar la toma de decisiones."
+                        }
+                    ]
+                },
+                {
+                    "@type": "ItemList",
+                    "@id": "",
+                    "name": "Proceso para contratar contable remoto",
+                    "description": "Proceso de Oberstaff para conectar empresas españolas con contables remotos de LATAM.",
+                    "numberOfItems": 4,
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Definición de necesidades contables",
+                            "description": "La empresa explica volumen de operaciones, software contable, existencia de asesor fiscal externo, modelos fiscales y seniority requerido."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": "Headhunting de talento financiero",
+                            "description": "Oberstaff presenta una terna de perfiles contables especializados y preevaluados en herramientas cloud, rigor contable y encaje operativo."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 3,
+                            "name": "Entrevista y elección del candidato",
+                            "description": "La empresa entrevista directamente a candidatos para validar criterio contable, metodología de trabajo y dominio del software utilizado."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 4,
+                            "name": "Arranque operativo blindado",
+                            "description": "Transferencia segura de accesos al ERP corporativo e integración del talento en cuentas por pagar, cuentas por cobrar y reporting."
+                        }
+                    ]
+                },
+                {
+                    "@type": "ItemList",
+                    "@id": "",
+                    "name": "Tipos de contables remotos disponibles",
+                    "description": "Especialidades de contabilidad remota que empresas españolas pueden contratar con Oberstaff.",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Auxiliar contable remoto",
+                            "description": "Soporte operativo diario, registro contable, control documental, asientos, facturas, conciliaciones básicas y archivo contable bajo supervisión."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": "Asistente contable remoto",
+                            "description": "Apoyo en cuentas por cobrar y por pagar, cuadre de extractos, seguimiento de vencimientos y control de flujo de caja."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 3,
+                            "name": "Asesor contable especializado",
+                            "description": "Perfil de mayor seniority orientado a reporting financiero, análisis de márgenes, cierres mensuales, presupuestos y cuadros de mando."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 4,
+                            "name": "Contable generalista de empresa",
+                            "description": "Gestión del ciclo contable completo, registro de operaciones, cuentas anuales, modelos fiscales, libros oficiales y apoyo al cierre."
+                        }
+                    ]
+                },
+                {
+                    "@type": "ItemList",
+                    "@id": "",
+                    "name": "Comparativa para contratar contable remoto",
+                    "description": "Comparación entre contratar contable remoto con Oberstaff, contratar un contable local en España o trabajar con una asesoría tradicional.",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Contable dedicado Oberstaff",
+                            "description": "Desde 950€ al mes, contabilidad diaria, conciliación, reporting en tiempo real, integración en ERP y contrato B2B internacional."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": "Contable local en España",
+                            "description": "Coste orientativo entre 2.100€ y 3.500€ al mes más Seguridad Social, con mayor rigidez laboral y costes fijos."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 3,
+                            "name": "Asesoría o gestoría tradicional",
+                            "description": "Coste variable y foco normalmente trimestral en liquidación de impuestos, con menor visibilidad diaria del cash flow."
+                        }
+                    ]
+                },
+                {
+                    "@type": "ItemList",
+                    "@id": "",
+                    "name": "Beneficios de contratar contable con Oberstaff",
+                    "description": "Beneficios para empresas españolas que incorporan contables remotos de LATAM con Oberstaff.",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Eficiencia de capital",
+                            "description": "Permite escalar el equipo de control financiero sin asumir Seguros Sociales, IRPF ni rigidez propia del marco laboral español."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": "Integridad de datos garantizada",
+                            "description": "El contable se integra directamente en el software financiero de la empresa y trabaja con datos contables actualizados."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 3,
+                            "name": "Control de la estrategia financiera",
+                            "description": "El profesional gestiona el ciclo contable y reporta la situación financiera sin que la empresa asuma riesgo laboral directo."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 4,
+                            "name": "Factura mensual en euros",
+                            "description": "La empresa recibe una sola factura mensual por el servicio del contable remoto, en idioma y zona horaria compatibles."
+                        }
+                    ]
+                },
+                {
+                    "@type": "ItemList",
+                    "@id": "",
+                    "name": "Claves para contratar un contable remoto",
+                    "description": "Guía para empresas españolas que quieren contratar un contable remoto con criterio financiero, dominio de ERP y soporte a la operación diaria.",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Por qué las empresas españolas contratan contables remotos en LATAM",
+                            "description": "Los profesionales financieros de LATAM tienen formación contable sólida, experiencia con NIIF y capacidad de adaptación a estándares españoles."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": "Qué definir antes de contratar un contador remoto",
+                            "description": "Clarificar si se necesita contabilidad general, apoyo fiscal, control financiero, auxiliar contable o perfil de mayor seniority."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 3,
+                            "name": "Contable por horas o jornada completa",
+                            "description": "Un perfil a jornada completa y exclusivo conviene cuando se necesita registro diario, cierres mensuales y conciliación continua."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 4,
+                            "name": "Complemento de la asesoría fiscal en España",
+                            "description": "El contable remoto prepara la información diaria para que la asesoría local pueda presentar impuestos con documentation ordenada."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 5,
+                            "name": "Fluidez técnica en ERPs",
+                            "description": "Validación de experiencia en herramientas como Holded, A3, QuickBooks, Xero, Odoo, Sage o SAP."
+                        }
+                    ]
+                },
+                {
+                    "@type": "ItemList",
+                    "@id": "",
+                    "name": "Roles relacionados con contable remoto",
+                    "description": "Otros perfiles relacionados que empresas españolas pueden contratar mediante Oberstaff.",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Contratar asistente virtual",
+                            "url": ""
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": "Community Manager",
+                            "url": ""
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 3,
+                            "name": "Diseñador gráfico",
+                            "url": ""
+                        }
+                    ]
+                },
+                {
+                    "@type": "FAQPage",
+                    "@id": "",
+                    "mainEntity": [
+                        {
+                            "@type": "Question",
+                            "name": "¿Cómo elimina Oberstaff el riesgo de falso autónomo?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Oberstaff contrata al contable remoto legalmente en su país de origen. La empresa española paga una factura por servicios B2B, reduciendo el riesgo asociado a contratar directamente a un freelancer que trabaja a jornada completa."
+                            }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "¿Puede un contable de LATAM trabajar con el Plan General Contable español?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Sí. La formación contable en Latinoamérica comparte fundamentos internacionales con el Plan General Contable español, como devengo, prudencia, uniformidad y partida doble. La adaptación a modelos fiscales españoles puede hacerse de forma ágil."
+                            }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "¿Quién gestiona las bajas o incidencias del profesional?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Oberstaff asume la carga administrativa y puede activar protocolos de reemplazo si el perfil debe ausentarse o no cumple los SLAs financieros exigidos."
+                            }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "¿Qué confidencialidad existe sobre la facturación de mi empresa?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Antes de iniciar la operativa, el contable firma acuerdos de confidencialidad. Además, trabaja dentro del entorno de licencias y accesos de la empresa, lo que permite rastrear actividad y revocar permisos."
+                            }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "¿De qué países de Latinoamérica son los contables?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Oberstaff recluta talento financiero principalmente desde Colombia, Argentina, México, Venezuela, Chile y Perú, mercados con formación universitaria en contabilidad y finanzas y zonas horarias compatibles con España."
+                            }
+                        }
+                    ]
+                },
+                {
+                    "@type": "BreadcrumbList",
+                    "@id": "",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Inicio",
+                            "item": ""
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": "Contratar contable",
+                            "item": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    </script>
+
+    <div class="service-detail-container" id="inicio">
+        <LeadHeroSection
+            webhookUrl=""
+            formName="Perfil Contable España"
+            pais="España"
+            topLabel="Finanzas y administración"
+            topLabelInsideH1={false}
+            title="Contratar contable remoto: toma el control de tu flujo de caja y blinda el departamento financiero de tu empresa"
+            cardTitle="Encuentra a tu contable hoy"
+            cardSubtitle="Accede a perfiles pre-evaluados listos para tu empresa."
+            buttonText="👉 Ver perfiles pre-evaluados y solicitar propuesta"
+            buttonIcon=""
+            buttonSubtext="↳ Tardarás menos de 1 minuto · sin compromiso"
+            footerLinkText="Ver cómo funciona el modelo EOR →"
+            footerLinkHref=""
+            badges={[
+                {
+                    text: "Talento dedicado 100 % a la salud financiera de tu negocio",
+                    icon: "💼",
+                },
+                {
+                    text: "Perfiles validados en Holded, A3, SAP Business One y QuickBooks",
+                    icon: "📋",
+                },
+                {
+                    text: "Integración rápida en tu software contable",
+                    icon: "⚡",
+                },
+                {
+                    text: "Conciliación diaria en tu ERP, junto a tu equipo en España",
+                    icon: "🕒",
+                },
+            ]}
+        >
+            <Fragment slot="description">
+                Al integrar un contable remoto dedicado desde LATAM,
+                internalizas el control de tus finanzas: delegas la conciliación
+                bancaria diaria, la gestión de cuentas por pagar/cobrar (AP/AR)
+                y el mantenimiento de tu ERP financiero.
+            </Fragment>
+        </LeadHeroSection>
+
+        <div class="fade-in-section">
+            <QueEsServicioSection
+                title="Del caos de las facturas al control del cash flow: el impacto de contratar a un contable in-house"
+                highlightWord="el impacto de contratar a un contable in-house"
+                description='Trabajar "a ciegas" es el mayor riesgo para la liquidez de una empresa. Mantener un departamento financiero en nómina local dispara tus costes fijos, pero externalizar el día a día a una asesoría tradicional genera un desfase crítico en tus datos operativos.'
+                imageSrc="/img1-contable.webp"
+                imageAlt="Contable remoto revisando conciliación bancaria"
+                badgeText="Control financiero"
+                quoteText="Al apostar por contratar contable remoto dedicado, integras a un analista que audita tus movimientos bancarios y facturación diariamente. Esto te permite tomar decisiones directivas basadas en balances reales actualizados, reduciendo drásticamente tus costes estructurales sin asumir riesgos de falso autónomo."
+                checklistTitle="Checklist de ventajas:"
+                checklistItems={[
+                    "Perfiles auditados en normativas contables y dominio avanzado de Excel/ERPs.",
+                    "Facturación B2B mensual 100% deducible, sin IRPF local ni Seguros Sociales.",
+                    "Escala tu equipo de finanzas sin contratos de permanencia ni riesgos de indemnización.",
+                ]}
+                ctaText="Solicitar propuesta personalizada  →"
+                ctaHref="#formulario-perfil"
+                diffIcon=""
+                diffTitle=""
+                diffDescription=""
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <ServicesSection
+                title="De la conciliación bancaria al reporte de márgenes: <strong>funciones técnicas </strong>de tu contable remoto"
+                cardTitleTag="h3"
+                description="Nuestros profesionales dominan las disciplinas que necesita el contable de una empresa para operar con seguridad y eficiencia. Desde el registro diario de operaciones hasta la preparación de cuentas anuales y el apoyo fiscal con los modelos españoles."
+                customClass="employer-use-cases"
+                services={[
+                    {
+                        icon: "📊",
+                        title: "Contabilidad general",
+                        description:
+                            "Registro de operaciones, asientos, cuentas anuales, adaptación al PGC, libros oficiales y balance de situación.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-green",
+                    },
+                    {
+                        icon: "📑",
+                        title: "Cuentas por pagar y cuentas por cobrar",
+                        description:
+                            "Facturación, seguimiento de cobros, pagos, vencimientos y apoyo al control del flujo operativo.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-pink",
+                    },
+                    {
+                        icon: "🏦",
+                        title: "Conciliación bancaria",
+                        description:
+                            "Cuadre de extractos, control riguroso de tesorería, gestión de pagos a proveedores y saldos.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-lime",
+                    },
+                    {
+                        icon: "💹",
+                        title: "Reporting financiero",
+                        description:
+                            "Informes de situación financiera, análisis de márgenes, cash flow y cuadros de mando contables.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-purple",
+                    },
+                    {
+                        icon: "🏦 ",
+                        title: "Soporte a fiscalidad local",
+                        description:
+                            "Organización del libro mayor y documentación limpia para que tu asesoría en España solo tenga que liquidar impuestos.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-green",
+                    },
+                    {
+                        icon: "📋",
+                        title: "Gestión de ERP y software contable",
+                        description:
+                            "Actualización y mantenimiento de la infraestructura financiera en Holded, Odoo, A3, Xero o QuickBooks.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-lime",
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <EorStepsSection
+                title="El roadmap de integración financiera:<strong> cómo delegar tus finanzas de forma segura</strong>"
+                subtitle="Entregar el control de la información al contratar contable exige un proceso metódico. Implementamos un protocolo de onboarding diseñado para garantizar la integridad de tus datos financieros desde el primer minuto."
+                steps={[
+                    {
+                        title: "¿Qué requiere la contabilidad de tu negocio?",
+                        lineColorClass: "line-black",
+                        description:
+                            "Explícanos en una llamada gratuita el volumen de operaciones, el software contable que usas, si tienes asesor fiscal externo, los modelos fiscales que gestionar y el nivel de seniority requerido.",
+                        badge: "⚡ 15 min · Sin compromiso",
+                    },
+                    {
+                        title: "Headhunting de talento financiero",
+                        lineColorClass: "line-pink",
+                        description:
+                            "Te ahorramos decenas de horas de entrevistas sin valor. Recibes una terna de asesores contables especializados pre-evaluados en herramientas cloud y rigor contable, listos para integrarse en tu estructura.",
+                        badgeIcon: "📋",
+                        badge: "Perfiles contables evaluados",
+                    },
+                    {
+                        title: "Entrevista y eliges tú",
+                        lineColorClass: "line-orange",
+                        description:
+                            "Entrevistas directas con los candidatos para validar su criterio contable, revisar su metodología de trabajo y el dominio del software que usas. Decides con quién quieres trabajar sin intermediarios.",
+                        badge: "Tú decides",
+                    },
+                    {
+                        title: "Arranque operativo blindado",
+                        lineColorClass: "line-blue",
+                        description:
+                            "Transferencia segura de accesos al ERP corporativo. El talento asume la gestión directa de las cuentas AP/AR, manteniendo tú el control total.",
+                        badge: "Integración en días",
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <EorCta
+                title="¿Ya sabes qué perfil financiero necesitas?"
+                titleTag="h2"
+                text="Si tu equipo directivo tiene que esperar al cierre de la gestoría para saber si un proyecto fue rentable, estás perdiendo competitividad. Internaliza tu operativa contable. Define el perfil financiero que necesitas y recibe una propuesta adaptada a tu volumen de transacciones en menos de 24 horas."
+                buttonText="👉 Quiero solicitar propuesta personalizada"
+                buttonHref="#formulario-perfil"
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <RolesPerfil
+                title="<strong>Arquitectura de perfiles:</strong> el nivel técnico exacto para tu estructura financiera"
+                subtitle="No todas las empresas necesitan un director financiero, ni todas las operativas se resuelven con un auxiliar básico. Filtramos y auditamos talento en LATAM basándonos en el nivel de complejidad de tus transacciones y tu stack tecnológico, ofreciendo niveles de integración."
+                layout="modern"
+                footerText=""
+                footerLinkText=""
+                footerLinkHref="#formulario-perfil"
+                roles={[
+                    {
+                        title: "📋 Auxiliar contable remoto",
+                        description: "",
+                        icon: "",
+                        iconColor: "#FF66CC",
+                        borderColorClass: "border-pink",
+                        subtitle:
+                            "Soporte operativo diario, registro contable y control documental para pymes. Gestiona asientos, facturas, conciliaciones básicas y archivo de documentación contable bajo tu supervisión directa.",
+                        techStack: ["Holded", "Factusol", "Asientos"],
+                        buttonText: "Solicitar más información →",
+                        buttonHref: "#formulario-perfil",
+                    },
+                    {
+                        title: "🧾  Asistente contable remoto",
+                        description: "",
+                        icon: "",
+                        iconColor: "#3b76f6",
+                        borderColorClass: "border-blue",
+                        subtitle:
+                            "Apoyo transversal, conciliaciones y seguimiento de procesos contables. Da soporte en cuentas por cobrar y por pagar, cuadre de extractos, seguimiento de vencimientos y control de flujo de caja.",
+                        techStack: ["Sage 50", "Conciliaciones", "A3"],
+                        buttonText: "Solicitar más información →",
+                        buttonHref: "#formulario-perfil",
+                    },
+                    {
+                        title: "💹 Asesores contables especializados",
+                        description: "",
+                        icon: "",
+                        iconColor: "#66FF99",
+                        borderColorClass: "border-green",
+                        subtitle:
+                            "Profesionales especializados en control financiero, presupuestos y herramientas como Excel y Power BI. Perfil de mayor seniority. Orientado a reporting financiero, análisis de márgenes, cierres mensuales y cuadros de mando.",
+                        techStack: ["Excel avanzado", "Power BI", "Reporting"],
+                        buttonText: "Solicitar más información →",
+                        buttonHref: "#formulario-perfil",
+                    },
+                    {
+                        title: "🌐 Contable de empresa (generalista) ",
+                        description: "",
+                        icon: "",
+                        iconColor: "#CCFF66",
+                        borderColorClass: "border-yellow",
+                        subtitle:
+                            "Mayor autonomía para cierres, revisión y reporting. Gestiona el ciclo contable completo: desde el registro de operaciones hasta la preparación de cuentas anuales, apoyo en los modelos fiscales 303, 200 y 390, y libros oficiales.",
+                        techStack: ["Modelos fiscales", "Xero", "QuickBooks"],
+                        buttonText: "Solicitar más información → ",
+                        buttonHref: "#formulario-perfil",
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <ComparisonPerfiles
+                title="<span style='color: #6663FD; font-weight: 800;'>Tabla comparativa: </span>contratar contable remoto dedicado vs. <br>asesoría tradicional"
+                subtitle="Descubre cómo el modelo de talento remoto dedicado te proporciona exclusividad operativa, visibilidad diaria de tus cuentas por pagar/cobrar (AP/AR) y una estructura de costes predecible."
+                footerNote="*Precios orientativos: el coste final varía según especialidad, experiencia y país del profesional contable."
+                oberstaffLabel="<span style='font-weight:800; color:#1B1B1B;'>Contable remoto</span> <span style='color:#FF66CC; font-weight:700;'>(Oberstaff)</span>"
+                criterioLabel="Factor financiero"
+                competitors={[
+                    "Contable local en España",
+                    "Asesoría/Gestoría tradicional",
+                ]}
+                rows={[
+                    {
+                        label: "Coste mensual",
+                        oberstaffValue: "<strong>Desde 950 €/mes</strong>",
+                        competitorValues: ["2.100–3.500 € + SS", "Variable"],
+                    },
+                    {
+                        label: "Foco operativo",
+                        oberstaffValue:
+                            "<span class='icon-check'>✓</span> Día a día (Bookkeeping). Registra, concilia y reporta en tiempo real",
+                        competitorValues: [
+                            "<span class='icon-check'>✓</span> Día a día. Alto coste de estructura",
+                            "Normalmente trimestral. Enfocada en liquidar impuestos",
+                        ],
+                    },
+                    {
+                        label: "Riesgo laboral",
+                        oberstaffValue:
+                            "<span class='icon-check'>✓</span> Cero. Contrato B2B internacional ",
+                        competitorValues: [
+                            "Alto. IRPF, seguros sociales y despidos.",
+                            "Cero. Contrato de servicios",
+                        ],
+                    },
+                    {
+                        label: "Integración tecnológica",
+                        oberstaffValue:
+                            "<span class='icon-check'>✓</span> Nativa. Opera dentro de tu Slack y tu propio ERP (Holded, QuickBooks, otros)",
+                        competitorValues: [
+                            "Nativa",
+                            "Externa. Debes enviarles Excel o PDFs constantemente",
+                        ],
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <PricingCardPerfil
+                sectionTitle="Previsibilidad financiera: estructura tus costes contables con una <span style='color:#6663FD; font-weight: 800;'>tarifa plana B2B</span>"
+                sectionSubtitle="Estructura tus costes fijos con previsibilidad absoluta. Nuestra tarifa cubre todo el ciclo: headhunting, compliance legal internacional y nómina. El coste escala únicamente en función del seniority técnico (Bookkeeper vs. Controller)."
+                cardTitle="Tarifa mensual unificada"
+                titleTag="p"
+                cardSubtitle="Todo incluido · jornada completa · sin comisiones ocultas"
+                priceLabel="DESDE"
+                priceAmount="950 €"
+                pricePeriod="/ mes"
+                features={[
+                    "Contabilidad general · registro, asientos y cierres",
+                    "Facturación y cobros · cuentas por pagar y por cobrar",
+                    "Herramientas · Sage, Holded, A3, QuickBooks y Xero",
+                ]}
+                ctaText="Solicitar propuesta"
+                ctaHref="#formulario-perfil"
+                disclaimer="*Precios orientativos. El coste final depende del perfil, país y nivel de experiencia. Sin costes ocultos ni comisiones adicionales."
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <BeneficiosPerfilDisenador
+                showInfoCard={false}
+                title="El ROI de un contable in-house: por qué blindar tus finanzas con <span style='color:#1b1b1b; font-weight: 900;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span>"
+                subtitle="Más control que con una gestoría externa y menos fricción que una contratación local."
+                image="/img2-contable.webp"
+                imageAlt="Contratar contable"
+                infoTitle=""
+                features={[
+                    {
+                        icon: "🎯",
+                        title: "Eficiencia de capital",
+                        description:
+                            "Escala tu equipo de control financiero sin el lastre de los seguros sociales o IRPF del marco laboral español. Una cuota plana que protege tu cash flow.",
+                    },
+                    {
+                        icon: "📊",
+                        title: "Integridad de datos garantizada",
+                        description:
+                            "Tu contable se integra directamente en tu software, con acceso a la contabilidad real de tu empresa y continuidad en los procesos.",
+                    },
+                    {
+                        icon: "⚡",
+                        title: "Tú controlas la estrategia financiera",
+                        description:
+                            "Tu profesional gestiona el ciclo contable y te reporta la situación financiera. Sin que tu empresa asuma ningún riesgo laboral.",
+                    },
+                ]}
+                infoItems={[
+                    {
+                        title: "",
+                        description: "",
+                    },
+                    {
+                        title: "",
+                        description: "",
+                    },
+                    {
+                        title: "",
+                        description: "",
+                    },
+                ]}
+            >
+                <div class="meta-custom-notice">
+                    Una sola factura mensual en euros. Todas las gestiones se
+                    hacen en tu idioma y en tu zona horaria.
+                </div>
+            </BeneficiosPerfilDisenador>
+        </div>
+
+        <div class="fade-in-section">
+            <GuiaContratacion
+                titleTag="h2"
+                headerTitle="Manual de validación financiera: cómo filtrar y contratar al <span style='color:#6663FD; font-weight: 900;'>contable</span> ideal para tu negocio"
+                headerDescription="Claves técnicas y estructurales para proteger la tesorería de tu organización antes de integrar talento contable externo."
+                cards={[
+                    {
+                        title: "¿Por qué las empresas españolas contratan contables remotos en LATAM?",
+                        description:
+                            "Los profesionales en finanzas y contabilidad en países como Colombia, Argentina o Venezuela tienen una formación académica equivalente, están habituados a trabajar con las Normas Internacionales de Información Financiera (NIIF), normativa fiscal internacional y pueden especializarse en los estándares españoles: IVA, IRPF, Impuesto de Sociedades, modelos 303, 200 y 390 en un tiempo de adaptación muy corto. <strong> Oberstaff<span style='color: #FF66CC;'>.</span></strong> selecciona y evalúa ese talento por ti.",
+                        description2: "",
+                    },
+                    {
+                        title: "¿Qué definir antes de contratar un contador remoto?",
+                        description:
+                            "Define bien tus necesidades: ¿Buscas contabilidad general, apoyo fiscal, control financiero o un auxiliar contable? Cuanto más concreto sea el briefing, más rápido encontrarás al perfil ideal. En <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong> te ayudamos a definirlo en una llamada de 15 minutos sin compromiso.",
+                        description2: "",
+                    },
+                    {
+                        title: "¿Qué diferencia hay entre contratar contable por horas o a jornada completa?",
+                        description:
+                            "Si tu empresa tiene un volumen contable bajo o estacional, un contable por horas puede ser suficiente. Si necesitas registro diario de operaciones, cierres mensuales, conciliación bancaria continua y apoyo fiscal regular, contratar contable a jornada completa y en exclusiva ofrece mayor continuidad y profundidad de conocimiento de tu negocio. <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong> también ofrece opciones de media jornada para empresas con volumen contable moderado — consúltalo en el briefing.",
+                        description2: "",
+                    },
+                    {
+                        title: "¿Este perfil sustituye a mi asesoría fiscal en España?",
+                        description:
+                            "La complementa perfectamente. Tu asesoría local es experta en tributación española y presentación de impuestos ante Hacienda. Tu contador remoto dedicado actúa como tu bookkeeper interno: prepara los números al milímetro diariamente para que la gestoría solo tenga que pulsar el botón de presentar los impuestos, evitando sobrecostes por desorden documental.",
+                        description2: "",
+                    },
+                    {
+                        title: "¿Qué nivel de fluidez técnica se exige en los ERPs?",
+                        description:
+                            "La ofimática básica no sirve en finanzas corporativas. Filtramos perfiles con experiencia real en ecosistemas financieros modernos. Ya sea que tu empresa utilice Holded, A3, QuickBooks, Xero, Odoo o SAP, validamos que el candidato posea una curva de aprendizaje mínima y entienda la arquitectura de las cuentas de tu negocio.",
+                        description2: "",
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <CasosExitoSection
+                title="Casos de éxito corporativo: organizaciones españolas que ya trabajan con <span style='font-weight: 900; color: #1b1b1b;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span>"
+                subtitle=""
+                testimonials={[
+                    {
+                        stars: 5,
+                        avatar: "/fernando.webp",
+                        imageAlt:
+                            "Fernando Calderón, cliente de Oberstaff en Madrid",
+                        text: "Estaba en busca de talento remoto especializado para mi empresa y después de varias búsquedas sin éxito, encontré a <strong>Oberstaff</strong> en Instagram. Desde nuestra primera llamada, su profesionalismo y calidad de trabajo me dejaron impresionado. Ahora, gracias a su excelente servicio, he expandido mi contrato con ellos para incluir más personal.",
+                        author: "Fernando Calderón",
+                        role: "CEO · BeautyPro",
+                    },
+                    {
+                        stars: 5,
+                        avatar: "/sha.webp",
+                        imageAlt:
+                            "Shadai Iborra, cliente de Oberstaff en Barcelona",
+                        text: "Con <strong>Oberstaff</strong> pude dar trabajo a dos personas a tiempo completo, ahorrando costes de reclutamiento, espacios de oficina y salario que tendría al hacerlo en España. Lo mejor de todo es que todo está incluido en una misma factura. Con <strong>Oberstaff</strong> encontré la solución perfecta para mis necesidades de contratación remota y optimización de costes.",
+                        author: "Shadai Iborra",
+                        role: "CEO · @amediastory",
+                    },
+                ]}
+            />
+        </div>
+
+        <FAQSection
+            title="Compliance, contingencia laboral y facturación: <strong>dudas clave sobre contratar contable virtual</strong>"
+            ctaText="Integrar talento financiero internacional exige garantías jurídicas absolutas. Bajo nuestra infraestructura externalizas el bookkeeping diario sin asumir riesgos de falsa autonomía ni contingencias patronales en España. Aclaramos cómo blindamos tu operativa legal y fiscal."
+            ctaButtonText="Hablar con asesor →"
+            ctaButtonHref="#formulario-perfil"
+            faqs={faqsList}
+        />
+
+        <div class="fade-in-section">
+            <PressSection
+                title="Cobertura de la infraestructura de talento de <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong> en medios especializados"
+                customClass="normal-case"
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <ConversionPerfilDisenador
+                webhookUrl=""
+                title="Elimina la latencia de tus <br>datos financieros: da el paso definitivo para <strong>contratar contable dedicado</strong>"
+                subtitle="Depender de la contabilidad reactiva frena el crecimiento de tu empresa. Transforma tu departamento financiero externalizando el día a día operativo a talento dedicado y seguro. Completa el formulario inicial y recibe una propuesta en 24 horas. Primera consulta de viabilidad sin coste."
+                buttonText="Solicitar propuesta gratuita →"
+                noteText="Nota: Rellenarlo te lleva menos de 1 minuto"
+                formName="Perfil Contable España"
+                pais="España"
+            />
+        </div>
+    </div>
+
+    <style>
+        .service-detail-container {
+        }
+
+        /* Estilos específicos para QueEsServicioSection en esta página */
+        :global(.que-es-servicio-section .quote-blue-border) {
+            border-left: 4px solid #ff66cc !important;
+            color: #ff66cc !important;
+            font-size: 16px !important;
+            margin-top: 0 !important; /* Para alinear con el inicio de la imagen */
+            font-weight: 600 !important;
+        }
+
+        :global(.que-es-servicio-section .que-es-main-content) {
+            align-items: flex-start !important;
+        }
+
+        :global(.employer-use-cases-grid) {
+            grid-template-columns: repeat(3, 1fr) !important;
+        }
+
+        @media (max-width: 900px) {
+            :global(.employer-use-cases-grid) {
+                grid-template-columns: 1fr !important;
+            }
+        }
+
+        :global(.employer-use-cases-grid .icon-box) {
+            background-color: transparent !important;
+            border: none !important;
+            padding: 0 !important;
+            width: 100% !important;
+            height: auto !important;
+            margin-bottom: 25px !important;
+            justify-content: flex-start !important;
+        }
+
+        :global(.employer-use-cases-grid .icon-emoji-servicios-home) {
+            font-size: 35px !important;
+            padding: 0 !important;
+        }
+
+        /* Fondo exclusivo para la sección de áreas del contable */
+        :global(section.employer-use-cases) {
+            background-color: #fafafc !important;
+        }
+
+        /* Fondo exclusivo para la sección de casos de éxito en esta página */
+        :global(.casos-exito) {
+            background-color: #fafafc !important;
+
+            padding-bottom: 80px !important;
+        }
+
+        /* Estilos específicos para la sección FAQ en esta página */
+        :global(.faq-disenador-custom .faq-columns) {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            text-align: center !important;
+        }
+
+        :global(.faq-disenador-custom .faq-left-column) {
+            position: static !important;
+            width: 100% !important;
+            max-width: 800px !important;
+            margin-bottom: 40px !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            text-align: left !important;
+        }
+
+        :global(.faq-disenador-custom .faq-main-title) {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            text-align: left !important;
+        }
+
+        :global(.faq-disenador-custom .faq-right-column) {
+            display: none !important;
+        }
+
+        :global(.faq-disenador-custom .faq-cta-card) {
+            margin: 0 !important;
+            padding: 0 !important;
+            max-width: 600px !important;
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+            text-align: left !important;
+        }
+
+        :global(.faq-disenador-custom .faq-cta-card p) {
+            font-family: "Poppins", sans-serif !important;
+            font-size: 18px !important;
+            font-weight: 400 !important;
+            color: #5a5a5a !important;
+            line-height: 1.6 !important;
+            margin-bottom: 30px !important;
+        }
+
+        :global(.faq-disenador-custom .faq-cta-button) {
+            background-color: #6663fd !important;
+            border: 2px solid #6663fd !important;
+            color: #ffffff !important;
+            width: auto !important;
+            min-width: 220px !important;
+            padding: 14px 32px !important;
+            font-size: 15px !important;
+            display: inline-block !important;
+        }
+
+        :global(.faq-disenador-custom .faq-cta-button:hover) {
+            background-color: transparent !important;
+            border: 2px solid #6663fd !important;
+            color: #6663fd !important;
+        }
+
+        .meta-custom-notice {
+            font-family: "Poppins", sans-serif;
+            margin-top: 40px;
+            padding: 24px 30px;
+            background-color: #f7f8fc;
+            border-left: 4px solid #ff66cc;
+            color: #ff66cc;
+            font-family: "Montserrat", sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        .service-detail-container
+            :global(.guia-cards-grid .guia-card:nth-child(5)) {
+            grid-column: 1 / -1;
+        }
+    </style>
+</DashboardProfilesUs>

@@ -5,34 +5,49 @@ import "../../styles/faq/faq-section.css";
 const faqs = [
     {
         question: "¿A quién le pago la inversión publicitaria?",
-        answers: ["La inversión en anuncios se paga directamente a Meta desde la cuenta publicitaria de tu empresa. A <strong>Oberstaff<span style='color: #ff66cc;'>.</span></strong> le pagas el fee mensual del especialista y la gestión del modelo de contratación."]
+        answers: [
+            "La inversión en anuncios se paga directamente a Meta desde la cuenta publicitaria de tu empresa. A <strong>Oberstaff<span style='color: #ff66cc;'>.</span></strong> le pagas el fee mensual del especialista y la gestión del modelo de contratación.",
+        ],
     },
     {
-        question: "¿Qué accesos necesita el especialista Facebook Ads?", 
-        answers: ["Habitualmente necesitará permisos sobre Business Manager, cuenta publicitaria, Pixel o Conversión API, catálogos y, si aplica, acceso coordinado a GTM, GA4 o CRM para revisar medición y calidad del dato."]
+        question: "¿Qué accesos necesita el especialista Facebook Ads?",
+        answers: [
+            "Habitualmente necesitará permisos sobre Business Manager, cuenta publicitaria, Pixel o Conversión API, catálogos y, si aplica, acceso coordinado a GTM, GA4 o CRM para revisar medición y calidad del dato.",
+        ],
     },
     {
         question: "¿Puede trabajar con mi equipo creativo o de ventas?",
-        answers: ["Sí, y debería hacerlo. Meta Ads funciona mejor cuando el especialista recibe feedback de ventas, objeciones reales, piezas nuevas y datos sobre qué lead termina comprando."]
+        answers: [
+            "Sí, y debería hacerlo. Meta Ads funciona mejor cuando el especialista recibe feedback de ventas, objeciones reales, piezas nuevas y datos sobre qué lead termina comprando.",
+        ],
     },
     {
         question: "¿Qué pasa si mi cuenta ya tiene campañas activas?",
-        answers: ["Parte del histórico, primero el profesional audita la estructura, la señal y la calidad del tráfico. Luego decide qué mantener, qué ordenar, qué pausar y qué escalar sin destruir aprendizajes útiles."]
+        answers: [
+            "Parte del histórico, primero el profesional audita la estructura, la señal y la calidad del tráfico. Luego decide qué mantener, qué ordenar, qué pausar y qué escalar sin destruir aprendizajes útiles.",
+        ],
     },
     {
         question: "¿Y si vendo por WhatsApp, llamada o CRM y no por ecommerce?",
-        answers: ["También encaja, solo necesitas un sistema para devolver resultados de negocio al marketing: estados del lead, oportunidad, cierre, ticket o al menos feedback cualitativo del equipo comercial."]
+        answers: [
+            "También encaja, solo necesitas un sistema para devolver resultados de negocio al marketing: estados del lead, oportunidad, cierre, ticket o al menos feedback cualitativo del equipo comercial.",
+        ],
     },
-    { 
-        question: "¿Qué flexibilidad tengo si el especialista Meta Ads no logra capturar el tono de mis campañas?",
-        answers: ["Puedes solicitar reemplazo o detener el servicio según las condiciones del modelo. La ventaja de esta estructura es que reduces fricción laboral y mantienes control sobre tus activos."]
-    }, 
     {
-        question: "¿Qué pasa si mi cuenta publicitaria sufre un bloqueo o baneo?",
-        answers: ["Nuestros expertos en Facebook Ads conocen las políticas comerciales de Meta y aplican buenas prácticas para minimizar riesgos. Si ocurre un bloqueo imprevisto por parte del algoritmo, el especialista se encargará de gestionar las apelaciones correspondientes con el soporte de Meta de forma proactiva."]
+        question:
+            "¿Qué flexibilidad tengo si el especialista Meta Ads no logra capturar el tono de mis campañas?",
+        answers: [
+            "Puedes solicitar reemplazo o detener el servicio según las condiciones del modelo. La ventaja de esta estructura es que reduces fricción laboral y mantienes control sobre tus activos.",
+        ],
     },
-     
-]; 
+    {
+        question:
+            "¿Qué pasa si mi cuenta publicitaria sufre un bloqueo o baneo?",
+        answers: [
+            "Nuestros expertos en Facebook Ads conocen las políticas comerciales de Meta y aplican buenas prácticas para minimizar riesgos. Si ocurre un bloqueo imprevisto por parte del algoritmo, el especialista se encargará de gestionar las apelaciones correspondientes con el soporte de Meta de forma proactiva.",
+        ],
+    },
+];
 
 interface Props {
     title?: string;
@@ -45,13 +60,13 @@ const {
     title = "Todo lo que necesitas saber antes de su <strong>expansión en LATAM</strong>",
     ctaText = "¿No estás seguro de qué modelo necesitas? El staff augmentation es ideal para perfiles tech integrados en tu equipo. Pero dependiendo de tu operación, puede que necesites un servicio diferente o combinar varios.",
     ctaButtonText = "Agenda una llamada gratuita",
-    ctaButtonHref = "#"
+    ctaButtonHref = "#",
 } = Astro.props;
 ---
 
 <style>
     .faq-d-section {
-        background-color: #FAFAFC;
+        background-color: #fafafc;
         padding: 100px 20px;
     }
 
@@ -73,7 +88,7 @@ const {
     }
 
     .faq-d-title {
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-size: 32px;
         font-weight: 700;
         font-style: normal;
@@ -85,27 +100,27 @@ const {
 
     .faq-d-title :global(strong) {
         font-weight: 900;
-        color: #6663FD;
+        color: #6663fd;
     }
 
     .faq-d-text {
-        font-family: 'Poppins', sans-serif;
+        font-family: "Poppins", sans-serif;
         font-size: 16px;
         font-weight: 400;
-        color: #5A5A5A;
+        color: #5a5a5a;
         line-height: 1.6;
         margin-bottom: 28px;
     }
 
     .faq-d-btn {
         display: inline-block;
-        background-color: #6663FD;
+        background-color: #6663fd;
         color: #ffffff;
         padding: 14px 32px;
-        border: 2px solid #6663FD;
+        border: 2px solid #6663fd;
         border-radius: 50px;
         text-decoration: none;
-        font-family: 'Poppins', sans-serif;
+        font-family: "Poppins", sans-serif;
         font-weight: 600;
         font-size: 15px;
         transition: all 0.3s ease;
@@ -113,7 +128,7 @@ const {
 
     .faq-d-btn:hover {
         background-color: transparent;
-        color: #6663FD;
+        color: #6663fd;
     }
 
     /* Right column: FAQ accordion — sin scroll interno, altura libre */
@@ -150,10 +165,10 @@ const {
         }
 
         .faq-d-text {
-           text-align: center;
-           margin-left: auto;
-           margin-right: auto;
-           max-width: 400px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 400px;
         }
 
         .faq-d-text :global(br) {
@@ -184,7 +199,9 @@ const {
                 faqs.map((faq) => (
                     <FAQItem question={faq.question}>
                         {faq.answers &&
-                            faq.answers.map((answer) => <p set:html={answer} />)}
+                            faq.answers.map((answer) => (
+                                <p set:html={answer} />
+                            ))}
                     </FAQItem>
                 ))
             }

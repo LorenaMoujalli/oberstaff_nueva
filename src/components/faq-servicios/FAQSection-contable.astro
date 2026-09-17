@@ -4,26 +4,39 @@ import "../../styles/faq/faq-section.css";
 
 const faqs = [
     {
-        question: "¿Cómo elimina <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong> el riesgo de \"falso autónomo\"?",
-        answers: ["Contratar directamente a un freelancer en LATAM que trabaje a jornada completa para ti expone a la empresa española a sanciones por falsa autonomía. Bajo nuestro modelo, nosotros contratamos al contable remoto legalmente en su país de origen. Tu empresa está jurídicamente aislada y solo paga una factura por servicios B2B, eliminando el riesgo de auditorías de la Seguridad Social."]
+        question:
+            "¿Cómo elimina <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong> el riesgo de \"falso autónomo\"?",
+        answers: [
+            "Contratar directamente a un freelancer en LATAM que trabaje a jornada completa para ti expone a la empresa española a sanciones por falsa autonomía. Bajo nuestro modelo, nosotros contratamos al contable remoto legalmente en su país de origen. Tu empresa está jurídicamente aislada y solo paga una factura por servicios B2B, eliminando el riesgo de auditorías de la Seguridad Social.",
+        ],
     },
     {
-        question: "¿Puede un contable de LATAM trabajar con el Plan General Contable (PGC) español?",
-        answers: ["Sí, sin problema. La formación contable en Latinoamérica comparte los mismos fundamentos internacionales que el Plan General Contable español — principios de devengo, uniformidad, prudencia y la estructura de partida doble son universales. La adaptación a la terminología y los modelos fiscales españoles (IVA, IRPF, Sociedades) es rápida precisamente porque la base técnica ya está sólida."]
+        question:
+            "¿Puede un contable de LATAM trabajar con el Plan General Contable (PGC) español?",
+        answers: [
+            "Sí, sin problema. La formación contable en Latinoamérica comparte los mismos fundamentos internacionales que el Plan General Contable español — principios de devengo, uniformidad, prudencia y la estructura de partida doble son universales. La adaptación a la terminología y los modelos fiscales españoles (IVA, IRPF, Sociedades) es rápida precisamente porque la base técnica ya está sólida.",
+        ],
     },
     {
         question: "¿Quién gestiona las bajas o incidencias del profesional? ",
-        answers: ["Nuestra infraestructura asume el 100 % de la carga administrativa. En caso de que el perfil deba ausentarse o no cumpla con los SLAs financieros exigidos por tu gerencia, ejecutamos un protocolo de reemplazo ágil sin costes de intermediación adicionales, garantizando que tus cierres contables no sufran interrupciones."]
+        answers: [
+            "Nuestra infraestructura asume el 100 % de la carga administrativa. En caso de que el perfil deba ausentarse o no cumpla con los SLAs financieros exigidos por tu gerencia, ejecutamos un protocolo de reemplazo ágil sin costes de intermediación adicionales, garantizando que tus cierres contables no sufran interrupciones.",
+        ],
     },
     {
-        question: "¿Qué confidencialidad existe sobre la facturación de mi empresa? ",
-        answers: ["Total y auditable. Antes del inicio de la operativa, el contable firma acuerdos de confidencialidad (NDA) vinculantes. Además, toda la operativa se realiza bajo el entorno de licencias de tu propia empresa (tu dominio de email, tus accesos cloud), lo que te permite rastrear la actividad y revocar accesos en segundos si fuera necesario."]
+        question:
+            "¿Qué confidencialidad existe sobre la facturación de mi empresa? ",
+        answers: [
+            "Total y auditable. Antes del inicio de la operativa, el contable firma acuerdos de confidencialidad (NDA) vinculantes. Además, toda la operativa se realiza bajo el entorno de licencias de tu propia empresa (tu dominio de email, tus accesos cloud), lo que te permite rastrear la actividad y revocar accesos en segundos si fuera necesario.",
+        ],
     },
     {
         question: "¿De qué países de Latinoamérica son los contables?",
-        answers: ["Reclutamos talento financiero de primer nivel operando principalmente desde Colombia, Argentina, México, Venezuela, Chile y Perú. Esto garantiza una sincronía perfecta con la zona horaria española y el acceso a mercados con excelente formación universitaria en contabilidad y finanzas."]
-    }
-]; 
+        answers: [
+            "Reclutamos talento financiero de primer nivel operando principalmente desde Colombia, Argentina, México, Venezuela, Chile y Perú. Esto garantiza una sincronía perfecta con la zona horaria española y el acceso a mercados con excelente formación universitaria en contabilidad y finanzas.",
+        ],
+    },
+];
 
 interface Props {
     title?: string;
@@ -36,13 +49,13 @@ const {
     title = "Todo lo que necesitas saber antes de su <strong>expansión en LATAM</strong>",
     ctaText = "¿No estás seguro de qué modelo necesitas? El staff augmentation es ideal para perfiles tech integrados en tu equipo. Pero dependiendo de tu operación, puede que necesites un servicio diferente o combinar varios.",
     ctaButtonText = "Agenda una llamada gratuita",
-    ctaButtonHref = "#"
+    ctaButtonHref = "#",
 } = Astro.props;
 ---
 
 <style>
     .faq-d-section {
-        background-color: #FAFAFC;
+        background-color: #fafafc;
         padding: 100px 20px;
     }
 
@@ -64,7 +77,7 @@ const {
     }
 
     .faq-d-title {
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-size: 32px;
         font-weight: 700;
         font-style: normal;
@@ -76,27 +89,27 @@ const {
 
     .faq-d-title :global(strong) {
         font-weight: 900;
-        color: #6663FD;
+        color: #6663fd;
     }
 
     .faq-d-text {
-        font-family: 'Poppins', sans-serif;
+        font-family: "Poppins", sans-serif;
         font-size: 16px;
         font-weight: 400;
-        color: #5A5A5A;
+        color: #5a5a5a;
         line-height: 1.6;
         margin-bottom: 28px;
     }
 
     .faq-d-btn {
         display: inline-block;
-        background-color: #6663FD;
+        background-color: #6663fd;
         color: #ffffff;
         padding: 14px 32px;
-        border: 2px solid #6663FD;
+        border: 2px solid #6663fd;
         border-radius: 50px;
         text-decoration: none;
-        font-family: 'Poppins', sans-serif;
+        font-family: "Poppins", sans-serif;
         font-weight: 600;
         font-size: 15px;
         transition: all 0.3s ease;
@@ -104,7 +117,7 @@ const {
 
     .faq-d-btn:hover {
         background-color: transparent;
-        color: #6663FD;
+        color: #6663fd;
     }
 
     /* Right column: FAQ accordion — sin scroll interno, altura libre */
@@ -141,10 +154,10 @@ const {
         }
 
         .faq-d-text {
-           text-align: center;
-           margin-left: auto;
-           margin-right: auto;
-           max-width: 400px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 400px;
         }
 
         .faq-d-text :global(br) {

@@ -1,0 +1,1592 @@
+---
+import DashboardServicesUs from "../../../layouts/DashboardServicesUs.astro"; 
+import HeroService from "../../../components/hero-servicios/HeroService.astro";
+import FranjaEmpresasHome from "../../../components/franja-empresas-home/FranjaEmpresasHome.astro";
+import ConEorService from "../../../components/conEorServicios/ConEorService.astro";
+//import BeneficiosSeccion from "../../../components/beneficios-eor-servicios/BeneficiosSeccion.astro";
+import EorStepsSection from "../../../components/eor-steps-servicios/EorStepsSection.astro";
+import EorCta from "../../../components/eor-cta-servicios/EorCta.astro";
+import FeaturesSection from "../../../components/oberstaff-features-servicios/FeaturesSection.astro";
+import CoberturaSeccion from "../../../components/geografica-servicios/CoberturaSeccion.astro";
+import PricingSection from "../../../components/pricing-servicios/PricingSection.astro";
+import CasosExitoSection from "../../../components/casos-exito-servicios/CasosExitoSection.astro";
+//import RolesSection from "../../../components/roles-servicios/RolesSection.astro";
+import FAQSection from "../../../components/faq-servicios/FAQSection.astro";
+import OtrosServiciosSection from "../../../components/otros-servicios-servicios/OtrosServiciosSection.astro";
+import ContactFormSection from "../../../components/form/ContactFormSection.astro";
+//import ArticulosSection from "../../../components/articulos-servicios/ArticulosSection.astro";
+import QueEsServicioSection from "../../../components/QueEsServicio/QueEsServicioSection.astro";
+import ServicesSection from "../../../components/services-oberstaff/ServicesSection.astro";
+import ProcessOberstaff from "../../../components/process/ProcessOberstaff.astro";
+import ProfilesSection from "../../../components/profiles/ProfilesSection.astro";
+const ogImage = "outsourcing-personal-pr.webp";
+
+const faqsList = [
+    {
+        question:
+            "¿Qué es el outsourcing de personal con talento de Sudamérica?",
+        answers: [
+            "Es el servicio con el que <span style='font-weight: 800; color: #1b1b1b;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> centraliza la selección, incorporación y administración de perfiles comerciales, administrativos, de mercadeo y de soporte en Sudamérica. Tu empresa define la necesidad y nosotros estructuramos la operación para reducir carga interna y sostener continuidad.",
+        ],
+    },
+    {
+        question: "¿Qué tipo de perfiles cubre este servicio?",
+        answers: [
+            "Cubre perfiles comerciales, administrativos, de mercadeo, soporte al cliente, back office, operaciones, finanzas y contenido. Si necesitas desarrolladores, QA, DevOps o roles de data, el modelo adecuado es Staff Augmentation.",
+        ],
+    },
+    {
+        question: "¿Qué incluye el outsourcing de selección de personal?",
+        answers: [
+            "Incluye búsqueda de talento en Sudamérica, evaluación inicial, entrevistas por competencias, validación del perfil y presentación de candidatos finalistas. Tu empresa toma la decisión final antes de la incorporación.",
+        ],
+    },
+    {
+        question:
+            "¿<span style='font-weight: 800; color: #1b1b1b;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> funciona como outsourcing company para empresas en Puerto Rico?",
+        answers: [
+            "Sí. <span style='font-weight: 800; color: #1b1b1b;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> funciona como una outsourcing company enfocada en conectar empresas de Puerto Rico con talento remoto de Sudamérica, centralizando selección, contratación, administración y seguimiento mensual del servicio.",
+        ],
+    },
+    {
+        question: "¿Qué significa outsourcing PR dentro de este servicio?",
+        answers: [
+            "En este contexto, outsourcing PR es una solución de externalización pensada para empresas ubicadas en Puerto Rico que quieren cubrir funciones operativas con talento de Sudamérica, sin asumir toda la carga administrativa de la contratación local.",
+        ],
+    },
+    {
+        question:
+            "¿Qué incluyen los outsourcing HR services de <span style='font-weight: 800; color: #1b1b1b;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span>?",
+        answers: [
+            "Nuestros outsourcing HR services incluyen búsqueda, preselección, incorporación, administración mensual, coordinación de pagos y gestión operativa del personal externalizado. El objetivo es liberar tiempo de Recursos Humanos y reducir complejidad interna.",
+        ],
+    },
+    {
+        question:
+            "¿Cuál es la diferencia entre outsourcing HR, EOR y Staff Augmentation?",
+        answers: [
+            "El outsourcing HR delega procesos de selección, contratación y administración de personal. El EOR permite contratar empleados en otro país sin abrir entidad local. El Staff Augmentation suma talento especializado, normalmente técnico, bajo tu dirección diaria.",
+        ],
+    },
+    {
+        question: "¿Cuánto tarda la incorporación?",
+        answers: [
+            "Depende del perfil, la seniority y la disponibilidad del mercado. En funciones administrativas, de mercadeo, ventas y soporte, el proceso suele avanzar con agilidad una vez validado el candidato y completada la documentación.",
+        ],
+    },
+    {
+        question: "¿Qué pasa si el volumen de mi operación baja?",
+        answers: [
+            "El modelo es flexible. Ajustas el tamaño del equipo externalizado según temporadas de alta o baja demanda, sin añadir procesos internos complejos ni asumir pasivos laborales por desvinculación."
+        ]
+    }
+];
+---
+
+<DashboardServicesUs
+    ogImage={ogImage}
+    title="Outsourcing de personal en Puerto Rico | Oberstaff."
+    description=" Outsourcing de personal en Puerto Rico. Externaliza selección, contratación y administración con talento de Sudamérica. Propuesta en menos de 24h."
+>
+    <link
+        rel="canonical"
+        href=""
+        slot="head"
+    />
+    <link rel="alternate" hreflang="es-PR" href="" slot="head" />
+    <link rel="alternate" hreflang="es-ES" href="" slot="head" />
+    <link rel="alternate" hreflang="x-default" href="" slot="head" />
+    <script slot="head" type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "",
+      "url": "",
+      "name": "Outsourcing de personal en Puerto Rico | Oberstaff",
+      "description": "Outsourcing de personal para empresas en Puerto Rico. Externaliza selección, contratación y administración con talento LATAM. Propuesta en menos de 24h.",
+      "inLanguage": "es-PR",
+      "isPartOf": {
+        "@id": ""
+      },
+      "publisher": {
+        "@id": ""
+      },
+      "about": {
+        "@id": ""
+      },
+      "mainEntity": {
+        "@id": ""
+      },
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Empresas, corporaciones y LLC en Puerto Rico que buscan externalizar selección, contratación y administración de personal con talento remoto en Sudamérica",
+        "geographicArea": {
+          "@type": "AdministrativeArea",
+          "name": "Puerto Rico"
+        }
+      },
+      "breadcrumb": {
+        "@id": ""
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "",
+      "name": "Outsourcing de personal para empresas en Puerto Rico",
+      "alternateName": [
+        "Outsourcing de personal en Puerto Rico",
+        "Outsourcing PR",
+        "Outsourcing HR services",
+        "Outsourcing de selección de personal",
+        "Outsourcing de contratación",
+        "Outsourcing de personal especializado",
+        "Outsourcing company para empresas en Puerto Rico"
+      ],
+      "serviceType": "Outsourcing de personal",
+      "category": "Servicios de outsourcing, selección, contratación y administración de personal",
+      "url": "",
+      "provider": {
+        "@id": ""
+      },
+      "mainEntityOfPage": {
+        "@id": ""
+      },
+      "description": "Servicio de outsourcing de personal para empresas en Puerto Rico que quieren delegar la búsqueda, selección, contratación, incorporación, administración mensual, pagos y seguimiento operativo de perfiles comerciales, administrativos, de marketing, soporte al cliente, back office, finanzas y operaciones con talento de Sudamérica.",
+      "slogan": "Externaliza equipos comerciales, administrativos y de soporte desde Sudamérica.",
+      "audience": {
+        "@type": "BusinessAudience",
+        "name": "Empresas en Puerto Rico",
+        "audienceType": "Empresas puertorriquenas que necesitan sostener funciones operativas recurrentes sin aumentar la carga interna de Recursos Humanos ni los costos fijos locales",
+        "geographicArea": {
+          "@type": "AdministrativeArea",
+          "name": "Puerto Rico"
+        }
+      },
+      "serviceAudience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Pymes, startups, corporaciones y LLC en Puerto Rico que buscan externalizar equipos comerciales, administrativos, financieros, creativos, de marketing, soporte y operaciones con talento remoto de Sudamérica",
+        "geographicArea": {
+          "@type": "AdministrativeArea",
+          "name": "Puerto Rico"
+        }
+      },
+      "areaServed": [
+        {
+          "@type": "AdministrativeArea",
+          "name": "Puerto Rico"
+        },
+        {
+          "@type": "Country",
+          "name": "Colombia"
+        },
+        {
+          "@type": "Country",
+          "name": "México"
+        },
+        {
+          "@type": "Country",
+          "name": "Argentina"
+        },
+        {
+          "@type": "Country",
+          "name": "Chile"
+        },
+        {
+          "@type": "Country",
+          "name": "Peru"
+        },
+        {
+          "@type": "Country",
+          "name": "Ecuador"
+        },
+        {
+          "@type": "Country",
+          "name": "Uruguay"
+        },
+        {
+          "@type": "Country",
+          "name": "Venezuela"
+        },
+        {
+          "@type": "Country",
+          "name": "Panamá"
+        },
+        {
+          "@type": "Country",
+          "name": "Paraguay"
+        }
+      ],
+      "availableChannel": {
+        "@type": "ServiceChannel",
+        "serviceUrl": "",
+        "servicePhone": {
+          "@type": "ContactPoint",
+          "telephone": "+17879864051",
+          "contactType": "sales",
+          "areaServed": {
+            "@type": "AdministrativeArea",
+            "name": "Puerto Rico"
+          },
+          "availableLanguage": [
+            "Spanish",
+            "English"
+          ]
+        }
+      },
+      "offers": {
+        "@type": "Offer",
+        "@id": "",
+        "name": "Outsourcing de personal completo",
+        "url": "",
+        "price": "790",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "eligibleCustomerType": "http://purl.org/goodrelations/v1#Business",
+        "eligibleRegion": {
+          "@type": "AdministrativeArea",
+          "name": "Puerto Rico"
+        },
+        "description": "Servicio completo de outsourcing de personal desde 790 USD por profesional al mes para empresas en Puerto Rico, con búsqueda en Sudamérica, entrevistas por competencias, coordinación, incorporación, administración mensual, facturación unificada y gestión centralizada.",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "790",
+          "priceCurrency": "USD",
+          "unitText": "profesional por mes"
+        }
+      },
+      "hasOfferCatalog": {
+        "@id": ""
+      },
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Modelo de servicio",
+          "value": "Outsourcing de personal remoto con selección, contratación, administración, pagos y seguimiento operativo"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Cobertura",
+          "value": "10 países de Sudamérica, México y Panamá"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Zona horaria",
+          "value": "Compatibilidad con Puerto Rico en horario AST"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Facturación",
+          "value": "Facturación mensual unificada en USD"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Ahorro potencial",
+          "value": "Hasta 70% de ahorro potencial en infraestructura y gestión local"
+        }
+      ]
+    },
+    {
+      "@type": "OfferCatalog",
+      "@id": "",
+      "name": "Que incluye el outsourcing de personal de Oberstaff",
+      "description": "Servicios incluidos dentro del modelo de outsourcing de personal para empresas en Puerto Rico.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Offer",
+            "name": "Outsourcing de selección de personal",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Outsourcing de selección de personal",
+              "description": "Identificacion, evaluacion y preselección de candidatos en Sudamérica para áreas comerciales, administrativas, de mercadeo y soporte, ajustados al perfil, experiencia, horario y presupuesto de la empresa."
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Offer",
+            "name": "Outsourcing de contratación",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Outsourcing de contratación",
+              "description": "Coordinación documental, gestión de contratos segun el modelo aplicable e incorporación del profesional para iniciar con claridad desde el primer dia."
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Offer",
+            "name": "Outsourcing de administración y payroll",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Outsourcing de administración y payroll",
+              "description": "Administración mensual del servicio, pagos, seguimiento operativo y gestión de incidencias para reducir la presion sobre el equipo interno."
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "Offer",
+            "name": "Outsourcing de personal especializado",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Outsourcing de personal especializado",
+              "description": "Conexion con perfiles comerciales, financieros, administrativos, creativos, de marketing y soporte al cliente a una fracción del costo local."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "",
+      "name": "Cuando usar outsourcing de personal en Puerto Rico",
+      "description": "Casos en los que una empresa en Puerto Rico puede usar outsourcing de personal para sostener funciones recurrentes sin aumentar complejidad administrativa ni costos fijos.",
+      "numberOfItems": 4,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Crecimiento sin ampliar la carga interna",
+          "description": "Sumar capacidad operativa sin asumir horas de búsqueda, filtros, entrevistas ni incidencias administrativas."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Varias funciones bajo un solo manejo",
+          "description": "Centralizar reclutamiento, incorporación, pagos y administración con un único proveedor de confianza."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Escalado con una estructura más ligera",
+          "description": "Aumentar capacidad en funciones recurrentes sin sumar supervision interna ni procesos administrativos."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Procesos repetibles y delegables",
+          "description": "Sostener en el tiempo funciones ya definidas que requieren continuidad, orden y ejecucion estable."
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "",
+      "name": "Sin outsourcing vs con Oberstaff",
+      "description": "Comparacion entre gestionar personal de forma interna y externalizar selección, incorporación y administración con Oberstaff.",
+      "numberOfItems": 5,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Búsqueda y seguimiento interno",
+          "description": "Sin outsourcing, el equipo asume búsqueda, entrevistas, incidencias y seguimiento interno. Con Oberstaff, delega selección, incorporación y administración del personal."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Carga para Recursos Humanos",
+          "description": "Sin outsourcing, cada nueva necesidad satura Recursos Humanos y managers. Con Oberstaff, se centralizan funciones con una outsourcing company en Sudamérica."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Sustituciones",
+          "description": "Sin outsourcing, las sustituciones consumen tiempo y coordinación interna. Con Oberstaff, existe un proceso ordenado de reemplazo para sostener continuidad."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Escalabilidad operativa",
+          "description": "Sin outsourcing, escalar implica más esfuerzo operativo y costos fijos. Con Oberstaff, se escala con una estructura más agil, flexible y eficiente."
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Foco del negocio",
+          "description": "Sin outsourcing, aumenta la dispersion y baja el foco en prioridades de negocio. Con Oberstaff, la empresa gana orden operativo y mantiene el foco en crecer y vender."
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "",
+      "name": "Perfiles de negocio que puedes externalizar",
+      "description": "Perfiles funcionales que empresas en Puerto Rico pueden externalizar con Oberstaff mediante talento remoto de Sudamérica.",
+      "numberOfItems": 14,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Closer de ventas"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Especialista Google Ads",
+          "url": ""
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Especialista Meta Ads",
+          "url": ""
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Experto SEO",
+          "url": ""
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Community Manager",
+          "url": ""
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Asistente virtual",
+          "url": ""
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "Contable",
+          "url": ""
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "Diseñador gráfico"
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "name": "Editor de video"
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "name": "Copywriter"
+        },
+        {
+          "@type": "ListItem",
+          "position": 11,
+          "name": "Teleoperador"
+        },
+        {
+          "@type": "ListItem",
+          "position": 12,
+          "name": "Customer Success"
+        },
+        {
+          "@type": "ListItem",
+          "position": 13,
+          "name": "Coordinador de operaciones"
+        },
+        {
+          "@type": "ListItem",
+          "position": 14,
+          "name": "Project Manager"
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "",
+      "name": "Cómo funciona el outsourcing de personal en Puerto Rico",
+      "description": "Proceso de Oberstaff para externalizar perfiles funcionales desde la necesidad inicial hasta la administración mensual del profesional.",
+      "numberOfItems": 4,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Análisis del proceso",
+          "description": "Definicion de funciones a delegar, volumen de trabajo, horario requerido, perfil ideal y responsabilidades del cargo."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Presentación de talento",
+          "description": "Presentación de opciones alineadas al rol, normalmente entre 3 y 5 candidatos por perfil, manteniendo la decision final en la empresa."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Activación operativa",
+          "description": "Gestión del papeleo, incorporación y puesta en marcha para que el proceso de externalizacion arranque sin fricciones."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Administración mensual",
+          "description": "El profesional ejecuta los procesos y Oberstaff administra pagos, seguimiento y coordinación operativa mes a mes."
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "",
+      "name": "Beneficios de elegir Oberstaff como aliado de outsourcing PR",
+      "description": "Beneficios del outsourcing de personal para empresas en Puerto Rico que buscan descargar trabajo operativo recurrente y optimizar su gestión interna.",
+      "numberOfItems": 6,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Menos carga para managers y Recursos Humanos",
+          "description": "El equipo interno deja de perder horas filtrando CVs, coordinando entrevistas, gestionando pagos y resolviendo incidencias."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Continuidad del servicio",
+          "description": "Cada incorporación o sustitucion deja de tratarse como un nuevo proyecto corporativo interno."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Una sola contraparte operativa",
+          "description": "El equipo externalizado se centraliza en un único proveedor con una gestión más simple y clara."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Español nativo y alineación cultural",
+          "description": "Trabajo con talento de Sudamérica en husos horarios compatibles con Puerto Rico y sin barreras de idioma."
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Eficiencia de costos",
+          "description": "Acceso a profesionales cualificados de áreas funcionales con una estructura de costos más competitiva."
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Flexibilidad real",
+          "description": "Ajuste, ampliacion o reduccion del servicio segun la evolución de la operación comercial del negocio."
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "",
+      "name": "Países con cobertura para outsourcing de personal",
+      "description": "Países de Sudamérica, México y Panamá donde Oberstaff apoya procesos de outsourcing de personal para empresas en Puerto Rico.",
+      "numberOfItems": 10,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Colombia"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "México"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Argentina"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Chile"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Peru"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Ecuador"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "Uruguay"
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "Venezuela"
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "name": "Panamá"
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "name": "Paraguay"
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "",
+      "name": "Otros modelos de Oberstaff",
+      "description": "Otros servicios relacionados dentro de la arquitectura de contratación remota de Oberstaff para empresas en Puerto Rico.",
+      "numberOfItems": 3,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Staff Augmentation",
+          "url": "",
+          "description": "Para ampliar equipos tech con perfiles IT integrados en herramientas, sprints y dirección diaria."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Employer of Record",
+          "url": "",
+          "description": "Para contratar empleados en Sudamérica con relacion laboral formal, payroll y cumplimiento local."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Contractor of Record",
+          "url": "",
+          "description": "Para trabajar con freelancers o especialistas independientes por proyecto, campaña o necesidad puntual."
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "",
+      "inLanguage": "es-PR",
+      "isPartOf": {
+        "@id": ""
+      },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Qué es el outsourcing de personal con talento de Sudamérica?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Es el servicio con el que Oberstaff centraliza la selección, incorporación y administración de perfiles comerciales, administrativos, de mercadeo y de soporte en Sudamérica. Tu empresa define la necesidad y nosotros estructuramos la operacion para reducir carga interna y sostener continuidad."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué tipo de perfiles cubre este servicio?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cubre perfiles comerciales, administrativos, de mercadeo, soporte al cliente, back office, operaciones, finanzas y contenido. Si necesitas desarrolladores, QA, DevOps o roles de data, el modelo adecuado es Staff Augmentation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué incluye el outsourcing de selección de personal?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Incluye búsqueda de talento en Sudamérica, evaluacion inicial, entrevistas por competencias, validacion del perfil y presentación de candidatos finalistas. Tu empresa toma la decision final antes de la incorporación."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Oberstaff funciona como outsourcing company para empresas en Puerto Rico?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Oberstaff funciona como una outsourcing company enfocada en conectar empresas de Puerto Rico con talento remoto de Sudamérica, centralizando selección, contratación, administración y seguimiento mensual del servicio."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué significa outsourcing PR dentro de este servicio?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "En este contexto, outsourcing PR es una solucion de externalizacion pensada para empresas ubicadas en Puerto Rico que quieren cubrir funciones operativas con talento de Sudamérica, sin asumir toda la carga administrativa de la contratación local."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué incluyen los outsourcing HR services de Oberstaff?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nuestros outsourcing HR services incluyen búsqueda, preselección, incorporación, administración mensual, coordinación de pagos y gestión operativa del personal externalizado. El objetivo es liberar tiempo de Recursos Humanos y reducir complejidad interna."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuál es la diferencia entre outsourcing HR, EOR y Staff Augmentation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El outsourcing HR delega procesos de selección, contratación y administración de personal. El EOR permite contratar empleados en otro pais sin abrir entidad local. El Staff Augmentation suma talento especializado, normalmente tecnico, bajo tu dirección diaria."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto tarda la incorporación?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depende del perfil, la seniority y la disponibilidad del mercado. En funciones administrativas, de mercadeo, ventas y soporte, el proceso suele avanzar con agilidad una vez validado el candidato y completada la documentacion."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué pasa si el volumen de mi operacion baja?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El modelo es flexible. Ajustas el tamaño del equipo externalizado segun temporadas de alta o baja demanda, sin añadir procesos internos complejos ni asumir toda la carga de una contratación local."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": ""
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Puerto Rico",
+          "item": ""
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Outsourcing de personal",
+          "item": ""
+        }
+      ]
+    }
+  ]
+}
+</script>
+    <div class="service-detail-container">
+        <div class="fade-in-section">
+            <HeroService
+                label="OUTSOURCING DE PERSONAL • HR SERVICES"
+                preTitle="Outsourcing de personal para empresas en Puerto Rico"
+                title="Externaliza equipos comerciales,"
+                highlight=" administrativos y de soporte desde Sudamérica"
+                description="<span style='color: #1B1B1B; font-weight: 800;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> ayuda a tu empresa en Puerto Rico a delegar el reclutamiento, la contratación y la administración de perfiles comerciales, administrativos, de mercadeo y de soporte en Sudamérica. Reduces carga operativa interna, accedes a talento cualificado en zonas horarias compatibles y mantienes el enfoque estratégico de tu negocio."
+                videoImg="/fondo-video.webp"
+                remoteCountry="CO"
+                floatingText="Alivio de la carga operativa"
+                badgeRightTitle="Zona horaria AST"
+                badgeRightText=""
+                badgeRightIcon="🔹"
+                primaryBtnText="Recibir propuesta en menos de 24h →"
+                primaryBtnHref="#contacto"
+                secondaryBtnText="Hablar con un especialista en outsourcing de personal"
+                secondaryBtnHref="#contacto"
+                underBtnText="↳ Tardarás menos de 1 minuto · sin compromiso"
+                modalTitle="¿Listo para expandir tu equipo en LATAM?"
+                modalDescription="Un especialista te explicará exactamente cuánto puedes ahorrar con nuestro modelo EOR."
+                modalBtnText="Agendar asesoría gratuita"
+                videoAlt="Outsourcing de personal en Puerto Rico."
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <FranjaEmpresasHome
+                stat1Number="70 %"
+                stat1Label="de ahorro potencial en infraestructura y gestión local."
+                stat2Number="10"
+                stat2Label="países de cobertura en Sudamérica, México y Panamá."
+                stat3Number="100 %"
+                stat3Label="de compatibilidad con tu zona horaria AST, sin desfase."
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <QueEsServicioSection
+                title="Outsourcing de personal con talento de Sudamérica para empresas en Puerto Rico"
+                highlightWord="Puerto Rico"
+                description="El outsourcing de personal deja en manos de <span style='font-weight: 800; color: #1b1b1b;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> la búsqueda, selección, contratación y administración mensual de profesionales para áreas funcionales: ventas, administración, marketing, soporte al cliente, back office, finanzas y operaciones."
+                imageSrc="/img-outsourcing.webp"
+                imageAlt="Profesional trabajando"
+                badgeText="Gestión unificada"
+                quoteText="Externaliza funciones operativas sin inflar tu plantilla interna ni asumir toda la carga de contratación local en la isla."
+                infoItems={[
+                    {
+                        icon: "⚙️",
+                        title: "¿Cómo funciona?",
+                        description:
+                            "Tu empresa define qué función cubrir, qué perfil necesita y qué experiencia busca. <span style='font-weight: 800; color: #1b1b1b;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> estructura el proceso, presenta candidatos preseleccionados y administra la operación mes a mes, sin sumar carga a tu equipo de Recursos Humanos.",
+                    },
+                    {
+                        icon: "🏢",
+                        title: "¿Por qué funciona para empresas en Puerto Rico?",
+                        description:
+                            "El español nativo elimina barreras de comunicación internas y externas. Además, muchos perfiles en Sudamérica son bilingües español-inglés, ideales si atiendes mercados globales, reduciendo costos drásticamente sin perder calidad.",
+                    },
+                ]}
+                diffIcon="💡"
+                diffTitle="¿En qué se diferencia este modelo?"
+                diffDescription="<span style='color: #1B1B1B; font-weight: 600;'>Staff Augmentation:</span> sumas talento a tu equipo y diriges el trabajo diario, sobre todo en perfiles tech.<br> <span style='color: #1B1B1B; font-weight: 600;'>Employer of Record:</span> contratas empleados en otro país sin abrir una entidad legal local propia.<br> <span style='color: #1B1B1B; font-weight: 600;'>Outsourcing de personal:</span> delegas selección, contratación y administración para aliviar tu carga interna con <span style='font-weight: 800; color: #1b1b1b;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span>"
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <PricingSection
+                eyebrow=""
+                title="Precios simples y <span style='font-weight: 900; color: #6663FD;'>sin sorpresas</span>"
+                subtitle=""
+                plans={[
+                    {
+                        badge: "MÁS POPULAR",
+                        title: "Outsourcing de personal completo",
+                        price: "790",
+                        currency: "$",
+                        period: "/ empleado / mes",
+                        teamSize: "Para equipos de 4-20 empleados",
+                        features: [
+                            "Búsqueda en Colombia, Venezuela, Argentina y otros países de Sudamérica.",
+                            "Entrevistas por competencias y ajuste a tus áreas de negocio.",
+                            "Coordinación, incorporación y administración mensual del servicio.",
+                            "Facturación mensual unificada y gestión centralizada.",
+                        ],
+                        ctaText: "Solicitar propuesta",
+                        ctaHref: "#contacto",
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <ServicesSection
+                title="¿Cuándo usar <strong>outsourcing de personal en Puerto Rico?</strong>"
+                description="Una solución estratégica cuando tu empresa necesita sostener funciones recurrentes sin aumentar la complejidad administrativa, los costos fijos ni la carga del equipo de Recursos Humanos."
+                customClass="employer-use-cases"
+                services={[
+                    {
+                        icon: "🚀",
+                        title: "Crecimiento sin ampliar la carga interna",
+                        description:
+                            "Sumas capacidad operativa sin asumir horas de búsqueda, filtros, entrevistas ni incidencias administrativas.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "rgba(255, 102, 204, 0.1)",
+                        cardClass: "card-green",
+                    },
+                    {
+                        icon: "🔍",
+                        title: "Varias funciones bajo un solo manejo",
+                        description:
+                            "Centralizas reclutamiento, incorporación, pagos y administración con un único proveedor de confianza.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "rgba(102, 255, 153, 0.1)",
+                        cardClass: "card-pink",
+                    },
+                    {
+                        icon: "🌎",
+                        title: "Escalado con una estructura más ligera",
+                        description:
+                            "Aumentas capacidad en funciones recurrentes sin sumar supervisión interna ni procesos administrativos.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "rgba(102, 99, 253, 0.1)",
+                        cardClass: "card-lime",
+                    },
+                    {
+                        icon: "💡",
+                        title: "Procesos repetibles y delegables",
+                        description:
+                            "Ya sabes qué funciones sostener en el tiempo y necesitas ejecutarlas con continuidad, orden y tranquilidad.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "rgba(204, 255, 102, 0.2)",
+                        cardClass: "card-lime",
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <ConEorService
+                eyebrow=""
+                title="Sin outsourcing vs. Con <span style='color: #1b1b1b; font-weight: 900;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span>"
+                description=""
+                negativeTitle="Sin Outsourcing de personal"
+                positiveTitle="Con <span style='font-weight: 900;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span>"
+                badge="La opción inteligente"
+                negativeIcon=""
+                positiveIcon=""
+                negativeItems={[
+                    "Tu equipo asume búsqueda, entrevistas, incidencias y seguimiento interno.",
+                    "Cada nueva necesidad satura a Recursos Humanos y a tus managers.",
+                    "Las sustituciones consumen tiempo y coordinación interna.",
+                    "Escalar implica más esfuerzo operativo y más costos fijos.",
+                    "Hay más dispersión y menos foco en las prioridades del negocio.",
+                ]}
+                positiveItems={[
+                    "Delegas la selección, incorporación y administración del personal.",
+                    "Centralizas funciones con una outsourcing company en Sudamérica.",
+                    "Aseguras continuidad con un proceso ordenado de reemplazo.",
+                    "Escalas con una estructura más ágil, flexible y eficiente.",
+                    "Ganas orden operativo y mantienes el foco en crecer y vender.",
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <ProcessOberstaff
+                className="process-employer"
+                title="Somos tu outsourcing company para <strong>personal remoto en Sudamérica </strong>"
+                description="<span style='font-weight: 800; color: #1B1B1B;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> gestiona el ciclo operativo de tus perfiles funcionales: búsqueda, selección, contratación, administración, pagos y acompañamiento mensual."
+                items={[
+                    {
+                        label: "Selección",
+                        badge: "Búsqueda a medida",
+                        title: "Outsourcing de selección de personal",
+                        description:
+                            "Identificamos, evaluamos y preseleccionamos candidatos en Sudamérica para áreas comerciales, administrativas, de mercadeo y soporte. Todo se ajusta al perfil, la experiencia, el horario y el presupuesto de tu empresa en Puerto Rico, incluidos perfiles bilingües español-inglés.",
+                        icon: "🔍",
+                        badgeColor: "#6663FD",
+                        badgeBg: "rgba(102, 99, 253, 0.1)",
+                    },
+                    {
+                        label: "Contratación",
+                        badge: "Sin fricciones",
+                        title: "Outsourcing de contratación",
+                        description:
+                            "Coordinamos la documentación, gestionamos los contratos según el modelo aplicable y dejamos resuelta la incorporación del profesional para que pueda empezar a trabajar con total claridad desde el primer día, sin fricción para tu equipo.",
+                        icon: "📝",
+                        badgeColor: "#6aca8a",
+                        badgeBg: "rgba(102, 255, 153, 0.15)",
+                    },
+                    {
+                        label: "Payroll",
+                        badge: "Cero burocracia",
+                        title: "Outsourcing de administración y payroll",
+                        description:
+                            "Nos encargamos de la administración mensual del servicio, los pagos, el seguimiento operativo y la gestión de incidencias. Este modelo de outsourcing HR reduce la presión sobre tu equipo interno y libera tiempo para tareas estratégicas.",
+                        icon: "🗂️",
+                        badgeColor: "#FF66CC",
+                        badgeBg: "rgba(255, 102, 204, 0.1)",
+                    },
+                    {
+                        label: "Especializado",
+                        badge: "Máximo rendimiento",
+                        title: "Outsourcing de personal especializado",
+                        description:
+                            "Conectamos tu negocio con perfiles comerciales, financieros, administrativos, creativos, de marketing y de soporte al cliente. Accedes a talento funcional cualificado a una fracción del costo local, manteniendo el control sobre el perfil seleccionado.",
+                        icon: "⚡",
+                        badgeColor: "#1B1B1B",
+                        badgeBg: "rgba(204, 255, 102, 0.3)",
+                    },
+                ]}
+                ctaTitle="Estructura tu equipo"
+                ctaDescription="Selección y payroll centralizados en una sola factura."
+                ctaBtnText="Agendar llamada"
+            />
+        </div>
+
+        <div class="fade-in-section profiles-employer-page">
+            <ProfilesSection
+                variant="grid"
+                title="Perfiles de negocio que puedes <strong>externalizar</strong>"
+                description="Nuestro servicio de outsourcing de personal especializado cubre las principales áreas funcionales y de negocio con candidatos preseleccionados y listos para integrarse a la operación de tu empresa."
+                profiles={[
+                    {
+                        icon: "💼",
+                        title: "Operaciones comerciales",
+                        quote: "Estrategias de ventas y cierres de contratos con perfiles enfocados en crecimiento.",
+                        roles: [{ label: "Closer de ventas", href: "" }],
+                        iconColorClass: "purple-text",
+                    },
+                    {
+                        icon: "📣",
+                        title: "Marketing y comunicación",
+                        quote: "Gestión integral de tus canales digitales, pauta y optimización en motores de búsqueda.",
+                        roles: [
+                            { label: "Especialista en Google Ads", href: "" },
+                            { label: "Especialista en Meta Ads", href: "" },
+                            { label: "Experto SEO", href: "" },
+                            { label: "Community Manager", href: "" },
+                        ],
+                        iconColorClass: "blue-text",
+                    },
+                    {
+                        icon: "📊",
+                        title: "Finanzas y administración",
+                        quote: "Soporte operativo diario para mantener las cuentas y la agenda de tu negocio bajo control.",
+                        roles: [
+                            { label: "Contable", href: "" },
+                            { label: "Asistente virtual", href: "" },
+                        ],
+                        iconColorClass: "pink-text",
+                    },
+                    {
+                        icon: "🎨",
+                        title: "Creatividad y contenido",
+                        quote: "Generación de activos visuales y redacción persuasiva alineada a tu marca.",
+                        roles: [
+                            { label: "Diseñador gráfico", href: "" },
+                            { label: "Editor de video", href: "" },
+                            { label: "Copywriter", href: "" },
+                        ],
+                        iconColorClass: "orange-text",
+                    },
+                    {
+                        icon: "🗣️",
+                        title: "Soporte y atención al cliente",
+                        quote: "",
+                        roles: [
+                            { label: "Teleoperador", href: "#" },
+                            { label: "Customer Success", href: "#" },
+                        ],
+                        iconColorClass: "orange-text",
+                    },
+                    {
+                        icon: "📁",
+                        title: "Operaciones y logística",
+                        quote: "",
+                        roles: [
+                            { label: "Coordinador de operaciones", href: "#" },
+                            { label: "Project Manager", href: "#" },
+                        ],
+                        iconColorClass: "orange-text",
+                    },
+                ]}
+            >
+                <div slot="bottom-alert" class="profiles-tech-notice">
+                    🚨 <strong>¿Necesitas perfiles tecnológicos?</strong> Desarrolladores,
+                    QA, DevOps, data engineers y otros perfiles IT se gestionan a
+                    través de nuestro servicio de Staff Augmentation, donde se integran
+                    directamente en tu equipo técnico, tus herramientas y tus sprints.
+                    → <a href=""
+                        >Staff Augmentation</a
+                    >
+                </div>
+            </ProfilesSection>
+        </div>
+
+        <div class="fade-in-section">
+            <EorStepsSection
+                title="Cómo funciona el <strong>outsourcing de personal en Puerto Rico</strong>"
+                subtitle="De la necesidad al profesional operativo, con una gestión mucho más ligera para tu empresa en Puerto Rico."
+                steps={[
+                    {
+                        title: "Análisis del proceso",
+                        lineColorClass: "line-black",
+                        description:
+                            "Definimos qué funciones vas a delegar, el volumen de trabajo, el horario requerido, el perfil ideal y las responsabilidades del cargo.",
+                    },
+                    {
+                        title: "Presentación de talento",
+                        lineColorClass: "line-pink",
+                        description:
+                            "Te presentamos opciones alineadas al rol, normalmente entre 3 y 5 candidatos por perfil. Tu empresa conserva la última palabra.",
+                    },
+                    {
+                        title: "Activación operativa",
+                        lineColorClass: "line-orange",
+                        description:
+                            "Gestionamos el papeleo, la incorporación y la puesta en marcha para que el proceso de externalización arranque sin fricciones.",
+                    },
+                    { 
+                        title: "Administración mensual",
+                        lineColorClass: "line-blue",
+                        description:
+                            "El profesional ejecuta tus procesos y <strong>Oberstaff</strong><span style='font-weight: 800; color: #FF66CC;'>.</span> administra los pagos, el seguimiento y la coordinación operativa mes a mes.",
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <EorCta
+                title="¿Listo para externalizar la gestión de tu personal de negocio?"
+                text="Habla con nuestros especialistas y recibe una propuesta personalizada de outsourcing de personal en menos de 24 horas."
+                buttonText="Solicitar propuesta gratuita"
+                buttonHref="#contacto"
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <FeaturesSection
+                customClass="eor-features"
+                eyebrow=""
+                title="¿Por qué elegir a <span style='font-weight: 900; color: #1b1b1b;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span> como  aliado de outsourcing PR?"
+                subtitle="Diseñado para empresas que necesitan descargar trabajo operativo recurrente, optimizar su gestión interna y sostener funciones clave del negocio con una estructura más eficiente desde Sudamérica."
+                features={[
+                    {
+                        title: "Menos carga para managers y RR. HH.",
+                        description:
+                            "Tu equipo deja de perder horas filtrando CVs, coordinando entrevistas, gestionando pagos y resolviendo incidencias.",
+                        icon: "🛡️",
+                        colorClass: "icon-blue",
+                        cardClass: "hover-purple",
+                    },
+                    {
+                        title: "Continuidad del servicio",
+                        description:
+                            "Dejas de tratar cada incorporación o sustitución como si fuera un nuevo proyecto corporativo interno.",
+                        icon: "🌎",
+                        colorClass: "icon-green",
+                        cardClass: "hover-green",
+                    },
+                    {
+                        title: "Una sola contraparte operativa",
+                        description:
+                            "centralizas todo tu equipo externalizado en un único proveedor, con una gestión más simple y clara.",
+                        icon: "🗣️",
+                        colorClass: "icon-yellow",
+                        cardClass: "hover-pink",
+                    },
+                    {
+                        title: "Español nativo y alineación cultural",
+                        description:
+                            "Trabajas con talento de Sudamérica en husos horarios compatibles con Puerto Rico y sin barreras de idioma.",
+                        icon: "🤝",
+                        colorClass: "icon-red",
+                        cardClass: "hover-yellow",
+                    },
+                    {
+                        title: "Máxima eficiencia de costos",
+                        description:
+                            "Accedes a profesionales cualificados de áreas funcionales con una estructura de costos mucho más competitiva.",
+                        icon: "🔄",
+                        colorClass: "icon-purple",
+                        cardClass: "hover-purple",
+                    },
+                    {
+                        title: "Flexibilidad real",
+                        description:
+                            "Ajustas, amplías o reduces el servicio según cómo evolucione la operación comercial de tu negocio.",
+                        icon: "📈",
+                        colorClass: "icon-pink",
+                        cardClass: "hover-green",
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section cobertura-full-bg">
+            <CoberturaSeccion
+                title="Tu outsourcing de personal en <span style='font-weight: 900; color: #6663FD;'>10 países de Sudamérica, México y Panamá</span>"
+                description="Un único contrato con <span style='font-weight: 800; color: #1b1b1b;'>Oberstaff<span class='brand-dot'>.</span></span> te permite externalizar procesos apoyándote en profesionales de los mercados clave. Tu compañía amplía capacidad operativa sin crear estructuras administrativas adicionales."
+                mapAlt="Mapa de cobertura del outsourcing de personal en México, Panamá y Sudamérica"
+                countries={[
+                    { code: "MX", name: "México" },
+                    { code: "VE", name: "Venezuela" },
+                    { code: "CO", name: "Colombia" },
+                    { code: "EC", name: "Ecuador" },
+                    { code: "PE", name: "Perú" },
+                    { code: "PY", name: "Paraguay" },
+                    { code: "AR", name: "Argentina" },
+                    { code: "UY", name: "Uruguay" },
+                    { code: "CL", name: "Chile" },
+                    { code: "PA", name: "Panamá" },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <CasosExitoSection
+                title="Negocios que ya escalan con<span style='font-weight: 900; color: #1b1b1b;'> Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span>"
+                subtitle=""
+                columns={3}
+                testimonials={[
+                    {
+                        stars: 5,
+                        avatar: "/fernando.webp",
+                        imageAlt: "Fernando Calderón, cliente de Oberstaff.",
+                        text: "Buscaba talento remoto especializado y, tras intentarlo en local sin éxito, encontré a <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong> Me impresionó la claridad de su estructura legal. Por el servicio y la misma zona horaria, ya amplié el contrato para sumar más personal.",
+                        author: "Fernando Calderón",
+                        role: "CEO · BeautyPro",
+                        videoId: "24KxCAFGrDs",
+                    },
+                    {
+                        stars: 5,
+                        avatar: "/sha.webp",
+                        imageAlt: "Shadai Iborra, cliente de Oberstaff.",
+                        text: "Con <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong> incorporé a dos personas a tiempo completo y me ahorré costos de reclutamiento, oficina y nómina local. Toda la gestión y los pagos quedan unificados en una sola factura mensual. La solución perfecta para nuestra contratación remota.",
+                        author: "Shadai Iborra",
+                        role: "CEO · @amediastory",
+                        videoId: "_CxlPfluS7M",
+                    },
+                    {
+                        stars: 5,
+                        avatar: "/Kate.webp",
+                        imageAlt: "Kate McCaferty, cliente de Oberstaff.",
+                        text: "Llevamos casi dos años con <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong> y la experiencia es excelente desde el primer día. Tienes el respaldo de un equipo dedicado que evalúa miles de perfiles por ti. El ahorro real y la optimización de costos superaron nuestras expectativas.",
+                        author: "Kate McCaferty",
+                        role: "CEO · KM Real Estate (EE. UU.)",
+                        videoId: "9RLgpEF-GVA",
+                    },
+                ]}
+            />
+        </div>
+
+        <FAQSection
+            title="Todo lo que necesitas saber<br>sobre el <strong style='color: #6663FD;'>outsourcing de <br> personal</strong>"
+            ctaText="¿Quieres entender cuál es el modelo idóneo para tus objetivos de negocio en la Isla?"
+            ctaButtonText="Agenda una llamada gratuita"
+            faqs={faqsList}
+        />
+
+        <div class="fade-in-section">
+            <OtrosServiciosSection
+                title="Otros modelos de <span style='font-weight: 900; color: #1b1b1b;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span>"
+                subtitle=""
+                description="¿No sabes qué modelo necesitas? El outsourcing de personal es uno de los modelos de contratación remota que ofrece <span style='font-weight: 800;'>Oberstaff</span><span style='font-weight: 800; color: #FF66CC;'>.</span> Según tu operación, quizá necesites un servicio diferente:"
+                servicios={[
+                    {
+                        icon: "🔗",
+                        title: "Staff Augmentation",
+                        description:
+                            "Cuando necesitas ampliar tu equipo tech con perfiles IT integrados en tus herramientas, sprints y dirección diaria.",
+                        href: "",
+                        colorClass: "icon-pink",
+                        hoverClass: "hover-pink",
+                        linkText: "Ver servicio",
+                    },
+                    {
+                        icon: "🏢",
+                        title: "Employer of Record",
+                        description:
+                            "Cuando necesitas contratar empleados en Sudamérica con relación laboral formal, payroll y cumplimiento local.",
+                        href: "",
+                        colorClass: "icon-green",
+                        hoverClass: "hover-green",
+                        linkText: "Ver servicio",
+                    },
+                    {
+                        icon: "📄",
+                        title: "Contractor of Record",
+                        description:
+                            "Para trabajar con freelancers o especialistas independientes por proyecto, campaña o necesidad puntual.",
+                        href: "",
+                        colorClass: "icon-purple",
+                        hoverClass: "hover-purple",
+                        linkText: "Ver servicio",
+                    },
+                ]}
+            />
+        </div>
+
+        <!-- 
+		<div class="fade-in-section">
+			<RolesSection />
+		</div>
+		-->
+
+        <div class="fade-in-section">
+            <ContactFormSection
+                title="¿Listo para externalizar el manejo de tu <span style='font-weight: 900; color: #6663FD;'>próximo profesional de negocio?</span>"
+                subtitle="Cuéntanos qué perfil remoto de área funcional necesita tu empresa en Puerto Rico y en menos de 24 horas recibirás una propuesta personalizada de outsourcing de personal, sin compromiso."
+                buttonText="Solicitar propuesta gratuita →"
+                directLabel="Nota: llenar el formulario te tomará"
+                phoneNumber="menos de 60 segundos"
+                phoneHref=""
+                directEmoji="⏱️"
+                formLabels={{
+                    name: "Nombre *",
+                    lastName: "Apellido *",
+                    company: "Nombre de la empresa",
+                    email: "Email *",
+                    phone: "Teléfono *",
+                    comments: "Comentarios",
+                }}
+                formPlaceholders={{
+                    name: "Tu nombre",
+                    lastName: "Tu apellido",
+                    company: "Nombre de tu organización",
+                    email: "nombre@tuempresa.com",
+                    phone: "+34 XXX XXX XXX",
+                    comments:
+                        "Cuéntanos brevemente sobre las funciones que deseas delegar...",
+                }}
+                customClass="employer-variant"
+                webhookUrl=""
+                formName="Servicio Outsourcing de Personal Puerto Rico"
+                pais="Puerto Rico"
+            />
+        </div>
+
+        <!-- 
+		<div class="fade-in-section">
+			<ArticulosSection />
+		</div>
+-->
+    </div>
+</DashboardServicesUs>
+
+<style>
+    .service-detail-container {
+    }
+
+    /* --- Estilos específicos para el componente de proceso en Employer --- */
+    :global(.process-employer .process-menu) {
+        background-color: #fafafc;
+    }
+
+    :global(.process-employer .process-tab-label) {
+        color: #5a5a5a;
+        font-weight: 600;
+    }
+
+    :global(.process-employer .process-tab:hover) {
+        background-color: #f0f0f5;
+        color: #1b1b1b;
+    }
+
+    :global(.process-employer .process-tab.active) {
+        background-color: #ffffff;
+    }
+
+    /* --- Iconos de Features más grandes --- */
+    :global(.eor-features .emoji-icon),
+    :global(.eor-features iconify-icon) {
+        font-size: 30px !important;
+    }
+
+    /* Grid de 3 columnas en desktop para Outsourcing (3 arriba y 3 abajo) */
+    @media (min-width: 1025px) {
+        :global(.profiles-employer-page .variant-grid .profiles-grid) {
+            grid-template-columns: repeat(3, 1fr) !important;
+        }
+    }
+
+    /* Ajustar ancho máximo del párrafo para que se vea más ancho y legible */
+    :global(.profiles-employer-page .variant-grid .header-centered p) {
+        max-width: 950px !important;
+    }
+
+    /* --- Forzar estadísticas arriba y logos de empresas abajo en la franja --- */
+    .service-detail-container :global(.franja-empresas-container) {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .service-detail-container :global(.franja-stats-left) {
+        justify-content: space-around;
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
+        gap: 20px;
+    }
+
+    .service-detail-container :global(.franja-stat-block) {
+        width: auto !important;
+        max-width: 280px;
+    }
+
+    .service-detail-container :global(.franja-label) {
+        max-width: 280px !important;
+    }
+
+    .service-detail-container :global(.franja-logos-slider) {
+        max-width: 100%;
+        width: 100%;
+        flex: none;
+    }
+
+    .service-detail-container :global(.franja-empresas-section) {
+        padding: 40px 0;
+    }
+
+    .service-detail-container :global(.eor-pricing) {
+        background-color: #fafafc;
+        border-top: 1px solid #e4e4e4;
+    }
+
+    .service-detail-container :global(.eor-steps) {
+        background-color: #fafafc;
+    }
+
+    .service-detail-container :global(.faq-section) {
+        border-top: 1px solid #e4e4e4;
+    }
+
+    .service-detail-container .cobertura-full-bg {
+        background-color: #fafafc;
+        width: 100%;
+    }
+
+    .service-detail-container
+        .cobertura-full-bg
+        :global(.cobertura-geografica) {
+        background-color: transparent !important;
+    }
+
+    .service-detail-container :global(.cobertura-geografica .brand-dot) {
+        color: #ff66cc !important;
+    }
+
+    .service-detail-container :global(.btn-pricing-link) {
+        display: inline-block;
+        background-color: #7b70ff;
+        color: #ffffff !important;
+        padding: 14px 44px;
+        border-radius: 50px;
+        font-weight: 700;
+        text-align: center;
+        transition: all 0.3s ease;
+        text-decoration: none;
+    }
+
+    .service-detail-container :global(.process-employer .process-cta-btn) {
+        display: inline-block;
+        background-color: #7b70ff !important;
+        border: 2px solid #7b70ff !important;
+        color: #ffffff !important;
+        padding: 14px 44px !important;
+        border-radius: 50px !important;
+        font-weight: 700 !important;
+        font-family: "Poppins", sans-serif !important;
+        font-size: 14px !important;
+        text-align: center !important;
+        text-decoration: none !important;
+        transition: all 0.3s ease !important;
+    }
+
+    .service-detail-container
+        :global(.process-employer .process-cta-btn:hover) {
+        background-color: transparent !important;
+        color: #7b70ff !important;
+        border: 2px solid #7b70ff !important;
+    }
+
+    .service-detail-container :global(.faq-section .faq-cta-button) {
+        display: inline-block;
+        background-color: #7b70ff !important;
+        border: 2px solid #7b70ff !important;
+        color: #ffffff !important;
+        padding: 14px 44px !important;
+        border-radius: 50px !important;
+        font-weight: 700 !important;
+        font-family: "Poppins", sans-serif !important;
+        font-size: 14px !important;
+        text-align: center !important;
+        text-decoration: none !important;
+        transition: all 0.3s ease !important;
+    }
+
+    .service-detail-container :global(.faq-section .faq-cta-button:hover) {
+        background-color: transparent !important;
+        color: #7b70ff !important;
+        border: 2px solid #7b70ff !important;
+    }
+
+    .service-detail-container :global(.employer-variant .btn-submit) {
+        display: inline-block;
+        background-color: #7b70ff !important;
+        border: 2px solid #7b70ff !important;
+        color: #ffffff !important;
+        padding: 14px 44px !important;
+        border-radius: 50px !important;
+        font-weight: 700 !important;
+        font-family: "Poppins", sans-serif !important;
+        font-size: 14px !important;
+        text-align: center !important;
+        text-decoration: none !important;
+        transition: all 0.3s ease !important;
+        width: 100% !important;
+    }
+
+    .service-detail-container :global(.employer-variant .btn-submit:hover) {
+        background-color: transparent !important;
+        color: #7b70ff !important;
+        border: 2px solid #7b70ff !important;
+    }
+
+    /* Hero buttons — fit content, nunca se cortan */
+    .service-detail-container :global(.hero-actions) {
+        flex-wrap: nowrap !important;
+        gap: 12px !important;
+    }
+
+    .service-detail-container :global(.hero-actions .btn-pink),
+    .service-detail-container :global(.hero-actions .btn-outline) {
+        padding: 16px 28px !important;
+        width: auto !important;
+        min-width: unset !important;
+        white-space: nowrap !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        font-size: 14px !important;
+    }
+
+    /* Más padding interno para la sección hero en esta página */
+    .service-detail-container :global(.hero-section) {
+        padding-top: 80px !important;
+        padding-bottom: 80px !important;
+    }
+
+    @media (max-width: 768px) {
+        .service-detail-container :global(.hero-actions) {
+            flex-wrap: wrap !important;
+        }
+        .service-detail-container :global(.hero-actions .btn-pink),
+        .service-detail-container :global(.hero-actions .btn-outline) {
+            width: 100% !important;
+            font-size: 13px !important;
+        }
+    }
+
+    /* Difference box un poco más ancho solo en esta página */
+    .service-detail-container :global(.que-es-difference-box) {
+        max-width: 1050px !important;
+    }
+
+    /* Caja de aviso tecnológico en la sección de perfiles */
+    .profiles-tech-notice {
+        max-width: 950px;
+        margin: 40px auto 0 auto;
+        background: rgba(102, 99, 253, 0.07);
+        border: 1px solid rgba(102, 99, 253, 0.2);
+        border-radius: 16px;
+        padding: 24px 32px;
+        font-family: "Poppins", sans-serif;
+        font-size: 14.5px;
+        color: #4a4a4a;
+        line-height: 1.6;
+        text-align: left;
+        box-shadow: 0 4px 12px rgba(102, 99, 253, 0.02);
+    }
+
+    .profiles-tech-notice strong {
+        color: #1b1b1b;
+    }
+
+    .profiles-tech-notice a {
+        color: #6663fd;
+        font-weight: 700;
+        text-decoration: none;
+        transition: color 0.2s ease;
+    }
+
+    @media (max-width: 768px) {
+        .profiles-tech-notice {
+            padding: 20px;
+            font-size: 13.5px;
+            margin-top: 30px;
+        }
+    }
+</style>

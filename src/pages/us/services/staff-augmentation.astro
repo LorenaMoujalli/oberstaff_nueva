@@ -1,0 +1,1758 @@
+---
+import DashboardServicesUs from "../../../layouts/DashboardServicesUs.astro"; 
+import HeroService from "../../../components/hero-servicios/HeroService.astro";
+import FranjaEmpresasHome from "../../../components/franja-empresas-home/FranjaEmpresasHome.astro";
+import ConEorService from "../../../components/conEorServicios/ConEorService.astro";
+//import BeneficiosSeccion from "../../../components/beneficios-eor-servicios/BeneficiosSeccion.astro";
+import EorStepsSection from "../../../components/eor-steps-servicios/EorStepsSection.astro";
+import EorCta from "../../../components/eor-cta-servicios/EorCta.astro";
+import FeaturesSection from "../../../components/oberstaff-features-servicios/FeaturesSection.astro";
+import CoberturaSeccion from "../../../components/geografica-servicios/CoberturaSeccion.astro";
+import PricingSection from "../../../components/pricing-servicios/PricingSection.astro";
+import CasosExitoSection from "../../../components/casos-exito-servicios/CasosExitoSection.astro";
+//import RolesSection from "../../../components/roles-servicios/RolesSection.astro";
+import FAQSection from "../../../components/faq-servicios/FAQSection.astro";
+import OtrosServiciosSection from "../../../components/otros-servicios-servicios/OtrosServiciosSection.astro";
+import ContactFormSection from "../../../components/form/ContactFormSection.astro";
+//import ArticulosSection from "../../../components/articulos-servicios/ArticulosSection.astro";
+import QueEsServicioSection from "../../../components/QueEsServicio/QueEsServicioSection.astro";
+import ServicesSection from "../../../components/services-oberstaff/ServicesSection.astro";
+import ProcessOberstaff from "../../../components/process/ProcessOberstaff.astro";
+import ProfilesSection from "../../../components/profiles/ProfilesSection.astro";
+const ogImage = "staff-pr.webp";
+
+const faqsList = [
+    {
+        question:
+            "¿Qué es el IT staff augmentation?",
+        answers: [
+            "El staff augmentation IT es un modelo en el que incorporas un profesional técnico de Sudamérica directamente en tu equipo de producto o desarrollo. Tú le asignas tareas, diriges su trabajo y evalúas su rendimiento como a cualquier miembro interno.",
+        ],
+    },
+    {
+        question: "¿Qué perfiles encajan mejor en este modelo?",
+        answers: [
+            "Desarrolladores, QA, ingeniería de datos, DevOps, UX/UI y otros perfiles vinculados a producto y tecnología.",
+        ],
+    },
+    {
+        question: "¿Cuánto tarda la incorporación?",
+        answers: [
+            "Depende del perfil, pero el proceso está diseñado para acelerar la presentación y la entrada de talento técnico ya validado.",
+        ],
+    },
+    {
+        question:
+            "¿El profesional trabaja bajo mi dirección?",
+        answers: [
+            "Sí. Tu empresa define tareas, prioridades, herramientas, estándares y criterios de calidad. <span style='font-weight: 800; color: #1b1b1b;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> acompaña la parte operativa y administrativa para que tu equipo se enfoque en la ejecución.",
+        ],
+    },
+    {
+        question:
+            "¿Cómo funciona la facturación para empresas en Puerto Rico?",
+        answers: [
+            "La facturación se realiza en dólares (USD), lo que simplifica la contabilidad de empresas puertorriqueñas bajo regulación fiscal de EE. UU. Recibes una única factura mensual por todos los profesionales contratados.",
+        ],
+    },
+    {
+        question: "¿Qué incluyen los servicios de nearshore staff augmentation con <span style='font-weight: 800; color: #1b1b1b;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span>?",
+        answers: [
+            "Incluyen la búsqueda, validación e incorporación de talento IT de Sudamérica a tu equipo. <span style='font-weight: 800; color: #1b1b1b;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> presenta perfiles alineados con tu necesidad y facilita la contratación para que mantengas el control operativo del trabajo diario.",
+        ],
+    }
+];
+---
+
+<DashboardServicesUs
+    ogImage={ogImage}
+    title="Staff Augmentation IT para Empresas en PR "
+    description="Potencia tu equipo en Puerto Rico con nuestro servicio de staff augmentation. Suma talento IT de LATAM validado y recibe tu propuesta en 24h. "
+>
+    <link
+        rel="canonical"
+        href=""
+        slot="head"
+    />
+    <link rel="alternate" hreflang="es-PR" href="" slot="head" />
+    <link rel="alternate" hreflang="es-ES" href="" slot="head" />
+    <link rel="alternate" hreflang="x-default" href="" slot="head" />
+    <script slot="head" type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "",
+      "url": "",
+      "name": "Staff Augmentation IT para Empresas en PR",
+      "description": "Potencia tu equipo en Puerto Rico con nuestro servicio de staff augmentation. Suma talento IT de LATAM validado y recibe tu propuesta en 24h.",
+      "inLanguage": "es-PR",
+      "isPartOf": {
+        "@id": ""
+      },
+      "publisher": {
+        "@id": ""
+      },
+      "about": {
+        "@id": ""
+      },
+      "mainEntity": {
+        "@id": ""
+      },
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Empresas, corporaciones, startups y equipos tecnológicos en Puerto Rico que necesitan ampliar su capacidad IT con talento remoto de Sudamérica",
+        "geographicArea": {
+          "@type": "AdministrativeArea",
+          "name": "Puerto Rico"
+        }
+      },
+      "breadcrumb": {
+        "@id": ""
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "",
+      "name": "Staff Augmentation para empresas en Puerto Rico",
+      "alternateName": [
+        "Staff Augmentation IT",
+        "IT Staff Augmentation Puerto Rico",
+        "Nearshore staff augmentation",
+        "Staff augmentation services",
+        "Team augmentation",
+        "Augmentation staff",
+        "Staff aug con talento de Sudamérica"
+      ],
+      "serviceType": "IT Staff Augmentation",
+      "category": "Servicios de ampliación de equipos tecnológicos y talento IT remoto",
+      "url": "",
+      "provider": {
+        "@id": ""
+      },
+      "mainEntityOfPage": {
+        "@id": ""
+      },
+      "description": "Servicio de staff augmentation IT para empresas en Puerto Rico que necesitan sumar profesionales tecnológicos de Sudamérica a sus equipos de producto, desarrollo, datos, infraestructura, QA, UX/UI o DevOps. La empresa mantiene el control operativo del trabajo diario, mientras Oberstaff gestiona la búsqueda, validación, incorporación y soporte operativo del profesional.",
+      "slogan": "Potencia tu equipo con profesionales IT de Sudamérica integrados a tus procesos, herramientas y roadmap.",
+      "audience": {
+        "@type": "BusinessAudience",
+        "name": "Empresas en Puerto Rico con equipos tecnológicos",
+        "audienceType": "Empresas puertorriqueñas que necesitan ampliar su equipo técnico con talento IT remoto, validado y alineado a la zona horaria AST/EST",
+        "geographicArea": {
+          "@type": "AdministrativeArea",
+          "name": "Puerto Rico"
+        }
+      },
+      "areaServed": [
+        {
+          "@type": "AdministrativeArea",
+          "name": "Puerto Rico"
+        },
+        {
+          "@type": "Country",
+          "name": "Colombia"
+        },
+        {
+          "@type": "Country",
+          "name": "México"
+        },
+        {
+          "@type": "Country",
+          "name": "Argentina"
+        },
+        {
+          "@type": "Country",
+          "name": "Chile"
+        },
+        {
+          "@type": "Country",
+          "name": "Perú"
+        },
+        {
+          "@type": "Country",
+          "name": "Venezuela"
+        },
+        {
+          "@type": "Country",
+          "name": "Ecuador"
+        },
+        {
+          "@type": "Country",
+          "name": "Uruguay"
+        },
+        {
+          "@type": "Country",
+          "name": "Panamá"
+        },
+        {
+          "@type": "Country",
+          "name": "Paraguay"
+        }
+      ],
+      "availableChannel": {
+        "@type": "ServiceChannel",
+        "serviceUrl": "",
+        "servicePhone": {
+          "@type": "ContactPoint",
+          "telephone": "+17879864051",
+          "contactType": "sales",
+          "areaServed": {
+            "@type": "AdministrativeArea",
+            "name": "Puerto Rico"
+          },
+          "availableLanguage": [
+            "Spanish",
+            "English"
+          ]
+        }
+      },
+      "offers": {
+        "@type": "Offer",
+        "@id": "",
+        "name": "Staff Augmentation completo",
+        "url": "",
+        "price": "790",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "description": "Servicio de Staff Augmentation completo desde 790 USD por profesional al mes. Incluye búsqueda en 10 países, evaluación técnica y por competencias, integración directa en herramientas y flujos, seguimiento operativo, reemplazo ágil cuando aplique y una única factura mensual en USD.",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "790",
+          "priceCurrency": "USD",
+          "unitText": "profesional por mes"
+        }
+      },
+      "hasOfferCatalog": {
+        "@id": ""
+      },
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Modelo de trabajo",
+          "value": "Profesionales IT integrados en las herramientas, reuniones, procesos y roadmap del cliente"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Dirección operativa",
+          "value": "La empresa en Puerto Rico define tareas, prioridades, estándares técnicos y criterios de calidad"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Facturación",
+          "value": "Una sola factura mensual en USD"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Zona horaria",
+          "value": "Profesionales alineados con AST/EST para reuniones, dailies y seguimiento en tiempo real"
+        }
+      ]
+    },
+    {
+      "@type": "OfferCatalog",
+      "@id": "",
+      "name": "Modelo de Staff Augmentation IT de Oberstaff",
+      "description": "Fases incluidas en el modelo de staff augmentation IT para empresas en Puerto Rico.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Offer",
+            "name": "Selección de talento IT",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Selección de talento IT",
+              "description": "Identificación de perfiles técnicos según stack, seniority y necesidades del proyecto."
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Offer",
+            "name": "Validación técnica y ajuste al proyecto",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Validación técnica y ajuste al proyecto",
+              "description": "Filtrado de candidatos por skills, experiencia, herramientas y ritmo de trabajo del equipo."
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Offer",
+            "name": "Integración directa en la operación",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Integración directa en la operación",
+              "description": "Incorporación del profesional en herramientas, reuniones, tableros, repositorios y flujos del cliente."
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "Offer",
+            "name": "Incorporación y continuidad sin fricción",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Incorporación y continuidad sin fricción",
+              "description": "Gestión operativa para que la incorporación sea ordenada, estable y fácil de sostener."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "",
+      "name": "Casos de uso de staff augmentation services en Puerto Rico",
+      "description": "Situaciones en las que una empresa en Puerto Rico puede usar staff augmentation para reforzar su equipo técnico.",
+      "numberOfItems": 4,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Escasez de talento tech local",
+          "description": "Para cubrir perfiles como Kotlin, React, Data Engineering, QA Automation o DevOps con talento IT en días, no en meses."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Sprint con deadline crítico",
+          "description": "Para sumar talento al sprint con el mismo stack y apoyar entregas desde la primera semana."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Migración o modernización tecnológica",
+          "description": "Para incorporar especialistas durante migraciones a cloud, cambios de framework o modernización de sistemas legacy."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Cobertura de baja o rotación",
+          "description": "Para cubrir de forma ágil la salida o baja temporal de un experto IT sin frenar las entregas."
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "",
+      "name": "Contratación local vs ampliar el equipo técnico en Sudamérica",
+      "description": "Comparación entre contratar localmente perfiles técnicos en Puerto Rico y ampliar el equipo con nearshore staff augmentation desde Sudamérica.",
+      "numberOfItems": 4,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Acceso a talento IT",
+          "description": "La contratación local puede ser limitada y costosa. Con Oberstaff se accede a talento IT en desarrollo, data, QA, DevOps y UX a una fracción del costo."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Flexibilidad para escalar",
+          "description": "El staff augmentation permite escalar arriba o abajo según release, roadmap o carga de trabajo."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Velocidad de incorporación",
+          "description": "Oberstaff acelera la selección, validación e incorporación del perfil para cubrir gaps técnicos urgentes."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Integración operativa",
+          "description": "El profesional se integra en dailies, stack, herramientas y dinámicas del equipo desde el inicio."
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "",
+      "name": "Perfiles IT para nearshore staff augmentation",
+      "description": "Perfiles tecnológicos que empresas en Puerto Rico pueden integrar mediante el servicio de staff augmentation de Oberstaff.",
+      "numberOfItems": 21,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Dev Frontend"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Dev Backend"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Full Stack"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Mobile"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "WordPress / Shopify"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Data Analyst"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "Data Engineer"
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "BI Developer"
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "name": "DevOps"
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "name": "AWS"
+        },
+        {
+          "@type": "ListItem",
+          "position": 11,
+          "name": "Azure"
+        },
+        {
+          "@type": "ListItem",
+          "position": 12,
+          "name": "SysAdmin"
+        },
+        {
+          "@type": "ListItem",
+          "position": 13,
+          "name": "Solutions Architect"
+        },
+        {
+          "@type": "ListItem",
+          "position": 14,
+          "name": "UX Designer"
+        },
+        {
+          "@type": "ListItem",
+          "position": 15,
+          "name": "UI Designer"
+        },
+        {
+          "@type": "ListItem",
+          "position": 16,
+          "name": "Product Design"
+        },
+        {
+          "@type": "ListItem",
+          "position": 17,
+          "name": "QA Manual"
+        },
+        {
+          "@type": "ListItem",
+          "position": 18,
+          "name": "QA Automation"
+        },
+        {
+          "@type": "ListItem",
+          "position": 19,
+          "name": "Test Analyst"
+        },
+        {
+          "@type": "ListItem",
+          "position": 20,
+          "name": "Technical Writer"
+        },
+        {
+          "@type": "ListItem",
+          "position": 21,
+          "name": "Scrum Master"
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "",
+      "name": "Proceso de staff augmentation para empresas en Puerto Rico",
+      "description": "Proceso de Oberstaff para presentar, validar e integrar talento IT remoto en equipos tecnológicos de Puerto Rico.",
+      "numberOfItems": 4,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Defines el perfil",
+          "description": "La empresa explica rol, stack, seniority, presupuesto, duración y dinámica de trabajo. Oberstaff busca en los principales hubs de Sudamérica."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Match técnico",
+          "description": "Oberstaff identifica y valida perfiles técnicos con ajuste a la necesidad, herramientas y cultura de trabajo del cliente."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Tú eliges al profesional",
+          "description": "Oberstaff presenta candidatos evaluados para que la empresa entreviste, compare y elija al profesional ideal."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Se integra a tu operación",
+          "description": "El talento se incorpora a dailies, tableros, repositorios, canales y procesos con acompañamiento operativo de Oberstaff."
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "",
+      "name": "Beneficios de elegir Oberstaff como staff augmentation company",
+      "description": "Beneficios para empresas en Puerto Rico que quieren escalar con talento IT remoto y mantener control directo de la ejecución.",
+      "numberOfItems": 7,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Control total del trabajo diario",
+          "description": "El equipo del cliente define tareas, prioridades, ritmo, estándares técnicos y criterios de calidad."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Mayor velocidad de incorporación",
+          "description": "Permite sumar capacidad técnica con más agilidad que en una contratación local tradicional."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Talento especializado",
+          "description": "Acceso a perfiles IT alineados con el stack, seniority y necesidades reales del proyecto."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Expertos alineados con tu horario",
+          "description": "Coordinación de reuniones y seguimiento en tiempo real con equipos en franja AST/EST."
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Flexibilidad para escalar",
+          "description": "La capacidad técnica puede ajustarse según release, backlog, presupuesto o evolución del roadmap."
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Integración natural en tu operación",
+          "description": "El profesional trabaja en herramientas, reuniones y dinámicas como una extensión del equipo."
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "Eficiencia de costos",
+          "description": "Optimización de la inversión sin sacrificar calidad técnica, comunicación ni propiedad del código."
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "",
+      "name": "Países para reservar talento IT nearshore",
+      "description": "Países de Sudamérica, México y Panamá desde los que Oberstaff valida e integra talento IT para empresas en Puerto Rico.",
+      "numberOfItems": 10,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Colombia"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "México"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Argentina"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Chile"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Perú"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Venezuela"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "Ecuador"
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "Uruguay"
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "name": "Panamá"
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "name": "Paraguay"
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "",
+      "name": "Otros servicios de Oberstaff",
+      "description": "Servicios relacionados de Oberstaff para empresas en Puerto Rico que necesitan contratar, administrar o externalizar talento remoto.",
+      "numberOfItems": 3,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Employer of Record",
+          "url": "",
+          "description": "Incorpora empleados con contrato laboral pleno, sin abrir una entidad local."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Outsourcing de personal",
+          "url": "",
+          "description": "Delega la selección, contratación y administración completa, ideal para perfiles no tech."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Contractor of Record",
+          "url": "",
+          "description": "Gestión integral de contratos para freelancers y trabajadores por proyecto."
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "",
+      "inLanguage": "es-PR",
+      "isPartOf": {
+        "@id": ""
+      },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Qué es el IT staff augmentation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El staff augmentation IT es un modelo en el que incorporas un profesional técnico de Sudamérica directamente en tu equipo de producto o desarrollo. Tú le asignas tareas, diriges su trabajo y evalúas su rendimiento como a cualquier miembro interno."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué perfiles encajan mejor en este modelo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Desarrolladores, QA, ingeniería de datos, DevOps, UX/UI y otros perfiles vinculados a producto y tecnología."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto tarda la incorporación?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depende del perfil, pero el proceso está diseñado para acelerar la presentación y la entrada de talento técnico ya validado."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿El profesional trabaja bajo mi dirección?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Tu empresa define tareas, prioridades, herramientas, estándares y criterios de calidad. Oberstaff acompaña la parte operativa y administrativa."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué incluyen los servicios de nearshore staff augmentation con Oberstaff?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Incluyen la búsqueda, validación e incorporación de talento IT de Sudamérica a tu equipo. Oberstaff presenta perfiles alineados y facilita la contratación."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo funciona la facturación para empresas en Puerto Rico?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La facturación se realiza en dólares USD, lo que simplifica la contabilidad de empresas puertorriqueñas bajo regulación fiscal de EE. UU. Recibes una única factura mensual por todos los profesionales contratados."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": ""
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Puerto Rico",
+          "item": ""
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Staff Augmentation",
+          "item": ""
+        }
+      ]
+    }
+  ]
+}
+</script>
+    <div class="service-detail-container">
+        <div class="fade-in-section staff-aug-pr-hero">
+            <HeroService
+                label="IT STAFF AUGMENTATION"
+                preTitle=""
+                title="Staff Augmentation para empresas en Puerto Rico"
+                highlight=""
+                description="Potencia tu equipo con profesionales IT de Sudamérica que se integran a tus procesos, herramientas, dailies y roadmap en tu misma zona horaria (AST/EST). Con nuestro servicio de staff augmentation, mantienes el control operativo del trabajo diario y accedes a talento técnico validado de forma flexible, eficiente y escalable."
+                videoImg="/fondo-video.webp"
+                remoteCountry="CO"
+                floatingText=" Talento tech validado"
+                badgeRightTitle="Integración ágil"
+                badgeRightText=""
+                badgeRightIcon="⚡"
+                primaryBtnText="Recibir propuesta en <24h"
+                primaryBtnHref="#contacto"
+                secondaryBtnText="Hablar con un especialista"
+                secondaryBtnHref="#contacto"
+                underBtnText="↳ Tardarás menos de 1 minuto · sin compromiso"
+                modalTitle="¿Listo para expandir tu equipo en LATAM?"
+                modalDescription="Un especialista te explicará exactamente cuánto puedes ahorrar con nuestro modelo EOR."
+                modalBtnText="Agendar asesoría gratuita"
+                videoAlt="servicio de Staff Augmentation para empresas en Puerto Rico."
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <FranjaEmpresasHome
+                stat1Number="Top 5 %"
+                stat1Label="Accedes al talento tech ya validado."
+                stat2Number="100 %"
+                stat2Label="Propiedad del código y los desarrollos."
+                stat3Number="$0"
+                stat3Label="Costo por reemplazo ágil del perfil."
+            />
+        </div>
+
+        <div class="fade-in-section que-es-staff-centered-wrapper">
+            <QueEsServicioSection
+                title="¿Qué es el IT staff augmentation?"
+                highlightWord="IT Staff Augmentation?"
+                description="El staff augmentation es un modelo que permite incorporar profesionales IT especializados — desarrolladores, perfiles QA, data, DevOps, UX o producto— para que trabajen integrados en tu equipo como una extensión real de tu operación.<br><br>Tu empresa define prioridades, asigna tareas y dirige el trabajo diario de tu augmentation staff, mientras <span style='font-weight: 800; color: #1b1b1b;'>Oberstaff<span class='brand-dot-pink'>.</span></span> gestiona la administración del profesional en su país de origen.<br><br>Para organizaciones en Puerto Rico, Sudamérica ofrece una ventaja clara en estos perfiles: formación técnica de alto nivel, español nativo, franja horaria compatible (AST/EST) y un costo mucho menor que el mercado estadounidense o local.  El staff aug con Sudamérica es la opción más eficiente para compañías en la Isla."
+                imageSrc=""
+                imageAlt=""
+                badgeText=""
+                quoteText=""
+                infoItems={[]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <PricingSection
+                eyebrow=""
+                title="Precios simples y <span style='font-weight: 900; color: #6663FD;'>sin sorpresas</span>"
+                subtitle=""
+                plans={[
+                    {
+                        badge: "MÁS POPULAR",
+                        title: "Staff Augmentation completo",
+                        price: "790",
+                        currency: "$",
+                        period: "/ profesional/mes",
+                        teamSize: "Para equipos de 4-20 empleados",
+                        features: [
+                            "Búsqueda en 10 países",
+                            "Evaluación técnica y por competencias",
+                            "Integración directa en tus herramientas y flujos",
+                            "Seguimiento operativo y reemplazo ágil cuando aplique",
+                            "Una única factura mensual en USD",
+                        ],
+                        ctaText: "Solicitar propuesta",
+                        ctaHref: "#contacto",
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <ServicesSection
+                title="Casos de uso de <strong>staff augmentation services </strong>en Puerto Rico"
+                description="Somos una staff augmentation company especializada en ayudar a empresas puertorriqueñas a reforzar sus equipos técnicos cuando necesitan velocidad, especialización y control directo de la ejecución."
+                customClass="employer-use-cases"
+                services={[
+                    {
+                        icon: "🚀",
+                        title: "Escasez de talento tech local",
+                        description:
+                            "Te faltan perfiles como Kotlin, React, Data Engineering, QA Automation o DevOps. Con staff augmentation accedes a talento IT en días, no en meses.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "rgba(255, 102, 204, 0.1)",
+                        cardClass: "card-green",
+                    },
+                    {
+                        icon: "🔍",
+                        title: "Sprint con deadline crítico",
+                        description:
+                            "Tu equipo no llega a la release. Con un staff augmentation model flexible, sumas talento al sprint con tu mismo stack y entregas desde la primera semana.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "rgba(102, 255, 153, 0.1)",
+                        cardClass: "card-pink",
+                    },
+                    {
+                        icon: "🌐",
+                        title: "Migración o modernización tecnológica",
+                        description:
+                            "Estás migrando a cloud, cambiando de framework o modernizando legacy y necesitas perfiles especializados que hoy no tienes en tu equipo.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "rgba(102, 99, 253, 0.1)",
+                        cardClass: "card-lime",
+                    },
+                    {
+                        icon: "💡",
+                        title: "Cobertura de baja o rotación",
+                        description:
+                            "Un experto IT se va o está de baja y necesitas cubrirlo con alguien que se integre en tu flujo de inmediato, sin frenar las entregas.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "rgba(204, 255, 102, 0.2)",
+                        cardClass: "card-lime",
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <ConEorService
+                eyebrow=""
+                title="Contratación local vs.  <span style='color: #6663FD; font-weight: 900;'>ampliar tu equipo técnico en Sudamérica</span>"
+                description=""
+                negativeTitle="Sin team augmentation"
+                positiveTitle="Con <span style='font-weight: 900;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span>"
+                badge="La opción inteligente"
+                negativeIcon=""
+                positiveIcon=""
+                negativeItems={[
+                    "Mercado local más limitado y con costos altos en perfiles técnicos.",
+                    "Más rigidez para ajustar tu capacidad técnica.",
+                    "Más carga de contratación y fricción al cubrir gaps urgentes.",
+                    "Incorporación más lenta a tus herramientas y ritmo de equipo."
+                ]}
+                positiveItems={[
+                    "Talento IT en desarrollo, data, QA, DevOps y UX a una fracción del costo.",
+                    "Escalas arriba o abajo según release o roadmap.",
+                    "<span style='font-weight: 800;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> acelera selección, validación e incorporación del perfil."
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <ProcessOberstaff
+                className="process-employer"
+                title="Nuestro modelo de <strong>Staff Augmentation IT</strong>"
+                description="Tu equipo técnico ampliado, sin carga operativa. <span style='font-weight: 800;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> cubre cada fase del team augmentation para que tú solo dirijas las tareas y las prioridades."
+                items={[
+                    {
+                        label: "Selección",
+                        badge: "",
+                        title: "Selección de talento IT",
+                        description:
+                            "Identificamos perfiles técnicos según el stack, la senioridad y las necesidades de tu proyecto.",
+                        icon: "🔍",
+                        badgeColor: "#6663FD",
+                        badgeBg: "rgba(102, 99, 253, 0.1)", 
+                    },
+                    {
+                        label: "Validación",
+                        badge: "",
+                        title: "Validación técnica y ajuste al proyecto",
+                        description:
+                            "Filtramos candidatos por skills, experiencia y encaje con tus herramientas y tu ritmo de trabajo.",
+                        icon: "📝",
+                        badgeColor: "#6aca8a",
+                        badgeBg: "rgba(102, 255, 153, 0.15)",
+                    },
+                    {
+                        label: "Integración",
+                        badge: "",
+                        title: "Integración directa en tu operación",
+                        description:
+                            "El profesional se incorpora a tus herramientas, reuniones y flujos como una extensión de tu equipo.",
+                        icon: "🗂️",
+                        badgeColor: "#FF66CC",
+                        badgeBg: "rgba(255, 102, 204, 0.1)",
+                    },
+                    {
+                        label: "Continuidad",
+                        badge: "",
+                        title: "Incorporación y continuidad sin fricción",
+                        description:
+                            "Gestionamos lo necesario para que la incorporación sea ordenada, estable y fácil de sostener.",
+                        icon: "⚡",
+                        badgeColor: "#1B1B1B",
+                        badgeBg: "rgba(204, 255, 102, 0.3)",
+                    },
+                ]}
+                ctaTitle="Empieza a escalar hoy"
+                ctaDescription="Un equipo dedicado gestionará todo el proceso por ti."
+                ctaBtnText="Agendar llamada"
+            />
+        </div>
+
+        <div class="fade-in-section profiles-employer-page">
+            <ProfilesSection
+                variant="grid"
+                title="Ampliación de equipo técnico con <strong>nearshore staff augmentation</strong>"
+                description="Talento técnico listo para integrarse en tu equipo de producto, desarrollo, datos, infraestructura o calidad."
+                profiles={[ 
+                  
+                    {
+                        icon: "💻",
+                        title: "Desarrollo & Tech",
+                        quote: "",
+                        roles: [
+                            { label: "Dev Frontend", href: "#" },
+                            { label: "Dev Backend", href: "#" },
+                            { label: "Full stack", href: "#" },
+                            { label: "Mobile", href: "#" },
+                            { label: "WordPress / Shopify", href: "#" }
+                        ],
+                        iconColorClass: "blue-text",
+                    },
+                    {
+                        icon: "🎨 ",
+                        title: "Data & Analytics",
+                        quote: "",
+                        roles: [
+                            { label: "Data Analyst", href: "#" },
+                            { label: "Data Engineer", href: "#" },
+                            { label: "BI Developer", href: "#" }
+                        ],
+                        iconColorClass: "pink-text", 
+                    },
+                    {
+                        icon: "📊",
+                        title: "DevOps & Cloud",
+                        quote: "",
+                        roles: [
+                            { label: "DevOps", href: "#" },
+                            { label: "AWS / Azure", href: "#" },
+                            { label: "SysAdmin", href: "#" },
+                            { label: "Solutions Architect", href: "#" },
+                        ],
+                        iconColorClass: "orange-text",
+                    },
+                    {
+                        icon: "🎨",
+                        title: "Diseño UX/UI",
+                        quote: "",
+                        roles: [
+                            { label: "UX/UI", href: "#" },
+                            { label: "UI Designer", href: "#" },
+                            { label: "Product Design", href: "#" }
+                        ],
+                        iconColorClass: "orange-text",
+                    },
+                    {
+                        icon: "⚙️",
+                        title: "QA & Testing",
+                        quote: "",
+                        roles: [
+                            { label: "QA Manual", href: "#" },
+                            { label: "QA Automation", href: "#" },
+                            { label: "Test Analyst", href: "#" } 
+                        ],
+                        iconColorClass: "orange-text",
+                    },
+                    {
+                        icon: "🧪",
+                        title: "Otros perfiles tech",
+                        quote: "",
+                        roles: [
+                            { label: "Technical Writer", href: "#" },
+                            { label: "Scrum Master", href: "#" },
+                        ],
+
+                        iconColorClass: "purple-text",
+                    },
+                ]}
+            >
+                <div slot="bottom-alert" class="profiles-tech-notice">
+                    🚨 <strong>¿Necesitas perfiles no tecnológicos (comerciales, administrativos, marketing, atención al cliente)?</strong> <br />Contamos con otros modelos para cubrir esas áreas →
+                    <a href="" 
+                        >Outsourcing de personal</a
+                    >
+                </div>
+            </ProfilesSection>
+        </div>
+
+
+
+         <div class="fade-in-section">
+            <ProcessOberstaff
+                className="process-employer"
+                title="Proceso de staff augmentation para <strong>empresas en Puerto Rico</strong>"
+                description="Un proceso diseñado para equipos tech que necesitan velocidad sin sacrificar calidad técnica."
+                items={[
+                    {
+                        label: "Defines",
+                        badge: "",
+                        title: "Defines el perfil",
+                        description:
+                            "Nos explicas el rol, stack, seniority, presupuesto, duración y dinámica de trabajo. Buscamos en los principales hubs de Sudamérica.",
+                        icon: "01",
+                        badgeColor: "#6663FD",
+                        badgeBg: "rgba(102, 99, 253, 0.1)", 
+                    },
+                    {
+                        label: "Match",
+                        badge: "",
+                        title: "Match técnico",
+                        description:
+                            "Identificamos y validamos perfiles técnicos con ajuste real a tu necesidad, tus herramientas y tu cultura de trabajo.",
+                        icon: "02",
+                        badgeColor: "#6aca8a",
+                        badgeBg: "rgba(102, 255, 153, 0.15)",
+                    },
+                    {
+                        label: "Eliges",
+                        badge: "",
+                        title: "Tú eliges al profesional",
+                        description:
+                            "Presentamos candidatos ya evaluados para que entrevistes, compares y elijas al profesional ideal para tu equipo.",
+                        icon: "03",
+                        badgeColor: "#FF66CC",
+                        badgeBg: "rgba(255, 102, 204, 0.1)",
+                    },
+                    {
+                        label: "Integración",
+                        badge: "",
+                        title: "Se integra a tu operación",
+                        description:
+                            "El talento se incorpora a tus dailies, tableros, repos, canales y procesos con acompañamiento de <span style='color: #1b1b1b; font-weight: 700;'>Oberstaff<span style='color: #FF66CC; font-weight: 700;'>.</span></span>",
+                        icon: "04",
+                        badgeColor: "#1B1B1B",
+                        badgeBg: "rgba(204, 255, 102, 0.3)",
+                    },
+                ]}
+                ctaTitle="Empieza a ahorrar hoy"
+                ctaDescription="Un equipo dedicado gestionará todo el proceso por ti."
+                ctaBtnText="Agendar llamada" 
+            />
+        </div>
+
+
+
+        <!-- 
+        <div class="fade-in-section">
+            <EorStepsSection 
+                title="Cómo funciona el <strong>outsourcing de personal en Puerto Rico</strong>"
+                subtitle=""
+                steps={[
+                    {
+                        title: "Análisis del proceso a externalizar",
+                        lineColorClass: "line-black",
+                        description:
+                            "Definimos qué funciones vas a delegar, el volumen de trabajo, el horario requerido, el perfil ideal y las responsabilidades del cargo.",
+                    },
+                    {
+                        title: "Presentación de candidatos",
+                        lineColorClass: "line-pink",
+                        description:
+                            "Te presentamos opciones alineadas al rol, normalmente entre 3 y 5 candidatos por perfil. Tu empresa conserva la última palabra.",
+                    },
+                    {
+                        title: "Activación de la operación",
+                        lineColorClass: "line-orange",
+                        description:
+                            "Gestionamos el papeleo, la incorporación y la puesta en marcha para que el proceso de externalización arranque sin fricciones.",
+                    },
+                    {
+                        title: "Administración mensual del servicio",
+                        lineColorClass: "line-blue",
+                        description:
+                            "El profesional ejecuta tus procesos y Oberstaff. administra los pagos, el seguimiento y la coordinación operativa mes a mes.",
+                    },
+                ]}
+            />
+        </div>
+        -->
+
+        <div class="fade-in-section">
+            <EorCta
+                title="¿Listo para ampliar tu equipo con talento IT de Sudamérica?"
+                text="Habla con nuestros especialistas y recibe una propuesta personalizada en menos de 24 horas."
+                buttonText="Solicitar propuesta gratuita →"
+                buttonHref="#contacto"
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <FeaturesSection
+                customClass="eor-features"
+                eyebrow=""
+                title="Por qué elegir <span style='font-weight: 900; color: #1b1b1b;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span> como tu <span style='font-weight: 900; color:#6663FD;'>staff augmentation company</span>"
+                subtitle="Diseñado para negocios en Puerto Rico que quieren escalar con agilidad, acceder a talento IT remoto de mayor calidad y mantener el control directo de la ejecución."
+                features={[
+                    {
+                        title: "Control total del trabajo diario",
+                        description:
+                            "Tu equipo define tareas, prioridades, ritmo, estándares técnicos y criterios de calidad.",
+                        icon: "🛡️",
+                        colorClass: "icon-blue",
+                        cardClass: "hover-purple",
+                    },
+                    {
+                        title: "Mayor velocidad de incorporación",
+                        description:
+                            "Sumas capacidad técnica con más agilidad que en una contratación local tradicional.",
+                        icon: "🌎",
+                        colorClass: "icon-green",
+                        cardClass: "hover-green",
+                    },
+                    {
+                        title: "Talento especializado",
+                        description:
+                            "Accedes a perfiles IT alineados con tu stack, tu seniority y tus necesidades reales.",
+                        icon: "🗣️",
+                        colorClass: "icon-yellow",
+                        cardClass: "hover-pink",
+                    },
+                    {
+                        title: "Expertos alineados con tu horario",
+                        description:
+                            "Coordinas reuniones y seguimiento en tiempo real con equipos en tu franja AST/EST.",
+                        icon: "⏰",
+                        colorClass: "icon-red",
+                        cardClass: "hover-yellow",
+                    },
+                    {
+                        title: "Flexibilidad para escalar",
+                        description:
+                            "Ajustas la capacidad según release, backlog, presupuesto o evolución del roadmap.",
+                        icon: "🔄",
+                        colorClass: "icon-purple",
+                        cardClass: "hover-purple",
+                    },
+                    {
+                        title: "Integración natural en tu operación",
+                        description:
+                            "El profesional trabaja en tus herramientas, reuniones y dinámicas como uno más del equipo.",
+                        icon: "🤝",
+                        colorClass: "icon-pink",
+                        cardClass: "hover-green",
+                    },
+                       {
+                        title: "Eficiencia de costos",
+                        description:
+                            "Optimizas la inversión sin sacrificar calidad técnica, comunicación ni propiedad del código.",
+                        icon: "💵",
+                        colorClass: "icon-pink",
+                        cardClass: "hover-green",
+                    }
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section cobertura-full-bg">
+            <CoberturaSeccion
+                title="Reserva talento IT en los principales hubs de Sudamérica, México y Panamá"
+                description="Accede a los ecosistemas tecnológicos de mayor crecimiento en Sudamérica. Validamos e integramos profesionales senior y mid-level desde los países con mejor huso horario para trabajar en sincronía con tu equipo en Puerto Rico:"
+                mapAlt=" Mapa de cobertura de Staff Augmentation IT en México, Panamá y Sudamérica"
+                countries={[
+                    { code: "MX", name: "México" },
+                    { code: "VE", name: "Venezuela" },
+                    { code: "CO", name: "Colombia" },
+                    { code: "EC", name: "Ecuador" },
+                    { code: "PE", name: "Perú" },
+                    { code: "PY", name: "Paraguay" },
+                    { code: "AR", name: "Argentina" },
+                    { code: "UY", name: "Uruguay" },
+                    { code: "CL", name: "Chile" },
+                    { code: "PA", name: "Panamá" },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <CasosExitoSection
+                title="Empresas que ya amplían su equipo con<span style='font-weight: 900; color: #1b1b1b;'> Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span>"
+                subtitle=""
+                columns={3}
+                testimonials={[
+                    {
+                        stars: 5,
+                        avatar: "/fernando.webp",
+                        imageAlt: "Fernando Calderón, cliente de Oberstaff.",
+                        text: "Buscaba talento remoto especializado y, tras intentarlo en local sin éxito, encontré a <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong> Me impresionó la claridad de su estructura legal. Por el servicio y la misma zona horaria, ya amplié el contrato para sumar más personal.",
+                        author: "Fernando Calderón",
+                        role: "CEO · BeautyPro",
+                        videoId: "24KxCAFGrDs",
+                    },
+                    {
+                        stars: 5,
+                        avatar: "/sha.webp",
+                        imageAlt: "Shadai Iborra, cliente de Oberstaff.",
+                        text: "Con <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong> incorporé a dos personas a tiempo completo y me ahorré costos de reclutamiento, oficina y nómina local. Toda la gestión y los pagos quedan unificados en una sola factura mensual. La solución perfecta para nuestra contratación remota.",
+                        author: "Shadai Iborra",
+                        role: "CEO · @amediastory",
+                        videoId: "_CxlPfluS7M",
+                    },
+                    {
+                        stars: 5,
+                        avatar: "/Kate.webp",
+                        imageAlt: "Kate McCaferty, cliente de Oberstaff.",
+                        text: "Llevamos casi dos años con <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong> y la experiencia es excelente desde el primer día. Tienes el respaldo de un equipo dedicado que evalúa miles de perfiles por ti. El ahorro real y la optimización de costos superaron nuestras expectativas.",
+                        author: "Kate McCaferty",
+                        role: "CEO · KM Real Estate (EE. UU.)",
+                        videoId: "9RLgpEF-GVA",
+                    },
+                ]}
+            />
+        </div>
+
+        <FAQSection
+            title="Todo lo que necesitas <br>saber antes de empezar"
+            ctaText="¿Tienes dudas sobre los perfiles técnicos o la estructura?"
+            ctaButtonText="Agenda una llamada gratuita"
+            faqs={faqsList}
+        />
+
+        <div class="fade-in-section">
+            <OtrosServiciosSection
+                title="Otros servicios de <span style='font-weight: 900; color: #1b1b1b;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span>"
+                subtitle=""
+                description="¿No estás seguro de qué modelo necesitas? El staff augmentation es ideal para perfiles tech integrados en tu equipo. Según tu operación, quizá necesites un servicio diferente o combinar varios."
+                servicios={[
+                    {
+                        icon: "🏢",
+                        title: "Outsourcing de personal",
+                        description:
+                            "Delega la selección, contratación y administración completa, ideal para perfiles no tech.",
+                        href: "",
+                        colorClass: "icon-pink",
+                        hoverClass: "hover-pink",
+                        linkText: "Ver servicio",
+                    },
+                    {
+                        icon: "🔗",
+                        title: "Employer of Record",
+                        description:
+                            "Incorpora empleados con contrato laboral pleno, sin abrir una entidad local.",
+                        href: "",
+                        colorClass: "icon-green",
+                        hoverClass: "hover-green",
+                        linkText: "Ver servicio",
+                    },
+                    {
+                        icon: "📄",
+                        title: "Contractor of Record",
+                        description:
+                            "Gestión integral de contratos para freelancers y trabajadores por proyecto.",
+                        href: "",
+                        colorClass: "icon-purple",
+                        hoverClass: "hover-purple",
+                        linkText: "Ver servicio",
+                    },
+                ]}
+            />
+        </div>
+
+        <!-- 
+		<div class="fade-in-section">
+			<RolesSection />
+		</div>
+		-->
+
+        <div class="fade-in-section">
+            <ContactFormSection
+                title="¿Listo para ampliar tu equipo con talento IT de Sudamérica?"
+                subtitle="Cuéntanos tu stack y qué perfil técnico necesitas y, en menos de 24 horas, recibirás una propuesta personalizada sin compromiso. Primera consulta gratuita."
+                buttonText="Solicitar propuesta gratuita →"
+                directLabel="Nota: llenar el formulario te toma"
+                phoneNumber="menos de 60 segundos"
+                phoneHref=""
+                directEmoji="⏱️"
+                formLabels={{
+                    name: "Nombre *",
+                    lastName: "Apellido *",
+                    company: "Nombre de la empresa",
+                    email: "Email *",
+                    phone: "Teléfono *",
+                    comments: "¿Qué perfil técnico necesitas? *",
+                }}
+                formPlaceholders={{
+                    name: "Tu nombre",
+                    lastName: "Tu apellido",
+                    company: "Nombre de tu organización",
+                    email: "nombre@tuempresa.com",
+                    phone: "+34 XXX XXX XXX",
+                    comments:
+                        "",
+                }}
+                customClass="employer-variant"
+                webhookUrl=""
+                formName="Servicio Staff Augmentation Puerto Rico"
+                pais="Puerto Rico"
+            />
+        </div>
+
+        <!-- 
+		<div class="fade-in-section">
+			<ArticulosSection />
+		</div>
+-->
+    </div>
+</DashboardServicesUs>
+
+<style>
+    .service-detail-container {
+    }
+
+    /* --- Estilos específicos para el componente de proceso en Employer --- */
+    :global(.process-employer .process-menu) {
+        background-color: #fafafc;
+    }
+
+    :global(.process-employer .process-tab-label) {
+        color: #5a5a5a;
+        font-weight: 600;
+    }
+
+    :global(.process-employer .process-tab:hover) {
+        background-color: #f0f0f5;
+        color: #1b1b1b;
+    }
+
+    :global(.process-employer .process-tab.active) {
+        background-color: #ffffff;
+    }
+
+
+
+    /* --- Iconos de Features más grandes --- */
+    :global(.eor-features .emoji-icon),
+    :global(.eor-features iconify-icon) {
+        font-size: 30px !important;
+    }
+
+    :global(.eor-features .feature-item:hover) {
+        border-color: rgba(0, 0, 0, 0.05) !important;
+    }
+
+    @media (min-width: 1025px) {
+        :global(.eor-features .features-grid > :last-child) {
+            grid-column: span 3;
+        }
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+        :global(.eor-features .features-grid > :last-child) {
+            grid-column: span 2;
+        }
+    }
+
+    /* Grid de 3 columnas en desktop para Outsourcing (3 arriba y 3 abajo) */
+    @media (min-width: 1025px) {
+        :global(.profiles-employer-page .variant-grid .profiles-grid) {
+            grid-template-columns: repeat(3, 1fr) !important;
+        }
+    }
+
+    /* Ajustar ancho máximo del párrafo para que se vea más ancho y legible */
+    :global(.profiles-employer-page .variant-grid .header-centered p) {
+        max-width: 950px !important;
+    }
+
+    /* --- Forzar estadísticas arriba y logos de empresas abajo en la franja --- */
+    .service-detail-container :global(.franja-empresas-container) {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .service-detail-container :global(.franja-stats-left) {
+        justify-content: space-around;
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
+        gap: 20px;
+    }
+
+    .service-detail-container :global(.franja-stat-block) {
+        width: auto !important;
+        max-width: 280px;
+    }
+
+    .service-detail-container :global(.franja-label) {
+        max-width: 280px !important;
+    }
+
+    .service-detail-container :global(.franja-logos-slider) {
+        max-width: 100%;
+        width: 100%;
+        flex: none;
+    }
+
+    .service-detail-container :global(.franja-empresas-section) {
+        padding: 40px 0;
+    }
+
+    .service-detail-container :global(.eor-pricing) {
+        background-color: #fafafc;
+        border-top: 1px solid #e4e4e4;
+    }
+
+    .service-detail-container :global(.eor-steps) {
+        background-color: #fafafc;
+    }
+
+    .service-detail-container :global(.faq-section) {
+        border-top: 1px solid #e4e4e4;
+    }
+
+    .service-detail-container .cobertura-full-bg {
+        background-color: #fafafc;
+        width: 100%;
+    }
+
+    .service-detail-container
+        .cobertura-full-bg
+        :global(.cobertura-geografica) {
+        background-color: transparent !important;
+    }
+
+    .service-detail-container :global(.cobertura-geografica .brand-dot) {
+        color: #ff66cc !important;
+    }
+
+    .service-detail-container :global(.btn-pricing-link) {
+        display: inline-block;
+        background-color: #7b70ff;
+        color: #ffffff !important;
+        padding: 14px 44px;
+        border-radius: 50px;
+        font-weight: 700;
+        text-align: center;
+        transition: all 0.3s ease;
+        text-decoration: none;
+    }
+
+    .service-detail-container :global(.process-employer .process-cta-btn) {
+        display: inline-block;
+        background-color: #66FF99 !important;
+        border: 2px solid #66FF99 !important;
+        color: #1b1b1b !important;
+        padding: 14px 44px !important;
+        border-radius: 50px !important;
+        font-weight: 700 !important;
+        font-family: "Poppins", sans-serif !important;
+        font-size: 14px !important;
+        text-align: center !important;
+        text-decoration: none !important;
+        transition: all 0.3s ease !important;
+    }
+
+    .service-detail-container
+        :global(.process-employer .process-cta-btn:hover) {
+        background-color: transparent !important;
+        color: #6aca8a !important;
+        border: 2px solid #6aca8a !important;
+    }
+
+    .service-detail-container :global(.process-employer .process-badge) {
+        display: none !important;
+    }
+
+    .service-detail-container :global(.faq-section .faq-cta-button) {
+        display: inline-block;
+        background-color: #66FF99 !important;
+        border: 2px solid #66FF99 !important;
+        color: #1b1b1b !important;
+        padding: 14px 44px !important;
+        border-radius: 50px !important;
+        font-weight: 700 !important;
+        font-family: "Poppins", sans-serif !important;
+        font-size: 14px !important;
+        text-align: center !important;
+        text-decoration: none !important;
+        transition: all 0.3s ease !important;
+    }
+
+    .service-detail-container :global(.faq-section .faq-cta-button:hover) {
+        background-color: transparent !important;
+        color: #6aca8a !important;
+        border: 2px solid #6aca8a !important;
+    }
+
+    .service-detail-container :global(.employer-variant .btn-submit) {
+        display: inline-block;
+        background-color: #66FF99 !important;
+        border: 2px solid #66FF99 !important;
+        color: #1b1b1b !important;
+        padding: 14px 44px !important;
+        border-radius: 50px !important;
+        font-weight: 700 !important;
+        font-family: "Poppins", sans-serif !important;
+        font-size: 14px !important;
+        text-align: center !important;
+        text-decoration: none !important;
+        transition: all 0.3s ease !important;
+        width: 100% !important;
+    }
+
+    .service-detail-container :global(.employer-variant .btn-submit:hover) {
+        background-color: transparent !important;
+        color: #6aca8a !important;
+        border: 2px solid #6aca8a !important;
+    }
+
+    /* Hero buttons — fit content, nunca se cortan */
+    .service-detail-container :global(.hero-actions) {
+        flex-wrap: nowrap !important;
+        gap: 12px !important;
+    }
+
+    .service-detail-container :global(.hero-actions .btn-pink),
+    .service-detail-container :global(.hero-actions .btn-outline) {
+        padding: 16px 28px !important;
+        width: auto !important;
+        min-width: unset !important;
+        white-space: nowrap !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        font-size: 14px !important;
+    }
+
+    /* Más padding interno para la sección hero en esta página */
+    .service-detail-container :global(.hero-section) {
+        padding-top: 80px !important;
+        padding-bottom: 80px !important;
+    }
+
+    @media (max-width: 768px) {
+        .service-detail-container :global(.hero-actions) {
+            flex-wrap: wrap !important;
+        }
+        .service-detail-container :global(.hero-actions .btn-pink),
+        .service-detail-container :global(.hero-actions .btn-outline) {
+            width: 100% !important;
+            font-size: 13px !important;
+        }
+    }
+
+    /* Difference box un poco más ancho solo en esta página */
+    .service-detail-container :global(.que-es-difference-box) {
+        max-width: 1050px !important;
+    }
+
+    /* Caja de aviso tecnológico en la sección de perfiles */
+    /* Caja de aviso tecnológico en la sección de perfiles */
+    .profiles-tech-notice {
+        max-width: 950px;
+        margin: 40px auto 0 auto;
+        background: #FFF5F6;
+        border: 1px solid #FFEBEF;
+        border-left: 4px solid #FF4D5A;
+        border-radius: 12px;
+        padding: 20px 24px;
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+        color: #6b7280;
+        line-height: 1.6;
+        text-align: left;
+        box-shadow: none;
+    }
+
+    .profiles-tech-notice strong {
+        color: #1b1b1b;
+        font-weight: 700;
+    }
+
+    .profiles-tech-notice a {
+        color: #6663fd;
+        font-weight: 600;
+        text-decoration: none;
+        transition: color 0.2s ease;
+    }
+
+    @media (max-width: 768px) {
+        .profiles-tech-notice {
+            padding: 16px 20px;
+            font-size: 13.5px;
+            margin-top: 30px;
+        }
+    }
+    /* Ocultar logos deslizantes e ir full-width con estadísticas */
+    .service-detail-container :global(.franja-logos-slider) {
+        display: none !important;
+    }
+
+    .service-detail-container :global(.franja-empresas-container) {
+        justify-content: center !important;
+    }
+
+    .service-detail-container :global(.franja-stats-left) {
+        flex: 0 1 100% !important;
+        justify-content: space-around !important;
+    }
+
+    /* Estilo centrado y limpio para Que Es Servicio Section en Staff Page */
+    .que-es-staff-centered-wrapper :global(.que-es-main-content) {
+        display: none !important;
+    }
+
+    .que-es-staff-centered-wrapper :global(.que-es-header) {
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .que-es-staff-centered-wrapper :global(.que-es-header h2) {
+        font-size: 34px !important;
+        font-weight: 800 !important;
+        letter-spacing: -1px;
+        margin-bottom: 24px !important;
+    }
+
+    .que-es-staff-centered-wrapper :global(.que-es-header p) {
+        text-align: left;
+        font-size: 16.5px !important;
+        line-height: 1.75 !important;
+        color: #5a5a5a !important;
+        max-width: 860px !important;
+    }
+
+    .que-es-staff-centered-wrapper :global(.brand-dot-pink) {
+        color: #ff66cc !important;
+        font-weight: 900 !important;
+    }
+
+    @media (max-width: 768px) {
+        .que-es-staff-centered-wrapper :global(.que-es-header h2) {
+            font-size: 26px !important;
+        }
+        .que-es-staff-centered-wrapper :global(.que-es-header p) {
+            font-size: 15px !important;
+            line-height: 1.65 !important;
+            padding: 0 10px;
+        }
+        /* Añadir padding al hero solo en esta página en móvil */
+        .service-detail-container :global(.hero-section) {
+            padding-left: 24px !important;
+            padding-right: 24px !important;
+            box-sizing: border-box;
+        }
+        .service-detail-container :global(.hero-container) {
+            padding-left: 10px !important;
+            padding-right: 10px !important;
+        }
+    }
+</style>
+
+<style is:global>
+    /* Staff Augmentation PR - mobile layout fix */
+    @media (max-width: 768px) {
+        /* Constrain the hero section and container to viewport */
+        .staff-aug-pr-hero .hero-section {
+            width: 100% !important;
+            max-width: 100vw !important;
+            box-sizing: border-box !important;
+            overflow-x: hidden !important;
+        }
+
+        .staff-aug-pr-hero .hero-container {
+            width: 100% !important;
+            max-width: 100% !important;
+            box-sizing: border-box !important;
+            overflow: hidden !important;
+        }
+
+        /* Constrain description so it doesn't expand the container */
+        .staff-aug-pr-hero .hero-description {
+            max-width: 100% !important;
+            width: 100% !important;
+            box-sizing: border-box !important;
+        }
+
+        /* Constrain actions and both buttons */
+        .staff-aug-pr-hero .hero-actions {
+            width: 100% !important;
+            max-width: 100% !important;
+            box-sizing: border-box !important;
+        }
+
+        .staff-aug-pr-hero .primary-btn-container,
+        .staff-aug-pr-hero .btn-pink,
+        .staff-aug-pr-hero .btn-outline {
+            width: 100% !important;
+            max-width: 100% !important;
+            box-sizing: border-box !important;
+        }
+
+        /* Allow button text to wrap inside */
+        .staff-aug-pr-hero .btn-outline,
+        .staff-aug-pr-hero .btn-pink {
+            white-space: normal !important;
+            word-break: break-word !important;
+            line-height: 1.4 !important;
+            text-align: center !important;
+            display: block !important;
+        }
+    }
+</style>

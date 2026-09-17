@@ -1,0 +1,1262 @@
+---
+import DashboardProfilesUs from "../../../layouts/DashboardProfilesUs.astro";
+import LeadHeroSection from "../../../components/community-manager/LeadHeroSection.astro";
+import ComparisonPerfiles from "../../../components/comparison-perfiles/ComparisonPerfiles.astro";
+import PricingCardPerfil from "../../../components/pricing-perfil/PricingCardPerfil.astro";
+import BeneficiosPerfilDisenador from "../../../components/beneficios-perfil/BeneficiosPerfilDisenador.astro";
+import PressSection from "../../../components/press/PressSection.astro";
+import ConversionPerfilDisenador from "../../../components/conversion-perfil/ConversionPerfilDisenador.astro";
+import RolesPerfil from "../../../components/roles-del-perfil/RolesPerfil.astro";
+import QueEsServicioSection from "../../../components/QueEsServicio/QueEsServicioSection.astro";
+import ServicesSection from "../../../components/services-oberstaff/ServicesSection.astro";
+import EorStepsSection from "../../../components/eor-steps-servicios/EorStepsSection.astro";
+import EorCta from "../../../components/eor-cta-servicios/EorCta.astro";
+import CasosExitoSection from "../../../components/casos-exito-servicios/CasosExitoSection.astro";
+import FAQSection from "../../../components/faq-servicios/FAQSection-community.astro";
+import GuiaContratacion from "../../../components/guia-contratacion-perfiles/GuiaContratacion.astro";
+
+const ogImage = "Contratar-closer-de-ventas.webp";
+
+const faqsList = [
+    {
+        question: "¿Qué ocurre si el closer de ventas no logra mejorar la tasa de cierre?",
+        answers: ["Si durante el período inicial el perfil no alcanza los KPIs de cierre acordados, puedes cancelar el servicio con 30 días de preaviso sin indemnizaciones o solicitarnos un reemplazo inmediato con un closer más afín a tu proceso comercial."]
+    },
+    {
+        question: "Precio de closer de ventas: ¿qué incluye el fee mensual?", 
+        answers: ["El fee de <strong class='brand-oberstaff'>Oberstaff<span class='brand-dot'>.</span></strong> cubre headhunting, evaluación, compliance legal internacional, contrato en el país de origen y nómina del profesional. No cobramos comisión sobre las ventas que cierre el profesional. Tú pagas una tarifa plana desde 910 €/mes sin variables ocultas."]
+    },
+    {
+        question: "¿El closer puede adaptarse a mi CRM y mis scripts de venta?",
+        answers: ["Sí, nuestros closers están acostumbrados a operar en distintos stacks de ventas: HubSpot, Salesforce, Pipedrive, Notion, Slack y herramientas de videoconferencia. Se integran en tu proceso desde el primer día y aprenden tu metodología de cierre."]
+    },
+    {
+        question: "¿Qué diferencia al modelo <strong class='brand-oberstaff'>Oberstaff<span class='brand-dot'>.</span></strong> de buscar closer de ventas en portales de empleo?",
+        answers: ["Publicar una oferta en un portal te expone a cientos de candidatos sin filtrar, con el riesgo de contratar directamente en España y asumir toda la carga laboral. Con <strong class='brand-oberstaff'>Oberstaff<span class='brand-dot'>.</span></strong> recibes una terna de closers pre-evaluados con roleplay verificado, y nosotros absorbemos todo el compliance legal internacional."]
+    },
+    {
+        question: "¿Quién entrega los leads y quién hace el seguimiento?",
+        answers: ["Depende del modelo. Algunas empresas generan oportunidades por marketing o setters; otras necesitan que el closer tome llamadas entrantes y también persiga propuestas abiertas. Se define antes de incorporar el perfil."]
+    }
+];
+---
+
+<DashboardProfilesUs
+    ogImage={ogImage}
+    title="Contratar closer de ventas desde España | Oberstaff"
+    description="Deja de perder leads cualificados en el último minuto. Al contratar closer de ventas sumas un perfil estratégico que domina el ciclo de ventas B2B."
+    footerTitle="Otros perfiles comerciales y de marketing que puedes contratar con <strong class='brand-oberstaff'>Oberstaff<span class='brand-dot'>.</span></strong>"
+    footerLinks={[
+        {
+            text: "✍️ Copywriter (argumentarios y landings)",
+            href: "",
+        },
+        {
+            text: "🔍 Especialista en Google Ads",
+            href: "",
+        },
+        {
+            text: "🗂️ Asistente virtual",
+            href: "",
+        },
+        {
+            text: "📱 Especialista en Meta Ads",
+            href: "",
+        },
+    ]}
+>
+    <link
+        rel="canonical"
+        href=""
+        slot="head"
+    />
+    <link rel="alternate" hreflang="es-ES" href="" slot="head" />
+    <link rel="alternate" hreflang="es-PR" href="" slot="head" />
+    <link rel="alternate" hreflang="x-default" href="" slot="head" />
+    <script type="application/ld+json" slot="head">
+        {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "WebPage",
+                    "@id": "",
+                    "url": "",
+                    "name": "Contratar closer de ventas desde España | Oberstaff",
+                    "description": "Deja de perder leads cualificados en el último minuto. Al contratar closer de ventas sumas un perfil estratégico que domina el ciclo de ventas B2B.",
+                    "inLanguage": "es-ES",
+                    "isPartOf": {
+                        "@id": ""
+                    },
+                    "publisher": {
+                        "@id": ""
+                    },
+                    "about": {
+                        "@id": ""
+                    },
+                    "mainEntity": {
+                        "@id": ""
+                    },
+                    "breadcrumb": {
+                        "@id": ""
+                    }
+                },
+                {
+                    "@type": "Service",
+                    "@id": "",
+                    "name": "Contratar Closer de Ventas Remoto en LATAM para empresas españolas",
+                    "alternateName": [
+                        "Contratar closer de ventas",
+                        "Closer de ventas remoto",
+                        "Closer ventas high ticket",
+                        "Closer B2B remoto",
+                        "Closer de ventas online",
+                        "Closer de ventas para empresas",
+                        "Especialista en cierre de ventas",
+                        "Ejecutivo de cierre remoto",
+                        "Talento comercial remoto LATAM"
+                    ],
+                    "serviceType": "Contratación de closer de ventas remoto",
+                    "category": "Servicios de contratación de talento remoto para ventas, cierre comercial y revenue",
+                    "url": "",
+                    "provider": {
+                        "@id": ""
+                    },
+                    "description": "Servicio para empresas españolas que necesitan contratar un closer de ventas remoto de LATAM con dedicación exclusiva para gestionar llamadas de cierre, seguimiento de oportunidades, manejo de objeciones, cierre high ticket, ventas B2B, actualización de CRM, forecast comercial y coordinación con marketing y ventas.",
+                    "slogan": "Recupera oportunidades que hoy se están enfriando en tu pipeline.",
+                    "audience": {
+                        "@type": "BusinessAudience",
+                        "audienceType": "Empresas españolas que necesitan contratar un closer de ventas remoto en LATAM para cerrar oportunidades cualificadas, mejorar tasa de cierre, gestionar objeciones, actualizar CRM y convertir leads en contratos firmados",
+                        "geographicArea": {
+                            "@type": "Country",
+                            "name": "España"
+                        }
+                    },
+                    "serviceAudience": {
+                        "@type": "BusinessAudience",
+                        "audienceType": "Pymes, startups, agencias, consultoras, empresas B2B, negocios high ticket y empresas españolas que buscan closers de ventas remotos dedicados, evaluados con roleplay, con horario compatible con España y gestión laboral resuelta",
+                        "geographicArea": {
+                            "@type": "Country",
+                            "name": "España"
+                        }
+                    },
+                    "areaServed": [
+                        {
+                            "@type": "Country",
+                            "name": "España"
+                        },
+                        {
+                            "@type": "Country",
+                            "name": "Colombia"
+                        },
+                        {
+                            "@type": "Country",
+                            "name": "México"
+                        },
+                        {
+                            "@type": "Country",
+                            "name": "Argentina"
+                        },
+                        {
+                            "@type": "Country",
+                            "name": "Venezuela"
+                        },
+                        {
+                            "@type": "Country",
+                            "name": "Chile"
+                        },
+                        {
+                            "@type": "Country",
+                            "name": "Perú"
+                        },
+                        {
+                            "@type": "Country",
+                            "name": "Ecuador"
+                        },
+                        {
+                            "@type": "Country",
+                            "name": "Uruguay"
+                        },
+                        {
+                            "@type": "Country",
+                            "name": "Panamá"
+                        },
+                        {
+                            "@type": "Country",
+                            "name": "Paraguay"
+                        }
+                    ],
+                    "offers": {
+                        "@type": "Offer",
+                        "@id": "",
+                        "name": "Closer de Ventas Remoto Dedicado",
+                        "url": "",
+                        "price": "910",
+                        "priceCurrency": "EUR",
+                        "availability": "https://schema.org/InStock",
+                        "eligibleCustomerType": "http://purl.org/goodrelations/v1#Business",
+                        "eligibleRegion": {
+                            "@type": "Country",
+                            "name": "España"
+                        },
+                        "description": "Contratación de closer de ventas remoto desde 910€ al mes, dirigido a empresas españolas que necesitan llamadas de cierre, seguimiento activo del pipeline, manejo de objeciones, negociación comercial, forecast, actualización diaria del CRM y una única factura mensual en euros.",
+                        "priceSpecification": {
+                            "@type": "UnitPriceSpecification",
+                            "price": "910",
+                            "priceCurrency": "EUR",
+                            "unitText": "profesional por mes"
+                        }
+                    },
+                    "hasOfferCatalog": {
+                        "@type": "OfferCatalog",
+                        "@id": "",
+                        "name": "Qué puede ejecutar un closer de ventas dedicado por tu empresa",
+                        "itemListElement": [
+                            {
+                                "@type": "Offer",
+                                "name": "Gestión de llamadas de cierre y seguimiento activo",
+                                "itemOffered": {
+                                    "@type": "Service",
+                                    "name": "Gestión de llamadas de cierre y seguimiento activo",
+                                    "description": "Ejecución de llamadas de venta estructuradas, seguimiento proactivo de prospectos y cadencias multicanal por llamada, email o WhatsApp."
+                                }
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Manejo avanzado de objeciones comerciales",
+                                "itemOffered": {
+                                    "@type": "Service",
+                                    "name": "Manejo avanzado de objeciones comerciales",
+                                    "description": "Identificación y neutralización de objeciones de precio, competencia, timing y autoridad de decisión mediante metodologías como Sandler, SPIN Selling o cierre por asunción."
+                                }
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Cierre de ventas high ticket y B2B",
+                                "itemOffered": {
+                                    "@type": "Service",
+                                    "name": "Cierre de ventas high ticket y B2B",
+                                    "description": "Gestión de procesos de venta de ciclo largo, contratos de alto valor, múltiples decisores, pain del comprador, propuesta de valor y urgencia legítima."
+                                }
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Higiene y actualización del CRM de ventas",
+                                "itemOffered": {
+                                    "@type": "Service",
+                                    "name": "Higiene y actualización del CRM de ventas",
+                                    "description": "Registro de interacciones, notas de llamada, etapa del deal, fechas de seguimiento, probabilidad de cierre y control del pipeline en CRM."
+                                }
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Gestión del pipeline comercial y forecast",
+                                "itemOffered": {
+                                    "@type": "Service",
+                                    "name": "Gestión del pipeline comercial y forecast",
+                                    "description": "Clasificación de prospectos por etapa de madurez, forecast comercial, identificación de deals estancados y acciones para desbloquear oportunidades."
+                                }
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Coordinación con marketing y equipo de ventas",
+                                "itemOffered": {
+                                    "@type": "Service",
+                                    "name": "Coordinación con marketing y equipo de ventas",
+                                    "description": "Retroalimentación sobre calidad de leads, objeciones frecuentes, perfil de comprador real y mensajes que funcionan en el cierre comercial."
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "@type": "ItemList",
+                    "@id": "",
+                    "name": "Ventajas de contratar closer de ventas remoto con Oberstaff",
+                    "description": "Ventajas comerciales y operativas para empresas españolas que contratan closers de ventas remotos en LATAM.",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Mayor foco en la fase de decisión",
+                            "description": "El closer trabaja en la parte crítica del embudo: convertir oportunidades cualificadas en acuerdos firmados."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": "Seguimiento comercial sistemático",
+                            "description": "Evita que propuestas, demos o conversaciones calientes se enfríen por falta de cadencia de seguimiento."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 3,
+                            "name": "Manejo profesional de objeciones",
+                            "description": "Trabaja objeciones de precio, timing, competencia y autoridad de decisión con metodología comercial."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 4,
+                            "name": "Menor coste estructural",
+                            "description": "Permite reforzar cierre comercial sin asumir nómina local, Seguridad Social ni pasivo laboral en España."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 5,
+                            "name": "Pipeline auditable",
+                            "description": "El CRM queda actualizado con notas, etapas, forecast y motivos de pérdida para mejorar la visibilidad comercial."
+                        }
+                    ]
+                },
+                {
+                    "@type": "ItemList",
+                    "@id": "",
+                    "name": "Proceso para contratar closer de ventas remoto",
+                    "description": "Proceso de Oberstaff para conectar empresas españolas con closers de ventas remotos de LATAM.",
+                    "numberOfItems": 4,
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Mapeo del proceso de cierre actual",
+                            "description": "La empresa comparte ticket medio, duración del ciclo de venta, CRM utilizado y principales motivos de pérdida de deals."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": "Selección de closers evaluados",
+                            "description": "Oberstaff busca y filtra perfiles de venta remota, evaluando resiliencia, dicción, manejo de objeciones y capacidad de cierre mediante roleplay."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 3,
+                            "name": "Entrevista y validación del fit comercial",
+                            "description": "La empresa entrevista candidatos y valida cómo manejarían objeciones de precio, deals fríos y seguimiento comercial en su sector."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 4,
+                            "name": "Integración en el stack de ventas",
+                            "description": "El closer obtiene acceso al CRM, calendario de reuniones y documentación comercial para empezar a trabajar oportunidades activas."
+                        }
+                    ]
+                },
+                {
+                    "@type": "ItemList",
+                    "@id": "",
+                    "name": "Tipos de closers de ventas disponibles",
+                    "description": "Especialidades de closer de ventas remoto que empresas españolas pueden contratar con Oberstaff.",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Closer ventas high ticket",
+                            "description": "Perfil especializado en ciclos de venta de alto valor, cierre consultivo, múltiples decisores y defensa de precio frente a alternativas más baratas."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": "Closer de ventas online para infoproductos y formación",
+                            "description": "Perfil habituado a llamadas tras masterclass o webinar, venta emocional, urgencia legítima y cierre con bonificaciones por tiempo limitado."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 3,
+                            "name": "Closer B2B para servicios profesionales",
+                            "description": "Perfil ideal para agencias, consultoras, empresas de software y servicios recurrentes con CEOs, directores de marketing o responsables de operaciones."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 4,
+                            "name": "Closer ventas para SaaS",
+                            "description": "Perfil especializado en demos de producto, cierre de suscripciones, venta de valor de plataforma, upselling y gestión de churn."
+                        }
+                    ]
+                },
+                {
+                    "@type": "ItemList",
+                    "@id": "",
+                    "name": "Comparativa para contratar closer de ventas",
+                    "description": "Comparación entre contratar closer de ventas con Oberstaff, closer local en España o freelance de ventas.",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Closer ventas con Oberstaff LATAM",
+                            "description": "Desde 910€ al mes, jornada completa, dedicación exclusiva al pipeline, roleplay verificado, propiedad del CRM y sin comisión sobre ventas cerradas."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": "Closer local en España",
+                            "description": "Coste orientativo entre 2.000€ y 3.500€ al mes más Seguridad Social, con dedicación exclusiva pero mayor coste fijo y pasivo laboral."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 3,
+                            "name": "Freelance o marketplace",
+                            "description": "Coste variable entre 1.000€ y 2.000€ o porcentaje sobre ventas, con posible trabajo multicliente y menor control operativo."
+                        }
+                    ]
+                },
+                {
+                    "@type": "ItemList",
+                    "@id": "",
+                    "name": "Beneficios de contratar closer de ventas con Oberstaff",
+                    "description": "Beneficios para empresas españolas que incorporan closers de ventas remotos de LATAM con Oberstaff.",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Especialización en el momento crítico",
+                            "description": "El closer se enfoca en la decisión final, donde captar y cerrar dejan de ser la misma disciplina."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": "Más lectura del pipeline",
+                            "description": "La dirección comercial puede ver qué entra, qué avanza, qué se cae y por qué, con información registrada en CRM."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 3,
+                            "name": "Menor fricción de estructura",
+                            "description": "Permite reforzar la capacidad de cierre sin sobredimensionar plantilla local ni depender de terceros sin contexto."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 4,
+                            "name": "Factura mensual en euros",
+                            "description": "La empresa recibe una sola factura mensual por el servicio del closer remoto, sin comisiones sobre ventas cerradas."
+                        }
+                    ]
+                },
+                {
+                    "@type": "ItemList",
+                    "@id": "",
+                    "name": "Claves para contratar un closer de ventas",
+                    "description": "Guía para empresas españolas que quieren contratar un closer de ventas remoto con criterio comercial, dominio de objeciones y capacidad de cierre.",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Métricas que debe manejar un closer de alto rendimiento",
+                            "description": "Tasa de cierre, velocidad del ciclo de venta, coste por oportunidad ganada, valor medio del contrato y métricas de retención en modelos de suscripción."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": "Diferencia entre closer, setter y SDR",
+                            "description": "Setter y SDR se ocupan de prospección y cualificación; el closer toma el relevo cuando el prospecto ya evalúa si la oferta es la solución."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 3,
+                            "name": "Closer de ventas LATAM para empresas españolas",
+                            "description": "El modelo remoto combina formación en venta consultiva, metodologías comerciales y franja horaria compatible con España."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 4,
+                            "name": "Cuándo conviene contratar closer remoto",
+                            "description": "Cuando la empresa tiene flujo regular de demos, llamadas o propuestas, pero la tasa de cierre está por debajo del rendimiento esperado."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 5,
+                            "name": "Briefing útil para buscar closer de ventas",
+                            "description": "Debe incluir ticket medio, origen de leads, volumen semanal de llamadas, idioma, duración del ciclo, existencia de setter previo y condiciones comerciales."
+                        }
+                    ]
+                },
+                {
+                    "@type": "ItemList",
+                    "@id": "",
+                    "name": "Roles relacionados con closer de ventas remoto",
+                    "description": "Otros perfiles comerciales y de marketing que empresas españolas pueden contratar mediante Oberstaff.",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Copywriter",
+                            "url": "",
+                            "description": "Para mejorar argumentarios comerciales, landings de captación, emails y materiales de venta."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": "Especialista en Meta Ads",
+                            "url": "",
+                            "description": "Para escalar las oportunidades que llegan al closer desde Facebook e Instagram Ads."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 3,
+                            "name": "Especialista en Google Ads",
+                            "url": "",
+                            "description": "Para captar demanda activa con intención de compra."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 4,
+                            "name": "Asistente Virtual",
+                            "url": "",
+                            "description": "Para gestionar back-office, agenda, documentación y soporte operativo del equipo comercial."
+                        }
+                    ]
+                },
+                {
+                    "@type": "FAQPage",
+                    "@id": "",
+                    "mainEntity": [
+                        {
+                            "@type": "Question",
+                            "name": "¿Qué ocurre si el closer de ventas no logra mejorar la tasa de cierre?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Si durante el período inicial el perfil no alcanza los KPIs de cierre acordados, puedes cancelar el servicio con 30 días de preaviso sin indemnizaciones o solicitar un reemplazo inmediato con un closer más afín a tu proceso comercial."
+                            }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "¿Qué incluye el fee mensual de un closer de ventas?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "El fee de Oberstaff cubre headhunting, evaluación, compliance legal internacional, contrato en el país de origen y nómina del profesional. No se cobra comisión sobre las ventas cerradas."
+                            }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "¿El closer puede adaptarse a mi CRM y mis scripts de venta?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Sí. Los closers pueden operar en stacks como HubSpot, Salesforce, Pipedrive, Notion, Slack y herramientas de videoconferencia, integrándose al proceso comercial desde el primer día."
+                            }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "¿Qué diferencia al modelo Oberstaff de buscar closer de ventas en portales de empleo?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Con Oberstaff recibes una terna de closers preevaluados mediante roleplay y prueba comercial, mientras Oberstaff absorbe el compliance legal internacional y reduce la carga de contratación directa."
+                            }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "¿Quién entrega los leads y quién hace el seguimiento?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Depende del modelo comercial. Algunas empresas generan oportunidades desde marketing o setters; otras necesitan que el closer tome llamadas entrantes y también persiga propuestas abiertas. Se define antes de incorporar el perfil."
+                            }
+                        }
+                    ]
+                },
+                {
+                    "@type": "BreadcrumbList",
+                    "@id": "",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Inicio",
+                            "item": ""
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": "Contratar Closer de Ventas",
+                            "item": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    </script>
+    <div class="service-detail-container" id="inicio">
+        <LeadHeroSection
+            webhookUrl=""
+            formName="Perfil Closer de Ventas España"
+            pais="España"
+            topLabel="Ventas y conversión B2B" 
+            topLabelInsideH1={false}
+            title="Contratar closer de ventas para recuperar oportunidades que hoy se están enfriando en tu pipeline"
+            cardTitle="Impulsa tu tasa de cierre"
+            cardSubtitle="Completa tus datos para recibir perfiles evaluados."
+            buttonText="Solicitar perfiles de closers de ventas →"
+            buttonIcon=""
+            buttonSubtext=""
+            footerLinkText="Ver cómo funciona el modelo EOR →"
+            footerLinkHref=""
+            badges={[
+                {
+                    text: "Venta consultiva y seguimiento comercial con criterio",
+                    icon: "💼",
+                },
+                {
+                    text: "Experiencia en CRM, pipeline, objeciones y forecast",
+                    icon: "📊",
+                },
+                {
+                    text: "Perfiles compatibles con el mercado español y procesos remotos",
+                    icon: "🇪🇸",
+                },
+                {
+                    text: "Closer ventas high ticket, B2B y operaciones digitales",
+                    icon: "🎯",
+                },
+            ]}
+            badgesClass="meta-ads-badges"
+        >
+            <Fragment slot="description">
+                Si tu empresa ya genera leads, llamadas o demos, pero demasiadas
+                conversaciones se quedan en “lo hablamos más adelante”, el
+                problema ya no está arriba del embudo. Está en el cierre. Con
+                <strong class="brand-oberstaff text-white">Oberstaff<span class="brand-dot">.</span></strong> puedes contratar closer de ventas remotos para
+                empresas españolas que necesitan convertir oportunidades
+                cualificadas en acuerdos firmados, sin montar una estructura
+                comercial rígida desde cero.
+            </Fragment>
+        </LeadHeroSection>
+
+        <div class="fade-in-section">
+            <QueEsServicioSection
+                title="La brecha entre oportunidades y contratos tiene nombre: falta un closer de ventas"
+                highlightWord="falta un closer de ventas"
+                description="Invertir en captación sin un profesional entrenado para cerrar es como llenar un embudo con el grifo abierto. Tus campañas traen prospectos; tu equipo comercial tiene el producto. Pero si nadie trabaja de forma sistemática la fase de decisión — las objeciones de precio, la competencia comparada, el timing del comprador — el 60 % de esas oportunidades se pierden en el silencio del pipeline."
+                imageSrc="/img1-closer.webp"
+                imageAlt="Closer de ventas gestionando oportunidades en CRM"
+                badgeText="Cierre y negociación activa"
+                quoteText="Al contratar closer de ventas remoto dedicado, integras a un profesional que vive en el fondo del funnel: llama, hace seguimiento, detecta señales de compra y cierra. Sin distracciones, sin carga administrativa y sin el sobrecoste de una nómina española."
+                checklistTitle="Señales de fuga comercial:"
+                checklistItems={[
+                    "Tienes llamadas agendadas, pero la tasa de cierre no acompaña el volumen de oportunidades.",
+                    "Tus propuestas salen, pero no existe una secuencia de seguimiento seria.",
+                    "Las objeciones sobre precio, timing o autoridad de decisión se repiten.",
+                    "Marketing dice que genera demanda y ventas responde que “los leads no convierten”, pero nadie baja al detalle de la conversación comercial.",
+                ]}
+                checklistIcon="•"
+                checklistIconClass="orange-bullet-icon"
+                ctaText="Solicitar perfiles de closer de ventas →"
+                ctaHref="#formulario-perfil"
+                diffIcon=""
+                diffTitle=""
+                diffDescription=""
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <ServicesSection
+                title="¿Qué ejecuta un closer de ventas dedicado <strong>dentro de tu proceso comercial?</strong>"
+                cardTitleTag="h3"
+                description="Es el profesional que toma el relevo cuando el lead ya está caliente: su trabajo es convertir el interés en decisión mediante conversaciones estructuradas, detección de necesidades reales y cierre de acuerdos en el menor número de interacciones posible."
+                customClass="employer-use-cases"
+                services={[
+                    {
+                        icon: "📞",
+                        title: "Gestión de llamadas de cierre y seguimiento activo",
+                        description:
+                            "Ejecución de llamadas de venta estructuradas con guión adaptado a tu oferta. Seguimiento proactivo de prospectos que no respondieron, con cadencias de contacto multicanal (llamada, email, WhatsApp) para recuperar oportunidades frías.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-green",
+                    },
+                    {
+                        icon: "📱",
+                        title: "Manejo avanzado de objeciones comerciales",
+                        description:
+                            "Identificación y neutralización de las objeciones más frecuentes en tu sector: precio, comparación con competidores, decisión diferida y falta de autoridad del interlocutor. Uso de técnicas contrastadas como el método Sandler, SPIN Selling o el cierre por asunción.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-pink",
+                    },
+                    {
+                        icon: "💼",
+                        title: "Cierre de ventas high ticket y B2B",
+                        description:
+                            "Gestión de procesos de venta de ciclo largo con varios interlocutores y etapas de decisión. Dominio del cierre de contratos de alto valor, con foco en la identificación del pain del comprador, la propuesta de valor diferenciada y la urgencia legítima.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-lime",
+                    },
+                    {
+                        icon: "📊",
+                        title: "Higiene y actualización del CRM de ventas",
+                        description:
+                            "Registro sistemático de cada interacción en el CRM (HubSpot, Salesforce, Pipedrive u otros): notas de llamada, etapa del deal, fecha de seguimiento y probabilidad de cierre. Un pipeline limpio que tu director comercial puede auditar en tiempo real.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-purple",
+                    },
+                    {
+                        icon: "🔁",
+                        title: "Gestión del pipeline comercial y forecasting",
+                        description:
+                            "Clasificación de prospectos por etapa de madurez y probabilidad de cierre. Elaboración de forecasts, identificación de deals estancados y propuesta de acciones para desbloquearlos. Tu visibilidad sobre el embudo, siempre actualizada.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-green",
+                    },
+                    {
+                        icon: "📋",
+                        title: "Coordinación con marketing y equipo de ventas",
+                        description:
+                            "Comunicación constante con el equipo que genera los leads para retroalimentar la calidad de la captación: perfil de comprador real, objeciones más frecuentes y mensajes que funcionan en el proceso de cierre.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-lime",
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <EorStepsSection
+                title="Cómo integramos a tu experto en cierre de ventas <span style='color: #6663FD; font-weight: 800;'>en 4 pasos</span>"
+                subtitle="Entregar la conversación más crítica de tu embudo — la que convierte oportunidad en cliente — exige un proceso de selección riguroso."
+                steps={[
+                    {
+                        title: "Mapea tu proceso de cierre actual",
+                        lineColorClass: "line-black",
+                        description:
+                            "Dinos el ticket medio de tu oferta, la duración media del ciclo de venta, el CRM que utilizas y los principales motivos de pérdida de deals.",
+                        badge: "⚡ 15 min · Sin compromiso",
+                    },
+                    {
+                        title: "Recibe closers evaluados en tu sector",
+                        lineColorClass: "line-pink",
+                        description:
+                            "Buscamos activamente en nuestra base de datos y mercado. Evaluamos resiliencia, dicción y manejo de objeciones.",
+                        badgeIcon: "",
+                        badge: "📋 Roleplay",
+                    },
+                    {
+                        title: "Entrevista y valida el fit comercial",
+                        lineColorClass: "line-orange",
+                        description:
+                            "Escucha directamente cómo los candidatos manejarían una objeción de precio en tu sector o cómo estructurarían el seguimiento de un deal frío.",
+                        badge: "Tú tienes la decisión final",
+                    },
+                    {
+                        title: "El closer se integra en tu stack de ventas",
+                        lineColorClass: "line-blue",
+                        description:
+                            "<strong class=\"brand-oberstaff text-white\">Oberstaff<span class=\"brand-dot\">.</span></strong> firma los acuerdos NDA. Tu closer obtiene acceso a tu CRM y tu calendario de reuniones y empieza a trabajar las oportunidades activas.",
+                        badge: "Integración activa en días",
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <EorCta
+                title="¿Conoces cuántas oportunidades pierde tu equipo en la fase de decisión?"
+                titleTag="h2"
+                text="Cuéntanos tu ticket medio y el volumen de reuniones mensuales. Recibirás una propuesta de closers de ventas adaptada a tu proceso comercial."
+                buttonText="👉 Solicitar propuesta personalizada"
+                buttonHref="#formulario-perfil"
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <RolesPerfil
+                title="Qué tipo de closer necesitas según <strong>ticket, complejidad y canal <br> de entrada</strong>"
+                subtitle="No todos los procesos de cierre son iguales. Filtramos perfiles según el modelo de negocio, el ticket, el tipo de interlocutor y la complejidad del ciclo de venta."
+                layout="modern"
+                customClass="grid-modern roles-copy-grid"
+                footerText=""
+                footerLinkText=""
+                footerLinkHref="#"
+                roles={[
+                    {
+                        title: "🎯 Closer de ventas high ticket",
+                        description: "",
+                        icon: "",
+                        iconColor: "#FF66CC",
+                        borderColorClass: "border-pink",
+                        subtitle:
+                            "Especializado en ciclos de venta de alto valor (productos o servicios desde 2.000 € hasta 50.000 €+ por contrato). Dominio del cierre consultivo, gestión de múltiples decisores y habilidad para defender el precio frente a alternativas más baratas.",
+                        techStack: ["HubSpot", "Pipedrive", "Calendly", "Loom"],
+                        buttonText: "Solicitar más información →",
+                        buttonHref: "#formulario-perfil",
+                    },
+                    {
+                        title: "📱 Closer de ventas online para infoproductos y formación",
+                        description: "",
+                        icon: "",
+                        iconColor: "#3b76f6",
+                        borderColorClass: "border-blue",
+                        subtitle:
+                            "Closer de ventas digital habituado a la venta emocional y de transformación. Gestiona llamadas de descubrimiento tras una masterclass o webinar, trabaja la urgencia real del prospecto y cierra con bonificaciones por tiempo limitado.",
+                        techStack: [
+                            "ActiveCampaign",
+                            "Zoom",
+                            "Hotmart",
+                            "Stripe",
+                        ],
+                        buttonText: "Solicitar más información →",
+                        buttonHref: "#formulario-perfil",
+                    },
+                    {
+                        title: "🏢 Closer B2B para servicios profesionales",
+                        description: "",
+                        icon: "",
+                        iconColor: "#66FF99",
+                        borderColorClass: "border-green",
+                        subtitle:
+                            "Ideal para agencias, consultoras y empresas de software. Cierra contratos de servicio recurrente con directores de marketing, CEOs o responsables de operaciones.",
+                        techStack: [
+                            "HubSpot CRM",
+                            "Salesforce",
+                            " LinkedIn",
+                            "Notion",
+                        ],
+                        buttonText: "Solicitar más información →",
+                        buttonHref: "#formulario-perfil",
+                    },
+                    {
+                        title: "🔁 Closer de ventas para SaaS",
+                        description: "",
+                        icon: "",
+                        iconColor: "#CCFF66",
+                        borderColorClass: "border-yellow",
+                        subtitle:
+                            "Especializado en demos de producto y cierre de suscripciones anuales o mensuales. Domina la venta de valor de plataforma, la gestión del churn y el upselling de planes superiores a clientes activos.",
+                        techStack: [
+                            "Intercom",
+                            "Gong",
+                            "Salesloft",
+                            "Pipedrive",
+                        ],
+                        buttonText: "Solicitar más información →",
+                        buttonHref: "#formulario-perfil",
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <ComparisonPerfiles
+                title="Análisis de inversión: precio closer de ventas <span style='font-weight: 800; color: #6663FD;'> local <br> vs. remoto (LATAM)</span> "
+                subtitle="Antes de decidir cómo incorporar capacidad de cierre a tu equipo, compara el costo real, el nivel de dedicación y el riesgo laboral de cada alternativa disponible en el mercado español."
+                footerNote="*Precios orientativos. El coste final varía según la especialidad, el ticket medio de tu oferta, la experiencia del closer y el país del profesional."
+                oberstaffLabel="<span style='color:#FF66CC; font-weight:700;'>Closer ventas con </span> <span style='color:#1B1B1B; font-weight: 800;'>Oberstaff<span style='color:#FF66CC; font-weight: 800;'>.</span></span><span style='color:#FF66CC; font-weight:700;'> (LATAM)</span>"
+                competitors={[
+                    "Closer local en España",
+                    "Freelance / Marketplace",
+                ]}
+                criterioLabel="Criterio comercial"
+                rows={[
+                    {
+                        label: "Precio closer de ventas",
+                        oberstaffValue:
+                            "<strong><span class='icon-check'>✓</span>Desde 910 €/mes</strong>",
+                        competitorValues: [
+                            "<span class='icon-cross'>✕</span>2.000–3.500 € + SS",
+                            "<span class='icon-cross'>✕</span>1.000–2.000 € o % sobre ventas",
+                        ],
+                    },
+                    {
+                        label: "Dedicación exclusiva a tu pipeline",
+                        oberstaffValue:
+                            "<span class='icon-check'>✓</span> Sí, jornada completa",
+                        competitorValues: [
+                            "<span class='icon-check'>✓</span> Sí, alto coste fijo",
+                            "<span class='icon-warning'>⚠</span> Multicliente, atiende varios embudos",
+                        ],
+                    },
+                    {
+                        label: "Evaluación de capacidad de cierre",
+                        oberstaffValue:
+                            "<span class='icon-check'>✓</span>  Roleplay + prueba técnica + psico",
+                        competitorValues: [
+                            "<span class='icon-cross'>✕</span> Solo CV y referencias",
+                            "<span class='icon-cross'>✕</span> Solo historial declarado",
+                        ],
+                    },
+                    {
+                        label: "Propiedad del CRM y grabaciones",
+                        oberstaffValue:
+                            "<span class='icon-check'>✓</span>  100 % tuya, blindada por NDA",
+                        competitorValues: [
+                            "<span class='icon-check'>✓</span> Tuya",
+                            "<span class='icon-warning'>⚠</span> Sin control sobre sus dispositivos",
+                        ],
+                    },
+                    {
+                        label: "Horario compatible con España",
+                        oberstaffValue:
+                            "<span class='icon-check'>✓</span> Sincronía total con tu equipo",
+                        competitorValues: [
+                            "<span class='icon-check'>✓</span> Compatible",
+                            "<span class='icon-warning'>⚠</span> Variable según agenda propia",
+                        ],
+                    },
+                    {
+                        label: "Comisión sobre ventas cerradas",
+                        oberstaffValue:
+                            "<span class='icon-check'>✓</span> Ninguna. Tarifa plana B2B",
+                        competitorValues: [
+                            "<span class='icon-check'>✓</span> Ninguna (solo salario fijo)",
+                            "<span class='icon-warning'>⚠</span> Suelen exigir % sobre deal",
+                        ],
+                    },
+                    {
+                        label: "Riesgo Laboral / finiquitos",
+                        oberstaffValue:
+                            "<span class='icon-check'>✓</span> Cero pasivo laboral",
+                        competitorValues: [
+                            "<span class='icon-cross'>✕</span> Pasivo laboral acumulado",
+                            "<span class='icon-check'>✓</span> Nulo",
+                        ],
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <PricingCardPerfil
+                sectionTitle="¿Cuánto cuesta contratar un closer de ventas <span style='color:#6663FD; font-weight: 900;'>con Oberstaff<span class='brand-dot'>.</span></span>? "
+                sectionSubtitle="Una estructura de costes predecible para que tu inversión en cierre sea escalable. Sin comisiones sobre ventas cerradas, sin variables ocultas."
+                cardTitle="Fee mensual único"
+                titleTag="p"
+                cardSubtitle="Jornada completa · sin comisiones sobre ventas"
+                priceLabel="DESDE"
+                priceAmount="910 €"
+                pricePeriod="/ mes"
+                features={[
+                    "Llamadas de cierre y seguimiento activo del pipeline",
+                    "Manejo de objeciones y negociación de condiciones contractuales",
+                    "Gestión y actualización diaria del CRM (HubSpot, Pipedrive, Salesforce u otros)",
+                    "Forecast semanal y reporte de ratio de cierre",
+                    "Coordinación con marketing para retroalimentar la calidad del lead",
+                    "Blindaje contractual: NDA y cesión de derechos sobre grabaciones y scripts",
+                ]}
+                ctaText="Solicitar propuesta"
+                ctaHref="#formulario-perfil"
+                disclaimer="*Precios orientativos según seniority, sector y país del profesional. Sin costes ocultos ni comisiones adicionales."
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <BeneficiosPerfilDisenador
+                showInfoCard={false}
+                title="Por qué contratar closer de ventas dedicado <span style='color:#6663FD; font-weight: 900;'>puede rendir mejor que un fundador saturado o un comercial generalista</span>"
+                subtitle="Combinamos la inmersión profunda de un perfil in-house que vive tu proceso comercial —conoce tu oferta, tus objeciones recurrentes y el perfil de tu comprador— con la agilidad de un modelo de contratación sin burocracia laboral española."
+                image="/img2-closer.webp"
+                imageAlt="Contratar closer de ventas"
+                infoTitle=""
+                features={[
+                    {
+                        icon: "🎯",
+                        title: "Especialización real en el momento crítico",
+                        description:
+                            "Captar y cerrar son disciplinas distintas. El closer trabaja donde la ambigüedad cuesta más dinero: la decisión final.",
+                    },
+                    {
+                        icon: "📊",
+                        title: "Más lectura del pipeline y menos intuición",
+                        description:
+                            "Con un closer de ventas dentro del CRM, la dirección ve qué entra, qué avanza, qué se cae y por qué.",
+                    },
+                    {
+                        icon: "⚡",
+                        title: "Menor fricción de estructura",
+                        description:
+                            "Puedes reforzar tu cierre sin sobredimensionar plantilla local ni dejar tu revenue en manos de terceros sin contexto.",
+                    },
+                ]}
+                infoItems={[
+                    {
+                        title: "",
+                        description: "",
+                    },
+                    {
+                        title: "",
+                        description: "",
+                    },
+                    {
+                        title: "",
+                        description: "",
+                    },
+                ]}
+            >
+                <div class="meta-custom-notice">
+                    Recibes una sola factura mensual en euros. Crece en
+                    contratos firmados, no en costes de estructura.
+                </div>
+            </BeneficiosPerfilDisenador>
+        </div>
+
+        <div class="fade-in-section">
+            <GuiaContratacion
+                titleTag="h2"
+                headerTitle="Cómo evaluar y contratar un closer de ventas <span style='color:#6663FD; font-weight: 900;'>que suba <br>tu tasa de cierre</span>"
+                headerDescription="Criterios técnicos y comerciales para asegurarte de que el profesional que incorporas domina el ciclo de decisión de tu comprador y puede defender tu oferta ante las objeciones más duras."
+                cards={[
+                    {
+                        title: "📊 ¿Qué métricas deben manejar los closers de ventas de alto rendimiento?",
+                        description:
+                            "Un closer estratégico trabaja con datos, no con intuición. Exige que el candidato conozca y gestione: tasa de cierre (ratio de deals ganados), velocidad del ciclo de venta, coste por oportunidad ganada, valor medio del contrato (ACV) y NRR para modelos de suscripción. Si el candidato no maneja estos conceptos con fluidez, no es el perfil adecuado.",
+                        description2: "",
+                    },
+                    {
+                        title: "🧩  ¿En qué se diferencia un closer de un setter o un SDR?",
+                        description:
+                            "Tanto los setters como los SDR (Sales Development Representative) se ocupan de la prospección y la cualificación: generan la cita o la demo. El closer toma el relevo a partir de ahí. Son funciones complementarias pero distintas. Al contratar closer de ventas para empresas, estás cubriendo específicamente la fase de conversión: el momento en que el prospecto ya sabe que tiene un problema y está evaluando si tu oferta es la solución.",
+                        description2: "",
+                    },
+                    {
+                        title: "🌎 ¿Closer de ventas para emprendedores digitales: funciona el modelo LATAM?",
+                        description:
+                            "El perfil de closer de ventas en Latinoamérica combina dos cualidades que el mercado español valora: formación técnica en metodologías de venta consultiva (Challenger Sale, SPIN, Sandler) y una franja horaria completamente compatible con España. Oberstaff selecciona específicamente perfiles habituados a vender servicios y productos de ticket medio-alto con ciclos de decisión complejos.",
+                        description2: "",
+                    },
+                    {
+                        title: "💻 ¿Cuándo conviene contratar closer de ventas digital o remoto?",
+                        description:
+                            "Cuando tu empresa tiene un flujo regular de demos, llamadas o propuestas pero el porcentaje que termina en contrato firmado está por debajo del 25–30 %. También cuando el equipo comercial dedica demasiado tiempo a prospectos que nunca van a comprar y no hay nadie que filtre y trabaje activamente los deals con mayor probabilidad de cierre. El closer remoto es la solución que añade músculo de conversión sin disparar la estructura de costes.",
+                        description2: "",
+                    },
+                    {
+                        title: "📝 “Busco closer de ventas”: cómo debe verse un briefing útil",
+                        description:
+                            "Incluye ticket medio, origen de leads, volumen semanal de llamadas, idioma, duración del ciclo, si hay setter previo, si la venta requiere propuesta y quién aprueba descuentos o condiciones.",
+                        description2: "",
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <CasosExitoSection
+                title="Empresas españolas que ya confían su equipo remoto a <span style='font-weight: 900; color: #6663FD;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span>"
+                subtitle=""
+                testimonials={[
+                    {
+                        stars: 5,
+                        avatar: "/fernando.webp",
+                        imageAlt:
+                            "Fernando Calderón, cliente de Oberstaff en Madrid",
+                        text: "Estaba en busca de talento remoto especializado para mi empresa y después de varias búsquedas sin éxito, encontré a <span class='brand-gradient'>Oberstaff</span> en Instagram. Desde nuestra primera llamada, su profesionalismo y calidad de trabajo me dejaron impresionado. Ahora, gracias a su excelente servicio, he expandido mi contrato con ellos para incluir más personal.",
+                        author: "Fernando Calderón",
+                        role: "CEO · BeautyPro",
+                        videoId: "24KxCAFGrDs",
+                    },
+                    {
+                        stars: 5,
+                        avatar: "/sha.webp",
+                        imageAlt:
+                            "Shadai Iborra, cliente de Oberstaff en Barcelona",
+                        text: "Con <span class='brand-gradient'>Oberstaff</span> pude dar trabajo a dos personas a tiempo completo, ahorrando costes de reclutamiento, espacios de oficina y salario que tendría al hacerlo en España. Lo mejor de todo es que todo está incluido en una misma factura. Con <span class='brand-gradient'>Oberstaff</span> encontré la solución perfecta para mis necesidades de contratación remota y optimización de costes.",
+                        author: "Shadai Iborra",
+                        role: "CEO · @amediastory",
+                        videoId: "_CxlPfluS7M",
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <FAQSection
+                title="Resolviendo tus dudas <br> <strong>sobre el servicio</strong>"
+                ctaText="Respondemos las dudas más frecuentes de las empresas españolas que quieren incorporar capacidad de cierre remota de forma estable y sin riesgos."
+                ctaButtonText="Hablar con asesor →"
+                ctaButtonHref="#formulario-perfil"
+                faqs={faqsList}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <PressSection title="Prensa y menciones" />
+        </div>
+
+        <div class="fade-in-section">
+            <ConversionPerfilDisenador
+                webhookUrl=""
+                title="Deja de perder oportunidades ya cualificadas y <strong>empieza a cerrarlas con método</strong>"
+                subtitle="Si estás listo para contratar closer de ventas y dar el salto hacia una estructura comercial eficiente y escalable, hablemos hoy mismo."
+                extraTitle="Solicita una sesión estratégica gratuita" 
+                buttonText="Solicitar propuesta gratuita →"
+                noteText=""
+                formName="Perfil Closer de Ventas España"
+                pais="España"
+            />
+        </div>
+    </div>
+
+    <style>
+        .service-detail-container {
+        }
+
+        :global(.meta-ads-badges) {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 10px !important;
+        }
+
+        .service-detail-container .roles-copy-grid {
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .service-detail-container
+            :global(.guia-cards-grid .guia-card:nth-child(5)) {
+            grid-column: 1 / -1;
+        }
+
+        .service-detail-container :global(.employer-use-cases-grid) {
+            grid-template-columns: repeat(3, 1fr) !important;
+        }
+
+        @media (max-width: 900px) {
+            .service-detail-container :global(.employer-use-cases-grid) {
+                grid-template-columns: 1fr !important;
+            }
+        }
+
+        .service-detail-container :global(.employer-use-cases-grid .icon-box) {
+            background-color: transparent !important;
+            border: none !important;
+            padding: 0 !important;
+            width: 100% !important;
+            height: auto !important;
+            margin-bottom: 25px !important;
+            justify-content: flex-start !important;
+        }
+
+        .service-detail-container
+            :global(.employer-use-cases-grid .icon-emoji-servicios-home) {
+            font-size: 35px !important;
+            padding: 0 !important;
+        }
+
+        @media (max-width: 768px) {
+            .service-detail-container
+                :global(.employer-use-cases-grid .icon-emoji-servicios-home) {
+                font-size: 30px !important;
+                padding: 0 !important;
+            }
+        }
+
+        /* Estilos específicos para QueEsServicioSection en esta página */
+        :global(.que-es-servicio-section .quote-blue-border) {
+            border-left: 4px solid #ff66cc !important;
+            color: #ff66cc !important;
+            font-size: 16px !important;
+            margin-top: 0 !important; /* Para alinear con el inicio de la imagen */
+            font-weight: 600 !important;
+        }
+
+        :global(.que-es-servicio-section .que-es-main-content) {
+            align-items: flex-start !important;
+        }
+
+        /* Fondo exclusivo para la sección de áreas del diseñador */
+        .service-detail-container :global(section.employer-use-cases) {
+            background-color: #fafafc !important;
+        }
+
+        /* Fondo exclusivo para la sección de casos de éxito en esta página */
+        :global(.casos-exito) {
+            background-color: #fafafc !important;
+
+            padding-bottom: 80px !important;
+        }
+
+        /* Estilos específicos para la sección FAQ en esta página */
+        :global(.faq-disenador-custom .faq-columns) {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            text-align: center !important;
+        }
+
+        :global(.faq-disenador-custom .faq-left-column) {
+            position: static !important;
+            width: 100% !important;
+            max-width: 800px !important;
+            margin-bottom: 40px !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            text-align: left !important;
+        }
+
+        :global(.faq-disenador-custom .faq-main-title) {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            text-align: left !important;
+        }
+
+        :global(.faq-disenador-custom .faq-right-column) {
+            display: none !important;
+        }
+
+        :global(.faq-disenador-custom .faq-cta-card) {
+            margin: 0 !important;
+            padding: 0 !important;
+            max-width: 600px !important;
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+            text-align: left !important;
+        }
+
+        :global(.faq-disenador-custom .faq-cta-card p) {
+            font-family: "Poppins", sans-serif !important;
+            font-size: 18px !important;
+            font-weight: 400 !important;
+            color: #5a5a5a !important;
+            line-height: 1.6 !important;
+            margin-bottom: 30px !important;
+        }
+
+        :global(.faq-disenador-custom .faq-cta-button) {
+            background-color: #6663fd !important;
+            border: 2px solid #6663fd !important;
+            color: #ffffff !important;
+            width: auto !important;
+            min-width: 220px !important;
+            padding: 14px 32px !important;
+            font-size: 15px !important;
+            display: inline-block !important;
+        }
+
+        :global(.faq-disenador-custom .faq-cta-button:hover) {
+            background-color: transparent !important;
+            border: 2px solid #6663fd !important;
+            color: #6663fd !important;
+        }
+
+        /* Ocultar la tarjeta de información en BeneficiosPerfilDisenador */
+        :global(.bp-info-card) {
+            display: none !important;
+        }
+
+        .meta-custom-notice {
+            font-family: "Poppins", sans-serif;
+            margin-top: 40px;
+            padding: 24px 30px;
+            background-color: #f7f8fc;
+            border-left: 4px solid #ff66cc;
+            color: #ff66cc;
+            font-family: "Montserrat", sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        :global(.faq-d-section) {
+            border-top: 1px solid #e5e7eb;
+        }
+
+        :global(.casos-exito) {
+            background-color: #ffffff !important;
+        }
+    </style>
+</DashboardProfilesUs>

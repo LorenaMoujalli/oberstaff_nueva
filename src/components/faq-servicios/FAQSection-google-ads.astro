@@ -4,27 +4,40 @@ import "../../styles/faq/faq-section.css";
 
 const faqs = [
     {
-        question: "¿Qué nivel de permisos necesitan los expertos en Google Ads en mi cuenta?",
-        answers: ["Necesitarán acceso 'Estándar' o 'Administrador' a Google Ads, además de permisos en GA4 y Google Tag Manager para configurar conversiones. Nuestra infraestructura legal (NDA) garantiza que esta cesión de accesos sea completamente segura."]
+        question:
+            "¿Qué nivel de permisos necesitan los expertos en Google Ads en mi cuenta?",
+        answers: [
+            "Necesitarán acceso 'Estándar' o 'Administrador' a Google Ads, además de permisos en GA4 y Google Tag Manager para configurar conversiones. Nuestra infraestructura legal (NDA) garantiza que esta cesión de accesos sea completamente segura.",
+        ],
     },
     {
         question: "¿Cómo superviso qué cambios están haciendo en mi inversión?",
-        answers: ["El profesional trabaja conectado a tus herramientas. Además, Google Ads posee un 'Historial de Cambios' donde puedes ver en tiempo real cada palabra clave añadida, cada ajuste de presupuesto y cada optimización realizada durante su jornada."]
+        answers: [
+            "El profesional trabaja conectado a tus herramientas. Además, Google Ads posee un 'Historial de Cambios' donde puedes ver en tiempo real cada palabra clave añadida, cada ajuste de presupuesto y cada optimización realizada durante su jornada.",
+        ],
     },
     {
-        question: "¿Qué ocurre si las campañas no son rentables en los primeros meses?",
-        answers: ["El algoritmo requiere una fase de aprendizaje. Sin embargo, si consideras que la estrategia técnica no es la adecuada, puedes cancelar la suscripción con 30 días de preaviso o solicitar un cambio de profesional."]
+        question:
+            "¿Qué ocurre si las campañas no son rentables en los primeros meses?",
+        answers: [
+            "El algoritmo requiere una fase de aprendizaje. Sin embargo, si consideras que la estrategia técnica no es la adecuada, puedes cancelar la suscripción con 30 días de preaviso o solicitar un cambio de profesional.",
+        ],
     },
     {
-        question: "¿A quién le pago el presupuesto de los anuncios, a Google o a <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong>?",
-        answers: ["La inversión publicitaria siempre se factura directamente a tu empresa por parte de Google Ads (mediante tu tarjeta o cuenta bancaria). A <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong> únicamente le abonas la cuota mensual fija por los honorarios del especialista SEM y la gestión laboral."]
+        question:
+            "¿A quién le pago el presupuesto de los anuncios, a Google o a <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong>?",
+        answers: [
+            "La inversión publicitaria siempre se factura directamente a tu empresa por parte de Google Ads (mediante tu tarjeta o cuenta bancaria). A <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong> únicamente le abonas la cuota mensual fija por los honorarios del especialista SEM y la gestión laboral.",
+        ],
     },
     {
-        question: "¿Existe riesgo de pagar impuestos o contingencias laborales por el experto Google Ads?",
-        answers: ["Ninguno, nosotros contratamos al talento bajo la legislación de su país natal. Tu departamento financiero solo registra una factura B2B internacional por externalización de servicios."]
+        question:
+            "¿Existe riesgo de pagar impuestos o contingencias laborales por el experto Google Ads?",
+        answers: [
+            "Ninguno, nosotros contratamos al talento bajo la legislación de su país natal. Tu departamento financiero solo registra una factura B2B internacional por externalización de servicios.",
+        ],
     },
-    
-]; 
+];
 
 interface Props {
     title?: string;
@@ -37,13 +50,13 @@ const {
     title = "Todo lo que necesitas saber antes de su <strong>expansión en LATAM</strong>",
     ctaText = "¿No estás seguro de qué modelo necesitas? El staff augmentation es ideal para perfiles tech integrados en tu equipo. Pero dependiendo de tu operación, puede que necesites un servicio diferente o combinar varios.",
     ctaButtonText = "Agenda una llamada gratuita",
-    ctaButtonHref = "#"
+    ctaButtonHref = "#",
 } = Astro.props;
 ---
 
 <style>
     .faq-d-section {
-        background-color: #FAFAFC;
+        background-color: #fafafc;
         padding: 100px 20px;
     }
 
@@ -65,7 +78,7 @@ const {
     }
 
     .faq-d-title {
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-size: 32px;
         font-weight: 700;
         font-style: normal;
@@ -77,27 +90,27 @@ const {
 
     .faq-d-title :global(strong) {
         font-weight: 900;
-        color: #6663FD;
+        color: #6663fd;
     }
 
     .faq-d-text {
-        font-family: 'Poppins', sans-serif;
+        font-family: "Poppins", sans-serif;
         font-size: 16px;
         font-weight: 400;
-        color: #5A5A5A;
+        color: #5a5a5a;
         line-height: 1.6;
         margin-bottom: 28px;
     }
 
     .faq-d-btn {
         display: inline-block;
-        background-color: #6663FD;
+        background-color: #6663fd;
         color: #ffffff;
         padding: 14px 32px;
-        border: 2px solid #6663FD;
+        border: 2px solid #6663fd;
         border-radius: 50px;
         text-decoration: none;
-        font-family: 'Poppins', sans-serif;
+        font-family: "Poppins", sans-serif;
         font-weight: 600;
         font-size: 15px;
         transition: all 0.3s ease;
@@ -105,7 +118,7 @@ const {
 
     .faq-d-btn:hover {
         background-color: transparent;
-        color: #6663FD;
+        color: #6663fd;
     }
 
     /* Right column: FAQ accordion — sin scroll interno, altura libre */
@@ -142,10 +155,10 @@ const {
         }
 
         .faq-d-text {
-           text-align: center;
-           margin-left: auto;
-           margin-right: auto;
-           max-width: 400px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 400px;
         }
 
         .faq-d-text :global(br) {
@@ -176,7 +189,9 @@ const {
                 faqs.map((faq) => (
                     <FAQItem question={faq.question}>
                         {faq.answers &&
-                            faq.answers.map((answer) => <p set:html={answer} />)}
+                            faq.answers.map((answer) => (
+                                <p set:html={answer} />
+                            ))}
                     </FAQItem>
                 ))
             }

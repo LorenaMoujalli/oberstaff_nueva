@@ -1,0 +1,1211 @@
+---
+import DashboardProfilesUs from "../../../layouts/DashboardProfilesUs.astro";
+import LeadHeroSection from "../../../components/community-manager/LeadHeroSection.astro";
+import ComparisonPerfiles from "../../../components/comparison-perfiles/ComparisonPerfiles.astro";
+import PricingCardPerfil from "../../../components/pricing-perfil/PricingCardPerfil.astro";
+import BeneficiosPerfilDisenador from "../../../components/beneficios-perfil/BeneficiosPerfilDisenador.astro";
+import PressSection from "../../../components/press/PressSection.astro";
+import ConversionPerfilDisenador from "../../../components/conversion-perfil/ConversionPerfilDisenador.astro";
+import RolesPerfil from "../../../components/roles-del-perfil/RolesPerfil.astro";
+import QueEsServicioSection from "../../../components/QueEsServicio/QueEsServicioSection.astro";
+import ServicesSection from "../../../components/services-oberstaff/ServicesSection.astro";
+import EorStepsSection from "../../../components/eor-steps-servicios/EorStepsSection.astro";
+import EorCta from "../../../components/eor-cta-servicios/EorCta.astro";
+import CasosExitoSection from "../../../components/casos-exito-servicios/CasosExitoSection.astro";
+import FAQSection from "../../../components/faq-servicios/FAQSection-community.astro";
+import GuiaContratacion from "../../../components/guia-contratacion-perfiles/GuiaContratacion.astro";
+
+const ogImage = "Experto-en-Meta-Ads.webp";
+
+const faqsList = [
+    {
+        question: "¿A quién le pago la inversión publicitaria?",
+        answers: ["La inversión en anuncios se paga directamente a Meta desde la cuenta publicitaria de tu empresa. A <strong>Oberstaff<span style='color: #ff66cc;'>.</span></strong> le pagas el fee mensual del especialista y la gestión del modelo de contratación."]
+    },
+    {
+        question: "¿Qué accesos necesita el especialista Facebook Ads?", 
+        answers: ["Habitualmente necesitará permisos sobre Business Manager, cuenta publicitaria, Pixel o Conversión API, catálogos y, si aplica, acceso coordinado a GTM, GA4 o CRM para revisar medición y calidad del dato."]
+    },
+    {
+        question: "¿Puede trabajar con mi equipo creativo o de ventas?",
+        answers: ["Sí, y debería hacerlo. Meta Ads funciona mejor cuando el especialista recibe feedback de ventas, objeciones reales, piezas nuevas y datos sobre qué lead termina comprando."]
+    },
+    {
+        question: "¿Qué pasa si mi cuenta ya tiene campañas activas?",
+        answers: ["Parte del histórico, primero el profesional audita la estructura, la señal y la calidad del tráfico. Luego decide qué mantener, qué ordenar, qué pausar y qué escalar sin destruir aprendizajes útiles."]
+    },
+    {
+        question: "¿Y si vendo por WhatsApp, llamada o CRM y no por ecommerce?",
+        answers: ["También encaja, solo necesitas un sistema para devolver resultados de negocio al marketing: estados del lead, oportunidad, cierre, ticket o al menos feedback cualitativo del equipo comercial."]
+    },
+    { 
+        question: "¿Qué flexibilidad tengo si el especialista Meta Ads no logra capturar el tono de mis campañas?",
+        answers: ["Puedes solicitar reemplazo o detener el servicio según las condiciones del modelo. La ventaja de esta estructura es que reduces fricción laboral y mantienes control sobre tus activos."]
+    }, 
+    {
+        question: "¿Qué pasa si mi cuenta publicitaria sufre un bloqueo o baneo?",
+        answers: ["Nuestros expertos en Facebook Ads conocen las políticas comerciales de Meta y aplican buenas prácticas para minimizar riesgos. Si ocurre un bloqueo imprevisto por parte del algoritmo, el especialista se encargará de gestionar las apelaciones correspondientes con el soporte de Meta de forma proactiva."]
+    },
+];
+---
+
+<DashboardProfilesUs
+    ogImage={ogImage}
+    title="Meta Ads: Experto en Meta Ads | Escala tus conversiones"
+    description="Incorpora un experto en Meta Ads. Especialistas de LATAM en Business Manager, CAPI y escalado de ROAS con dedicación exclusiva. Maximiza tu inversión."
+    footerTitle="Roles relacionados"
+    footerLinks={[
+        {
+            text: "📹  Editor de video",
+            href: "",
+        },
+        {
+            text: "🔍 Especialista en Google Ads",
+            href: "",
+        },
+        {
+            text: "🎨  Diseñador gráfico",
+            href: "",
+        },
+    ]}
+>
+    <Fragment slot="head">
+        <link rel="canonical" href="" />
+        <link rel="alternate" hreflang="es-ES" href="" />
+        <link rel="alternate" hreflang="es-PR" href="" />
+        <link rel="alternate" hreflang="x-default" href="" />
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@graph": [
+                    {
+                        "@type": "WebPage",
+                        "@id": "",
+                        "url": "",
+                        "name": "Experto en Meta Ads | Escala tus conversiones | Oberstaff",
+                        "description": "Incorpora un experto en Meta Ads. Especialistas de LATAM en Business Manager, CAPI y escalado de ROAS con dedicación exclusiva. Maximiza tu inversión.",
+                        "inLanguage": "es-ES",
+                        "isPartOf": {
+                            "@id": ""
+                        },
+                        "publisher": {
+                            "@id": ""
+                        },
+                        "about": {
+                            "@id": ""
+                        },
+                        "mainEntity": {
+                            "@id": ""
+                        },
+                        "breadcrumb": {
+                            "@id": ""
+                        }
+                    },
+                    {
+                        "@type": "Service",
+                        "@id": "",
+                        "name": "Contratar Experto en Meta Ads Remoto en LATAM para empresas españolas",
+                        "alternateName": [
+                            "Experto en Meta Ads",
+                            "Contratar experto en Meta Ads",
+                            "Especialista en Meta Ads",
+                            "Especialista en Facebook Ads",
+                            "Experto en Facebook Ads",
+                            "Especialista en Instagram Ads",
+                            "Especialista Paid Social remoto",
+                            "Media Buyer Meta Ads",
+                            "Talento Meta Ads de LATAM"
+                        ],
+                        "serviceType": "Contratación de experto en Meta Ads remoto",
+                        "category": "Servicios de contratación de talento remoto para Meta Ads, Facebook Ads, Instagram Ads y Paid Social",
+                        "url": "",
+                        "provider": {
+                            "@id": ""
+                        },
+                        "description": "Servicio para empresas españolas que necesitan contratar un experto en Meta Ads remoto de LATAM con dedicación exclusiva, experiencia en Business Manager, Pixel de Meta, API de Conversiones, catálogos, remarketing, Facebook Ads, Instagram Ads, testing creativo, optimización de CPA, ROAS, MER y horario compatible con España.",
+                        "slogan": "Convierte Facebook e Instagram en un canal predecible de captación.",
+                        "audience": {
+                            "@type": "BusinessAudience",
+                            "audienceType": "Empresas españolas que necesitan contratar un experto en Meta Ads remoto en LATAM para optimizar Facebook Ads, Instagram Ads, Business Manager, Pixel, CAPI, remarketing, ROAS, CPA, CPL y campañas de conversión",
+                            "geographicArea": {
+                                "@type": "Country",
+                                "name": "España"
+                            }
+                        },
+                        "serviceAudience": {
+                            "@type": "BusinessAudience",
+                            "audienceType": "Pymes, startups, ecommerce, agencias y empresas españolas que buscan especialistas Meta Ads remotos dedicados, evaluados técnicamente, con horario compatible con España y gestión laboral resuelta",
+                            "geographicArea": {
+                                "@type": "Country",
+                                "name": "España"
+                            }
+                        },
+                        "areaServed": [
+                            {
+                                "@type": "Country",
+                                "name": "España"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "Colombia"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "México"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "Argentina"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "Venezuela"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "Chile"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "Perú"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "Ecuador"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "Uruguay"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "Panamá"
+                            },
+                            {
+                                "@type": "Country",
+                                "name": "Paraguay"
+                            }
+                        ],
+                        "offers": {
+                            "@type": "Offer",
+                            "@id": "",
+                            "name": "Experto en Meta Ads Remoto Dedicado",
+                            "url": "",
+                            "price": "950",
+                            "priceCurrency": "EUR",
+                            "availability": "https://schema.org/InStock",
+                            "eligibleCustomerType": "http://purl.org/goodrelations/v1#Business",
+                            "eligibleRegion": {
+                                "@type": "Country",
+                                "name": "España"
+                            },
+                            "description": "Contratación de experto en Meta Ads remoto desde 950€ al mes, dirigido a empresas españolas que necesitan gestión de Facebook Ads, Instagram Ads, Pixel, CAPI, catálogos, remarketing, testing creativo, optimización diaria de ROAS, CPA, CPL y una única factura mensual en euros.",
+                            "priceSpecification": {
+                                "@type": "UnitPriceSpecification",
+                                "price": "950",
+                                "priceCurrency": "EUR",
+                                "unitText": "profesional por mes"
+                            }
+                        },
+                        "hasOfferCatalog": {
+                            "@type": "OfferCatalog",
+                            "@id": "",
+                            "name": "Qué puede ejecutar un experto en Meta Ads dedicado por tu empresa",
+                            "itemListElement": [
+                                {
+                                    "@type": "Offer",
+                                    "name": "Auditoría inicial y lectura del funnel",
+                                    "itemOffered": {
+                                        "@type": "Service",
+                                        "name": "Auditoría inicial y lectura del funnel",
+                                        "description": "Revisión del histórico de campañas, estructura de conjuntos, calidad de eventos, ventanas de atribución, creatividades ganadoras, públicos, frecuencia y puntos de fuga entre anuncio, landing y CRM."
+                                    }
+                                },
+                                {
+                                    "@type": "Offer",
+                                    "name": "Arquitectura de campañas y audiencias",
+                                    "itemOffered": {
+                                        "@type": "Service",
+                                        "name": "Arquitectura de campañas y audiencias",
+                                        "description": "Reordenamiento de campañas según objetivo de negocio: generación de leads, ventas, catálogo y remarketing, con definición de audiencias amplias, personalizadas y similares."
+                                    }
+                                },
+                                {
+                                    "@type": "Offer",
+                                    "name": "Gestión creativa y testeo A/B de anuncios",
+                                    "itemOffered": {
+                                        "@type": "Service",
+                                        "name": "Gestión creativa y testeo A/B de anuncios",
+                                        "description": "Definición de hooks, copies, formatos nativos, piezas para Reels Ads, Stories, carruseles y pruebas multivariable para reducir CPM y mejorar CTR."
+                                    }
+                                },
+                                {
+                                    "@type": "Offer",
+                                    "name": "Tracking, calidad de señal y atribución",
+                                    "itemOffered": {
+                                        "@type": "Service",
+                                        "name": "Tracking, calidad de señal y atribución",
+                                        "description": "Implementación del Pixel de Meta, API de Conversiones del lado del servidor, eventos personalizados vía GTM, modelos de atribución y cuadros de mando."
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "@type": "ItemList",
+                        "@id": "",
+                        "name": "Ventajas de contratar experto en Meta Ads remoto con Oberstaff",
+                        "description": "Ventajas operativas para empresas españolas que contratan expertos Meta Ads remotos en LATAM.",
+                        "itemListElement": [
+                            {
+                                "@type": "ListItem",
+                                "position": 1,
+                                "name": "Optimización en tiempo real",
+                                "description": "El especialista monitoriza CPM, CTR, CPA, ROAS y rendimiento de campañas durante una jornada compatible con España."
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 2,
+                                "name": "Creatividad y data",
+                                "description": "Análisis de hooks, copies y formatos creativos para reducir CPA, combatir fatiga creativa y mejorar el rendimiento del feed."
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 3,
+                                "name": "Tarifa plana B2B",
+                                "description": "Permite aumentar inversión en Meta sin cobrar un porcentaje adicional sobre el presupuesto publicitario."
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 4,
+                                "name": "Flexibilidad sin indemnizaciones",
+                                "description": "Posibilidad de cancelar o solicitar reemplazo si el experto en Meta Ads no logra los objetivos de rentabilidad."
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 5,
+                                "name": "Acceso blindado",
+                                "description": "Protección de activos en Business Manager mediante acuerdos de confidencialidad y estructura contractual."
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "ItemList",
+                        "@id": "",
+                        "name": "Proceso para contratar experto en Meta Ads remoto",
+                        "description": "Proceso de Oberstaff para conectar empresas españolas con expertos Meta Ads y Facebook Ads remotos de LATAM.",
+                        "numberOfItems": 4,
+                        "itemListElement": [
+                            {
+                                "@type": "ListItem",
+                                "position": 1,
+                                "name": "Definición de objetivos de campañas en Meta",
+                                "description": "Análisis de inversión mensual, tipo de producto o servicio, prioridad de captación y objetivo de rentabilidad."
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 2,
+                                "name": "Selección de especialistas en Facebook Ads",
+                                "description": "Filtrado de expertos en Meta Ads en LATAM, revisando historial de cuentas gestionadas y resultados de prueba técnica."
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 3,
+                                "name": "Entrevista y validación de criterio de negocio",
+                                "description": "La empresa evalúa cómo el candidato diagnosticaría un CPM alto, una campaña Advantage+ o una estrategia de escalado."
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 4,
+                                "name": "Integración al ecosistema publicitario de Meta",
+                                "description": "Onboarding, acuerdos de confidencialidad y acceso seguro a cuenta publicitaria, catálogo, Pixel, CAPI y herramientas de analítica."
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "ItemList",
+                        "@id": "",
+                        "name": "Tipos de especialistas en Meta Ads disponibles",
+                        "description": "Especialidades de Meta Ads, Facebook Ads e Instagram Ads que empresas españolas pueden contratar con Oberstaff.",
+                        "itemListElement": [
+                            {
+                                "@type": "ListItem",
+                                "position": 1,
+                                "name": "Experto en Facebook Ads y generación de leads",
+                                "description": "Perfil especializado en Lead Ads, Messenger, WhatsApp, landing pages, embudos y captación de demanda para servicios, reservas, citas o demos."
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 2,
+                                "name": "Especialista en Facebook Ads for ecommerce",
+                                "description": "Perfil orientado a catálogos, Advantage+ Shopping, Shopify, WooCommerce, remarketing dinámico y escalado de ROAS."
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 3,
+                                "name": "Especialista en retargeting",
+                                "description": "Perfil enfocado en audiencias personalizadas, listas de clientes, visitantes web, engagement, LTV y remarketing dinámico."
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 4,
+                                "name": "Especialista en Pixel y API de Conversiones",
+                                "description": "Perfil técnico para implementar Pixel de Meta, CAPI, GTM, eventos, modelos de atribución y recuperación de señal post-iOS 14."
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 5,
+                                "name": "Especialista en creatividades y UGC Ads",
+                                "description": "Perfil enfocado en hooks, Reels, Stories, carruseles, UGC, testeo A/B, análisis de CTR y reducción de CPM."
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 6,
+                                "name": "Consultor Facebook Ads 360 generalista senior",
+                                "description": "Perfil que orquesta estrategia paid social, campañas de frío, retargeting, presupuesto global, reporting y coordinación con marketing."
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "ItemList",
+                        "@id": "",
+                        "name": "Comparativa para contratar experto en Meta Ads",
+                        "description": "Comparación entre contratar experto Meta Ads con Oberstaff, especialista local en España, freelance por horas o agencia multicuentas.",
+                        "itemListElement": [
+                            {
+                                "@type": "ListItem",
+                                "position": 1,
+                                "name": "Oberstaff LATAM",
+                                "description": "Desde 950€ al mes, dedicación exclusiva, tarifa plana B2B, mayor inmersión en Business Manager, CRM, landing, ventas y campañas."
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 2,
+                                "name": "Especialista local en España",
+                                "description": "Coste orientativo entre 2.500€ y 4.000€ al mes más Seguridad Social, con dedicación interna pero mayor coste estructural."
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 3,
+                                "name": "Freelance por horas",
+                                "description": "Coste orientativo entre 1.200€ y 2.500€ o por campaña, con disponibilidad variable y posible reparto de tiempo entre varios clientes."
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 4,
+                                "name": "Agencia multicuentas",
+                                "description": "Fee base más 10% o 15% sobre inversión publicitaria, procesos estandarizados y atención repartida entre varias cuentas."
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "ItemList",
+                        "@id": "",
+                        "name": "Beneficios de contratar experto en Meta Ads con Oberstaff",
+                        "description": "Beneficios para empresas españolas que incorporan expertos Meta Ads remotos de LATAM con Oberstaff.",
+                        "itemListElement": [
+                            {
+                                "@type": "ListItem",
+                                "position": 1,
+                                "name": "Enfoque publicitario exclusivo",
+                                "description": "El experto trabaja enfocado en Business Manager, frecuencia de impacto, creatividad diaria, campañas y objetivos de rentabilidad."
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 2,
+                                "name": "Operación sincronizada",
+                                "description": "Participa en decisiones de audiencias, reportes de ROAS, feedback de ventas y estrategia con el equipo de marketing."
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 3,
+                                "name": "Protección corporativa",
+                                "description": "Business Manager, audiencias, Pixel y datos publicitarios se protegen mediante contratos y gestión laboral por parte de Oberstaff."
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 4,
+                                "name": "Factura mensual en euros",
+                                "description": "La empresa recibe una sola factura mensual por el servicio del experto Meta Ads remoto."
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "ItemList",
+                        "@id": "",
+                        "name": "Claves para contratar un experto en Meta Ads",
+                        "description": "Guía para empresas españolas que quieren contratar un experto Meta Ads remoto con criterio técnico, creativo y de negocio.",
+                        "itemListElement": [
+                            {
+                                "@type": "ListItem",
+                                "position": 1,
+                                "name": "Stack técnico y operativo de Meta Ads",
+                                "description": "Business Manager, Events Manager, Pixel, Conversión API, catálogos, audiencias personalizadas, lookalike, ventas, leads, tráfico y remarketing dinámico."
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 2,
+                                "name": "Cuándo conviene incorporar un experto en Meta Ads",
+                                "description": "Cuando la empresa tiene oferta validada, margen suficiente, capacidad comercial y necesita sistematizar captación o ventas en Facebook e Instagram."
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 3,
+                                "name": "Cuándo no conviene contratar un experto en Meta Ads",
+                                "description": "Si no existe oferta clara, margen suficiente, landing, WhatsApp, CRM o proceso comercial mínimo para atender los leads generados."
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 4,
+                                "name": "Señales de pérdida de dinero en Meta Ads",
+                                "description": "Fatiga creativa, leads de baja calidad, cambios sin respetar aprendizaje, mala deduplicación Pixel-CAPI o remarketing solapado."
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "ItemList",
+                        "@id": "",
+                        "name": "Roles relacionados con experto en Meta Ads remoto",
+                        "description": "Otros perfiles relacionados que empresas españolas pueden contratar mediante Oberstaff.",
+                        "itemListElement": [
+                            {
+                                "@type": "ListItem",
+                                "position": 1,
+                                "name": "Diseñador gráfico",
+                                "item": ""
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 2,
+                                "name": "Editor de video remoto",
+                                "item": ""
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 3,
+                                "name": "Especialista en Google Ads",
+                                "item": ""
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "FAQPage",
+                        "@id": "",
+                        "mainEntity": [
+                            {
+                                "@type": "Question",
+                                "name": "¿A quién le pago la inversión publicitaria?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "La inversión en anuncios se paga directamente a Meta desde la cuenta publicitaria de tu empresa. A Oberstaff le pagas el fee mensual del especialista y la gestión del modelo de contratación."
+                                }
+                            },
+                            {
+                                "@type": "Question",
+                                "name": "¿Qué accesos necesita el especialista Facebook Ads?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "Habitualmente necesita permisos sobre Business Manager, cuenta publicitaria, Pixel o API de Conversiones, catálogos y, si aplica, acceso coordinado a GTM, GA4 o CRM."
+                                }
+                            },
+                            {
+                                "@type": "Question",
+                                "name": "¿Puede trabajar con mi equipo creativo o de ventas?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "Sí. Meta Ads funciona mejor cuando el especialista recibe feedback de ventas, objeciones reales, piezas nuevas y datos sobre qué lead termina comprando."
+                                }
+                            },
+                            {
+                                "@type": "Question",
+                                "name": "¿Qué pasa si mi cuenta ya tiene campañas activas?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "El profesional audita primero la estructura, la señal y la calidad del tráfico. Después decide qué mantener, qué ordenar, qué pausar y qué escalar sin destruir aprendizajes útiles."
+                                }
+                            },
+                            {
+                                "@type": "Question",
+                                "name": "¿Y si vendo por WhatsApp, llamada o CRM y no por ecommerce?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "También encaja. Lo importante es contar con un sistema que devuelva resultados de negocio al marketing: estados del lead, oportunidad, cierre, ticket o feedback comercial."
+                                }
+                            },
+                            {
+                                "@type": "Question",
+                                "name": "¿Qué flexibilidad tengo si el especialista Meta Ads no logra capturar el tono de mis campañas?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "Puedes solicitar reemplazo o detener el servicio según las condiciones del modelo, reduciendo fricción laboral y manteniendo control sobre tus activos publicitarios."
+                                }
+                            },
+                            {
+                                "@type": "Question",
+                                "name": "¿Qué pasa si mi cuenta publicitaria sufre un bloqueo o baneo?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "Los expertos en Facebook Ads aplican buenas prácticas para minimizar riesgos. Si ocurre un bloqueo imprevisto, el especialista puede gestionar apelaciones con soporte de Meta de forma proactiva."
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "BreadcrumbList",
+                        "@id": "",
+                        "itemListElement": [
+                            {
+                                "@type": "ListItem",
+                                "position": 1,
+                                "name": "Inicio",
+                                "item": ""
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 2,
+                                "name": "Experto en Meta Ads",
+                                "item": ""
+                            }
+                        ]
+                    }
+                ]
+            }
+        </script>
+    </Fragment>
+    <div class="service-detail-container" id="inicio">
+        <LeadHeroSection
+            webhookUrl=""
+            formName="Perfil Experto en Meta Ads España"
+            pais="España"
+            topLabel=""
+            topLabelInsideH1={true}
+            title="Experto en Meta Ads: convierte Facebook e Instagram en un canal predecible de captación"
+            cardTitle="Impulsa tu ROAS hoy"
+            cardSubtitle="Completa tus datos para recibir perfiles."
+            buttonText="Solicitar especialistas en Facebook Ads"
+            buttonIcon=""
+            buttonSubtext="↳ Tardarás menos de 1 minuto"
+            footerLinkText="Ver cómo funciona el modelo EOR →"
+            footerLinkHref=""
+            badges={[
+                {
+                    text: "Optimización diaria de tus campañas Facebook Ads",
+                    icon: "📈",
+                },
+                { text: "Expertos en campañas Facebook Ads", icon: "🎯" },
+                {
+                    text: "Testing creativo continuo para reducir fatiga y mejorar CTR",
+                    icon: "🔄",
+                },
+                {
+                    text: "Reporting alineado a CPL, CAC, ROAS, MER y ventas reales",
+                    icon: "📊",
+                },
+            ]}
+            badgesClass="meta-ads-badges"
+        >
+            <Fragment slot="description">
+                Tu negocio pierde dinero cada día que tus campañas de Facebook e
+                Instagram corren sin un especialista dedicado que las optimice.
+                Con <strong
+                    >Oberstaff<strong style="color: #ff66cc;">.</strong></strong
+                > puedes contratar expertos en Meta Ads de LATAM con experiencia real
+                en Business Manager, Pixel, Conversión API, catálogos y remarketing
+                listos para optimizar tu operación y convertir inversión en resultados.
+            </Fragment>
+        </LeadHeroSection>
+
+        <div class="fade-in-section">
+            <QueEsServicioSection
+                title="Recupera el control de tu inversión con expertos en Facebook Ads dedicados a tiempo completo a <br> tu negocio"
+                highlightWord="dedicados a tiempo completo a <br> tu negocio"
+                description="La publicidad en Meta ha cambiado: ya no basta con segmentar por intereses. Necesitas especialistas en Facebook Ads que entiendan la atribución post-iOS 14, que sepan estructurar campañas de Advantage+ y que iteren creatividades a la velocidad que el feed demanda."
+                imageSrc="/img1-meta.webp"
+                imageAlt="Especialista en Meta Ads analizando campañas de Meta"
+                badgeText="Optimización en tiempo real"
+                quoteText="Con <span style='color: #1b1b1b; font-weight: 800;'>Oberstaff<span style='color: #FF66CC;'>.</span></span> eliminas la barrera del pasivo laboral en España y accedes a talento senior que se integra como un miembro más de tu equipo de marketing. "
+                checklistTitle="Checklist de ventajas operativas:"
+                checklistItems={[
+                    "<span style='color: #1b1b1b; font-weight: 600;'>Optimización en tiempo real:</span> Tu especialista monitoriza el CPM y el CTR durante tu jornada laboral, ajustando pujas cuando el mercado español está más activo.",
+                    "<span style='color: #1b1b1b; font-weight: 600;'>Creatividad y data:</span> No solo mueven botones; analizan qué gancho (hook) funciona mejor en tus anuncios para reducir el CPA.",
+                    "<span style='color: #1b1b1b; font-weight: 600;'>Tarifa plana B2B:</span> aumenta tu inversión en la plataforma sin que te cobremos un porcentaje adicional por gestión de inversión.",
+                    "<span style='color: #1b1b1b; font-weight: 600;'>Sin ataduras a largo plazo:</span>  Si el experto en Meta Ads no logra los objetivos de rentabilidad, puedes cancelar sin indemnizaciones o solicitar un reemplazo rápido.",
+                    "<span style='color: #1b1b1b; font-weight: 600;'>Acceso blindado:</span> firmamos los acuerdos de confidencialidad (NDA) para proteger tus activos en Business Manager.",
+                ]}
+                ctaText="Solicitar propuesta personalizada →"
+                ctaHref="#formulario-perfil"
+                diffIcon=""
+                diffTitle=""
+                diffDescription=""
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <ServicesSection
+                title="Experto en Facebook Ads: <strong>qué incluye su trabajo dentro de tu cuenta publicitaria</strong>"
+                cardTitleTag="h3"
+                description="Al contratar Facebook Ads a través de nuestro modelo, aseguras que el profesional cubra todos los pilares del ecosistema publicitario de Meta:"
+                customClass="employer-use-cases"
+                services={[
+                    {
+                        icon: "🎯",
+                        title: "Auditoría inicial y lectura del funnel",
+                        description:
+                            "Revisión del histórico de campañas, estructura de conjuntos, calidad de eventos, ventanas de atribución, creatividades ganadoras, público impactado, frecuencia, comentarios y puntos de fuga entre anuncio, landing y CRM.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "rgba(255, 102, 204, 0.1)",
+                        cardClass: "card-green",
+                    },
+                    {
+                        icon: "🔁",
+                        title: "Arquitectura de campañas y audiencias",
+                        description:
+                            "Reordenamiento de campañas según objetivo real de negocio: generación de leads, ventas, catálogo, remarketing. Definición de audiencias amplias, personalizadas y similares, con control del solapamiento y de la presión publicitaria.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "rgba(102, 255, 153, 0.1)",
+                        cardClass: "card-pink",
+                    },
+                    {
+                        icon: "🖼️",
+                        title: "Gestión creativa y testeo A/B de anuncios",
+                        description:
+                            "Definición del hook, estructura del copy persuasivo y selección de formatos nativos: imagen estática, carrusel, colecciones, Reels Ads y Stories. Pruebas multivariable de creatividades para identificar el anuncio ganador con menor CPM y mayor CTR.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "rgba(102, 99, 253, 0.1)",
+                        cardClass: "card-lime",
+                    },
+                    {
+                        icon: "📦",
+                        title: "Tracking, calidad de señal y atribución",
+                        description:
+                            "Implementación del Pixel de Meta y configuración de la API de Conversiones del lado del servidor (CAPI). Eventos personalizados vía GTM, modelos de atribución y cuadros de mando en tiempo real.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "rgba(204, 255, 102, 0.2)",
+                        cardClass: "card-lime",
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <EorStepsSection
+                title="Encuentra a tu próximo experto en Meta Ads <span style='color: #6663FD; font-weight: 800;'>en 4 pasos</span>"
+                subtitle="Hemos simplificado el reclutamiento para que puedas centrarte en vender mientras nosotros te conectamos con el mejor experto en Facebook Ads:"
+                steps={[
+                    {
+                        title: "Definición de objetivos de tus campañas en Meta:",
+                        lineColorClass: "line-black",
+                        description:
+                            "Analizamos tu inversión mensual y el tipo de producto/servicio que promocionas.",
+                        badge: "15 min · Sin compromiso",
+                    },
+                    {
+                        title: "Selección de perfiles de especialistas en Facebook Ads",
+                        lineColorClass: "line-pink",
+                        description:
+                            " Filtramos nuestra base de datos en LATAM y te presentamos expertos en Meta Ads. Verás su historial de cuentas gestionadas y los resultados de su prueba técnica.",
+                        badgeIcon: "",
+                        badge: "En menos de 7 días",
+                    },
+                    {
+                        title: "Entrevista y valida criterio de negocio",
+                        lineColorClass: "line-orange",
+                        description:
+                            "Evalúa cómo diagnosticarían un CPM desbocado, cómo estructurarían una campaña Advantage+ para tu sector y decide quién gestionará tu inversión.",
+                        badge: "Tú decides siempre",
+                    },
+                    {
+                        title: "Integración rápida a tu ecosistema publicitario de Meta",
+                        lineColorClass: "line-blue",
+                        description:
+                            "Una vez elegido el perfil, facilitamos onboarding, acuerdos de confidencialidad y puedes brindar acceso seguro a tu cuenta publicitaria, catálogo y herramientas de analítica.",
+                        badge: "Integración en días",
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <EorCta
+                title="¿Tu inversión en Meta Ads no está escalando como debería?"
+                titleTag="h2"
+                text="Indícanos si tu prioridad es generar leads cualificados, escalar ventas en eCommerce o recuperar audiencias calientes con retargeting, y recibe una propuesta personalizada en menos de 24 horas. Sin compromiso."
+                buttonText="👉 Solicitar propuesta y perfiles de Meta Ads"
+                buttonHref="#formulario-perfil"
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <RolesPerfil
+                title="Especialistas en Meta Ads: <strong>perfiles que puedes incorporar</strong>"
+                subtitle="Filtramos perfiles según tipo de embudo, volumen de inversión, complejidad técnica y modelo de monetización."
+                layout="modern"
+                customClass="grid-seo"
+                footerText=""
+                footerLinkText=""
+                footerLinkHref="#formulario-perfil"
+                roles={[
+                    {
+                        title: "Experto en Facebook Ads y generación de leads",
+                        description: "",
+                        icon: "",
+                        iconColor: "#FF66CC",
+                        borderColorClass: "border-pink",
+                        subtitle:
+                            "Especializado en capturar demanda latente a través de formularios instantáneos, Messenger, WhatsApp o derivación a landing pages optimizadas. Ideal para empresas que venden servicios, reservas, citas o demos.",
+                        techStack: ["Lead Ads", "Embudos", "CRM Integration"],
+                        buttonText: "Solicitar más información →",
+                        buttonHref: "#formulario-perfil",
+                    },
+                    {
+                        title: "Especialista en Facebook Ads para eCommerce",
+                        description: "",
+                        icon: "",
+                        iconColor: "#3b76f6",
+                        borderColorClass: "border-blue",
+                        subtitle:
+                            "Dominio de catálogos de comercio electrónico, campañas de Advantage+ Shopping y embudos de compra. Especializado en maximizar el ROAS y escalar el ticket en tiendas Shopify o WooCommerce integradas con Meta.",
+                        techStack: ["Shopify", "Catálogo Meta", "DPA ", "ROAS"],
+                        buttonText: "Solicitar más información →",
+                        buttonHref: "#formulario-perfil",
+                    },
+                    {
+                        title: "Especialista en retargeting",
+                        description: "",
+                        icon: "",
+                        iconColor: "#66FF99",
+                        borderColorClass: "border-green",
+                        subtitle:
+                            "Dominio de audiencias personalizadas avanzadas: segmentación por comportamiento, listas de clientes, visitantes web y engagement. Retargeting dinámico de producto y estrategias de LTV para maximizar el valor del cliente.",
+                        techStack: [
+                            "Custom Audiences",
+                            "Retargeting",
+                            "LTV",
+                            "Catálogo",
+                        ],
+                        buttonText: "Solicitar más información →",
+                        buttonHref: "#formulario-perfil",
+                    },
+                    {
+                        title: "Especialista en Pixel y API de Conversiones (CAPI)",
+                        description: "",
+                        icon: "",
+                        iconColor: "#CCFF66",
+                        borderColorClass: "border-yellow",
+                        subtitle:
+                            "Implementación del Pixel de Meta y la API de Conversiones del lado del servidor post-iOS 14. Configuración de eventos, modelos de atribución y cuadros de mando orientados a negocio.",
+                        techStack: ["Meta Pixel", "CAPI", "GTM", "Atribución"],
+                        buttonText: "Solicitar más información → ",
+                        buttonHref: "#formulario-perfil",
+                    },
+                    {
+                        title: "Especialista en creatividades y UGC Ads",
+                        description: "",
+                        icon: "",
+                        iconColor: "#FF66CC",
+                        borderColorClass: "border-pink",
+                        subtitle:
+                            "Perfil enfocado en el apoyo a la producción estratégica de creatividades de alta conversión: hook, formatos nativos (Reels, Stories, carrusel), testeo masivo A/B y análisis del CTR y de impacto para reducir el CPM.",
+                        techStack: [
+                            "Facebook Ads",
+                            "Instagram Ads ",
+                            "UGC",
+                            "A/B Testing",
+                        ],
+                        buttonText: "Solicitar más información →",
+                        buttonHref: "#formulario-perfil",
+                    },
+                    {
+                        title: "Consultor Facebook Ads 360° (generalista senior)",
+                        description: "",
+                        icon: "",
+                        iconColor: "#3b76f6",
+                        borderColorClass: "border-blue",
+                        subtitle:
+                            "Perfil que orquesta toda la estrategia paid social en Meta: define el mix de campañas de frío y retargeting, gestiona el presupuesto global, coordina con el equipo de marketing y presenta reporting orientado a negocio.",
+                        techStack: [
+                            "Business Manager",
+                            "GA4",
+                            "Looker Studio",
+                            "Paid Social",
+                        ],
+                        buttonText: "Solicitar más información →",
+                        buttonHref: "#formulario-perfil",
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <ComparisonPerfiles
+                title="Análisis comparativo: experto en Meta Ads con <br>  <span style='color: #1b1b1b; font-weight: 900;'>Oberstaff<span style='color: #FF66CC; font-weight: 900;'>.</span></span> frente a otras opciones"
+                subtitle="Comparamos las alternativas del mercado español para demostrarte cómo un especialista en Meta Ads remoto de Latinoamérica te otorga dedicación exclusiva, retención absoluta de la data de tu Business Manager y una drástica reducción de costes operativos."
+                footerNote="Precios orientativos: el coste final varía según experiencia y país del profesional contratado."
+                oberstaffLabel="<span style='color:#FF66CC; font-weight:700;'>Experto Meta Ads dedicado (<span style='color:#1b1b1b; font-weight: 800;'>Oberstaff<span style='color: #FF66CC; font-weight: 800;'>.</span></span>)</span>"
+                competitors={[
+                    "Especialista local en España",
+                    "Freelance por horas",
+                    "Agencia multicuentas",
+                ]}
+                rows={[
+                    {
+                        label: "Coste mensual orientativo",
+                        oberstaffValue:
+                            "<strong><span class='icon-check'>✓</span>Desde 950 €/mes</strong>",
+                        competitorValues: [
+                            "<span class='icon-cross'>✕</span>2.500–4.000 € + SS",
+                            "<span class='icon-cross'>✕</span>1.200–2.500 € o por campaña",
+                            "<span class='icon-cross'>✕</span>Fee base + 10–15 % sobre inversión",
+                        ],
+                    },
+                    {
+                        label: "Foco",
+                        oberstaffValue:
+                            "<span class='icon-check'>✓</span> Trabaja sobre tu cuenta como extensión del equipo interno.",
+                        competitorValues: [
+                            "<span class='icon-check'>✓</span> Parte de tu equipo",
+                            "<span class='icon-warning'>⚠</span> Suele repartir tiempo entre varios clientes",
+                            "<span class='icon-cross'>✕</span> Opera con cartera amplia y procesos estandarizados",
+                        ],
+                    },
+                    {
+                        label: "Velocidad de respuesta",
+                        oberstaffValue:
+                            "<span class='icon-check'>✓</span> Alta: optimización y feedback en horario compatible.",
+                        competitorValues: [
+                            "<span class='icon-check'>✓</span> Alta",
+                            "<span class='icon-warning'>⚠</span> Variable según disponibilidad",
+                            "<span class='icon-cross'>✕</span> Depende de tickets, reuniones y carga operativa",
+                        ],
+                    },
+                    {
+                        label: "Propiedad y contexto",
+                        oberstaffValue:
+                            "<span class='icon-check'>✓</span> Mayor inmersión en oferta, CRM, landing y ventas.",
+                        competitorValues: [
+                            "<span class='icon-check'>✓</span> Alta",
+                            "<span class='icon-warning'>⚠</span> Conoce menos profundidad del negocio",
+                            "<span class='icon-warning'>⚠</span> Normalmente prioriza eficiencia operativa global",
+                        ],
+                    },
+                    {
+                        label: "Comisión sobre inversión publicitaria",
+                        oberstaffValue:
+                            "<span class='icon-check'>✓</span> Ninguna. Tarifa plana B2B.",
+                        competitorValues: [
+                            "<span class='icon-check'>✓</span> Ninguna",
+                            "<span class='icon-warning'>⚠</span> Algunos cobran % sobre inversión",
+                            "<span class='icon-cross'>✕</span> Sí, entre el 10 y el 15 % de la inversión",
+                        ],
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <PricingCardPerfil
+                sectionTitle="Control financiero absoluto con tu experto en Meta Ads: <span style='color:#6663FD; font-weight: 900;'>Un coste fijo, cero sorpresas</span> "
+                sectionSubtitle=""
+                cardTitle="Fee mensual único"
+                titleTag="p"
+                cardSubtitle="Jornada completa en tus campañas sin comisiones sobre tu inversión en Meta."
+                priceLabel="DESDE"
+                priceAmount="950 €"
+                pricePeriod="/ mes"
+                features={[
+                    "Auditoría inicial de Business Manager y diagnóstico de campañas activas.",
+                    "Campañas Facebook Ads e Instagram Ads: frío, retargeting y conversión.",
+                    "Audiencias Lookalike, Custom Audiences y catálogo dinámico para eCommerce.",
+                    "Pixel de Meta y API de Conversiones (CAPI): recuperación de señales post-iOS 14.",
+                    "Testeo A/B de creatividades, gestión de frecuencia de impacto y control del CPM.",
+                ]}
+                ctaText="Empezar ahora →"
+                ctaHref="#formulario-perfil"
+                disclaimer="*Precios orientativos. El coste final depende del perfil, país y nivel de experiencia. Sin costes ocultos ni comisiones adicionales."
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <BeneficiosPerfilDisenador
+                showInfoCard={false}
+                title="Cómo se integra tu próximo experto en Meta Ads <span style='color:#6663FD; font-weight: 900;'>en 4 pasos</span>"
+                subtitle="Unimos la potencia analítica de un perfil interno integrado en tus métricas con la agilidad estructural de nuestro modelo, tú solo pones el foco en maximizar el retorno (ROAS), olvidando la carga administrativa."
+                image="/img2-meta.webp"
+                imageAlt="Experto en Meta Ads revisando métricas de Business Manager"
+                features={[
+                    {
+                        icon: "🎯",
+                        title: "Enfoque publicitario exclusivo: ",
+                        description:
+                            "Tu experto en Meta trabaja 100% enfocado en tu Business Manager, en tu frecuencia de impacto y en la rotación de tus creatividades diarias.",
+                    },
+                    {
+                        icon: "⚡",
+                        title: "Operación sincronizada:",
+                        description:
+                            "Debate la estrategia de audiencias en tiempo real y actualiza el informe de ROAS al cierre de cada semana, igual que un miembro más de tu equipo de marketing. ",
+                    },
+                    {
+                        icon: "🛡️",
+                        title: "Protección corporativa:",
+                        description:
+                            "Tu Business Manager y tus audiencias son activos críticos. Los protegemos con contratos en el país de origen del talento y gestionamos la nómina para que no asumas riesgos.",
+                    },
+                ]}
+            >
+                <div class="meta-custom-notice">
+                    Tú recibes una sola factura mensual en euros. Escala tus
+                    ventas en Meta.
+                </div>
+            </BeneficiosPerfilDisenador>
+        </div>
+
+        <div class="fade-in-section">
+            <GuiaContratacion
+                titleTag="h2"
+                headerTitle="Expertos en Facebook Ads: <span style='color:#6663FD; font-weight: 900;'>qué revisar antes de contratar</span>"
+                headerDescription="Aspectos clave que debes evaluar antes de ceder el control de tu Business Manager y tu inversión publicitaria a un especialista en Meta Ads."
+                cards={[
+                    {
+                        title: "¿Cuál es el stack técnico y operativo que debe dominar un especialista en Meta Ads?",
+                        description:
+                            "Business Manager, Events Manager, Pixel, Conversión API, catálogos, audiencias personalizadas, lookalike, campañas de ventas, leads, tráfico, mensajes y remarketing dinámico.",
+                        description2:
+                            "Además de control de frecuencia, fatiga creativa, fases del embudo, CPL, CAC, coste por oportunidad, ROAS, MER, ticket medio, tasa de cierre, calidad de contacto y aprendizajes accionables para la siguiente iteración.",
+                    },
+                    {
+                        title: "¿Cuándo conviene incorporar un experto en Meta Ads?",
+                        description:
+                            "Cuando vendes un servicio, producto o ticket medio que necesita educación, demostración o prueba social o tu negocio ya valida oferta y necesitas sistematizar la captación, no improvisar con anuncios.",
+                        description2:
+                            "En eCommerce, cuando ya tienes margen suficiente para escalar con catálogos, remarketing y testing de creatividades o quieres que marketing y ventas compartan criterio sobre la calidad del lead y el retorno real.",
+                    },
+                    {
+                        type: "negative",
+                        title: "Cuando no conviene contratar un experto en Meta Ads",
+                        items: [
+                            "Si aún no hay una oferta clara o una propuesta de valor validada.",
+                            "Si esperas que Meta Ads corrija un problema de producto, precio o cierre comercial.",
+                            "Si no cuentas con landing, WhatsApp o proceso comercial mínimo para atender los leads.",
+                            "Si no tienes margen suficiente para absorber una fase inicial de testeo.",
+                            "Si buscas solo un operador táctico que pulse botones, no criterio de negocio.",
+                        ],
+                    },
+                    {
+                        type: "warning",
+                        title: "Señales de que estás perdiendo dinero en Meta y necesitas un especialista en Facebook Ads que te apoye",
+                        items: [
+                            "Tus campañas dependen del mismo anuncio durante semanas y nadie gestiona la fatiga creativa.",
+                            " El CPL baja en el panel, pero ventas te dice que la calidad del lead es mala.",
+                            "Cambias presupuesto, público y copy sin respetar la fase de aprendizaje.",
+                            "No sabes si la conversión llega por Pixel, por Conversión API o por una mezcla mal deduplicada.",
+                            "Tu remarketing es pequeño, está solapado o persigue a usuarios que ya convirtieron.",
+                        ],
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <CasosExitoSection
+                title="Organizaciones que ya confían en <span style='font-weight: 900; color: #1b1b1b;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span>"
+                subtitle=""
+                testimonials={[
+                    {
+                        stars: 5,
+                        avatar: "/fernando.webp",
+                        imageAlt:
+                            "Fernando Calderón, cliente de Oberstaff en Madrid",
+                        text: "Estaba en busca de talento remoto especializado para mi empresa y después de varias búsquedas sin éxito, encontré a Oberstaff en Instagram. Desde nuestra primera llamada, su profesionalismo y calidad de trabajo me dejaron impresionado. Ahora, gracias a su excelente servicio, he expandido mi contrato con ellos para incluir más personal.",
+                        author: "Fernando Calderón",
+                        role: "CEO · BeautyPro",
+                        videoId: "24KxCAFGrDs",
+                    },
+                    {
+                        stars: 5,
+                        avatar: "/sha.webp",
+                        imageAlt:
+                            "Shadai Iborra, cliente de Oberstaff en Barcelona",
+                        text: "Con Oberstaff pude dar trabajo a dos personas a tiempo completo, ahorrando costes de reclutamiento, espacios de oficina y salario que tendría al hacerlo en España. Lo mejor de todo es que todo está incluido en una misma factura. Con Oberstaff encontré la solución perfecta para mis necesidades de contratación remota y optimización de costes.",
+                        author: "Shadai Iborra",
+                        role: "CEO · @amediastory",
+                        videoId: "_CxlPfluS7M",
+                    },
+                ]}
+            />
+        </div>
+
+        <!--
+        <div class="fade-in-section">
+            <PressSection title="Prensa y menciones" />
+        </div>
+         -->
+
+        <div class="fade-in-section">
+            <FAQSection
+                title=" ¿Quieres contratar un experto en Meta Ads con nosotros? <strong>Esto es lo que tienes que saber</strong>"
+                ctaText="Respuestas a las principales inquietudes sobre el proceso y funcionamiento del servicio dirigido a organizaciones que desean integrar talento especializado en Facebook e Instagram Ads desde LATAM."
+                ctaButtonText="Hablar con asesor →"
+                ctaButtonHref="#formulario-perfil"
+                faqs={faqsList}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <PressSection title="Prensa y menciones" />
+        </div>
+
+        <div class="fade-in-section">
+            <ConversionPerfilDisenador
+                webhookUrl=""
+                title="¿Preparado para dejar de improvisar en  <strong>Facebook e Instagram Ads?</strong>"
+                subtitle="Cuéntanos tu objetivo: generar leads cualificados, vender más con tu eCommerce, reactivar audiencias o ordenar una cuenta que hoy gasta sin criterio. Evaluaremos tu caso y te enviaremos una propuesta personalizada para incorporar al perfil adecuado."
+                buttonText="Solicitar propuesta gratuita →"
+                noteText=""
+                formName="Perfil Experto en Meta Ads España"
+                pais="España"
+            />
+        </div>
+    </div>
+
+    <style>
+        .service-detail-container {
+        }
+
+        :global(.meta-ads-badges) {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 10px !important;
+        }
+
+        :global(.employer-use-cases-grid) {
+            grid-template-columns: repeat(2, 1fr) !important;
+        }
+
+        @media (max-width: 900px) {
+            :global(.employer-use-cases-grid) {
+                grid-template-columns: 1fr !important;
+            }
+        }
+
+        /* Estilos específicos para QueEsServicioSection en esta página */
+        :global(.que-es-servicio-section .quote-blue-border) {
+            border-left: 4px solid #ff66cc !important;
+            color: #ff66cc !important;
+            font-size: 16px !important;
+            margin-top: 0 !important; /* Para alinear con el inicio de la imagen */
+            font-weight: 600 !important;
+        }
+
+        :global(.que-es-servicio-section .que-es-main-content) {
+            align-items: flex-start !important;
+        }
+
+        /* Fondo exclusivo para la sección de áreas del diseñador */
+        :global(section.employer-use-cases) {
+            background-color: #fafafc !important;
+        }
+
+        /* Fondo exclusivo para la sección de casos de éxito en esta página */
+        :global(.casos-exito) {
+            background-color: #fafafc !important;
+
+            padding-bottom: 80px !important;
+        }
+
+        /* Estilos específicos para la sección FAQ en esta página */
+        :global(.faq-disenador-custom .faq-columns) {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            text-align: center !important;
+        }
+
+        :global(.faq-disenador-custom .faq-left-column) {
+            position: static !important;
+            width: 100% !important;
+            max-width: 800px !important;
+            margin-bottom: 40px !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            text-align: left !important;
+        }
+
+        :global(.faq-disenador-custom .faq-main-title) {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            text-align: left !important;
+        }
+
+        :global(.faq-disenador-custom .faq-right-column) {
+            display: none !important;
+        }
+
+        :global(.faq-disenador-custom .faq-cta-card) {
+            margin: 0 !important;
+            padding: 0 !important;
+            max-width: 600px !important;
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+            text-align: left !important;
+        }
+
+        :global(.faq-disenador-custom .faq-cta-card p) {
+            font-family: "Poppins", sans-serif !important;
+            font-size: 18px !important;
+            font-weight: 400 !important;
+            color: #5a5a5a !important;
+            line-height: 1.6 !important;
+            margin-bottom: 30px !important;
+        }
+
+        :global(.faq-disenador-custom .faq-cta-button) {
+            background-color: #6663fd !important;
+            border: 2px solid #6663fd !important;
+            color: #ffffff !important;
+            width: auto !important;
+            min-width: 220px !important;
+            padding: 14px 32px !important;
+            font-size: 15px !important;
+            display: inline-block !important;
+        }
+
+        :global(.faq-disenador-custom .faq-cta-button:hover) {
+            background-color: transparent !important;
+            border: 2px solid #6663fd !important;
+            color: #6663fd !important;
+        }
+
+        /* Ocultar la tarjeta de información en BeneficiosPerfilDisenador */
+        :global(.bp-info-card) {
+            display: none !important;
+        }
+
+        .meta-custom-notice {
+            font-family: "Poppins", sans-serif;
+            margin-top: 40px;
+            padding: 24px 30px;
+            background-color: #f7f8fc;
+            border-left: 4px solid #ff66cc;
+            color: #ff66cc;
+            font-family: "Montserrat", sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        :global(.faq-d-section) {
+            border-top: 1px solid #e5e7eb;
+        }
+
+        :global(.casos-exito) {
+            background-color: #ffffff !important;
+        }
+    </style>
+</DashboardProfilesUs>

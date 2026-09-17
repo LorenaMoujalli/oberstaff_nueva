@@ -1,0 +1,1187 @@
+---
+import DashboardProfilesUs from "../../../layouts/DashboardProfilesUs.astro";
+import LeadHeroSection from "../../../components/community-manager/LeadHeroSection.astro";
+import ComparisonPerfiles from "../../../components/comparison-perfiles/ComparisonPerfiles.astro";
+import PricingCardPerfil from "../../../components/pricing-perfil/PricingCardPerfil.astro";
+import BeneficiosPerfilDisenador from "../../../components/beneficios-perfil/BeneficiosPerfilDisenador.astro";
+import PressSection from "../../../components/press/PressSection.astro";
+import ConversionPerfilDisenador from "../../../components/conversion-perfil/ConversionPerfilDisenador.astro";
+import RolesPerfil from "../../../components/roles-del-perfil/RolesPerfil.astro";
+import QueEsServicioSection from "../../../components/QueEsServicio/QueEsServicioSection.astro";
+import ServicesSection from "../../../components/services-oberstaff/ServicesSection.astro";
+import EorStepsSection from "../../../components/eor-steps-servicios/EorStepsSection.astro";
+import EorCta from "../../../components/eor-cta-servicios/EorCta.astro";
+import CasosExitoSection from "../../../components/casos-exito-servicios/CasosExitoSection.astro";
+import FAQSection from "../../../components/faq-servicios/FAQSection-community.astro";
+import GuiaContratacion from "../../../components/guia-contratacion-perfiles/GuiaContratacion.astro";
+
+const ogImage = "Contratar-community-manager.webp";
+
+const faqsList = [
+    {
+        question: "¿El CM trabajará con cuentas de otras empresas al mismo tiempo?",
+        answers: [" No. Tu profesional está asignado 100 % en exclusiva a tu marca, pensando solo en tu calendario editorial y analizando a tus competidores."]
+    },
+    {
+        question: "¿Cuándo conviene contratar un community manager?",
+        answers: ["Cuando tu empresa necesita constancia en redes y seguimiento diario de la comunidad, pero no quiere saturar a perfiles internos con esa tarea."]
+    },
+    {
+        question: "¿Qué flexibilidad tengo si el CM no logra captar nuestra voz corporativa?",
+        answers: ["Encontrar el tono exacto (brand voice) es vital. Si notas que no encaja con tus valores en los primeros días, puedes cancelar el servicio con solo 30 días de preaviso, sin pleitos laborales ni indemnizaciones por despido, o solicitarnos un reemplazo inmediato."]
+    },
+    {
+        question: "¿Cómo garantizan que el candidato sabe gestionar redes?",
+        answers: ["Prueba técnica de social media + evaluación psicométrica + entrevista con nuestro equipo de selección."]
+    },
+    {
+        question: "¿Contratar community manager? Precio y tarifas en España",
+        answers: ["Contratar community manager local en España cuesta entre 2.000 € y 2.800 € brutos al mes, sin contar Seguridad Social ni otros gastos. Con <strong style='color:#1b1b1b;'>Oberstaff<span class='brand-dot'>.</span></strong> accedes al mismo talento desde LATAM desde 820 €/mes, todo incluido en tu zona horaria y sin gestión administrativa."]
+    }
+];
+---
+
+<DashboardProfilesUs
+    ogImage={ogImage}
+    title="Contratar Community Manager para Empresas Españolas"
+    description="¿Buscas contratar community manager sin saber por dónde empezar? Perfiles evaluados de LATAM, zona horaria España y hasta un 70% de ahorro."
+    footerTitle="Roles relacionados"
+    footerLinks={[
+        {
+            text: "🎨 Contratar diseñador gráfico",
+            href: "",
+        },
+        {
+            text: "🗂️ Asistente administrativo virtual",
+            href: "",
+        },
+        {
+            text: "📹 Editor de video remoto",
+            href: "",
+        },
+    ]}
+>
+    <link rel="canonical" href="" slot="head" />
+    <link rel="alternate" hreflang="es-ES" href="" slot="head" />
+    <link rel="alternate" hreflang="es-PR" href="" slot="head" />
+    <link rel="alternate" hreflang="x-default" href="" slot="head" />
+    <script slot="head" type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "WebPage",
+                    "@id": "",
+                    "url": "",
+                    "name": "Contratar Community Manager para Empresas Españolas | Oberstaff",
+                    "description": "¿Buscas contratar community manager sin saber por dónde empezar? Perfiles evaluados de LATAM, zona horaria España y hasta un 70% de ahorro.",
+                    "inLanguage": "es-ES",
+                    "isPartOf": {
+                        "@id": ""
+                    },
+                    "publisher": {
+                        "@id": ""
+                    },
+                    "about": {
+                        "@id": ""
+                    },
+                    "mainEntity": {
+                        "@id": ""
+                    },
+                    "breadcrumb": {
+                        "@id": ""
+                    }
+                },
+                {
+                    "@type": "Service",
+                    "@id": "",
+                    "name": "Contratar Community Manager remoto en LATAM para empresas españolas",
+                    "alternateName": [
+                        "Contratar community manager",
+                        "Community manager remoto",
+                        "Community manager para empresas",
+                        "Community manager LATAM",
+                        "Gestor de redes sociales remoto",
+                        "Social media manager remoto",
+                        "Talento social media remoto"
+                    ],
+                    "serviceType": "Contratación de community manager remoto",
+                    "category": "Servicios de contratación de talento remoto para marketing y redes sociales",
+                    "url": "",
+                    "provider": {
+                        "@id": ""
+                    },
+                    "description": "Servicio para empresas españolas que necesitan contratar un Community Manager remoto de LATAM con dedicación exclusiva, dominio de social media, gestión de comunidad, moderación, analítica, social listening, horario compatible con España y gestión laboral cubierta por Oberstaff.",
+                    "slogan": "Delega el crecimiento de tu comunidad digital en talento experto, sin riesgo ni burocracia laboral local.",
+                    "audience": {
+                        "@type": "BusinessAudience",
+                        "audienceType": "Empresas españolas que necesitan contratar community manager remoto en LATAM para gestionar redes sociales, comunidad digital, reputación online, engagement y contenidos",
+                        "geographicArea": {
+                            "@type": "Country",
+                            "name": "España"
+                        }
+                    },
+                    "serviceAudience": {
+                        "@type": "BusinessAudience",
+                        "audienceType": "Pymes, startups, ecommerce, agencias y empresas españolas que buscan Community Managers remotos dedicados, evaluados en social media, con horario compatible con España y gestión laboral resuelta",
+                        "geographicArea": {
+                            "@type": "Country",
+                            "name": "España"
+                        }
+                    },
+                    "areaServed": [
+                        {
+                            "@type": "Country",
+                            "name": "España"
+                        },
+                        {
+                            "@type": "Country",
+                            "name": "Colombia"
+                        },
+                        {
+                            "@type": "Country",
+                            "name": "Argentina"
+                        },
+                        {
+                            "@type": "Country",
+                            "name": "México"
+                        },
+                        {
+                            "@type": "Country",
+                            "name": "Venezuela"
+                        },
+                        {
+                            "@type": "Country",
+                            "name": "Chile"
+                        },
+                        {
+                            "@type": "Country",
+                            "name": "Perú"
+                        },
+                        {
+                            "@type": "Country",
+                            "name": "Uruguay"
+                        }
+                    ],
+                    "offers": {
+                        "@type": "Offer",
+                        "@id": "",
+                        "name": "Community Manager remoto Dedicado",
+                        "url": "",
+                        "price": "820",
+                        "priceCurrency": "EUR",
+                        "availability": "https://schema.org/InStock",
+                        "eligibleCustomerType": "http://purl.org/goodrelations/v1#Business",
+                        "eligibleRegion": {
+                            "@type": "Country",
+                            "name": "España"
+                        },
+                        "description": "Contratación de Community Manager remoto desde 820€ al mes, dirigido a empresas españolas que necesitan gestión de redes sociales, moderación de comunidad, analítica mensual, coordinación con marketing, horario compatible con España y una única factura mensual en euros.",
+                        "priceSpecification": {
+                            "@type": "UnitPriceSpecification",
+                            "price": "820",
+                            "priceCurrency": "EUR",
+                            "unitText": "profesional por mes"
+                        }
+                    },
+                    "hasOfferCatalog": {
+                        "@type": "OfferCatalog",
+                        "@id": "",
+                        "name": "Qué puede hacer un Community Manager remoto por tu empresa",
+                        "itemListElement": [
+                            {
+                                "@type": "Offer",
+                                "name": "Gestión táctica de perfiles sociales",
+                                "itemOffered": {
+                                    "@type": "Service",
+                                    "name": "Gestión táctica de perfiles sociales",
+                                    "description": "Programación de calendarios editoriales en Instagram, LinkedIn, TikTok, Facebook y X, adaptando la estrategia a cada plataforma."
+                                }
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Curación y adaptación de formatos",
+                                "itemOffered": {
+                                    "@type": "Service",
+                                    "name": "Curación y adaptación de formatos",
+                                    "description": "Estructuración de publicaciones, curación de tendencias y adaptación de mensajes para mantener activa la voz de marca."
+                                }
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Moderación de comunidad",
+                                "itemOffered": {
+                                    "@type": "Service",
+                                    "name": "Moderación de comunidad",
+                                    "description": "Respuesta a mensajes directos, comentarios y moderación de situaciones de reputación online para mantener la marca conectada con su audiencia."
+                                }
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Analítica y social listening",
+                                "itemOffered": {
+                                    "@type": "Service",
+                                    "name": "Analítica y social listening",
+                                    "description": "Medición de KPIs como alcance, engagement rate, clics y crecimiento de seguidores, con informes mensuales e insights estratégicos."
+                                }
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Estrategia de social media",
+                                "itemOffered": {
+                                    "@type": "Service",
+                                    "name": "Estrategia de social media",
+                                    "description": "Estudio de audiencias, análisis de competidores, selección de hashtags y detección de tendencias para mejorar el alcance orgánico."
+                                }
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Soporte en distribución Paid Social",
+                                "itemOffered": {
+                                    "@type": "Service",
+                                    "name": "Soporte en distribución Paid Social",
+                                    "description": "Gestión de la comunidad que interactúa con anuncios en Meta Ads y LinkedIn Ads, apoyando al equipo de performance marketing."
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "@type": "ItemList",
+                    "@id": "",
+                    "name": "Ventajas de contratar Community Manager remoto con Oberstaff",
+                    "description": "Ventajas operativas para empresas españolas que contratan Community Managers remotos en LATAM.",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Community Managers evaluados",
+                            "description": "Perfiles evaluados con pruebas técnicas de social media y test psicométricos."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": "Protección de accesos y activos digitales",
+                            "description": "Oberstaff firma acuerdos de confidencialidad para proteger contraseñas, cuentas y activos digitales."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 3,
+                            "name": "Ahorro estructural",
+                            "description": "Un profesional social media in-house consolidado en una única factura mensual."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 4,
+                            "name": "Flexibilidad sin indemnizaciones",
+                            "description": "Posibilidad de cancelar o solicitar reemplazo si el Community Manager no logra captar la esencia de la marca."
+                        }
+                    ]
+                },
+                {
+                    "@type": "ItemList",
+                    "@id": "",
+                    "name": "Proceso para contratar Community Manager con Oberstaff",
+                    "description": "Proceso de Oberstaff para conectar empresas españolas con Community Managers remotos de LATAM.",
+                    "numberOfItems": 4,
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Diagnóstico de situación digital",
+                            "description": "La empresa indica plataformas prioritarias, sector y tono de voz que debe tener el futuro Community Manager."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": "Presentación de estrategas validados",
+                            "description": "Oberstaff presenta entre 3 y 5 Community Managers con KPIs demostrables, experiencia previa y resultados de evaluación."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 3,
+                            "name": "Entrevistas de brand fit",
+                            "description": "La empresa entrevista a los finalistas, evalúa su creatividad, criterio de comunicación y capacidad para representar la voz de marca."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 4,
+                            "name": "Activación de la gestión social",
+                            "description": "Oberstaff asume el compliance legal y el Community Manager comienza a publicar, interactuar, moderar y medir resultados."
+                        }
+                    ]
+                },
+                {
+                    "@type": "ItemList",
+                    "@id": "",
+                    "name": "Tipos de Community Manager disponibles",
+                    "description": "Especialidades de Community Manager remoto que empresas españolas pueden contratar con Oberstaff.",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Gestor de redes multiplataforma",
+                            "description": "Dominio de Instagram, TikTok, Facebook y X para crecimiento orgánico y dinamización de comunidades visuales."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": "Community Manager LinkedIn y B2B",
+                            "description": "Construcción de autoridad corporativa, social selling y generación de leads cualificados en entornos profesionales."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 3,
+                            "name": "Community Manager para ecommerce y social commerce",
+                            "description": "Gestión de atención al cliente por DM, reseñas públicas, catálogo social y lanzamientos."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 4,
+                            "name": "Community Manager para marca personal",
+                            "description": "Ghostwriting y gestión de presencia digital para CEOs, divulgadores, coaches, fundadores y líderes."
+                        }
+                    ]
+                },
+                {
+                    "@type": "ItemList",
+                    "@id": "",
+                    "name": "Comparativa para contratar Community Manager",
+                    "description": "Comparación entre contratar Community Manager con Oberstaff, contratar un CM local en España, plataformas freelance o agencia de social media externa.",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Oberstaff LATAM",
+                            "description": "Desde 820€ al mes, jornada completa, dedicación exclusiva, horario compatible con España y validación técnica de social media."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": "Community Manager local en España",
+                            "description": "Coste orientativo entre 2.000€ y 2.800€ brutos al mes, sin contar Seguridad Social ni otros gastos."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 3,
+                            "name": "Plataformas freelance",
+                            "description": "Coste variable entre 800€ y 2.000€, con menor garantía de dedicación exclusiva y horario fijo."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 4,
+                            "name": "Agencia Social Media externa",
+                            "description": "Coste orientativo entre 1.500€ y 4.000€, con cuentas compartidas, más burocracia y menor respuesta inmediata."
+                        }
+                    ]
+                },
+                {
+                    "@type": "ItemList",
+                    "@id": "",
+                    "name": "Beneficios de contratar Community Manager con Oberstaff",
+                    "description": "Beneficios para empresas españolas que incorporan Community Managers remotos de LATAM con Oberstaff.",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Mimetización con la marca",
+                            "description": "El Community Manager trabaja enfocado en el calendario editorial, tendencias y comunidad diaria de la marca."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": "Ecosistema sincronizado",
+                            "description": "El perfil se conecta a canales internos como Slack, participa en ideas y programa contenido en herramientas como Metricool."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 3,
+                            "name": "Blindaje corporativo",
+                            "description": "Contratos en el país de origen del talento para proteger accesos, datos, contraseñas y gestión laboral."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 4,
+                            "name": "Factura mensual única",
+                            "description": "La empresa recibe una sola factura internacional en euros por el servicio del Community Manager remoto."
+                        }
+                    ]
+                },
+                {
+                    "@type": "ItemList",
+                    "@id": "",
+                    "name": "Claves para buscar Community Manager estratégico",
+                    "description": "Guía para empresas españolas que quieren contratar Community Manager remoto de forma estratégica.",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Agencia de Social Media o Community Manager dedicado",
+                            "description": "Comparación entre agencias con cuentas compartidas y un Community Manager dedicado en exclusiva a la marca."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": "Ventajas de Oberstaff frente a marketplaces o agencias",
+                            "description": "Talento dedicado exclusivo, contrato estable, gestión laboral cubierta, integración y menor riesgo legal."
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 3,
+                            "name": "Herramientas que debe dominar un Community Manager moderno",
+                            "description": "Business Manager, Creator Studio, Metricool, Buffer, Later, social listening, Canva y CapCut."
+                        }
+                    ]
+                },
+                {
+                    "@type": "ItemList",
+                    "@id": "",
+                    "name": "Roles relacionados con Community Manager remoto",
+                    "description": "Otros perfiles relacionados que empresas españolas pueden contratar mediante Oberstaff.",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Contratar diseñador gráfico",
+                            "url": ""
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": "Asistente administrativo virtual",
+                            "url": ""
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 3,
+                            "name": "Editor de video remoto",
+                            "url": ""
+                        }
+                    ]
+                },
+                {
+                    "@type": "FAQPage",
+                    "@id": "",
+                    "mainEntity": [
+                        {
+                            "@type": "Question",
+                            "name": "¿El Community Manager trabajará con cuentas de otras empresas al mismo tiempo?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "No. El profesional está asignado en exclusiva a tu marca, enfocado en tu calendario editorial, tu comunidad diaria y el análisis de tus competidores."
+                            }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "¿Cuándo conviene contratar un Community Manager?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Conviene cuando la empresa necesita constancia en redes sociales y seguimiento diario de la comunidad, pero no quiere saturar a perfiles internos con esa tarea."
+                            }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "¿Qué flexibilidad tengo si el Community Manager no logra captar nuestra voz corporativa?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Si el perfil no encaja con la voz de marca, puedes cancelar el servicio con preaviso o solicitar un reemplazo sin pleitos laborales ni indemnizaciones por despido."
+                            }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "¿De qué países de LATAM son los estrategas sociales?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Oberstaff evalúa talento formado en comunicación y marketing en Colombia, Argentina, México, Venezuela, Chile, Perú y Uruguay, zonas horarias compatibles con España."
+                            }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "¿Cómo garantizan que el candidato sabe gestionar redes?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Mediante prueba técnica de social media, evaluación psicométrica y entrevista con el equipo de selección de Oberstaff."
+                            }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "¿Cuál es el precio de contratar un Community Manager?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Contratar un Community Manager local en España puede costar entre 2.000€ y 2.800€ brutos al mes, sin contar Seguridad Social ni otros gastos. Con Oberstaff puedes acceder a talento de LATAM desde 820€ al mes, en zona horaria compatible con España y sin gestión administrativa directa."
+                            }
+                        }
+                    ]
+                },
+                {
+                    "@type": "BreadcrumbList",
+                    "@id": "",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Inicio",
+                            "item": ""
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": "Contratar Community Manager",
+                            "item": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    </script>
+
+    <div class="service-detail-container" id="inicio">
+        <LeadHeroSection
+            webhookUrl=""
+            formName="Perfil Community Manager España"
+            pais="España"
+            topLabel="Contratar community Manager remoto desde Latinoamérica"
+            topLabelInsideH1={false}
+            topLabelTag="h1"
+            titleTag="p"
+            title="Delega el crecimiento de tu comunidad digital en talento experto, sin el riesgo ni la burocracia laboral local."
+            cardTitle="Encuentra a tu CM ideal hoy"
+            cardSubtitle="Accede a perfiles pre-evaluados listos para integrarse."
+            buttonText="👉 Ver perfiles pre-evaluados y solicitar propuesta"
+            buttonIcon=""
+            buttonSubtext="↳ Tardarás menos de 1 minuto · sin compromiso"
+            footerLinkText="Ver cómo funciona el modelo EOR →"
+            footerLinkHref=""
+            badges={[
+                { text: "Dedicación exclusiva a tu feed", icon: "🎯" },
+                { text: "Estrategas validados en social media", icon: "📋" },
+                {
+                    text: "Integración directa a tus redes sociales",
+                    icon: "⚡",
+                },
+                { text: "Moderación en horario español", icon: "🕒" },
+            ]}
+            badgesClass="community-badges"
+        >
+            <Fragment slot="description">
+                Con <span style="color: white; font-weight: 700;"
+                    >Oberstaff</span
+                ><span style="color: #FF66CC; font-weight: 700;">.</span> puedes contratar
+                Community Manager especializado en social media, con dominio de los
+                algoritmos actuales y la capacidad de disparar tu engagement.
+            </Fragment>
+        </LeadHeroSection>
+
+        <div class="fade-in-section">
+            <QueEsServicioSection
+                title="Dinamiza tu comunidad digital de la manera más ágil y segura"
+                highlightWord="ágil y segura"
+                description="Te conectamos con gestores de redes sociales especializados en nutrir comunidades. Profesionales que no solo programan posts, sino que entienden las métricas (CTR, alcance, retención), dominan el social listening y saben convertir interacciones vacías en un ecosistema rentable para tu negocio."
+                imageSrc="/img1-community.webp"
+                imageAlt="Contratar Community Manager"
+                badgeText="Crecimiento digital"
+                quoteText="Tú marcas los objetivos comerciales y el tono de comunicación. Tu CM ejecuta el calendario editorial y modera tu comunidad. Nosotros blindamos los contratos de confidencialidad para proteger tus accesos digitales."
+                checklistTitle="Checklist de ventajas:"
+                checklistItems={[
+                    "Community Managers evaluados con pruebas técnicas de social media y test psicométricos.",
+                    "Tus contraseñas y activos digitales protegidos: <span style='color: #1b1b1b; font-weight: 700;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 700;'>.</span> firma los acuerdos de confidencialidad.",
+                    "Ahorro estructural masivo: un profesional social in-house consolidado en una única factura mensual.",
+                    "Sin ataduras: si el CM no logra captar la esencia de tu marca, cancela o pide un reemplazo sin pagar indemnizaciones.",
+                ]}
+                ctaText="Solicitar candidatos →"
+                ctaHref="#formulario-perfil"
+                diffIcon=""
+                diffTitle=""
+                diffDescription=""
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <ServicesSection
+                title="¿Qué hace un community manager <strong>para empresas?</strong>"
+                cardTitleTag="h3"
+                description="Es la voz digital de tu marca: gestiona la reputación online, crea contenido de valor, responde a tu comunidad y convierte seguidores en clientes. Cuando una empresa busca contratar community manager, no solo necesita alguien que publique en redes: necesita una persona que entienda la marca, mantenga la consistencia del mensaje y convierta la actividad social en una herramienta real de crecimiento."
+                customClass="employer-use-cases"
+                services={[
+                    {
+                        icon: "📱",
+                        title: "Gestión táctica de perfiles sociales",
+                        description:
+                            "Programación de calendarios editoriales en Instagram, LinkedIn, TikTok, Facebook y X. Adaptación de la estrategia a los algoritmos de cada plataforma.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-green",
+                    },
+                    {
+                        icon: "✍️ ",
+                        title: "Curación y adaptación de formatos",
+                        description:
+                            "Estructuración de publicaciones diarias, curación de tendencias y adaptación de mensajes para cada red social, la voz de tu marca se mantenga activa.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-pink",
+                    },
+                    {
+                        icon: "💬",
+                        title: "Moderación de Comunidad (Community Building)",
+                        description:
+                            "Respuesta ágil a mensajes directos (DMs), comentarios y moderación de crisis de reputación online.  Tu marca siempre conectada con su audiencia.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-lime",
+                    },
+                    {
+                        icon: "📊 ",
+                        title: "Analítica y social listening",
+                        description:
+                            "Seguimiento mensual de KPIs clave: crecimiento de comunidad, alcance real, CTR y análisis cualitativo del sentimiento de los usuarios.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-purple",
+                    },
+                    {
+                        icon: "🎯",
+                        title: " Estrategia de social media",
+                        description:
+                            "Estudio de audiencias digitales, análisis de competidores, selección estratégica de hashtags y detección de tendencias nativas para maximizar el alcance orgánico.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-green",
+                    },
+                    {
+                        icon: "📣",
+                        title: "Soporte en distribución Paid Social",
+                        description:
+                            "Gestión de la comunidad que interactúa con tus anuncios en Meta Ads y LinkedIn Ads, apoyando al equipo de performance marketing.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-pink",
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <EorStepsSection
+                title="Cómo contratar un community manager con <span style='color: #1b1b1b; font-weight: 800;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 800;'>.</span>"
+                subtitle="Un proceso sencillo, rápido y sin riesgo, desde que nos contactas hasta que tienes a tu CM dinamizando tus perfiles sociales. Si estabas en modo 'buscar community manager' sin saber por dónde empezar, aquí simplificamos el proceso para que tomes una decisión más rápida y con menos riesgo."
+                steps={[
+                    {
+                        title: "Cuéntanos tu situación digital actual",
+                        lineColorClass: "line-black",
+                        description:
+                            "Indícanos las plataformas prioritarias para tu sector y el tono de voz (corporativo, disruptivo, educativo) que debe tener tu futuro CM.",
+                        badge: "15 min · Sin compromiso",
+                    },
+                    {
+                        title: "Recibe ternas de estrategas validados",
+                        lineColorClass: "line-pink",
+                        description:
+                            "Te presentamos entre 3–5 Community Managers, verás sus analíticas de crecimiento en proyectos anteriores y los resultados de sus test de social media.",
+                        badgeIcon: "📋",
+                        badge: "Con KPIs demostrables",
+                    },
+                    {
+                        title: 'Entrevistas de "brand fit"',
+                        lineColorClass: "line-orange",
+                        description:
+                            "Habla directamente con ellos. Evalúa su fluidez, su creatividad ante escenarios hipotéticos de crisis en LinkedIn o Instagram y decide quién será la voz oficial de tu negocio.",
+                        badge: "Tú tienes la decisión final",
+                    },
+                    {
+                        title: "Toma el control del feed",
+                        lineColorClass: "line-blue",
+                        description:
+                            "<span style='color: #1B1B1B; font-weight: 700;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 700;'>.</span> asume el compliance legal. Tú le das acceso de   'Editor' o 'Administrador' en tu Business Manager y tu nuevo Community Manager comienza a publicar, interactuar y medir.",
+                        badge: "",
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <EorCta
+                title="¿Ya sabes cuáles son las redes sociales donde necesitas mayor impacto?"
+                titleTag="h2"
+                text="Indícanos si buscas un perfil más corporativo (LinkedIn) o más dinámico (TikTok/Instagram) y recibe una propuesta en menos de 24 horas. Sin compromiso."
+                buttonText="👉 Solicitar propuesta personalizada"
+                buttonHref="#formulario-perfil"
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <RolesPerfil
+                title="Tipos de community manager <strong>disponibles</strong>"
+                subtitle="Encuentra al profesional de comunicación digital que mejor conecte con el tono de tu audiencia."
+                layout="modern"
+                footerText=""
+                footerLinkText=""
+                footerLinkHref="#formulario-perfil"
+                roles={[
+                    {
+                        title: "📱  Gestor de redes multiplataforma",
+                        description: "",
+                        icon: "",
+                        iconColor: "#FF66CC",
+                        borderColorClass: "border-pink",
+                        subtitle:
+                            "Dominio integral de Instagram, TikTok, Facebook y X. Foco en crecimiento orgánico sostenido y dinamización de comunidades visuales.",
+                        techStack: [
+                            "Meta Business",
+                            "Creator Studio",
+                            "Metricool",
+                            "Canva",
+                        ],
+                        buttonText: "Solicitar más información →",
+                        buttonHref: "#formulario-perfil",
+                    },
+                    {
+                        title: "💼 CM LinkedIn & B2B",
+                        description: "",
+                        icon: "",
+                        iconColor: "#3b76f6",
+                        borderColorClass: "border-blue",
+                        subtitle:
+                            "Construcción de autoridad corporativa, social selling y generación de leads cualificados en entornos profesionales y directivos.",
+                        techStack: [
+                            "LinkedIn",
+                            "Sales Navigator",
+                            "Taplio",
+                            "Notion",
+                        ],
+                        buttonText: "Solicitar más información →",
+                        buttonHref: "#formulario-perfil",
+                    },
+                    {
+                        title: "🛒 CM para eCommerce/social commerce ",
+                        description: "",
+                        icon: "",
+                        iconColor: "#66FF99",
+                        borderColorClass: "border-green",
+                        subtitle:
+                            "Perfil orientado a la venta por catálogo social. Gestiona atención al cliente por DM, reseñas públicas y expectación ante lanzamientos (hype).",
+                        techStack: [
+                            "Shopify",
+                            "Meta Ads",
+                            "Klaviyo",
+                            "Trustpilot",
+                        ],
+                        buttonText: "Solicitar más información →",
+                        buttonHref: "#formulario-perfil",
+                    },
+                    {
+                        title: "⭐ Community Manager para marca personal ",
+                        description: "",
+                        icon: "",
+                        iconColor: "#CCFF66",
+                        borderColorClass: "border-yellow",
+                        subtitle:
+                            "Ghostwriting y gestión de presencia digital para CEOs, divulgadores, coaches y fundadores. Captura de la voz íntima y personal del líder.",
+                        techStack: [
+                            "LinkedIn",
+                            "Instagram",
+                            "TikTok",
+                            "Linktree",
+                        ],
+                        buttonText: "Solicitar más información → ",
+                        buttonHref: "#formulario-perfil",
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <ComparisonPerfiles
+                title="Comparativa: Precio community manager <span style='color: #1b1b1b; font-weight: 900;'>Oberstaff<span style='color: #ff66cc; font-weight: 900;'>.</span></span> <br>vs. otras opciones"
+                subtitle="Compara el coste real de contratar community manager para empresas en España, como freelance o a través de agencia frente a nuestro modelo EOR de talento remoto desde LATAM."
+                footerNote=""
+                oberstaffLabel="<span style='font-weight:800; color:#1B1B1B;'>Oberstaff<span style='color:#FF66CC;'>.</span></span> <span style='color:#FF66CC; font-weight:700;'>(LATAM)</span>"
+                competitors={[
+                    "CM local España",
+                    "Plataformas freelance",
+                    "Agencia Social Media externa",
+                ]}
+                rows={[
+                    {
+                        label: "Coste operativo mensual",
+                        oberstaffValue:
+                            "<strong><span class='icon-check'>✓</span> Desde 820 €</strong>",
+                        competitorValues: [
+                            "<span class='icon-cross'>✕</span> 2.000–2.800 €",
+                            "<span class='icon-cross'>✕</span> 800–2.000 € (o pago por post)",
+                            "<span class='icon-cross'>✕</span> 1.500–4.000 €",
+                        ],
+                    },
+                    {
+                        label: "Dedicación exclusiva a tus redes",
+                        oberstaffValue:
+                            "<span class='icon-check'>✓</span> Sí, jornada completa",
+                        competitorValues: [
+                            "<span class='icon-check'>✓</span> Sí",
+                            "<span class='icon-warning'>⚠</span> Gestiona múltiples cuentas de clientes",
+                            "<span class='icon-cross'>✕</span> No, cuentas compartidas",
+                        ],
+                    },
+                    {
+                        label: "Propiedad legal y contraseñas",
+                        oberstaffValue:
+                            "<span class='icon-check'>✓</span> Blindada por Oberstaff (EOR/NDA)",
+                        competitorValues: [
+                            "<span class='icon-cross'>✕</span> Gestionado internamente",
+                            "<span class='icon-cross'>✕</span> Riesgo al compartirlas sin soporte legal ",
+                            "<span class='icon-check'>✓</span> Contratos corporativos",
+                        ],
+                    },
+                    {
+                        label: "Moderación en tiempo real",
+                        oberstaffValue:
+                            "<span class='icon-check'>✓</span> Inmediata (horario de España)",
+                        competitorValues: [
+                            "<span class='icon-check'>✓</span> Inmediata",
+                            "<span class='icon-warning'>⚠</span> Sin horario de respuesta fijo",
+                            "<span class='icon-warning'>⚠</span> Sujeto a horarios de oficina de la agencia",
+                        ],
+                    },
+                    {
+                        label: "Agilidad ante cambios/tendencias",
+                        oberstaffValue:
+                            "<span class='icon-check'>✓</span> Alta: pídele un cambio y lo hará al instante",
+                        competitorValues: [
+                            "<span class='icon-check'>✓</span> Alta",
+                            "<span class='icon-warning'>⚠</span> Respuestas lentas",
+                            "<span class='icon-cross'>✕</span> Burocracia para aprobar posts urgentes",
+                        ],
+                    },
+                    {
+                        label: "Validación de habilidades",
+                        oberstaffValue:
+                            "<span class='icon-check'>✓</span> Examen técnico de RR. SS. + psico",
+                        competitorValues: [
+                            "<span class='icon-cross'>✕</span> Riesgo en tu selección",
+                            "<span class='icon-cross'>✕</span> Solo CV/portfolio",
+                            "<span class='icon-check'>✓</span> Equipos capacitados",
+                        ],
+                    },
+                    {
+                        label: "Riesgo de indemnización",
+                        oberstaffValue:
+                            "<span class='icon-check'>✓</span> Nulo",
+                        competitorValues: [
+                            "<span class='icon-cross'>✕</span> Alto (legislación española)",
+                            "<span class='icon-check'>✓</span> Nulo",
+                            "<span class='icon-cross'>✕</span> Penalizaciones por cancelación temprana",
+                        ],
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <PricingCardPerfil
+                sectionTitle="¿Cuál es el precio de internalizar tus Redes Sociales con <span style='color:#1b1b1b; font-weight: 900;'>Oberstaff<span style='color:#FF66CC; font-weight: 900;'>.</span>?</span>"
+                sectionSubtitle="Una nómina local puede asfixiar tu presupuesto de marketing. Pero con <span style='color:#1B1B1B; font-weight: 700;'>Oberstaff</span><span style='color:#FF66CC; font-weight: 700;'>.</span>  puedes acceder al mismo nivel de talento a una fracción del coste, sin sacrificar engagement."
+                cardTitle="Fee mensual único"
+                titleTag="p"
+                cardSubtitle="Jornada completa."
+                priceLabel="DESDE"
+                priceAmount="820 €"
+                pricePeriod="/ mes"
+                features={[
+                    "Estrategia multicanal",
+                    "Moderación y protección de reputación de marca",
+                    "Analítica mensual con informes de resultados",
+                    "Coordinación con tu equipo de marketing",
+                ]}
+                ctaText="Solicitar propuesta"
+                ctaHref="#formulario-perfil"
+                disclaimer="*Precios orientativos según seniority."
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <BeneficiosPerfilDisenador
+                showInfoCard={false}
+                title="Contratar community manager con <span style='color:#1b1b1b; font-weight: 900;'>Oberstaff<span style='color:#FF66CC; font-weight: 900;'>.</span></span> ¿Por qué confiar tu comunidad a talento de LATAM?"
+                subtitle="Combinamos la inmersión profunda de un perfil in-house que entiende la esencia de tu feed, con la agilidad de un servicio externo para que te centres en los likes, leads y resultados, no en los contratos."
+                image="/img2-community.webp"
+                imageAlt="Community manager estratégico analizando métricas y comunidad digital para una empresa"
+                infoTitle=""
+                features={[
+                    {
+                        icon: "🎯",
+                        title: "Mimetización con la marca:",
+                        description:
+                            "Tu CM no reparte su atención. Trabaja enfocado en tu calendario editorial, tus tendencias y tu comunidad diaria.",
+                    },
+                    {
+                        icon: "📊",
+                        title: "Ecosistema sincronizado",
+                        description:
+                            "Se conecta a tus canales de Slack, debate ideas en tiempo real y programa en tu Metricool.",
+                    },
+                    {
+                        icon: "🛡️",
+                        title: "Blindaje corporativo:",
+                        description:
+                            "Las contraseñas de tus redes son activos críticos. Con contratos en el país de origen del talento, protegemos tus datos y gestionamos la nómina.",
+                    },
+                ]}
+                infoItems={[
+                    {
+                        title: "",
+                        description: "",
+                    },
+                    {
+                        title: "",
+                        description: "",
+                    },
+                    {
+                        title: "",
+                        description: "",
+                    },
+                ]}
+            >
+                <div class="meta-custom-notice">
+                    Recibes una sola factura internacional en euros. Crece en
+                    seguidores, no en papeleo.
+                </div>
+            </BeneficiosPerfilDisenador>
+        </div>
+
+        <div class="fade-in-section">
+            <GuiaContratacion
+                titleTag="h2"
+                headerTitle="¿Cómo buscar community manager estratégico <span style='color:#6663FD; font-weight: 900;'>para tu negocio?</span>"
+                headerDescription="Criterios indispensables para acertar antes de entregar la reputación de tu marca a un gestor de redes sociales remoto."
+                cards={[
+                    {
+                        title: "¿Es mejor una agencia de social media o un CM dedicado?",
+                        description:
+                            "Las agencias son útiles para estrategias puntuales, pero para el trabajo diario, suelen asignar tu cuenta a perfiles saturados. Con <span style='color:#1b1b1b; font-weight: 700;'>Oberstaff<span style='color:#FF66CC; font-weight: 900;'>.</span></span> , tienes a un profesional senior In-house, reteniendo el know-how y reaccionando al instante.",
+                        description2: "",
+                    },
+                    {
+                        title: "¿Dónde busco Community Manager?: ventajas de <span style='color:#1b1b1b; font-weight: 700;'>Oberstaff<span style='color:#FF66CC; font-weight: 700;'>.</span></span>",
+                        description:
+                            "Existen varias plataformas para incorporar CM, como marketplaces de freelancers o agencias. Sin embargo, <span style='color:#1b1b1b; font-weight: 700;'>Oberstaff<span style='color:#FF66CC; font-weight: 900;'>.</span></span> ofrece un modelo diferente: talento dedicado exclusivo para ti, con contrato estable y toda la gestión laboral cubierta. Mayor compromiso, mejor integración y ausencia de riesgos legales para tu negocio.",
+                        description2: "",
+                    },
+                    {
+                        title: "¿Qué herramientas debería dominar un CM moderno?",
+                        description:
+                            "Exige que el candidato demuestre soltura en Business Manager, Creator Studio, herramientas de programación masiva (Metricool, Buffer, Later), plataformas de escucha social (social listening) y nociones sólidas de diseño ágil (Canva, CapCut) para maquetar el contenido diario.",
+                        description2: "",
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <CasosExitoSection
+                title="Empresas españolas que ya confían en <span style='font-weight: 900; color: #1b1b1b;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span>"
+                subtitle=""
+                testimonials={[
+                    {
+                        stars: 5,
+                        avatar: "/fernando.webp",
+                        imageAlt:
+                            "Fernando Calderón, cliente de Oberstaff en Madrid",
+                        text: "Estaba en busca de talento remoto especializado para mi empresa y después de varias búsquedas sin éxito, encontré a <strong>Oberstaff</strong> en Instagram. Desde nuestra primera llamada, su profesionalismo y calidad de trabajo me dejaron impresionado. Ahora, gracias a su excelente servicio, he expandido mi contrato con ellos para incluir más personal.",
+                        author: "Fernando Calderón",
+                        role: "CEO · BeautyPro",
+                    },
+                    {
+                        stars: 5,
+                        avatar: "/sha.webp",
+                        imageAlt:
+                            "Shadai Iborra, cliente de Oberstaff en Barcelona",
+                        text: "Con <strong>Oberstaff</strong> pude dar trabajo a dos personas a tiempo completo, ahorrando costes de reclutamiento, espacios de oficina y salario que tendría al hacerlo en España. Lo mejor de todo es que todo está incluido en una misma factura. Con <strong>Oberstaff</strong> encontré la solución perfecta para mis necesidades de contratación remota y optimización de costes.",
+                        author: "Shadai Iborra",
+                        role: "CEO · @amediastory",
+                    },
+                ]}
+            />
+        </div>
+
+        <FAQSection
+            title="Quieres contratar un <strong>community manager</strong> con nosotros esto es lo que tienes que saber."
+            ctaText="Respondemos las dudas más frecuentes sobre el proceso y funcionamiento del servicio a negocios que deseen incorporar talento de LATAM."
+            ctaButtonText="Hablar con asesor →"
+            ctaButtonHref="#formulario-perfil"
+            faqs={faqsList}
+        />
+
+        <div class="fade-in-section">
+            <PressSection title="Prensa y menciones" />
+        </div>
+
+        <div class="fade-in-section">
+            <ConversionPerfilDisenador
+                webhookUrl=""
+                title="Encuentra al Community Manager ideal para <br> <strong>dinamizar tu marca</strong>"
+                subtitle="Rellena el formulario (te tomará menos de 1 minuto) y en menos de 24 horas recibirás una propuesta de talento social media personalizada, sin ningún compromiso. Primera sesión de consultoría gratuita."
+                buttonText="Solicitar propuesta gratuita →"
+                noteText="Nota: Rellenarlo te lleva menos de 1 minuto"
+                formName="Perfil Community Manager España"
+                pais="España"
+            />
+        </div>
+    </div>
+</DashboardProfilesUs>
+
+<style>
+    .service-detail-container {
+    }
+
+    :global(.community-badges) {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 10px !important;
+    }
+
+    :global(.employer-use-cases-grid) {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+
+    @media (max-width: 900px) {
+        :global(.employer-use-cases-grid) {
+            grid-template-columns: 1fr !important;
+        }
+    }
+
+    :global(.employer-use-cases-grid .icon-box) {
+        background-color: transparent !important;
+        border: none !important;
+        padding: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        margin-bottom: 25px !important;
+        justify-content: flex-start !important;
+    }
+
+    :global(.employer-use-cases-grid .icon-emoji-servicios-home) {
+        font-size: 35px !important;
+        padding: 0 !important;
+    }
+
+    @media (max-width: 768px) {
+        :global(.employer-use-cases-grid .icon-emoji-servicios-home) {
+            font-size: 30px !important;
+            padding: 0 !important;
+        }
+    }
+
+    /* Estilos específicos para QueEsServicioSection en esta página */
+    :global(.que-es-servicio-section .quote-blue-border) {
+        border-left: 4px solid #ff66cc !important;
+        color: #ff66cc !important;
+        font-size: 16px !important;
+        margin-top: 0 !important; /* Para alinear con el inicio de la imagen */
+        font-weight: 600 !important;
+    }
+
+    :global(.que-es-servicio-section .que-es-main-content) {
+        align-items: flex-start !important;
+    }
+
+    /* Fondo exclusivo para la sección de áreas del diseñador */
+    :global(section.employer-use-cases) {
+        background-color: #fafafc !important;
+    }
+
+    /* Fondo exclusivo para la sección de casos de éxito en esta página */
+    :global(.casos-exito) {
+        background-color: #fafafc !important;
+
+        padding-bottom: 80px !important;
+    }
+
+    /* Estilos específicos para la sección FAQ en esta página */
+    :global(.faq-disenador-custom .faq-columns) {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    :global(.faq-disenador-custom .faq-left-column) {
+        position: static !important;
+        width: 100% !important;
+        max-width: 800px !important;
+        margin-bottom: 40px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        text-align: left !important;
+    }
+
+    :global(.faq-disenador-custom .faq-main-title) {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        text-align: left !important;
+    }
+
+    :global(.faq-disenador-custom .faq-right-column) {
+        display: none !important;
+    }
+
+    :global(.faq-disenador-custom .faq-cta-card) {
+        margin: 0 !important;
+        padding: 0 !important;
+        max-width: 600px !important;
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        text-align: left !important;
+    }
+
+    :global(.faq-disenador-custom .faq-cta-card p) {
+        font-family: "Poppins", sans-serif !important;
+        font-size: 18px !important;
+        font-weight: 400 !important;
+        color: #5a5a5a !important;
+        line-height: 1.6 !important;
+        margin-bottom: 30px !important;
+    }
+
+    :global(.faq-disenador-custom .faq-cta-button) {
+        background-color: #6663fd !important;
+        border: 2px solid #6663fd !important;
+        color: #ffffff !important;
+        width: auto !important;
+        min-width: 220px !important;
+        padding: 14px 32px !important;
+        font-size: 15px !important;
+        display: inline-block !important;
+    }
+
+    :global(.faq-disenador-custom .faq-cta-button:hover) {
+        background-color: transparent !important;
+        border: 2px solid #6663fd !important;
+        color: #6663fd !important;
+    }
+
+    .meta-custom-notice {
+        font-family: "Poppins", sans-serif;
+        margin-top: 40px;
+        padding: 24px 30px;
+        background-color: #f7f8fc;
+        border-left: 4px solid #ff66cc;
+        color: #ff66cc;
+        font-family: "Montserrat", sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 1.4;
+    }
+
+    .service-detail-container
+        :global(.guia-cards-grid .guia-card:nth-child(3)) {
+        grid-column: 1 / -1;
+    }
+</style>
