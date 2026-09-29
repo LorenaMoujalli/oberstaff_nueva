@@ -19,24 +19,43 @@ const ogImage = "Contratar-Asistente-Virtual.webp";
 
 const faqsList = [
     {
-        question: "¿Cuánto cuesta contratar un asistente virtual en España?",
-        answers: ["El coste de contratar una persona local para tareas administrativas puede crecer rápido cuando sumas salario, Seguridad Social, selección y gestión, aproximadamente entre 1.500 y 2.500 €/mes. Con nosotros puedes acceder al mismo nivel de talento por 820 € al mes"]
+        question: "Will my remote virtual assistant work with other company accounts at the same time?",
+        answers: ["No. Under the dedicated model described on this page, the virtual assistant is assigned exclusively to your company under the schedule and scope defined in the proposal and does not divide those agreed working hours among other client accounts."]
     },
     {
-        question: "¿Cuándo conviene contratar un asistente virtual administrativo?",
-        answers: ["Cuando tu equipo directivo o comercial necesita apoyo administrativo constante para no frenar sus ventas, pero la empresa no quiere asumir los altos costes y la rigidez de una contratación local."]
+        question: "Can LATAM virtual assistants work with U.S. teams in fluent English?",
+        answers: ["Yes. English proficiency is evaluated according to the requirements of the role. Candidates presented for U.S.-facing positions are screened for the written and verbal communication level required for the assigned responsibilities, with bilingual EN/ES options available when needed."]
     },
     {
-        question: "¿Este recurso dará soporte a otras empresas simultáneamente?",
-        answers: ["No. El modelo es de asignación exclusiva. El profesional opera a jornada completa integrado en tus canales, enfocado al 100 % en los KPIs y tareas de tu organización."]
+        question: "What is the difference between a Virtual Assistant and an Executive Assistant?",
+        answers: ["Both roles can provide remote administrative support, but their typical scope and stakeholders are different:", "<strong>Virtual Assistant - Operational Support:</strong> Can manage calendars, inboxes, CRM updates, documents, reporting, customer or vendor follow-up, eCommerce administration, and other recurring back-office tasks across a team.","<strong>Executive Assistant - Leadership Support:</strong> Usually works more closely with founders or senior leaders on complex scheduling, priority communications, meeting preparation, travel, confidential coordination, and executive-level follow-up."]
     },
     {
-        question: "¿Qué nivel de flexibilidad tengo si cambian las necesidades de la empresa?",
-        answers: ["Total. Nuestro contrato comercial B2B permite prescindir del servicio con un preaviso estándar de 30 días, protegiéndote contra demandas o indemnizaciones por despido propias del marco legal español."]
+        question: "What is the difference between a freelance virtual assistant and <span style='color:#1b1b1b; font-weight:800;'>Oberstaff<span style='color: #FF66CC; font-weight:800;''>.</span></span>?",
+        answers: ["A freelancer may be ideal for limited or project-based support, but availability, screening, continuity, and administration depend on the individual engagement. Oberstaff. provides a dedicated talent model with role-specific screening, a structured shortlist, international service administration, ongoing support, and replacement options subject to the service agreement."]
     },
     {
-        question: "¿Cómo garantiza <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong> la calidad del talento?",
-        answers: ["Implementamos un embudo de tres fases: test de ofimática corporativa, evaluación de competencias psicométricas y validación final por entrevista directa con nuestros especialistas de RR. HH. "]
+        question: "Which tools can the professional manage?",
+        answers: ["Depending on experience and scope, candidates may work with Google Workspace, Microsoft 365, Slack, Microsoft Teams, Zoom, Calendly, Notion, Asana, ClickUp, Trello, Monday.com, HubSpot, Salesforce, Zendesk, Intercom, Gorgias, Shopify, spreadsheets, CRMs, databases, and other approved business systems."]
+    },
+    {
+        question: "How quickly should administrative tasks and requests be completed?",
+        answers: ["The right SLA depends on task type, business impact, system access, workload, dependencies, and the agreed working hours. Your company should define priorities for urgent requests, same-day follow-up, recurring daily tasks, weekly reporting, and work that requires approval from another team member."]
+    },
+    {
+        question: "How are candidates evaluated?",
+        answers: ["Candidates may undergo experience screening, English or bilingual assessment, administrative exercises, communication tests, tool validation, spreadsheet or CRM tasks, prioritization scenarios, remote-work readiness review, reference or work-sample checks when available, and interviews based on realistic operating situations."]
+    }
+    ,{
+        question: "What happens if the professional does not adapt to our processes or quality standards?",
+        answers: ["<span style='color:#1b1b1b; font-weight:800;'>Oberstaff<span style='color: #FF66CC; font-weight:800;''>.</span></span> can help recalibrate onboarding, clarify SOPs, access, task priorities, and performance expectations. If the fit still is not right, replacement options can be requested according to the service agreement. Cancellation and notice terms are also governed by the applicable contract."]
+    },
+    {
+        question: "Which countries do candidates come from?",
+        answers: ["<span style='color:#1b1b1b; font-weight:800;'>Oberstaff<span style='color: #FF66CC; font-weight:800;''>.</span></span> recruits remote professionals across Latin America, including markets such as Colombia, Argentina, Peru, Venezuela, and Mexico, subject to availability, role requirements, language level, schedule, and the selected service model."]
+    },{
+        question: "How does billing and payroll administration work for U.S. companies?",
+        answers: ["Your company receives a consolidated monthly invoice in U.S. dollars from <span style='color:#1b1b1b; font-weight:800;'>Oberstaff<span style='color: #FF66CC; font-weight:800;''>.</span></span> We coordinate the agreed international contracting structure, professional compensation or payroll administration, and service documentation according to the engagement model."]
     }
 ];
 ---
@@ -542,52 +561,46 @@ const faqsList = [
             webhookUrl=""
             formName="Perfil Asistente Virtual España"
             pais="España"
-            topLabel="Contratar un asistente virtual:"
+            topLabel=""
             topLabelInsideH1={true}
-            title=" externaliza tu back-office y escala tu operativa sin pasivo laboral"
-            cardTitle="Encuentra a tu asistente hoy"
-            cardSubtitle="Accede a perfiles pre-evaluados listos para tu empresa."
-            buttonText="👉 Ver perfiles pre-evaluados y solicitar propuesta"
-     
+            title="Hire a Virtual Assistant for Your U.S. Business"
+            cardTitle="Find your assistant today"
+            cardSubtitle="Access pre-vetted profiles ready for your company."
+            buttonText="👉 Request Virtual Assistant Profiles and a Proposal"
             buttonIcon=""
-            buttonSubtext="↳ Tardarás menos de 1 minuto · sin compromiso"
-            footerLinkText="Ver cómo funciona el modelo EOR →"
+            buttonSubtext="↳ It takes less than 1 minute · no commitment"
+            footerLinkText="Learn how Oberstaff's remote staffing model works for U.S. companies →"
             footerLinkHref=""
             badges={[
-                { text: "Talento 100 % enfocado en tu negocio", icon: "🎯" },
-                { text: "Evaluados previamente en soporte administrativo", icon: "📋" },
-                { text: "Integración ágil en tus herramientas corporativas", icon: "⚡" },
-                { text: " Latencia cero: horario comercial compatible con España", icon: "🕒" },
+                // { text: "Talento 100 % enfocado en tu negocio", icon: "🎯" },
+                // { text: "Evaluados previamente en soporte administrativo", icon: "📋" },
+                // { text: "Integración ágil en tus herramientas corporativas", icon: "⚡" },
+                // { text: " Latencia cero: horario comercial compatible con España", icon: "🕒" },
             ]}
         >
             <Fragment slot="description">
-                El mayor cuello de botella para el crecimiento de un negocio es
-                tener a sus directivos atrapados en microtareas administrativas.
-                Al incorporar un asistente virtual para empresas delegas la
-                gestión de CRMs, la estandarización de procesos (SOPs) y la
-                atención a proveedores en un perfil dedicado. Recupera el
-                control de tu agenda corporativa mientras nosotros absorbemos el
-               100 % de la carga burocrática y legal internacional.
+                Oberstaff. helps U.S. companies <strong>hire virtual assistant</strong> professionals from Latin America who work as dedicated members of the operating team. Our <strong>virtual assistant services</strong> combine role-specific screening with a dedicated professional who can manage calendars, inboxes, CRM updates, documents, recurring follow-up, reporting, and other administrative workflows during the U.S. business hours your company requires. This page refers to a human administrative professional, not AI assistant software or a shared gig resource.
 
             </Fragment>
         </LeadHeroSection>
 
         <div class="fade-in-section">
             <QueEsServicioSection
-                title="Descentraliza tu carga administrativa: el impacto financiero al contratar a un asistente virtual remoto in-house"
-                highlightWord="asistente virtual remoto in-house"
-                description="Mantener la gestión documental y el soporte de primer nivel en nómina local dispara tus costes de estructura antes de generar un solo euro de retorno. Al apostar por contratar un asistente virtual dedicado, integras a un profesional pre-evaluado que opera bajo tus propios protocolos de ciberseguridad, reduciendo tus costes operativos sin sacrificar exclusividad."
+                title="Dedicated Administrative Support, Backed by a Structured Hiring Model"
+                highlightWord=""
+                description="For companies comparing <strong>remote virtual assistant services</strong>, Oberstaff. has supported U.S. businesses in building remote teams with vetted Latin American professionals and structured role support."
                 imageSrc="/img1-asistente.webp"
                 imageAlt="Contratar asistente virtual "
-                badgeText="Orden y control"
+                badgeText="Order and control"
                 quoteText=""
-                checklistTitle="Checklist de validación operativa:"
+                checklistTitle="Validation Checklist:"
                 checklistItems={[
-                    "Validación de competencias: evaluación previa en gestión de archivos, redacción corporativa y herramientas cloud.",
-                    " Eficiencia fiscal: facturación B2B internacional deducible como gasto de servicios profesionales.",
-                    "Escalabilidad inmediata: ajusta tu capacidad de soporte administrativo sin procesos de despido ni indemnizaciones.",
+                    "<strong>Dedicated administrative focus</strong>",
+                    "<strong>Vetted business skills</strong>",
+                    "<strong>U.S. hours alignment</strong>",
+                    "<strong>Bilingual professionals (EN/ES)</strong>"
                 ]}
-                ctaText="Solicitar asistente virtual →"
+                ctaText="→ Request a virtual assistant"
                 ctaHref="#formulario-perfil"
                 diffIcon=""
                 diffTitle=""
@@ -597,16 +610,16 @@ const faqsList = [
 
         <div class="fade-in-section">
             <ServicesSection
-                title="De la gestión de agendas al control del CRM: funciones técnicas de un <strong>asistente virtual para empresas</strong>"
+                title="What Does a <strong>Virtual Assistant</strong> Do? Core Responsibilities and Business Impact"
                 cardTitleTag="h3"
-                description="Un asistente virtual administrativo ayuda a tu organización a descargar tareas operativas que frenan al equipo: manejo de agenda, filtrado de correo, seguimiento, reportes y coordinación interna. No es solo apoyo puntual; es una persona trabajando en remoto que aporta orden documental, velocidad de respuesta y continuidad."
+                description="When a U.S. company needs to <strong>hire a virtual assistant</strong>, the goal is usually to remove recurring administrative friction and create reliable ownership of day-to-day support. The exact scope depends on the role, but a <strong>dedicated virtual assistant</strong> can coordinate schedules, communications, records, systems, reporting, and follow-up while working inside your approved processes and tools."
                 customClass="employer-use-cases"
                 services={[
                     {
                         icon: "📅",
-                        title: "Gestión de agenda y calendario",
+                        title: "Calendar and Executive Scheduling",
                         description:
-                            "Organización de reuniones, coordinación de horarios, recordatorios y gestión de viajes ejecutivos.",
+                            "Coordinate meetings, maintain calendar accuracy, manage reminders, resolve scheduling conflicts, prepare agendas, and support travel or event logistics according to your internal rules.",
                         linkText: "",
                         href: "",
                         customIconBg: "rgba(255, 102, 204, 0.1)",
@@ -614,9 +627,9 @@ const faqsList = [
                     },
                     {
                         icon: "📧",
-                        title: "Gestión de correo y comunicaciones",
+                        title: "Inbox and Business Communications",
                         description:
-                            "Clasificación de bandeja de entrada, respuesta y seguimiento de emails. Atención ágil a clientes y proveedores.",
+                            "Triage incoming email, organize priority messages, prepare approved responses, track follow-ups, and coordinate routine communications with customers, vendors, candidates, and internal stakeholders.",
                         linkText: "",
                         href: "",
                         customIconBg: "rgba(102, 255, 153, 0.1)",
@@ -624,9 +637,9 @@ const faqsList = [
                     },
                     {
                         icon: "📄",
-                        title: "Documentación y gestión de archivos",
+                        title: "Documentation, SOPs, and File Management",
                         description:
-                            "Actualización de documentos, bases de datos, SOPs y archivos compartidos para que la información esté accesible y limpia.",
+                            "Maintain shared drives, update documents and SOPs, organize meeting notes, keep recurring records current, and make sure teams can find the information they need without rebuilding it from scratch.",
                         linkText: "",
                         href: "",
                         customIconBg: "rgba(102, 99, 253, 0.1)",
@@ -644,9 +657,9 @@ const faqsList = [
                     },
                     {
                         icon: "🔢",
-                        title: "Higiene de datos en CRM",
+                        title: "CRM, Data Hygiene, and Reporting",
                         description:
-                            "Actualización de fichas de clientes, limpieza de pipelines y reportes de actividad comercial en tiempo real.",
+                            "Update contacts and leads, clean pipelines, log activities, maintain spreadsheets or databases, prepare recurring reports, and flag missing information before it affects sales or operations.",
                         linkText: "",
                         href: "",
                         customIconBg: "rgba(255, 153, 102, 0.1)",
@@ -654,9 +667,9 @@ const faqsList = [
                     },
                     {
                         icon: "🛠️",
-                        title: "Stack de productividad",
+                        title: "Vendor, Customer, and Internal Follow-Up",
                         description:
-                            "Google Workspace, Microsoft 365, Notion, Asana, Slack, Calendly y plataformas de colaboración.",
+                            "Track pending actions, confirm deadlines, coordinate handoffs, and escalate exceptions to sales, operations, finance, customer support, or leadership with the context needed for the next person to act.",
                         linkText: "",
                         href: "",
                         customIconBg: "rgba(102, 204, 255, 0.1)",
@@ -668,37 +681,37 @@ const faqsList = [
 
         <div class="fade-in-section">
             <EorStepsSection
-                title="El roadmap de integración administrativa: contratar un <strong>asistente virtual de forma segura</strong>"
-                subtitle="Externalizar el soporte administrativo requiere una transición técnica que proteja la privacidad de tu negocio. Aplicamos un proceso de onboarding diseñado para la seguridad de la información."
+                title="How to Hire Remote Virtual Assistant Talent with <span style='color:#1b1b1b; font-weight:800;'>Oberstaff<span style='color: #FF66CC; font-weight:800;''>.</span></span>"
+                subtitle="This <strong>virtual assistant hiring</strong> process is designed for U.S. companies that want to <strong>hire virtual assistants</strong>  in Latin America while reducing recruiting effort, shortening time to shortlist, and connecting the role with the real tasks, systems, schedule, access requirements, language needs, and operating priorities of the business."
                 steps={[
                     {
-                        title: "Auditoría de cuellos de botella",
+                        title: "Scope Definition",
                         lineColorClass: "line-black",
                         description:
-                            "Define el volumen de tareas, SLAs y stack tecnológico, requeridos para diseñar el perfil técnico exacto.",
-                        badge: "15 min · Sin compromiso",
+                            "We define the recurring tasks, expected workload, required U.S. time-zone overlap, tools, access boundaries, English or bilingual requirements, reporting cadence, escalation rules, and the responsibilities that are inside or outside the role.",
+                        badge: "",
                     },
                     {
-                        title: "Selección de talento",
+                        title: "Candidate Shortlist",
                         lineColorClass: "line-pink",
                         description:
-                            "Te presentamos una terna (3 a 5) de perfiles de LATAM con ofimática avanzada y encaje cultural validado.",
-                        badgeIcon: "📋",
-                        badge: "Perfiles evaluados",
+                            "<span style='color:#1b1b1b; font-weight:800;'>Oberstaff<span style='color: #FF66CC; font-weight:800;''>.</span></span> sources and screens candidates, then presents a curated shortlist aligned with the agreed requirements. The number and timing of profiles may vary according to specialization, schedule, language level, and market availability.",
+                        badgeIcon: "",
+                        badge: "",
                     },
                     {
-                        title: "Entrevistas de validación",
+                        title: "Direct Interviews and Final Approval",
                         lineColorClass: "line-orange",
                         description:
-                            "Sesiones directas con los candidatos. Tú validas su criterio operativo y decides a quién entregarle el control de tu agenda.",
-                        badge: "Tú tienes la última palabra",
+                            "Your team interviews the strongest candidates to evaluate communication, judgment, organization, technical fit, and cultural alignment. Your company retains final approval over the selected professional.",
+                        badge: "",
                     },
                     {
-                        title: "Sincronización Operativa",
+                        title: "Contracting, Payroll, and Onboarding",
                         lineColorClass: "line-blue",
                         description:
-                            "El perfil se integra en tus canales (Slack, Teams, otros), asimilando tu cultura y horarios desde el día uno.",
-                        badge: "Integración en días",
+                            "<span style='color:#1b1b1b; font-weight:800;'>Oberstaff<span style='color: #FF66CC; font-weight:800;''>.</span></span> coordinates the agreed international contracting structure, professional compensation, payroll administration, monthly billing, and ongoing service support. The selected remote virtual assistant begins after onboarding, secure-access setup, and operating documentation are complete.",
+                        badge: "",
                     },
                 ]}
             />
@@ -706,199 +719,213 @@ const faqsList = [
 
         <div class="fade-in-section">
             <EorCta
-                title="¿Tu equipo directivo está asfixiado por microtareas? Recupera su tiempo al contratar a un asistente virtual"
+                title="Ready to Hire a Virtual Assistant and Reclaim Your Team's Time?"
                 titleTag="h2"
-                text="Cuéntanos cuál es el cuello de botella documental de tu empresa. Define el perfil exacto que necesitas y recibe una propuesta adaptada a tu modelo de negocio en menos de 24 horas."
-                buttonText="👉 Solicitar propuesta personalizada"
+                text="If you need a <strong>virtual assistant for hire</strong> on a dedicated basis, Oberstaff. connects U.S. businesses with vetted Latin American virtual assistants who can manage recurring administrative work, support executives, maintain CRM and documentation, coordinate follow-up, and collaborate during the U.S. business hours your operation requires."
+                buttonText="👉 Hire Virtual Assistant Talent for Your U.S. Team"
                 buttonHref="#formulario-perfil"
             />
         </div>
 
         <div class="fade-in-section">
             <RolesPerfil
-                title="Especialización operativa: asistentes virtuales para negocios a <strong>tu disposición</strong>"
-                subtitle=""
+                title="Types of <strong>Virtual Assistant</strong> Profiles According to Your Operating Model"
+                subtitle="We help U.S. companies <strong>hire virtual assistants</strong> whose experience matches the administrative workflows they need to delegate:"
                 layout="modern"
-                footerText="💡 ¿Necesitas también un perfil que lleve la contabilidad formal y las obligaciones fiscales?"
-                footerLinkText="Ver perfil de contable remoto →"
+                footerText=""
+                footerLinkText=""
                 footerLinkHref="#formulario-perfil"
                 roles={[
                     {
-                        title: "🗂️ Asistente administrativo virtual",
-                        description: "",
+                        title: "🗂️ Administrative Virtual Assistant",
+                        description: "A virtual administrative assistant supports calendars, inboxes, documents, SOPs, CRM updates, databases, recurring reports, vendor coordination, meeting notes, and general back-office administration. This virtual admin assistant role is a practical fit for recurring workflows that need consistent ownership.",
                         icon: "",
                         iconColor: "#FF66CC",
                         borderColorClass: "border-pink",
                         subtitle:
-                            "Estandarización de SOPs, control de agenda, filtro de emails y auditoría de documentos internos.",
+                            "A virtual administrative assistant supports calendars, inboxes, documents, SOPs, CRM updates, databases, recurring reports, vendor coordination, meeting notes, and general back-office administration. This virtual admin assistant role is a practical fit for recurring workflows that need consistent ownership.",
                         techStack: [
                             "Google Workspace",
                             "Notion",
                             "Trello",
                             "Slack",
                         ],
-                        buttonText: "Solicitar más información →",
+                        buttonText: "→ Request more information ",
                         buttonHref: "#formulario-perfil",
                     },
                     {
-                        title: "🗣️ Soporte y atención al cliente",
+                        title: "🗣️ Executive Virtual Assistant",
                         description: "",
                         icon: "",
                         iconColor: "#3b76f6",
                         borderColorClass: "border-blue",
                         subtitle:
-                            "Gestión de tickets, SLAs de respuesta (primer nivel), resolución de incidencias y fidelización B2B/B2C.",
+                            "For leadership teams, a <strong>virtual personal assistant</strong> supports founders, executives, and senior managers with complex scheduling, priority inboxes, meeting preparation, travel coordination, action-item tracking, stakeholder follow-up, and confidential administrative work.",
                         techStack: [
                             "Zendesk",
                             "Freshdesk",
                             "Intercom",
                             "WhatsApp Business",
                         ],
-                        buttonText: "Solicitar más información →",
+                        buttonText: "→ Request more information",
                         buttonHref: "#formulario-perfil",
                     },
                     {
-                        title: "🛒 Asistente virtual remoto para eCommerce",
+                        title: "🛒 Customer Support and eCommerce Virtual Assistant",
                         description: "",
                         icon: "",
                         iconColor: "#66FF99",
                         borderColorClass: "border-green",
                         subtitle:
-                            "Actualización masiva de SKUs, control de inventario base y seguimiento de logística posventa.",
+                            "Supports customer inboxes, tickets, order-status follow-up, product-data updates, returns coordination, reviews, store administration, and customer-service handoffs under approved scripts and escalation rules.",
                         techStack: ["Shopify", "Amazon Seller", "Klaviyo"],
-                        buttonText: "Solicitar más información →",
+                        buttonText: "→ Request more information",
                         buttonHref: "#formulario-perfil",
                     },
-                    {
-                        title: "💼 Asistente personal ejecutivo",
-                        description: "",
-                        icon: "",
-                        iconColor: "#CCFF66",
-                        borderColorClass: "border-yellow",
-                        subtitle:
-                            "Gestión de agendas directivas complejas (C-Level), filtro de comunicaciones críticas y preparación de juntas.",
-                        techStack: ["Calendly", "Notion", "Zoom", "Asana"],
-                        buttonText: "Solicitar más información → ",
-                        buttonHref: "#formulario-perfil",
-                    },
+                    // {
+                    //     title: "💼 Asistente personal ejecutivo",
+                    //     description: "",
+                    //     icon: "",
+                    //     iconColor: "#CCFF66",
+                    //     borderColorClass: "border-yellow",
+                    //     subtitle:
+                    //         "Gestión de agendas directivas complejas (C-Level), filtro de comunicaciones críticas y preparación de juntas.",
+                    //     techStack: ["Calendly", "Notion", "Zoom", "Asana"],
+                    //     buttonText: "→ Request more information",
+                    //     buttonHref: "#formulario-perfil",
+                    // },
                 ]}
             />
         </div>
 
         <div class="fade-in-section">
             <ComparisonPerfiles
-                title="Asistente virtual España vs. asistente remoto dedicado y <span style='color: #6663FD; font-weight: 800;'>otras opciones</span>"
-                subtitle="Analiza la diferencia entre tener un recurso integrado en tu equipo frente a los riesgos de la fragmentación operativa."
-                footerNote="Nota: Precios B2B orientativos. La inversión exacta depende del seniority y el nivel técnico requerido"
-                oberstaffLabel="<span style='font-weight:800; color:#1B1B1B;'>Asistente dedicado <span style='color:#1b1b1b; font-weight:800;'>(Oberstaff<span style='color: #FF66CC; font-weight:800;''>.</span>)</span>"
-                competitors={["Contratación local", "Freelance"]}
+                title="<span style='color: #6663FD; font-weight: 800;'>Hire a Virtual Assistant</span> <span style='color:#1b1b1b; font-weight:800;'>Oberstaff<span style='color: #FF66CC; font-weight:800;''>.</span></span> vs. Local Hiring, Agencies, and Freelancers"
+                subtitle="Compare more than the monthly fee. Whether you are considering a freelance virtual assistant, a <strong>virtual assistant staffing agency,</strong> another <strong>virtual assistant company,</strong> a local employee, or , evaluate schedule coverage, role dedication, process knowledge, data access, continuity, screening, and the administrative model behind the engagement."
+                footerNote="* Pricing and cost structures are indicative. The final budget depends on the professional's seniority, schedule, language requirements, specialization, country of residence, and the scope defined in the proposal."
+                oberstaffLabel="<span style='font-weight:800; color:#1B1B1B;'><span style='color:#1b1b1b; font-weight:800;'>Oberstaff<span style='color: #FF66CC; font-weight:800;''>.</span></span> LATAM talent"
+                competitors={["U.S. W-2 hire", "U.S. admin agency", "Freelance Virtual Assistant"]}
                 rows={[
                     {
-                        label: "Coste mensual",
-                        oberstaffValue: "<strong>Desde 820 €/mes</strong>",
+                        label: "Monthly Cost",
+                        oberstaffValue: "<strong>From $820 USD/month</strong>",
                         competitorValues: [
-                            "1.500–2.500 €/mes",
-                            "800–2.000 €"
+                            "Salary + payroll + benefits",
+                            "Service retainers vary",
+                            "Hourly/monthly rates vary"
                         ],
                     },
                     {
-                        label: "Foco y atención",
+                        label: "Role focus",
                         oberstaffValue:
-                            "<span class='icon-check'>✓</span> 100 % exclusivo. Conoce tu empresa a fondo.",
+                            "<span class='icon-check'>✓</span> Dedicated under agreed schedule.",
                         competitorValues: [
-                            "<span class='icon-check'>✓</span>  Exclusivo, pero con altos costes fijos.",
-                            "<span class='icon-warning'>⚠</span> Multicliente"
+                            "<span class='icon-check'>✓</span> Full-time internal.",
+                            "<span class='icon-warning'>⚠</span> May be shared across accounts",
+                            "<span class='icon-warning'>⚠</span> May support multiple clients"
                         ],
                     },
                     {
-                        label: "Seguridad de datos",
+                        label: "Administrative model",
                         oberstaffValue:
-                            "<span class='icon-check'>✓</span>  NDA corporativo. Accesos controlados.",
+                            "<span class='icon-check'>✓</span> Consolidated B2B invoice",
                         competitorValues: [
-                            "<span class='icon-cross'>✕</span> Seguro, pero costoso de escalar.",
-                            "<span class='icon-cross'>✕</span> Sin control sobre sus dispositivos"
+                            "<span class='icon-cross'>✕</span> Internal recruiting, payroll, and HR",
+                            "<span class='icon-cross'>✕</span> B2B agency service agreement",
+                            "<span class='icon-cross'>✕</span> Client manages contractor agreement"
                         ],
                     },
                     {
-                        label: "Latencia de respuesta",
+                        label: "Response coverage",
                         oberstaffValue:
-                            "<span class='icon-check'>✓</span> Tiempo real. En tu horario comercial.",
+                            "<span class='icon-check'>✓</span> U.S. hours aligned to role.",
                         competitorValues: [
-                            "<span class='icon-check'>✓</span> Tiempo real", 
-                            "<span class='icon-warning'>⚠</span> Asíncrono. La respuesta puede demorar horas."
+                            "<span class='icon-check'>✓</span> Standard internal shift.", 
+                            "<span class='icon-warning'>⚠</span> Depends on service tier.",
+                            "<span class='icon-warning'>⚠</span> Depends on availability."
                         ],
                     },
                     {
-                        label: "Sin permanencia",
-                        oberstaffValue: "<span class='icon-check'>✓</span> Sí",
+                        label: "Skill validation",
+                        oberstaffValue: "<span class='icon-check'>✓</span> Administrative tests, communication, interviews, and role-fit screening.",
                         competitorValues: [
-                            "<span class='icon-cross'>✕</span> Indemnizaciones",
-                            "<span class='icon-warning'>⚠</span> Según contrato"
+                            "<span class='icon-warning'>⚠</span> Your team owns sourcing and assessment.",
+                            "<span class='icon-warning'>⚠</span> Agency process and screening depth vary.",
+                            "<span class='icon-warning'>⚠</span> Often based on reviews, references, or marketplace history."
                         ],
                     },
-                    {
-                        label: "Auditoría de talento",
-                        oberstaffValue:
-                            "<span class='icon-check'>✓</span> Filtro técnico + psicométrico",
-                        competitorValues: [
-                            "<span class='icon-cross'>✕</span> Consumo de horas de RRHH",
-                            "<span class='icon-warning'>⚠</span> Basado solo en reseñas "
-                        ],
-                    },
+                    // {
+                    //     label: "Auditoría de talento",
+                    //     oberstaffValue:
+                    //         "<span class='icon-check'>✓</span> Filtro técnico + psicométrico",
+                    //     competitorValues: [
+                    //         "<span class='icon-cross'>✕</span> Consumo de horas de RRHH",
+                    //         "<span class='icon-warning'>⚠</span> Basado solo en reseñas "
+                    //     ],
+                    // },
                 ]}
             />
         </div>
 
         <div class="fade-in-section">
             <PricingCardPerfil
-                sectionTitle="Fin a los sobrecostes: tarifa plana al contratar a un <span style='color:#6663FD; font-weight: 900;'>asistente virtual</span>"
-                sectionSubtitle="Estructura tus costes fijos con previsibilidad. Nuestra tarifa incluye todo: headhunting, compliance legal internacional y nómina. El coste escala únicamente según la especialización del talento."
-                cardTitle="Todo incluido"
+                sectionTitle="<span style='color:#6663FD; font-weight: 900;'>Virtual Assistant</span> Pricing for U.S. Companies"
+                sectionSubtitle="All-inclusive virtual assistant plans start at $820/month. The amount includes the professional's compensation plus <span style='color:#1b1b1b; font-weight:800;'>Oberstaff<span style='color: #FF66CC; font-weight:800;''>.</span></span>'s sourcing, role-specific evaluation, international service administration, monthly billing, and ongoing support. When comparing <strong>virtual assistants</strong> pricing, evaluate what the monthly scope includes rather than the headline number alone. <strong>The virtual assistant services rate</strong> is adjusted to the candidate's seniority, schedule, language requirements, specialization, tool requirements, and country."
+                cardTitle="All-Inclusive"
                 titleTag="p"
-                cardSubtitle="Jornada completa · sin costes ocultos"
-                priceLabel="DESDE"
-                priceAmount="820 €"
-                pricePeriod="/ mes"
+                cardSubtitle=""
+                priceLabel="Starting from"
+                priceAmount="$820"
+                pricePeriod="/month USD"
                 features={[
-                    "Gestión de agenda ejecutiva y filtrado de comunicaciones.",
-                    "Orden documental y soporte administrativo.",
-                    "Dominio de CRMs y herramientas de trabajo asíncrono.",
-                    "Soporte directo a direcciones de área.",
-                    "Facturación B2B internacional en euros.",
+                    "The professional's monthly compensation is included.",
+                    "Recruitment, role-specific screening, and curated candidate shortlist.",
+                    "International contracting and payroll administration managed by <span style='color:#1b1b1b; font-weight:800;'>Oberstaff<span style='color: #FF66CC; font-weight:800;''>.</span></span>",
+                    "A dedicated full-time Virtual Assistant under the schedule and scope defined in the proposal.",
+                    "Calendar, inbox, CRM, documentation, reporting, follow-up, and administrative support according to scope.",
+                    "Professional English or bilingual EN/ES requirements as agreed for the role.",
+                    "Ongoing <span style='color:#1b1b1b; font-weight:800;'>Oberstaff<span style='color: #FF66CC; font-weight:800;''>.</span></span> service support and role follow-up.",
+                    "One consolidated monthly invoice in U.S. dollars.",
                 ]}
-                ctaText="Solicitar propuesta"
+                ctaText="Request an All-Inclusive Virtual Assistant Proposal"
                 ctaHref="#formulario-perfil"
-                disclaimer="*Precios orientativos. El coste final depende del perfil, país y nivel de experiencia."
+                disclaimer="*Applicable legal, tax, and employment obligations may vary according to the professional's country, engagement structure, and jurisdiction."
             />
         </div>
 
          <div class="fade-in-section">
             <BeneficiosPerfilDisenador
                 showInfoCard={false}
-                title="Exclusividad y latencia cero: el ROI operativo de tu <span style='color:#6663FD; font-weight: 900;'>asistente virtual</span>"
-                subtitle="El retorno operativo de un perfil dedicado reside en la profundidad de su conocimiento sobre tus procesos. Esta dedicación total garantiza que la información corporativa sea precisa y esté siempre disponible, eliminando el coste oculto que suponen los errores humanos por falta de contexto en la gestión de datos."
+                title="<span style='color:#6663FD; font-weight: 900;'>Virtual Assistant</span> Deliverables and KPIs You Can Track"
+                subtitle="Your <strong>dedicated virtual assistant</strong> can work under a structured operating framework with deliverables and KPIs connected to recurring administrative execution:"
                   image="/img2-asistente.webp"
             imageAlt="Asistente virtual revisando procesos administrativos"
                 infoTitle=""
                 features={[
                     {
                         icon: "🎯",
-                        title: "Eliminación del pasivo laboral y cargas sociales:",
+                        title: "Task Queue and SLA Management:",
                         description:
-                            "Al operar bajo nuestro modelo, tu empresa se libera de la rigidez del marco laboral español. No asumes costes de indemnización, seguros sociales ni impuestos de contratación local.",
+                            "Tracking recurring tasks, due dates, pending follow-ups, turnaround times, ownership, and completion against the priorities agreed for the role.",
+                    },
+                    {
+                        icon: "🗓️",
+                        title: "Calendar and Inbox Control:",
+                        description:
+                            "Monitoring scheduling accuracy, unresolved requests, follow-up status, meeting preparation, priority messages, and recurring communication workflows.",
                     },
                     {
                         icon: "📊",
-                        title: "Blindaje de información mediante NDAs corporativos:",
+                        title: "CRM, Data, and Documentation Quality:",
                         description:
-                            "La confidencialidad es innegociable. Cada asistente opera bajo estrictos acuerdos de confidencialidad garantizando que tu base de datos de clientes permanezca protegida.",
+                            "Maintaining current records, reducing duplicates or missing fields, updating SOPs and shared documents, and reporting recurring data-quality issues.",
                     },
                     {
                         icon: "⚡",
-                        title: "Recuperación del tiempo estratégico (deep work):",
+                        title: "Monthly Administrative Report:",
                         description:
-                            "Al delegar atención de correos y coordinación de agendas, liberas a tu equipo C-Level para tareas de alto impacto. Pasas de 'apagar fuegos' a liderar la estrategia de expansión de tu negocio.",
-                    },
+                            "Summarizing completed work, recurring bottlenecks, pending items, response or turnaround trends, process improvements, and operational recommendations.",
+                    }
                 ]}
                 infoItems={[
                     {
@@ -916,7 +943,8 @@ const faqsList = [
                 ]} 
             >
                 <div class="meta-custom-notice">
-                  Recibes una factura B2B en tu idioma y zona horaria.
+                  * KPI availability depends on the assigned responsibilities, system permissions, task volume, CRM or project-management integration, the agreed service window, and the reporting capabilities of each tool. Business outcomes also depend on internal processes, decision speed, data quality, and the broader operating environment.
+
                 </div>
             </BeneficiosPerfilDisenador>
         </div>
@@ -924,38 +952,44 @@ const faqsList = [
         <div class="fade-in-section">
             <GuiaContratacion
                 titleTag="h2"
-                headerTitle="Manual de validación operativa: cómo filtrar y contratar a un <span style='color:#6663FD; font-weight: 900;'>asistente virtual</span> con dominio de SOPs"
-                headerDescription="La diferencia entre un asistente que genera orden y uno que genera más trabajo para el CEO radica en su capacidad para operar bajo procesos estandarizados. Un perfil de alto nivel no espera instrucciones improvisadas; busca ejecutar y mejorar la documentación existente."
+                headerTitle="Virtual Assistant Remote Integration and U.S. Time-Zone Coverage"
+                headerDescription="The virtual assistant works inside the systems and operating standards your company already uses. Integration should be designed around secure access, clear ownership, documented procedures, escalation rules, and realistic service windows. A nearshore virtual assistant can also provide practical overlap with Eastern, Central, Mountain, or Pacific business hours when the schedule is defined in the proposal."
                 cards={[
                     {
-                        title: "¿Es mejor contratar asistente virtual freelance o uno integrado en remoto?",
+                        title: "U.S. time-zone coverage",
                         description:
-                            "Si necesitas seguimiento diario, coordinación con tu equipo y una persona que forme parte de tu organización, un perfil remoto estable funciona mejor y a menor coste total.",
+                            "Schedule overlap can be aligned with Eastern, Central, Mountain, or Pacific business hours. Extended, weekend, or multi-shift coverage must be defined in the proposal.",
                         description2: "",
                     },
                     {
-                        title: "¿Qué soft skills y competencias técnicas se deben exigir al contratar un asistente virtual administrativo?",
+                        title: "Communication channels",
                         description:
-                            "Descarta perfiles reactivos, audita su capacidad para mantener CRMs limpios, redactar procedimientos (SOPs) y estructurar bases de datos. Una llamada de 15 minutos con nuestros asesores te ayudará a trazar el perfil técnico exacto que tu operativa demanda.",
+                            "Slack, Microsoft Teams, email, Zoom, recurring check-ins, and the communication standards already used by your internal team.",
                         description2: "",
                     },
                     {
-                        title: "¿Qué stack tecnológico deben dominar los asistentes virtuales para negocios?",
+                        title: "Productivity and project-management tools",
                         description:
-                            "La ofimática básica ya no es suficiente. El perfil debe operar con fluidez en ecosistemas empresariales: Google Workspace, Microsoft 365, gestores de proyectos (Asana, Jira, Notion) y plataformas de comunicación síncrona (Slack, Teams).",
+                            "Google Workspace, Microsoft 365, Notion, Asana, ClickUp, Trello, Monday.com, Calendly, or other approved productivity systems.",
                         description2: "",
                     },
                     {
-                        title: "¿Secretaria virtual clásica o asistente administrativo remoto?",
+                        title: "CRM and customer systems",
                         description:
-                            "Muchas búsquedas empiezan con el término secretaria virtual para empresas, pero hoy el rol suele ir mucho más allá de contestar correos o agendar reuniones. En la práctica, lo que mejor funciona es un asistente administrativo virtual capaz de seguir procesos, coordinar tareas y dar soporte operativo constante al negocio.",
+                            "HubSpot, Salesforce, Zendesk, Intercom, Gorgias, Shopify, spreadsheets, databases, or the CRM and helpdesk already used by the company.",
                         description2: "",
                     },
                     {
-                        title: "¿Cuál es la ventaja de un asistente virtual remoto ante un asistente administrativo tradicional?",
+                        title: "SOP, access, and data documentation",
                         description:
-                            "Las funciones centrales son idénticas, pero contratar un asistente virtual en España a través del modelo de <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong> aporta una enorme agilidad, suprime los gastos fijos de oficina y te conecta con talento internacional perfectamente alineado con tu franja horaria.",
+                            "Role scope, SOPs, password-management rules, least-privilege access, escalation matrix, approved templates, and data-handling requirements.",
                         description2: "",
+                    },
+                    {
+                        title: "Reporting cadence",
+                        description:
+                            "Daily task visibility, weekly priorities, recurring status reporting, and calibration meetings based on operational needs.",
+                        description2: ""
                     },
                 ]}
             />
@@ -964,14 +998,22 @@ const faqsList = [
 
         <div class="fade-in-section">
             <CasosExitoSection
-                title="<span style='font-weight: 900; color: #6663FD;'>Casos de éxito corporativo: </span>negocios que ya contratan talento con nosotros"
-                subtitle="Resultados reales de organizaciones que decidieron contratar asistente virtual con <strong>Oberstaff<span style='color: #FF66CC;'>.</span></strong>"
+                title="Companies that already trust <span style='color:#1b1b1b; font-weight:800;'>Oberstaff<span style='color: #FF66CC; font-weight:800;''>.</span></span>"
+                subtitle=""
                 testimonials={[
+                  {
+                        stars: 5,
+                        avatar: "/Kate.webp",
+                        imageAlt: "Kate McCafferty, client of Oberstaff in Madrid",
+                        text: "We’ve been working with <strong>Oberstaff</strong> for nearly two years, and the experience has been excellent from day one. Their dedicated team has supported us throughout the entire process, reviewing thousands of candidates and presenting qualified professionals who fit our needs. The cost savings, operational efficiency, and overall quality of the service have exceeded our expectations.",
+                        author: "Kate McCafferty",
+                        role: "CEO · KM Real Estate (U.S.)",
+                    },
                     {
                         stars: 5,
                         avatar: "/fernando.webp",
                         imageAlt: "Fernando Calderón, cliente de Oberstaff en Madrid",
-                        text: "Estaba en busca de talento remoto especializado para mi empresa y después de varias búsquedas sin éxito, encontré a <strong>Oberstaff</strong> en Instagram. Desde nuestra primera llamada, su profesionalismo y calidad de trabajo me dejaron impresionado. Ahora, gracias a su excelente servicio, he expandido mi contrato con ellos para incluir más personal.",
+                        text: "I was looking for specialized remote talent and, after several unsuccessful local searches, I found <strong>Oberstaff</strong> From the first call, I was impressed by their professionalism and the clarity of their operating structure. The service and time-zone alignment worked so well that I expanded the engagement to add more people to the team.",
                         author: "Fernando Calderón",
                         role: "CEO · BeautyPro",
                     },
@@ -979,7 +1021,7 @@ const faqsList = [
                         stars: 5,
                         avatar: "/sha.webp",
                         imageAlt: "Shadai Iborra, cliente de Oberstaff en Barcelona",
-                        text: "Con <strong>Oberstaff</strong> pude dar trabajo a dos personas a tiempo completo, ahorrando costes de reclutamiento, espacios de oficina y salario que tendría al hacerlo en España. Lo mejor de todo es que todo está incluido en una misma factura. Con <strong>Oberstaff</strong> encontré la solución perfecta para mis necesidades de contratación remota y optimización de costes.",
+                        text: "With <strong>Oberstaff</strong> I was able to add two full-time professionals while reducing recruiting costs, office expenses, and the payroll burden I would have faced by hiring locally. The best part is that the entire operation is consolidated into one monthly invoice <strong>Oberstaff</strong> gave us the right solution for remote hiring and cost optimization.",
                         author: "Shadai Iborra",
                         role: "CEO · @amediastory",
                     },
@@ -990,26 +1032,26 @@ const faqsList = [
        
 
         <FAQSection
-            title="Blindaje legal y contingencia laboral de tu <strong>asistente virtual</strong>"
-            ctaText="Protege tu balance frente a la rigidez del marco laboral español. Al integrar tu asistente virtual bajo nuestra arquitectura legal, desplazas la carga administrativa y el pasivo laboral hacia nuestra infraestructura global."
-            ctaButtonText="Hablar con asesor →"
+            title="Frequently Asked Questions About <strong>Hiring a Virtual Assistant</strong> in the U.S."
+            ctaText=""
+            ctaButtonText="Request a Free Consultation →"
             ctaButtonHref="#formulario-perfil"
             faqs={faqsList}
         />
 
-         <div class="fade-in-section">
-            <PressSection title="Respaldo corporativo: menciones en medios" />
-        </div>
+         <!-- <div class="fade-in-section">
+            <PressSection title="Corporate support: Media mentions" />
+        </div> -->
 
         <div class="fade-in-section">
             <ConversionPerfilDisenador
                 webhookUrl=""
-                title="Sistematiza tu empresa hoy: da el paso definitivo para contratar un <strong>asistente virtual</strong>"
-                subtitle="Dejar tu back-office en manos del azar frena tu escalabilidad. Transforma tus costes fijos en una inversión operativa ágil. Rellena el formulario (tardarás menos de 1 minuto) y en menos de 24 horas recibirás una propuesta personalizada sin compromiso."
-                buttonText="Solicitar propuesta gratuita →"
-                noteText="Nota: Rellenarlo te lleva menos de 1 minuto"
-                formName="Perfil Asistente Virtual España"
-                pais="España"
+                title="Hire a Dedicated Remote Virtual Assistant for Your U.S. Team"
+                subtitle="Teams searching for &quot;<strong>hire a virtual assistant USA</strong>&quot; options typically need a professional aligned with U.S. workflows, business hours, and communication standards. Fill out our quick 1-minute form to receive a curated shortlist of pre-vetted virtual assistant professionals aligned with your tasks, tools, schedule, language requirements, and operating needs."
+                buttonText="Request a Free Consultation →"
+                noteText="Note: It takes less than 1 minute to fill out"
+                formName="U.S. Virtual Assistant Profile"
+                pais="United States"
             />
         </div>
     </div>
