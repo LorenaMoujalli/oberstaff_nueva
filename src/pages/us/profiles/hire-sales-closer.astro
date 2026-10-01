@@ -19,24 +19,48 @@ const ogImage = "Contratar-closer-de-ventas.webp";
 
 const faqsList = [
     {
-        question: "¿Qué ocurre si el closer de ventas no logra mejorar la tasa de cierre?",
-        answers: ["Si durante el período inicial el perfil no alcanza los KPIs de cierre acordados, puedes cancelar el servicio con 30 días de preaviso sin indemnizaciones o solicitarnos un reemplazo inmediato con un closer más afín a tu proceso comercial."]
+        question: "Will my remote sales closer work with other company accounts at the same time?",
+        answers: ["No. The closer is assigned exclusively to your company under the schedule defined in the proposal and does not divide the agreed working hours among other client accounts."]
     },
     {
-        question: "Precio de closer de ventas: ¿qué incluye el fee mensual?", 
-        answers: ["El fee de <strong class='brand-oberstaff'>Oberstaff<span class='brand-dot'>.</span></strong> cubre headhunting, evaluación, compliance legal internacional, contrato en el país de origen y nómina del profesional. No cobramos comisión sobre las ventas que cierre el profesional. Tú pagas una tarifa plana desde 910 €/mes sin variables ocultas."]
+        question: "Can LATAM sales closers sell to U.S. prospects in fluent English?",
+        answers: ["Yes, when professional English is part of the role requirements. Candidates selected for U.S.-based positions are evaluated for the required written and verbal level, typically from B2 to C2, as well as clarity, listening, commercial communication, and buyer-facing confidence."]
     },
     {
-        question: "¿El closer puede adaptarse a mi CRM y mis scripts de venta?",
-        answers: ["Sí, nuestros closers están acostumbrados a operar en distintos stacks de ventas: HubSpot, Salesforce, Pipedrive, Notion, Slack y herramientas de videoconferencia. Se integran en tu proceso desde el primer día y aprenden tu metodología de cierre."]
+        question: "What is the difference between a Sales Closer and an SDR or Setter?",
+        answers: [
+            "The roles can work in the same funnel, but their ownership is different:",
+            "<strong>SDR / Setter - Prospecting and Qualification Owner:</strong> Generates or contacts prospects, qualifies fit and interest, and books the next sales step according to the company's process.",
+            "<strong>Sales Closer - Late-Stage Conversion Owner:</strong> Takes over qualified opportunities, runs the decision-stage conversation, handles objections, follows up on proposals, negotiates within approved boundaries, and drives the opportunity toward a clear outcome.",
+        ]
     },
     {
-        question: "¿Qué diferencia al modelo <strong class='brand-oberstaff'>Oberstaff<span class='brand-dot'>.</span></strong> de buscar closer de ventas en portales de empleo?",
-        answers: ["Publicar una oferta en un portal te expone a cientos de candidatos sin filtrar, con el riesgo de contratar directamente en España y asumir toda la carga laboral. Con <strong class='brand-oberstaff'>Oberstaff<span class='brand-dot'>.</span></strong> recibes una terna de closers pre-evaluados con roleplay verificado, y nosotros absorbemos todo el compliance legal internacional."]
+        question: "What is the difference between a freelance sales closer and Oberstaff?",
+        answers: ["A freelance closer may be useful for a short campaign, but availability, process integration, and continuity can vary. <span style='color: #1b1b1b; font-weight: 800;'> Oberstaff<span style='color: #ff66cc'>.</span></span> provides dedicated full-time talent, role-specific vetting, international staffing support, and an operating model designed for ongoing integration with your CRM and sales team."]
     },
     {
-        question: "¿Quién entrega los leads y quién hace el seguimiento?",
-        answers: ["Depende del modelo. Algunas empresas generan oportunidades por marketing o setters; otras necesitan que el closer tome llamadas entrantes y también persiga propuestas abiertas. Se define antes de incorporar el perfil."]
+        question: "Which CRM and sales tools can the professional use?",
+        answers: ["Depending on experience and scope, candidates may work with HubSpot, Salesforce, Pipedrive, Zoho CRM, Gong, Salesloft, Outreach, Aircall, Dialpad, Calendly, Zoom, Google Meet, Slack, Microsoft Teams, Notion, and other approved sales or collaboration tools."]
+    },
+    {
+        question: "Which sales KPIs should we use to measure the closer?",
+        answers: ["The right scorecard depends on your funnel and sales cycle. Common measures include close rate, show rate, stage conversion, sales-cycle length, follow-up completion, average deal value, win rate by lead source, forecast accuracy, and documented loss reasons."]
+    },
+    {
+        question: "How are sales closer candidates evaluated?",
+        answers: ["Candidates undergo experience screening, communication assessment, sales roleplays or realistic scenarios, objection-handling evaluation, CRM or tool validation, English or bilingual assessment when required, reference or performance-evidence review when available, and interviews focused on your sales motion."]
+    },
+    {
+        question: "What happens if the sales closer does not adapt to our sales process or performance expectations?",
+        answers: ["If the profile is not aligned with the agreed role, process, or KPIs during onboarding, <span style='color: #1b1b1b; font-weight: 800;'> Oberstaff<span style='color: #ff66cc'>.</span></span> can review the fit and support recalibration. If the mismatch remains, you can request a replacement candidate or cancel according to the notice terms defined in your service agreement, without directly employing the professional."]
+    },
+    {
+        question: "Which countries do sales closer candidates come from?",
+        answers: ["<span style='color: #1b1b1b; font-weight: 800;'> Oberstaff<span style='color: #ff66cc'>.</span></span> recruits sales professionals across Latin America, including markets such as Colombia, Argentina, Peru, Venezuela, and Mexico, subject to availability, language requirements, schedule, seniority, sales specialization, and the selected service model."]
+    },
+    {
+        question: "How does billing and payroll work for U.S. companies?",
+        answers: ["You receive a consolidated monthly invoice in U.S. dollars from <span style='color: #1b1b1b; font-weight: 800;'> Oberstaff<span style='color: #ff66cc'>.</span></span> <span style='color: #1b1b1b; font-weight: 800;'> Oberstaff<span style='color: #ff66cc'>.</span></span> coordinates the international contracting and payroll administration for the professional under the agreed service model."]
     }
 ];
 ---
@@ -575,66 +599,59 @@ const faqsList = [
             webhookUrl=""
             formName="Perfil Closer de Ventas España"
             pais="España"
-            topLabel="Ventas y conversión B2B" 
+            topLabel="" 
             topLabelInsideH1={false}
-            title="Contratar closer de ventas para recuperar oportunidades que hoy se están enfriando en tu pipeline"
-            cardTitle="Impulsa tu tasa de cierre"
-            cardSubtitle="Completa tus datos para recibir perfiles evaluados."
-            buttonText="Solicitar perfiles de closers de ventas →"
+            title="Hire a Sales Closer to Turn Qualified U.S. Leads Into Revenue"
+            cardTitle="Find a Sales Closer"
+            cardSubtitle="Access pre-evaluated profiles ready for your company."
+            buttonText="Request Sales Closer Profiles and a Proposal →"
             buttonIcon=""
-            buttonSubtext=""
-            footerLinkText="Ver cómo funciona el modelo EOR →"
+            buttonSubtext="↳ It takes less than 1 minute · no commitment"
+            footerLinkText="Learn how Oberstaff's international staffing and EOR support works for U.S. companies"
             footerLinkHref=""
             badges={[
-                {
-                    text: "Venta consultiva y seguimiento comercial con criterio",
-                    icon: "💼",
-                },
-                {
-                    text: "Experiencia en CRM, pipeline, objeciones y forecast",
-                    icon: "📊",
-                },
-                {
-                    text: "Perfiles compatibles con el mercado español y procesos remotos",
-                    icon: "🇪🇸",
-                },
-                {
-                    text: "Closer ventas high ticket, B2B y operaciones digitales",
-                    icon: "🎯",
-                },
+                // {
+                //     text: "Venta consultiva y seguimiento comercial con criterio",
+                //     icon: "💼",
+                // },
+                // {
+                //     text: "Experiencia en CRM, pipeline, objeciones y forecast",
+                //     icon: "📊",
+                // },
+                // {
+                //     text: "Perfiles compatibles con el mercado español y procesos remotos",
+                //     icon: "🇪🇸",
+                // },
+                // {
+                //     text: "Closer ventas high ticket, B2B y operaciones digitales",
+                //     icon: "🎯",
+                // },
             ]}
             badgesClass="meta-ads-badges"
         >
             <Fragment slot="description">
-                Si tu empresa ya genera leads, llamadas o demos, pero demasiadas
-                conversaciones se quedan en “lo hablamos más adelante”, el
-                problema ya no está arriba del embudo. Está en el cierre. Con
-                <strong class="brand-oberstaff text-white">Oberstaff<span class="brand-dot">.</span></strong> puedes contratar closer de ventas remotos para
-                empresas españolas que necesitan convertir oportunidades
-                cualificadas en acuerdos firmados, sin montar una estructura
-                comercial rígida desde cero.
+                <strong>Oberstaff.</strong> helps U.S. companies <strong>hire a sales closer</strong> from Latin America who works as an extension of the revenue team. Your dedicated <strong>remote sales closer</strong> runs qualified sales calls, handles objections, follows up on proposals, updates the CRM, and moves active opportunities toward a clear buying decision during the U.S. business hours your company requires.
             </Fragment>
         </LeadHeroSection>
 
         <div class="fade-in-section">
             <QueEsServicioSection
-                title="La brecha entre oportunidades y contratos tiene nombre: falta un closer de ventas"
-                highlightWord="falta un closer de ventas"
-                description="Invertir en captación sin un profesional entrenado para cerrar es como llenar un embudo con el grifo abierto. Tus campañas traen prospectos; tu equipo comercial tiene el producto. Pero si nadie trabaja de forma sistemática la fase de decisión — las objeciones de precio, la competencia comparada, el timing del comprador — el 60 % de esas oportunidades se pierden en el silencio del pipeline."
+                title="The U.S. Sales Hiring Challenge: Strong Lead Flow, High Overhead, and Inconsistent Closing Ownership"
+                highlightWord="Hiring Challenge"
+                description="Many U.S. companies invest heavily in paid acquisition, outbound prospecting, referrals, and booked demos but still leave the most valuable stage of the funnel without a clear owner. Founders, account executives, SDRs, and customer-facing managers often share follow-up, creating inconsistent sales calls, delayed proposals, and opportunities that stall after showing real buying intent."
                 imageSrc="/img1-closer.webp"
                 imageAlt="Closer de ventas gestionando oportunidades en CRM"
-                badgeText="Cierre y negociación activa"
-                quoteText="Al contratar closer de ventas remoto dedicado, integras a un profesional que vive en el fondo del funnel: llama, hace seguimiento, detecta señales de compra y cierra. Sin distracciones, sin carga administrativa y sin el sobrecoste de una nómina española."
-                checklistTitle="Señales de fuga comercial:"
+                badgeText="Closing and Active Negotiation"
+                quoteText="Hiring locally can add closing capacity, but it also brings recruiting time, fixed payroll, benefits, onboarding, management overhead, and replacement costs. Agencies or fractional sales teams may provide coverage, yet the closer can be spread across several accounts. Freelancers can work for specific campaigns, but availability and continuity may vary. For U.S. companies comparing sales closers for hire, a dedicated sales closer creates one accountable owner for qualified opportunities after the lead-generation and qualification stages."
+                checklistTitle="For U.S. companies, the closing bottleneck usually becomes visible when lead generation scales faster than sales execution:"
                 checklistItems={[
-                    "Tienes llamadas agendadas, pero la tasa de cierre no acompaña el volumen de oportunidades.",
-                    "Tus propuestas salen, pero no existe una secuencia de seguimiento seria.",
-                    "Las objeciones sobre precio, timing o autoridad de decisión se repiten.",
-                    "Marketing dice que genera demanda y ventas responde que “los leads no convierten”, pero nadie baja al detalle de la conversación comercial.",
+                    "<strong>Expensive local sales headcount:</strong> Adding a U.S. W-2 sales professional means budgeting beyond base compensation for recruiting, payroll administration, benefits, sales tools, management time, and potential variable compensation.",
+                    "<strong>Commission-heavy outsourced models:</strong> Some outsourced or freelance closing models rely on revenue-share structures, split attention across accounts, or optimize for short-term wins instead of disciplined CRM ownership and pipeline continuity.",
+                    "<strong>Founder and AE bottlenecks:</strong> When founders, account executives, or managers handle every late-stage conversation, follow-up competes with delivery, leadership, prospecting, and account management.",
                 ]}
                 checklistIcon="•"
                 checklistIconClass="orange-bullet-icon"
-                ctaText="Solicitar perfiles de closer de ventas →"
+                ctaText="→ Request a Sales Closer"
                 ctaHref="#formulario-perfil"
                 diffIcon=""
                 diffTitle=""
@@ -644,16 +661,16 @@ const faqsList = [
 
         <div class="fade-in-section">
             <ServicesSection
-                title="¿Qué ejecuta un closer de ventas dedicado <strong>dentro de tu proceso comercial?</strong>"
+                title="What Does a <strong>Sales Closer</strong> Do? Core Responsibilities and Business Impact"
                 cardTitleTag="h3"
-                description="Es el profesional que toma el relevo cuando el lead ya está caliente: su trabajo es convertir el interés en decisión mediante conversaciones estructuradas, detección de necesidades reales y cierre de acuerdos en el menor número de interacciones posible."
+                description="When a U.S. company needs to hire a sales closer, the objective is to improve conversion after a prospect has already shown meaningful intent. Unlike prospecting-focused positions, sales closer roles own late-stage discovery, objection handling, proposal follow-up, negotiation, CRM progression, and the discipline required to reach a clear yes, no, or next step."
                 customClass="employer-use-cases"
                 services={[
                     {
                         icon: "📞",
-                        title: "Gestión de llamadas de cierre y seguimiento activo",
+                        title: "Qualified Sales Calls and Late-Stage Discovery",
                         description:
-                            "Ejecución de llamadas de venta estructuradas con guión adaptado a tu oferta. Seguimiento proactivo de prospectos que no respondieron, con cadencias de contacto multicanal (llamada, email, WhatsApp) para recuperar oportunidades frías.",
+                            "Run discovery and closing calls with qualified prospects, validate business need, urgency, decision process, budget context, and success criteria, then connect the offer to the buyer's priorities without repeating qualification work unnecessarily.",
                         linkText: "",
                         href: "",
                         customIconBg: "transparent",
@@ -661,9 +678,9 @@ const faqsList = [
                     },
                     {
                         icon: "📱",
-                        title: "Manejo avanzado de objeciones comerciales",
+                        title: "Objection Handling and Decision Support",
                         description:
-                            "Identificación y neutralización de las objeciones más frecuentes en tu sector: precio, comparación con competidores, decisión diferida y falta de autoridad del interlocutor. Uso de técnicas contrastadas como el método Sandler, SPIN Selling o el cierre por asunción.",
+                            "Address concerns around price, ROI, timing, competitors, implementation, internal approval, or perceived risk. The goal is not pressure; it is to clarify value, surface the real blocker, and help qualified buyers make an informed decision.",
                         linkText: "",
                         href: "",
                         customIconBg: "transparent",
@@ -671,9 +688,9 @@ const faqsList = [
                     },
                     {
                         icon: "💼",
-                        title: "Cierre de ventas high ticket y B2B",
+                        title: "Proposal, Negotiation, and Follow-Up Management",
                         description:
-                            "Gestión de procesos de venta de ciclo largo con varios interlocutores y etapas de decisión. Dominio del cierre de contratos de alto valor, con foco en la identificación del pain del comprador, la propuesta de valor diferenciada y la urgencia legítima.",
+                            "Follow up after demos, proposals, quotes, or stakeholder meetings using the approved cadence. Keep every active opportunity tied to a next action and prevent qualified deals from going cold because ownership is unclear.",
                         linkText: "",
                         href: "",
                         customIconBg: "transparent",
@@ -681,9 +698,9 @@ const faqsList = [
                     },
                     {
                         icon: "📊",
-                        title: "Higiene y actualización del CRM de ventas",
+                        title: "CRM Hygiene, Pipeline Progression, and Forecasting",
                         description:
-                            "Registro sistemático de cada interacción en el CRM (HubSpot, Salesforce, Pipedrive u otros): notas de llamada, etapa del deal, fecha de seguimiento y probabilidad de cierre. Un pipeline limpio que tu director comercial puede auditar en tiempo real.",
+                            "Document notes, decision criteria, deal stage, next contact, probability, value, blockers, and loss reasons in HubSpot, Salesforce, Pipedrive, or the CRM your team already uses. Clean data gives leadership a more reliable view of pipeline health and expected revenue.",
                         linkText: "",
                         href: "",
                         customIconBg: "transparent",
@@ -691,23 +708,13 @@ const faqsList = [
                     },
                     {
                         icon: "🔁",
-                        title: "Gestión del pipeline comercial y forecasting",
+                        title: "Sales Handoffs and Revenue-Team Feedback",
                         description:
-                            "Clasificación de prospectos por etapa de madurez y probabilidad de cierre. Elaboración de forecasts, identificación de deals estancados y propuesta de acciones para desbloquearlos. Tu visibilidad sobre el embudo, siempre actualizada.",
+                            "Coordinate with SDRs, Setters, marketing, account executives, operations, and leadership. Share recurring objections, lead-quality issues, messaging friction, and lost-deal patterns that can improve qualification, campaigns, sales scripts, offers, and enablement.",
                         linkText: "",
                         href: "",
                         customIconBg: "transparent",
                         cardClass: "card-green",
-                    },
-                    {
-                        icon: "📋",
-                        title: "Coordinación con marketing y equipo de ventas",
-                        description:
-                            "Comunicación constante con el equipo que genera los leads para retroalimentar la calidad de la captación: perfil de comprador real, objeciones más frecuentes y mensajes que funcionan en el proceso de cierre.",
-                        linkText: "",
-                        href: "",
-                        customIconBg: "transparent",
-                        cardClass: "card-lime",
                     },
                 ]}
             />
@@ -715,37 +722,37 @@ const faqsList = [
 
         <div class="fade-in-section">
             <EorStepsSection
-                title="Cómo integramos a tu experto en cierre de ventas <span style='color: #6663FD; font-weight: 800;'>en 4 pasos</span>"
-                subtitle="Entregar la conversación más crítica de tu embudo — la que convierte oportunidad en cliente — exige un proceso de selección riguroso."
+                title="How to <span style='color: #6663FD; font-weight: 800;'>Hire a Sales Closer</span> Remotely with <span style='color: #1b1b1b; font-weight: 800;'> Oberstaff<span style='color: #ff66cc'>.</span></span>"
+                subtitle="The process is designed for U.S. companies that want to hire a sales closer in Latin America while reducing hiring friction and matching the role to deal size, lead source, buyer type, CRM, sales cycle, objection profile, language requirements, and required U.S. time-zone overlap."
                 steps={[
                     {
-                        title: "Mapea tu proceso de cierre actual",
+                        title: "Step 1: Scope Definition",
                         lineColorClass: "line-black",
                         description:
-                            "Dinos el ticket medio de tu oferta, la duración media del ciclo de venta, el CRM que utilizas y los principales motivos de pérdida de deals.",
-                        badge: "⚡ 15 min · Sin compromiso",
+                            "We define your average deal size, sales-cycle length, lead sources, qualification criteria, monthly call volume, current close rate, CRM, follow-up process, U.S. schedule, language needs, and the tasks that are inside or outside the closer role.",
+                        badge: "",
                     },
                     {
-                        title: "Recibe closers evaluados en tu sector",
+                        title: "Step 2: Candidate Shortlist",
                         lineColorClass: "line-pink",
                         description:
-                            "Buscamos activamente en nuestra base de datos y mercado. Evaluamos resiliencia, dicción y manejo de objeciones.",
+                            "Oberstaff. sources and screens candidates, then presents a curated shortlist aligned with the agreed closing motion. The number and timing of profiles may vary according to industry, seniority, schedule, language level, deal complexity, and market availability.",
                         badgeIcon: "",
-                        badge: "📋 Roleplay",
+                        badge: "",
                     },
                     {
-                        title: "Entrevista y valida el fit comercial",
+                        title: "Step 3: Direct Interviews and Final Approval",
                         lineColorClass: "line-orange",
                         description:
-                            "Escucha directamente cómo los candidatos manejarían una objeción de precio en tu sector o cómo estructurarían el seguimiento de un deal frío.",
-                        badge: "Tú tienes la decisión final",
+                            "Your team interviews the strongest candidates and can test how they would handle a real objection, structure a late-stage call, recover a stalled proposal, or document a deal in your pipeline. Your company retains final approval over the selected closer.",
+                        badge: "",
                     },
                     {
-                        title: "El closer se integra en tu stack de ventas",
+                        title: "Step 4: Contracting, Payroll, and Onboarding",
                         lineColorClass: "line-blue",
                         description:
-                            "<strong class=\"brand-oberstaff text-white\">Oberstaff<span class=\"brand-dot\">.</span></strong> firma los acuerdos NDA. Tu closer obtiene acceso a tu CRM y tu calendario de reuniones y empieza a trabajar las oportunidades activas.",
-                        badge: "Integración activa en días",
+                            "Oberstaff. coordinates the international contracting structure, professional compensation, payroll administration, monthly billing, and ongoing service support. The selected sales closer begins after onboarding, secure-access setup, CRM access, sales documentation, and operating expectations are complete.",
+                        badge: "",
                     },
                 ]}
             />
@@ -753,18 +760,18 @@ const faqsList = [
 
         <div class="fade-in-section">
             <EorCta
-                title="¿Conoces cuántas oportunidades pierde tu equipo en la fase de decisión?"
+                title="Ready to Hire a Sales Closer Focused on Qualified Opportunities?"
                 titleTag="h2"
-                text="Cuéntanos tu ticket medio y el volumen de reuniones mensuales. Recibirás una propuesta de closers de ventas adaptada a tu proceso comercial."
-                buttonText="👉 Solicitar propuesta personalizada"
+                text="Oberstaff. connects U.S. businesses with vetted Latin American sales closers who can run late-stage calls, handle objections, follow up on proposals, maintain CRM discipline, and collaborate with your revenue team during the U.S. business hours your operation requires."
+                buttonText="👉 Hire Sales Closer Talent for Your U.S. Team"
                 buttonHref="#formulario-perfil"
             />
         </div>
 
         <div class="fade-in-section">
             <RolesPerfil
-                title="Qué tipo de closer necesitas según <strong>ticket, complejidad y canal <br> de entrada</strong>"
-                subtitle="No todos los procesos de cierre son iguales. Filtramos perfiles según el modelo de negocio, el ticket, el tipo de interlocutor y la complejidad del ciclo de venta."
+                title="Types of Sales Closer Profiles According to Your <strong>Sales Motion</strong>"
+                subtitle="We help U.S. companies hire <strong>sales closers</strong> whose experience matches the offer, buyer, deal value, channel, and complexity of the sales cycle."
                 layout="modern"
                 customClass="grid-modern roles-copy-grid"
                 footerText=""
@@ -772,66 +779,49 @@ const faqsList = [
                 footerLinkHref="#"
                 roles={[
                     {
-                        title: "🎯 Closer de ventas high ticket",
+                        title: "🎯 High-Ticket Sales Closer",
                         description: "",
                         icon: "",
                         iconColor: "#FF66CC",
                         borderColorClass: "border-pink",
                         subtitle:
-                            "Especializado en ciclos de venta de alto valor (productos o servicios desde 2.000 € hasta 50.000 €+ por contrato). Dominio del cierre consultivo, gestión de múltiples decisores y habilidad para defender el precio frente a alternativas más baratas.",
+                            "Works with higher-value offers where buyers need confidence, proof, ROI context, and structured follow-up before committing. Common in consulting, education, premium services, agencies, and other considered-purchase environments.",
                         techStack: ["HubSpot", "Pipedrive", "Calendly", "Loom"],
-                        buttonText: "Solicitar más información →",
+                        buttonText: "→ Request more information",
                         buttonHref: "#formulario-perfil",
                     },
                     {
-                        title: "📱 Closer de ventas online para infoproductos y formación",
-                        description: "",
-                        icon: "",
-                        iconColor: "#3b76f6",
-                        borderColorClass: "border-blue",
-                        subtitle:
-                            "Closer de ventas digital habituado a la venta emocional y de transformación. Gestiona llamadas de descubrimiento tras una masterclass o webinar, trabaja la urgencia real del prospecto y cierra con bonificaciones por tiempo limitado.",
-                        techStack: [
-                            "ActiveCampaign",
-                            "Zoom",
-                            "Hotmart",
-                            "Stripe",
-                        ],
-                        buttonText: "Solicitar más información →",
-                        buttonHref: "#formulario-perfil",
-                    },
-                    {
-                        title: "🏢 Closer B2B para servicios profesionales",
+                        title: "🏢 B2B Sales Closer for Professional Services",
                         description: "",
                         icon: "",
                         iconColor: "#66FF99",
                         borderColorClass: "border-green",
                         subtitle:
-                            "Ideal para agencias, consultoras y empresas de software. Cierra contratos de servicio recurrente con directores de marketing, CEOs o responsables de operaciones.",
+                            "Handles sales conversations with founders, managers, directors, and other business stakeholders. Strong candidates understand multi-step decisions, stakeholder alignment, proposal follow-up, commercial objections, and value-based selling.",
                         techStack: [
                             "HubSpot CRM",
                             "Salesforce",
                             " LinkedIn",
                             "Notion",
                         ],
-                        buttonText: "Solicitar más información →",
+                        buttonText: "→ Request more information",
                         buttonHref: "#formulario-perfil",
                     },
                     {
-                        title: "🔁 Closer de ventas para SaaS",
+                        title: "🔁 SaaS and Inbound Sales Closer",
                         description: "",
                         icon: "",
                         iconColor: "#CCFF66",
                         borderColorClass: "border-yellow",
                         subtitle:
-                            "Especializado en demos de producto y cierre de suscripciones anuales o mensuales. Domina la venta de valor de plataforma, la gestión del churn y el upselling de planes superiores a clientes activos.",
+                            "Supports booked demos, inbound opportunities, subscriptions, software evaluations, renewals, or upsells. The role connects product capabilities to business outcomes while managing implementation, plan, timing, and ROI objections.",
                         techStack: [
                             "Intercom",
                             "Gong",
                             "Salesloft",
                             "Pipedrive",
                         ],
-                        buttonText: "Solicitar más información →",
+                        buttonText: "→ Request more information",
                         buttonHref: "#formulario-perfil",
                     },
                 ]}
@@ -840,77 +830,65 @@ const faqsList = [
 
         <div class="fade-in-section">
             <ComparisonPerfiles
-                title="Análisis de inversión: precio closer de ventas <span style='font-weight: 800; color: #6663FD;'> local <br> vs. remoto (LATAM)</span> "
-                subtitle="Antes de decidir cómo incorporar capacidad de cierre a tu equipo, compara el costo real, el nivel de dedicación y el riesgo laboral de cada alternativa disponible en el mercado español."
-                footerNote="*Precios orientativos. El coste final varía según la especialidad, el ticket medio de tu oferta, la experiencia del closer y el país del profesional."
-                oberstaffLabel="<span style='color:#FF66CC; font-weight:700;'>Closer ventas con </span> <span style='color:#1B1B1B; font-weight: 800;'>Oberstaff<span style='color:#FF66CC; font-weight: 800;'>.</span></span><span style='color:#FF66CC; font-weight:700;'> (LATAM)</span>"
+                title="<span style='font-weight: 800; color: #6663FD;'>Hire a Sales Closer</span> : <span style='color: #1b1b1b; font-weight: 800;'>Oberstaff<span style='color: #ff66cc'>.</span></span> vs. Local Hiring, Agencies, and Freelancers "
+                subtitle="Compare more than the monthly fee. Whether you are considering a freelance sales closer, an outsourced sales agency, a local employee, or Oberstaff., evaluate pipeline ownership, schedule coverage, CRM integration, commission structure, closing-skill validation, continuity, and the administrative model behind the engagement."
+                footerNote="* Pricing and comparison points are indicative. Final budget and operating model vary by seniority, industry, candidate country, language requirements, schedule, deal size, sales-cycle complexity, and agreed scope."
+                oberstaffLabel="Closer ventas con <span style='color:#1B1B1B; font-weight: 800;'>Oberstaff<span style='color:#FF66CC; font-weight: 800;'>.</span></span><span style='color:#FF66CC; font-weight:700;'> (LATAM)</span>"
                 competitors={[
-                    "Closer local en España",
-                    "Freelance / Marketplace",
+                    "U.S. W-2 hire",
+                    "U.S. sales agency",
+                    "Freelance Sales Closer",
                 ]}
-                criterioLabel="Criterio comercial"
+                criterioLabel="Criteria"
                 rows={[
                     {
-                        label: "Precio closer de ventas",
+                        label: "Monthly Cost",
                         oberstaffValue:
-                            "<strong><span class='icon-check'>✓</span>Desde 910 €/mes</strong>",
+                            "<strong><span class='icon-check'>✓</span> Starting from $910/month USD</strong>",
                         competitorValues: [
-                            "<span class='icon-cross'>✕</span>2.000–3.500 € + SS",
-                            "<span class='icon-cross'>✕</span>1.000–2.000 € o % sobre ventas",
+                            "<span class='icon-cross'>✕</span> Salary plus payroll, benefits, recruiting, tools, and possible variable compensation",
+                            "<span class='icon-warning'>⚠</span> Retainer, project fee, and/or commission depending on the provider",
+                            "<span class='icon-warning'>⚠</span> Monthly fee, hourly rate, and/or percentage of closed revenue",
                         ],
                     },
                     {
-                        label: "Dedicación exclusiva a tu pipeline",
+                        label: "Role focus",
                         oberstaffValue:
-                            "<span class='icon-check'>✓</span> Sí, jornada completa",
+                            "<span class='icon-check'>✓</span> Dedicated full-time closer assigned to your company",
                         competitorValues: [
-                            "<span class='icon-check'>✓</span> Sí, alto coste fijo",
-                            "<span class='icon-warning'>⚠</span> Multicliente, atiende varios embudos",
+                            "<span class='icon-check'>✓</span> Full-time internal employee",
+                            "<span class='icon-warning'>⚠</span> Coverage may be distributed across multiple client accounts",
+                            "<span class='icon-warning'>⚠</span> Often balances multiple concurrent clients or campaigns",
                         ],
                     },
                     {
-                        label: "Evaluación de capacidad de cierre",
+                        label: "Administrative burden",
                         oberstaffValue:
-                            "<span class='icon-check'>✓</span>  Roleplay + prueba técnica + psico",
+                            "<span class='icon-check'>✓</span> <span style='color: #1b1b1b; font-weight: 800;'> Oberstaff<span style='color: #ff66cc'>.</span></span> coordinates international contracting, professional payroll administration, and monthly billing",
                         competitorValues: [
-                            "<span class='icon-cross'>✕</span> Solo CV y referencias",
-                            "<span class='icon-cross'>✕</span> Solo historial declarado",
+                            "<span class='icon-cross'>✕</span> Your company manages U.S. payroll, benefits, HR administration, and employment processes",
+                            "<span class='icon-check'>✓</span> Standard vendor relationship, subject to agency contract and scope",
+                            "<span class='icon-warning'>⚠</span> Contractor classification, payment, documentation, and continuity remain your responsibility",
                         ],
                     },
                     {
-                        label: "Propiedad del CRM y grabaciones",
+                        label: "Pipeline coverage",
                         oberstaffValue:
-                            "<span class='icon-check'>✓</span>  100 % tuya, blindada por NDA",
+                            "<span class='icon-check'>✓</span> Agreed full-time schedule with U.S. time-zone overlap and CRM ownership",
                         competitorValues: [
-                            "<span class='icon-check'>✓</span> Tuya",
-                            "<span class='icon-warning'>⚠</span> Sin control sobre sus dispositivos",
+                            "<span class='icon-check'>✓</span> Standard internal schedule and direct process control",
+                            "<span class='icon-warning'>⚠</span> Depends on service window, account model, and assigned team",
+                            "<span class='icon-warning'>⚠</span> Availability and response cadence can vary by workload",
                         ],
                     },
                     {
-                        label: "Horario compatible con España",
+                        label: "Skill validation",
                         oberstaffValue:
-                            "<span class='icon-check'>✓</span> Sincronía total con tu equipo",
+                            "<span class='icon-check'>✓</span> Roleplays, objection scenarios, interviews, communication checks, and role-fit screening",
                         competitorValues: [
-                            "<span class='icon-check'>✓</span> Compatible",
-                            "<span class='icon-warning'>⚠</span> Variable según agenda propia",
-                        ],
-                    },
-                    {
-                        label: "Comisión sobre ventas cerradas",
-                        oberstaffValue:
-                            "<span class='icon-check'>✓</span> Ninguna. Tarifa plana B2B",
-                        competitorValues: [
-                            "<span class='icon-check'>✓</span> Ninguna (solo salario fijo)",
-                            "<span class='icon-warning'>⚠</span> Suelen exigir % sobre deal",
-                        ],
-                    },
-                    {
-                        label: "Riesgo Laboral / finiquitos",
-                        oberstaffValue:
-                            "<span class='icon-check'>✓</span> Cero pasivo laboral",
-                        competitorValues: [
-                            "<span class='icon-cross'>✕</span> Pasivo laboral acumulado",
-                            "<span class='icon-check'>✓</span> Nulo",
+                            "<span class='icon-warning'>⚠</span> Your team owns sourcing, testing, and assessment",
+                            "<span class='icon-warning'>⚠</span> Agency methodology and assigned closer quality vary by provider",
+                            "<span class='icon-warning'>⚠</span> Often based on portfolio, claims, reviews, references, or marketplace history",
                         ],
                     },
                 ]}
@@ -919,54 +897,75 @@ const faqsList = [
 
         <div class="fade-in-section">
             <PricingCardPerfil
-                sectionTitle="¿Cuánto cuesta contratar un closer de ventas <span style='color:#6663FD; font-weight: 900;'>con Oberstaff<span class='brand-dot'>.</span></span>? "
-                sectionSubtitle="Una estructura de costes predecible para que tu inversión en cierre sea escalable. Sin comisiones sobre ventas cerradas, sin variables ocultas."
-                cardTitle="Fee mensual único"
+                sectionTitle="Sales Closer Pricing for U.S. Companies"
+                sectionSubtitle="All-inclusive plans start at $910/month. The amount includes the professional's compensation and Oberstaff's sourcing, role-specific evaluation, contracting, payroll administration, monthly billing, and ongoing service support. The final quote is adjusted to seniority, schedule, language requirements, industry, average deal size, sales-cycle complexity, and candidate country."
+                cardTitle="All-Inclusive"
                 titleTag="p"
-                cardSubtitle="Jornada completa · sin comisiones sobre ventas"
-                priceLabel="DESDE"
-                priceAmount="910 €"
-                pricePeriod="/ mes"
+                cardSubtitle=""
+                priceLabel="Starting from"
+                priceAmount="$910"
+                pricePeriod="/month USD"
                 features={[
-                    "Llamadas de cierre y seguimiento activo del pipeline",
-                    "Manejo de objeciones y negociación de condiciones contractuales",
-                    "Gestión y actualización diaria del CRM (HubSpot, Pipedrive, Salesforce u otros)",
-                    "Forecast semanal y reporte de ratio de cierre",
-                    "Coordinación con marketing para retroalimentar la calidad del lead",
-                    "Blindaje contractual: NDA y cesión de derechos sobre grabaciones y scripts",
+                    "The professional's monthly compensation is included.",
+                    "Recruitment, sales-specific screening, roleplays, and curated candidate shortlist.",
+                    "International contracting and payroll administration managed by Oberstaff.",
+                    "A dedicated full-time Sales Closer under the schedule and scope defined in the proposal.",
+                    "Qualified closing calls, objection handling, proposal follow-up, and pipeline progression.",
+                    "CRM updates, next-action discipline, loss-reason tracking, and agreed sales reporting.",
+                    "Professional English or bilingual EN/ES requirements as agreed for the role.",
+                    "One consolidated monthly invoice in U.S. dollars.",
+                    "No Oberstaff commission on closed sales under the flat-fee staffing model described in the proposal.",
                 ]}
-                ctaText="Solicitar propuesta"
+                ctaText="Request an All-Inclusive Sales Closer Proposal"
                 ctaHref="#formulario-perfil"
-                disclaimer="*Precios orientativos según seniority, sector y país del profesional. Sin costes ocultos ni comisiones adicionales."
+                disclaimer="*Applicable legal, tax, and employment obligations may vary according to the professional's country, engagement structure, and jurisdiction"
             />
         </div>
 
         <div class="fade-in-section">
             <BeneficiosPerfilDisenador
                 showInfoCard={false}
-                title="Por qué contratar closer de ventas dedicado <span style='color:#6663FD; font-weight: 900;'>puede rendir mejor que un fundador saturado o un comercial generalista</span>"
-                subtitle="Combinamos la inmersión profunda de un perfil in-house que vive tu proceso comercial —conoce tu oferta, tus objeciones recurrentes y el perfil de tu comprador— con la agilidad de un modelo de contratación sin burocracia laboral española."
+                title="Remote Sales Closer Integration and <span style='color:#6663FD; font-weight: 900;'>U.S. Time-Zone Coverage</span>"
+                subtitle="For U.S. teams evaluating <strong>remote closers</strong>, the closer should work inside the sales systems and operating standards your company already uses. Integration should be designed around secure access, clear deal ownership, documented handoffs, approved sales messaging, measurable pipeline stages, and realistic response windows."
                 image="/img2-closer.webp"
                 imageAlt="Contratar closer de ventas"
                 infoTitle=""
                 features={[
                     {
                         icon: "🎯",
-                        title: "Especialización real en el momento crítico",
+                        title: "U.S. time-zone coverage",
                         description:
-                            "Captar y cerrar son disciplinas distintas. El closer trabaja donde la ambigüedad cuesta más dinero: la decisión final.",
+                            "Schedule overlap can be aligned with Eastern, Central, Mountain, or Pacific business hours. Evening, weekend, or multi-shift coverage must be defined in the proposal.",
                     },
                     {
                         icon: "📊",
-                        title: "Más lectura del pipeline y menos intuición",
+                        title: "Communication channels",
                         description:
-                            "Con un closer de ventas dentro del CRM, la dirección ve qué entra, qué avanza, qué se cae y por qué.",
+                            "Slack, Microsoft Teams, email, project-management tools, recurring pipeline reviews, and calibration meetings with the sales owner or manager.",
                     },
                     {
                         icon: "⚡",
-                        title: "Menor fricción de estructura",
+                        title: "Sales calls and engagement tools",
                         description:
-                            "Puedes reforzar tu cierre sin sobredimensionar plantilla local ni dejar tu revenue en manos de terceros sin contexto.",
+                            "Zoom, Google Meet, Microsoft Teams, Calendly, Aircall, Dialpad, Gong, Salesloft, Outreach, or other approved systems used by your revenue team.",
+                    },
+                    {
+                        icon: "🗂️",
+                        title: "CRM and pipeline management",
+                        description:
+                            "HubSpot, Salesforce, Pipedrive, Zoho CRM, or the sales platform already used to track stages, notes, next actions, probabilities, and closed-lost reasons.",
+                    },
+                    {
+                        icon: "📝",
+                        title: "Sales documentation",
+                        description:
+                            "ICP and qualification criteria, call framework, objection library, pricing rules, proposal templates, competitor notes, follow-up cadence, discount authority, and escalation rules.",
+                    },
+                    {
+                        icon: "📅",
+                        title: "Reporting cadence",
+                        description:
+                            "Daily pipeline hygiene, weekly forecast or deal review, and monthly KPI reporting based on opportunity volume, sales cycle, and leadership needs.",
                     },
                 ]}
                 infoItems={[
@@ -984,47 +983,35 @@ const faqsList = [
                     },
                 ]}
             >
-                <div class="meta-custom-notice">
+                <!-- <div class="meta-custom-notice">
                     Recibes una sola factura mensual en euros. Crece en
                     contratos firmados, no en costes de estructura.
-                </div>
+                </div> -->
             </BeneficiosPerfilDisenador>
         </div>
 
         <div class="fade-in-section">
             <GuiaContratacion
                 titleTag="h2"
-                headerTitle="Cómo evaluar y contratar un closer de ventas <span style='color:#6663FD; font-weight: 900;'>que suba <br>tu tasa de cierre</span>"
-                headerDescription="Criterios técnicos y comerciales para asegurarte de que el profesional que incorporas domina el ciclo de decisión de tu comprador y puede defender tu oferta ante las objeciones más duras."
+                headerTitle="How to <span style='color:#6663FD; font-weight: 900;'>Hire a Sales Closer</span>: Candidate Evaluation Guide"
+                headerDescription="During interviews, evaluate the candidate's decision process and selling judgment rather than focusing only on charisma, years of experience, or claimed revenue numbers:"
                 cards={[
                     {
-                        title: "📊 ¿Qué métricas deben manejar los closers de ventas de alto rendimiento?",
+                        title: "Discovery and Qualification Judgment",
                         description:
-                            "Un closer estratégico trabaja con datos, no con intuición. Exige que el candidato conozca y gestione: tasa de cierre (ratio de deals ganados), velocidad del ciclo de venta, coste por oportunidad ganada, valor medio del contrato (ACV) y NRR para modelos de suscripción. Si el candidato no maneja estos conceptos con fluidez, no es el perfil adecuado.",
+                            "Can the candidate identify the buyer's real problem, desired outcome, urgency, decision process, and constraints without turning the call into an interrogation or repeating work already completed by the SDR?",
                         description2: "",
                     },
                     {
-                        title: "🧩  ¿En qué se diferencia un closer de un setter o un SDR?",
+                        title: "Objection Handling and Negotiation",
                         description:
-                            "Tanto los setters como los SDR (Sales Development Representative) se ocupan de la prospección y la cualificación: generan la cita o la demo. El closer toma el relevo a partir de ahí. Son funciones complementarias pero distintas. Al contratar closer de ventas para empresas, estás cubriendo específicamente la fase de conversión: el momento en que el prospecto ya sabe que tiene un problema y está evaluando si tu oferta es la solución.",
+                            "Ask how the candidate would respond to price, timing, competitor, implementation, authority, or ROI objections. Strong closers isolate the real concern, clarify tradeoffs, and protect the value of the offer instead of defaulting to pressure or discounting.",
                         description2: "",
                     },
                     {
-                        title: "🌎 ¿Closer de ventas para emprendedores digitales: funciona el modelo LATAM?",
+                        title: "Pipeline and Data Discipline",
                         description:
-                            "El perfil de closer de ventas en Latinoamérica combina dos cualidades que el mercado español valora: formación técnica en metodologías de venta consultiva (Challenger Sale, SPIN, Sandler) y una franja horaria completamente compatible con España. Oberstaff selecciona específicamente perfiles habituados a vender servicios y productos de ticket medio-alto con ciclos de decisión complejos.",
-                        description2: "",
-                    },
-                    {
-                        title: "💻 ¿Cuándo conviene contratar closer de ventas digital o remoto?",
-                        description:
-                            "Cuando tu empresa tiene un flujo regular de demos, llamadas o propuestas pero el porcentaje que termina en contrato firmado está por debajo del 25–30 %. También cuando el equipo comercial dedica demasiado tiempo a prospectos que nunca van a comprar y no hay nadie que filtre y trabaje activamente los deals con mayor probabilidad de cierre. El closer remoto es la solución que añade músculo de conversión sin disparar la estructura de costes.",
-                        description2: "",
-                    },
-                    {
-                        title: "📝 “Busco closer de ventas”: cómo debe verse un briefing útil",
-                        description:
-                            "Incluye ticket medio, origen de leads, volumen semanal de llamadas, idioma, duración del ciclo, si hay setter previo, si la venta requiere propuesta y quién aprueba descuentos o condiciones.",
+                            "Confirm that the candidate can explain how they document next steps, forecast probability, manage follow-up, identify stalled opportunities, record loss reasons, and use CRM data to improve future sales conversations.",
                         description2: "",
                     },
                 ]}
@@ -1033,54 +1020,61 @@ const faqsList = [
 
         <div class="fade-in-section">
             <CasosExitoSection
-                title="Empresas españolas que ya confían su equipo remoto a <span style='font-weight: 900; color: #6663FD;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span>"
+                title="Companies that already trust <span style='color:#1b1b1b; font-weight:800;'>Oberstaff<span style='color: #FF66CC; font-weight:800;''>.</span></span>"
                 subtitle=""
                 testimonials={[
-                    {
-                        stars: 5,
-                        avatar: "/fernando.webp",
-                        imageAlt:
-                            "Fernando Calderón, cliente de Oberstaff en Madrid",
-                        text: "Estaba en busca de talento remoto especializado para mi empresa y después de varias búsquedas sin éxito, encontré a <span class='brand-gradient'>Oberstaff</span> en Instagram. Desde nuestra primera llamada, su profesionalismo y calidad de trabajo me dejaron impresionado. Ahora, gracias a su excelente servicio, he expandido mi contrato con ellos para incluir más personal.",
-                        author: "Fernando Calderón",
-                        role: "CEO · BeautyPro",
-                        videoId: "24KxCAFGrDs",
-                    },
-                    {
-                        stars: 5,
-                        avatar: "/sha.webp",
-                        imageAlt:
-                            "Shadai Iborra, cliente de Oberstaff en Barcelona",
-                        text: "Con <span class='brand-gradient'>Oberstaff</span> pude dar trabajo a dos personas a tiempo completo, ahorrando costes de reclutamiento, espacios de oficina y salario que tendría al hacerlo en España. Lo mejor de todo es que todo está incluido en una misma factura. Con <span class='brand-gradient'>Oberstaff</span> encontré la solución perfecta para mis necesidades de contratación remota y optimización de costes.",
-                        author: "Shadai Iborra",
-                        role: "CEO · @amediastory",
-                        videoId: "_CxlPfluS7M",
-                    },
-                ]}
+                        {
+                                stars: 5,
+                                avatar: "/Kate.webp",
+                                imageAlt: "Kate McCafferty, client of Oberstaff in Madrid",
+                                text: "We’ve been working with <strong>Oberstaff</strong> for nearly two years, and the experience has been excellent from day one. Their dedicated team has supported us throughout the entire process, reviewing thousands of candidates and presenting qualified professionals who fit our needs. The cost savings, operational efficiency, and overall quality of the service have exceeded our expectations.",
+                                author: "Kate McCafferty",
+                                role: "CEO · KM Real Estate (U.S.)",
+                                videoId: "test"
+                            },
+                            {
+                                stars: 5,
+                                avatar: "/fernando.webp",
+                                imageAlt: "Fernando Calderón, cliente de Oberstaff en Madrid",
+                                text: "I was looking for specialized remote talent and, after several unsuccessful local searches, I found <strong>Oberstaff</strong> From the first call, I was impressed by their professionalism and the clarity of their operating structure. The service and time-zone alignment worked so well that I expanded the engagement to add more people to the team.",
+                                author: "Fernando Calderón",
+                                role: "CEO · BeautyPro",
+                                videoId: "test"
+                            },
+                            {
+                                stars: 5,
+                                avatar: "/sha.webp",
+                                imageAlt: "Shadai Iborra, cliente de Oberstaff en Barcelona",
+                                text: "With <strong>Oberstaff</strong> I was able to add two full-time professionals while reducing recruiting costs, office expenses, and the payroll burden I would have faced by hiring locally. The best part is that the entire operation is consolidated into one monthly invoice <strong>Oberstaff</strong> gave us the right solution for remote hiring and cost optimization.",
+                                author: "Shadai Iborra",
+                                role: "CEO · @amediastory",
+                                videoId: "test"
+                            },
+                        ]}
             />
         </div>
 
         <div class="fade-in-section">
             <FAQSection
-                title="Resolviendo tus dudas <br> <strong>sobre el servicio</strong>"
-                ctaText="Respondemos las dudas más frecuentes de las empresas españolas que quieren incorporar capacidad de cierre remota de forma estable y sin riesgos."
-                ctaButtonText="Hablar con asesor →"
+                title="Frequently Asked Questions About Hiring a <strong>Sales Closer</strong> in the U.S."
+                ctaText=""
+                ctaButtonText="→ Request a free Sales Closer proposal"
                 ctaButtonHref="#formulario-perfil"
                 faqs={faqsList}
             />
         </div>
 
-        <div class="fade-in-section">
+        <!-- <div class="fade-in-section">
             <PressSection title="Prensa y menciones" />
-        </div>
+        </div> -->
 
         <div class="fade-in-section">
             <ConversionPerfilDisenador
                 webhookUrl=""
-                title="Deja de perder oportunidades ya cualificadas y <strong>empieza a cerrarlas con método</strong>"
-                subtitle="Si estás listo para contratar closer de ventas y dar el salto hacia una estructura comercial eficiente y escalable, hablemos hoy mismo."
-                extraTitle="Solicita una sesión estratégica gratuita" 
-                buttonText="Solicitar propuesta gratuita →"
+                title="Hire a Dedicated <strong>Remote Sales Closer</strong> for Your U.S. Team"
+                subtitle="Fill out our quick 1-minute form to receive a curated shortlist of pre-vetted <strong>sales closer</strong> profiles aligned with your deal size, sales cycle, lead source, language requirements, and U.S. working hours."
+                extraTitle="" 
+                buttonText="→ Request a free Sales Closer proposal"
                 noteText=""
                 formName="Perfil Closer de Ventas España"
                 pais="España"
