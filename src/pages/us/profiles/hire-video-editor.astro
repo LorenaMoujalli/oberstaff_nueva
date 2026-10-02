@@ -522,6 +522,47 @@ const faqsList = [
         </div>
 
         <div class="fade-in-section">
+            <BeneficiosPerfilDisenador
+                showInfoCard={false}
+                title="Video Editing Deliverables and KPIs You Can Track"
+                subtitle="Your dedicated video editor works under a structured production framework with deliverables and KPIs connected to speed, quality, consistency, and content performance:"
+              image="/img2-videos.webp" 
+            imageAlt="Contratar editor de videos"
+                features={[
+                    {
+                        icon: "🎯",
+                        title: "Production Throughput and On-Time Delivery:",
+                        description:
+                            "Track completed videos, cutdowns, platform versions, average turnaround time, backlog size, and the percentage of deliverables completed by the agreed publishing deadline.",
+                    },
+                    {
+                        icon: "⚡",
+                        title: "Revision Cycle Efficiency:",
+                        description:
+                            "Measure the average number of review rounds, time between feedback and revised export, repeated correction types, approval bottlenecks, and the percentage of edits approved within the expected revision window.",
+                    },
+                    {
+                        icon: "🎨",
+                        title: "Retention and Creative Performance Signals:",
+                        description:
+                            "When platform data is available, review hook retention, average watch time, completion rate, viewer drop-off points, click-through or conversion signals for paid creative, and patterns that can inform future editing decisions.",
+                    },
+                    {
+                        icon: "🛡️",
+                        title: "Delivery QA and Asset Handoff:",
+                        description:
+                            "Track export accuracy, caption or graphic errors, correct aspect ratios, audio consistency, file naming, source-project availability, organized masters, and whether final assets are stored in the approved company environment.",
+                    }
+                ]}
+            >
+              <div class="meta-custom-notice">
+                   * KPI availability depends on platform permissions, media spend, content strategy, footage quality, publishing cadence, creative concept, audience, and the analytics available for each channel. A video editor can influence retention and creative performance, but business outcomes also depend on offer, distribution, targeting, and broader marketing strategy.
+                </div>
+             
+            </BeneficiosPerfilDisenador>
+        </div>
+
+        <div class="fade-in-section">
             <EorStepsSection
                 title="How to  <span style='color: #6663FD; font-weight: 800;'>Hire Remote Video Editor</span> Talent with <span style='font-weight:800; color:#1B1B1B;'>Oberstaff<span style='color:#FF66CC;'>.</span></span>"
                 subtitle="The process is designed for U.S. companies that want to <strong>hire video editors</strong> in Latin America while reducing sourcing risk, shortening time to shortlist, and matching the role to content formats, production volume, software, turnaround expectations, U.S. time-zone overlap, and creative standards. It also gives teams <strong>hiring video editors</strong> a consistent framework for comparing portfolio quality, workflow discipline, communication, and role fit."
@@ -670,6 +711,7 @@ const faqsList = [
                 subtitle="Compare more than the monthly fee. When reviewing video editors for hire, evaluate dedicated capacity, turnaround, source-file control, software fit, revision workflow, time-zone overlap, skill validation, and the administrative model behind the engagement. Whether you are considering a freelance video editor, a video editing agency, a local employee, or <span style='font-weight:800; color:#1B1B1B;'>Oberstaff<span style='color:#FF66CC;'>.</span></span>, the best option depends on recurring volume and how much production ownership your team needs. "
                 footerNote=""
                 oberstaffLabel="<span style='font-weight:800; color:#1B1B1B;'>Oberstaff<span style='color:#FF66CC;'>.</span></span> <span style='color:#FF66CC; font-weight:700;'>LATAM talent</span>"
+                criterioLabel="Criteria"
                 competitors={[
                     "U.S. W-2 hire",
                     "U.S. video / creative agency",
@@ -760,47 +802,6 @@ const faqsList = [
             />
         </div>
 
-       <div class="fade-in-section">
-            <BeneficiosPerfilDisenador
-                showInfoCard={false}
-                title="Video Editing Deliverables and KPIs You Can Track"
-                subtitle="Your dedicated video editor works under a structured production framework with deliverables and KPIs connected to speed, quality, consistency, and content performance:"
-              image="/img2-videos.webp" 
-            imageAlt="Contratar editor de videos"
-                features={[
-                    {
-                        icon: "🎯",
-                        title: "Production Throughput and On-Time Delivery:",
-                        description:
-                            "Track completed videos, cutdowns, platform versions, average turnaround time, backlog size, and the percentage of deliverables completed by the agreed publishing deadline.",
-                    },
-                    {
-                        icon: "⚡",
-                        title: "Revision Cycle Efficiency:",
-                        description:
-                            "Measure the average number of review rounds, time between feedback and revised export, repeated correction types, approval bottlenecks, and the percentage of edits approved within the expected revision window.",
-                    },
-                    {
-                        icon: "🎨",
-                        title: "Retention and Creative Performance Signals:",
-                        description:
-                            "When platform data is available, review hook retention, average watch time, completion rate, viewer drop-off points, click-through or conversion signals for paid creative, and patterns that can inform future editing decisions.",
-                    },
-                    {
-                        icon: "🛡️",
-                        title: "Delivery QA and Asset Handoff:",
-                        description:
-                            "Track export accuracy, caption or graphic errors, correct aspect ratios, audio consistency, file naming, source-project availability, organized masters, and whether final assets are stored in the approved company environment.",
-                    }
-                ]}
-            >
-              <div class="meta-custom-notice">
-                   * KPI availability depends on platform permissions, media spend, content strategy, footage quality, publishing cadence, creative concept, audience, and the analytics available for each channel. A video editor can influence retention and creative performance, but business outcomes also depend on offer, distribution, targeting, and broader marketing strategy.
-                </div>
-             
-            </BeneficiosPerfilDisenador>
-        </div>
-
            <div class="fade-in-section">
             <GuiaContratacion
                 titleTag="h2"
@@ -844,6 +845,7 @@ const faqsList = [
                         text: "We’ve been working with <strong>Oberstaff<span style='color: #FF66CC;'></span></strong> for nearly two years, and the experience has been excellent from day one. Their dedicated team has supported us throughout the entire process, reviewing thousands of candidates and presenting qualified professionals who fit our needs. The cost savings, operational efficiency, and overall quality of the service have exceeded our expectations.",
                         author: "Kate McCafferty",
                         role: "CEO · KM Real Estate (U.S.)",
+                        videoId: "test"
                     },
                     {
                         stars: 5,
@@ -852,6 +854,7 @@ const faqsList = [
                         text: "I was looking for specialized remote talent and, after several unsuccessful local searches, I found <strong>Oberstaff<span style='color: #FF66CC;'></span></strong> From the first call, I was impressed by their professionalism and the clarity of their operating structure. The service and time-zone alignment worked so well that I expanded the engagement to add more people to the team.",
                         author: "Fernando Calderón",
                         role: "CEO · BeautyPro",
+                        videoId: "test"
                     },
                     {
                         stars: 5,
@@ -860,6 +863,7 @@ const faqsList = [
                         text: "With <strong>Oberstaff<span style='color: #FF66CC;'></span></strong> I was able to add two full-time professionals while reducing recruiting costs, office expenses, and the payroll burden I would have faced by hiring locally. The best part is that the entire operation is consolidated into one monthly invoice. <strong>Oberstaff<span style='color: #FF66CC;'></span></strong> gave us the right solution for remote hiring and cost optimization.",
                         author: "Shadai Iborra",
                         role: "CEO · @amediastory",
+                        videoId: "test"
                     },
                 ]}
             />

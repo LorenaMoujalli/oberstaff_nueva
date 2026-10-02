@@ -680,51 +680,59 @@ const faqsList = [
         </div>
 
         <div class="fade-in-section">
-            <EorStepsSection
-                title="How to Hire Remote Virtual Assistant Talent with <span style='color:#1b1b1b; font-weight:800;'>Oberstaff<span style='color: #FF66CC; font-weight:800;''>.</span></span>"
-                subtitle="This <strong>virtual assistant hiring</strong> process is designed for U.S. companies that want to <strong>hire virtual assistants</strong>  in Latin America while reducing recruiting effort, shortening time to shortlist, and connecting the role with the real tasks, systems, schedule, access requirements, language needs, and operating priorities of the business."
-                steps={[
+            <BeneficiosPerfilDisenador
+                showInfoCard={false}
+                title="Virtual Assistant Deliverables and KPIs You Can Track"
+                subtitle="Your <strong>dedicated virtual assistant</strong> can work under a structured operating framework with deliverables and KPIs connected to recurring administrative execution:"
+                  image="/img2-asistente.webp"
+            imageAlt="Asistente virtual revisando procesos administrativos"
+                infoTitle=""
+                features={[
                     {
-                        title: "Scope Definition",
-                        lineColorClass: "line-black",
+                        icon: "🎯",
+                        title: "Task Queue and SLA Management:",
                         description:
-                            "We define the recurring tasks, expected workload, required U.S. time-zone overlap, tools, access boundaries, English or bilingual requirements, reporting cadence, escalation rules, and the responsibilities that are inside or outside the role.",
-                        badge: "",
+                            "Tracking recurring tasks, due dates, pending follow-ups, turnaround times, ownership, and completion against the priorities agreed for the role.",
                     },
                     {
-                        title: "Candidate Shortlist",
-                        lineColorClass: "line-pink",
+                        icon: "🗓️",
+                        title: "Calendar and Inbox Control:",
                         description:
-                            "<span style='color:#1b1b1b; font-weight:800;'>Oberstaff<span style='color: #FF66CC; font-weight:800;''>.</span></span> sources and screens candidates, then presents a curated shortlist aligned with the agreed requirements. The number and timing of profiles may vary according to specialization, schedule, language level, and market availability.",
-                        badgeIcon: "",
-                        badge: "",
+                            "Monitoring scheduling accuracy, unresolved requests, follow-up status, meeting preparation, priority messages, and recurring communication workflows.",
                     },
                     {
-                        title: "Direct Interviews and Final Approval",
-                        lineColorClass: "line-orange",
+                        icon: "📊",
+                        title: "CRM, Data, and Documentation Quality:",
                         description:
-                            "Your team interviews the strongest candidates to evaluate communication, judgment, organization, technical fit, and cultural alignment. Your company retains final approval over the selected professional.",
-                        badge: "",
+                            "Maintaining current records, reducing duplicates or missing fields, updating SOPs and shared documents, and reporting recurring data-quality issues.",
                     },
                     {
-                        title: "Contracting, Payroll, and Onboarding",
-                        lineColorClass: "line-blue",
+                        icon: "⚡",
+                        title: "Monthly Administrative Report:",
                         description:
-                            "<span style='color:#1b1b1b; font-weight:800;'>Oberstaff<span style='color: #FF66CC; font-weight:800;''>.</span></span> coordinates the agreed international contracting structure, professional compensation, payroll administration, monthly billing, and ongoing service support. The selected remote virtual assistant begins after onboarding, secure-access setup, and operating documentation are complete.",
-                        badge: "",
-                    },
+                            "Summarizing completed work, recurring bottlenecks, pending items, response or turnaround trends, process improvements, and operational recommendations.",
+                    }
                 ]}
-            />
-        </div>
+                infoItems={[
+                    {
+                        title: "",
+                        description: "",
+                    },
+                    {
+                        title: "",
+                        description: "",
+                    },
+                    {
+                        title: "",
+                        description: "",
+                    },
+                ]} 
+            >
+                <div class="meta-custom-notice">
+                  * KPI availability depends on the assigned responsibilities, system permissions, task volume, CRM or project-management integration, the agreed service window, and the reporting capabilities of each tool. Business outcomes also depend on internal processes, decision speed, data quality, and the broader operating environment.
 
-        <div class="fade-in-section">
-            <EorCta
-                title="Ready to Hire a Virtual Assistant and Reclaim Your Team's Time?"
-                titleTag="h2"
-                text="If you need a <strong>virtual assistant for hire</strong> on a dedicated basis, Oberstaff. connects U.S. businesses with vetted Latin American virtual assistants who can manage recurring administrative work, support executives, maintain CRM and documentation, coordinate follow-up, and collaborate during the U.S. business hours your operation requires."
-                buttonText="👉 Hire Virtual Assistant Talent for Your U.S. Team"
-                buttonHref="#formulario-perfil"
-            />
+                </div>
+            </BeneficiosPerfilDisenador>
         </div>
 
         <div class="fade-in-section">
@@ -799,12 +807,61 @@ const faqsList = [
         </div>
 
         <div class="fade-in-section">
+            <EorStepsSection
+                title="How to Hire Remote Virtual Assistant Talent with <span style='color:#1b1b1b; font-weight:800;'>Oberstaff<span style='color: #FF66CC; font-weight:800;''>.</span></span>"
+                subtitle="This <strong>virtual assistant hiring</strong> process is designed for U.S. companies that want to <strong>hire virtual assistants</strong>  in Latin America while reducing recruiting effort, shortening time to shortlist, and connecting the role with the real tasks, systems, schedule, access requirements, language needs, and operating priorities of the business."
+                steps={[
+                    {
+                        title: "Scope Definition",
+                        lineColorClass: "line-black",
+                        description:
+                            "We define the recurring tasks, expected workload, required U.S. time-zone overlap, tools, access boundaries, English or bilingual requirements, reporting cadence, escalation rules, and the responsibilities that are inside or outside the role.",
+                        badge: "",
+                    },
+                    {
+                        title: "Candidate Shortlist",
+                        lineColorClass: "line-pink",
+                        description:
+                            "<span style='color:#1b1b1b; font-weight:800;'>Oberstaff<span style='color: #FF66CC; font-weight:800;''>.</span></span> sources and screens candidates, then presents a curated shortlist aligned with the agreed requirements. The number and timing of profiles may vary according to specialization, schedule, language level, and market availability.",
+                        badgeIcon: "",
+                        badge: "",
+                    },
+                    {
+                        title: "Direct Interviews and Final Approval",
+                        lineColorClass: "line-orange",
+                        description:
+                            "Your team interviews the strongest candidates to evaluate communication, judgment, organization, technical fit, and cultural alignment. Your company retains final approval over the selected professional.",
+                        badge: "",
+                    },
+                    {
+                        title: "Contracting, Payroll, and Onboarding",
+                        lineColorClass: "line-blue",
+                        description:
+                            "<span style='color:#1b1b1b; font-weight:800;'>Oberstaff<span style='color: #FF66CC; font-weight:800;''>.</span></span> coordinates the agreed international contracting structure, professional compensation, payroll administration, monthly billing, and ongoing service support. The selected remote virtual assistant begins after onboarding, secure-access setup, and operating documentation are complete.",
+                        badge: "",
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <EorCta
+                title="Ready to Hire a Virtual Assistant and Reclaim Your Team's Time?"
+                titleTag="h2"
+                text="If you need a <strong>virtual assistant for hire</strong> on a dedicated basis, Oberstaff. connects U.S. businesses with vetted Latin American virtual assistants who can manage recurring administrative work, support executives, maintain CRM and documentation, coordinate follow-up, and collaborate during the U.S. business hours your operation requires."
+                buttonText="👉 Hire Virtual Assistant Talent for Your U.S. Team"
+                buttonHref="#formulario-perfil"
+            />
+        </div>
+
+        <div class="fade-in-section">
             <ComparisonPerfiles
                 title="<span style='color: #6663FD; font-weight: 800;'>Hire a Virtual Assistant</span> <span style='color:#1b1b1b; font-weight:800;'>Oberstaff<span style='color: #FF66CC; font-weight:800;''>.</span></span> vs. Local Hiring, Agencies, and Freelancers"
                 subtitle="Compare more than the monthly fee. Whether you are considering a freelance virtual assistant, a <strong>virtual assistant staffing agency,</strong> another <strong>virtual assistant company,</strong> a local employee, or , evaluate schedule coverage, role dedication, process knowledge, data access, continuity, screening, and the administrative model behind the engagement."
                 footerNote="* Pricing and cost structures are indicative. The final budget depends on the professional's seniority, schedule, language requirements, specialization, country of residence, and the scope defined in the proposal."
                 oberstaffLabel="<span style='font-weight:800; color:#1B1B1B;'><span style='color:#1b1b1b; font-weight:800;'>Oberstaff<span style='color: #FF66CC; font-weight:800;''>.</span></span> LATAM talent"
                 competitors={["U.S. W-2 hire", "U.S. admin agency", "Freelance Virtual Assistant"]}
+                criterioLabel="Criteria"
                 rows={[
                     {
                         label: "Monthly Cost",
@@ -893,62 +950,6 @@ const faqsList = [
             />
         </div>
 
-         <div class="fade-in-section">
-            <BeneficiosPerfilDisenador
-                showInfoCard={false}
-                title="<span style='color:#6663FD; font-weight: 900;'>Virtual Assistant</span> Deliverables and KPIs You Can Track"
-                subtitle="Your <strong>dedicated virtual assistant</strong> can work under a structured operating framework with deliverables and KPIs connected to recurring administrative execution:"
-                  image="/img2-asistente.webp"
-            imageAlt="Asistente virtual revisando procesos administrativos"
-                infoTitle=""
-                features={[
-                    {
-                        icon: "🎯",
-                        title: "Task Queue and SLA Management:",
-                        description:
-                            "Tracking recurring tasks, due dates, pending follow-ups, turnaround times, ownership, and completion against the priorities agreed for the role.",
-                    },
-                    {
-                        icon: "🗓️",
-                        title: "Calendar and Inbox Control:",
-                        description:
-                            "Monitoring scheduling accuracy, unresolved requests, follow-up status, meeting preparation, priority messages, and recurring communication workflows.",
-                    },
-                    {
-                        icon: "📊",
-                        title: "CRM, Data, and Documentation Quality:",
-                        description:
-                            "Maintaining current records, reducing duplicates or missing fields, updating SOPs and shared documents, and reporting recurring data-quality issues.",
-                    },
-                    {
-                        icon: "⚡",
-                        title: "Monthly Administrative Report:",
-                        description:
-                            "Summarizing completed work, recurring bottlenecks, pending items, response or turnaround trends, process improvements, and operational recommendations.",
-                    }
-                ]}
-                infoItems={[
-                    {
-                        title: "",
-                        description: "",
-                    },
-                    {
-                        title: "",
-                        description: "",
-                    },
-                    {
-                        title: "",
-                        description: "",
-                    },
-                ]} 
-            >
-                <div class="meta-custom-notice">
-                  * KPI availability depends on the assigned responsibilities, system permissions, task volume, CRM or project-management integration, the agreed service window, and the reporting capabilities of each tool. Business outcomes also depend on internal processes, decision speed, data quality, and the broader operating environment.
-
-                </div>
-            </BeneficiosPerfilDisenador>
-        </div>
-
         <div class="fade-in-section">
             <GuiaContratacion
                 titleTag="h2"
@@ -1008,6 +1009,7 @@ const faqsList = [
                         text: "We’ve been working with <strong>Oberstaff</strong> for nearly two years, and the experience has been excellent from day one. Their dedicated team has supported us throughout the entire process, reviewing thousands of candidates and presenting qualified professionals who fit our needs. The cost savings, operational efficiency, and overall quality of the service have exceeded our expectations.",
                         author: "Kate McCafferty",
                         role: "CEO · KM Real Estate (U.S.)",
+                        videoId: "test"
                     },
                     {
                         stars: 5,
@@ -1016,6 +1018,7 @@ const faqsList = [
                         text: "I was looking for specialized remote talent and, after several unsuccessful local searches, I found <strong>Oberstaff</strong> From the first call, I was impressed by their professionalism and the clarity of their operating structure. The service and time-zone alignment worked so well that I expanded the engagement to add more people to the team.",
                         author: "Fernando Calderón",
                         role: "CEO · BeautyPro",
+                        videoId: "test"
                     },
                     {
                         stars: 5,
@@ -1024,6 +1027,8 @@ const faqsList = [
                         text: "With <strong>Oberstaff</strong> I was able to add two full-time professionals while reducing recruiting costs, office expenses, and the payroll burden I would have faced by hiring locally. The best part is that the entire operation is consolidated into one monthly invoice <strong>Oberstaff</strong> gave us the right solution for remote hiring and cost optimization.",
                         author: "Shadai Iborra",
                         role: "CEO · @amediastory",
+                        videoId: "test"
+
                     },
                 ]}
             />
