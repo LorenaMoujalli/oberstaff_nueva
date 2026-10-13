@@ -15,7 +15,8 @@ interface Benefit {
 interface Props {
     title?: string;
     benefits?: Benefit[];
-    infoText?: string;
+    infoText?: string | null | false;
+    showInfoBox?: boolean;
 }
 
 const {
@@ -76,7 +77,8 @@ const {
             colorClass: "green",
         },
     ],
-    infoText = `<strong>Oberstaff<span class="dot">.</span> factura en euros</strong>, todas las gestiones se hacen en tu idioma, en tu zona horaria y cumpliendo la normativa vigente para empresas españolas.`
+    infoText = `<strong>Oberstaff<span class="dot">.</span> factura en euros</strong>, todas las gestiones se hacen en tu idioma, en tu zona horaria y cumpliendo la normativa vigente para empresas españolas.`,
+    showInfoBox = true,
 } = Astro.props;
 ---
 
@@ -118,10 +120,12 @@ const {
             </div>
         </div>
 
-        <div class="benefits-info-box">
-            <span class="info-icon" aria-hidden="true">💡</span>
-            <p set:html={infoText} />
-        </div>
+        {showInfoBox && infoText && (
+            <div class="benefits-info-box">
+                <span class="info-icon" aria-hidden="true">💡</span>
+                <p set:html={infoText} />
+            </div>
+        )}
     </div>
 </section>
 

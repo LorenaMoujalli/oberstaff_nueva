@@ -93,6 +93,7 @@ interface Props {
     ctaText?: string;
     ctaButtonText?: string;
     customClass?: string;
+    showCta?: boolean;
 }
 
 const { 
@@ -100,7 +101,8 @@ const {
     faqs = homeFaqs,
     ctaText = "¿No sabes qué modelo de contratación necesitas para tu empresa?",
     ctaButtonText = "Agenda una llamada gratuita",
-    customClass = ""
+    customClass = "",
+    showCta = true,
 } = Astro.props;
 ---
 
@@ -110,12 +112,14 @@ const {
             <div class="faq-left-column">
                 <h2 class="faq-main-title" set:html={title} />
                 
-                <div class="faq-cta-card">
-                    <p set:html={ctaText} />
-                    <a href="#contacto" class="faq-cta-button">
-                        {ctaButtonText}
-                    </a>
-                </div>
+                {showCta && (
+                    <div class="faq-cta-card">
+                        <p set:html={ctaText} />
+                        <a href="#contacto" class="faq-cta-button">
+                            {ctaButtonText}
+                        </a>
+                    </div>
+                )}
             </div>
 
             <div class="faq-right-column">
