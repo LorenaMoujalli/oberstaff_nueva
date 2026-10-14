@@ -1,0 +1,35 @@
+---
+import "../../styles/calculator/calculator-hero.css";
+
+interface Props {
+    title: string;
+    subtitle: string;
+    author: string;
+    readingTime: string;
+}
+
+const { title, subtitle, author, readingTime } = Astro.props;
+---
+
+<header class="calc-navbar">
+    <div class="calc-nav-container">
+        <a href="/" class="calc-brand-logo">
+            Oberstaff<span class="calc-brand-dot">.</span>
+        </a>
+    </div>
+</header>
+
+<section class="calc-hero">
+    <div class="calc-blur-glow calc-pink-glow"></div>
+    <div class="calc-blur-glow calc-purple-glow"></div>
+
+    <div class="calc-container calc-hero-content">
+        <h1 class="calc-hero-title">{title}</h1>
+        <p class="calc-hero-subtitle">{subtitle}</p>
+
+        <div class="calc-article-meta">
+            <span>👤 {author}</span>
+            <span>⏱️ Tiempo de lectura: {readingTime}</span>
+        </div>
+    </div>
+</section>

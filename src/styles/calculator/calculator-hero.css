@@ -1,0 +1,117 @@
+/* ================= NAVBAR ================= */
+.calc-navbar {
+  background: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.calc-nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.calc-brand-logo {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: 24px;
+  color: var(--text-dark);
+  text-decoration: none;
+}
+
+.calc-brand-dot {
+  color: var(--brand-pink);
+}
+
+/* ================= HERO ================= */
+.calc-hero {
+  background:
+    linear-gradient(to right, rgba(27, 27, 27, 0.95) 40%, rgba(27, 27, 27, 0.7) 100%),
+    url("https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=2000&q=80")
+      center / cover no-repeat;
+  position: relative;
+  padding: 120px 0 100px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.calc-blur-glow {
+  position: absolute;
+  filter: blur(100px);
+  z-index: 1;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.calc-pink-glow {
+  top: -20%;
+  left: -10%;
+  width: 600px;
+  height: 600px;
+  background: linear-gradient(135deg, var(--brand-pink) 0%, rgba(255, 102, 204, 0.4) 100%);
+}
+
+.calc-purple-glow {
+  top: 10%;
+  right: -15%;
+  width: 500px;
+  height: 700px;
+  background: linear-gradient(135deg, var(--brand-purple) 0%, rgba(102, 99, 253, 0.4) 100%);
+}
+
+.calc-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.calc-hero-title {
+  font-family: var(--font-heading);
+  font-size: 46px;
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: -1px;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.calc-hero-subtitle {
+  font-family: var(--font-body);
+  font-size: 20px;
+  line-height: 1.7;
+  color: #ffffff;
+  opacity: 0.9;
+}
+
+.calc-article-meta {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  color: #ffffff;
+  opacity: 0.8;
+  font-size: 14px;
+  margin-top: 30px;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .calc-hero-title {
+    font-size: 36px;
+  }
+
+  .calc-hero {
+    padding: 80px 0 90px;
+  }
+
+  .calc-article-meta {
+    flex-direction: column;
+    gap: 6px;
+  }
+}

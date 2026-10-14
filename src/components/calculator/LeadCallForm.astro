@@ -1,0 +1,66 @@
+---
+import "../../styles/calculator/lead-call-form.css";
+import "../../styles/calculator/calculator-form.css";
+
+interface Props {
+    bookingUrl: string;
+}
+
+const { bookingUrl } = Astro.props;
+---
+
+<h2 class="calc-section-title calc-section-title--spaced-lg calc-section-title--center">
+    El siguiente paso
+</h2>
+<p class="calc-p">
+    Tienes el diagnóstico de tu propio caso arriba, el modelo explicado, y los números del mercado. Lo
+    que sigue es ver cómo aplicaría exactamente a tu equipo.
+</p>
+
+<div class="calc-cta">
+    <h3 class="calc-h3-title calc-cta-title">Agendar una llamada</h3>
+
+    <form id="lead-form">
+        <div class="calc-form-row">
+            <label class="calc-label" for="lead-name">Nombre</label>
+            <input type="text" class="calc-input" id="lead-name" name="nombre" required />
+        </div>
+        <div class="calc-form-row">
+            <label class="calc-label" for="lead-phone">Teléfono</label>
+            <input type="tel" class="calc-input" id="lead-phone" name="telefono" required />
+        </div>
+        <div class="calc-form-row">
+            <label class="calc-label" for="lead-company">Nombre de la empresa</label>
+            <input type="text" class="calc-input" id="lead-company" name="empresa" required />
+        </div>
+        <button type="submit" class="calc-btn calc-btn--pink">Agendar mi llamada &rarr;</button>
+        <p class="calc-micro-legal">
+            Al enviarlo aceptas recibir comunicación de Oberstaff. Puedes darte de baja cuando quieras.
+        </p>
+    </form>
+
+    <div class="calc-form-success" id="form-success" aria-live="polite">
+        <div class="calc-form-success-icon">✅</div>
+        <p class="calc-form-success-text">
+            Listo. Nos pondremos en contacto contigo en breve para coordinar la llamada.
+        </p>
+    </div>
+
+    <div class="calc-direct-booking">
+        <p class="calc-p">O si prefieres reservar directamente en nuestra agenda:</p>
+        <a href={bookingUrl} target="_blank" rel="noopener noreferrer">
+            🗓️ Reservar 15 minutos sin compromiso &rarr;
+        </a>
+    </div>
+</div>
+
+<script>
+    const leadForm = document.getElementById("lead-form") as HTMLFormElement | null;
+    const formSuccess = document.getElementById("form-success");
+
+    leadForm?.addEventListener("submit", (event) => {
+        event.preventDefault();
+        leadForm.style.display = "none";
+        if (formSuccess) formSuccess.style.display = "block";
+    });
+</script>

@@ -1,0 +1,73 @@
+/* ================= FORMULARIO FINAL ================= */
+.calc-cta {
+  background: #ffffff;
+  border: 2px solid var(--border);
+  border-radius: 20px;
+  padding: 50px;
+  margin-top: 50px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+}
+
+.calc-cta-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.calc-micro-legal {
+  font-size: 12px;
+  color: var(--text-gray);
+  text-align: center;
+  margin-top: 15px;
+}
+
+.calc-form-success {
+  display: none;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.calc-form-success-icon {
+  font-size: 50px;
+  color: var(--brand-green);
+  margin-bottom: 15px;
+}
+
+.calc-form-success-text {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  color: var(--text-dark);
+  font-size: 20px;
+}
+
+.calc-direct-booking {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 1px solid var(--border);
+}
+
+.calc-direct-booking p {
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+
+.calc-direct-booking a {
+  color: var(--brand-purple);
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 16px;
+  font-family: var(--font-heading);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.calc-direct-booking a:hover {
+  color: var(--brand-pink);
+}
+
+@media (max-width: 768px) {
+  .calc-cta {
+    padding: 30px 20px;
+  }
+}

@@ -1,0 +1,79 @@
+---
+import DashboardLayoutCalculadora from "../../layouts/DashboardLayoutCalculadora.astro";
+import CalculatorHero from "../../components/calculator/CalculatorHero.astro";
+import CalculatorForm from "../../components/calculator/CalculatorForm.astro";
+import ComparisonTable from "../../components/calculator/ComparisonTable.astro";
+import LeadCallForm from "../../components/calculator/LeadCallForm.astro";
+import "../../styles/calculator/calculator-page.css";
+
+const ogImage = "Contratar-Talento.webp";
+const title = "El modelo que usan las empresas que sí están escalando | Oberstaff";
+const description =
+    "Calcula el coste real de un puesto local frente a talento remoto integrado y descubre cuánto puede ahorrar tu empresa al año.";
+const hiddenContentId = "hidden-content";
+const videoUrl = "https://www.youtube.com/embed/HDb_Ps3rsQo?start=0&end=90&autoplay=0&rel=0";
+const bookingUrl =
+    "https://info-oberstaff.zohobookings.com/4327750000001590002/#/4327750000001590002";
+---
+
+<DashboardLayoutCalculadora ogImage={ogImage} title={title} ogDescription={description}>
+    <link rel="canonical" href="https://oberstaff.com/calculator/" slot="head" />
+    <meta slot="head" name="description" content={description} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" slot="head" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin slot="head" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+        slot="head"
+    />
+
+    <div class="calc-page">
+        <CalculatorHero
+            title="El modelo que usan las empresas que sí están escalando"
+            subtitle="No es trabajar más. Es montar el equipo distinto desde el principio."
+            author="Denis Moronta, Oberstaff"
+            readingTime="6 min"
+        />
+
+        <section class="calc-section calc-section--content">
+            <div class="calc-container">
+                <div class="calc-content-box">
+                    <h2 class="calc-section-title calc-section-title--center">
+                        Lo que tienen en común las empresas que escalan
+                    </h2>
+
+                    <p class="calc-p">
+                        No es que tengan más presupuesto. Es que dejaron de medir un puesto nuevo solo
+                        por el sueldo que pagan, y empezaron a mirar el coste real de la silla.
+                    </p>
+                    <p class="calc-p">
+                        Un profesional local no cuesta solo su nómina. Cuesta la nómina, más la
+                        cotización social, más la parte proporcional de oficina, equipo, licencias de
+                        software, y el tiempo invertido en formar a alguien que, si rota, se lleva ese
+                        esfuerzo con él.
+                    </p>
+                    <p class="calc-p">
+                        Las empresas que escalan sin ahogar su margen hicieron un cambio simple. Siguen
+                        contratando el mismo nivel de talento, pero lo integran en remoto desde
+                        Latinoamérica. Mismo idioma, zona horaria compatible, mismas reuniones, pero sin
+                        la estructura fija detrás.
+                    </p>
+
+                    <h2 class="calc-section-title calc-section-title--spaced">Haz la cuenta tú mismo</h2>
+                    <p class="calc-p">
+                        En vez de decirte que esto ahorra dinero sin más, preferimos que lo veas con tus
+                        propios números. Métele el puesto que tienes en mente:
+                    </p>
+
+                    <CalculatorForm revealTargetId={hiddenContentId} />
+
+                    <div id={hiddenContentId} class="calc-hidden-section">
+                        <ComparisonTable videoUrl={videoUrl} />
+                        <LeadCallForm bookingUrl={bookingUrl} />
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</DashboardLayoutCalculadora>

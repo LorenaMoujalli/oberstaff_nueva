@@ -1,0 +1,167 @@
+---
+import "../../styles/calculator/calculator-form.css";
+
+interface Props {
+    /** id del contenedor que se revela una vez calculado el resultado. */
+    revealTargetId: string;
+}
+
+const { revealTargetId } = Astro.props;
+
+const countries = [
+    { value: "es", label: "España" },
+    { value: "pr", label: "Puerto Rico" },
+    { value: "us", label: "EE. UU." },
+];
+
+const roles = [
+    { value: "desarrollo", label: "Desarrollo" },
+    { value: "diseno", label: "Diseño" },
+    { value: "soporte", label: "Soporte" },
+    { value: "admin", label: "Administrativo" },
+    { value: "marketing", label: "Marketing" },
+    { value: "otro", label: "Otro" },
+];
+---
+
+<div class="calc-wrapper" data-reveal-target={revealTargetId}>
+    <form id="calc-form">
+        <div class="calc-form-grid">
+            <div class="calc-form-row">
+                <label class="calc-label" for="calc-country">País de contratación</label>
+                <select class="calc-select" id="calc-country" required>
+                    {countries.map(({ value, label }) => <option value={value}>{label}</option>)}
+                </select>
+            </div>
+
+            <div class="calc-form-row">
+                <label class="calc-label" for="calc-role">Puesto o área</label>
+                <select class="calc-select" id="calc-role" required>
+                    {roles.map(({ value, label }) => <option value={value}>{label}</option>)}
+                </select>
+            </div>
+        </div>
+
+        <div class="calc-form-row">
+            <label class="calc-label" for="calc-salary">Salario bruto mensual local</label>
+            <input
+                type="number"
+                class="calc-input"
+                id="calc-salary"
+                placeholder="Ej: 2200"
+                min="1"
+                step="any"
+                required
+            />
+        </div>
+
+        <div class="calc-form-row calc-toggle">
+            <label class="calc-label" for="calc-office">¿Tiene oficina física para este puesto?</label>
+            <label class="calc-switch">
+                <input type="checkbox" id="calc-office" checked />
+                <span class="calc-switch-slider"></span>
+            </label>
+        </div>
+
+        <button type="submit" class="calc-btn calc-btn--primary">
+            Calcular mi coste real &rarr;
+        </button>
+    </form>
+
+    <div class="calc-loader" id="calc-loader" aria-live="polite">
+        <div class="calc-spinner"></div>
+        <p class="calc-loader-text">Calculando el coste real de tu equipo...</p>
+    </div>
+
+    <div class="calc-results" id="calc-results" aria-live="polite">
+        <div class="calc-result-grid">
+            <div class="calc-result-box">
+                <div class="calc-result-title">Lo que pagas hoy</div>
+                <div class="calc-result-val" id="res-actual">0 €</div>
+                <div class="calc-result-note">Anual, todo incluido</div>
+            </div>
+            <div class="calc-result-box">
+                <div class="calc-result-title">Con talento remoto</div>
+                <div class="calc-result-val calc-result-val--remote" id="res-remoto">0 €</div>
+                <div class="calc-result-note">Anual, todo incluido</div>
+            </div>
+        </div>
+
+        <div class="calc-savings-box">
+            <div class="calc-savings-title">Tu ahorro estimado anual</div>
+            <div class="calc-savings-val" id="res-ahorro">0 €</div>
+            <div class="calc-savings-micro">
+                Esta es una estimación con datos de mercado. Si quieres el número exacto para tu
+                empresa, reserva 15 minutos o agenda una llamada a continuación.
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const MONTHS_PER_YEAR = 12;
+    const SOCIAL_SECURITY_RATE = 0.31;
+    const ABSENCE_RATE = 0.04;
+    const OFFICE_MONTHLY_COST = 200;
+    const EQUIPMENT_COST = 750;
+    const LOADING_DELAY_MS = 1500;
+
+    // Coste mensual estimado del talento remoto por área.
+    const remoteMonthlyCosts: Record<string, number> = {
+        desarrollo: 1400,
+        diseno: 900,
+        soporte: 800,
+        admin: 800,
+        marketing: 900,
+        otro: 900,
+    };
+
+    const currencyFormatter = new Intl.NumberFormat("es-ES", {
+        style: "currency",
+        currency: "EUR",
+        maximumFractionDigits: 0,
+    });
+
+    const wrapper = document.querySelector<HTMLElement>(".calc-wrapper");
+    const form = document.getElementById("calc-form") as HTMLFormElement | null;
+    const loader = document.getElementById("calc-loader");
+    const results = document.getElementById("calc-results");
+
+    if (wrapper && form && loader && results) {
+        const revealTarget = document.getElementById(wrapper.dataset.revealTarget ?? "");
+
+        form.addEventListener("submit", (event) => {
+            event.preventDefault();
+
+            const salary = parseFloat((document.getElementById("calc-salary") as HTMLInputElement).value);
+            const role = (document.getElementById("calc-role") as HTMLSelectElement).value;
+            const hasOffice = (document.getElementById("calc-office") as HTMLInputElement).checked;
+
+            results.style.display = "none";
+            loader.style.display = "block";
+
+            const annualSalary = salary * MONTHS_PER_YEAR;
+            const socialSecurity = annualSalary * SOCIAL_SECURITY_RATE;
+            const officeCost = hasOffice ? OFFICE_MONTHLY_COST * MONTHS_PER_YEAR : 0;
+            const absenceCost = annualSalary * ABSENCE_RATE;
+
+            const realTotalCost = annualSalary + socialSecurity + officeCost + EQUIPMENT_COST + absenceCost;
+            const remoteTotalCost = (remoteMonthlyCosts[role] ?? remoteMonthlyCosts.otro) * MONTHS_PER_YEAR;
+            const totalSavings = realTotalCost - remoteTotalCost;
+            const savingsPercent = ((totalSavings / realTotalCost) * 100).toFixed(0);
+
+            document.getElementById("res-actual")!.textContent = currencyFormatter.format(realTotalCost);
+            document.getElementById("res-remoto")!.textContent = currencyFormatter.format(remoteTotalCost);
+            document.getElementById("res-ahorro")!.textContent =
+                `${currencyFormatter.format(totalSavings)} (${savingsPercent}%)`;
+
+            // Simula tiempo de cálculo antes de mostrar resultados y revelar el resto de la página.
+            setTimeout(() => {
+                loader.style.display = "none";
+                results.style.display = "block";
+                revealTarget?.classList.add("show");
+                results.scrollIntoView({ behavior: "smooth", block: "center" });
+            }, LOADING_DELAY_MS);
+        });
+    }
+</script>

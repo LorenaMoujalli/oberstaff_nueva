@@ -1,0 +1,78 @@
+---
+import "../../styles/calculator/comparison-table.css";
+
+interface Props {
+    videoUrl: string;
+}
+
+const { videoUrl } = Astro.props;
+
+const rows = [
+    { concept: "Seguridad Social a tu cargo", local: "Sí, ~31% del bruto", remote: "No aplica" },
+    { concept: "MEI", local: "Sí", remote: "No aplica" },
+    { concept: "Riesgo de indemnización", local: "Sí", remote: "Asumido por Oberstaff" },
+    {
+        concept: "Tiempo para estar operativo",
+        local: "Semanas de selección + formación",
+        remote: "Menos de 30 días",
+    },
+    {
+        concept: "Si no funciona, coste de cambio",
+        local: "Alto, proceso completo de nuevo",
+        remote: "Cambio sin coste adicional",
+    },
+    { concept: "Factura", local: "Nómina + cargas", remote: "Una sola factura, deducible" },
+];
+---
+
+<h3 class="calc-h3-title calc-video-title">Así se ve en la práctica</h3>
+<div class="calc-video-wrapper">
+    <iframe
+        src={videoUrl}
+        title="Así se ve en la práctica el modelo de talento remoto de Oberstaff"
+        loading="lazy"
+        allowfullscreen></iframe>
+</div>
+
+<h2 class="calc-section-title calc-section-title--spaced-lg calc-section-title--center">
+    Si aún no estás del todo convencido, aquí tienes los números
+</h2>
+<p class="calc-p">No queremos que nos creas por lo que decimos. Queremos que lo veas con datos.</p>
+
+<p class="calc-p">
+    <strong>Lo que está pasando en España ahora mismo:</strong><br />
+    Hay más de 150.000 puestos sin cubrir en el país, y no es porque falte gente. Es porque entre la
+    Seguridad Social, el MEI y la reducción de jornada a 37,5 horas, contratar en local se ha vuelto
+    una decisión cada vez más difícil de justificar en el papel.
+</p>
+
+<p class="calc-p"><strong>Lo que cambia con el modelo de talento remoto:</strong></p>
+
+<div class="calc-table-wrapper">
+    <table class="calc-table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Contratación local</th>
+                <th>Talento remoto integrado</th>
+            </tr>
+        </thead>
+        <tbody>
+            {
+                rows.map(({ concept, local, remote }) => (
+                    <tr>
+                        <td>{concept}</td>
+                        <td>{local}</td>
+                        <td>{remote}</td>
+                    </tr>
+                ))
+            }
+        </tbody>
+    </table>
+</div>
+
+<p class="calc-p">
+    <strong>Lo que dicen las empresas que ya lo hicieron:</strong><br />
+    Empresarios en España que adoptaron este modelo están recortando hasta un 70%, según el caso, del
+    gasto estructural asociado a estos puestos, sin bajar el nivel del perfil que contratan.
+</p>
