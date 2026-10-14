@@ -12,6 +12,7 @@ import ContactFormSection from "../../components/form/ContactFormSection.astro";
 import PressSection from "../../components/press/PressSection.astro";
 import EorCta from "../../components/eor-cta-servicios/EorCta.astro";
 
+
 const ogImage = "home-pr.webp";
 
 // --- 1. HERO PROPS ---
@@ -41,6 +42,7 @@ const heroProps = {
 	card3Role: "Graphic Designer",
 	card3Location: "Remote from Colombia",
 };
+
 
 // --- 2. STATS PROPS ---
 const statsProps = {
@@ -311,6 +313,9 @@ const benefitsList = [
 		colorClass: "green",
 	},
 ];
+
+const benefitsInfoText = `<span class="brand-text">Oberstaff<span class="brand-dot">.</span></span> <strong>combines staffing agency services, recruitment, and operational support</strong> to help companies in the U. S. access international talent without increasing their administrative burden.`;
+
 // --- 7. TESTIMONIALS PROPS ---
 const testimonialsProps = {
 	id: "casos-de-exito",
@@ -321,12 +326,12 @@ const testimonialsProps = {
 
 const testimonialsList = [
 	{
-		clientName: "Shadai Iborra",
-		clientMeta: "CEO · @amediastory",
-		clientImage: "/sha.webp",
-		quote: "\"With <span style='font-weight: 700; color: #1B1B1B;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span> I was able to add two full-time professionals while reducing recruiting costs, office expenses, and the payroll burden I would have faced by hiring locally. The best part is that the entire operation is consolidated into one monthly invoice. <span style='font-weight: 700; color: #1B1B1B;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span> gave us the right solution for remote hiring and cost optimization.”",
-		videoId: "_CxlPfluS7M",
-		altText: "Shadai Iborra, Oberstaff Client",
+		clientName: "Kate McCaferty",
+		clientMeta: "CEO · KM Real Estate (U.S.)",
+		clientImage: "/Kate.webp",
+		quote: "“We’ve been working with <span style='font-weight: 700; color: #1B1B1B;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span> for nearly two years, and the experience has been excellent from day one. Their dedicated team has supported us throughout the entire process, reviewing thousands of candidates and presenting qualified professionals who fit our needs. The cost savings, operational efficiency, and overall quality of the service have exceeded our expectations.”",
+		videoId: "9RLgpEF-GVA",
+		altText: "Kate McCaferty, Oberstaff Client",
 	},
 	{
 		clientName: "Fernando Calderón",
@@ -337,12 +342,12 @@ const testimonialsList = [
 		altText: "Fernando Calderón, Oberstaff Client",
 	},
 	{
-		clientName: "Kate McCaferty",
-		clientMeta: "CEO · KM Real Estate (U.S.)",
-		clientImage: "/Kate.webp",
-		quote: "“We’ve been working with <span style='font-weight: 700; color: #1B1B1B;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span> for nearly two years, and the experience has been excellent from day one. Their dedicated team has supported us throughout the entire process, reviewing thousands of candidates and presenting qualified professionals who fit our needs. The cost savings, operational efficiency, and overall quality of the service have exceeded our expectations.”",
-		videoId: "9RLgpEF-GVA",
-		altText: "Kate McCaferty, Oberstaff Client",
+		clientName: "Shadai Iborra",
+		clientMeta: "CEO · @amediastory",
+		clientImage: "/sha.webp",
+		quote: "\"With <span style='font-weight: 700; color: #1B1B1B;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span> I was able to add two full-time professionals while reducing recruiting costs, office expenses, and the payroll burden I would have faced by hiring locally. The best part is that the entire operation is consolidated into one monthly invoice. <span style='font-weight: 700; color: #1B1B1B;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span> gave us the right solution for remote hiring and cost optimization.”",
+		videoId: "_CxlPfluS7M",
+		altText: "Shadai Iborra, Oberstaff Client",
 	},
 ];
 
@@ -764,6 +769,47 @@ const mentionsList = [
 
 		<div class="fade-in-section">
 			<ServicesSection
+				title="Why Latin America hiring works <span style='color: #6663FD; font-weight: 900;'>for U.S. companies</span>"
+				description="Latin America hiring expands your access to skilled professionals who can collaborate during the U.S. workday. Compared with distant offshore models, nearshore teams often make communication, onboarding, and daily execution easier while giving growing companies more flexibility."
+				customClass="employer-use-cases"
+				services={[
+					{
+						icon: "🕐",
+						title: "Collaborate during the same workday",
+						description:
+							"Professionals across the region can join standups, client calls, training sessions, reviews, and handoffs during your team’s normal working hours.",
+						linkText: "",
+						href: "",
+						customIconBg: "rgba(255, 102, 204, 0.1)",
+						cardClass: "card-green",
+					},
+					{
+						icon: "🔍",
+						title: "Reach more qualified candidates",
+						description:
+							"As your remote recruiting agency, <span style='font-weight: 800; color: #1b1b1b;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> expands access to Latin American talent while screening for experience, communication, software proficiency, and industry knowledge.",
+						linkText: "",
+						href: "",
+						customIconBg: "rgba(102, 255, 153, 0.1)",
+						cardClass: "card-pink",
+					},
+					{
+						icon: "📈",
+						title: "Add capacity without a prolonged domestic search",
+						description:
+							"Strengthen sales, marketing, operations, finance, customer service, technology, and creative production without turning every vacancy into a lengthy local recruiting cycle.",
+						linkText: "",
+						href: "",
+						customIconBg: "rgba(102, 99, 253, 0.1)",
+						cardClass: "card-lime",
+					},
+					
+				]}
+			/>
+		</div>
+
+		<div class="fade-in-section">
+			<ServicesSection
 				cardTitleTag="h3"
 				title="Nearshore staffing services for <span style='color: #6663FD; font-weight: 900; white-space: nowrap;'>every stage of growth</span>"
 				description="Different operations require different structures. As your dedicated nearshore staffing agency, Oberstaff guides you toward the most compliant and cost-effective model depending on the specific profile, target workflow, and organizational control you require."
@@ -778,6 +824,11 @@ const mentionsList = [
 				items={processItems}
 			/>
 		</div>
+
+
+
+
+
 
 		<div class="fade-in-section">
 			<ProfilesSection
@@ -929,6 +980,28 @@ const mentionsList = [
 	}
 
 	.welcome-section .stats-description {
-		font-family: "Poppins", sans-serif;
+		font-family: 'Poppins', sans-serif;
+	}
+
+	.welcome-section .employer-use-cases .services-container {
+		max-width: 1200px;
+	}
+
+	@media (min-width: 851px) {
+		.welcome-section .employer-use-cases .services-grid,
+		.welcome-section .employer-use-cases-grid {
+			grid-template-columns: repeat(3, 1fr);
+			gap: 25px;
+		}
+
+		.welcome-section .employer-use-cases .service-card {
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+		}
+
+		.welcome-section .employer-use-cases .service-card-desc {
+			flex-grow: 1;
+		}
 	}
 </style>
