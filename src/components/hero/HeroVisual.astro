@@ -4,9 +4,41 @@ import "../../styles/hero/HeroVisual.css";
 
 interface Props {
     showPedro?: boolean;
+    card1Name?: string;
+    card1Role?: string;
+    card1Location?: string;
+    card1Image?: string;
+    card1MapIcon?: string;
+    card2Name?: string;
+    card2Role?: string;
+    card2Location?: string;
+    card2Image?: string;
+    card2MapIcon?: string;
+    card3Name?: string;
+    card3Role?: string;
+    card3Location?: string;
+    card3Image?: string;
+    card3MapIcon?: string;
 }
 
-const { showPedro = true } = Astro.props;
+const {
+    showPedro = true,
+    card1Name = "Juan Escobar",
+    card1Role = "Especialista SEO",
+    card1Location = "Remoto desde Vzla",
+    card1Image = "/img1-hero (1).webp",
+    card1MapIcon = "/ve.webp",
+    card2Name = "Pedro Pérez",
+    card2Role = "Full Stack Developer",
+    card2Location = "Remoto desde Arg",
+    card2Image = "/img2-hero.webp",
+    card2MapIcon = "/ar.webp",
+    card3Name = "María Gómez",
+    card3Role = "Diseñadora Gráfica",
+    card3Location = "Remoto desde Col",
+    card3Image = "/img3-hero.webp",
+    card3MapIcon = "/co.webp",
+} = Astro.props;
 ---
 
 <div class="hero-visual">
@@ -18,38 +50,38 @@ const { showPedro = true } = Astro.props;
         /> 
 
         <FloatingCard
-            name="Juan Escobar"
-            role="Especialista SEO"
-            location="Remoto desde Vzla"
-            image="/img1-hero (1).webp"
-            mapIcon="/ve.webp"
+            name={card1Name}
+            role={card1Role}
+            location={card1Location}
+            image={card1Image}
+            mapIcon={card1MapIcon}
             class="card-juan"
             delay="0s"
-            altText="Juan Escobar, especialista SEO"
+            altText={`${card1Name}, ${card1Role}`}
         />
 
         {showPedro && (
             <FloatingCard
-                name="Pedro Pérez"
-                role="Full Stack Developer"
-                location="Remoto desde Arg"
-                image="/img2-hero.webp"
-                mapIcon="/ar.webp"
+                name={card2Name}
+                role={card2Role}
+                location={card2Location}
+                image={card2Image}
+                mapIcon={card2MapIcon}
                 class="card-mateo"
                 delay="0.5s"
-                altText="Pedro Pérez, desarrollador full stack"
+                altText={`${card2Name}, ${card2Role}`}
             />
         )}
 
         <FloatingCard
-            name="María Gómez"
-            role="Diseñadora Gráfica"
-            location="Remoto desde Col"
-            image="/img3-hero.webp"
-            mapIcon="/co.webp"
+            name={card3Name}
+            role={card3Role}
+            location={card3Location}
+            image={card3Image}
+            mapIcon={card3MapIcon}
             class="card-camila"
             delay="1s"
-            altText="María Gómez, diseñadora gráfica"
+            altText={`${card3Name}, ${card3Role}`}
         />
     </div>
 </div>

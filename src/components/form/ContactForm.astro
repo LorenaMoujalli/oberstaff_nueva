@@ -12,6 +12,9 @@ interface Props {
         email?: string;
         phone?: string;
         comments?: string;
+        captchaLabel?: string;
+        captchaHint?: string;
+        smsConsentText?: string;
     };
     placeholders?: {
         name?: string;
@@ -20,10 +23,15 @@ interface Props {
         email?: string;
         phone?: string;
         comments?: string;
+        captcha?: string;
     };
     customClass?: string;
     formName?: string;
     pais?: string;
+    smsConsentText?: string;
+    captchaLabel?: string;
+    captchaHint?: string;
+    captchaPlaceholder?: string;
 }
 
 const {
@@ -49,13 +57,22 @@ const {
     customClass = "",
     formName = "",
     pais = "",
+    smsConsentText,
+    captchaLabel,
+    captchaHint,
+    captchaPlaceholder,
 } = Astro.props;
 
 const isPrPage = Astro.url.pathname.includes('/pr');
-const finalPais = pais || (isPrPage ? "Puerto Rico" : "España");
+const isUsPage = Astro.url.pathname.includes('/us');
+const finalPais = pais || (isPrPage ? "Puerto Rico" : (isUsPage ? "United States" : "España"));
 const privacyPolicyUrl = isPrPage 
   ? "/pr/politica-de-privacidad-y-cookies-de-oberstaff" 
   : "/politica-de-privacidad-y-cookies-de-oberstaff";
+
+const finalCaptchaLabel = captchaLabel || labels?.captchaLabel || "Código de verificación";
+const finalCaptchaHint = captchaHint || labels?.captchaHint || "Ingresa el texto que ves en la imagen";
+const finalCaptchaPlaceholder = captchaPlaceholder || placeholders?.captcha || "Escribe el código";
 ---
 
 <!-- intl-tel-input library -->
@@ -120,27 +137,31 @@ const privacyPolicyUrl = isPrPage
                     class="consent-checkbox"
                     required
                 />
-                <span class="consent-text">
-                    <strong>Al facilitar su número de teléfono</strong>, aceptas recibir mensajes SMS relacionados con atención al cliente de <strong>Oberstaff<span style="color: #FF66CC;">.</span></strong>
-                    La frecuencia de los mensajes puede variar. Pueden aplicarse tarifas estándar de mensajes y datos.
-                    Responde STOP para cancelar la suscripción. Responde Help para obtener ayuda.
-                    <a href={privacyPolicyUrl} target="_blank" class="consent-link">Política de privacidad y uso de cookies.</a>
-                    <span class="required-star">*</span>
-                </span>
+                {smsConsentText ? (
+                    <span class="consent-text" set:html={smsConsentText} />
+                ) : (
+                    <span class="consent-text">
+                        <strong>Al facilitar su número de teléfono</strong>, aceptas recibir mensajes SMS relacionados con atención al cliente de <strong>Oberstaff<span style="color: #FF66CC;">.</span></strong>
+                        La frecuencia de los mensajes puede variar. Pueden aplicarse tarifas estándar de mensajes y datos.
+                        Responde STOP para cancelar la suscripción. Responde Help para obtener ayuda.
+                        <a href={privacyPolicyUrl} target="_blank" class="consent-link">Política de privacidad y uso de cookies.</a>
+                        <span class="required-star">*</span>
+                    </span>
+                )}
             </label>
             <p class="consent-error" id="consent-error" aria-live="polite"></p>
         </div>
 
         <!-- CAPTCHA Verification -->
         <div class="form-group full-width captcha-group">
-            <label class="captcha-label">Código de verificación <span class="required-star">*</span></label>
-            <p class="captcha-hint">Ingresa el texto que ves en la imagen</p>
+            <label class="captcha-label">{finalCaptchaLabel} <span class="required-star">*</span></label>
+            <p class="captcha-hint">{finalCaptchaHint}</p>
             <div class="captcha-input-row">
                 <input
                     type="text"
                     id="captcha-input"
                     class="captcha-input"
-                    placeholder="Escribe el código"
+                    placeholder={finalCaptchaPlaceholder}
                     autocomplete="off"
                     maxlength="8"
                     required
@@ -503,8 +524,9 @@ const privacyPolicyUrl = isPrPage
 
             // ── Validate consent ──
             let hasError = false;
+            const isUs = f.dataset.pais === 'United States' || window.location.pathname.includes('/us');
             if (!consentCheckbox?.checked) {
-                if (consentError) consentError.textContent = '⚠ Debes aceptar el consentimiento para continuar.';
+                if (consentError) consentError.textContent = isUs ? '⚠ You must agree to the SMS consent to continue.' : '⚠ Debes aceptar el consentimiento para continuar.';
                 hasError = true;
             } else {
                 if (consentError) consentError.textContent = '';
@@ -514,13 +536,13 @@ const privacyPolicyUrl = isPrPage
             const userCode = captchaInput?.value.trim().toUpperCase();
             if (!userCode) {
                 // Campo vacío
-                if (captchaError) captchaError.textContent = '⚠ Este campo es obligatorio. Ingresa el código de la imagen.';
+                if (captchaError) captchaError.textContent = isUs ? '⚠ This field is required. Enter the characters shown in the image.' : '⚠ Este campo es obligatorio. Ingresa el código de la imagen.';
                 captchaInput?.classList.add('invalid');
                 hasError = true;
             } else if (userCode !== currentCode) {
                 // Código incorrecto: refresh primero, luego mostrar error (refreshCaptcha limpia el mensaje)
                 refreshCaptcha();
-                if (captchaError) captchaError.textContent = '❌ El código ingresado es incorrecto. Se generó un nuevo código, inténtalo de nuevo.';
+                if (captchaError) captchaError.textContent = isUs ? '❌ Incorrect code. A new code was generated, please try again.' : '❌ El código ingresado es incorrecto. Se generó un nuevo código, inténtalo de nuevo.';
                 captchaInput?.classList.add('invalid');
                 hasError = true;
             } else {

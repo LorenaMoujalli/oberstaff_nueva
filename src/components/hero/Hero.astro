@@ -12,6 +12,21 @@ interface Props {
     videoButtonText?: string;
     showPedro?: boolean;
     badge?: string;
+    card1Name?: string;
+    card1Role?: string;
+    card1Location?: string;
+    card1Image?: string;
+    card1MapIcon?: string;
+    card2Name?: string;
+    card2Role?: string;
+    card2Location?: string;
+    card2Image?: string;
+    card2MapIcon?: string;
+    card3Name?: string;
+    card3Role?: string;
+    card3Location?: string;
+    card3Image?: string;
+    card3MapIcon?: string;
 }
 
 const props = Astro.props;
@@ -20,6 +35,6 @@ const props = Astro.props;
 <section class="hero-oberstaff">
     <div class="hero-container">
         <HeroContent {...props} />
-        <HeroVisual showPedro={props.showPedro} />
+        <HeroVisual {...props} />
     </div>
 </section>

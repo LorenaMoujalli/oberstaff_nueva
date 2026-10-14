@@ -2,19 +2,30 @@
 import "../../styles/franja-empresas-home/FranjaEmpresasHome.css";
 
 interface Props {
-    stat1Number: string;
-    stat1Label: string;
-    stat2Number: string;
-    stat2Label: string;
+    stat1Number?: string;
+    stat1Label?: string;
+    stat2Number?: string;
+    stat2Label?: string;
     stat3Number?: string;
     stat3Label?: string;
+    showLogos?: boolean;
+    customClass?: string;
 }
 
-const { stat1Number, stat1Label, stat2Number, stat2Label, stat3Number, stat3Label } = Astro.props;
+const {
+    stat1Number = "70%",
+    stat1Label = "De ahorro en costes de infraestructura y gestión local",
+    stat2Number = "10",
+    stat2Label = "Países con cobertura operativa en LATAM",
+    stat3Number = "100%",
+    stat3Label = "De la carga administrativa delegada",
+    showLogos = true,
+    customClass = ""
+} = Astro.props;
 ---
 
-<div class="franja-empresas-section">
-    <div class="franja-empresas-container">
+<div class:list={["franja-empresas-section", { "stats-only": !showLogos }, customClass]}>
+    <div class:list={["franja-empresas-container", { "stats-only": !showLogos }]}>
         
         <!-- Bloque Izquierdo: Estadísticas -->
         <div class="franja-stats-left">
@@ -43,23 +54,25 @@ const { stat1Number, stat1Label, stat2Number, stat2Label, stat3Number, stat3Labe
         </div>
 
         <!-- Bloque Derecho: Slider de Logos -->
-        <div class="franja-logos-slider">
-            <div class="logos-track">
-                <!-- Logos dinámicos de public -->
-                <img src="/logo-terranova.webp" alt="Logo de Terranova, empresa que confía en Oberstaff" class="logo-item" />
-                <img src="/logo-orion.webp" alt="Logo de Orion, empresa que confía en Oberstaff" class="logo-item" />
-                <img src="/logo-aether-nexus.webp" alt="Logo de Aether Nexus, empresa que confía en Oberstaff" class="logo-item" />
-                <img src="/logo-orbital.webp" alt="Logo de Orbital, empresa que confía en Oberstaff" class="logo-item" />
-                <img src="/logo-aether.webp" alt="Logo de Aether, empresa que confía en Oberstaff" class="logo-item" />
-                
-                <!-- Duplicados para el loop suave -->
-                <img src="/logo-terranova.webp" alt="" class="logo-item" aria-hidden="true" />
-                <img src="/logo-orion.webp" alt="" class="logo-item" aria-hidden="true" />
-                <img src="/logo-aether-nexus.webp" alt="" class="logo-item" aria-hidden="true" />
-                <img src="/logo-orbital.webp" alt="" class="logo-item" aria-hidden="true" />
-                <img src="/logo-aether.webp" alt="" class="logo-item" aria-hidden="true" />
+        {showLogos && (
+            <div class="franja-logos-slider">
+                <div class="logos-track">
+                    <!-- Logos dinámicos de public -->
+                    <img src="/logo-terranova.webp" alt="Logo de Terranova, empresa que confía en Oberstaff" class="logo-item" />
+                    <img src="/logo-orion.webp" alt="Logo de Orion, empresa que confía en Oberstaff" class="logo-item" />
+                    <img src="/logo-aether-nexus.webp" alt="Logo de Aether Nexus, empresa que confía en Oberstaff" class="logo-item" />
+                    <img src="/logo-orbital.webp" alt="Logo de Orbital, empresa que confía en Oberstaff" class="logo-item" />
+                    <img src="/logo-aether.webp" alt="Logo de Aether, empresa que confía en Oberstaff" class="logo-item" />
+                    
+                    <!-- Duplicados para el loop suave -->
+                    <img src="/logo-terranova.webp" alt="" class="logo-item" aria-hidden="true" />
+                    <img src="/logo-orion.webp" alt="" class="logo-item" aria-hidden="true" />
+                    <img src="/logo-aether-nexus.webp" alt="" class="logo-item" aria-hidden="true" />
+                    <img src="/logo-orbital.webp" alt="" class="logo-item" aria-hidden="true" />
+                    <img src="/logo-aether.webp" alt="" class="logo-item" aria-hidden="true" />
+                </div>
             </div>
-        </div>
+        )}
 
     </div>
 </div>

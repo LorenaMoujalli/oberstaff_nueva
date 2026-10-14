@@ -72,20 +72,27 @@
     background-color: #66FF99;
     color: #1b1b1b;
     text-decoration: none;
-    padding: 14px 20px;
+    padding: 14px 28px;
     border: 2px solid var(--brand-green, #66FF99);
     border-radius: 50px;
 
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 250px;
+    min-width: 250px;
+    width: fit-content;
     height: 54px;
     box-sizing: border-box;
     transition: all 0.3s ease;
     font-size: 13px;
     font-family: "Poppins", sans-serif;
     font-weight: 700;
+    white-space: nowrap;
+    gap: 6px;
+}
+
+.hero-oberstaff .btn-primary span {
+    white-space: nowrap;
 }
 
 .hero-oberstaff .btn-primary:hover {
@@ -131,8 +138,10 @@
 }
 
 .btn-icon-right {
-    margin-left: 8px;
     font-size: 1.1rem;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
 }
 
 .btn-icon-left {
@@ -166,5 +175,18 @@
         justify-content: center;
         flex-direction: column;
         align-items: center;
+    }
+}
+
+@media (max-width: 520px) {
+    .hero-oberstaff .btn-primary {
+        min-width: 0;
+        width: 100%;
+        max-width: 320px;
+        white-space: normal;
+        height: auto;
+        min-height: 54px;
+        text-align: center;
+        padding: 12px 18px;
     }
 }

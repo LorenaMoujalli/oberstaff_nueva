@@ -14,6 +14,9 @@ import EorCta from "../../../components/eor-cta-servicios/EorCta.astro";
 import CasosExitoSection from "../../../components/casos-exito-servicios/CasosExitoSection.astro";
 import FAQSection from "../../../components/faq-servicios/FAQSection-community.astro";
 import GuiaContratacion from "../../../components/guia-contratacion-perfiles/GuiaContratacion.astro";
+import FranjaEmpresasHome from "../../../components/franja-empresas-home/FranjaEmpresasHome.astro";
+import ProcessOberstaff from "../../../components/process/ProcessOberstaff.astro";
+import OtrosServiciosSection from "../../../components/otros-servicios-servicios/OtrosServiciosSection.astro";
 
 const ogImage = "Contratar-Contable.webp";
 
@@ -81,6 +84,117 @@ const faqsList = [
         ],
     },
 ];
+
+const statsFranjaProps = {
+    stat1Number: "70%",
+    stat1Label: "De ahorro en costes de infraestructura y gestión local",
+    stat2Number: "10",
+    stat2Label: "Países con cobertura operativa en LATAM",
+    stat3Number: "100%",
+    stat3Label: "De la carga administrativa delegada",
+    showLogos: false,
+};
+
+const processProps = {
+    id: "hiring-process",
+    useH3ForTitle: true,
+    title: "How our remote recruitment agency <span style='color: #6663FD; font-weight: 900; white-space: nowrap;'>supports your hiring process</span>",
+    ctaTitle: "Start saving today",
+    ctaDescription: "A dedicated team will manage the entire process for you.",
+    ctaBtnText: "Schedule a call",
+    ctaBtnHref: "#formulario-perfil",
+};
+
+const processItems = [
+    {
+        label: "Selection",
+        badge: "Free Consultation – Zero Upfront Obligation",
+        title: "1. Define Your Ideal Candidate Profile",
+        description:
+            "Tell us your specific needs—whether you are looking for executive virtual assistants, digital marketers, accountants, bilingual customer support representatives, or high-level tech developers. Our expert corporate recruiters target professionals who perfectly align with your company culture, workflow standards, and business goals.",
+    },
+    {
+        label: "Structure",
+        badge: "Flexible Engagements – No Rigid Long-Term Lock-Ins",
+        title: "2. Select the Ideal Compliance Framework",
+        description:
+            "We review your requirements and consult you on the exact operational structure (EOR, CoR, or Staff Augmentation) that fully legally safeguards your cross-border operations from regulatory risks.",
+    },
+    {
+        label: "Interview",
+        badge: "Vetted Candidates Ready to Start in Less Than 30 Days",
+        title: "3. Interview & Choose the Elite Top 1%",
+        description:
+            "We present a curated shortlist of pre-vetted, interviewed candidates. You retain complete authority over final hiring decisions, while Oberstaff completely manages sourcing, technical testing, backgrounds, and documentation setup.",
+    },
+    {
+        label: "Integration",
+        badge: "Time Zone Alignment Guaranteed",
+        title: "4. Smooth Integration into Your Workflows",
+        description:
+            "Your new hire joins your team, working in lockstep with your US time zone. All international payroll, compliance, and multi-country operational variables are centralized into a single, straightforward monthly invoice in USD, keeping total transparency over daily production.",
+    },
+];
+
+const otrosServiciosProps = {
+    title: "Other <span style='font-weight: 800; color: #1b1b1b;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span>’s Workforce Solutions",
+    subtitle: "",
+    description: "<span style='font-weight: 800; color: #1b1b1b;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> provides employer of record solutions for U.S. companies that need to employ professionals legally across Latin America. Depending on the type of working relationship, level of management, and international talent strategy you require, we can also support your company with:",
+    servicios: [
+        {
+            icon: "🔗",
+            title: "Staff Augmentation",
+            description: "Add specialized talent to existing teams while you retain day-to-day management.",
+            href: "/us/services/staff-augmentation/",
+            colorClass: "icon-pink",
+            hoverClass: "hover-pink",
+            linkText: "View service",
+        },
+        {
+            icon: "🏢",
+            title: "BPO & Team Outsourcing",
+            description: "Delegate complete support or back-office functions to a team managed through <span style='font-weight: 800; color: #1b1b1b;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span>",
+            href: "/us/services/outsourced-staffing/",
+            colorClass: "icon-green",
+            hoverClass: "hover-green",
+            linkText: "View service",
+        },
+        {
+            icon: "📄",
+            title: "Contractor of Record",
+            description: "Centralize contracts, payments, and administration for genuine international contractors.",
+            href: "/us/services/contractor-of-record/",
+            colorClass: "icon-purple",
+            hoverClass: "hover-purple",
+            linkText: "View service",
+        },
+    ],
+};
+
+const queEsOutsourcingProps = {
+    title: "Qué es el outsourcing de personal con talento de <br> LATAM",
+    highlightWord: "con talento de <br> LATAM",
+    description: "<span style='color: #1B1B1B; font-weight: 700;'>Externaliza las funciones operativas de tu negocio sin ampliar tu estructura interna.</span> El outsourcing de personal te permite delegar a <span style='color: #1B1B1B; font-weight: 800;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> la selección, contratación y administración mensual de profesionales de áreas funcionales y de negocio: comercial, administración, marketing y soporte al cliente.",
+    imageSrc: "/img-outsourcing.webp",
+    imageAlt: "Profesional trabajando",
+    badgeText: "Carga administrativa 0%",
+    quoteText: "",
+    infoItems: [
+        {
+            icon: "⚙️",
+            title: "¿Cómo funciona?",
+            description: "Tú defines qué necesita la organización; nosotros ejecutamos el proceso completo y mantenemos la operativa mes a mes.",
+        },
+        {
+            icon: "🌍",
+            title: "¿Sirve para mi empresa?",
+            description: "Latinoamérica aporta una combinación ideal para las empresas españolas que buscan estos perfiles: español nativo, husos horarios compatibles con CET, formación profesional sólida en áreas de negocio y costes significativamente más competitivos que el mercado local.",
+        },
+    ],
+    diffIcon: "💡",
+    diffTitle: "¿En qué se diferencia este modelo?",
+    diffDescription: '<div class="diff-grid"><div class="diff-item"><strong>Staff Augmentation:</strong><span>Sumas talento a tu equipo y diriges el trabajo día a día.</span></div><div class="diff-item"><strong>Employer of Record (EOR):</strong><span>Contratas empleados sin abrir entidad local.</span></div><div class="diff-item highlighted"><strong>Outsourcing de Personal:</strong><span>Delegas la selección, contratación y administración del personal para reducir carga operativa interna.</span></div></div>',
+};
 ---
 
 <DashboardProfilesUs
@@ -1032,6 +1146,25 @@ const faqsList = [
                 formName="U.S. Bookkeeper Profile"
                 pais="United States"
             />
+        </div>
+
+        <div class="fade-in-section">
+            <FranjaEmpresasHome {...statsFranjaProps} />
+        </div>
+
+        <div class="fade-in-section">
+            <ProcessOberstaff
+                {...processProps}
+                items={processItems}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <OtrosServiciosSection {...otrosServiciosProps} />
+        </div>
+
+        <div class="fade-in-section hide-quote-border diff-custom-layout">
+            <QueEsServicioSection {...queEsOutsourcingProps} />
         </div>
     </div>
 

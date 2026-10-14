@@ -17,6 +17,10 @@ interface Props {
     webhookUrl?: string;
     formName?: string;
     pais?: string;
+    smsConsentText?: string;
+    captchaLabel?: string;
+    captchaHint?: string;
+    captchaPlaceholder?: string;
 }
 
 const {
@@ -34,6 +38,10 @@ const {
     webhookUrl = "",
     formName = "",
     pais = "",
+    smsConsentText,
+    captchaLabel,
+    captchaHint,
+    captchaPlaceholder,
 } = Astro.props;
 ---
  
@@ -70,6 +78,10 @@ const {
                 webhookUrl={webhookUrl}
                 formName={formName}
                 pais={pais}
+                smsConsentText={smsConsentText}
+                captchaLabel={captchaLabel}
+                captchaHint={captchaHint}
+                captchaPlaceholder={captchaPlaceholder}
             />
         </div>
     </div>

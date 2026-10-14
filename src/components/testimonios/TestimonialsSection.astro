@@ -10,15 +10,17 @@ interface Testimonial {
     quote: string;
     videoId: string;
     altText: string;
+    videoBtnText?: string;
 }
 
 interface Props {
     id?: string;
     testimonials?: Testimonial[];
     title?: string;
+    videoBtnText?: string;
 }
 
-const defaultTestimonials = [
+const defaultTestimonials: Testimonial[] = [
     {
         clientName: "Shadai Iborra",
         clientMeta: "CEO · @amediastory - Barcelona, España.",
@@ -37,7 +39,7 @@ const defaultTestimonials = [
     },
 ];
 
-const { id, testimonials = defaultTestimonials, title = "Empresas que ya <strong>contratan talento remoto</strong> en Sudamérica" } = Astro.props;
+const { id, testimonials = defaultTestimonials, title = "Empresas que ya <strong>contratan talento remoto</strong> en Sudamérica", videoBtnText = "Ver testimonio en vídeo" } = Astro.props;
 ---
 
 <section class="testimonials-section" id={id}>
@@ -49,7 +51,7 @@ const { id, testimonials = defaultTestimonials, title = "Empresas que ya <strong
         <div class="testimonials-grid">
             {
                 testimonials.map((testimonial) => (
-                    <TestimonialCard {...testimonial} />
+                    <TestimonialCard videoBtnText={videoBtnText} {...testimonial} />
                 ))
             }
         </div>

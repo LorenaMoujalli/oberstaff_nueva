@@ -1,6 +1,6 @@
 .que-es-difference-box {
     max-width: 900px;
-   background: rgba(204, 255, 102, 0.15);
+    background: rgba(204, 255, 102, 0.15);
     border: 1px solid rgba(204, 255, 102, 0.4);
     border-radius: 16px;
     padding: 30px 40px;
@@ -9,13 +9,15 @@
     align-items: center;
 }
 
-.diff-icon { font-size: 32px;}
+.diff-icon {
+    font-size: 32px;
+}
 
 .diff-text h3,
 .diff-text p.diff-title {
     font-family: 'Montserrat', sans-serif;
-    font-size: 18px; 
-    
+    font-size: 18px;
+
     color: #1B1B1B;
     margin-bottom: 15px;
     margin-top: 0;
@@ -34,10 +36,135 @@
 }
 
 @media (max-width: 900px) {
-    .que-es-difference-box { 
-        flex-direction: column; 
-        text-align: center; 
-        align-items: center; 
+    .que-es-difference-box {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
         padding: 30px 20px;
+    }
+}
+
+/* Layout personalizado para comparativa (Difference Box) */
+.hide-quote-border .quote-blue-border {
+    display: none !important;
+}
+
+.diff-custom-layout .que-es-difference-box {
+    display: block !important;
+    max-width: 100% !important;
+    background: rgba(204, 255, 102, 0.1) !important;
+    border: 1px solid rgba(204, 255, 102, 0.3) !important;
+    padding: 30px 40px !important;
+    border-radius: 20px !important;
+    text-align: left !important;
+}
+
+.diff-custom-layout .diff-icon {
+    display: inline-flex !important;
+    font-size: 32px !important;
+    margin-right: 15px !important;
+    vertical-align: middle !important;
+    align-items: center !important;
+}
+
+.diff-custom-layout .diff-text {
+    display: inline !important;
+}
+
+.diff-custom-layout .diff-text .diff-title,
+.diff-custom-layout .diff-text h3 {
+    display: inline-flex !important;
+    margin: 0 !important;
+    font-weight: 800 !important;
+    font-size: 18px !important;
+    color: #1b1b1b !important;
+    white-space: nowrap !important;
+    vertical-align: middle !important;
+    align-items: center !important;
+}
+
+.diff-custom-layout .diff-text p:not(.diff-title) {
+    display: block !important;
+    width: 100% !important;
+    margin-top: 35px !important;
+}
+
+.diff-custom-layout .diff-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 30px !important;
+    width: 100% !important;
+    align-items: stretch !important;
+}
+
+.diff-custom-layout .diff-item {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+}
+
+.diff-custom-layout .diff-item strong {
+    font-family: "Poppins", sans-serif !important;
+    font-size: 16px !important;
+    color: #1b1b1b !important;
+    font-weight: 700 !important;
+}
+
+.diff-custom-layout .diff-item span {
+    font-family: "Poppins", sans-serif !important;
+    font-size: 14px !important;
+    color: #5a5a5a !important;
+    line-height: 1.5 !important;
+}
+
+.diff-custom-layout .highlighted span {
+    color: #1b1b1b !important;
+}
+
+.diff-custom-layout .highlighted {
+    background: white !important;
+    padding: 25px !important;
+    border-radius: 12px !important;
+    border-left: 3px solid #6663fd !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
+    transform: translateY(-5px) !important;
+}
+
+.diff-custom-layout .highlighted strong {
+    color: #6663fd !important;
+}
+
+@media (max-width: 1100px) {
+
+    .diff-custom-layout .diff-text .diff-title,
+    .diff-custom-layout .diff-text h3 {
+        white-space: normal !important;
+    }
+}
+
+@media (max-width: 900px) {
+    .diff-custom-layout .diff-grid {
+        grid-template-columns: 1fr !important;
+        gap: 25px !important;
+    }
+
+    .diff-custom-layout .que-es-difference-box {
+        padding: 30px 20px !important;
+        display: block !important;
+    }
+
+    .diff-custom-layout .diff-icon {
+        display: inline-block !important;
+        margin-bottom: 20px !important;
+    }
+
+    .diff-custom-layout .diff-text .diff-title,
+    .diff-custom-layout .diff-text h3 {
+        display: inline-block !important;
+        vertical-align: middle !important;
+    }
+
+    .diff-custom-layout .highlighted {
+        transform: none !important;
     }
 }

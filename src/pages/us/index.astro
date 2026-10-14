@@ -26,6 +26,20 @@ const heroProps = {
 	videoButtonText: `See How It Works`,
 	buttonHref2: "#how-it-works",
 	showPedro: false,
+
+	// Variables para los elementos flotantes (Hero Cards)
+	card1Name: "Juan Escobar",
+	card1Role: "SEO Specialist",
+	card1Location: "Remote from Venezuela",
+
+	// En caso de activar a Pedro Pérez (showPedro: true)
+	card2Name: "Pedro Pérez",
+	card2Role: "Full Stack Developer",
+	card2Location: "Remote from Argentina",
+
+	card3Name: "María Gómez",
+	card3Role: "Graphic Designer",
+	card3Location: "Remote from Colombia",
 };
 
 // --- 2. STATS PROPS ---
@@ -51,7 +65,7 @@ const servicesList = [
 			"Hire full-time employees in South America legally and safely without setting up a foreign corporate entity. Oberstaff acts as the legal employer, managing international payroll, local labor law compliance, benefits, and local taxes, allowing your business to expand completely.",
 		linkText:
 			"Learn more about our comprehensive Employer of Record (EOR) services.",
-		href: "",
+		href: "/us/services/employer-of-record",
 		colorClass: "purple-bg",
 		cardClass: "card-purple",
 	},
@@ -62,7 +76,7 @@ const servicesList = [
 			"Delegate the absolute recruitment, screening, onboarding, and ongoing management of high-performing commercial, administrative, and BPO customer support teams. Leverage agile processes and hands-on operational support without expanding your internal administrative overhead.",
 		linkText:
 			"Explore our customized Business Process Outsourcing and Staff Solutions.",
-		href: "",
+		href: "/us/services/outsourced-staffing",
 		colorClass: "pink-bg",
 		cardClass: "card-green",
 	},
@@ -73,7 +87,7 @@ const servicesList = [
 			"Supercharge your technical engineering squads with elite remote software developers, QA engineers, DevOps specialists, data analysts, and specialized IT profiles. Highly qualified tech talent seamlessly integrates into your existing tech stack, agile methodologies, and daily workflows to accelerate product roadmaps without adding heavy fixed payroll strain.",
 		linkText:
 			"Discover how our Tech Staff Augmentation can accelerate your sprint goals.",
-		href: "",
+		href: "/us/services/staff-augmentation",
 		colorClass: "orange-bg",
 		cardClass: "card-pink",
 	},
@@ -84,37 +98,48 @@ const servicesList = [
 			"Formalize your professional agreements with independent overseas talent while eliminating 1099 misclassification risks before the IRS. This model provides complete operational flexibility, centralized automated invoices, legal shielding, and dedicated cross-border payment compliance for specialized contractors.",
 		linkText:
 			"Protect your enterprise with our Contractor of Record compliance frameworks.",
-		href: "",
+		href: "/us/services/contractor-of-record",
 		colorClass: "gray-bg",
 		cardClass: "card-lime",
 	},
 ];
 
 // --- 4. PROCESS PROPS ---
+const processProps = {
+	id: "como-funciona",
+	useH3ForTitle: true,
+	title: "How our remote recruitment agency <span style='color: #6663FD; font-weight: 900; white-space: nowrap;'>supports your hiring process</span>",
+	// Variables para la tarjeta lateral CTA
+	ctaTitle: "Start saving today",
+	ctaDescription: "A dedicated team will manage the entire process for you.",
+	ctaBtnText: "Schedule a call",
+	ctaBtnHref: "#contact",
+};
+
 const processItems = [
 	{
-		label: "Selección",
+		label: "Selection",
 		badge: "Free Consultation – Zero Upfront Obligation",
 		title: "1. Define Your Ideal Candidate Profile",
 		description:
 			"Tell us your specific needs—whether you are looking for executive virtual assistants, digital marketers, accountants, bilingual customer support representatives, or high-level tech developers. Our expert corporate recruiters target professionals who perfectly align with your company culture, workflow standards, and business goals.",
 	},
 	{
-		label: "Estructura",
+		label: "Structure",
 		badge: "Flexible Engagements – No Rigid Long-Term Lock-Ins",
 		title: "2. Select the Ideal Compliance Framework",
 		description:
 			"We review your requirements and consult you on the exact operational structure (EOR, CoR, or Staff Augmentation) that fully legally safeguards your cross-border operations from regulatory risks.",
 	},
 	{
-		label: "Entrevistas",
+		label: "Interview",
 		badge: "Vetted Candidates Ready to Start in Less Than 30 Days",
 		title: "3. Interview & Choose the Elite Top 1%",
 		description:
 			"We present a curated shortlist of pre-vetted, interviewed candidates. You retain complete authority over final hiring decisions, while Oberstaff completely manages sourcing, technical testing, backgrounds, and documentation setup.",
 	},
 	{
-		label: "Integración",
+		label: "Integration",
 		badge: "Time Zone Alignment Guaranteed",
 		title: "4. Smooth Integration into Your Workflows",
 		description:
@@ -131,7 +156,7 @@ const profilesList = [
 		roles: [
 			{
 				label: "High-Ticket Sales Closers",
-				href: "",
+				href: "/us/profiles/hire-sales-closer",
 			},
 		],
 		iconColorClass: "purple-text",
@@ -143,19 +168,19 @@ const profilesList = [
 		roles: [
 			{
 				label: "SEO Specialist",
-				href: "",
+				href: "/us/profiles/hire-seo-expert",
 			},
 			{
 				label: "Google Ads Experts",
-				href: "",
+				href: "/us/profiles/hire-google-ads-expert",
 			},
 			{
 				label: "Paid Media (Meta) Specialists",
-				href: "",
+				href: "/us/profiles/hire-facebook-ads-expert",
 			},
 			{
 				label: "Data-Driven Community Managers",
-				href: "",
+				href: "/us/profiles/hire-community-manager",
 			},
 		],
 		iconColorClass: "pink-text",
@@ -164,7 +189,7 @@ const profilesList = [
 		icon: "✍️",
 		title: "Content Writing & Copywriting",
 		quote: "Words that sell, content that ranks.",
-		roles: [{ label: "Copywriter", href: "" }],
+		roles: [{ label: "Copywriter", href: "/us/profiles/hire-copywriter" }],
 		iconColorClass: "orange-text",
 	},
 	{
@@ -174,7 +199,7 @@ const profilesList = [
 		roles: [
 			{
 				label: "Graphic Designers",
-				href: "",
+				href: "/us/profiles/hire-graphic-designer",
 			},
 			{ label: "Web and Product Designers", href: "#" },
 			{
@@ -191,7 +216,7 @@ const profilesList = [
 		roles: [
 			{
 				label: "Video Editors",
-				href: "",
+				href: "/us/profiles/hire-video-editor",
 			},
 		],
 		iconColorClass: "pink-text",
@@ -203,7 +228,7 @@ const profilesList = [
 		roles: [
 			{
 				label: "Virtual Assistants (VA)",
-				href: "",
+				href: "/us/profiles/hire-virtual-assistant",
 			},
 		],
 		iconColorClass: "orange-text",
@@ -212,7 +237,7 @@ const profilesList = [
 		icon: "🧮",
 		title: "Corporate Accounting & Finance",
 		quote: "Flawless financial books, automated reporting, and zero tax surprises.",
-		roles: [{ label: "Bilingual Bookkeepers", href: "" }],
+		roles: [{ label: "Bilingual Bookkeepers", href: "/us/profiles/hire-bookkeeper" }],
 		iconColorClass: "blue-text",
 	},
 	{
@@ -220,10 +245,10 @@ const profilesList = [
 		title: "Technology & Data",
 		quote: "The tech talent you need, without the high costs.",
 		roles: [
-			{ label: "Full-Stack Developers", href: "#" },
-			{ label: "WordPress Specialists", href: "#" },
-			{ label: "iOS & Android", href: "#" },
-			{ label: "Mobile Engineers", href: "#" },
+			{ label: "Full-Stack Developers", href: "" },
+			{ label: "WordPress Specialists", href: "" },
+			{ label: "iOS & Android", href: "" },
+			{ label: "Mobile Engineers", href: "" },
 		],
 		iconColorClass: "purple-text",
 	},
@@ -286,9 +311,42 @@ const benefitsList = [
 		colorClass: "green",
 	},
 ];
-// const benefitsInfoText = `<span class="brand-text">Oberstaff<span class="brand-dot">.</span></span> <strong>combines staffing agency services, recruitment, and operational support</strong> to help companies in Puerto Rico access international talent without increasing their administrative burden.`;
+// --- 7. TESTIMONIALS PROPS ---
+const testimonialsProps = {
+	id: "casos-de-exito",
+	title: "Success Stories from Enterprises Scaling with <span style='color: #6663FD; font-weight: 900; white-space: nowrap;'>Nearshore Talent</span>",
+	// Variable para cambiar la frase de ver video ("Ver testimonio en vídeo")
+	videoBtnText: "Watch video testimonial",
+};
 
-// --- 7. FAQS PROPS ---
+const testimonialsList = [
+	{
+		clientName: "Shadai Iborra",
+		clientMeta: "CEO · @amediastory",
+		clientImage: "/sha.webp",
+		quote: "\"With <span style='font-weight: 700; color: #1B1B1B;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span> I was able to add two full-time professionals while reducing recruiting costs, office expenses, and the payroll burden I would have faced by hiring locally. The best part is that the entire operation is consolidated into one monthly invoice. <span style='font-weight: 700; color: #1B1B1B;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span> gave us the right solution for remote hiring and cost optimization.”",
+		videoId: "_CxlPfluS7M",
+		altText: "Shadai Iborra, Oberstaff Client",
+	},
+	{
+		clientName: "Fernando Calderón",
+		clientMeta: "CEO · bybeautypro.com",
+		clientImage: "/fernando.webp",
+		quote: "“I was looking for specialized remote talent and, after several unsuccessful local searches, I found <span style='font-weight: 700; color: #1B1B1B;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span> From the first call, I was impressed by their professionalism and the clarity of their operating structure. The service and time-zone alignment worked so well that I expanded the engagement to add more people to the team.”",
+		videoId: "24KxCAFGrDs",
+		altText: "Fernando Calderón, Oberstaff Client",
+	},
+	{
+		clientName: "Kate McCaferty",
+		clientMeta: "CEO · KM Real Estate (U.S.)",
+		clientImage: "/Kate.webp",
+		quote: "“We’ve been working with <span style='font-weight: 700; color: #1B1B1B;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span> for nearly two years, and the experience has been excellent from day one. Their dedicated team has supported us throughout the entire process, reviewing thousands of candidates and presenting qualified professionals who fit our needs. The cost savings, operational efficiency, and overall quality of the service have exceeded our expectations.”",
+		videoId: "9RLgpEF-GVA",
+		altText: "Kate McCaferty, Oberstaff Client",
+	},
+];
+
+// --- 8. FAQS PROPS ---
 const faqsList = [
 	{
 		question: "What does a remote staffing agency do?",
@@ -337,7 +395,39 @@ const faqsList = [
 	},
 ];
 
-// --- 8. PRESS PROPS ---
+// --- 9. CONTACT FORM PROPS ---
+const contactFormProps = {
+	title: "Ready to hire Latin American talent <span style='color: #6663FD; font-weight: 900; white-space: nowrap;'>for your U.S. team?</span>",
+	subtitle: "Tell us which role you need, what the professional will own, your preferred working hours, and your target timeline. An Oberstaff specialist will help you evaluate the talent profile and the engagement model that best fits your company.",
+	directLabel: "Direct contact for U.S. companies:",
+	buttonText: "Submit request",
+	webhookUrl: "",
+	formName: "Home US",
+	pais: "United States",
+	formLabels: {
+		name: "First Name *",
+		lastName: "Last Name *",
+		company: "Company Name / LLC *",
+		email: "Corporate Email *",
+		phone: "Phone Number *",
+		comments: "Tell us about your talent requirements (Role, Budget, or Stack) *",
+	},
+	formPlaceholders: {
+		name: "Your first name",
+		lastName: "Your last name",
+		company: "Ex. My Company",
+		email: "name@company.com",
+		phone: "+1 XXX XXX XXXX",
+		comments: "Comments",
+	},
+	// Variables para SMS Consent y Código de verificación (modificables a tu gusto)
+	smsConsentText: `<strong>By providing your phone number</strong>, you agree to receive customer support SMS messages from <strong>Oberstaff<span style="color: #FF66CC;">.</span></strong> Message frequency may vary. Standard message and data rates may apply. Reply STOP to cancel subscription. Reply HELP for help. <a href="/politica-de-privacidad-y-cookies-de-oberstaff" target="_blank" class="consent-link">Privacy policy and cookie usage.</a> <span class="required-star">*</span>`,
+	captchaLabel: "Verification code",
+	captchaHint: "Enter the characters shown in the image",
+	captchaPlaceholder: "Enter code",
+};
+
+// --- 10. PRESS PROPS ---
 const mentionsList = [
 	{
 		name: "Cámara de Comercio",
@@ -684,11 +774,8 @@ const mentionsList = [
 
 		<div class="fade-in-section">
 			<ProcessOberstaff
-				id="como-funciona"
-				useH3ForTitle={true}
-				title="How our remote recruitment agency <span style='color: #6663FD; font-weight: 900; white-space: nowrap;'>supports your hiring process</span>"
+				{...processProps}
 				items={processItems}
-				ctaDescription="Un equipo dedicado gestionará todo el proceso por ti."
 			/>
 		</div>
 
@@ -720,34 +807,8 @@ const mentionsList = [
 
 		<div class="fade-in-section">
 			<TestimonialsSection
-				id="casos-de-exito"
-				title="Success Stories from Enterprises Scaling with <span style='color: #6663FD; font-weight: 900; white-space: nowrap;'>Nearshore Talent</span>"
-				testimonials={[
-					{
-						clientName: "Shadai Iborra",
-						clientMeta: "CEO · @amediastory",
-						clientImage: "/sha.webp",
-						quote: "\"With <span style='font-weight: 700; color: #1B1B1B;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span> I was able to add two full-time professionals while reducing recruiting costs, office expenses, and the payroll burden I would have faced by hiring locally. The best part is that the entire operation is consolidated into one monthly invoice. <span style='font-weight: 700; color: #1B1B1B;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span> gave us the right solution for remote hiring and cost optimization.”",
-						videoId: "_CxlPfluS7M",
-						altText: "Shadai Iborra, Oberstaff Client",
-					},
-					{
-						clientName: "Fernando Calderón",
-						clientMeta: "CEO · bybeautypro.com",
-						clientImage: "/fernando.webp",
-						quote: "“I was looking for specialized remote talent and, after several unsuccessful local searches, I found <span style='font-weight: 700; color: #1B1B1B;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span> From the first call, I was impressed by their professionalism and the clarity of their operating structure. The service and time-zone alignment worked so well that I expanded the engagement to add more people to the team.”",
-						videoId: "24KxCAFGrDs",
-						altText: "Fernando Calderón, Oberstaff Client",
-					},
-					{
-						clientName: "Kate McCaferty",
-						clientMeta: "CEO · KM Real Estate (U.S.)",
-						clientImage: "/Kate.webp",
-						quote: "“We’ve been working with <span style='font-weight: 700; color: #1B1B1B;'>Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span> for nearly two years, and the experience has been excellent from day one. Their dedicated team has supported us throughout the entire process, reviewing thousands of candidates and presenting qualified professionals who fit our needs. The cost savings, operational efficiency, and overall quality of the service have exceeded our expectations.”",
-						videoId: "9RLgpEF-GVA",
-						altText: "Kate McCaferty, Oberstaff Client",
-					},
-				]}
+				{...testimonialsProps}
+				testimonials={testimonialsList}
 			/>
 		</div>
 
@@ -761,30 +822,7 @@ const mentionsList = [
 
 		<div class="fade-in-section">
 			<ContactFormSection
-				title="Ready to hire Latin American talent <span style='color: #6663FD; font-weight: 900; white-space: nowrap;'>for your U.S. team?</span>"
-				subtitle="Tell us which role you need, what the professional will own, your preferred working hours, and your target timeline. An Oberstaff specialist will help you evaluate the talent profile and the engagement model that best fits your company."
-				directLabel="Atención directa en Puerto Rico:"
-				buttonText="Submit request"
-				webhookUrl=""
-				formName="Home Puerto Rico"
-				pais="Puerto Rico"
-				formLabels={{
-					name: "First Name *",
-					lastName: "Last Name *",
-					company: "Company Name / LLC *",
-					email: "Corporate Email *",
-					phone: "Phone Number *",
-					comments:
-						"Tell us about your talent requirements (Role, Budget, or Stack) *",
-				}}
-				formPlaceholders={{
-					name: "Your first name",
-					lastName: "Your last name",
-					company: "Ex. My Company",
-					email: "name@company.com",
-					phone: "+1 787 XXX XXXX",
-					comments: "Comments",
-				}}
+				{...contactFormProps}
 			/>
 		</div>
 		<!-- 

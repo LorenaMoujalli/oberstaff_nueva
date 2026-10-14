@@ -66,6 +66,30 @@
     background: #e2e2e2;
 }
 
+/* --- Modo sólo estadísticas (centrado) --- */
+.franja-empresas-container.stats-only {
+    justify-content: center;
+}
+
+.franja-empresas-container.stats-only .franja-stats-left {
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    max-width: 1050px;
+    margin: 0 auto;
+    gap: 30px;
+}
+
+.franja-empresas-container.stats-only .franja-stat-block {
+    flex: 1;
+    max-width: 280px;
+}
+
+.franja-empresas-container.stats-only .franja-label {
+    max-width: 240px;
+}
+
+
 /* Bloque Derecho: Slider de Logos */
 .franja-logos-slider {
     flex: 0.8;

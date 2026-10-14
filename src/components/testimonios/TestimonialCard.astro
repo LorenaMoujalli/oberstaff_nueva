@@ -10,9 +10,10 @@ interface Props {
     videoUrl?: string;
     videoId?: string;
     altText?: string;
+    videoBtnText?: string;
 }
 
-const { clientName, clientMeta, clientImage, quote, videoUrl = "/", videoId, altText } = Astro.props;
+const { clientName, clientMeta, clientImage, quote, videoUrl = "/", videoId, altText, videoBtnText = "Ver testimonio en vídeo" } = Astro.props;
 ---
 
 <article class="testimonial-card">
@@ -41,6 +42,6 @@ const { clientName, clientMeta, clientImage, quote, videoUrl = "/", videoId, alt
     <button type="button" class="video-link open-testimonial-video" data-video-id={videoId}>
         <iconify-icon icon="mdi:play-circle-outline" class="play-icon"
         ></iconify-icon>
-        Ver testimonio en vídeo
+        {videoBtnText}
     </button>
 </article>
