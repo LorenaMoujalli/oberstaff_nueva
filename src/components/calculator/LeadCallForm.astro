@@ -4,9 +4,13 @@ import "../../styles/calculator/calculator-form.css";
 
 interface Props {
     bookingUrl: string;
+    webhookUrl?: string;
 }
 
-const { bookingUrl } = Astro.props;
+const {
+    bookingUrl,
+    webhookUrl = "https://hooks.zapier.com/hooks/catch/12433184/415zqe7/",
+} = Astro.props;
 ---
 
 <h2 class="calc-section-title calc-section-title--spaced-lg calc-section-title--center">
@@ -20,7 +24,7 @@ const { bookingUrl } = Astro.props;
 <div class="calc-cta">
     <h3 class="calc-h3-title calc-cta-title">Agendar una llamada</h3>
 
-    <form id="lead-form">
+    <form id="lead-form" data-webhook-url={webhookUrl}>
         <div class="calc-form-row">
             <label class="calc-label" for="lead-name">Nombre</label>
             <input type="text" class="calc-input" id="lead-name" name="nombre" required />
@@ -33,6 +37,43 @@ const { bookingUrl } = Astro.props;
             <label class="calc-label" for="lead-company">Nombre de la empresa</label>
             <input type="text" class="calc-input" id="lead-company" name="empresa" required />
         </div>
+
+        <!-- CAPTCHA Verification -->
+        <div class="calc-form-row captcha-group">
+            <label class="calc-label" for="captcha-input">
+                Código de verificación <span class="required-star">*</span>
+            </label>
+            <p class="captcha-hint">Ingresa el texto que ves en la imagen</p>
+            <div class="captcha-input-row">
+                <input
+                    type="text"
+                    id="captcha-input"
+                    class="captcha-input"
+                    placeholder="Escribe el código"
+                    autocomplete="off"
+                    maxlength="8"
+                    required
+                />
+                <button
+                    type="button"
+                    id="captcha-refresh"
+                    class="captcha-refresh-btn"
+                    title="Nuevo código"
+                    aria-label="Generar nuevo código"
+                >
+                    &#x21bb;
+                </button>
+            </div>
+            <canvas
+                id="captcha-canvas"
+                class="captcha-canvas"
+                width="200"
+                height="60"
+                aria-label="Código de verificación visual"
+            ></canvas>
+            <p class="captcha-error" id="captcha-error" aria-live="polite"></p>
+        </div>
+
         <button type="submit" class="calc-btn calc-btn--pink">Agendar mi llamada &rarr;</button>
         <p class="calc-micro-legal">
             Al enviarlo aceptas recibir comunicación de Oberstaff. Puedes darte de baja cuando quieras.
@@ -55,11 +96,174 @@ const { bookingUrl } = Astro.props;
 </div>
 
 <script>
+    // ── CAPTCHA Generator ──────────────────────────────────────────
+    const CAPTCHA_CHARS = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+
+    function generateCaptchaCode(length = 6): string {
+        let code = '';
+        for (let i = 0; i < length; i++) {
+            code += CAPTCHA_CHARS[Math.floor(Math.random() * CAPTCHA_CHARS.length)];
+        }
+        return code;
+    }
+
+    function drawCaptcha(canvas: HTMLCanvasElement, code: string) {
+        const ctx = canvas.getContext('2d');
+        if (!ctx) return;
+        const w = canvas.width;
+        const h = canvas.height;
+
+        // Background
+        ctx.clearRect(0, 0, w, h);
+        ctx.fillStyle = '#f0f0f6';
+        ctx.fillRect(0, 0, w, h);
+
+        // Noise lines
+        for (let i = 0; i < 6; i++) {
+            ctx.strokeStyle = `hsl(${Math.random() * 360}, 40%, 70%)`;
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(Math.random() * w, Math.random() * h);
+            ctx.lineTo(Math.random() * w, Math.random() * h);
+            ctx.stroke();
+        }
+
+        // Noise dots
+        for (let i = 0; i < 40; i++) {
+            ctx.fillStyle = `hsl(${Math.random() * 360}, 40%, 65%)`;
+            ctx.beginPath();
+            ctx.arc(Math.random() * w, Math.random() * h, 1, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        // Draw characters
+        const charW = w / (code.length + 1);
+        for (let i = 0; i < code.length; i++) {
+            ctx.save();
+            const x = charW * (i + 0.9);
+            const y = h / 2 + 8;
+            const angle = (Math.random() - 0.5) * 0.4;
+            ctx.translate(x, y);
+            ctx.rotate(angle);
+            ctx.font = `bold ${20 + Math.random() * 6}px monospace`;
+            ctx.fillStyle = `hsl(${240 + Math.random() * 60}, 55%, 35%)`;
+            ctx.strokeStyle = `hsl(${240 + Math.random() * 60}, 40%, 60%)`;
+            ctx.lineWidth = 0.5;
+            ctx.strokeText(code[i], 0, 0);
+            ctx.fillText(code[i], 0, 0);
+            ctx.restore();
+        }
+    }
+
     const leadForm = document.getElementById("lead-form") as HTMLFormElement | null;
     const formSuccess = document.getElementById("form-success");
+    const canvas = document.getElementById("captcha-canvas") as HTMLCanvasElement | null;
+    const captchaInput = document.getElementById("captcha-input") as HTMLInputElement | null;
+    const captchaRefresh = document.getElementById("captcha-refresh") as HTMLButtonElement | null;
+    const captchaError = document.getElementById("captcha-error") as HTMLElement | null;
+
+    let currentCode = '';
+
+    function refreshCaptcha() {
+        if (canvas && captchaInput) {
+            currentCode = generateCaptchaCode();
+            drawCaptcha(canvas, currentCode);
+            captchaInput.value = '';
+            captchaInput.classList.remove('invalid');
+            if (captchaError) captchaError.textContent = '';
+        }
+    }
+
+    if (canvas && captchaInput) {
+        refreshCaptcha();
+        captchaRefresh?.addEventListener('click', refreshCaptcha);
+        captchaInput.addEventListener('input', () => {
+            captchaInput.classList.remove('invalid');
+            if (captchaError) captchaError.textContent = '';
+        });
+
+        // Redraw if the section was hidden and becomes visible
+        const hiddenParent = leadForm?.closest('.calc-hidden-section');
+        if (hiddenParent) {
+            const observer = new MutationObserver(() => {
+                if (hiddenParent.classList.contains('show') && canvas && currentCode) {
+                    drawCaptcha(canvas, currentCode);
+                }
+            });
+            observer.observe(hiddenParent, { attributes: true, attributeFilter: ['class', 'style'] });
+        }
+    }
 
     leadForm?.addEventListener("submit", (event) => {
         event.preventDefault();
+
+        // ── Validate CAPTCHA ──
+        const userCode = captchaInput?.value.trim().toUpperCase();
+        if (!userCode) {
+            if (captchaError) captchaError.textContent = '⚠ Este campo es obligatorio. Ingresa el código de la imagen.';
+            captchaInput?.classList.add('invalid');
+            captchaInput?.focus();
+            return;
+        }
+
+        if (userCode !== currentCode) {
+            refreshCaptcha();
+            if (captchaError) captchaError.textContent = '❌ El código ingresado es incorrecto. Se generó un nuevo código, inténtalo de nuevo.';
+            captchaInput?.classList.add('invalid');
+            captchaInput?.focus();
+            return;
+        }
+
+        if (captchaError) captchaError.textContent = '';
+        captchaInput?.classList.remove('invalid');
+
+        const submitBtn = leadForm.querySelector('button[type="submit"]') as HTMLButtonElement | null;
+        if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Enviando...';
+        }
+
+        const nombre = (document.getElementById("lead-name") as HTMLInputElement)?.value.trim() || "";
+        const telefono = (document.getElementById("lead-phone") as HTMLInputElement)?.value.trim() || "";
+        const empresa = (document.getElementById("lead-company") as HTMLInputElement)?.value.trim() || "";
+
+        const payload: Record<string, any> = {
+            nombre,
+            telefono,
+            empresa,
+            Nombre: nombre,
+            Telefono: telefono,
+            Teléfono: telefono,
+            Empresa: empresa,
+            "Nombre de la empresa": empresa,
+            "Origen Formulario": "Calculadora de Ahorro",
+            "Página": window.location.href,
+            "Fecha": new Date().toLocaleString("es-ES"),
+        };
+
+        const countryEl = document.getElementById("calc-country") as HTMLSelectElement | null;
+        const roleEl = document.getElementById("calc-role") as HTMLSelectElement | null;
+        const salaryEl = document.getElementById("calc-salary") as HTMLInputElement | null;
+        const resAhorro = document.getElementById("res-ahorro")?.textContent?.trim();
+        const resActual = document.getElementById("res-actual")?.textContent?.trim();
+        const resRemoto = document.getElementById("res-remoto")?.textContent?.trim();
+
+        if (countryEl?.selectedOptions?.[0]?.text) payload["País"] = countryEl.selectedOptions[0].text;
+        if (roleEl?.selectedOptions?.[0]?.text) payload["Puesto o área"] = roleEl.selectedOptions[0].text;
+        if (salaryEl?.value) payload["Salario bruto local"] = salaryEl.value;
+        if (resActual) payload["Coste actual"] = resActual;
+        if (resRemoto) payload["Coste talento remoto"] = resRemoto;
+        if (resAhorro) payload["Ahorro anual estimado"] = resAhorro;
+
+        const webhookEndpoint = leadForm.dataset.webhookUrl || "https://hooks.zapier.com/hooks/catch/12433184/415zqe7/";
+
+        fetch(webhookEndpoint, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload),
+            mode: "no-cors",
+        }).catch((err) => console.error("Error al enviar lead al webhook:", err));
+
         leadForm.style.display = "none";
         if (formSuccess) formSuccess.style.display = "block";
     });
