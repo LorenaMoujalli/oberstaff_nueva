@@ -17,6 +17,7 @@ import GuiaContratacion from "../../../components/guia-contratacion-perfiles/Gui
 import FranjaEmpresasHome from "../../../components/franja-empresas-home/FranjaEmpresasHome.astro";
 import ProcessOberstaff from "../../../components/process/ProcessOberstaff.astro";
 import OtrosServiciosSection from "../../../components/otros-servicios-servicios/OtrosServiciosSection.astro";
+import OperationalGaps from "../../../components/operational-gaps/OperationalGaps.astro";
 
 const ogImage = "Contratar-closer-de-ventas.webp";
 
@@ -68,20 +69,26 @@ const faqsList = [
 ];
 
 const statsFranjaProps = {
-    stat1Number: "70%",
-    stat1Label: "De ahorro en costes de infraestructura y gestión local",
-    stat2Number: "10",
-    stat2Label: "Países con cobertura operativa en LATAM",
-    stat3Number: "100%",
-    stat3Label: "De la carga administrativa delegada",
+    stat1Number: "Dedicated closing focus",
+    stat1Label: "Qualified calls, objections, follow-up, negotiation, and deal progression.",
+    stat2Number: "Vetted sales capability",
+    stat2Label: "Roleplays, discovery judgment, objection handling, CRM discipline, and communication.",
+    stat3Number: "U.S. hours alignment",
+    stat3Label: "Schedule overlap for Eastern, Central, Mountain, or Pacific sales operations.",
+    stat4Number: "Bilingual professionals (EN/ES)",
+    stat4Label: "English-first or bilingual coverage for U.S. companies serving English- and Spanish-speaking buyers.",
+    title: "A Dedicated Closing Professional, <span style='color: #6663FD; font-weight: 900;'>Supported by a Structured Hiring Model</span>",
+    note: "<span style='font-weight: 800; color: #1b1b1b;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> has supported U.S. companies in building remote teams with vetted Latin American professionals.",
     showLogos: false,
 };
 
 const processProps = {
     id: "hiring-process",
     useH3ForTitle: true,
-    title: "How our remote recruitment agency <span style='color: #6663FD; font-weight: 900; white-space: nowrap;'>supports your hiring process</span>",
-    ctaTitle: "Start saving today",
+    title: "Sales Closer Deliverables and <span style='color: #6663FD; font-weight: 900;'>KPIs</span> You Can Track",
+    description: "Your dedicated remote sales closer works inside a measurable operating framework with deliverables and KPIs connected to qualified-opportunity conversion:",
+    footnote: "* KPI performance depends on lead quality, traffic source, offer-market fit, pricing, deal size, sales-cycle length, brand credibility, prospect availability, CRM data quality, and the scope assigned to the closer. A closer can improve execution and conversion discipline but cannot independently control every revenue variable.",
+    ctaTitle: "",
     ctaDescription: "A dedicated team will manage the entire process for you.",
     ctaBtnText: "Schedule a call",
     ctaBtnHref: "#formulario-perfil",
@@ -89,32 +96,32 @@ const processProps = {
 
 const processItems = [
     {
-        label: "Selection",
-        badge: "Free Consultation – Zero Upfront Obligation",
-        title: "1. Define Your Ideal Candidate Profile",
+        label: "Closing Activity",
+        badge: "KPI",
+        title: "Closing Activity and Follow-Up",
         description:
-            "Tell us your specific needs—whether you are looking for executive virtual assistants, digital marketers, accountants, bilingual customer support representatives, or high-level tech developers. Our expert corporate recruiters target professionals who perfectly align with your company culture, workflow standards, and business goals.",
+            "Tracking completed sales calls, follow-up attempts, proposals in motion, next-step compliance, no-shows, reschedules, and the percentage of active deals with a documented next action.",
     },
     {
-        label: "Structure",
-        badge: "Flexible Engagements – No Rigid Long-Term Lock-Ins",
-        title: "2. Select the Ideal Compliance Framework",
+        label: "Conversion",
+        badge: "KPI",
+        title: "Conversion and Sales-Cycle Performance",
         description:
-            "We review your requirements and consult you on the exact operational structure (EOR, CoR, or Staff Augmentation) that fully legally safeguards your cross-border operations from regulatory risks.",
+            "Monitoring close rate, show rate, stage-to-stage conversion, average deal value, sales-cycle length, win rate by lead source, and the time opportunities spend in each stage.",
     },
     {
-        label: "Interview",
-        badge: "Vetted Candidates Ready to Start in Less Than 30 Days",
-        title: "3. Interview & Choose the Elite Top 1%",
+        label: "Pipeline",
+        badge: "KPI",
+        title: "Pipeline Hygiene and Forecast Accuracy",
         description:
-            "We present a curated shortlist of pre-vetted, interviewed candidates. You retain complete authority over final hiring decisions, while Oberstaff completely manages sourcing, technical testing, backgrounds, and documentation setup.",
+            "Maintaining deal stages, probability, expected close dates, opportunity value, decision-makers, blockers, and loss reasons so leadership can distinguish real pipeline from stale opportunities.",
     },
     {
-        label: "Integration",
-        badge: "Time Zone Alignment Guaranteed",
-        title: "4. Smooth Integration into Your Workflows",
+        label: "Sales Report",
+        badge: "KPI",
+        title: "Weekly or Monthly Sales Report",
         description:
-            "Your new hire joins your team, working in lockstep with your US time zone. All international payroll, compliance, and multi-country operational variables are centralized into a single, straightforward monthly invoice in USD, keeping total transparency over daily production.",
+            "Summarizing wins, losses, recurring objections, stalled deals, follow-up status, conversion trends, pipeline risks, and practical recommendations for marketing, qualification, scripts, offers, or sales process.",
     },
 ];
 
@@ -749,14 +756,18 @@ const queEsOutsourcingProps = {
         </LeadHeroSection>
 
         <div class="fade-in-section">
+            <FranjaEmpresasHome {...statsFranjaProps} />
+        </div>
+
+        <div class="fade-in-section">
             <QueEsServicioSection
                 title="The U.S. Sales Hiring Challenge: Strong Lead Flow, High Overhead, and Inconsistent Closing Ownership"
                 highlightWord="Hiring Challenge"
-                description="Many U.S. companies invest heavily in paid acquisition, outbound prospecting, referrals, and booked demos but still leave the most valuable stage of the funnel without a clear owner. Founders, account executives, SDRs, and customer-facing managers often share follow-up, creating inconsistent sales calls, delayed proposals, and opportunities that stall after showing real buying intent."
+                description="Many U.S. companies invest heavily in paid acquisition, outbound prospecting, referrals, and booked demos but still leave the most valuable stage of the funnel without a clear owner. Founders, account executives, SDRs, and customer-facing managers often share follow-up, creating inconsistent sales calls, delayed proposals, and opportunities that stall after showing real buying intent.<br /><br />Hiring locally can add closing capacity, but it also brings recruiting time, fixed payroll, benefits, onboarding, management overhead, and replacement costs. Agencies or fractional sales teams may provide coverage, yet the closer can be spread across several accounts. Freelancers can work for specific campaigns, but availability and continuity may vary. For U.S. companies comparing sales closers for hire, a dedicated sales closer creates one accountable owner for qualified opportunities after the lead-generation and qualification stages."
                 imageSrc="/img1-closer.webp"
                 imageAlt="Closer de ventas gestionando oportunidades en CRM"
                 badgeText="Closing and Active Negotiation"
-                quoteText="Hiring locally can add closing capacity, but it also brings recruiting time, fixed payroll, benefits, onboarding, management overhead, and replacement costs. Agencies or fractional sales teams may provide coverage, yet the closer can be spread across several accounts. Freelancers can work for specific campaigns, but availability and continuity may vary. For U.S. companies comparing sales closers for hire, a dedicated sales closer creates one accountable owner for qualified opportunities after the lead-generation and qualification stages."
+                quoteText=""
                 checklistTitle="For U.S. companies, the closing bottleneck usually becomes visible when lead generation scales faster than sales execution:"
                 checklistItems={[
                     "<strong>Expensive local sales headcount:</strong> Adding a U.S. W-2 sales professional means budgeting beyond base compensation for recruiting, payroll administration, benefits, sales tools, management time, and potential variable compensation.",
@@ -770,6 +781,19 @@ const queEsOutsourcingProps = {
                 diffIcon=""
                 diffTitle=""
                 diffDescription=""
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <OperationalGaps
+                title="Common operational gaps"
+                items={[
+                    "Booked calls are happening, but close rate is not keeping pace with qualified lead volume.",
+                    "Proposals and quotes are sent without a consistent follow-up cadence, next step, or accountable owner.",
+                    "Pricing, timing, competitor, implementation, or approval objections are handled differently by each salesperson.",
+                    "Lost-deal reasons, next actions, and probability are not documented consistently in the CRM, making forecasting unreliable.",
+                ]}
+                alertText="The dedicated Sales Closer solves the late-stage conversion and follow-up problem. The role does not replace an SDR or Setter responsible for prospecting and qualification, nor a demand-generation team responsible for creating pipeline."
             />
         </div>
 
@@ -835,6 +859,13 @@ const queEsOutsourcingProps = {
         </div>
 
         <div class="fade-in-section">
+            <ProcessOberstaff
+                {...processProps}
+                items={processItems}
+            />
+        </div>
+
+        <div class="fade-in-section">
             <RolesPerfil
                 title="Types of Sales Closer Profiles According to Your <strong>Sales Motion</strong>"
                 subtitle="We help U.S. companies hire <strong>sales closers</strong> whose experience matches the offer, buyer, deal value, channel, and complexity of the sales cycle."
@@ -895,6 +926,35 @@ const queEsOutsourcingProps = {
         </div>
 
         <div class="fade-in-section">
+            <GuiaContratacion
+                titleTag="h2"
+                headerTitle="How <span style='color: #1b1b1b; font-weight: 800;'> Oberstaff<span style='color: #ff66cc'>.</span></span> Evaluates Sales Closer Candidates"
+                headerDescription="Before any candidate meets your team, Oberstaff completes a multi-stage, role-specific evaluation process:"
+                footerText="Only candidates who meet the agreed role requirements are presented. Your company interviews the shortlist and retains final approval over the selected professional."
+                cards={[
+                    {
+                        title: "English and U.S. Business Communication Assessment",
+                        description:
+                            "Written and verbal English is evaluated according to the role, typically from B2 to C2, with attention to clarity, listening, discovery, commercial vocabulary, buyer-facing confidence, and bilingual EN/ES requirements when applicable.",
+                        description2: "",
+                    },
+                    {
+                        title: "Sales Closer Practical Assessment",
+                        description:
+                            "Candidates complete roleplays or scenario-based evaluation covering discovery, objection handling, pricing conversations, follow-up judgment, negotiation, closing discipline, and CRM or sales-tool familiarity relevant to the position.",
+                        description2: "",
+                    },
+                    {
+                        title: "Professional Reliability and Remote-Work Readiness",
+                        description:
+                            "Oberstaff reviews experience, references or performance evidence when available, communication habits, schedule alignment, resilience, professional conduct, remote-work readiness, and ability to operate securely inside a distributed revenue team.",
+                        description2: "",
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
             <EorStepsSection
                 title="How to <span style='color: #6663FD; font-weight: 800;'>Hire a Sales Closer</span> Remotely with <span style='color: #1b1b1b; font-weight: 800;'> Oberstaff<span style='color: #ff66cc'>.</span></span>"
                 subtitle="The process is designed for U.S. companies that want to hire a sales closer in Latin America while reducing hiring friction and matching the role to deal size, lead source, buyer type, CRM, sales cycle, objection profile, language requirements, and required U.S. time-zone overlap."
@@ -939,6 +999,79 @@ const queEsOutsourcingProps = {
                 text="Oberstaff. connects U.S. businesses with vetted Latin American sales closers who can run late-stage calls, handle objections, follow up on proposals, maintain CRM discipline, and collaborate with your revenue team during the U.S. business hours your operation requires."
                 buttonText="👉 Hire Sales Closer Talent for Your U.S. Team"
                 buttonHref="#formulario-perfil"
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <ServicesSection
+                sectionId="industries"
+                titleId="industries-title"
+                title="Where a Dedicated <strong>Sales Closer</strong> Creates the Most Value"
+                cardTitleTag="h3"
+                description="Remote sales closer placements are especially useful when demand already exists but the buying decision requires live conversation, structured follow-up, and consistent deal ownership:"
+                customClass="employer-use-cases"
+                services={[
+                    {
+                        icon: "💻",
+                        title: "B2B SaaS and Tech Companies",
+                        description:
+                            "Running demos and late-stage discovery, connecting product capabilities to business outcomes, managing stakeholder objections, and moving qualified opportunities through evaluation, approval, and close.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-green",
+                    },
+                    {
+                        icon: "🤝",
+                        title: "Agencies and Professional Services",
+                        description:
+                            "Closing retainers, projects, consulting engagements, and recurring services with founders, department leaders, and business owners who need clear scope, value, timing, and ROI before committing.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-pink",
+                    },
+                    {
+                        icon: "🏠",
+                        title: "Real Estate and Property Services",
+                        description:
+                            "Following up with qualified buyers, sellers, investors, tenants, or commercial prospects, keeping appointments and proposals moving, and routing specialized legal, financing, or transaction questions to the appropriate internal expert.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-lime",
+                    },
+                    {
+                        icon: "🩺",
+                        title: "Healthcare, Wellness, and Aesthetics",
+                        description:
+                            "Handling qualified non-clinical sales conversations for elective services, memberships, treatment plans, or premium programs while escalating medical, privacy, or suitability questions to authorized staff.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-purple",
+                    },
+                    {
+                        icon: "🎓",
+                        title: "Education, Coaching, and Digital Offers",
+                        description:
+                            "Managing booked calls after webinars, applications, paid-media funnels, or consultations, addressing fit and investment objections, and maintaining ethical follow-up for high-consideration programs or services.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-green",
+                    },
+                    {
+                        icon: "🛠️",
+                        title: "High-Ticket Consumer and Home Services",
+                        description:
+                            "Following up on qualified estimates, consultations, or inbound requests where the buyer compares providers, timing, financing, scope, and expected outcomes before making a higher-value purchase decision.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-pink",
+                    },
+                ]}
             />
         </div>
 
@@ -1038,49 +1171,77 @@ const queEsOutsourcingProps = {
         </div>
 
         <div class="fade-in-section">
+            <GuiaContratacion
+                titleTag="h2"
+                headerTitle="Remote Sales Closer Integration and <span style='color:#6663FD; font-weight: 900;'>U.S. Time-Zone Coverage</span>"
+                headerDescription="For U.S. teams evaluating remote closers, the closer should work inside the sales systems and operating standards your company already uses. Integration should be designed around secure access, clear deal ownership, documented handoffs, approved sales messaging, measurable pipeline stages, and realistic response windows."
+                cards={[
+                    {
+                        title: "U.S. time-zone coverage",
+                        description:
+                            "Schedule overlap can be aligned with Eastern, Central, Mountain, or Pacific business hours. Evening, weekend, or multi-shift coverage must be defined in the proposal.",
+                        description2: "",
+                    },
+                    {
+                        title: "Communication channels",
+                        description:
+                            "Slack, Microsoft Teams, email, project-management tools, recurring pipeline reviews, and calibration meetings with the sales owner or manager.",
+                        description2: "",
+                    },
+                    {
+                        title: "Sales calls and engagement tools",
+                        description:
+                            "Zoom, Google Meet, Microsoft Teams, Calendly, Aircall, Dialpad, Gong, Salesloft, Outreach, or other approved systems used by your revenue team.",
+                        description2: "",
+                    },
+                    {
+                        title: "CRM and pipeline management",
+                        description:
+                            "HubSpot, Salesforce, Pipedrive, Zoho CRM, or the sales platform already used to track stages, notes, next actions, probabilities, and closed-lost reasons.",
+                        description2: "",
+                    },
+                    {
+                        title: "Sales documentation",
+                        description:
+                            "ICP and qualification criteria, call framework, objection library, pricing rules, proposal templates, competitor notes, follow-up cadence, discount authority, and escalation rules.",
+                        description2: "",
+                    },
+                    {
+                        title: "Reporting cadence",
+                        description:
+                            "Daily pipeline hygiene, weekly forecast or deal review, and monthly KPI reporting based on opportunity volume, sales cycle, and leadership needs.",
+                        description2: "",
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
             <BeneficiosPerfilDisenador
                 showInfoCard={false}
-                title="Remote Sales Closer Integration and <span style='color:#6663FD; font-weight: 900;'>U.S. Time-Zone Coverage</span>"
-                subtitle="For U.S. teams evaluating <strong>remote closers</strong>, the closer should work inside the sales systems and operating standards your company already uses. Integration should be designed around secure access, clear deal ownership, documented handoffs, approved sales messaging, measurable pipeline stages, and realistic response windows."
+                title="How to <span style='color:#6663FD; font-weight: 900;'>Hire a Sales Closer</span>: Candidate Evaluation Guide"
+                subtitle="During interviews, evaluate the candidate's decision process and selling judgment rather than focusing only on charisma, years of experience, or claimed revenue numbers:"
                 image="/img2-closer.webp"
                 imageAlt="Contratar closer de ventas"
                 infoTitle=""
                 features={[
                     {
-                        icon: "🎯",
-                        title: "U.S. time-zone coverage",
+                        icon: "🔍",
+                        title: "Discovery and Qualification Judgment",
                         description:
-                            "Schedule overlap can be aligned with Eastern, Central, Mountain, or Pacific business hours. Evening, weekend, or multi-shift coverage must be defined in the proposal.",
+                            "Can the candidate identify the buyer's real problem, desired outcome, urgency, decision process, and constraints without turning the call into an interrogation or repeating work already completed by the SDR?",
+                    },
+                    {
+                        icon: "🤝",
+                        title: "Objection Handling and Negotiation",
+                        description:
+                            "Ask how the candidate would respond to price, timing, competitor, implementation, authority, or ROI objections. Strong closers isolate the real concern, clarify tradeoffs, and protect the value of the offer instead of defaulting to pressure or discounting.",
                     },
                     {
                         icon: "📊",
-                        title: "Communication channels",
+                        title: "Pipeline and Data Discipline",
                         description:
-                            "Slack, Microsoft Teams, email, project-management tools, recurring pipeline reviews, and calibration meetings with the sales owner or manager.",
-                    },
-                    {
-                        icon: "⚡",
-                        title: "Sales calls and engagement tools",
-                        description:
-                            "Zoom, Google Meet, Microsoft Teams, Calendly, Aircall, Dialpad, Gong, Salesloft, Outreach, or other approved systems used by your revenue team.",
-                    },
-                    {
-                        icon: "🗂️",
-                        title: "CRM and pipeline management",
-                        description:
-                            "HubSpot, Salesforce, Pipedrive, Zoho CRM, or the sales platform already used to track stages, notes, next actions, probabilities, and closed-lost reasons.",
-                    },
-                    {
-                        icon: "📝",
-                        title: "Sales documentation",
-                        description:
-                            "ICP and qualification criteria, call framework, objection library, pricing rules, proposal templates, competitor notes, follow-up cadence, discount authority, and escalation rules.",
-                    },
-                    {
-                        icon: "📅",
-                        title: "Reporting cadence",
-                        description:
-                            "Daily pipeline hygiene, weekly forecast or deal review, and monthly KPI reporting based on opportunity volume, sales cycle, and leadership needs.",
+                            "Confirm that the candidate can explain how they document next steps, forecast probability, manage follow-up, identify stalled opportunities, record loss reasons, and use CRM data to improve future sales conversations.",
                     },
                 ]}
                 infoItems={[
@@ -1102,35 +1263,7 @@ const queEsOutsourcingProps = {
                     Recibes una sola factura mensual en euros. Crece en
                     contratos firmados, no en costes de estructura.
                 </div> -->
-            </BeneficiosPerfilDisenador>
-        </div>
-
-        <div class="fade-in-section">
-            <GuiaContratacion
-                titleTag="h2"
-                headerTitle="How to <span style='color:#6663FD; font-weight: 900;'>Hire a Sales Closer</span>: Candidate Evaluation Guide"
-                headerDescription="During interviews, evaluate the candidate's decision process and selling judgment rather than focusing only on charisma, years of experience, or claimed revenue numbers:"
-                cards={[
-                    {
-                        title: "Discovery and Qualification Judgment",
-                        description:
-                            "Can the candidate identify the buyer's real problem, desired outcome, urgency, decision process, and constraints without turning the call into an interrogation or repeating work already completed by the SDR?",
-                        description2: "",
-                    },
-                    {
-                        title: "Objection Handling and Negotiation",
-                        description:
-                            "Ask how the candidate would respond to price, timing, competitor, implementation, authority, or ROI objections. Strong closers isolate the real concern, clarify tradeoffs, and protect the value of the offer instead of defaulting to pressure or discounting.",
-                        description2: "",
-                    },
-                    {
-                        title: "Pipeline and Data Discipline",
-                        description:
-                            "Confirm that the candidate can explain how they document next steps, forecast probability, manage follow-up, identify stalled opportunities, record loss reasons, and use CRM data to improve future sales conversations.",
-                        description2: "",
-                    },
-                ]}
-            />
+                        </BeneficiosPerfilDisenador>
         </div>
 
         <div class="fade-in-section">
@@ -1196,24 +1329,13 @@ const queEsOutsourcingProps = {
             />
         </div>
 
-        <div class="fade-in-section">
-            <FranjaEmpresasHome {...statsFranjaProps} />
-        </div>
-
-        <div class="fade-in-section">
-            <ProcessOberstaff
-                {...processProps}
-                items={processItems}
-            />
-        </div>
-
-        <div class="fade-in-section">
+        <!-- <div class="fade-in-section">
             <OtrosServiciosSection {...otrosServiciosProps} />
-        </div>
+        </div> -->
 
-        <div class="fade-in-section hide-quote-border diff-custom-layout">
+        <!-- <div class="fade-in-section hide-quote-border diff-custom-layout">
             <QueEsServicioSection {...queEsOutsourcingProps} />
-        </div>
+        </div> -->
     </div>
 
     <style>
@@ -1230,11 +1352,6 @@ const queEsOutsourcingProps = {
             max-width: 1000px;
             margin-left: auto;
             margin-right: auto;
-        }
-
-        .service-detail-container
-            :global(.guia-cards-grid .guia-card:nth-child(5)) {
-            grid-column: 1 / -1;
         }
 
         .service-detail-container :global(.employer-use-cases-grid) {

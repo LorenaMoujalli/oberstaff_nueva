@@ -1,0 +1,65 @@
+---
+import "../../styles/operational-gaps/operational-gaps.css";
+
+interface Props {
+    title: string;
+    items: string[];
+    /** Texto del aviso inferior. Admite HTML. */
+    alertText?: string;
+    alertLinkText?: string;
+    alertLinkHref?: string;
+    customClass?: string;
+}
+
+const {
+    title,
+    items,
+    alertText,
+    alertLinkText,
+    alertLinkHref,
+    customClass = "",
+} = Astro.props;
+---
+
+<section class:list={["op-gaps", customClass]}>
+    <h3 class="op-gaps-title" set:html={title} />
+
+    <div class="op-gaps-card">
+        <ul class="op-gaps-list">
+            {
+                items.map((item) => (
+                    <li class="op-gaps-item">
+                        <span class="op-gaps-icon" aria-hidden="true">
+                            <svg
+                                width="14"
+                                height="14"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="#FF66CC"
+                                stroke-width="3"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                        </span>
+                        <span class="op-gaps-text" set:html={item} />
+                    </li>
+                ))
+            }
+        </ul>
+    </div>
+
+    {
+        alertText && (
+            <div class="op-gaps-alert">
+                <strong set:html={alertText} />
+                {alertLinkText && alertLinkHref && (
+                    <a href={alertLinkHref} class="op-gaps-alert-link">
+                        {alertLinkText}
+                    </a>
+                )}
+            </div>
+        )
+    }
+</section>

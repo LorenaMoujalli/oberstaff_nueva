@@ -14,9 +14,10 @@ import EorCta from "../../../components/eor-cta-servicios/EorCta.astro";
 import CasosExitoSection from "../../../components/casos-exito-servicios/CasosExitoSection.astro";
 import FAQSection from "../../../components/faq-servicios/FAQSection-community.astro";
 import GuiaContratacion from "../../../components/guia-contratacion-perfiles/GuiaContratacion.astro";
-import FranjaEmpresasHome from "../../../components/franja-empresas-home/FranjaEmpresasHome.astro";
 import ProcessOberstaff from "../../../components/process/ProcessOberstaff.astro";
+import FranjaEmpresasHome from "../../../components/franja-empresas-home/FranjaEmpresasHome.astro";
 import OtrosServiciosSection from "../../../components/otros-servicios-servicios/OtrosServiciosSection.astro";
+import OperationalGaps from "../../../components/operational-gaps/OperationalGaps.astro";
 
 const ogImage = "Contratar-Asistente-Virtual.webp";
 
@@ -62,21 +63,28 @@ const faqsList = [
     }
 ];
 
+// Los textos descriptivos de cada bloque no vienen en tareas.md: "&nbsp;" mantiene visible el bloque sin inventar copy.
 const statsFranjaProps = {
-    stat1Number: "70%",
-    stat1Label: "De ahorro en costes de infraestructura y gestión local",
-    stat2Number: "10",
-    stat2Label: "Países con cobertura operativa en LATAM",
-    stat3Number: "100%",
-    stat3Label: "De la carga administrativa delegada",
+    stat1Number: "Dedicated administrative focus",
+    stat1Label: "&nbsp;",
+    stat2Number: "Vetted business skills",
+    stat2Label: "&nbsp;",
+    stat3Number: "U.S. hours alignment",
+    stat3Label: "&nbsp;",
+    stat4Number: "Bilingual professionals (EN/ES)",
+    stat4Label: "&nbsp;",
+    title: "Dedicated Administrative Support, <span style='color: #6663FD; font-weight: 900;'>Backed by a Structured Hiring Model</span>",
+    note: "For companies comparing <strong>remote virtual assistant services</strong>, <span style='font-weight: 800; color: #1b1b1b;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> has supported U.S. businesses in building remote teams with vetted Latin American professionals and structured role support.",
     showLogos: false,
 };
 
 const processProps = {
     id: "hiring-process",
     useH3ForTitle: true,
-    title: "How our remote recruitment agency <span style='color: #6663FD; font-weight: 900; white-space: nowrap;'>supports your hiring process</span>",
-    ctaTitle: "Start saving today",
+    title: "Virtual Assistant Deliverables and <span style='color: #6663FD; font-weight: 900;'>KPIs</span> You Can Track",
+    description: "Your dedicated virtual assistant can work under a structured operating framework with deliverables and KPIs connected to recurring administrative execution:",
+    footnote: "* KPI availability depends on the assigned responsibilities, system permissions, task volume, CRM or project-management integration, the agreed service window, and the reporting capabilities of each tool. Business outcomes also depend on internal processes, decision speed, data quality, and the broader operating environment.",
+    ctaTitle: "",
     ctaDescription: "A dedicated team will manage the entire process for you.",
     ctaBtnText: "Schedule a call",
     ctaBtnHref: "#formulario-perfil",
@@ -84,32 +92,32 @@ const processProps = {
 
 const processItems = [
     {
-        label: "Selection",
-        badge: "Free Consultation – Zero Upfront Obligation",
-        title: "1. Define Your Ideal Candidate Profile",
+        label: "Task Queue",
+        badge: "KPI",
+        title: "Task Queue and SLA Management",
         description:
-            "Tell us your specific needs—whether you are looking for executive virtual assistants, digital marketers, accountants, bilingual customer support representatives, or high-level tech developers. Our expert corporate recruiters target professionals who perfectly align with your company culture, workflow standards, and business goals.",
+            "Tracking recurring tasks, due dates, pending follow-ups, turnaround times, ownership, and completion against the priorities agreed for the role.",
     },
     {
-        label: "Structure",
-        badge: "Flexible Engagements – No Rigid Long-Term Lock-Ins",
-        title: "2. Select the Ideal Compliance Framework",
+        label: "Calendar & Inbox",
+        badge: "KPI",
+        title: "Calendar and Inbox Control",
         description:
-            "We review your requirements and consult you on the exact operational structure (EOR, CoR, or Staff Augmentation) that fully legally safeguards your cross-border operations from regulatory risks.",
+            "Monitoring scheduling accuracy, unresolved requests, follow-up status, meeting preparation, priority messages, and recurring communication workflows.",
     },
     {
-        label: "Interview",
-        badge: "Vetted Candidates Ready to Start in Less Than 30 Days",
-        title: "3. Interview & Choose the Elite Top 1%",
+        label: "Data Quality",
+        badge: "KPI",
+        title: "CRM, Data, and Documentation Quality",
         description:
-            "We present a curated shortlist of pre-vetted, interviewed candidates. You retain complete authority over final hiring decisions, while Oberstaff completely manages sourcing, technical testing, backgrounds, and documentation setup.",
+            "Maintaining current records, reducing duplicates or missing fields, updating SOPs and shared documents, and reporting recurring data-quality issues.",
     },
     {
-        label: "Integration",
-        badge: "Time Zone Alignment Guaranteed",
-        title: "4. Smooth Integration into Your Workflows",
+        label: "Monthly Report",
+        badge: "KPI",
+        title: "Monthly Administrative Report",
         description:
-            "Your new hire joins your team, working in lockstep with your US time zone. All international payroll, compliance, and multi-country operational variables are centralized into a single, straightforward monthly invoice in USD, keeping total transparency over daily production.",
+            "Summarizing completed work, recurring bottlenecks, pending items, response or turnaround trends, process improvements, and operational recommendations.",
     },
 ];
 
@@ -146,31 +154,6 @@ const otrosServiciosProps = {
             linkText: "View service",
         },
     ],
-};
-
-const queEsOutsourcingProps = {
-    title: "Qué es el outsourcing de personal con talento de <br> LATAM",
-    highlightWord: "con talento de <br> LATAM",
-    description: "<span style='color: #1B1B1B; font-weight: 700;'>Externaliza las funciones operativas de tu negocio sin ampliar tu estructura interna.</span> El outsourcing de personal te permite delegar a <span style='color: #1B1B1B; font-weight: 800;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> la selección, contratación y administración mensual de profesionales de áreas funcionales y de negocio: comercial, administración, marketing y soporte al cliente.",
-    imageSrc: "/img-outsourcing.webp",
-    imageAlt: "Profesional trabajando",
-    badgeText: "Carga administrativa 0%",
-    quoteText: "",
-    infoItems: [
-        {
-            icon: "⚙️",
-            title: "¿Cómo funciona?",
-            description: "Tú defines qué necesita la organización; nosotros ejecutamos el proceso completo y mantenemos la operativa mes a mes.",
-        },
-        {
-            icon: "🌍",
-            title: "¿Sirve para mi empresa?",
-            description: "Latinoamérica aporta una combinación ideal para las empresas españolas que buscan estos perfiles: español nativo, husos horarios compatibles con CET, formación profesional sólida en áreas de negocio y costes significativamente más competitivos que el mercado local.",
-        },
-    ],
-    diffIcon: "💡",
-    diffTitle: "¿En qué se diferencia este modelo?",
-    diffDescription: '<div class="diff-grid"><div class="diff-item"><strong>Staff Augmentation:</strong><span>Sumas talento a tu equipo y diriges el trabajo día a día.</span></div><div class="diff-item"><strong>Employer of Record (EOR):</strong><span>Contratas empleados sin abrir entidad local.</span></div><div class="diff-item highlighted"><strong>Outsourcing de Personal:</strong><span>Delegas la selección, contratación y administración del personal para reducir carga operativa interna.</span></div></div>',
 };
 ---
  
@@ -699,26 +682,42 @@ const queEsOutsourcingProps = {
         </LeadHeroSection>
 
         <div class="fade-in-section">
+            <FranjaEmpresasHome {...statsFranjaProps} />
+        </div>
+
+        <div class="fade-in-section">
             <QueEsServicioSection
-                title="Dedicated Administrative Support, Backed by a Structured Hiring Model"
+                title="The U.S. Hiring Challenge: Administrative Overload and High Local Employment Overhead"
                 highlightWord=""
-                description="For companies comparing <strong>remote virtual assistant services</strong>, Oberstaff. has supported U.S. businesses in building remote teams with vetted Latin American professionals and structured role support."
+                description="Many U.S. companies spread recurring administrative work across founders, managers, sales teams, customer support, or whoever has time. The result is fragmented ownership: calendars become reactive, inbox follow-up is delayed, CRM records lose accuracy, SOPs fall behind, and high-value employees spend hours on work that could be delegated. <br /><br />Hiring locally can create dedicated ownership, but it also adds recruiting time, payroll administration, benefits, equipment, management overhead, and replacement costs. Administrative agencies can provide coverage, but the person handling your work may be shared across accounts. Freelancers can be effective for limited tasks, yet schedule continuity and business context may vary. For companies considering virtual assistant outsourcing, a dedicated virtual assistant gives recurring administrative work one accountable owner who learns your systems and operating rhythm."
                 imageSrc="/img1-asistente.webp"
                 imageAlt="Contratar asistente virtual "
                 badgeText="Order and control"
                 quoteText=""
-                checklistTitle="Validation Checklist:"
+                checklistTitle="Expanding administrative capacity in the United States can become unnecessarily expensive and difficult to manage:"
                 checklistItems={[
-                    "<strong>Dedicated administrative focus</strong>",
-                    "<strong>Vetted business skills</strong>",
-                    "<strong>U.S. hours alignment</strong>",
-                    "<strong>Bilingual professionals (EN/ES)</strong>"
+                    "<strong>Local W-2 Overhead:</strong> A local administrative hire adds salary plus employer-side payroll administration, benefits, recruiting, equipment, onboarding, and HR management to the total cost of the role.",
+                    "<strong>Shared-Service Continuity Gaps:</strong> Administrative agencies and shared support models may divide attention across several client accounts, which can slow context building and recurring follow-up.",
+                    "strong>Freelance Availability Varies:</strong> A freelance or outsourced virtual assistant may be useful for project-based work, but availability, working hours, systems access, and long-term continuity depend on the individual engagement.",
                 ]}
                 ctaText="→ Request a virtual assistant"
                 ctaHref="#formulario-perfil"
                 diffIcon=""
                 diffTitle=""
                 diffDescription=""
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <OperationalGaps
+                title="Common operational gaps"
+                items={[
+                    "Calendars, meeting coordination, inboxes, and recurring follow-up consume hours from founders and managers.",
+                    "CRM records, spreadsheets, reports, and contact data become outdated because no one consistently owns maintenance.",
+                    "SOPs, shared files, meeting notes, and administrative documentation are updated inconsistently across teams.",
+                    "Vendor, customer, sales, and internal follow-ups are delayed or lost because responsibility is spread across several people.",
+                ]}
+                alertText="A dedicated Virtual Assistant solves the recurring administrative ownership problem. The role does not replace specialized accounting, legal, HR, strategic operations, or department leadership responsibilities that require separate expertise and decision authority."
             />
         </div>
 
@@ -794,59 +793,10 @@ const queEsOutsourcingProps = {
         </div>
 
         <div class="fade-in-section">
-            <BeneficiosPerfilDisenador
-                showInfoCard={false}
-                title="Virtual Assistant Deliverables and KPIs You Can Track"
-                subtitle="Your <strong>dedicated virtual assistant</strong> can work under a structured operating framework with deliverables and KPIs connected to recurring administrative execution:"
-                  image="/img2-asistente.webp"
-            imageAlt="Asistente virtual revisando procesos administrativos"
-                infoTitle=""
-                features={[
-                    {
-                        icon: "🎯",
-                        title: "Task Queue and SLA Management:",
-                        description:
-                            "Tracking recurring tasks, due dates, pending follow-ups, turnaround times, ownership, and completion against the priorities agreed for the role.",
-                    },
-                    {
-                        icon: "🗓️",
-                        title: "Calendar and Inbox Control:",
-                        description:
-                            "Monitoring scheduling accuracy, unresolved requests, follow-up status, meeting preparation, priority messages, and recurring communication workflows.",
-                    },
-                    {
-                        icon: "📊",
-                        title: "CRM, Data, and Documentation Quality:",
-                        description:
-                            "Maintaining current records, reducing duplicates or missing fields, updating SOPs and shared documents, and reporting recurring data-quality issues.",
-                    },
-                    {
-                        icon: "⚡",
-                        title: "Monthly Administrative Report:",
-                        description:
-                            "Summarizing completed work, recurring bottlenecks, pending items, response or turnaround trends, process improvements, and operational recommendations.",
-                    }
-                ]}
-                infoItems={[
-                    {
-                        title: "",
-                        description: "",
-                    },
-                    {
-                        title: "",
-                        description: "",
-                    },
-                    {
-                        title: "",
-                        description: "",
-                    },
-                ]} 
-            >
-                <div class="meta-custom-notice">
-                  * KPI availability depends on the assigned responsibilities, system permissions, task volume, CRM or project-management integration, the agreed service window, and the reporting capabilities of each tool. Business outcomes also depend on internal processes, decision speed, data quality, and the broader operating environment.
-
-                </div>
-            </BeneficiosPerfilDisenador>
+            <ProcessOberstaff
+                {...processProps}
+                items={processItems}
+            />
         </div>
 
         <div class="fade-in-section">
@@ -921,6 +871,35 @@ const queEsOutsourcingProps = {
         </div>
 
         <div class="fade-in-section">
+            <GuiaContratacion
+                titleTag="h2"
+                headerTitle="How <span style='color: #1b1b1b; font-weight: 800;'> Oberstaff<span style='color: #ff66cc'>.</span></span> Evaluates Virtual Assistant Candidates"
+                headerDescription="Before any candidate meets your team, Oberstaff completes a multi-stage, role-specific evaluation process:"
+                footerText="Only candidates who meet the agreed role requirements are presented. The final hiring decision remains with your company."
+                cards={[
+                    {
+                        title: "English and U.S. Business Communication Assessment",
+                        description:
+                            "Written and verbal English is evaluated according to the role, with attention to clarity, tone, comprehension, business communication, and bilingual EN/ES requirements when applicable.",
+                        description2: "",
+                    },
+                    {
+                        title: "Administrative Practical Assessment",
+                        description:
+                            "Candidates may complete exercises involving email drafting, calendar prioritization, spreadsheets, CRM updates, document organization, SOP interpretation, data accuracy, research, and the tools relevant to the position.",
+                        description2: "",
+                    },
+                    {
+                        title: "Professional Reliability and Remote-Work Readiness",
+                        description:
+                            "Oberstaff reviews experience, references or work samples when available, communication habits, schedule alignment, attention to detail, confidentiality, problem-solving, professional conduct, and readiness to work securely with a distributed team.",
+                        description2: "",
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
             <EorStepsSection
                 title="How to Hire Remote Virtual Assistant Talent with <span style='color:#1b1b1b; font-weight:800;'>Oberstaff<span style='color: #FF66CC; font-weight:800;''>.</span></span>"
                 subtitle="This <strong>virtual assistant hiring</strong> process is designed for U.S. companies that want to <strong>hire virtual assistants</strong>  in Latin America while reducing recruiting effort, shortening time to shortlist, and connecting the role with the real tasks, systems, schedule, access requirements, language needs, and operating priorities of the business."
@@ -965,6 +944,79 @@ const queEsOutsourcingProps = {
                 text="If you need a <strong>virtual assistant for hire</strong> on a dedicated basis, Oberstaff. connects U.S. businesses with vetted Latin American virtual assistants who can manage recurring administrative work, support executives, maintain CRM and documentation, coordinate follow-up, and collaborate during the U.S. business hours your operation requires."
                 buttonText="👉 Hire Virtual Assistant Talent for Your U.S. Team"
                 buttonHref="#formulario-perfil"
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <ServicesSection
+                sectionId="industries"
+                titleId="industries-title"
+                title="Where a Dedicated <strong>Virtual Assistant</strong> Creates the Most Value"
+                cardTitleTag="h3"
+                description="A virtual assistant for small business teams can create leverage across industries where recurring administrative work competes with higher-value priorities:"
+                customClass="employer-use-cases"
+                services={[
+                    {
+                        icon: "💼",
+                        title: "Professional Services and Agencies",
+                        description:
+                            "These virtual assistant services for small business and professional-services teams can cover calendar coordination, client follow-up, proposal administration, CRM updates, meeting notes, document organization, vendor communication, and recurring internal reporting.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-green",
+                    },
+                    {
+                        icon: "💻",
+                        title: "B2B SaaS & Tech Startups",
+                        description:
+                            "Maintaining CRM records, scheduling demos and internal meetings, updating documentation, coordinating customer or sales follow-up, preparing reports, and supporting distributed teams across recurring workflows.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-pink",
+                    },
+                    {
+                        icon: "🛒",
+                        title: "eCommerce and DTC Brands",
+                        description:
+                            "Supporting product-data updates, customer inboxes, order follow-up, returns coordination, inventory administration, helpdesk handoffs, vendor communication, and recurring store operations.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-lime",
+                    },
+                    {
+                        icon: "🏠",
+                        title: "Real Estate and Property Teams",
+                        description:
+                            "Managing calendars, lead records, listing or transaction documents, appointment coordination, CRM follow-up, vendor scheduling, and routine communication with prospects, clients, tenants, or partners.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-purple",
+                    },
+                    {
+                        icon: "🩺",
+                        title: "Healthcare, Wellness, and Aesthetics",
+                        description:
+                            "Handling non-clinical scheduling, approved patient or client communications, administrative records, reminders, service information, and internal follow-up while routing sensitive or regulated matters to authorized staff.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-green",
+                    },
+                    {
+                        icon: "👔",
+                        title: "Executives, Founders, and Multi-Location Businesses",
+                        description:
+                            "Protecting leadership time through calendar management, priority inbox support, meeting preparation, travel coordination, recurring reporting, location follow-up, and administrative task ownership across teams.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-pink",
+                    },
+                ]}
             />
         </div>
 
@@ -1110,6 +1162,51 @@ const queEsOutsourcingProps = {
             />
         </div>
 
+        <div class="fade-in-section">
+            <BeneficiosPerfilDisenador
+                showInfoCard={false}
+                title="How to <span style='color:#6663FD; font-weight: 900;'>Hire a Virtual Assistant</span>: Candidate Evaluation Guide"
+                subtitle="During interviews, evaluate how the candidate prioritizes, communicates, protects information, follows processes, and maintains accuracy rather than focusing only on years of experience or a list of software tools:"
+                image="/img2-asistente.webp"
+                imageAlt="Asistente virtual revisando procesos administrativos"
+                infoTitle=""
+                features={[
+                    {
+                        icon: "🗓️",
+                        title: "Prioritization and Communication Judgment",
+                        description:
+                            "Can the candidate distinguish urgent from important work, communicate blockers early, write clearly, and manage recurring requests without creating unnecessary follow-up for managers?",
+                    },
+                    {
+                        icon: "🔒",
+                        title: "Accuracy, Confidentiality, and Escalation",
+                        description:
+                            "Ask how the candidate would handle sensitive information, conflicting instructions, missing data, calendar mistakes, customer issues, or a task that requires finance, HR, legal, sales, or leadership approval.",
+                    },
+                    {
+                        icon: "🛠️",
+                        title: "Tool and Process Ownership",
+                        description:
+                            "Confirm that the candidate can learn SOPs, maintain CRM and documentation quality, use the required productivity stack, track open tasks, and suggest practical process improvements without exceeding the role scope.",
+                    },
+                ]}
+                infoItems={[
+                    {
+                        title: "",
+                        description: "",
+                    },
+                    {
+                        title: "",
+                        description: "",
+                    },
+                    {
+                        title: "",
+                        description: "",
+                    },
+                ]}
+            >
+            </BeneficiosPerfilDisenador>
+        </div>
 
         <div class="fade-in-section">
             <CasosExitoSection
@@ -1150,6 +1247,10 @@ const queEsOutsourcingProps = {
 
        
 
+        <!-- <div class="fade-in-section">
+            <OtrosServiciosSection {...otrosServiciosProps} />
+        </div> -->
+
         <FAQSection
             title="Frequently Asked Questions About <strong>Hiring a Virtual Assistant</strong> in the U.S."
             ctaText=""
@@ -1174,24 +1275,6 @@ const queEsOutsourcingProps = {
             />
         </div>
 
-        <div class="fade-in-section">
-            <FranjaEmpresasHome {...statsFranjaProps} />
-        </div>
-
-        <div class="fade-in-section">
-            <ProcessOberstaff
-                {...processProps}
-                items={processItems}
-            />
-        </div>
-
-        <div class="fade-in-section">
-            <OtrosServiciosSection {...otrosServiciosProps} />
-        </div>
-
-        <div class="fade-in-section hide-quote-border diff-custom-layout">
-            <QueEsServicioSection {...queEsOutsourcingProps} />
-        </div>
     </div>
 
     <style>

@@ -8,6 +8,10 @@ interface Props {
     stat2Label?: string;
     stat3Number?: string;
     stat3Label?: string;
+    stat4Number?: string;
+    stat4Label?: string;
+    title?: string;
+    note?: string;
     showLogos?: boolean;
     customClass?: string;
 }
@@ -19,12 +23,17 @@ const {
     stat2Label = "Países con cobertura operativa en LATAM",
     stat3Number = "100%",
     stat3Label = "De la carga administrativa delegada",
+    stat4Number,
+    stat4Label,
+    title,
+    note,
     showLogos = true,
     customClass = ""
 } = Astro.props;
 ---
 
-<div class:list={["franja-empresas-section", { "stats-only": !showLogos }, customClass]}>
+<div class:list={["franja-empresas-section", { "stats-only": !showLogos, "franja-compact": !!stat4Number }, customClass]}>
+    {title && <h2 class="franja-title" set:html={title} />}
     <div class:list={["franja-empresas-container", { "stats-only": !showLogos }]}>
         
         <!-- Bloque Izquierdo: Estadísticas -->
@@ -48,6 +57,17 @@ const {
                     <div class="franja-stat-block">
                         <span class="franja-number franja-gradient-text">{stat3Number}</span>
                         <span class="franja-label" set:html={stat3Label}></span>
+                    </div>
+                </>
+            )}
+
+            {stat4Number && stat4Label && (
+                <>
+                    <div class="franja-vertical-divider"></div>
+
+                    <div class="franja-stat-block">
+                        <span class="franja-number franja-gradient-text">{stat4Number}</span>
+                        <span class="franja-label" set:html={stat4Label}></span>
                     </div>
                 </>
             )}
@@ -75,4 +95,5 @@ const {
         )}
 
     </div>
+    {note && <p class="franja-note" set:html={note} />}
 </div>

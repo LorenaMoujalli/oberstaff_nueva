@@ -18,6 +18,8 @@ interface Props {
     cardTitleTag?: "h3" | "p";
     image?: string;
     imageAlt?: string;
+    sectionId?: string;
+    titleId?: string;
 }
 
 const {
@@ -69,17 +71,19 @@ const {
     cardTitleTag = "p",
     image,
     imageAlt = "",
+    sectionId = "servicios",
+    titleId = "services-title",
 } = Astro.props;
 
 import ServiceCard from "./ServiceCard.astro";
 import "../../styles/services-oberstaff/services-section.css";
 ---
 
-<section class={`services-oberstaff ${customClass}`} id="servicios">
+<section class={`services-oberstaff ${customClass}`} id={sectionId}>
     <div class="services-container">
         <header class={`services-header ${image ? 'has-header-image' : ''}`}>
             <div class="services-header-text">
-                <h2 id="services-title" set:html={title} />
+                <h2 id={titleId} set:html={title} />
                 <p class="section-description" set:html={description} />
             </div>
             {image && (

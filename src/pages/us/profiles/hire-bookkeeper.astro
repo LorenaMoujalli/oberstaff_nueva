@@ -17,6 +17,7 @@ import GuiaContratacion from "../../../components/guia-contratacion-perfiles/Gui
 import FranjaEmpresasHome from "../../../components/franja-empresas-home/FranjaEmpresasHome.astro";
 import ProcessOberstaff from "../../../components/process/ProcessOberstaff.astro";
 import OtrosServiciosSection from "../../../components/otros-servicios-servicios/OtrosServiciosSection.astro";
+import OperationalGaps from "../../../components/operational-gaps/OperationalGaps.astro";
 
 const ogImage = "Contratar-Contable.webp";
 
@@ -86,20 +87,26 @@ const faqsList = [
 ];
 
 const statsFranjaProps = {
-    stat1Number: "70%",
-    stat1Label: "De ahorro en costes de infraestructura y gestión local",
-    stat2Number: "10",
-    stat2Label: "Países con cobertura operativa en LATAM",
-    stat3Number: "100%",
-    stat3Label: "De la carga administrativa delegada",
+    stat1Number: "Dedicated bookkeeping focus",
+    stat1Label: "Transactions, reconciliations, AP/AR, records, and month-end support.",
+    stat2Number: "Vetted technical skills",
+    stat2Label: "Bookkeeping judgment, accounting software, Excel, documentation, and process discipline.",
+    stat3Number: "U.S. hours alignment",
+    stat3Label: "Coverage scheduled for Eastern, Central, Mountain, or Pacific business needs.",
+    stat4Number: "Professional English and communication",
+    stat4Label: "Clear written and verbal communication for finance, vendor, customer, and internal-team workflows.",
+    title: "A Dedicated Bookkeeping Professional, <span style='color: #6663FD; font-weight: 900;'>Supported by a Structured Hiring Model</span>",
+    note: "<span style='font-weight: 800; color: #1b1b1b;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> has supported U.S. companies in building remote teams with vetted Latin American professionals.",
     showLogos: false,
 };
 
 const processProps = {
     id: "hiring-process",
     useH3ForTitle: true,
-    title: "How our remote recruitment agency <span style='color: #6663FD; font-weight: 900; white-space: nowrap;'>supports your hiring process</span>",
-    ctaTitle: "Start saving today",
+    title: "Remote <span style='color: #6663FD; font-weight: 900; white-space: nowrap;'>Bookkeeping</span> Deliverables and KPIs<br>You Can Track",
+    description: "Your dedicated remote bookkeeper can work under a structured operating framework with deliverables and KPIs connected to bookkeeping accuracy, timeliness, and financial-record readiness:",
+    footnote: "* KPI availability depends on accounting-system permissions, transaction volume, banking integrations, documentation quality, the agreed bookkeeping scope, approval workflows, and reporting cadence. Revenue, profit, cash flow, and tax outcomes depend on broader business activity and professional financial decisions beyond the bookkeeper role.",
+    ctaTitle: "",
     ctaDescription: "A dedicated team will manage the entire process for you.",
     ctaBtnText: "Schedule a call",
     ctaBtnHref: "#formulario-perfil",
@@ -107,32 +114,32 @@ const processProps = {
 
 const processItems = [
     {
-        label: "Selection",
-        badge: "Free Consultation – Zero Upfront Obligation",
-        title: "1. Define Your Ideal Candidate Profile",
+        label: "Reconciliation",
+        badge: "KPI",
+        title: "Reconciliation Completion and Exception Tracking",
         description:
-            "Tell us your specific needs—whether you are looking for executive virtual assistants, digital marketers, accountants, bilingual customer support representatives, or high-level tech developers. Our expert corporate recruiters target professionals who perfectly align with your company culture, workflow standards, and business goals.",
+            "Monitor which bank and credit card accounts are reconciled, the number and age of unresolved differences, and whether reconciliations are completed by the agreed deadline.",
     },
     {
-        label: "Structure",
-        badge: "Flexible Engagements – No Rigid Long-Term Lock-Ins",
-        title: "2. Select the Ideal Compliance Framework",
+        label: "Transactions",
+        badge: "KPI",
+        title: "Transaction Backlog and Coding Quality",
         description:
-            "We review your requirements and consult you on the exact operational structure (EOR, CoR, or Staff Augmentation) that fully legally safeguards your cross-border operations from regulatory risks.",
+            "Track uncategorized transactions, missing documentation, duplicate entries, open questions, and items waiting for management or CPA review.",
     },
     {
-        label: "Interview",
-        badge: "Vetted Candidates Ready to Start in Less Than 30 Days",
-        title: "3. Interview & Choose the Elite Top 1%",
+        label: "AP/AR",
+        badge: "KPI",
+        title: "AP/AR Visibility",
         description:
-            "We present a curated shortlist of pre-vetted, interviewed candidates. You retain complete authority over final hiring decisions, while Oberstaff completely manages sourcing, technical testing, backgrounds, and documentation setup.",
+            "Maintain current aging reports, overdue invoice lists, vendor due dates, collection follow-up status, and exceptions that require approval or escalation.",
     },
     {
-        label: "Integration",
-        badge: "Time Zone Alignment Guaranteed",
-        title: "4. Smooth Integration into Your Workflows",
+        label: "Month-End",
+        badge: "KPI",
+        title: "Month-End Readiness Report",
         description:
-            "Your new hire joins your team, working in lockstep with your US time zone. All international payroll, compliance, and multi-country operational variables are centralized into a single, straightforward monthly invoice in USD, keeping total transparency over daily production.",
+            "Summarize reconciliation status, open bookkeeping items, missing documents, AP/AR exceptions, recurring trends, and the records ready for management, controller, or CPA review.",
     },
 ];
 
@@ -169,31 +176,6 @@ const otrosServiciosProps = {
             linkText: "View service",
         },
     ],
-};
-
-const queEsOutsourcingProps = {
-    title: "Qué es el outsourcing de personal con talento de <br> LATAM",
-    highlightWord: "con talento de <br> LATAM",
-    description: "<span style='color: #1B1B1B; font-weight: 700;'>Externaliza las funciones operativas de tu negocio sin ampliar tu estructura interna.</span> El outsourcing de personal te permite delegar a <span style='color: #1B1B1B; font-weight: 800;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> la selección, contratación y administración mensual de profesionales de áreas funcionales y de negocio: comercial, administración, marketing y soporte al cliente.",
-    imageSrc: "/img-outsourcing.webp",
-    imageAlt: "Profesional trabajando",
-    badgeText: "Carga administrativa 0%",
-    quoteText: "",
-    infoItems: [
-        {
-            icon: "⚙️",
-            title: "¿Cómo funciona?",
-            description: "Tú defines qué necesita la organización; nosotros ejecutamos el proceso completo y mantenemos la operativa mes a mes.",
-        },
-        {
-            icon: "🌍",
-            title: "¿Sirve para mi empresa?",
-            description: "Latinoamérica aporta una combinación ideal para las empresas españolas que buscan estos perfiles: español nativo, husos horarios compatibles con CET, formación profesional sólida en áreas de negocio y costes significativamente más competitivos que el mercado local.",
-        },
-    ],
-    diffIcon: "💡",
-    diffTitle: "¿En qué se diferencia este modelo?",
-    diffDescription: '<div class="diff-grid"><div class="diff-item"><strong>Staff Augmentation:</strong><span>Sumas talento a tu equipo y diriges el trabajo día a día.</span></div><div class="diff-item"><strong>Employer of Record (EOR):</strong><span>Contratas empleados sin abrir entidad local.</span></div><div class="diff-item highlighted"><strong>Outsourcing de Personal:</strong><span>Delegas la selección, contratación y administración del personal para reducir carga operativa interna.</span></div></div>',
 };
 ---
 
@@ -706,8 +688,9 @@ const queEsOutsourcingProps = {
                 //     icon: "⚡",
                 // },
                 // {
-                //     text: "Conciliación diaria en tu ERP, junto a tu equipo en España",
+                //     text: "U.S. hours alignment Coverage scheduled for Eastern, Central, Mountain, or Pacific business needs.",
                 //     icon: "🕒",
+
                 // },
             ]}
         >
@@ -717,14 +700,18 @@ const queEsOutsourcingProps = {
         </LeadHeroSection>
 
         <div class="fade-in-section">
+            <FranjaEmpresasHome {...statsFranjaProps} />
+        </div>
+
+        <div class="fade-in-section">
             <QueEsServicioSection
                 title="The U.S. Bookkeeping Challenge: Higher Hiring Overhead and Financial Records That Fall Behind"
                 highlightWord="Bookkeeping Challenge"
-                description='For companies <strong>hiring a bookkeeper</strong>, the operational problem often begins when bookkeeping work is spread across founders, office managers, operations staff, outside accountants, or whoever has time to enter transactions and chase missing documents. The result is fragmented ownership: reconciliations are delayed, invoices accumulate, receivables age without follow-up, and month-end becomes a cleanup project instead of a repeatable process.'
+                description='For companies <strong>hiring a bookkeeper</strong>, the operational problem often begins when bookkeeping work is spread across founders, office managers, operations staff, outside accountants, or whoever has time to enter transactions and chase missing documents. The result is fragmented ownership: reconciliations are delayed, invoices accumulate, receivables age without follow-up, and month-end becomes a cleanup project instead of a repeatable process.<br /><br />If you are comparing a bookkeeper for hire with a local employee, an accounting firm, or an independent freelancer, focus on ownership and continuity as much as cost. Hiring locally can create consistent ownership, but it also introduces recruiting time, payroll administration, benefits, onboarding, management overhead, and replacement costs. Accounting firms can be valuable for tax, review, advisory, or periodic close support, yet their engagement may not be designed to own your daily transaction queue. Freelancers can work well for limited assignments, but availability and continuity may vary.'
                 imageSrc="/img1-contable.webp"
                 imageAlt="Contable remoto revisando conciliación bancaria"
                 badgeText="Financial Control"
-                quoteText="If you are comparing a bookkeeper for hire with a local employee, an accounting firm, or an independent freelancer, focus on ownership and continuity as much as cost. Hiring locally can create consistent ownership, but it also introduces recruiting time, payroll administration, benefits, onboarding, management overhead, and replacement costs. Accounting firms can be valuable for tax, review, advisory, or periodic close support, yet their engagement may not be designed to own your daily transaction queue. Freelancers can work well for limited assignments, but availability and continuity may vary."
+                quoteText=""
                 checklistTitle="For many U.S. companies, the core issue is not a lack of accounting advice; it is a lack of consistent day-to-day bookkeeping capacity"
                 checklistItems={[
                     "<strong>Local Hiring Adds Fixed Overhead:</strong> A direct U.S. hire adds recruiting, onboarding, employer payroll costs, benefits where applicable, and ongoing management responsibilities beyond base compensation.",
@@ -736,6 +723,19 @@ const queEsOutsourcingProps = {
                 diffIcon=""
                 diffTitle=""
                 diffDescription=""
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <OperationalGaps
+                title="Common operational gaps"
+                items={[
+                    "Bank and credit card accounts remain unreconciled, making balances and transaction detail less reliable.",
+                    "Accounts payable and accounts receivable follow-up becomes reactive, increasing overdue invoices and missed internal deadlines.",
+                    "Month-end close is delayed by uncategorized transactions, missing receipts, duplicate entries, or incomplete supporting documentation.",
+                    "CPAs, controllers, or finance leaders spend review time cleaning routine bookkeeping issues instead of focusing on higher-value accounting and financial decisions.",
+                ]}
+                alertText="A dedicated Bookkeeper solves the recurring execution and record-maintenance problem. The role does not replace a CPA, controller, tax professional, or accountant responsible for tax positions, assurance, complex accounting judgments, or strategic financial oversight."
             />
         </div>
 
@@ -800,7 +800,14 @@ const queEsOutsourcingProps = {
             />
         </div>
 
-                <div class="fade-in-section">
+        <div class="fade-in-section">
+            <ProcessOberstaff
+                {...processProps}
+                items={processItems}
+            />
+        </div>
+
+        <div class="fade-in-section">
             <RolesPerfil
                 title="Types of <strong>Remote Bookkeeper</strong> Profiles According to Your Operating Model"
                 subtitle="We help U.S. companies <strong>hire remote bookkeeper</strong> talent with the level of responsibility that matches transaction volume, finance processes, and internal supervision."
@@ -849,7 +856,7 @@ const queEsOutsourcingProps = {
             />
         </div>
 
-        <div class="fade-in-section">
+               <div class="fade-in-section">
             <GuiaContratacion
                 titleTag="h2"
                 headerTitle="How <span style='color: #1b1b1b; font-weight: 800;'> Oberstaff<span style='color: #ff66cc'>.</span></span> Evaluates Remote Bookkeeper Candidates"
@@ -876,7 +883,7 @@ const queEsOutsourcingProps = {
                 ]}
             />
         </div>
-
+        
         <div class="fade-in-section">
             <EorStepsSection
                 title="How to Hire Remote Bookkeeper Talent with <span style='color: #1b1b1b; font-weight: 800;'> Oberstaff<span style='color: #ff66cc'>.</span></span>"
@@ -922,6 +929,79 @@ const queEsOutsourcingProps = {
                 text="Oberstaff. connects U.S. businesses with vetted Latin American bookkeepers who can keep transactions organized, reconcile accounts, support AP/AR, maintain documentation, prepare recurring bookkeeping reports, and collaborate during the U.S. business hours your operation requires."
                 buttonText="👉 Hire Remote Bookkeeper Talent for Your U.S. Team"
                 buttonHref="#formulario-perfil"
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <ServicesSection
+                sectionId="industries"
+                titleId="industries-title"
+                title="Where a Dedicated <strong>Remote Bookkeeper</strong> Creates the Most Value"
+                cardTitleTag="h3"
+                description="Our remote bookkeeper placements support recurring financial operations across business models with different transaction volumes, billing cycles, and documentation needs:"
+                customClass="employer-use-cases"
+                services={[
+                    {
+                        icon: "🛒",
+                        title: "eCommerce and DTC brands",
+                        description:
+                            "Reconciling sales and payment activity, organizing platform and processor transactions, tracking vendor bills, supporting inventory-related bookkeeping records, reviewing refunds and fees, and maintaining AP/AR visibility for recurring close.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-green",
+                    },
+                    {
+                        icon: "💻",
+                        title: "B2B SaaS & Professional Services",
+                        description:
+                            "Tracking customer invoices, recurring expenses, software subscriptions, contractor and vendor records, collections status, bank activity, and monthly bookkeeping schedules for management review.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-pink",
+                    },
+                    {
+                        icon: "🏠",
+                        title: "Real Estate & Property Businesses",
+                        description:
+                            "Organizing property-level income and expenses, vendor invoices, recurring charges, deposits, bank reconciliations, owner or management reporting support, and documentation that can be handed to the appropriate accounting or tax professional.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-lime",
+                    },
+                    {
+                        icon: "🩺",
+                        title: "Healthcare, wellness, and professional practices",
+                        description:
+                            "Supporting non-clinical bookkeeping workflows such as operating expenses, vendor bills, receipts, bank and credit card reconciliations, recurring invoices, and management reports while following the company's access and confidentiality controls.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-purple",
+                    },
+                    {
+                        icon: "🏗️",
+                        title: "Construction, trades, and multi-location businesses",
+                        description:
+                            "Organizing vendor and subcontractor documentation, project or location coding, invoices, payments, receipts, account reconciliations, and recurring expense visibility across multiple jobs, branches, or operating units.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-green",
+                    },
+                    {
+                        icon: "📣",
+                        title: "Agencies and other service businesses",
+                        description:
+                            "For owners hiring a bookkeeper for a small business, experienced small business bookkeepers can track client billing, contractor or vendor costs, reimbursable expenses, collections, recurring subscriptions, bank activity, and bookkeeping reports that help owners understand operational performance before the books reach their CPA or controller.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-pink",
+                    },
+                ]}
             />
         </div>
 
@@ -1018,49 +1098,77 @@ const queEsOutsourcingProps = {
         </div>
 
         <div class="fade-in-section">
+            <GuiaContratacion
+                titleTag="h2"
+                headerTitle="Remote Bookkeeper Integration and U.S. Time-Zone Coverage"
+                headerDescription="A QuickBooks remote bookkeeper or specialist working in another approved accounting platform operates inside the accounting systems, approval rules, documentation standards, and recurring close process your company already uses. Integration should be designed around secure access, clear ownership, separation of duties, documented escalation, and realistic service windows."
+                cards={[
+                    {
+                        title: "U.S. time-zone coverage",
+                        description:
+                            "Schedule overlap can be aligned with Eastern, Central, Mountain, or Pacific business hours. Extended, weekend, or multi-shift coverage must be defined in the proposal.",
+                        description2: "",
+                    },
+                    {
+                        title: "Communication channels",
+                        description:
+                            "Slack, Microsoft Teams, email, project-management tools, and recurring check-ins with the internal finance or operations owner.",
+                        description2: "",
+                    },
+                    {
+                        title: "Accounting platforms",
+                        description:
+                            "QuickBooks Online, Xero, Odoo, SAP Business One, Zoho Books, Excel, Google Sheets, or other approved accounting and reporting environments required by the role.",
+                        description2: "",
+                    },
+                    {
+                        title: "AP/AR and approval handoffs",
+                        description:
+                            "Vendor bills, customer invoices, payment-preparation queues, collection follow-up, expense documentation, and escalation to the authorized employee for approvals or exceptions.",
+                        description2: "",
+                    },
+                    {
+                        title: "Bookkeeping documentation and controls",
+                        description:
+                            "Chart-of-accounts guidance, close checklist, coding rules, approval matrix, receipt and invoice standards, access permissions, exception log, and documented escalation to management, controller, or CPA.",
+                        description2: "",
+                    },
+                    {
+                        title: "Reporting cadence",
+                        description:
+                            "Daily or weekly exception visibility, recurring reconciliation status, AP/AR aging updates, month-end readiness reporting, and calibration meetings based on operational needs.",
+                        description2: "",
+                    },
+                ]}
+            />
+        </div>
+
+         <div class="fade-in-section">
             <BeneficiosPerfilDisenador
                 showInfoCard={false}
-                title="Remote Bookkeeper Integration and U.S. Time-Zone Coverage"
-                subtitle="A <strong>QuickBooks remote bookkeeper</strong> or specialist working in another approved accounting platform operates inside the accounting systems, approval rules, documentation standards, and recurring close process your company already uses. Integration should be designed around secure access, clear ownership, separation of duties, documented escalation, and realistic service windows."
+                title="How to Hire a Bookkeeper: Candidate Evaluation Guide"
+                subtitle="During interviews, evaluate the candidate's bookkeeping reasoning and process discipline rather than focusing only on years of experience or software names:"
                 image="/img2-contable.webp"
                 imageAlt="Contratar contable"
                 infoTitle=""
                 features={[
                     {
-                        icon: "🎯",
-                        title: "U.S. time-zone coverage",
+                        icon: "🧮",
+                        title: "Reconciliation Judgment and Error Detection",
                         description:
-                            "Schedule overlap can be aligned with Eastern, Central, Mountain, or Pacific business hours. Extended, weekend, or multi-shift coverage must be defined in the proposal.",
-                    },
-                    {
-                        icon: "📊",
-                        title: "Communication channels",
-                        description:
-                            "Slack, Microsoft Teams, email, project-management tools, and recurring check-ins with the internal finance or operations owner.",
-                    },
-                    {
-                        icon: "⚡",
-                        title: "Accounting platforms",
-                        description:
-                            "QuickBooks Online, Xero, Odoo, SAP Business One, Zoho Books, Excel, Google Sheets, or other approved accounting and reporting environments required by the role.",
+                            "Can the candidate explain how they would investigate an unreconciled balance, duplicate transaction, stale reconciling item, missing bank activity, or transaction that does not have enough documentation to code confidently?",
                     },
                     {
                         icon: "🧾",
-                        title: "AP/AR and approval handoffs",
+                        title: "AP/AR Process and Internal-Control Awareness",
                         description:
-                            "Vendor bills, customer invoices, payment-preparation queues, collection follow-up, expense documentation, and escalation to the authorized employee for approvals or exceptions.",
+                            "Ask how the candidate handles vendor bills, invoice due dates, customer follow-up, payment preparation, approvals, duplicate invoices, account ownership, and situations that require escalation rather than independent action.",
                     },
                     {
-                        icon: "📁",
-                        title: "Bookkeeping documentation and controls",
+                        icon: "📊",
+                        title: "Bookkeeping Data Interpretation",
                         description:
-                            "Chart-of-accounts guidance, close checklist, coding rules, approval matrix, receipt and invoice standards, access permissions, exception log, and documented escalation to management, controller, or CPA.",
-                    },
-                    {
-                        icon: "📅",
-                        title: "Reporting cadence",
-                        description:
-                            "Daily or weekly exception visibility, recurring reconciliation status, AP/AR aging updates, month-end readiness reporting, and calibration meetings based on operational needs.",
+                            "Confirm that the candidate can interpret aging reports, reconciliation status, transaction backlogs, unusual account movements, missing documents, and month-end exceptions, and can communicate what management or the CPA needs to review.",
                     },
                 ]}
                 infoItems={[
@@ -1121,6 +1229,10 @@ const queEsOutsourcingProps = {
             />
         </div>  
 
+        <!-- <div class="fade-in-section">
+            <OtrosServiciosSection {...otrosServiciosProps} />
+        </div> -->
+
         <FAQSection
             title="Frequently Asked Questions About How to <strong>Hire a Bookkeeper</strong> in the U.S."
             ctaText=""
@@ -1146,26 +1258,7 @@ const queEsOutsourcingProps = {
                 formName="U.S. Bookkeeper Profile"
                 pais="United States"
             />
-        </div>
-
-        <div class="fade-in-section">
-            <FranjaEmpresasHome {...statsFranjaProps} />
-        </div>
-
-        <div class="fade-in-section">
-            <ProcessOberstaff
-                {...processProps}
-                items={processItems}
-            />
-        </div>
-
-        <div class="fade-in-section">
-            <OtrosServiciosSection {...otrosServiciosProps} />
-        </div>
-
-        <div class="fade-in-section hide-quote-border diff-custom-layout">
-            <QueEsServicioSection {...queEsOutsourcingProps} />
-        </div>
+        </div> 
     </div>
 
     <style>
@@ -1300,9 +1393,5 @@ const queEsOutsourcingProps = {
             line-height: 1.4;
         }
 
-        .service-detail-container
-            :global(.guia-cards-grid .guia-card:nth-child(5)) {
-            grid-column: 1 / -1;
-        }
     </style>
 </DashboardProfilesUs>
