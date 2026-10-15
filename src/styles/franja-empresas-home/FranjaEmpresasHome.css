@@ -89,6 +89,87 @@
     max-width: 240px;
 }
 
+/* --- Modo con Título y/o 4 Estadísticas --- */
+.franja-empresas-container.has-title {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+}
+
+.franja-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    color: #1B1B1B;
+    text-align: center;
+    margin: 0 auto;
+    line-height: 1.25;
+    max-width: 900px;
+}
+
+.franja-note {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: #555555;
+    text-align: center;
+    margin: 0 auto;
+    line-height: 1.5;
+    max-width: 820px;
+}
+
+.franja-empresas-section.has-four-stats .franja-stats-left {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.franja-empresas-section.has-four-stats .franja-stat-block {
+    flex: 1;
+    max-width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.franja-empresas-section.has-four-stats .franja-number,
+.franja-empresas-section.has-title .franja-number {
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    margin-bottom: 12px;
+    min-height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.franja-empresas-section.has-four-stats .franja-label,
+.franja-empresas-section.has-title .franja-label {
+    text-transform: none;
+    font-size: 13.5px;
+    font-weight: 400;
+    color: #5A5A5A;
+    line-height: 1.45;
+    letter-spacing: normal;
+    max-width: 240px;
+}
+
+.franja-empresas-section.has-four-stats .franja-vertical-divider {
+    height: 44px;
+    align-self: center;
+    margin-top: 5px;
+    background: #e2e2e2;
+    flex-shrink: 0;
+}
+
 
 /* Bloque Derecho: Slider de Logos */
 .franja-logos-slider {
@@ -174,10 +255,65 @@
         max-width: 100%;
         width: 100%;
     }
+
+    .franja-empresas-section.has-four-stats .franja-stats-left {
+        max-width: 950px;
+        gap: 15px;
+    }
+
+    .franja-empresas-section.has-four-stats .franja-number {
+        font-size: 19px;
+        min-height: 46px;
+    }
+
+    .franja-empresas-section.has-four-stats .franja-label {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 860px) {
+    .franja-empresas-section.has-four-stats .franja-stats-left {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px 20px;
+        max-width: 620px;
+    }
+
+    .franja-empresas-section.has-four-stats .franja-vertical-divider {
+        display: none;
+    }
+
+    .franja-empresas-section.has-four-stats .franja-stat-block {
+        max-width: 100%;
+    }
+
+    .franja-title {
+        font-size: 26px;
+    }
 }
 
 @media (max-width: 768px) {
     /* --- franja-stat-block & franja-stats-left --- */
+}
+
+@media (max-width: 520px) {
+    .franja-empresas-section.has-four-stats .franja-stats-left {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .franja-title {
+        font-size: 22px;
+    }
+
+    .franja-empresas-section.has-four-stats .franja-number {
+        font-size: 18px;
+        min-height: auto;
+    }
+
+    .franja-note {
+        font-size: 13.5px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -233,3 +369,4 @@
         }
     }
 }
+

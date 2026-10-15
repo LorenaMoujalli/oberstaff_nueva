@@ -2,42 +2,54 @@
 import "../../styles/franja-empresas-home/FranjaEmpresasHome.css";
 
 interface Props {
+    title?: string;
+    note?: string;
     stat1Number?: string;
     stat1Label?: string;
     stat2Number?: string;
     stat2Label?: string;
     stat3Number?: string;
     stat3Label?: string;
+    stat4Number?: string;
+    stat4Label?: string;
     showLogos?: boolean;
     customClass?: string;
 }
 
 const {
+    title,
+    note,
     stat1Number = "70%",
     stat1Label = "De ahorro en costes de infraestructura y gestión local",
     stat2Number = "10",
     stat2Label = "Países con cobertura operativa en LATAM",
     stat3Number = "100%",
     stat3Label = "De la carga administrativa delegada",
+    stat4Number,
+    stat4Label,
     showLogos = true,
     customClass = ""
 } = Astro.props;
 ---
 
-<div class:list={["franja-empresas-section", { "stats-only": !showLogos }, customClass]}>
-    <div class:list={["franja-empresas-container", { "stats-only": !showLogos }]}>
+<div class:list={["franja-empresas-section", { "stats-only": !showLogos, "has-title": !!title, "has-four-stats": !!(stat4Number && stat4Label) }, customClass]}>
+    <div class:list={["franja-empresas-container", { "stats-only": !showLogos, "has-title": !!title }]}>
         
+        {title && (
+            <h2 class="franja-title" set:html={title} />
+        )}
+
         <!-- Bloque Izquierdo: Estadísticas -->
         <div class="franja-stats-left">
             <div class="franja-stat-block">
-                <span class="franja-number franja-gradient-text">{stat1Number}</span>
+                <span class="franja-number franja-gradient-text" set:html={stat1Number}></span>
                 <span class="franja-label" set:html={stat1Label}></span>
             </div>
 
             <div class="franja-vertical-divider"></div>
 
             <div class="franja-stat-block">
-                <span class="franja-number franja-gradient-text">{stat2Number}</span>
+                <span class="franja-number franja-gradient-text" set:html={stat2Number}></span>
                 <span class="franja-label" set:html={stat2Label}></span>
             </div>
 
@@ -46,12 +58,27 @@ const {
                     <div class="franja-vertical-divider"></div>
 
                     <div class="franja-stat-block">
-                        <span class="franja-number franja-gradient-text">{stat3Number}</span>
+                        <span class="franja-number franja-gradient-text" set:html={stat3Number}></span>
                         <span class="franja-label" set:html={stat3Label}></span>
                     </div>
                 </>
             )}
+
+            {stat4Number && stat4Label && (
+                <>
+                    <div class="franja-vertical-divider"></div>
+
+                    <div class="franja-stat-block">
+                        <span class="franja-number franja-gradient-text" set:html={stat4Number}></span>
+                        <span class="franja-label" set:html={stat4Label}></span>
+                    </div>
+                </>
+            )}
         </div>
+
+        {note && (
+            <p class="franja-note" set:html={note} />
+        )}
 
         <!-- Bloque Derecho: Slider de Logos -->
         {showLogos && (
