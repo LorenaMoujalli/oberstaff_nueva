@@ -280,6 +280,7 @@
 }
 
 @media (max-width: 860px) {
+
     .franja-empresas-section.has-four-stats .franja-stats-left,
     .franja-empresas-section.franja-compact .franja-stats-left {
         display: grid;
@@ -308,6 +309,7 @@
 }
 
 @media (max-width: 520px) {
+
     .franja-empresas-section.has-four-stats .franja-stats-left,
     .franja-empresas-section.franja-compact .franja-stats-left {
         grid-template-columns: 1fr;
