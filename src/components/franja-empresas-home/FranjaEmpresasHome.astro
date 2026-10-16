@@ -32,7 +32,7 @@ const {
 } = Astro.props;
 ---
 
-<div class:list={["franja-empresas-section", { "stats-only": !showLogos, "has-title": !!title, "has-four-stats": !!(stat4Number && stat4Label) }, customClass]}>
+<div class:list={["franja-empresas-section", { "stats-only": !showLogos, "has-title": !!title, "has-four-stats": !!(stat4Number && stat4Label), "franja-compact": !!(stat4Number && stat4Label) }, customClass]}>
     <div class:list={["franja-empresas-container", { "stats-only": !showLogos, "has-title": !!title }]}>
         
         {title && (

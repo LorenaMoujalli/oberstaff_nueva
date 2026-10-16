@@ -16,9 +16,10 @@ interface Props {
     headerDescription: string;
     cards: CardData[];
     titleTag?: string;
+    footerText?: string;
 }
 
-const { headerTitle, headerDescription, cards = [], titleTag } = Astro.props;
+const { headerTitle, headerDescription, cards = [], titleTag, footerText } = Astro.props;
 ---
 
 <GuiaContratacionSection>
@@ -38,4 +39,6 @@ const { headerTitle, headerDescription, cards = [], titleTag } = Astro.props;
             type={card.type}
         />
     ))}
+
+    {footerText && <p slot="footer" class="guia-footer-text" set:html={footerText} />}
 </GuiaContratacionSection>

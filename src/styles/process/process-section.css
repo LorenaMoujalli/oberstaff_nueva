@@ -82,3 +82,14 @@
         padding: 60px 20px;
     }
 }
+
+/* --- Nota al pie opcional (aclaraciones / disclaimers) --- */
+.process-footnote {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    color: #5A5A5A;
+    line-height: 1.6;
+    max-width: 900px;
+    margin: 30px auto 0;
+    text-align: center;
+}

@@ -17,6 +17,7 @@ import GuiaContratacion from "../../../components/guia-contratacion-perfiles/Gui
 import FranjaEmpresasHome from "../../../components/franja-empresas-home/FranjaEmpresasHome.astro";
 import ProcessOberstaff from "../../../components/process/ProcessOberstaff.astro";
 import OtrosServiciosSection from "../../../components/otros-servicios-servicios/OtrosServiciosSection.astro";
+import OperationalGaps from "../../../components/operational-gaps/OperationalGaps.astro";
 
 const ogImage = "Contratar-editor-de-videos.webp";
 
@@ -64,20 +65,26 @@ const faqsList = [
 ];
 
 const statsFranjaProps = {
-    stat1Number: "70%",
-    stat1Label: "De ahorro en costes de infraestructura y gestión local",
-    stat2Number: "10",
-    stat2Label: "Países con cobertura operativa en LATAM",
-    stat3Number: "100%",
-    stat3Label: "De la carga administrativa delegada",
+    stat1Number: "Dedicated editing capacity",
+    stat1Label: "Full-time focus on your content pipeline and production queue.",
+    stat2Number: "Vetted technical portfolios",
+    stat2Label: "Editing judgment, software skills, workflow discipline, and role-fit validation.",
+    stat3Number: "U.S. hours alignment",
+    stat3Label: "Coverage scheduled for Eastern, Central, Mountain, or Pacific needs.",
+    stat4Number: "Integrated production workflow",
+    stat4Label: "Works inside your review, storage, communication, and brand systems.",
+    title: "A Dedicated Video Editing Professional, <span style='color: #6663FD; font-weight: 900;'>Supported by a Structured Hiring Model</span>",
+    note: "<span style='font-weight: 800; color: #1b1b1b;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> has supported U.S. companies in building remote teams with vetted Latin American professionals.",
     showLogos: false,
 };
 
 const processProps = {
     id: "hiring-process",
     useH3ForTitle: true,
-    title: "How our remote recruitment agency <span style='color: #6663FD; font-weight: 900; white-space: nowrap;'>supports your hiring process</span>",
-    ctaTitle: "Start saving today",
+    title: "Video Editing Deliverables and <span style='color: #6663FD; font-weight: 900;'>KPIs</span> You Can Track",
+    description: "Your dedicated video editor works under a structured production framework with deliverables and KPIs connected to speed, quality, consistency, and content performance:",
+    footnote: "* KPI availability depends on platform permissions, media spend, content strategy, footage quality, publishing cadence, creative concept, audience, and the analytics available for each channel. A video editor can influence retention and creative performance, but business outcomes also depend on offer, distribution, targeting, and broader marketing strategy.",
+    ctaTitle: "",
     ctaDescription: "A dedicated team will manage the entire process for you.",
     ctaBtnText: "Schedule a call",
     ctaBtnHref: "#formulario-perfil",
@@ -85,32 +92,32 @@ const processProps = {
 
 const processItems = [
     {
-        label: "Selection",
-        badge: "Free Consultation – Zero Upfront Obligation",
-        title: "1. Define Your Ideal Candidate Profile",
+        label: "Throughput",
+        badge: "KPI",
+        title: "Production Throughput and On-Time Delivery",
         description:
-            "Tell us your specific needs—whether you are looking for executive virtual assistants, digital marketers, accountants, bilingual customer support representatives, or high-level tech developers. Our expert corporate recruiters target professionals who perfectly align with your company culture, workflow standards, and business goals.",
+            "Track completed videos, cutdowns, platform versions, average turnaround time, backlog size, and the percentage of deliverables completed by the agreed publishing deadline.",
     },
     {
-        label: "Structure",
-        badge: "Flexible Engagements – No Rigid Long-Term Lock-Ins",
-        title: "2. Select the Ideal Compliance Framework",
+        label: "Revisions",
+        badge: "KPI",
+        title: "Revision Cycle Efficiency",
         description:
-            "We review your requirements and consult you on the exact operational structure (EOR, CoR, or Staff Augmentation) that fully legally safeguards your cross-border operations from regulatory risks.",
+            "Measure the average number of review rounds, time between feedback and revised export, repeated correction types, approval bottlenecks, and the percentage of edits approved within the expected revision window.",
     },
     {
-        label: "Interview",
-        badge: "Vetted Candidates Ready to Start in Less Than 30 Days",
-        title: "3. Interview & Choose the Elite Top 1%",
+        label: "Retention",
+        badge: "KPI",
+        title: "Retention and Creative Performance Signals",
         description:
-            "We present a curated shortlist of pre-vetted, interviewed candidates. You retain complete authority over final hiring decisions, while Oberstaff completely manages sourcing, technical testing, backgrounds, and documentation setup.",
+            "When platform data is available, review hook retention, average watch time, completion rate, viewer drop-off points, click-through or conversion signals for paid creative, and patterns that can inform future editing decisions.",
     },
     {
-        label: "Integration",
-        badge: "Time Zone Alignment Guaranteed",
-        title: "4. Smooth Integration into Your Workflows",
+        label: "Delivery QA",
+        badge: "KPI",
+        title: "Delivery QA and Asset Handoff",
         description:
-            "Your new hire joins your team, working in lockstep with your US time zone. All international payroll, compliance, and multi-country operational variables are centralized into a single, straightforward monthly invoice in USD, keeping total transparency over daily production.",
+            "Track export accuracy, caption or graphic errors, correct aspect ratios, audio consistency, file naming, source-project availability, organized masters, and whether final assets are stored in the approved company environment.",
     },
 ];
 
@@ -147,31 +154,6 @@ const otrosServiciosProps = {
             linkText: "View service",
         },
     ],
-};
-
-const queEsOutsourcingProps = {
-    title: "Qué es el outsourcing de personal con talento de <br> LATAM",
-    highlightWord: "con talento de <br> LATAM",
-    description: "<span style='color: #1B1B1B; font-weight: 700;'>Externaliza las funciones operativas de tu negocio sin ampliar tu estructura interna.</span> El outsourcing de personal te permite delegar a <span style='color: #1B1B1B; font-weight: 800;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> la selección, contratación y administración mensual de profesionales de áreas funcionales y de negocio: comercial, administración, marketing y soporte al cliente.",
-    imageSrc: "/img-outsourcing.webp",
-    imageAlt: "Profesional trabajando",
-    badgeText: "Carga administrativa 0%",
-    quoteText: "",
-    infoItems: [
-        {
-            icon: "⚙️",
-            title: "¿Cómo funciona?",
-            description: "Tú defines qué necesita la organización; nosotros ejecutamos el proceso completo y mantenemos la operativa mes a mes.",
-        },
-        {
-            icon: "🌍",
-            title: "¿Sirve para mi empresa?",
-            description: "Latinoamérica aporta una combinación ideal para las empresas españolas que buscan estos perfiles: español nativo, husos horarios compatibles con CET, formación profesional sólida en áreas de negocio y costes significativamente más competitivos que el mercado local.",
-        },
-    ],
-    diffIcon: "💡",
-    diffTitle: "¿En qué se diferencia este modelo?",
-    diffDescription: '<div class="diff-grid"><div class="diff-item"><strong>Staff Augmentation:</strong><span>Sumas talento a tu equipo y diriges el trabajo día a día.</span></div><div class="diff-item"><strong>Employer of Record (EOR):</strong><span>Contratas empleados sin abrir entidad local.</span></div><div class="diff-item highlighted"><strong>Outsourcing de Personal:</strong><span>Delegas la selección, contratación y administración del personal para reducir carga operativa interna.</span></div></div>',
 };
 ---
 
@@ -541,6 +523,10 @@ const queEsOutsourcingProps = {
         </LeadHeroSection>
 
         <div class="fade-in-section">
+            <FranjaEmpresasHome {...statsFranjaProps} />
+        </div>
+
+        <div class="fade-in-section">
             <QueEsServicioSection
                 title="The U.S. Video Production Challenge: Rising Costs and Fragmented Post-Production"
                 highlightWord="Video Production"
@@ -554,13 +540,25 @@ const queEsOutsourcingProps = {
                     "<strong>Local Payroll Overhead:</strong> An in-house W-2 video editor requires more than base compensation: recruiting, payroll taxes, benefits, software, hardware, management time, and replacement costs all affect the total employment budget. Each video editor hire also carries onboarding, workflow documentation, and replacement considerations.",
                     "<strong>Agency Scope Fragmentation:</strong> Agency retainers and project packages can work well for campaigns, but recurring revisions, cutdowns, subtitles, platform versions, and source-file requests may depend on the exact statement of work. Some companies therefore outsource video editing to create more predictable recurring post-production capacity.",
                     "<strong>Freelance Capacity Gaps:</strong> A freelance video editor may be ideal for isolated projects, but availability, response time, file organization, and brand familiarity can vary when the professional is balancing several clients. Teams that hire freelance video editor support should compare availability, revision ownership, source-file handoff, and long-term continuity before choosing a model.",
-                    "Cero fricción laboral: si el estilo de montaje no encaja con tu marca, solicita un reemplazo o cancela.",
                 ]}
                 ctaText="→ Request Video Editor Profiles"
                 ctaHref="#formulario-perfil"
                 diffIcon=""
                 diffTitle=""
                 diffDescription=""
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <OperationalGaps
+                title="Common operational gaps"
+                items={[
+                    "Raw footage and approved concepts sit in the production queue because editing capacity cannot keep pace with weekly content needs.",
+                    "Marketing and growth teams spend hours cutting clips, adding captions, exporting versions, and managing revisions instead of focusing on strategy and distribution.",
+                    "Feedback is scattered across email, chat, documents, and review links, creating duplicate revisions and uncertainty about which version is final.",
+                    "Aspect ratios, naming conventions, subtitles, audio levels, color treatment, and project-file organization change from one vendor or campaign to the next.",
+                ]}
+                alertText="The dedicated Video Editor solves the recurring post-production capacity problem. The role does not replace a Video Producer or Creative Director responsible for production strategy, filming, campaign concepts, creative direction, or media planning."
             />
         </div>
 
@@ -636,44 +634,82 @@ const queEsOutsourcingProps = {
         </div>
 
         <div class="fade-in-section">
-            <BeneficiosPerfilDisenador
-                showInfoCard={false}
-                title="Video Editing Deliverables and KPIs You Can Track"
-                subtitle="Your dedicated video editor works under a structured production framework with deliverables and KPIs connected to speed, quality, consistency, and content performance:"
-              image="/img2-videos.webp" 
-            imageAlt="Contratar editor de videos"
-                features={[
+            <ProcessOberstaff
+                {...processProps}
+                items={processItems}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <ServicesSection
+                sectionId="profile-types"
+                titleId="profile-types-title"
+                title="Types of <strong>Video Editor</strong> Profiles According to Your Content Model"
+                cardTitleTag="h3"
+                description="We help you hire video editors specialized in the formats that matter most to your marketing and content operation:"
+                customClass="employer-use-cases"
+                services={[
                     {
-                        icon: "🎯",
-                        title: "Production Throughput and On-Time Delivery:",
+                        icon: "📱",
+                        title: "Social Media Video Editor and Short Form Video Editor",
                         description:
-                            "Track completed videos, cutdowns, platform versions, average turnaround time, backlog size, and the percentage of deliverables completed by the agreed publishing deadline.",
+                            "Produces Reels, TikToks, Shorts, social ads, UGC-style edits, and recurring vertical content with fast pacing, readable subtitles, branded templates, hook variations, and platform-native framing.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-green",
                     },
                     {
-                        icon: "⚡",
-                        title: "Revision Cycle Efficiency:",
+                        icon: "🎙️",
+                        title: "YouTube and Podcast Video Editor",
                         description:
-                            "Measure the average number of review rounds, time between feedback and revised export, repeated correction types, approval bottlenecks, and the percentage of edits approved within the expected revision window.",
+                            "Edits educational videos, interviews, podcasts, webinars, founder content, tutorials, and recurring YouTube episodes with narrative structure, B-roll, J- and L-cuts, audio cleanup, chapters, and consistent long-form pacing. For teams that want to hire YouTube video editor talent, portfolio review should confirm both long-form storytelling and the ability to repurpose episodes into short-form clips.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-pink",
                     },
                     {
-                        icon: "🎨",
-                        title: "Retention and Creative Performance Signals:",
+                        icon: "📈",
+                        title: "Performance Creative and Motion Video Editor",
                         description:
-                            "When platform data is available, review hook retention, average watch time, completion rate, viewer drop-off points, click-through or conversion signals for paid creative, and patterns that can inform future editing decisions.",
+                            "Builds paid-social variations, product demonstrations, offer-focused creative, motion graphics, animated callouts, lower thirds, hook tests, and version batches for Meta Ads, TikTok Ads, YouTube Ads, and other performance channels.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-lime",
                     },
-                    {
-                        icon: "🛡️",
-                        title: "Delivery QA and Asset Handoff:",
-                        description:
-                            "Track export accuracy, caption or graphic errors, correct aspect ratios, audio consistency, file naming, source-project availability, organized masters, and whether final assets are stored in the approved company environment.",
-                    }
                 ]}
-            >
-              <div class="meta-custom-notice">
-                   * KPI availability depends on platform permissions, media spend, content strategy, footage quality, publishing cadence, creative concept, audience, and the analytics available for each channel. A video editor can influence retention and creative performance, but business outcomes also depend on offer, distribution, targeting, and broader marketing strategy.
-                </div>
-             
-            </BeneficiosPerfilDisenador>
+            />
+        </div>
+
+           <div class="fade-in-section">
+            <GuiaContratacion
+                titleTag="h2"
+                headerTitle="How <span style='color: #1b1b1b; font-weight: 800;'> Oberstaff<span style='color: #ff66cc'>.</span></span> Evaluates Video Editor Candidates"
+                headerDescription="Before any candidate meets your team, Oberstaff completes a multi-stage, role-specific evaluation process:"
+                footerText="Only candidates who meet the agreed role requirements are presented. The final hiring decision remains with your company."
+                cards={[
+                    {
+                        title: "English, Communication, and Workflow Fluency Assessment",
+                        description:
+                            "Communication is evaluated according to the role, with attention to U.S. business context, brief comprehension, feedback handling, asynchronous collaboration, time-zone alignment, and bilingual EN/ES requirements when applicable.",
+                        description2: "",
+                    },
+                    {
+                        title: "Video Editing Practical Assessment",
+                        description:
+                            "Candidates are evaluated through portfolio review and role-relevant technical validation covering storytelling, pacing, captions, audio, color, versioning, file organization, software proficiency, and the type of content required by the position.",
+                        description2: "",
+                    },
+                    {
+                        title: "Professional Reliability and Remote-Work Readiness",
+                        description:
+                            "Oberstaff reviews experience, work samples or references when available, communication habits, schedule alignment, problem-solving, professional conduct, hardware and connectivity readiness, and the ability to work securely inside a distributed production workflow.",
+                        description2: "",
+                    },
+                ]}
+            />
         </div>
 
         <div class="fade-in-section">
@@ -891,7 +927,7 @@ const queEsOutsourcingProps = {
             />
         </div>
 
-        <div class="fade-in-section">
+         <div class="fade-in-section">
             <PricingCardPerfil
                 sectionTitle="<span style='color:#6663FD; font-weight: 900;'>Video Editor</span> Pricing for U.S. Companie"
                 sectionSubtitle="All-inclusive plans for dedicated video editing talent start at $990/month. The amount includes the professional's compensation and <span style='color: #1b1b1b; font-weight: 800;'> Oberstaff<span style='color: #ff66cc'>.</span></span>'s sourcing, evaluation, contracting, payroll administration, monthly billing, and ongoing service support. The final quote is adjusted to the candidate's seniority, schedule, software, English level, motion or color requirements, production volume, specialization, and country. For companies that want to <strong>hire full time video editor</strong> talent, this creates a predictable monthly model for recurring post-production capacity."
@@ -916,35 +952,123 @@ const queEsOutsourcingProps = {
             />
         </div>
 
-           <div class="fade-in-section">
-            <GuiaContratacion
-                titleTag="h2"
-                headerTitle="How to Hire a <span style='color:#6663FD; font-weight: 900;'>Video Editor</span>: Candidate Evaluation Guide"
-                headerDescription="During interviews, evaluate how the candidate thinks through an edit, manages a real production workflow, and responds to feedback rather than judging only the visual polish of a finished reel:"
-                cards={[
+        <div class="fade-in-section">
+            <ServicesSection
+                sectionId="integration"
+                titleId="integration-title"
+                title="Remote <strong>Video Editor</strong> Integration and U.S. Time-Zone Coverage"
+                cardTitleTag="h3"
+                description="The specialist works inside the production systems and review standards your company already uses. Integration should be designed around secure media access, clear creative ownership, documented feedback, organized source files, and realistic production windows."
+                customClass="employer-use-cases"
+                services={[
                     {
-                        title: "Editing Judgment and Storytelling",
+                        icon: "🕐",
+                        title: "U.S. time-zone coverage",
                         description:
-                            "Can the candidate explain why a sequence is structured a certain way, how pacing changes by format, where B-roll or graphics add value, and what should be removed to protect clarity and retention?"
+                            "Schedule overlap can be aligned with Eastern, Central, Mountain, or Pacific business hours. Extended, weekend, or multi-shift production coverage must be defined in the proposal.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-green",
                     },
                     {
-                        title: "Technical Workflow and File Discipline",
+                        icon: "💬",
+                        title: "Communication and review tools",
                         description:
-                            "Ask how the candidate handles proxies, multicam footage, audio sync, codecs, color management, project organization, version control, review notes, source files, and final export specifications."
+                            "Slack, Microsoft Teams, email, Frame.io, project-management tools, and recurring creative calibration with the internal owner.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-pink",
                     },
-                    { 
-                       
-                        title: "Retention and Performance Interpretation",
-                     description:
-                        "Confirm that the candidate can interpret watch time, completion rate, hook retention, drop-off points, creative-test results, and revision patterns without pretending that editing alone determines campaign or business performance."
+                    {
+                        icon: "🎞️",
+                        title: "Editing software",
+                        description:
+                            "Adobe Premiere Pro, After Effects, Audition, DaVinci Resolve, Final Cut Pro, CapCut Pro, or other approved tools required by your production workflow. If your workflow is Adobe-native, Oberstaff. can help you hire Adobe Premiere Pro editor talent that can work inside your existing project, template, and review standards.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-lime",
                     },
-                    // {
-                     
-                    //     title: "Curvas de retención: la métrica a evaluar al contratar editor de video YouTube",
-                    //  description:"Un montador tradicional busca estética; un estratega audiovisual busca retención. Al auditar a tu candidato, evalúa cómo estructura los primeros 30 segundos (el hook o gancho) para evitar la fuga inicial de espectadores. Debe dominar el uso de B-roll, saltos de escala (punch-ins) y diseño sonoro para mantener alta la Duración Media de Visualización (AVD)."
-                    // },
+                    {
+                        icon: "🗂️",
+                        title: "Media storage and file workflow",
+                        description:
+                            "Google Drive, Dropbox, Frame.io, OneDrive, approved cloud storage, proxy workflows, project-file conventions, masters, and platform-specific export folders.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-purple",
+                    },
+                    {
+                        icon: "📋",
+                        title: "Brand and production documentation",
+                        description:
+                            "Creative brief, brand guide, editing references, caption rules, LUTs, motion templates, music policy, folder structure, export specs, naming conventions, and approval process.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-green",
+                    },
+                    {
+                        icon: "📅",
+                        title: "Reporting and production cadence",
+                        description:
+                            "Daily production-queue visibility, weekly output review, monthly KPI or workflow summary, and calibration meetings based on content volume and operating needs.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-pink",
+                    },
                 ]}
             />
+        </div>
+
+         <div class="fade-in-section">
+            <BeneficiosPerfilDisenador
+                showInfoCard={false}
+                title="How to Hire a <span style='color:#6663FD; font-weight: 900;'>Video Editor</span>: Candidate Evaluation Guide"
+                subtitle="During interviews, evaluate how the candidate thinks through an edit, manages a real production workflow, and responds to feedback rather than judging only the visual polish of a finished reel:"
+                image="/img2-videos.webp"
+                imageAlt="Contratar editor de videos"
+                infoTitle=""
+                features={[
+                    {
+                        icon: "🎬",
+                        title: "Editing Judgment and Storytelling",
+                        description:
+                            "Can the candidate explain why a sequence is structured a certain way, how pacing changes by format, where B-roll or graphics add value, and what should be removed to protect clarity and retention?",
+                    },
+                    {
+                        icon: "⚙️",
+                        title: "Technical Workflow and File Discipline",
+                        description:
+                            "Ask how the candidate handles proxies, multicam footage, audio sync, codecs, color management, project organization, version control, review notes, source files, and final export specifications.",
+                    },
+                    {
+                        icon: "📈",
+                        title: "Retention and Performance Interpretation",
+                        description:
+                            "Confirm that the candidate can interpret watch time, completion rate, hook retention, drop-off points, creative-test results, and revision patterns without pretending that editing alone determines campaign or business performance.",
+                    },
+                ]}
+                infoItems={[
+                    {
+                        title: "",
+                        description: "",
+                    },
+                    {
+                        title: "",
+                        description: "",
+                    },
+                    {
+                        title: "",
+                        description: "",
+                    },
+                ]}
+            >
+            </BeneficiosPerfilDisenador>
         </div>
 
         <div class="fade-in-section">
@@ -987,6 +1111,10 @@ const queEsOutsourcingProps = {
             <PressSection title="Prensa y menciones" />
         </div> -->
 
+        <!-- <div class="fade-in-section">
+            <OtrosServiciosSection {...otrosServiciosProps} />
+        </div> -->
+
         <FAQSection
             title="<strong>Frequently Asked Questions</strong> About Hiring a Video Editor in the U.S."
             ctaText="."
@@ -1007,24 +1135,6 @@ const queEsOutsourcingProps = {
             />
         </div>
 
-        <div class="fade-in-section">
-            <FranjaEmpresasHome {...statsFranjaProps} />
-        </div>
-
-        <div class="fade-in-section">
-            <ProcessOberstaff
-                {...processProps}
-                items={processItems}
-            />
-        </div>
-
-        <div class="fade-in-section">
-            <OtrosServiciosSection {...otrosServiciosProps} />
-        </div>
-
-        <div class="fade-in-section hide-quote-border diff-custom-layout">
-            <QueEsServicioSection {...queEsOutsourcingProps} />
-        </div>
     </div>
 
     <style>
@@ -1060,6 +1170,10 @@ const queEsOutsourcingProps = {
         :global(.employer-use-cases-grid .icon-emoji-servicios-home) {
             font-size: 35px !important;
             padding: 0 !important;
+        }
+
+        :global(.guia-cards-grid:has(> .guia-card:nth-child(3):last-child) .guia-card:nth-child(3)) {
+            grid-column: 1 / -1;
         }
 
         @media (max-width: 768px) {

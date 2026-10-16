@@ -17,6 +17,7 @@ import GuiaContratacion from "../../../components/guia-contratacion-perfiles/Gui
 import FranjaEmpresasHome from "../../../components/franja-empresas-home/FranjaEmpresasHome.astro";
 import ProcessOberstaff from "../../../components/process/ProcessOberstaff.astro";
 import OtrosServiciosSection from "../../../components/otros-servicios-servicios/OtrosServiciosSection.astro";
+import OperationalGaps from "../../../components/operational-gaps/OperationalGaps.astro";
 
 const ogImage = "Contratar-Copywriter.webp";
 
@@ -86,20 +87,26 @@ const faqsList = [
 ];
 
 const statsFranjaProps = {
-    stat1Number: "70%",
-    stat1Label: "De ahorro en costes de infraestructura y gestión local",
-    stat2Number: "10",
-    stat2Label: "Países con cobertura operativa en LATAM",
-    stat3Number: "100%",
-    stat3Label: "De la carga administrativa delegada",
+    stat1Number: "Conversion-focused copywriting",
+    stat1Label: "Landing pages, ads, email, product copy, and sales assets built around commercial action.",
+    stat2Number: "Vetted writing and research skills",
+    stat2Label: "Buyer research, persuasion, editing, structure, and brand-voice adaptation.",
+    stat3Number: "U.S. hours alignment",
+    stat3Label: "Collaboration scheduled for Eastern, Central, Mountain, or Pacific needs.",
+    stat4Number: "Bilingual professionals (EN/ES)",
+    stat4Label: "U.S. business English with bilingual support when campaigns require Spanish-language adaptation.",
+    title: "A Dedicated Copywriting Professional, <span style='color: #6663FD; font-weight: 900;'>Supported by a Structured Hiring Model</span>",
+    note: "<span style='font-weight: 800; color: #1b1b1b;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> has supported U.S. companies in building remote teams with vetted Latin American professionals.",
     showLogos: false,
 };
 
 const processProps = {
     id: "hiring-process",
     useH3ForTitle: true,
-    title: "How our remote recruitment agency <span style='color: #6663FD; font-weight: 900; white-space: nowrap;'>supports your hiring process</span>",
-    ctaTitle: "Start saving today",
+    title: "Copywriting Deliverables and <span style='color: #6663FD; font-weight: 900;'>KPIs</span> You Can Track",
+    description: "Your dedicated copywriter works under a structured operating framework with deliverables and measurement signals connected to the assets being produced:",
+    footnote: "* KPI availability depends on analytics access, traffic and lead volume, attribution setup, campaign maturity, CRM or email integrations, and the objective of each asset. Copywriting can influence conversion, acquisition efficiency, and response, but results also depend on the offer, traffic quality, design, media, product, pricing, and sales execution.",
+    ctaTitle: "",
     ctaDescription: "A dedicated team will manage the entire process for you.",
     ctaBtnText: "Schedule a call",
     ctaBtnHref: "#formulario-perfil",
@@ -107,32 +114,32 @@ const processProps = {
 
 const processItems = [
     {
-        label: "Selection",
-        badge: "Free Consultation – Zero Upfront Obligation",
-        title: "1. Define Your Ideal Candidate Profile",
+        label: "Landing Pages",
+        badge: "KPI",
+        title: "Landing Page and Funnel Performance",
         description:
-            "Tell us your specific needs—whether you are looking for executive virtual assistants, digital marketers, accountants, bilingual customer support representatives, or high-level tech developers. Our expert corporate recruiters target professionals who perfectly align with your company culture, workflow standards, and business goals.",
+            "Tracking page conversion rate, form completion, qualified lead rate, CTA interaction, test results, and conversion differences between message variants when analytics and traffic volume allow meaningful comparison.",
     },
     {
-        label: "Structure",
-        badge: "Flexible Engagements – No Rigid Long-Term Lock-Ins",
-        title: "2. Select the Ideal Compliance Framework",
+        label: "Paid Media",
+        badge: "KPI",
+        title: "Paid Acquisition Message Performance",
         description:
-            "We review your requirements and consult you on the exact operational structure (EOR, CoR, or Staff Augmentation) that fully legally safeguards your cross-border operations from regulatory risks.",
+            "Reviewing CTR, CPL, CPA, lead quality, winning hooks, offer angles, and creative-copy combinations together with the paid media team to identify messages worth expanding or retiring.",
     },
     {
-        label: "Interview",
-        badge: "Vetted Candidates Ready to Start in Less Than 30 Days",
-        title: "3. Interview & Choose the Elite Top 1%",
+        label: "Email",
+        badge: "KPI",
+        title: "Email and Lifecycle Response",
         description:
-            "We present a curated shortlist of pre-vetted, interviewed candidates. You retain complete authority over final hiring decisions, while Oberstaff completely manages sourcing, technical testing, backgrounds, and documentation setup.",
+            "Monitoring clicks, replies, booked meetings, conversions, unsubscribes, and sequence-level outcomes according to the objective of each email and the tracking available in the CRM or email platform.",
     },
     {
-        label: "Integration",
-        badge: "Time Zone Alignment Guaranteed",
-        title: "4. Smooth Integration into Your Workflows",
+        label: "Monthly Report",
+        badge: "KPI",
+        title: "Monthly Copy and Messaging Report",
         description:
-            "Your new hire joins your team, working in lockstep with your US time zone. All international payroll, compliance, and multi-country operational variables are centralized into a single, straightforward monthly invoice in USD, keeping total transparency over daily production.",
+            "Summarizing completed assets, tests launched, recurring objections, message insights, winning claims, funnel friction, and recommended priorities for the next production cycle.",
     },
 ];
 
@@ -169,31 +176,6 @@ const otrosServiciosProps = {
             linkText: "View service",
         },
     ],
-};
-
-const queEsOutsourcingProps = {
-    title: "Qué es el outsourcing de personal con talento de <br> LATAM",
-    highlightWord: "con talento de <br> LATAM",
-    description: "<span style='color: #1B1B1B; font-weight: 700;'>Externaliza las funciones operativas de tu negocio sin ampliar tu estructura interna.</span> El outsourcing de personal te permite delegar a <span style='color: #1B1B1B; font-weight: 800;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> la selección, contratación y administración mensual de profesionales de áreas funcionales y de negocio: comercial, administración, marketing y soporte al cliente.",
-    imageSrc: "/img-outsourcing.webp",
-    imageAlt: "Profesional trabajando",
-    badgeText: "Carga administrativa 0%",
-    quoteText: "",
-    infoItems: [
-        {
-            icon: "⚙️",
-            title: "¿Cómo funciona?",
-            description: "Tú defines qué necesita la organización; nosotros ejecutamos el proceso completo y mantenemos la operativa mes a mes.",
-        },
-        {
-            icon: "🌍",
-            title: "¿Sirve para mi empresa?",
-            description: "Latinoamérica aporta una combinación ideal para las empresas españolas que buscan estos perfiles: español nativo, husos horarios compatibles con CET, formación profesional sólida en áreas de negocio y costes significativamente más competitivos que el mercado local.",
-        },
-    ],
-    diffIcon: "💡",
-    diffTitle: "¿En qué se diferencia este modelo?",
-    diffDescription: '<div class="diff-grid"><div class="diff-item"><strong>Staff Augmentation:</strong><span>Sumas talento a tu equipo y diriges el trabajo día a día.</span></div><div class="diff-item"><strong>Employer of Record (EOR):</strong><span>Contratas empleados sin abrir entidad local.</span></div><div class="diff-item highlighted"><strong>Outsourcing de Personal:</strong><span>Delegas la selección, contratación y administración del personal para reducir carga operativa interna.</span></div></div>',
 };
 ---
 
@@ -754,14 +736,18 @@ const queEsOutsourcingProps = {
         </LeadHeroSection>
 
         <div class="fade-in-section">
+            <FranjaEmpresasHome {...statsFranjaProps} />
+        </div>
+
+        <div class="fade-in-section">
             <QueEsServicioSection
                 title="The U.S. Hiring Challenge: High Copy Costs and Fragmented Brand Messaging"
                 highlightWord="el texto que no convierte es dinero que se evapora"
-                description="Many companies spread copywriting across marketing, founders, product teams, sales, and outside vendors. The result is fragmented ownership: value propositions change by channel, campaigns launch with inconsistent claims, and important objections are not carried from acquisition through the sales process."
+                description="Many companies spread copywriting across marketing, founders, product teams, sales, and outside vendors. The result is fragmented ownership: value propositions change by channel, campaigns launch with inconsistent claims, and important objections are not carried from acquisition through the sales process.<br /><br />Hiring locally can create a single owner, but it also adds recruiting time, payroll administration, benefits, management overhead, and replacement costs. Agencies can provide broader capacity, yet brand knowledge may be distributed across several strategists and writers. Freelancers can be effective for defined projects, but availability and continuity may vary. For teams hiring copywriter talent, the key is sustained context around your offer, buyer, brand voice, and funnel."
                 imageSrc="/img1-copy.webp"
                 imageAlt="Copywriter profesional redactando textos de conversión"
                 badgeText="Texts oriented to conversion"
-                quoteText="Hiring locally can create a single owner, but it also adds recruiting time, payroll administration, benefits, management overhead, and replacement costs. Agencies can provide broader capacity, yet brand knowledge may be distributed across several strategists and writers. Freelancers can be effective for defined projects, but availability and continuity may vary. For teams hiring copywriter talent, the key is sustained context around your offer, buyer, brand voice, and funnel."
+                quoteText=""
                 checklistTitle="Scaling acquisition in the United States becomes more expensive when the message does not convert the traffic you already pay to generate:"
                 checklistItems={[
                     "<strong>High U.S. Payroll Overhead:</strong> An in-house W-2 copywriter adds salary, employer payroll costs, benefits, recruiting time, software, and management overhead before the first asset is delivered.",
@@ -773,6 +759,19 @@ const queEsOutsourcingProps = {
                 diffIcon=""
                 diffTitle=""
                 diffDescription=""
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <OperationalGaps
+                title="Common operational gaps"
+                items={[
+                    "The value proposition changes between ads, landing pages, email, and sales materials.",
+                    "Marketing teams spend time rewriting copy instead of focusing on strategy, campaigns, and experimentation.",
+                    "Paid traffic reaches pages with weak hierarchy, unclear proof, generic CTAs, or unresolved buyer objections.",
+                    "Sales conversations reveal objections and winning arguments, but those insights are not documented or reused across the funnel.",
+                ]}
+                alertText="The dedicated Copywriter solves message continuity and conversion-copy ownership. The role does not replace an SEO/content strategist responsible for keyword strategy and editorial planning, a designer responsible for visual execution, or a paid media specialist responsible for campaign management and media buying."
             />
         </div>
 
@@ -838,6 +837,13 @@ const queEsOutsourcingProps = {
         </div>
 
          <div class="fade-in-section">
+            <ProcessOberstaff
+                {...processProps}
+                items={processItems}
+            />
+        </div>
+
+         <div class="fade-in-section">
             <RolesPerfil
                 title="Types of Copywriter Profiles According to <strong>Your Growth <br> Model</strong>"
                 subtitle="We help you hire copywriters with experience aligned to the commercial assets and channels that matter most to your operation."
@@ -898,6 +904,53 @@ const queEsOutsourcingProps = {
         </div>
 
         <div class="fade-in-section">
+            <BeneficiosPerfilDisenador
+                showInfoCard={false}
+                title="How <span style='color: #1b1b1b; font-weight: 800;'> Oberstaff<span style='color: #ff66cc'>.</span></span> Evaluates Copywriter Candidates"
+                subtitle="Before any candidate meets your team, Oberstaff completes a multi-stage, role-specific evaluation process:"
+                image="/img2-copy.webp"
+                imageAlt="Contratar copywriter"
+                infoTitle="Banderas rojas: qué revisar antes de contratar servicios de copywriting externos"
+                features={[
+                    {
+                        icon: "🗣️",
+                        title: "English and U.S. Market Communication Assessment",
+                        description:
+                            "Written and verbal English is evaluated according to the role, with attention to U.S. business communication, clarity, tone, vocabulary, editing quality, and bilingual EN/ES requirements when applicable.",
+                    },
+                    {
+                        icon: "✍️",
+                        title: "Copywriting Practical Assessment",
+                        description:
+                            "Candidates complete exercises relevant to the position, which may include buyer research, value-proposition work, headline and CTA writing, landing-page structure, email or ad copy, brand-voice adaptation, editing, and explanation of persuasive decisions.",
+                    },
+                    {
+                        icon: "🛡️",
+                        title: "Professional Reliability and Remote-Work Readiness",
+                        description:
+                            "Oberstaff reviews experience, references or work samples when available, communication habits, schedule alignment, problem-solving, professional conduct, and readiness to collaborate securely with a distributed U.S. team.",
+                    },
+                ]}
+                infoItems={[
+                    {
+                        title: "",
+                        description: "",
+                    },
+                    {
+                        title: "",
+                        description: "",
+                    },
+                    {
+                        title: "",
+                        description: "",
+                    },
+                ]}
+            >
+                <div class="meta-custom-notice">Only candidates who meet the agreed role requirements are presented. The final hiring decision remains with your company.</div>
+            </BeneficiosPerfilDisenador>
+        </div>
+
+        <div class="fade-in-section">
             <EorStepsSection
                 title="How to Hire <span style='color: #6663FD; font-weight: 800;'>Remote Copywriter</span> Talent with <span style='color: #1b1b1b; font-weight: 800;'> Oberstaff<span style='color: #ff66cc'>.</span></span>"
                 subtitle="If you need to <strong>find a copywriter</strong> for a U.S. team, the process should match the role to buyer research, channel priorities, brand voice, content volume, performance goals, language requirements, and U.S. time-zone overlap. <span style='color: #1b1b1b; font-weight: 800;'> Oberstaff<span style='color: #ff66cc'>.</span></span> helps U.S. companies <strong>hire copywriters in Latin America</strong> while reducing hiring friction and keeping the final selection with your team."
@@ -942,6 +995,79 @@ const queEsOutsourcingProps = {
                 text="Oberstaff. connects U.S. businesses with vetted Latin American copywriters who can research buyers, clarify value propositions, write landing pages, support paid campaigns, create lifecycle messaging, and collaborate during the U.S. business hours your operation requires."
                 buttonText="👉 Hire Copywriter Talent for Your U.S. Team"
                 buttonHref="#formulario-perfil"
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <ServicesSection
+                sectionId="industries"
+                titleId="industries-title"
+                title="Where a Dedicated <strong>Copywriter</strong> Creates the Most Value"
+                cardTitleTag="h3"
+                description="Our remote copywriter placements can support conversion and message consistency across business models where clear commercial communication directly affects acquisition, sales, or retention:"
+                customClass="employer-use-cases"
+                services={[
+                    {
+                        icon: "🛒",
+                        title: "eCommerce and DTC brands",
+                        description:
+                            "Writing product pages, collection copy, promotional campaigns, launch messaging, cart and checkout microcopy, lifecycle sequences, and paid creative angles around product benefits and customer objections.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-green",
+                    },
+                    {
+                        icon: "💻",
+                        title: "B2B SaaS & Tech Startups",
+                        description:
+                            "Clarifying complex products, value propositions, landing pages, demo-request flows, nurture sequences, feature messaging, comparison pages, sales assets, and demand-generation campaigns for technical or multi-stakeholder buying journeys.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-pink",
+                    },
+                    {
+                        icon: "🏠",
+                        title: "Real Estate & Professional Services",
+                        description:
+                            "Developing service-page copy, lead-generation landing pages, email follow-up, local-market messaging, credibility proof, proposals, and sales materials for high-consideration services where trust and clarity affect lead quality.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-lime",
+                    },
+                    {
+                        icon: "🩺",
+                        title: "Healthcare, wellness, and aesthetics",
+                        description:
+                            "Creating clear service messaging, educational conversion pages, appointment-oriented landing pages, campaign copy, FAQs, and compliant review workflows while routing clinical, legal, privacy, or regulated claims to authorized reviewers.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-purple",
+                    },
+                    {
+                        icon: "🏨",
+                        title: "Hospitality and multi-location businesses",
+                        description:
+                            "Writing location pages, offers, booking messages, campaign landing pages, email promotions, local value propositions, and guest-facing microcopy that keeps brand positioning consistent across markets and properties.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-green",
+                    },
+                    {
+                        icon: "🎓",
+                        title: "Education, coaching, and creator-led brands",
+                        description:
+                            "Supporting launches, lead magnets, webinar funnels, course pages, membership offers, email sequences, sales pages, and audience messaging where the founder or creator voice must remain recognizable while conversion structure improves.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-pink",
+                    },
+                ]}
             />
         </div>
 
@@ -1039,71 +1165,49 @@ const queEsOutsourcingProps = {
         </div>
 
         <div class="fade-in-section">
-            <BeneficiosPerfilDisenador
-                showInfoCard={false}
-                title="Copywriter Remote Integration and <span style='color:#6663FD; font-weight: 900;'>U.S. Time-Zone Coverage</span>"
-                subtitle="The specialist works inside the systems, briefs, review workflows, and brand standards your company already uses. Integration should be designed around secure access, clear ownership, documented approvals, consistent feedback, and realistic production expectations."
-                image="/img2-copy.webp"
-                imageAlt="Contratar copywriter"
-                infoTitle="Banderas rojas: qué revisar antes de contratar servicios de copywriting externos"
-                features={[
+            <GuiaContratacion
+                titleTag="h2"
+                headerTitle="Copywriter Remote Integration and <span style='color:#6663FD; font-weight: 900;'>U.S. Time-Zone Coverage</span>"
+                headerDescription="The specialist works inside the systems, briefs, review workflows, and brand standards your company already uses. Integration should be designed around secure access, clear ownership, documented approvals, consistent feedback, and realistic production expectations."
+                cards={[
                     {
-                        icon: "🎯",
                         title: "U.S. time-zone coverage",
                         description:
                             "Schedule overlap can be aligned with Eastern, Central, Mountain, or Pacific business hours. Extended or special coverage must be defined in the proposal.",
+                        description2: "",
                     },
                     {
-                        icon: "⚡",
                         title: "Communication channels",
                         description:
                             "Slack, Microsoft Teams, email, project management tools, and recurring calibration meetings with the internal marketing owner.",
+                        description2: "",
                     },
                     {
-                        icon: "🛡️",
                         title: "Writing and collaboration stack",
                         description:
                             "Google Docs, Microsoft 365, Notion, Figma comments, WordPress, Webflow, Shopify, or the approved systems your team uses to draft, review, and publish copy.",
+                        description2: "",
                     },
                     {
-                        icon: "📈",
                         title: "Marketing and performance context",
                         description:
                             "Google Analytics, HubSpot, Salesforce, Klaviyo, ad-platform reporting, heatmaps, CRM data, or approved dashboards that help the copywriter understand buyer behavior and asset performance.",
+                        description2: "",
                     },
                     {
-                        icon: "📝",
                         title: "Brand and messaging documentation",
                         description:
                             "Brand voice guide, ICP and buyer research, product documentation, proof library, claims guidance, offer details, objections, compliance notes, and existing message architecture.",
+                        description2: "",
                     },
                     {
-                        icon: "📅",
                         title: "Review and reporting cadence",
                         description:
                             "Prioritized production queue, documented feedback, version control, test learnings, monthly message insights, and calibration meetings based on operational needs.",
+                        description2: "",
                     },
                 ]}
-                infoItems={[
-                    {
-                        title: "",
-                        description: "",
-                    },
-                    {
-                        title: "",
-                        description: "",
-                    },
-                    {
-                        title: "",
-                        description: "",
-                    },
-                ]}
-            >
-                <!-- <div class="meta-custom-notice">
-                    Recibes una sola factura mensual en euros y mantienes la
-                    propiedad del trabajo y las piezas finales. -->
-                </div>
-            </BeneficiosPerfilDisenador>
+            />
         </div>
 
         <div class="fade-in-section">
@@ -1170,6 +1274,10 @@ const queEsOutsourcingProps = {
             />
         </div>
 
+        <!-- <div class="fade-in-section">
+            <OtrosServiciosSection {...otrosServiciosProps} />
+        </div> -->
+
         <div class="fade-in-section">
             <FAQSection
                 title="Frequently Asked Questions About <strong>Hiring a Copywriter</strong> in the U.S."
@@ -1196,24 +1304,6 @@ const queEsOutsourcingProps = {
             />
         </div>
 
-        <div class="fade-in-section">
-            <FranjaEmpresasHome {...statsFranjaProps} />
-        </div>
-
-        <div class="fade-in-section">
-            <ProcessOberstaff
-                {...processProps}
-                items={processItems}
-            />
-        </div>
-
-        <div class="fade-in-section">
-            <OtrosServiciosSection {...otrosServiciosProps} />
-        </div>
-
-        <div class="fade-in-section hide-quote-border diff-custom-layout">
-            <QueEsServicioSection {...queEsOutsourcingProps} />
-        </div>
     </div>
 
     <style>
@@ -1230,11 +1320,6 @@ const queEsOutsourcingProps = {
             max-width: 1000px;
             margin-left: auto;
             margin-right: auto;
-        }
-
-        .service-detail-container
-            :global(.guia-cards-grid .guia-card:nth-child(5)) {
-            grid-column: 1 / -1;
         }
 
         .service-detail-container :global(.employer-use-cases-grid) {
@@ -1294,6 +1379,10 @@ const queEsOutsourcingProps = {
             background-color: #fafafc !important;
 
             padding-bottom: 80px !important;
+        }
+
+        :global(.guia-cards-grid:has(> .guia-card:nth-child(3):last-child) .guia-card:nth-child(3)) {
+            grid-column: 1 / -1;
         }
 
         /* Estilos específicos para la sección FAQ en esta página */

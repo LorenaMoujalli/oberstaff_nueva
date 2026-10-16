@@ -17,6 +17,7 @@ import GuiaContratacion from "../../../components/guia-contratacion-perfiles/Gui
 import FranjaEmpresasHome from "../../../components/franja-empresas-home/FranjaEmpresasHome.astro";
 import ProcessOberstaff from "../../../components/process/ProcessOberstaff.astro";
 import OtrosServiciosSection from "../../../components/otros-servicios-servicios/OtrosServiciosSection.astro";
+import OperationalGaps from "../../../components/operational-gaps/OperationalGaps.astro";
 
 const ogImage = "Experto-en-Meta-Ads.webp";
 
@@ -68,20 +69,26 @@ const faqsList = [
 ];
 
 const statsFranjaProps = {
-    stat1Number: "70%",
-    stat1Label: "De ahorro en costes de infraestructura y gestión local",
-    stat2Number: "10",
-    stat2Label: "Países con cobertura operativa en LATAM",
-    stat3Number: "100%",
-    stat3Label: "De la carga administrativa delegada",
+    stat1Number: "Dedicated paid social specialist focus",
+    stat1Label: "Campaign structure, optimization, testing, and reporting.",
+    stat2Number: "Vetted Meta Ads expert skills",
+    stat2Label: "Business Manager, Pixel/CAPI, audiences, analytics, and performance judgment.",
+    stat3Number: "U.S. hours alignment",
+    stat3Label: "Coverage scheduled for Eastern, Central, Mountain, or Pacific needs.",
+    stat4Number: "Bilingual professionals (EN/ES)",
+    stat4Label: "Professional U.S. English and Spanish support when campaigns require bilingual execution.",
+    title: "A Dedicated Facebook Ads Specialist, <span style='color: #6663FD; font-weight: 900;'>Supported by a Structured Hiring Model</span>",
+    note: "<span style='font-weight: 800; color: #1b1b1b;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> has supported U.S. companies in building remote teams with vetted Latin American professionals.",
     showLogos: false,
 };
 
 const processProps = {
     id: "hiring-process",
     useH3ForTitle: true,
-    title: "How our remote recruitment agency <span style='color: #6663FD; font-weight: 900; white-space: nowrap;'>supports your hiring process</span>",
-    ctaTitle: "Start saving today",
+    title: "Facebook Ads Expert Deliverables and <span style='color: #6663FD; font-weight: 900;'>KPIs</span> You Can Track",
+    description: "Your dedicated Facebook Ads expert works under a structured operating framework with deliverables and KPIs connected to acquisition efficiency, signal quality, creative learning, and business outcomes:",
+    footnote: "* KPI availability depends on platform permissions, conversion volume, campaign objective, attribution setup, CRM or ecommerce integration, sales feedback, tracking quality, and the agreed scope. Meta Ads performance also depends on the offer, creative production, landing experience, pricing, sales process, and fulfillment capacity.",
+    ctaTitle: "",
     ctaDescription: "A dedicated team will manage the entire process for you.",
     ctaBtnText: "Schedule a call",
     ctaBtnHref: "#formulario-perfil",
@@ -89,32 +96,32 @@ const processProps = {
 
 const processItems = [
     {
-        label: "Selection",
-        badge: "Free Consultation – Zero Upfront Obligation",
-        title: "1. Define Your Ideal Candidate Profile",
+        label: "Account & Budget",
+        badge: "KPI",
+        title: "Account and Budget Management",
         description:
-            "Tell us your specific needs—whether you are looking for executive virtual assistants, digital marketers, accountants, bilingual customer support representatives, or high-level tech developers. Our expert corporate recruiters target professionals who perfectly align with your company culture, workflow standards, and business goals.",
+            "Tracking active campaigns, spend pacing, delivery, audience pressure, learning status, frequency, budget allocation, and the account changes made during each optimization cycle.",
     },
     {
-        label: "Structure",
-        badge: "Flexible Engagements – No Rigid Long-Term Lock-Ins",
-        title: "2. Select the Ideal Compliance Framework",
+        label: "Performance",
+        badge: "KPI",
+        title: "Performance and Efficiency Metrics",
         description:
-            "We review your requirements and consult you on the exact operational structure (EOR, CoR, or Staff Augmentation) that fully legally safeguards your cross-border operations from regulatory risks.",
+            "Monitoring CPM, CTR, CPC, CPL, CPA, ROAS, MER, conversion rate, cost per qualified opportunity, and other metrics that match the company's funnel and revenue model.",
     },
     {
-        label: "Interview",
-        badge: "Vetted Candidates Ready to Start in Less Than 30 Days",
-        title: "3. Interview & Choose the Elite Top 1%",
+        label: "Creative",
+        badge: "KPI",
+        title: "Creative and Funnel Learning",
         description:
-            "We present a curated shortlist of pre-vetted, interviewed candidates. You retain complete authority over final hiring decisions, while Oberstaff completely manages sourcing, technical testing, backgrounds, and documentation setup.",
+            "Documenting winning and losing hooks, angles, formats, audiences, landing-page patterns, lead-quality signals, sales feedback, and measurement issues that should shape the next testing cycle.",
     },
     {
-        label: "Integration",
-        badge: "Time Zone Alignment Guaranteed",
-        title: "4. Smooth Integration into Your Workflows",
+        label: "Monthly Report",
+        badge: "KPI",
+        title: "Monthly Paid Social Report",
         description:
-            "Your new hire joins your team, working in lockstep with your US time zone. All international payroll, compliance, and multi-country operational variables are centralized into a single, straightforward monthly invoice in USD, keeping total transparency over daily production.",
+            "Summarizing spend, outcomes, attribution caveats, campaign learnings, creative fatigue, pipeline or revenue signals, actions taken, recommended tests, and the priorities for the next period.",
     },
 ];
 
@@ -151,31 +158,6 @@ const otrosServiciosProps = {
             linkText: "View service",
         },
     ],
-};
-
-const queEsOutsourcingProps = {
-    title: "Qué es el outsourcing de personal con talento de <br> LATAM",
-    highlightWord: "con talento de <br> LATAM",
-    description: "<span style='color: #1B1B1B; font-weight: 700;'>Externaliza las funciones operativas de tu negocio sin ampliar tu estructura interna.</span> El outsourcing de personal te permite delegar a <span style='color: #1B1B1B; font-weight: 800;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> la selección, contratación y administración mensual de profesionales de áreas funcionales y de negocio: comercial, administración, marketing y soporte al cliente.",
-    imageSrc: "/img-outsourcing.webp",
-    imageAlt: "Profesional trabajando",
-    badgeText: "Carga administrativa 0%",
-    quoteText: "",
-    infoItems: [
-        {
-            icon: "⚙️",
-            title: "¿Cómo funciona?",
-            description: "Tú defines qué necesita la organización; nosotros ejecutamos el proceso completo y mantenemos la operativa mes a mes.",
-        },
-        {
-            icon: "🌍",
-            title: "¿Sirve para mi empresa?",
-            description: "Latinoamérica aporta una combinación ideal para las empresas españolas que buscan estos perfiles: español nativo, husos horarios compatibles con CET, formación profesional sólida en áreas de negocio y costes significativamente más competitivos que el mercado local.",
-        },
-    ],
-    diffIcon: "💡",
-    diffTitle: "¿En qué se diferencia este modelo?",
-    diffDescription: '<div class="diff-grid"><div class="diff-item"><strong>Staff Augmentation:</strong><span>Sumas talento a tu equipo y diriges el trabajo día a día.</span></div><div class="diff-item"><strong>Employer of Record (EOR):</strong><span>Contratas empleados sin abrir entidad local.</span></div><div class="diff-item highlighted"><strong>Outsourcing de Personal:</strong><span>Delegas la selección, contratación y administración del personal para reducir carga operativa interna.</span></div></div>',
 };
 ---
 
@@ -740,14 +722,18 @@ const queEsOutsourcingProps = {
         </LeadHeroSection>
 
         <div class="fade-in-section">
+            <FranjaEmpresasHome {...statsFranjaProps} />
+        </div>
+
+        <div class="fade-in-section">
             <QueEsServicioSection
                 title="The U.S. Paid Social Hiring Challenge: High Overhead and Fragmented Meta Ads Execution"
                 highlightWord="Meta Ads"
-                description="Many U.S. companies split Meta Ads responsibilities across a marketing manager, agency, freelancer, designer, and sales team. The result is fragmented ownership: campaign changes happen without clean testing, creative feedback arrives late, tracking issues remain unresolved, and platform-reported conversions do not always match what the CRM or ecommerce system shows."
+                description="Many U.S. companies split Meta Ads responsibilities across a marketing manager, agency, freelancer, designer, and sales team. The result is fragmented ownership: campaign changes happen without clean testing, creative feedback arrives late, tracking issues remain unresolved, and platform-reported conversions do not always match what the CRM or ecommerce system shows.<br /><br />Hiring locally can create clear ownership, but it also adds recruiting time, payroll administration, benefits, management overhead, and replacement costs. Agencies can provide broader resources, yet day-to-day account knowledge may be distributed across multiple people. Freelancers can work well for defined projects, but availability and continuity may vary. A dedicated Facebook Ads expert creates one accountable owner for campaign structure, optimization, measurement, testing, and performance follow-through."
                 imageSrc="/img1-meta.webp"
                 imageAlt="Especialista en Meta Ads analizando campañas de Meta"
                 badgeText="Real-Time Optimization"
-                quoteText="Hiring locally can create clear ownership, but it also adds recruiting time, payroll administration, benefits, management overhead, and replacement costs. Agencies can provide broader resources, yet day-to-day account knowledge may be distributed across multiple people. Freelancers can work well for defined projects, but availability and continuity may vary. A dedicated Facebook Ads expert creates one accountable owner for campaign structure, optimization, measurement, testing, and performance follow-through. "
+                quoteText=""
                 checklistTitle="Scaling Facebook and Instagram advertising in the United States can become expensive and inefficient when the operating model is not clear:"
                 checklistItems={[
                     "<span style='color: #1b1b1b; font-weight: 600;'>High U.S. Hiring Overhead:</span> A direct in-house hire adds salary, payroll taxes, benefits, recruiting effort, onboarding time, software access, and management costs beyond the advertising budget itself.",
@@ -759,6 +745,19 @@ const queEsOutsourcingProps = {
                 diffIcon=""
                 diffTitle=""
                 diffDescription=""
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <OperationalGaps
+                title="Common operational gaps"
+                items={[
+                    "Campaigns keep spending even when lead quality, close rate, or margin indicates that platform efficiency is misleading.",
+                    "Creative testing is reactive, with the same ads running too long and no documented hypothesis or refresh cadence.",
+                    "Meta Pixel, Conversions API, GA4, ecommerce, and CRM data do not reconcile, making attribution and optimization less reliable.",
+                    "Budgets, audiences, bids, or copy change too frequently to produce clean learning or a repeatable scaling process.",
+                ]}
+                alertText="The dedicated Facebook Ads expert solves the paid-media ownership and optimization problem. The role does not replace creative production, offer strategy, landing-page development, sales follow-up, CRM ownership, or ecommerce operations. Those functions should collaborate with the specialist so campaign decisions reflect the full acquisition system."
             />
         </div>
 
@@ -824,6 +823,13 @@ const queEsOutsourcingProps = {
         </div>
 
         <div class="fade-in-section">
+            <ProcessOberstaff
+                {...processProps}
+                items={processItems}
+            />
+        </div>
+
+        <div class="fade-in-section">
             <RolesPerfil
                 title="Types of <strong>Facebook Ads Experts</strong> According to Your Growth Model"
                 subtitle="We help U.S. companies hire Facebook Ads expert talent specialized in the acquisition model, funnel, and technical requirements that matter most to the business:"
@@ -879,6 +885,35 @@ const queEsOutsourcingProps = {
         </div>
 
         <div class="fade-in-section">
+            <GuiaContratacion
+                titleTag="h2"
+                headerTitle="How <span style='color: #1b1b1b; font-weight: 800;'> Oberstaff<span style='color: #ff66cc'>.</span></span> Evaluates Facebook Ads Expert Candidates"
+                headerDescription="Before any candidate meets your team, Oberstaff completes a multi-stage, role-specific evaluation process:"
+                footerText="Only candidates who meet the agreed role requirements are presented. The final hiring decision remains with your company."
+                cards={[
+                    {
+                        title: "English and U.S. Business Communication Assessment",
+                        description:
+                            "Written and verbal English is evaluated according to the role, typically from B2 to C2, with attention to campaign communication, analytical explanations, stakeholder collaboration, clarity, and bilingual EN/ES requirements when applicable.",
+                        description2: "",
+                    },
+                    {
+                        title: "Meta Ads Practical Assessment",
+                        description:
+                            "Candidates are evaluated on account diagnosis, campaign architecture, audience logic, performance metrics, creative-testing decisions, Pixel/CAPI concepts, attribution reasoning, optimization scenarios, and the tools relevant to the position.",
+                        description2: "",
+                    },
+                    {
+                        title: "Professional Reliability and Remote-Work Readiness",
+                        description:
+                            "Oberstaff reviews experience, references or work samples when available, communication habits, schedule alignment, analytical judgment, documentation discipline, professional conduct, and readiness to work securely with a distributed U.S. team.",
+                        description2: "",
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
             <EorStepsSection
                 title="How to <span style='color: #6663FD; font-weight: 800;'>Hire Facebook Ads Expert</span> Talent with <span style='color: #1b1b1b; font-weight: 800;'> Oberstaff<span style='color: #ff66cc'>.</span></span>"
                 subtitle="The process is designed for U.S. companies that want to <strong>outsource Facebook Ads</strong> execution to dedicated talent in Latin America while reducing hiring risk, shortening time to shortlist, and matching the professional to ad spend, funnel complexity, tracking requirements, creative volume, business model, U.S. time-zone overlap, and revenue objectives"
@@ -923,6 +958,79 @@ const queEsOutsourcingProps = {
                 text="Oberstaff.connects U.S. businesses with vetted Latin American <strong>Meta Ads specialist</strong> professionals who can manage Facebook and Instagram campaigns, improve measurement, coordinate creative testing, optimize budgets, support lead generation or ecommerce growth, and collaborate during the U.S. business hours your operation requires."
                 buttonText="👉 Hire Facebook Ads Expert Talent for Your U.S. Team"
                 buttonHref="#formulario-perfil"
+            />
+        </div>
+
+         <div class="fade-in-section">
+            <ServicesSection
+                sectionId="industries"
+                titleId="industries-title"
+                title="Where a Dedicated <strong>Facebook Ads Expert</strong> Creates the Most Value"
+                cardTitleTag="h3"
+                description="Our remote Meta Ads placements support acquisition programs across U.S. industries where paid social performance depends on disciplined testing, reliable tracking, and fast coordination with sales or ecommerce teams:"
+                customClass="employer-use-cases"
+                services={[
+                    {
+                        icon: "🛒",
+                        title: "eCommerce and DTC brands",
+                        description:
+                            "Managing prospecting, catalog sales, Advantage+ campaigns, dynamic remarketing, cart recovery, creative iteration, audience exclusions, ROAS, MER, and margin-aware scaling for online stores.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-green",
+                    },
+                    {
+                        icon: "💻",
+                        title: "B2B SaaS & Tech Startups",
+                        description:
+                            "Generating demo requests, trial signups, webinar registrations, content leads, and pipeline opportunities while connecting Meta campaign data with CRM stages, lead quality, and sales feedback.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-pink",
+                    },
+                    {
+                        icon: "🏠",
+                        title: "Real Estate, Home Services & Local Services",
+                        description:
+                            "Building lead-generation campaigns by state, metro, ZIP or service area for calls, quote requests, consultations, appointments, property inquiries, and local demand, with retargeting tied to first-party audience signals.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-lime",
+                    },
+                    {
+                        icon: "🩺",
+                        title: "Healthcare, wellness, and aesthetics",
+                        description:
+                            "Supporting appointment and consultation acquisition with approved service messaging, lead forms, calls, landing pages, remarketing, and careful review of Meta advertising policies for regulated or sensitive categories.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-purple",
+                    },
+                    {
+                        icon: "🏨",
+                        title: "Hospitality, franchises, and multi-location businesses",
+                        description:
+                            "Driving bookings, local promotions, events, store or venue traffic, seasonal demand, and location-level campaigns segmented by city, market, audience, or service territory.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-green",
+                    },
+                    {
+                        icon: "🎓",
+                        title: "Education, Courses & Professional Training",
+                        description:
+                            "Generating student inquiries, admissions leads, webinar registrations, application starts, course purchases, and remarketing sequences across defined U.S. markets and audience segments.",
+                        linkText: "",
+                        href: "",
+                        customIconBg: "transparent",
+                        cardClass: "card-pink",
+                    },
+                ]}
             />
         </div>
 
@@ -1019,49 +1127,78 @@ const queEsOutsourcingProps = {
             />
         </div>
 
+         <div class="fade-in-section">
+            <GuiaContratacion
+                titleTag="h2"
+                headerTitle="<span style='color:#6663FD; font-weight: 900;'>Facebook Ads Specialist</span> Remote Integration and U.S. Time-Zone Coverage"
+                headerDescription="The specialist works inside the advertising, analytics, communication, and revenue systems your company already uses. Integration should be designed around secure permissions, clear account ownership, documented optimization routines, sales or ecommerce feedback, and realistic U.S. business-hour overlap."
+                cards={[
+                    {
+                        title: "U.S. time-zone coverage",
+                        description:
+                            "Schedule overlap can be aligned with Eastern, Central, Mountain, or Pacific business hours. Extended, weekend, or multi-shift coverage must be defined in the proposal.",
+                        description2: "",
+                    },
+                    {
+                        title: "Communication channels",
+                        description:
+                            "Slack, Microsoft Teams, email, project management tools, and recurring optimization or performance meetings with the internal marketing owner.",
+                        description2: "",
+                    },
+                    {
+                        title: "Advertising platforms and assets",
+                        description:
+                            "Meta Business Manager, Ads Manager, Events Manager, Facebook and Instagram placements, product catalogs, audiences, lead forms, and company-owned ad accounts used by the Facebook Ads specialist.",
+                        description2: "",
+                    },
+                    {
+                        title: "Measurement and tracking systems",
+                        description:
+                            "Meta Pixel, Conversions API, GTM, GA4, Looker Studio, ecommerce analytics, call tracking, or other approved measurement environments.",
+                        description2: "",
+                    },
+                    {
+                        title: "Sales and eCommerce handoffs",
+                        description:
+                            "HubSpot, Salesforce, Shopify, WooCommerce, call systems, landing-page tools, or the CRM and commerce platforms already used by the company.",
+                        description2: "",
+                    },
+                    {
+                        title: "Reporting cadence",
+                        description:
+                            "Daily account visibility when required, weekly optimization notes, monthly KPI reporting, creative-learning summaries, and calibration meetings based on operational needs.",
+                        description2: "",
+                    },
+                ]}
+            />
+        </div>
+
+
         <div class="fade-in-section">
             <BeneficiosPerfilDisenador
                 showInfoCard={false}
-                title="<span style='color:#6663FD; font-weight: 900;'>Facebook Ads Specialist</span> Remote Integration and U.S. Time-Zone Coverage"
-                subtitle="The specialist works inside the advertising, analytics, communication, and revenue systems your company already uses. Integration should be designed around secure permissions, clear account ownership, documented optimization routines, sales or ecommerce feedback, and realistic U.S. business-hour overlap."
+                title="How to <span style='color:#6663FD; font-weight: 900;'>Hire Facebook Ads Specialist</span>: Talent: Candidate Evaluation Guide"
+                subtitle="During interviews, evaluate diagnosis, testing logic, measurement judgment, and the ability to connect paid social metrics with real business outcomes. Whether you need to <strong>hire a media buyer</strong> or a broader <strong>Meta Ads expert</strong>, focus on how the candidate thinks through account problems rather than only on screenshots of ROAS or platform certifications:"
                 image="/img2-meta.webp"
                 imageAlt="Experto en Meta Ads revisando métricas de Business Manager"
                 features={[
                     {
-                        icon: "🎯",
-                        title: "U.S. time-zone coverage",
+                        icon: "🔎",
+                        title: "Account Audit and Prioritization",
                         description:
-                            "Schedule overlap can be aligned with Eastern, Central, Mountain, or Pacific business hours. Extended, weekend, or multi-shift coverage must be defined in the proposal.",
+                            "Can the <strong>Facebook advertising specialist</strong> identify the highest-impact issues in an account, separate structural problems from normal volatility, and explain what should be fixed before increasing spend?",
                     },
                     {
-                        icon: "⚡",
-                        title: "Communication channels",
+                        icon: "📈",
+                        title: "Measurement and Attribution Judgment",
                         description:
-                            "Slack, Microsoft Teams, email, project management tools, and recurring optimization or performance meetings with the internal marketing owner.",
+                            "Ask how the candidate would investigate a mismatch between Meta-reported conversions and CRM or ecommerce revenue, including Pixel/CAPI signal quality, event setup, attribution windows, deduplication, and offline feedback.",
                     },
                     {
-                        icon: "🛡️",
-                        title: "Advertising platforms and assets",
+                        icon: "🎨",
+                        title: "Creative and Business Interpretation",
                         description:
-                            "Meta Business Manager, Ads Manager, Events Manager, Facebook and Instagram placements, product catalogs, audiences, lead forms, and company-owned ad accounts used by the Facebook Ads specialist.",
-                    },
-                    {
-                        icon: "📊",
-                        title: "Measurement and tracking systems",
-                        description:
-                            "Meta Pixel, Conversions API, GTM, GA4, Looker Studio, ecommerce analytics, call tracking, or other approved measurement environments.",
-                    },
-                    {
-                        icon: "🤝",
-                        title: "Sales and eCommerce handoffs",
-                        description:
-                            "HubSpot, Salesforce, Shopify, WooCommerce, call systems, landing-page tools, or the CRM and commerce platforms already used by the company.",
-                    },
-                    {
-                        icon: "📅",
-                        title: "Reporting cadence",
-                        description:
-                            "Daily account visibility when required, weekly optimization notes, monthly KPI reporting, creative-learning summaries, and calibration meetings based on operational needs.",
+                            "Confirm that the candidate can interpret CPM, CTR, CPC, CPL, CPA, ROAS, MER, frequency, lead quality, close rate, and creative fatigue together rather than optimizing a single platform metric in isolation.",
                     },
                 ]}
             >
@@ -1069,31 +1206,7 @@ const queEsOutsourcingProps = {
                     Tú recibes una sola factura mensual en euros. Escala tus
                     ventas en Meta.
                 </div> -->
-            </BeneficiosPerfilDisenador>
-        </div>
-
-        <div class="fade-in-section">
-            <GuiaContratacion
-                titleTag="h2"
-                headerTitle="How to <span style='color:#6663FD; font-weight: 900;'>Hire Facebook Ads Specialist</span>: Talent: Candidate Evaluation Guide"
-                headerDescription="During interviews, evaluate diagnosis, testing logic, measurement judgment, and the ability to connect paid social metrics with real business outcomes. Whether you need to <strong>hire a media buyer</strong> or a broader <strong>Meta Ads expert</strong>, focus on how the candidate thinks through account problems rather than only on screenshots of ROAS or platform certifications:"
-                cards={[
-                    {
-                        title: "Account Audit and Prioritization",
-                        description:
-                            "Can the <strong>Facebook advertising specialist</strong> identify the highest-impact issues in an account, separate structural problems from normal volatility, and explain what should be fixed before increasing spend?",
-                    },
-                    {
-                        title: "Measurement and Attribution Judgment",
-                        description:
-                            "Ask how the candidate would investigate a mismatch between Meta-reported conversions and CRM or ecommerce revenue, including Pixel/CAPI signal quality, event setup, attribution windows, deduplication, and offline feedback.",
-                    },
-                    {
-                        title: "Creative and Business Interpretation",
-                        description:"Confirm that the candidate can interpret CPM, CTR, CPC, CPL, CPA, ROAS, MER, frequency, lead quality, close rate, and creative fatigue together rather than optimizing a single platform metric in isolation."
-                    },
-                ]}
-            />
+                        </BeneficiosPerfilDisenador>
         </div>
 
         <div class="fade-in-section">
@@ -1138,6 +1251,10 @@ const queEsOutsourcingProps = {
         </div>
          -->
 
+        <!-- <div class="fade-in-section">
+            <OtrosServiciosSection {...otrosServiciosProps} />
+        </div> -->
+
         <div class="fade-in-section">
             <FAQSection
                 title="Frequently Asked Questions About Hiring a <strong>Facebook Ads Expert</strong> in the U.S."
@@ -1164,24 +1281,6 @@ const queEsOutsourcingProps = {
             />
         </div>
 
-        <div class="fade-in-section">
-            <FranjaEmpresasHome {...statsFranjaProps} />
-        </div>
-
-        <div class="fade-in-section">
-            <ProcessOberstaff
-                {...processProps}
-                items={processItems}
-            />
-        </div>
-
-        <div class="fade-in-section">
-            <OtrosServiciosSection {...otrosServiciosProps} />
-        </div>
-
-        <div class="fade-in-section hide-quote-border diff-custom-layout">
-            <QueEsServicioSection {...queEsOutsourcingProps} />
-        </div>
     </div>
 
     <style>
@@ -1227,6 +1326,10 @@ const queEsOutsourcingProps = {
             background-color: #fafafc !important;
 
             padding-bottom: 80px !important;
+        }
+
+        :global(.guia-cards-grid:has(> .guia-card:nth-child(3):last-child) .guia-card:nth-child(3)) {
+            grid-column: 1 / -1;
         }
 
         /* Estilos específicos para la sección FAQ en esta página */

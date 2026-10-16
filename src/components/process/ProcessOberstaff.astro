@@ -17,6 +17,7 @@ interface ProcessItem {
 interface Props {
     title?: string;
     description?: string;
+    footnote?: string;
     items?: ProcessItem[];
     ctaTitle?: string;
     ctaDescription?: string;
@@ -30,6 +31,7 @@ interface Props {
 const {
     title = 'Cómo <strong>reducir costes de personal</strong> contratando talento remoto en Latinoamérica',
     description,
+    footnote,
     items = [
         {
             label: "Selección",
@@ -109,6 +111,8 @@ const panes = items.map((item, index) => ({
                 btnHref={ctaBtnHref}
             />
         </div>
+
+        {footnote && <p class="process-footnote" set:html={footnote} />}
     </div>
 </section>
 
