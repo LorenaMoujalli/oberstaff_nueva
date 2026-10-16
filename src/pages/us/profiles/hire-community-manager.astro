@@ -17,6 +17,7 @@ import GuiaContratacion from "../../../components/guia-contratacion-perfiles/Gui
 import FranjaEmpresasHome from "../../../components/franja-empresas-home/FranjaEmpresasHome.astro";
 import ProcessOberstaff from "../../../components/process/ProcessOberstaff.astro";
 import OtrosServiciosSection from "../../../components/otros-servicios-servicios/OtrosServiciosSection.astro";
+import OperationalGaps from "../../../components/operational-gaps/OperationalGaps.astro";
 
 const ogImage = "Contratar-community-manager.webp";
 
@@ -64,12 +65,16 @@ const faqsList = [
 ];
 
 const statsFranjaProps = {
-    stat1Number: "70%",
-    stat1Label: "De ahorro en costes de infraestructura y gestión local",
-    stat2Number: "10",
-    stat2Label: "Países con cobertura operativa en LATAM",
-    stat3Number: "100%",
-    stat3Label: "De la carga administrativa delegada",
+    stat1Number: "Dedicated community focus",
+    stat1Label: "Moderation, member care, engagement, and retention.",
+    stat2Number: "Vetted communication skills",
+    stat2Label: "Writing, judgment, conflict handling, and brand-voice adaptation.",
+    stat3Number: "U.S. hours alignment",
+    stat3Label: "Coverage scheduled for Eastern, Central, Mountain, or Pacific needs.",
+    stat4Number: "Bilingual professionals (EN/ES)",
+    stat4Label: "Fluent in U.S. English and Spanish to manage conversations and support bilingual communities.",
+    title: "A Dedicated Community Professional, Supported by a <span style='color: #6663FD; font-weight: 900;'> Structured Hiring Model</span>",
+    note: "<span style='font-weight: 800; color: #1B1B1B;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> has supported U.S. companies in building remote teams with vetted Latin American professionals.",
     showLogos: false,
 };
 
@@ -686,16 +691,6 @@ const queEsOutsourcingProps = {
             buttonSubtext=""
             footerLinkText="Learn how Oberstaff's international staffing and EOR support works for U.S. companies →"
             footerLinkHref=""
-            badges={[
-                { text: "Dedicated exclusively to your feed", icon: "🎯" },
-                { text: "Proven social media strategists", icon: "📋" },
-                {
-                    text: "Direct integration with your social media accounts",
-                    icon: "⚡",
-                },
-                { text: "Moderation during U.S. business hours", icon: "🕒" },
-            ]}
-            badgesClass="community-badges"
         >
             <Fragment slot="description">
                 <span style="color: white; font-weight: 700;"
@@ -703,6 +698,10 @@ const queEsOutsourcingProps = {
                 ><span style="color: #FF66CC; font-weight: 700;">.</span> helps U.S. companies hire community manager professionals from Latin America who work as an extension of the internal team. Each remote community manager moderates conversations, answers comments and messages, supports members, strengthens engagement, and helps turn interactions into lasting customer and community relationships during the U.S. business hours your company requires.
             </Fragment>
         </LeadHeroSection>
+
+        <div class="fade-in-section">
+            <FranjaEmpresasHome {...statsFranjaProps} />
+        </div>
 
         <div class="fade-in-section">
             <QueEsServicioSection
@@ -726,6 +725,23 @@ const queEsOutsourcingProps = {
                 diffTitle=""
                 diffDescription=""
             />
+
+</div>
+
+<div class="fade-in-section">
+<OperationalGaps
+title="Common operational gaps"
+items={[
+"Comments, direct messages, reviews, and member questions remain unanswered or receive inconsistent responses.",
+"Marketing teams are pulled away from strategy and content work to manage daily conversation queues.",
+"Customer-support teams resolve tickets but may not have the context or tone required for public community interaction.",
+"Spam, harassment, misinformation, or sensitive complaints are handled reactively without documented escalation rules.",
+]}
+alertText="The dedicated Community Manager solves the continuity and relationship problem. The role does not replace a Social Media Manager responsible for strategy, content calendars, publishing, campaigns, analytics, or channel growth."
+/>
+</div>
+
+
         </div>
 
         <div class="fade-in-section">
@@ -791,52 +807,56 @@ const queEsOutsourcingProps = {
         </div>
 
         <div class="fade-in-section">
-            <EorStepsSection
-                title="How to Hire Remote Community Manager Talent with <span style='font-weight: 800; color: #1b1b1b;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span>"
-                subtitle="The process is designed for U.S. companies that want to hire community managers in Latin America while reducing hiring risk, shortening time to shortlist, and connecting the role with audience needs, response standards, moderation requirements, escalation rules, retention priorities, and operating reality."
-                steps={[
-                    {
-                        title: "Step 1: Scope Definition",
-                        lineColorClass: "line-black",
-                        description:
-                            "We define the channels, community type, average conversation volume, required U.S. time-zone overlap, response priorities, moderation rules, escalation matrix, English or bilingual requirements, and the tasks that are inside or outside the role.",
-                        badge: "",
-                    },
-                    {
-                        title: "Step 2: Candidate Shortlist",
-                        lineColorClass: "line-pink",
-                        description:
-                            "Oberstaff sources and screens candidates, then presents a curated shortlist aligned with the agreed requirements. The number and timing of profiles may vary according to specialization, schedule, language level, and market availability.",
-                        badgeIcon: "📋",
-                        badge: "",
-                    },
-                    {
-                        title: 'Step 3: Direct Interviews and Final Approval"',
-                        lineColorClass: "line-orange",
-                        description:
-                            "Your team interviews the strongest candidates to evaluate communication, judgment, role fit, and cultural alignment. Your company retains final approval over the selected professional.",
-                        badge: "",
-                    },
-                    {
-                        title: "Step 4: Contracting, Payroll, and Onboarding",
-                        lineColorClass: "line-blue",
-                        description:
-                            "<span style='color: #1B1B1B; font-weight: 700;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 700;'>.</span> coordinates the international contracting structure, professional compensation, payroll administration, monthly billing, and ongoing service support. The selected remote community manager begins after onboarding, secure-access setup, and operating documentation are complete.",
-                        badge: "",
-                    },
-                ]}
-            />
-        </div>
-
-        <div class="fade-in-section">
-            <EorCta
-                title="Ready to Hire Community Managers Focused on Engagement and Retention?"
-                titleTag="h2"
-                text="<span style='font-weight: 800; color: #ffffff;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> connects U.S. businesses with vetted Latin American community managers who can moderate conversations, answer comments and messages, support members, protect brand voice, strengthen engagement, and collaborate during the U.S. business hours your operation requires."
-                buttonText="Hire Community Manager Talent for Your U.S. Team"
-                buttonHref="#formulario-perfil"
-            />
-        </div>
+			<ServicesSection
+				title="Community Management Deliverables and <span style='color: #6663FD; font-weight: 900; white-space: nowrap;'>KPIs You Can Track </span>"
+				cardTitleTag="h3"
+				description="Your dedicated online community manager works under a structured operating framework with deliverables and KPIs connected to daily community care:"
+				customClass="employer-use-cases"
+				services={[
+					{
+						icon: "",
+						title: "Queue and SLA Management:",
+						description:
+							"Tracking comments, messages, reviews, mentions, pending conversations, first-response time, and compliance with the response priorities agreed for each channel.",
+						linkText: "",
+						href: "",
+						customIconBg: "rgba(255, 102, 204, 0.1)",
+						cardClass: "card-green",
+					},
+					{
+						icon: "",
+						title: "Community Health and Sentiment:",
+						description:
+							"Monitoring recurring questions, member participation, positive and negative sentiment, unresolved concerns, spam patterns, and signals that may affect trust or retention.",
+						linkText: "",
+						href: "",
+						customIconBg: "rgba(102, 255, 153, 0.1)",
+						cardClass: "card-pink",
+					},
+					{
+						icon: "",
+						title: "Escalation and Resolution Tracking:",
+						description:
+							"Documenting qualified leads, support handoffs, complaints, sensitive cases, response status, and the internal team responsible for the next action.",
+						linkText: "",
+						href: "",
+						customIconBg: "rgba(102, 99, 253, 0.1)",
+						cardClass: "card-lime",
+					},
+					{
+						icon: "",
+						title: "Monthly Community Report:",
+						description:
+							"Summarizing response performance, conversation themes, community risks, frequently asked questions, engagement signals, escalation trends, and operational recommendations.",
+						linkText: "",
+						href: "",
+						customIconBg: "rgba(204, 255, 102, 0.2)",
+						cardClass: "card-lime",
+					},
+				]}
+                
+			/>
+		</div>        
 
         <div class="fade-in-section">
             <RolesPerfil
@@ -888,6 +908,178 @@ const queEsOutsourcingProps = {
             />
         </div>
 
+        <div class="fade-in-section">
+            <BeneficiosPerfilDisenador
+                showInfoCard={false}
+                title="How <span style='font-weight: 800; color: #1b1b1b;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> Evaluates Community Manager Candidates"
+                subtitle="Before any candidate meets your team, Oberstaff completes a multi-stage, role-specific evaluation process:"
+                image="/img2-community.webp"
+                imageAlt="Community manager estratégico analizando métricas y comunidad digital para una empresa"
+                infoTitle=""
+                features={[
+                    {
+                        icon: "🎯",
+                        title: "English and Cultural Fluency Assessment:",
+                        description:
+                            "Written and verbal English is evaluated according to the role, typically from B2 to C2, with attention to U.S. business communication, tone, clarity, judgment, and bilingual EN/ES requirements when applicable.",
+                    },
+                    {
+                        icon: "📊",
+                        title: "Community Management Practical Assessment:",
+                        description:
+                            "Candidates complete response-writing exercises, brand-voice adaptation, moderation scenarios, conflict-handling cases, escalation decisions, and platform or tool validation relevant to the position.",
+                    },
+                    {
+                        icon: "🛡️",
+                        title: "Professional Reliability and Remote-Work Readiness:",
+                        description:
+                            "<span style='font-weight: 800; color: #1b1b1b;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> reviews experience, references or work samples when available, communication habits, schedule alignment, problem-solving, professional conduct, and readiness to work securely with a distributed team.",
+                    },
+                ]}
+                infoItems={[
+                    {
+                        title: "",
+                        description: "",
+                    },
+                    {
+                        title: "",
+                        description: "",
+                    },
+                    {
+                        title: "",
+                        description: "",
+                    },
+                ]}
+            >
+                <div class="meta-custom-notice">
+                    Only candidates who meet the agreed role requirements are presented. The final hiring decision remains with your company.
+                </div>
+            </BeneficiosPerfilDisenador>
+        </div>
+
+        <div class="fade-in-section">
+            <EorStepsSection
+                title="How to Hire Remote Community Manager Talent with <span style='font-weight: 800; color: #1b1b1b;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span>"
+                subtitle="The process is designed for U.S. companies that want to hire community managers in Latin America while reducing hiring risk, shortening time to shortlist, and connecting the role with audience needs, response standards, moderation requirements, escalation rules, retention priorities, and operating reality."
+                steps={[
+                    {
+                        title: "Step 1: Scope Definition",
+                        lineColorClass: "line-black",
+                        description:
+                            "We define the channels, community type, average conversation volume, required U.S. time-zone overlap, response priorities, moderation rules, escalation matrix, English or bilingual requirements, and the tasks that are inside or outside the role.",
+                        badge: "",
+                    },
+                    {
+                        title: "Step 2: Candidate Shortlist",
+                        lineColorClass: "line-pink",
+                        description:
+                            "Oberstaff sources and screens candidates, then presents a curated shortlist aligned with the agreed requirements. The number and timing of profiles may vary according to specialization, schedule, language level, and market availability.",
+                        badgeIcon: "📋",
+                        badge: "",
+                    },
+                    {
+                        title: 'Step 3: Direct Interviews and Final Approval"',
+                        lineColorClass: "line-orange",
+                        description:
+                            "Your team interviews the strongest candidates to evaluate communication, judgment, role fit, and cultural alignment. Your company retains final approval over the selected professional.",
+                        badge: "",
+                    },
+                    {
+                        title: "Step 4: Contracting, Payroll, and Onboarding",
+                        lineColorClass: "line-blue",
+                        description:
+                            "<span style='color: #1B1B1B; font-weight: 700;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 700;'>.</span> coordinates the international contracting structure, professional compensation, payroll administration, monthly billing, and ongoing service support. The selected remote community manager begins after onboarding, secure-access setup, and operating documentation are complete.",
+                        badge: "",
+                    },
+                ]}
+            />
+        </div>
+
+        <div class="fade-in-section">
+            <EorCta
+                title="Ready to Hire Community Managers Focused on Engagement and Retention?"
+                titleTag="h2"
+                text="<span style='font-weight: 800; color: #ffffff;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> connects U.S. businesses with vetted Latin American community managers who can moderate conversations, answer comments and messages, support members, protect brand voice, strengthen engagement, and collaborate during the U.S. business hours your operation requires."
+                buttonText="Hire Community Manager Talent for Your U.S. Team"
+                buttonHref="#formulario-perfil"
+            />
+        </div>
+
+        <div class="fade-in-section">
+			<ServicesSection
+				title="Where a Dedicated Community Manager <span style='color: #6663FD; font-weight: 900; white-space: nowrap;'>Creates the Most Value </span>"
+				cardTitleTag="h3"
+				description="Our community manager remote placements deliver specialized impact across key industries:"
+				customClass="employer-use-cases"
+				services={[
+					{
+						icon: "",
+						title: "eCommerce and DTC brands",
+						description:
+							"Managing product questions, social inboxes, reviews, order-related handoffs, launch-period comments, recurring objections, and customer-care escalation on approved channels.",
+						linkText: "",
+						href: "",
+						customIconBg: "rgba(255, 102, 204, 0.1)",
+						cardClass: "card-green",
+					},
+					{
+						icon: "",
+						title: "B2B SaaS & Tech Startups",
+						description:
+							"Supporting user communities, answering routine product questions, capturing feature feedback, moderating professional conversations, and escalating technical, account, or sales-related needs.",
+						linkText: "",
+						href: "",
+						customIconBg: "rgba(102, 255, 153, 0.1)",
+						cardClass: "card-pink",
+					},
+					{
+						icon: "",
+						title: "Real Estate & Professional Services",
+						description:
+							"Responding to comments and direct messages, maintaining a consistent professional tone, qualifying inquiries, and routing buyer, seller, tenant, or client opportunities to the appropriate team.",
+						linkText: "",
+						href: "",
+						customIconBg: "rgba(102, 99, 253, 0.1)",
+						cardClass: "card-lime",
+					},
+					{
+						icon: "",
+						title: "Healthcare, wellness, and aesthetics",
+						description:
+							"Managing non-clinical questions, reviews, community comments, appointment inquiries, and service information while escalating medical, privacy, safety, or sensitive concerns to authorized staff.",
+						linkText: "",
+						href: "",
+						customIconBg: "rgba(204, 255, 102, 0.2)",
+						cardClass: "card-lime",
+					},
+
+                    {
+						icon: "",
+						title: "Hospitality and multi-location businesses",
+						description:
+							"Handling guest questions, reviews, local comments, reputation concerns, service-recovery escalation, and location-specific handoffs across approved business profiles.",
+						linkText: "",
+						href: "",
+						customIconBg: "rgba(204, 255, 102, 0.2)",
+						cardClass: "card-lime",
+					},
+                    {
+						icon: "",
+						title: "Creators and personal brands",
+						description:
+							"Managing audience conversations, member recognition, private groups, recurring questions, comment moderation, community guidelines, and protection of the creator's established voice.",
+						linkText: "",
+						href: "",
+						customIconBg: "rgba(204, 255, 102, 0.2)",
+						cardClass: "card-lime",
+					},
+
+				]}
+                
+			/>
+		</div>
+
+        
         <div class="fade-in-section">
             <ComparisonPerfiles
                 title="Hire a Community Manager: <span style='font-weight: 800; color: #1b1b1b;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> vs. Local Hiring, Agencies, and Freelancers"
@@ -982,54 +1174,92 @@ const queEsOutsourcingProps = {
         </div>
 
         <div class="fade-in-section">
-            <BeneficiosPerfilDisenador
-                showInfoCard={false}
-                title="How <span style='font-weight: 800; color: #1b1b1b;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> Evaluates Community Manager Candidates"
-                subtitle="Before any candidate meets your team, Oberstaff completes a multi-stage, role-specific evaluation process:"
-                image="/img2-community.webp"
-                imageAlt="Community manager estratégico analizando métricas y comunidad digital para una empresa"
-                infoTitle=""
-                features={[
+            <RolesPerfil
+                title="Community Manager Remote Integration and <strong>U.S. Time-Zone Coverage</strong>"
+                subtitle="The specialist works inside the systems and response standards your company already uses. Integration should be designed around secure access, clear ownership, documented escalation, and realistic service windows."
+                layout="modern"
+                footerText=""
+                footerLinkText=""
+                footerLinkHref="#formulario-perfil"
+                roles={[
                     {
-                        icon: "🎯",
-                        title: "English and Cultural Fluency Assessment:",
-                        description:
-                            "Written and verbal English is evaluated according to the role, typically from B2 to C2, with attention to U.S. business communication, tone, clarity, judgment, and bilingual EN/ES requirements when applicable.",
+                        title: "U.S. time-zone coverage",
+                        description: "",
+                        icon: "",
+                        iconColor: "#FF66CC",
+                        borderColorClass: "border-pink",
+                        subtitle:
+                            "Schedule overlap can be aligned with Eastern, Central, Mountain, or Pacific business hours. Extended, weekend, or multi-shift coverage must be defined in the proposal.",
+                        
+                        buttonText: "",
+                        buttonHref: "#formulario-perfil",
                     },
                     {
-                        icon: "📊",
-                        title: "Community Management Practical Assessment:",
-                        description:
-                            "Candidates complete response-writing exercises, brand-voice adaptation, moderation scenarios, conflict-handling cases, escalation decisions, and platform or tool validation relevant to the position.",
+                        title: "Communication channels",
+                        description: "",
+                        icon: "",
+                        iconColor: "#3b76f6",
+                        borderColorClass: "border-blue",
+                        subtitle:
+                            "Slack, Microsoft Teams, email, project management tools, and recurring calibration meetings with the internal owner.",
+                        
+                        buttonText: "",
+                        buttonHref: "#formulario-perfil",
                     },
                     {
-                        icon: "🛡️",
-                        title: "Professional Reliability and Remote-Work Readiness:",
-                        description:
-                            "<span style='font-weight: 800; color: #1b1b1b;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> reviews experience, references or work samples when available, communication habits, schedule alignment, problem-solving, professional conduct, and readiness to work securely with a distributed team.",
+                        title: "Community platforms",
+                        description: "",
+                        icon: "",
+                        iconColor: "#66FF99",
+                        borderColorClass: "border-green",
+                        subtitle:
+                            "Meta Business Suite Inbox, Instagram, Facebook Groups, LinkedIn, TikTok, YouTube, X, Reddit, Discord, Khoros, or other approved environments.",
+                        
+                        buttonText: "",
+                        buttonHref: "#formulario-perfil",
                     },
+                    {
+                        title: "Support and sales handoffs",
+                        description: "",
+                        icon: "",
+                        iconColor: "#FF9966",
+                        borderColorClass: "border-orange",
+                        subtitle:
+                            "Zendesk, Intercom, Gorgias, HubSpot, Salesforce, or the CRM and helpdesk already used by the company.",
+                        
+                        buttonText: "",
+                        buttonHref: "#formulario-perfil",
+                    },
+                    {
+                        title: "Brand and moderation documentation",
+                        description: "",
+                        icon: "",
+                        iconColor: "#FF99CC",
+                        borderColorClass: "border-orange",
+                        subtitle:
+                            "Brand voice guide, response library, FAQ, restricted topics, community rules, escalation matrix, and incident-reporting format.",
+                        
+                        buttonText: "",
+                        buttonHref: "#formulario-perfil",
+                    }, 
+                    {
+                        title: "Reporting cadence",
+                        description: "",
+                        icon: "",
+                        iconColor: "#3b76f6",
+                        borderColorClass: "border-blue",
+                        subtitle:
+                            "Daily queue visibility, weekly community pulse, monthly KPI report, and calibration meetings based on operational needs.",
+                        
+                        buttonText: "",
+                        buttonHref: "#formulario-perfil",
+                    }, 
+                    
                 ]}
-                infoItems={[
-                    {
-                        title: "",
-                        description: "",
-                    },
-                    {
-                        title: "",
-                        description: "",
-                    },
-                    {
-                        title: "",
-                        description: "",
-                    },
-                ]}
-            >
-                <div class="meta-custom-notice">
-                    Only candidates who meet the agreed role requirements are presented. The final hiring decision remains with your company.
-                </div>
-            </BeneficiosPerfilDisenador>
+            />
         </div>
 
+        
         <div class="fade-in-section">
             <GuiaContratacion
                 titleTag="h2"
@@ -1064,6 +1294,15 @@ const queEsOutsourcingProps = {
 				subtitle=""
 				columns={3}
 				testimonials={[
+                    {
+						stars: 5,
+						avatar: "/Kate.webp",
+						imageAlt: "Kate McCaferty, Oberstaff, Client.",
+						text: "We’ve been working with Oberstaff for nearly two years, and the experience has been excellent from day one. Their dedicated team has supported us throughout the process, presenting qualified professionals who fit our needs. The cost savings, operational efficiency, and overall quality of the service have exceeded our expectations.",
+						author: "Kate McCaferty",
+						role: "CEO · KM Real Estate (U.S.)",
+						videoId: "9RLgpEF-GVA",
+					},
 					{
 						stars: 5,
 						avatar: "/fernando.webp",
@@ -1082,15 +1321,7 @@ const queEsOutsourcingProps = {
 						role: "CEO · @amediastory",
 						videoId: "_CxlPfluS7M",
 					},
-					{
-						stars: 5,
-						avatar: "/Kate.webp",
-						imageAlt: "Kate McCaferty, Oberstaff, Client.",
-						text: "We’ve been working with Oberstaff for nearly two years, and the experience has been excellent from day one. Their dedicated team has supported us throughout the process, presenting qualified professionals who fit our needs. The cost savings, operational efficiency, and overall quality of the service have exceeded our expectations.",
-						author: "Kate McCaferty",
-						role: "CEO · KM Real Estate (U.S.)",
-						videoId: "9RLgpEF-GVA",
-					},
+					
 				]}
 			/>
 		</div>
@@ -1124,28 +1355,9 @@ const queEsOutsourcingProps = {
             />
         </div>
 
-        <div class="fade-in-section">
-            <FranjaEmpresasHome {...statsFranjaProps} />
-        </div>
+        
 
-        <div class="fade-in-section">
-            <ProcessOberstaff
-                {...processProps}
-                items={processItems}
-            />
-        </div>
-
-        <div class="fade-in-section">
-            <OtrosServiciosSection {...otrosServiciosProps} />
-        </div>
-
-        <div class="fade-in-section hide-quote-border diff-custom-layout">
-            <QueEsServicioSection {...queEsOutsourcingProps} />
-        </div>
-    </div>
-</DashboardProfilesUs>
-
-<style>
+        <style>
     .service-detail-container {
     }
 
@@ -1156,7 +1368,7 @@ const queEsOutsourcingProps = {
     }
 
     :global(.employer-use-cases-grid) {
-        grid-template-columns: repeat(3, 1fr) !important;
+    grid-template-columns: repeat(2, 1fr) !important;
     }
 
     @media (max-width: 900px) {
@@ -1290,8 +1502,7 @@ const queEsOutsourcingProps = {
         line-height: 1.4;
     }
 
-    .service-detail-container
-        :global(.guia-cards-grid .guia-card:nth-child(3)) {
-        grid-column: 1 / -1;
+    :global(.guia-cards-grid .guia-card:nth-child(3)) {
+      grid-column: 1 / -1;
     }
 </style>

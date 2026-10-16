@@ -25,6 +25,7 @@ import GuiaContratacion from "../../../components/guia-contratacion-perfiles/Gui
 import FranjaEmpresasHome from "../../../components/franja-empresas-home/FranjaEmpresasHome.astro";
 import ProcessOberstaff from "../../../components/process/ProcessOberstaff.astro";
 import OtrosServiciosSection from "../../../components/otros-servicios-servicios/OtrosServiciosSection.astro";
+import OperationalGaps from "../../../components/operational-gaps/OperationalGaps.astro";
 
 const ogImage = "Contratar-disenador-grafico.webp";
 
@@ -73,12 +74,16 @@ const faqsList = [
 ];
 
 const statsFranjaProps = {
-    stat1Number: "70%",
-    stat1Label: "De ahorro en costes de infraestructura y gestión local",
-    stat2Number: "10",
-    stat2Label: "Países con cobertura operativa en LATAM",
-    stat3Number: "100%",
-    stat3Label: "De la carga administrativa delegada",
+    stat1Number: "Dedicated creative focus",
+    stat1Label: "Recurring brand, campaign, sales, social, editorial, and print production.",
+    stat2Number: "Portfolio and technical skills vetted",
+    stat2Label: "Composition, typography, software, file quality, and commercial execution.",
+    stat3Number: "U.S. hours alignment",
+    stat3Label: "Coverage scheduled for Eastern, Central, Mountain, or Pacific needs.",
+    stat4Number: "Source-file and IP control",
+    stat4Label: "Editable files, storage, confidentiality, and ownership terms documented.",
+    title: "A Dedicated Creative Professional, Supported by a <span style='color: #6663FD; font-weight: 900; white-space: nowrap;'>Structured Hiring Model</span>",
+    note: "<span style='font-weight: 800; color: #1B1B1B;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> has supported U.S. companies looking to outsource graphic designers and build high-performing remote teams.",
     showLogos: false,
 };
 
@@ -671,18 +676,17 @@ const queEsOutsourcingProps = {
       buttonSubtext=""
       footerLinkText="Explore Oberstaff's Remote Staffing Model →"
       footerLinkHref=""
-      badges={[
-        { text: "Exclusive creative focus on your brand", icon: "🎯" },
-        { text: "Reviewed design portfolios", icon: "🎨" },
-        { text: "Full integration with your local libraries and the cloud", icon: "⚡" },
-        { text: "Designs compatible with U.S. business hours", icon: "🕒" },
-      ]}
+      
     >
       <Fragment slot="description">
     <span style='font-weight: 800; color: #fffff;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> helps U.S. companies hire graphic designer talent from Latin America who work as dedicated extensions of internal marketing and creative teams. Each remote graphic designer can produce recurring brand assets, campaign creative, social media graphics, presentations, sales collateral, editorial materials, and print-ready files during the U.S. business hours your company requires. 
 
       </Fragment>
     </LeadHeroSection>
+
+    <div class="fade-in-section">
+      <FranjaEmpresasHome {...statsFranjaProps} />
+    </div>
 
     <!--
     <div class="fade-in-section">
@@ -728,7 +732,7 @@ const queEsOutsourcingProps = {
 											"
 				imageSrc="/img-disenador.webp"
 				imageAlt="Profesional trabajando"
-				badgeText="Identidad visual"
+				badgeText="Visual identity"
 				quoteText=""
 				checklistTitle="Scaling a company's visual production in the United States can become expensive and operationally inefficient:"
 				checklistItems={[
@@ -738,9 +742,23 @@ const queEsOutsourcingProps = {
 					
 				]}
         
-				
 			/>
+      
 		</div>
+
+    <div class="fade-in-section">
+<OperationalGaps
+title="Common operational gaps"
+items={[
+"Marketing campaigns are delayed due to bottlenecks in graphic asset production.",
+"Internal teams lack a dedicated social media designer to maintain daily channel growth.",
+"Early-stage founders struggle to hire designers for startups without exhausting their seed capital.",
+"Source files (.AI, .PSD, .INDD) are scattered across personal drives without standardized asset organization.",
+"A dedicated hire graphic designer solution solves production continuity. The role does not replace a Creative Director responsible for high-level brand positioning.",
+]}
+alertText=""
+/>
+</div>
 <!--
     
 ctaText="Solicitar perfiles de diseño gráfico remoto →"
@@ -850,6 +868,82 @@ ctaText="Solicitar perfiles de diseño gráfico remoto →"
 			/>
 		</div>
 
+    <div class="fade-in-section">
+            <RolesPerfil
+                title="Graphic Design Deliverables and <strong>KPIs You Can Track</strong>"
+                subtitle="Your dedicated remote graphic designer works under a structured production framework with deliverables and KPIs connected to creative capacity, quality, and workflow efficiency:"
+                layout="modern"
+                footerText=""
+                footerLinkText=""
+                footerLinkHref="#formulario-perfil"
+                roles={[
+                    {
+                        title: "Production Output and SLA Management:",
+                        description: "",
+                        icon: "",
+                        iconColor: "#FF66CC",
+                        borderColorClass: "border-pink",
+                        subtitle:
+                            "Tracking total completed graphics, turnaround speed per deliverable, revision turnaround time, and adherence to agreed project deadlines.",
+                        
+                        buttonText: "",
+                        buttonHref: "#formulario-perfil",
+                    },
+                    {
+                        title: "Brand Consistency and Quality Compliance:",
+                        description: "",
+                        icon: "",
+                        iconColor: "#3b76f6",
+                        borderColorClass: "border-blue",
+                        subtitle:
+                            "Ensuring zero brand guide violations, correct resolution specs (RGB/CMYK, DPI), clean vector nodes, and proper layer organization in editable files.",
+                        
+                        buttonText: "",
+                        buttonHref: "#formulario-perfil",
+                    },
+                    {
+                        title: "Marketing Asset Performance Alignment:",
+                        description: "",
+                        icon: "",
+                        iconColor: "#66FF99",
+                        borderColorClass: "border-green",
+                        subtitle:
+                            "Collaborating on A/B test ad variations, click-through-rate (CTR) creative iterations, and visual refreshment of decaying ad creatives.",
+                        
+                        buttonText: "",
+                        buttonHref: "#formulario-perfil",
+                    },
+                    {
+                        title: "Monthly Creative Production Report:",
+                        description: "",
+                        icon: "",
+                        iconColor: "#FF9966",
+                        borderColorClass: "border-orange",
+                        subtitle:
+                            "Summarizing completed design requests, software usage, asset library updates, creative bottlenecks, and recommendations for upcoming campaigns.",
+                        
+                        buttonText: "",
+                        buttonHref: "#formulario-perfil",
+                    },
+                    
+                ]}
+            />
+        
+      <div 
+    slot="bottom-alert" 
+    class="profiles-tech-notice"
+    style="background-color: #FFF5F5; border-left: 4px solid #FF4D4D; border-radius: 12px; padding: 18px 24px; max-width: 1050px; width: 100%; margin: 2rem auto 0 auto; text-align: center; color: #1B1B1B; font-family: 'Poppins', sans-serif; font-size: 0.95rem; line-height: 1.6; margin-bottom: 30px"
+>
+    🚨 <strong>* KPI availability depends on project management tools, creative request volume, campaign integration, and clear brand guidelines. </strong>
+    <a 
+        href="https://oberstaff.com/us/services/outsourced-staffing" 
+        style="color: #6663FD; font-weight: 700; text-decoration: none;"
+    >
+        
+    </a>
+</div>
+      
+		</div>
 
     <!-- 
     <div class="fade-in-section">
@@ -887,6 +981,99 @@ ctaText="Solicitar perfiles de diseño gráfico remoto →"
       </div>
     </div>
     -->
+    <div class="fade-in-section">
+      <RolesPerfil
+        title="Types of Graphic Designer Profiles According to <span style='color: #6663FD; font-weight: 900; white-space: nowrap;'>Your Production Model</span>"
+        subtitle="We help you hire graphic designers specialized in the visual work that supports your growth. Depending on the scope, the curated shortlist may include graphic designers for hire in branding, campaign production, social content, editorial design, print, or motion."
+        layout="modern"
+        footerText=""
+        footerLinkText=""
+        footerLinkHref="#formulario-perfil"
+        roles={[
+          {
+            title: "🏷️ Brand Designer and Marketing Graphic Designer",
+            description: "",
+            icon: "",
+            iconColor: "#FF66CC",
+            borderColorClass: "border-pink",
+            subtitle: "Supports logo systems, brand refreshes, visual guidelines, campaign key visuals, reusable templates, presentations, sales collateral, packaging concepts, and recurring marketing materials that require consistent execution.",
+            buttonText: "Request more information →",
+            buttonHref: "#formulario-perfil",
+          },
+          {
+            title: "📱 Digital Campaign and Social Media Designer",
+            description: "",
+            icon: "",
+            iconColor: "#3b76f6",
+            borderColorClass: "border-blue",
+            subtitle: "Produces paid-social creative, organic content assets, display banners, email graphics, infographics, thumbnails, landing-page visuals, campaign variations, and platform-specific formats for fast-moving digital teams.",
+            buttonText: "Request more information →",
+            buttonHref: "#formulario-perfil",
+          },
+          {
+            title: "🖨️ Editorial, Presentation, Print, and Motion Designer",
+            description: "",
+            icon: "",
+            iconColor: "#66FF99",
+            borderColorClass: "border-green",
+            subtitle: "Creates reports, e-books, catalogs, brochures, pitch decks, trade-show files, print-ready artwork, packaging production, animated posts, kinetic typography, simple explainers, transitions, and other assets based on the selected candidate's portfolio and tool set.",
+            buttonText: "Request more information →",
+            buttonHref: "#formulario-perfil",
+          },
+         
+        ]}
+      />
+    </div>
+
+    <div class="fade-in-section">
+      <BeneficiosPerfilDisenador
+        showInfoCard={false}
+        title="How <span style='font-weight: 800; color: #1b1b1b;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> Evaluates Graphic Designer Candidates"
+        subtitle="Before any candidate meets your team, Oberstaff. completes a multi-stage, role-specific evaluation process:"
+   image="/img2-disenador.webp"
+      imageAlt="Diseñador gráfico creando contenido creativo para marca online"
+        infoTitle=""
+        features={[
+          {
+            icon: "🎯",
+            title: "English and Creative Communication Assessment:",
+            description:
+              "Written and verbal English is evaluated according to the role, typically from B2 to C2, with attention to U.S. business communication, brief interpretation, presentation of design decisions, feedback handling, and bilingual EN/ES requirements when applicable.",
+          },
+          {
+            icon: "📊",
+            title: "Portfolio and Technical Practical Assessment:",
+            description:
+              "Candidates are evaluated on portfolio relevance, composition, hierarchy, typography, visual consistency, Adobe or required-tool proficiency, non-destructive file construction, vector quality, layout systems, export preparation, and a practical design task aligned with the position.",
+          },
+          {
+            icon: "🛡️",
+            title: "Professional Reliability and Remote-Work Readiness:",
+            description:
+              "<span style='font-weight: 800; color: #1b1b1b;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> reviews experience, references or work samples when available, communication habits, deadline management, schedule alignment, feedback response, professional conduct, secure file handling, and readiness to work with a distributed team.",
+          },
+        ]}
+        infoItems={[
+          {
+            title: "",
+            description: "",
+          },
+          {
+            title: "",
+            description: "",
+          },
+          {
+            title: "",
+            description: "",
+          },
+        ]}
+      >
+        <div class="meta-custom-notice">
+        Only candidates who meet the agreed role requirements are presented. A successful graphic designer hire starts with role clarity, portfolio relevance, technical validation, and workflow fit. The final hiring decision remains with your company. 
+        </div>
+      </BeneficiosPerfilDisenador>
+    </div>
+    
     <div class="fade-in-section">
 			<EorStepsSection
 				title="How to Hire Remote Graphic Designer Talent with <span style='font-weight: 800; color: #1b1b1b;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span>"
@@ -948,52 +1135,80 @@ ctaText="Solicitar perfiles de diseño gráfico remoto →"
 			/>
 		</div>
 
-
-    
     <div class="fade-in-section">
-      <RolesPerfil
-        title="Types of Graphic Designer Profiles According to <span style='color: #6663FD; font-weight: 900; white-space: nowrap;'>Your Production Model</span>"
-        subtitle="We help you hire graphic designers specialized in the visual work that supports your growth. Depending on the scope, the curated shortlist may include graphic designers for hire in branding, campaign production, social content, editorial design, print, or motion."
-        layout="modern"
-        footerText=""
-        footerLinkText=""
-        footerLinkHref="#formulario-perfil"
-        roles={[
+			<ServicesSection
+				title="Where a Dedicated Graphic Designer <span style='color: #6663FD; font-weight: 900; white-space: nowrap;'>Creates the Most Value </span>"
+				cardTitleTag="h3"
+				description="Our remote graphic designer placements support recurring visual production across key industries:"
+				customClass="employer-use-cases"
+				services={[
+					{
+						icon: "💻",
+						title: "eCommerce and DTC brands",
+						description:
+							"Producing product-launch assets, paid-social variations, email graphics, marketplace visuals, infographics, promotional banners, packaging adaptations, comparison charts, and reusable templates for high-volume campaign calendars.",
+						linkText: "",
+						href: "",
+						customIconBg: "rgba(255, 102, 204, 0.1)",
+						cardClass: "card-green",
+					},
+					{
+						icon: "✒️",
+						title: "B2B SaaS & Tech Startups",
+						description:
+							"Companies that need to hire designers for startups can use this role to create website and campaign graphics, product-marketing visuals, pitch decks, sales collateral, case studies, event materials, reports, e-books, webinar assets, and visual explanations of technical concepts.",
+						linkText: "",
+						href: "",
+						customIconBg: "rgba(102, 255, 153, 0.1)",
+						cardClass: "card-pink",
+					},
+					{
+						icon: "📄",
+						title: "Real Estate & Professional Services",
+						description:
+							"A graphic designer for small business teams can create property brochures, listing presentations, social templates, proposals, service one-pagers, reports, signage, lead magnets, email assets, and consistent branded materials for distributed teams or multiple agents.",
+						linkText: "",
+						href: "",
+						customIconBg: "rgba(102, 99, 253, 0.1)",
+						cardClass: "card-lime",
+					},
+					{
+						icon: "⚕️",
+						title: "Healthcare, Wellness, and Aesthetics",
+						description:
+							"Producing educational graphics, service menus, treatment visuals, appointment campaigns, brochures, presentations, social content, location materials, and brand-consistent assets while following the company's review and compliance process.",
+						linkText: "",
+						href: "",
+						customIconBg: "rgba(204, 255, 102, 0.2)",
+						cardClass: "card-lime",
+					},
+
+           {
+						icon: "📍",
+						title: "Hospitality and Multi-Location Businesses",
+						description:
+							"Creating menus, promotional campaigns, local-event graphics, signage, digital displays, social templates, location-specific adaptations, sales materials, and branded files that can be reused across multiple properties or franchises.",
+						linkText: "",
+						href: "",
+						customIconBg: "rgba(204, 255, 102, 0.2)",
+						cardClass: "card-lime",
+					},
           {
-            title: "🏷️ Brand Designer and Marketing Graphic Designer",
-            description: "",
-            icon: "",
-            iconColor: "#FF66CC",
-            borderColorClass: "border-pink",
-            subtitle: "Supports logo systems, brand refreshes, visual guidelines, campaign key visuals, reusable templates, presentations, sales collateral, packaging concepts, and recurring marketing materials that require consistent execution.",
-            buttonText: "Request more information →",
-            buttonHref: "#formulario-perfil",
-          },
-          {
-            title: "📱 Digital Campaign and Social Media Designer",
-            description: "",
-            icon: "",
-            iconColor: "#3b76f6",
-            borderColorClass: "border-blue",
-            subtitle: "Produces paid-social creative, organic content assets, display banners, email graphics, infographics, thumbnails, landing-page visuals, campaign variations, and platform-specific formats for fast-moving digital teams.",
-            buttonText: "Request more information →",
-            buttonHref: "#formulario-perfil",
-          },
-          {
-            title: "🖨️ Editorial, Presentation, Print, and Motion Designer",
-            description: "",
-            icon: "",
-            iconColor: "#66FF99",
-            borderColorClass: "border-green",
-            subtitle: "Creates reports, e-books, catalogs, brochures, pitch decks, trade-show files, print-ready artwork, packaging production, animated posts, kinetic typography, simple explainers, transitions, and other assets based on the selected candidate's portfolio and tool set.",
-            buttonText: "Request more information →",
-            buttonHref: "#formulario-perfil",
-          },
-         
-        ]}
-      />
-    </div>
-     
+						icon: "📢",
+						title: "Creators, Media Teams, and Personal Brands",
+						description:
+							"Producing thumbnails, social series, media kits, sponsorship decks, digital products, event assets, channel templates, short-form motion graphics, and visual systems that protect an established voice while increasing publishing capacity.",
+						linkText: "",
+						href: "",
+						customIconBg: "rgba(204, 255, 102, 0.2)",
+						cardClass: "card-lime",
+					},
+
+				]}
+                
+			/>
+		</div>
+
 
     <div class="fade-in-section">
       <ComparisonPerfiles
@@ -1086,53 +1301,90 @@ ctaText="Solicitar perfiles de diseño gráfico remoto →"
     </div>
 
    <div class="fade-in-section">
-      <BeneficiosPerfilDisenador
-        showInfoCard={false}
-        title="How <span style='font-weight: 800; color: #1b1b1b;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> Evaluates Graphic Designer Candidates"
-        subtitle="Before any candidate meets your team, Oberstaff. completes a multi-stage, role-specific evaluation process:"
-   image="/img2-disenador.webp"
-      imageAlt="Diseñador gráfico creando contenido creativo para marca online"
-        infoTitle=""
-        features={[
-          {
-            icon: "🎯",
-            title: "English and Creative Communication Assessment:",
-            description:
-              "Written and verbal English is evaluated according to the role, typically from B2 to C2, with attention to U.S. business communication, brief interpretation, presentation of design decisions, feedback handling, and bilingual EN/ES requirements when applicable.",
-          },
-          {
-            icon: "📊",
-            title: "Portfolio and Technical Practical Assessment:",
-            description:
-              "Candidates are evaluated on portfolio relevance, composition, hierarchy, typography, visual consistency, Adobe or required-tool proficiency, non-destructive file construction, vector quality, layout systems, export preparation, and a practical design task aligned with the position.",
-          },
-          {
-            icon: "🛡️",
-            title: "Professional Reliability and Remote-Work Readiness:",
-            description:
-              "<span style='font-weight: 800; color: #1b1b1b;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> reviews experience, references or work samples when available, communication habits, deadline management, schedule alignment, feedback response, professional conduct, secure file handling, and readiness to work with a distributed team.",
-          },
-        ]}
-        infoItems={[
-          {
-            title: "",
-            description: "",
-          },
-          {
-            title: "",
-            description: "",
-          },
-          {
-            title: "",
-            description: "",
-          },
-        ]}
-      >
-        <div class="meta-custom-notice">
-        Only candidates who meet the agreed role requirements are presented. A successful graphic designer hire starts with role clarity, portfolio relevance, technical validation, and workflow fit. The final hiring decision remains with your company. 
+            <RolesPerfil
+                title="Remote Graphic Designer Integration and <strong>U.S. Time-Zone Coverage</strong>"
+                subtitle="The specialist works inside the systems and response standards your company already uses. Integration should be designed around secure access, clear ownership, documented escalation, and realistic service windows."
+                layout="modern"
+                footerText=""
+                footerLinkText=""
+                footerLinkHref="#formulario-perfil"
+                roles={[
+                    {
+                        title: "U.S. time-zone coverage",
+                        description: "",
+                        icon: "",
+                        iconColor: "#FF66CC",
+                        borderColorClass: "border-pink",
+                        subtitle:
+                            "Schedule overlap aligned with Eastern, Central, Mountain, or Pacific business hours when you hire remote graphic designer talent.",
+                        
+                        buttonText: "",
+                        buttonHref: "#formulario-perfil",
+                    },
+                    {
+                        title: "Communication channels",
+                        description: "",
+                        icon: "",
+                        iconColor: "#3b76f6",
+                        borderColorClass: "border-blue",
+                        subtitle:
+                            "Slack, Microsoft Teams, email, project-management tools, creative reviews, and recurring calibration meetings with the internal owner.",
+                        
+                        buttonText: "",
+                        buttonHref: "#formulario-perfil",
+                    },
+                    {
+                        title: "Design and creative platforms",
+                        description: "",
+                        icon: "",
+                        iconColor: "#66FF99",
+                        borderColorClass: "border-green",
+                        subtitle:
+                            "Adobe Photoshop, Illustrator, InDesign, After Effects, Premiere Pro, Adobe Express, Figma, Canva, Creative Cloud Libraries, or other approved production tools.",
+                        
+                        buttonText: "",
+                        buttonHref: "#formulario-perfil",
+                    },
+                    {
+                        title: "Project, review, and approval tools",
+                        description: "",
+                        icon: "",
+                        iconColor: "#FF9966",
+                        borderColorClass: "border-orange",
+                        subtitle:
+                            "Asana, Trello, Notion, ClickUp, Jira, Monday.com, Frame.io, Figma comments, proofing tools, or the workflow already used by the company.",
+                        
+                        buttonText: "",
+                        buttonHref: "#formulario-perfil",
+                    },
+                    {
+                        title: "Brand and file documentation",
+                        description: "",
+                        icon: "",
+                        iconColor: "#FF99CC",
+                        borderColorClass: "border-orange",
+                        subtitle:
+                            "Brand guidelines, templates, content dimensions, print specifications, naming conventions, folder structure, font and image licenses, source-file rules, and approval responsibilities.",
+                        
+                        buttonText: "",
+                        buttonHref: "#formulario-perfil",
+                    }, 
+                    {
+                        title: "Reporting cadence",
+                        description: "",
+                        icon: "",
+                        iconColor: "#3b76f6",
+                        borderColorClass: "border-blue",
+                        subtitle:
+                            "Daily production-queue visibility, weekly creative pulse, monthly KPI report, and calibration meetings based on workload and operational needs.",
+                        
+                        buttonText: "",
+                        buttonHref: "#formulario-perfil",
+                    }, 
+                    
+                ]}
+            />
         </div>
-      </BeneficiosPerfilDisenador>
-    </div>
 
     <div class="fade-in-section">
       <GuiaContratacion
@@ -1252,6 +1504,15 @@ ctaText="Solicitar perfiles de diseño gráfico remoto →"
 				subtitle=""
 				columns={3}
 				testimonials={[
+          {
+						stars: 5,
+						avatar: "/Kate.webp",
+						imageAlt: "Kate McCaferty, Oberstaff, Client.",
+						text: "We’ve been working with Oberstaff for nearly two years, and the experience has been excellent from day one. Their dedicated team has supported us throughout the process, presenting qualified professionals who fit our needs. The cost savings, operational efficiency, and overall quality of the service have exceeded our expectations.",
+						author: "Kate McCaferty",
+						role: "CEO · KM Real Estate (U.S.)",
+						videoId: "9RLgpEF-GVA",
+					},
 					{
 						stars: 5,
 						avatar: "/fernando.webp",
@@ -1270,16 +1531,7 @@ ctaText="Solicitar perfiles de diseño gráfico remoto →"
 						role: "CEO · @amediastory",
 						videoId: "_CxlPfluS7M",
 					},
-					{
-						stars: 5,
-						avatar: "/Kate.webp",
-						imageAlt: "Kate McCaferty, Oberstaff, Client.",
-						text: "We’ve been working with Oberstaff for nearly two years, and the experience has been excellent from day one. Their dedicated team has supported us throughout the process, presenting qualified professionals who fit our needs. The cost savings, operational efficiency, and overall quality of the service have exceeded our expectations.",
-						author: "Kate McCaferty",
-						role: "CEO · KM Real Estate (U.S.)",
-						videoId: "9RLgpEF-GVA",
-					},
-				]}
+					]}
 			/>
 		</div>
 
@@ -1314,28 +1566,6 @@ ctaText="Solicitar perfiles de diseño gráfico remoto →"
       pais="España"
     />
   </div>
-
-  <div class="fade-in-section">
-    <FranjaEmpresasHome {...statsFranjaProps} />
-  </div>
-
-  <div class="fade-in-section">
-    <ProcessOberstaff
-      {...processProps}
-      items={processItems}
-    />
-  </div>
-
-  <div class="fade-in-section">
-    <OtrosServiciosSection {...otrosServiciosProps} />
-  </div>
-
-  <div class="fade-in-section hide-quote-border diff-custom-layout">
-    <QueEsServicioSection {...queEsOutsourcingProps} />
-  </div>
-  
-
-
 
 
 
@@ -1453,4 +1683,6 @@ ctaText="Solicitar perfiles de diseño gráfico remoto →"
       :global(.guia-cards-grid .guia-card:nth-child(3)) {
       grid-column: 1 / -1;
     }
+
+    
 </style>

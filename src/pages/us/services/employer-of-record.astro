@@ -670,48 +670,20 @@ const faqsList = [
 				infoItems={[
 					{
 						icon: "⚙️",
-						title: "¿Cómo funciona?",
+						title: "How does it work?",
 						description:
-							"<span style='color: #1B1B1B; font-weight: 700;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 700;'>.</span> es el empleador legal del profesional en su país de residencia. Asumimos el contrato, el pago en moneda local, la seguridad social y el cumplimiento normativo aplicable. Tu empresa en Puerto Rico recibe una sola factura en USD.",
+							"<span style='color: #1B1B1B; font-weight: 700;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 700;'>.</span> acts as your global employer of record across Latin America, employing each professional through the appropriate local employment structure. We manage employment agreements, payroll, and country-specific compliance, while your U.S.-based company receives one consolidated invoice in USD.",
 					},
 					{
 						icon: "🏢",
-						title: "¿Sirve para mi empresa?",
+						title: "Is it right for my US business?",
 						description:
-							"Para una empresa puertorriqueña, el EOR es la vía rápida y segura de contratar en Sudamérica sin abrir una corporación extranjera, sin manejar múltiples leyes laborales y sin riesgo de auditorías por mala clasificación de contratistas.",
+							"For a US business (LLC or C-Corp), an EOR is the fastest and safest route to hire in Latin America without setting up foreign corporations, navigating complex local labor laws, or risking contractor misclassification audits (W-8BEN / 1099 issues).",
 					},
 				]}
 
 				
-				diffIcon="💡"
-				diffTitle="Diferencia clave frente a COR"
-				diffDescription="Con EOR, el profesional entra como empleado y existe relación laboral formal. Con CoR, el profesional opera como independiente. Si necesitas payroll, seguridad social y cumplimiento laboral continuo, el modelo correcto es EOR."
-			/>
-		</div>
-
-        	<div class="fade-in-section">
-			<PricingSection
-				eyebrow=""
-				title="Employer of Record Services Pricing for <span style='color: #6663FD; font-weight: 900;'>International Employment</span>"
-				subtitle=""
-				plans={[
-					{
-						badge: "MOST POPULAR",
-						title: "Complete EOR Service",
-						price: "790",
-						currency: "$",
-						period: "per employee/month",
-						teamSize: "Para equipos de 4-20 empleados",
-						features: [
-							"Locally compliant employment agreement.",
-							"Payroll calculation, local salary payments, and currency administration.",
-							"Onboarding, employment changes, statutory benefits, documentation, and offboarding support.",
-						],
-						ctaText: "Request a proposal",
-						ctaHref: "#contacto",
-					},
-				]}
-			/>
+				/>
 		</div>
 
 		<div class="fade-in-section">
@@ -765,6 +737,50 @@ const faqsList = [
 		</div>
 
 		<div class="fade-in-section">
+			<ServicesSection
+				title="How a Remote Employer of Record <span style='color: #6663FD; font-weight: 900;'>Relationship Works</span>"
+				description="A remote employer of record separates operational leadership from local employment administration. Oberstaff serves as the legal employer in the employee’s country, while your U.S. company remains responsible for the role, priorities, performance, and integration with your team. <br> <br> This structure gives your company the control needed to run the function while avoiding the need to create and maintain a foreign legal entity for each supported country."
+				customClass="employer-use-cases"
+				services={[
+					{
+						icon: "🏆",
+						title: "Your company leads",
+						description:
+							"• Role scope, business priorities, and performance goals. <br> • Daily management, team communication, and access to tools. <br> • Compensation approval, promotions, and business decisions.",
+						linkText: "",
+						href: "",
+						customIconBg: "rgba(255, 102, 204, 0.1)",
+						cardClass: "card-green",
+					},
+					{
+						icon: "⚙️",
+						title: "Oberstaff manages",
+						description:
+							"• Locally compliant employment agreements and onboarding documentation. <br> • Employer of record payroll services, including salary calculations, local-currency payments, statutory deductions, and employee payslips. <br> • Leave administration, employment changes, and HR documentation. <br> • Country-specific support for compensation changes, renewals, and offboarding. <br> • A consolidated monthly invoice and dedicated B2B support.",
+						linkText: "",
+						href: "",
+						customIconBg: "rgba(102, 255, 153, 0.1)",
+						cardClass: "card-pink",
+					},
+					
+				]}
+			/>
+			<div 
+    slot="bottom-alert" 
+    class="profiles-tech-notice"
+    style="background-color: #FFF5F5; border-left: 4px solid #FF4D4D; border-radius: 12px; padding: 18px 24px; max-width: 1050px; width: 100%; margin: 2rem auto 0 auto; text-align: center; color: #1B1B1B; font-family: 'Poppins', sans-serif; font-size: 0.95rem; line-height: 1.6;"
+>
+    🚨 <strong>What to expect from your EOR partner </strong><br> Your EOR partner should provide country-specific cost visibility, a clear responsibility split, reliable payroll operations, documented service processes, and direct support for your HR, Finance, Legal, and team leaders.
+    <a 
+        href="https://oberstaff.com/us/services/outsourced-staffing" 
+        style="color: #6663FD; font-weight: 700; text-decoration: none;"
+    >
+        
+    </a>
+</div>
+			</div>
+
+			<div class="fade-in-section">
 			<ConEorService
 				eyebrow=""
 				title="In-House International HR vs. <span style='color: #6663FD; font-weight: 900;'>Employer of Record services</span>"
@@ -790,59 +806,6 @@ const faqsList = [
 				]}
 			/>
 		</div>
-<!--
-		<div class="fade-in-section">
-			<ProcessOberstaff
-				className="process-employer"
-				title="¿Qué incluye nuestra gestión como <strong>empleador legal?</strong>"
-				items={[
-					{
-						label: "Estructuración",
-						badge: "100 % legal",
-						title: "Estructuración contractual",
-						description:
-							"Redactamos, revisamos y firmamos el contrato laboral local conforme a la normativa vigente en el país del talento.",
-						icon: "🔍",
-						badgeColor: "#6663FD",
-						badgeBg: "rgba(102, 99, 253, 0.1)",
-					},
-					{
-						label: "Payroll",
-						badge: "Gestión total",
-						title: "Payroll y administración mensual",
-						description:
-							"Calculamos la nómina y gestionamos pagos, recibos, novedades, remesas internacionales y la administración recurrente.",
-						icon: "📝",
-						badgeColor: "#6aca8a",
-						badgeBg: "rgba(102, 255, 153, 0.15)",
-					},
-					{
-						label: "Beneficios",
-						badge: "Sin riesgos",
-						title: "Beneficios y retenciones locales",
-						description:
-							"Administramos pagos en moneda local, aportes legales, beneficios obligatorios y los conceptos que exige cada país.",
-						icon: "🗂️",
-						badgeColor: "#FF66CC",
-						badgeBg: "rgba(255, 102, 204, 0.1)",
-					},
-					{
-						label: "Cumplimiento",
-						badge: "Soporte continuo",
-						title: "Cumplimiento y soporte continuo",
-						description:
-							"Acompañamos incidencias, renovaciones, ajustes salariales, permisos, terminaciones y todo el soporte documental.",
-						icon: "⚡",
-						badgeColor: "#1B1B1B",
-						badgeBg: "rgba(204, 255, 102, 0.3)",
-					},
-				]}
-				ctaTitle="Empieza a ahorrar hoy"
-				ctaDescription="Un equipo dedicado gestionará todo el proceso por ti."
-				ctaBtnText="Agendar llamada"
-			/>
-		</div>
--->
 
 		<div class="fade-in-section profiles-employer-page">
 			<ProfilesSection
@@ -903,25 +866,25 @@ const faqsList = [
 				subtitle=""
 				steps={[
 					{
-						title: "Workforce planning",
+						title: "01 — Workforce planning",
 						lineColorClass: "line-black",
 						description:
 							"You share the role, hiring country, target compensation, work arrangement, preferred start date, and expected level of integration with your U.S. team.",
 					},
 					{
-						title: "Local employment setup",
+						title: "02 — Local employment setup",
 						lineColorClass: "line-pink",
 						description:
 							"We confirm required benefits, local employment conditions, documentation, payroll inputs, and the complete onboarding process for the selected country.",
 					},
 					{
-						title: "Employee onboarding",
+						title: "03 — Employee onboarding",
 						lineColorClass: "line-orange",
 						description:
 							"The professional signs through <span style='font-weight: 800; color: #1b1b1b;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span>'s local employment structure and is prepared to begin working with your U.S. organization.",
 					},
 					{
-						title: "Monthly workforce administration",
+						title: "04 — Monthly workforce administration",
 						lineColorClass: "line-blue",
 						description:
 							"You receive one consolidated invoice while we coordinate payroll, local payments, statutory benefits, approved changes, documentation, and employee support.",
@@ -998,7 +961,8 @@ const faqsList = [
 			/>
 		</div>
 
-		<div class="fade-in-section cobertura-full-bg">
+
+<div class="fade-in-section cobertura-full-bg">
 			<CoberturaSeccion
 				title="Centralized Payroll for Your Staff <span style='color: #6663FD; font-weight: 900; white-space: nowrap;'>in Latin America</span>"
 				description="Hire professionals in key Spanish-speaking talent markets and centralize your HR administration through a single EOR partner."
@@ -1017,14 +981,21 @@ const faqsList = [
 			/>
 		</div>
 
-	
-
 		<div class="fade-in-section">
 			<CasosExitoSection
 				title="Companies Growing Their Remote Teams with <span style='font-weight: 800; color: #1b1b1b;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span>"
 				subtitle=""
 				columns={3}
 				testimonials={[
+					{
+						stars: 5,
+						avatar: "/Kate.webp",
+						imageAlt: "Kate McCaferty, Oberstaff EOR Client",
+						text: "We’ve been working with <span style='font-weight: 800; color: #1b1b1b;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'></span> for nearly two years, and the experience has been excellent from day one. Their dedicated team has supported us throughout the entire process, reviewing thousands of candidates and presenting qualified professionals who fit our needs. The cost savings, operational efficiency, and overall quality of the service have exceeded our expectations.",
+						author: "Kate McCaferty",
+						role: "CEO · KM Real Estate (U.S.)",
+						videoId: "9RLgpEF-GVA",
+					},
 					{
 						stars: 5,
 						avatar: "/fernando.webp",
@@ -1043,18 +1014,90 @@ const faqsList = [
 						role: "CEO · @amediastory",
 						videoId: "_CxlPfluS7M",
 					},
+		
+				]}
+			/>
+		</div>
+
+
+        	<div class="fade-in-section">
+			<PricingSection
+				eyebrow=""
+				title="Employer of Record Services Pricing for <span style='color: #6663FD; font-weight: 900;'>International Employment</span>"
+				subtitle=""
+				plans={[
 					{
-						stars: 5,
-						avatar: "/Kate.webp",
-						imageAlt: "Kate McCaferty, Oberstaff EOR Client",
-						text: "We’ve been working with <span style='font-weight: 800; color: #1b1b1b;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'></span> for nearly two years, and the experience has been excellent from day one. Their dedicated team has supported us throughout the entire process, reviewing thousands of candidates and presenting qualified professionals who fit our needs. The cost savings, operational efficiency, and overall quality of the service have exceeded our expectations.",
-						author: "Kate McCaferty",
-						role: "CEO · KM Real Estate (U.S.)",
-						videoId: "9RLgpEF-GVA",
+						badge: "MOST POPULAR",
+						title: "Complete EOR Service",
+						price: "790",
+						currency: "$",
+						period: "per employee/month",
+						teamSize: "Para equipos de 4-20 empleados",
+						features: [
+							"Locally compliant employment agreement.",
+							"Payroll calculation, local salary payments, and currency administration.",
+							"Onboarding, employment changes, statutory benefits, documentation, and offboarding support.",
+						],
+						ctaText: "Request a proposal",
+						ctaHref: "#contacto",
 					},
 				]}
 			/>
 		</div>
+<!--
+		<div class="fade-in-section">
+			<ProcessOberstaff
+				className="process-employer"
+				title="¿Qué incluye nuestra gestión como <strong>empleador legal?</strong>"
+				items={[
+					{
+						label: "Estructuración",
+						badge: "100 % legal",
+						title: "Estructuración contractual",
+						description:
+							"Redactamos, revisamos y firmamos el contrato laboral local conforme a la normativa vigente en el país del talento.",
+						icon: "🔍",
+						badgeColor: "#6663FD",
+						badgeBg: "rgba(102, 99, 253, 0.1)",
+					},
+					{
+						label: "Payroll",
+						badge: "Gestión total",
+						title: "Payroll y administración mensual",
+						description:
+							"Calculamos la nómina y gestionamos pagos, recibos, novedades, remesas internacionales y la administración recurrente.",
+						icon: "📝",
+						badgeColor: "#6aca8a",
+						badgeBg: "rgba(102, 255, 153, 0.15)",
+					},
+					{
+						label: "Beneficios",
+						badge: "Sin riesgos",
+						title: "Beneficios y retenciones locales",
+						description:
+							"Administramos pagos en moneda local, aportes legales, beneficios obligatorios y los conceptos que exige cada país.",
+						icon: "🗂️",
+						badgeColor: "#FF66CC",
+						badgeBg: "rgba(255, 102, 204, 0.1)",
+					},
+					{
+						label: "Cumplimiento",
+						badge: "Soporte continuo",
+						title: "Cumplimiento y soporte continuo",
+						description:
+							"Acompañamos incidencias, renovaciones, ajustes salariales, permisos, terminaciones y todo el soporte documental.",
+						icon: "⚡",
+						badgeColor: "#1B1B1B",
+						badgeBg: "rgba(204, 255, 102, 0.3)",
+					},
+				]}
+				ctaTitle="Empieza a ahorrar hoy"
+				ctaDescription="Un equipo dedicado gestionará todo el proceso por ti."
+				ctaBtnText="Agendar llamada"
+			/>
+		</div>
+-->
+
 
 		<FAQSection
 			title="Frequently Asked Questions about <span style='font-weight: 800; color: #1b1b1b;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span>’s EOR Services"
@@ -1325,5 +1368,6 @@ const faqsList = [
 		background-color: transparent !important;
 		color: #7B70FF !important;
 		border: 2px solid #7B70FF !important;
+		
 	}
 </style>
