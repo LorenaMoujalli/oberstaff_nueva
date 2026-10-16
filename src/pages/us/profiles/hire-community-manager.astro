@@ -17,6 +17,7 @@ import GuiaContratacion from "../../../components/guia-contratacion-perfiles/Gui
 import FranjaEmpresasHome from "../../../components/franja-empresas-home/FranjaEmpresasHome.astro";
 import ProcessOberstaff from "../../../components/process/ProcessOberstaff.astro";
 import OtrosServiciosSection from "../../../components/otros-servicios-servicios/OtrosServiciosSection.astro";
+import OperationalGaps from "../../../components/operational-gaps/OperationalGaps.astro";
 
 const ogImage = "Contratar-community-manager.webp";
 
@@ -725,75 +726,22 @@ const queEsOutsourcingProps = {
                 diffDescription=""
             />
 
-            <h3 style="text-align: center; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 20px; color: #1B1B1B; margin-top: 2rem; margin-bottom: 1.5rem; line-height: 1.3;">
-    Common operational gaps
-</h3>
-
-<div style="background-color: #ffffff; border: 1px solid #FFE4F2; border-radius: 24px; padding: 1.8rem; max-width: 800px; width: 100%; margin: 0 auto 3.5rem auto; box-shadow: 0 10px 30px rgba(0,0,0,0.03); font-family: 'Poppins', sans-serif;">
-    <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1.25rem;">
-        
-        <li style="display: flex; align-items: flex-start; gap: 1rem;">
-            <div style="width: 28px; height: 28px; border-radius: 50%; background-color: rgba(255, 102, 204, 0.15); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 0px;">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FF66CC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-            </div>
-            <span style="font-size: 0.95rem; line-height: 1.5; color: #333333; font-weight: 400;">
-                Comments, direct messages, reviews, and member questions remain unanswered or receive inconsistent responses.
-            </span>
-        </li>
-
-        <li style="display: flex; align-items: flex-start; gap: 1rem;">
-            <div style="width: 28px; height: 28px; border-radius: 50%; background-color: rgba(255, 102, 204, 0.15); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FF66CC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-            </div>
-            <span style="font-size: 0.95rem; line-height: 1.5; color: #333333; font-weight: 400;">
-                Marketing teams are pulled away from strategy and content work to manage daily conversation queues.
-            </span>
-        </li>
-
-        <li style="display: flex; align-items: flex-start; gap: 1rem;">
-            <div style="width: 28px; height: 28px; border-radius: 50%; background-color: rgba(255, 102, 204, 0.15); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FF66CC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-            </div>
-            <span style="font-size: 0.95rem; line-height: 1.5; color: #333333; font-weight: 400;">
-                Customer-support teams resolve tickets but may not have the context or tone required for public community interaction.</span></strong>
-            </span>
-        </li>
-
-        <li style="display: flex; align-items: flex-start; gap: 1rem;">
-            <div style="width: 28px; height: 28px; border-radius: 50%; background-color: rgba(255, 102, 204, 0.15); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FF66CC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-            </div>
-            <span style="font-size: 0.95rem; line-height: 1.5; color: #333333; font-weight: 400;">
-                Spam, harassment, misinformation, or sensitive complaints are handled reactively without documented escalation rules.
-            </span>
-        </li>
-
-        </ul>
 </div>
 
-<div 
-    slot="bottom-alert" 
-    class="profiles-tech-notice"
-    style="background-color: #FFF5F5; border-left: 4px solid #FF4D4D; border-radius: 12px; padding: 18px 24px; max-width: 1050px; width: 100%; margin: 2rem auto 0 auto; text-align: center; color: #1B1B1B; font-family: 'Poppins', sans-serif; font-size: 0.95rem; line-height: 1.6; margin-bottom: 30px"
->
-    <strong>The dedicated Community Manager solves the continuity and relationship problem. The role does not replace a Social Media Manager responsible for strategy, content calendars, publishing, campaigns, analytics, or channel growth. </strong>
-    <a 
-        href="" 
-        style="color: #6663FD; font-weight: 700; text-decoration: none;"
-    >
-        
-    </a>
+<div class="fade-in-section">
+<OperationalGaps
+title="Common operational gaps"
+items={[
+"Comments, direct messages, reviews, and member questions remain unanswered or receive inconsistent responses.",
+"Marketing teams are pulled away from strategy and content work to manage daily conversation queues.",
+"Customer-support teams resolve tickets but may not have the context or tone required for public community interaction.",
+"Spam, harassment, misinformation, or sensitive complaints are handled reactively without documented escalation rules.",
+]}
+alertText="The dedicated Community Manager solves the continuity and relationship problem. The role does not replace a Social Media Manager responsible for strategy, content calendars, publishing, campaigns, analytics, or channel growth."
+/>
 </div>
 
-		</div>
+
         </div>
 
         <div class="fade-in-section">
@@ -1420,7 +1368,7 @@ const queEsOutsourcingProps = {
     }
 
     :global(.employer-use-cases-grid) {
-        grid-template-columns: repeat(3, 1fr) !important;
+    grid-template-columns: repeat(2, 1fr) !important;
     }
 
     @media (max-width: 900px) {
@@ -1554,8 +1502,7 @@ const queEsOutsourcingProps = {
         line-height: 1.4;
     }
 
-    .service-detail-container
-        :global(.guia-cards-grid .guia-card:nth-child(3)) {
-        grid-column: 1 / -1;
+    :global(.guia-cards-grid .guia-card:nth-child(3)) {
+      grid-column: 1 / -1;
     }
 </style>

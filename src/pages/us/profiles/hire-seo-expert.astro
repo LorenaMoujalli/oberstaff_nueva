@@ -17,6 +17,7 @@ import GuiaContratacion from "../../../components/guia-contratacion-perfiles/Gui
 import FranjaEmpresasHome from "../../../components/franja-empresas-home/FranjaEmpresasHome.astro";
 import ProcessOberstaff from "../../../components/process/ProcessOberstaff.astro";
 import OtrosServiciosSection from "../../../components/otros-servicios-servicios/OtrosServiciosSection.astro";
+import OperationalGaps from "../../../components/operational-gaps/OperationalGaps.astro";
 
 const ogImage = "Contratar-experto-seo.webp";
 
@@ -775,72 +776,18 @@ const queEsOutsourcingProps = {
       />
     </div>
 
-    <h3 style="text-align: center; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 20px; color: #1B1B1B; margin-top: 2rem; margin-bottom: 1.5rem; line-height: 1.3;">
-    Common operational gaps
-</h3>
 
-<div style="background-color: #ffffff; border: 1px solid #FFE4F2; border-radius: 24px; padding: 1.8rem; max-width: 800px; width: 100%; margin: 0 auto 3.5rem auto; box-shadow: 0 10px 30px rgba(0,0,0,0.03); font-family: 'Poppins', sans-serif;">
-    <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1.25rem;">
-        
-        <li style="display: flex; align-items: flex-start; gap: 1rem;">
-            <div style="width: 28px; height: 28px; border-radius: 50%; background-color: rgba(255, 102, 204, 0.15); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 0px;">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FF66CC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-            </div>
-            <span style="font-size: 0.95rem; line-height: 1.5; color: #333333; font-weight: 400;">
-                Technical issues in crawling, indexing, internal linking, Core Web Vitals, or templates remain open because no one owns the SEO backlog.
-            </span>
-        </li>
-
-        <li style="display: flex; align-items: flex-start; gap: 1rem;">
-            <div style="width: 28px; height: 28px; border-radius: 50%; background-color: rgba(255, 102, 204, 0.15); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FF66CC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-            </div>
-            <span style="font-size: 0.95rem; line-height: 1.5; color: #333333; font-weight: 400;">
-                Marketing teams publish content without consistent search-intent mapping, cannibalization checks, internal linking, or post-publication optimization.
-            </span>
-        </li>
-
-        <li style="display: flex; align-items: flex-start; gap: 1rem;">
-            <div style="width: 28px; height: 28px; border-radius: 50%; background-color: rgba(255, 102, 204, 0.15); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FF66CC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-            </div>
-            <span style="font-size: 0.95rem; line-height: 1.5; color: #333333; font-weight: 400;">
-                Developers receive SEO requests without clear prioritization, acceptance criteria, business impact, or validation after deployment.</span></strong>
-            </span>
-        </li>
-
-        <li style="display: flex; align-items: flex-start; gap: 1rem;">
-            <div style="width: 28px; height: 28px; border-radius: 50%; background-color: rgba(255, 102, 204, 0.15); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FF66CC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-            </div>
-            <span style="font-size: 0.95rem; line-height: 1.5; color: #333333; font-weight: 400;">
-                Organic reporting focuses on traffic or rankings alone instead of qualified visibility, conversions, landing-page performance, and commercial outcomes.
-            </span>
-        </li>
-
-        </ul>
-</div>
-
-<div 
-    slot="bottom-alert" 
-    class="profiles-tech-notice"
-    style="background-color: #FFF5F5; border-left: 4px solid #FF4D4D; border-radius: 12px; padding: 18px 24px; max-width: 1050px; width: 100%; margin: 2rem auto 0 auto; text-align: center; color: #1B1B1B; font-family: 'Poppins', sans-serif; font-size: 0.95rem; line-height: 1.6; margin-bottom: 30px"
->
-    <strong>The dedicated SEO Specialist solves the recurring ownership and execution problem. The role does not replace developers, subject-matter experts, copywriters, product teams, or paid-media specialists; instead, it coordinates SEO requirements with them and keeps organic-search priorities moving. </strong>
-    <a 
-        href="" 
-        style="color: #6663FD; font-weight: 700; text-decoration: none;"
-    >
-        
-    </a>
+<div class="fade-in-section">
+<OperationalGaps
+title="Common operational gaps"
+items={[
+"Technical issues in crawling, indexing, internal linking, Core Web Vitals, or templates remain open because no one owns the SEO backlog.",
+"Marketing teams publish content without consistent search-intent mapping, cannibalization checks, internal linking, or post-publication optimization.",
+"Developers receive SEO requests without clear prioritization, acceptance criteria, business impact, or validation after deployment.",
+"Organic reporting focuses on traffic or rankings alone instead of qualified visibility, conversions, landing-page performance, and commercial outcomes.",
+]}
+alertText="The dedicated SEO Specialist solves the recurring ownership and execution problem. The role does not replace developers, subject-matter experts, copywriters, product teams, or paid-media specialists; instead, it coordinates SEO requirements with them and keeps organic-search priorities moving."
+/>
 </div>
 
 		</div>
@@ -1603,6 +1550,11 @@ const queEsOutsourcingProps = {
       font-size: 16px;
       font-weight: 700;
       line-height: 1.4;
+    }
+
+     
+      :global(.guia-cards-grid .guia-card:nth-child(3)) {
+      grid-column: 1 / -1;
     }
   </style>
 </DashboardProfilesUs>
