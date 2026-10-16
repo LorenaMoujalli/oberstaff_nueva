@@ -1323,6 +1323,10 @@ const otrosServiciosProps = {
             text-align: center !important;
         }
 
+        :global(.guia-cards-grid:has(> .guia-card:nth-child(3):last-child) .guia-card:nth-child(3)) {
+            grid-column: 1 / -1;
+        }
+
         :global(.faq-disenador-custom .faq-left-column) {
             position: static !important;
             width: 100% !important;

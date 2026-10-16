@@ -1172,6 +1172,10 @@ const otrosServiciosProps = {
             padding: 0 !important;
         }
 
+        :global(.guia-cards-grid:has(> .guia-card:nth-child(3):last-child) .guia-card:nth-child(3)) {
+            grid-column: 1 / -1;
+        }
+
         @media (max-width: 768px) {
             :global(.employer-use-cases-grid .icon-emoji-servicios-home) {
                 font-size: 30px !important;
