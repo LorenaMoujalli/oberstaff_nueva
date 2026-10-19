@@ -43,12 +43,14 @@ const {
     captchaRefreshTitle,
 } = Astro.props;
 
-const isPrPage = Astro.url.pathname.includes("/pr");
+const isPrPage = Astro.url.pathname.startsWith("/pr/") || Astro.url.pathname === "/pr" || Astro.url.pathname.includes("/pr/");
 const isUsPage = Astro.url.pathname.includes("/us");
 const finalPais = pais || (isPrPage ? "Puerto Rico" : (isUsPage ? "United States" : "España"));
 const privacyPolicyUrl = isPrPage
     ? "/pr/politica-de-privacidad-y-cookies-de-oberstaff"
-    : "/politica-de-privacidad-y-cookies-de-oberstaff";
+    : (isUsPage
+        ? "/us/oberstaff-privacy-and-cookie-policy"
+        : "/politica-de-privacidad-y-cookies-de-oberstaff");
 
 const finalPlaceholderName = placeholderName || (isUsPage ? "Full name *" : "Nombre completo *");
 const finalPlaceholderCompany = placeholderCompany || (isUsPage ? "Company name *" : "Nombre de la empresa *");
@@ -257,6 +259,24 @@ const finalSmsConsentText = smsConsentText || defaultSmsConsentText;
     }
     .form-feedback.error {
         color: #ef4444;
+    }
+
+    :global(.consent-link) {
+        color: #6663FD !important;
+        text-decoration: underline !important;
+    }
+    :global(.consent-link:visited) {
+        color: #6663FD !important;
+        text-decoration: underline !important;
+    }
+    :global(.consent-link:hover) {
+        color: #4f46e5 !important;
+        text-decoration: underline !important;
+    }
+    :global(.consent-link:active),
+    :global(.consent-link:focus) {
+        color: #6663FD !important;
+        text-decoration: underline !important;
     }
 </style>
 

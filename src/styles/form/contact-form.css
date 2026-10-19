@@ -1,22 +1,28 @@
 .eor-contact-form {
     background-color: #FAFAFC;
     padding: 80px 20px;
-
+    overflow-x: hidden;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .contact-container {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1.15fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
     /* Slightly larger form column */
     gap: 80px;
     align-items: center;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* Info Column */
 .contact-info {
     max-width: 500px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .contact-info h2 {
@@ -105,13 +111,23 @@
 /* Responsive */
 @media (max-width: 1024px) {
     .contact-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
         gap: 60px;
         text-align: center;
+        width: 100%;
     }
 
     .contact-info {
         margin: 0 auto;
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+
+    .form-wrapper {
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
     }
 
     .contact-direct-card {

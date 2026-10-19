@@ -9,6 +9,39 @@ interface Props {
     webhookUrl?: string;
     formName?: string;
     pais?: string;
+
+    // Field Visibility and Layout
+    showRolesField?: boolean;
+    showCommentsField?: boolean;
+    phoneBelowEmail?: boolean;
+
+    // Field Placeholders
+    namePlaceholder?: string;
+    companyPlaceholder?: string;
+    emailPlaceholder?: string;
+    phonePlaceholder?: string;
+    rolesPlaceholder?: string;
+    commentsPlaceholder?: string;
+
+    // SMS Consent / Policy
+    consentText?: string;
+    privacyPolicyText?: string;
+    privacyPolicyUrl?: string;
+    consentErrorText?: string;
+
+    // Captcha Texts
+    captchaLabel?: string;
+    captchaHint?: string;
+    captchaPlaceholder?: string;
+    captchaRefreshTitle?: string;
+    captchaRequiredError?: string;
+    captchaInvalidError?: string;
+
+    // Dynamic Feedback / Status
+    buttonLoadingText?: string;
+    successToastMessage?: string;
+    duplicateToastMessage?: string;
+    errorFeedbackMessage?: string;
 }
 
 const {
@@ -18,14 +51,47 @@ const {
     microcopy = "↳ Sin compromiso · te contactaremos en menos de 24 horas para entender tu necesidad y explicarte los siguientes pasos.",
     webhookUrl = "",
     formName = "",
-    pais = ""
+    pais = "",
+
+    showRolesField = true,
+    showCommentsField = true,
+    phoneBelowEmail = false,
+
+    namePlaceholder = "Nombre completo *",
+    companyPlaceholder = "Nombre de la empresa *",
+    emailPlaceholder = "Email corporativo *",
+    phonePlaceholder = "Teléfono *",
+    rolesPlaceholder = "¿Cuántos profesionales o qué roles buscas contratar? *",
+    commentsPlaceholder = "Comentarios adicionales (opcional)",
+
+    consentText = '<strong>Al facilitar su número de teléfono</strong>, aceptas recibir mensajes SMS relacionados con atención al cliente de <strong>Oberstaff<span style="color: #FF66CC;">.</span></strong> La frecuencia de los mensajes puede variar. Pueden aplicarse tarifas estándar de mensajes y datos. Responde STOP para cancelar la suscripción. Responde Help para obtener ayuda.',
+    privacyPolicyText = "Política de privacidad y uso de cookies.",
+    privacyPolicyUrl,
+    consentErrorText = "⚠ Debes aceptar el consentimiento para continuar.",
+
+    captchaLabel = "Código de verificación ",
+    captchaHint = "Ingresa el texto que ves en la imagen",
+    captchaPlaceholder = "Escribe el código",
+    captchaRefreshTitle = "Nuevo código",
+    captchaRequiredError = "⚠ Este campo es obligatorio. Ingresa el código de la imagen.",
+    captchaInvalidError = "❌ El código ingresado es incorrecto. Se generó un nuevo código, inténtalo de nuevo.",
+
+    buttonLoadingText = "Enviando...",
+    successToastMessage = "¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.",
+    duplicateToastMessage = "Ya hemos recibido una solicitud con este correo. Nos pondremos en contacto pronto.",
+    errorFeedbackMessage = "❌ Error al enviar. Por favor inténtalo de nuevo.",
 } = Astro.props;
  
-const isPrPage = Astro.url.pathname.includes('/pr');
-const finalPais = pais || (isPrPage ? "Puerto Rico" : "España");
-const privacyPolicyUrl = isPrPage 
-  ? "/pr/politica-de-privacidad-y-cookies-de-oberstaff" 
-  : "/politica-de-privacidad-y-cookies-de-oberstaff";
+const isPrPage = Astro.url.pathname.startsWith('/pr/') || Astro.url.pathname === '/pr' || Astro.url.pathname.includes('/pr/');
+const isUsPage = Astro.url.pathname.includes('/us') || pais.toLowerCase().includes('estados unidos');
+const finalPais = pais || (isPrPage ? "Puerto Rico" : (isUsPage ? "Estados Unidos" : "España"));
+const finalPrivacyPolicyUrl = privacyPolicyUrl || (
+  isPrPage 
+    ? "/pr/politica-de-privacidad-y-cookies-de-oberstaff" 
+    : (isUsPage
+        ? "/us/oberstaff-privacy-and-cookie-policy"
+        : "/politica-de-privacidad-y-cookies-de-oberstaff")
+);
 ---
 
 <!-- intl-tel-input library -->
@@ -36,17 +102,40 @@ const privacyPolicyUrl = isPrPage
     <h2 set:html={title} />
     <p class="intro-text" set:html={description} />
 
-    <form class="modern-form" data-webhook-url={webhookUrl} data-is-pr={isPrPage ? "true" : "false"} data-form-name={formName} data-pais={finalPais}>
-        <input type="text" placeholder="Nombre completo *" required />
-        <input type="text" placeholder="Nombre de la empresa *" required />
+    <form 
+        class="modern-form" 
+        data-webhook-url={webhookUrl} 
+        data-is-pr={isPrPage ? "true" : "false"} 
+        data-is-us={isUsPage ? "true" : "false"}
+        data-form-name={formName} 
+        data-pais={finalPais}
+        data-loading-text={buttonLoadingText}
+        data-consent-error={consentErrorText}
+        data-captcha-required={captchaRequiredError}
+        data-captcha-invalid={captchaInvalidError}
+        data-success-toast={successToastMessage}
+        data-duplicate-toast={duplicateToastMessage}
+        data-error-feedback={errorFeedbackMessage}
+    >
+        <input type="text" placeholder={namePlaceholder} required />
+        <input type="text" placeholder={companyPlaceholder} required />
         
-        <div class="form-row">
-            <input type="email" placeholder="Email corporativo *" required />
-            <input type="tel" placeholder="Teléfono *" required style="width: 100%; box-sizing: border-box;" oninput="this.value = this.value.replace(/[^0-9 ]/g, '')" data-phone="true" />
-        </div>
+        {phoneBelowEmail ? (
+            <input type="email" placeholder={emailPlaceholder} required />
+            <input type="tel" placeholder={phonePlaceholder} required style="width: 100%; box-sizing: border-box;" oninput="this.value = this.value.replace(/[^0-9 ]/g, '')" data-phone="true" />
+        ) : (
+            <div class="form-row">
+                <input type="email" placeholder={emailPlaceholder} required />
+                <input type="tel" placeholder={phonePlaceholder} required style="width: 100%; box-sizing: border-box;" oninput="this.value = this.value.replace(/[^0-9 ]/g, '')" data-phone="true" />
+            </div>
+        )}
 
-        <input type="text" placeholder="¿Cuántos profesionales o qué roles buscas contratar? *" required />
-        <textarea rows="4" placeholder="Comentarios adicionales (opcional)"></textarea>
+        {showRolesField && (
+            <input type="text" placeholder={rolesPlaceholder} required />
+        )}
+        {showCommentsField && (
+            <textarea rows="4" placeholder={commentsPlaceholder}></textarea>
+        )}
 
         <!-- SMS Consent Checkbox -->
         <div class="form-group full-width consent-group" style="margin-bottom: 15px;">
@@ -59,10 +148,9 @@ const privacyPolicyUrl = isPrPage
                     style="flex-shrink: 0; width: 18px; height: 18px; margin-top: 3px; accent-color: #6663FD; cursor: pointer;"
                 />
                 <span class="consent-text" style="font-family: 'Poppins', sans-serif; font-size: 10px; line-height: 1.6; color: #4a4a4a;">
-                    <strong>Al facilitar su número de teléfono</strong>, aceptas recibir mensajes SMS relacionados con atención al cliente de <strong>Oberstaff<span style="color: #FF66CC;">.</span></strong>
-                    La frecuencia de los mensajes puede variar. Pueden aplicarse tarifas estándar de mensajes y datos.
-                    Responde STOP para cancelar la suscripción. Responde Help para obtener ayuda.
-                    <a href={privacyPolicyUrl} target="_blank" class="consent-link" style="color: #6663FD; text-decoration: underline;">Política de privacidad y uso de cookies.</a>
+                    <span set:html={consentText} />
+                    {" "}
+                    <a href={finalPrivacyPolicyUrl} target="_blank" class="consent-link" style="color: #6663FD; text-decoration: underline;">{privacyPolicyText}</a>
                     <span class="required-star" style="color: #ef4444; font-weight: 700; margin-left: 2px;">*</span>
                 </span>
             </label>
@@ -71,20 +159,20 @@ const privacyPolicyUrl = isPrPage
 
         <!-- CAPTCHA Verification -->
         <div class="form-group full-width captcha-group" style="margin-bottom: 20px; text-align: left;">
-            <label class="captcha-label" style="font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 600; color: #1B1B1B; display: block; margin-bottom: 4px;">Código de verificación <span class="required-star" style="color: #ef4444; font-weight: 700; margin-left: 2px;">*</span></label>
-            <p class="captcha-hint" style="font-family: 'Poppins', sans-serif; font-size: 12px; color: #888; margin: 0 0 8px 0;">Ingresa el texto que ves en la imagen</p>
+            <label class="captcha-label" style="font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 600; color: #1B1B1B; display: block; margin-bottom: 4px;">{captchaLabel}<span class="required-star" style="color: #ef4444; font-weight: 700; margin-left: 2px;">*</span></label>
+            <p class="captcha-hint" style="font-family: 'Poppins', sans-serif; font-size: 12px; color: #888; margin: 0 0 8px 0;">{captchaHint}</p>
             <div class="captcha-input-row" style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
                 <input
                     type="text"
                     id="captcha-input"
                     class="captcha-input"
-                    placeholder="Escribe el código"
+                    placeholder={captchaPlaceholder}
                     autocomplete="off"
                     maxlength="8"
                     required
                     style="font-family: 'Poppins', sans-serif; background-color: #FAFAFC; border: 1px solid #E0E0E0; padding: 10px 14px; border-radius: 8px; font-size: 15px; outline: none; transition: border-color 0.3s ease, box-shadow 0.3s ease; width: 200px; color: #1B1B1B; letter-spacing: 2px;"
                 />
-                <button type="button" id="captcha-refresh" class="captcha-refresh-btn" title="Nuevo código" aria-label="Generar nuevo código" style="background: none; border: 1.5px solid #6663FD; border-radius: 6px; color: #6663FD; font-size: 18px; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s, color 0.2s; padding: 0; flex-shrink: 0;">
+                <button type="button" id="captcha-refresh" class="captcha-refresh-btn" title={captchaRefreshTitle} aria-label={captchaRefreshTitle} style="background: none; border: 1.5px solid #6663FD; border-radius: 6px; color: #6663FD; font-size: 18px; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s, color 0.2s; padding: 0; flex-shrink: 0;">
                     &#x21bb;
                 </button>
             </div>
@@ -120,6 +208,9 @@ const privacyPolicyUrl = isPrPage
     .captcha-refresh-btn:hover {
         background: #6663FD !important;
         color: #fff !important;
+    }
+    :global(.modern-form .iti) {
+        width: 100%;
     }
 </style>
 
@@ -292,15 +383,27 @@ const privacyPolicyUrl = isPrPage
         let iti: any = null;
         if (phoneInput && (window as any).intlTelInput) {
             const isPr = f.dataset.isPr === 'true';
+            const isUs = f.dataset.isUs === 'true' || f.dataset.pais?.toLowerCase().includes('estados unidos');
             iti = (window as any).intlTelInput(phoneInput, {
-                initialCountry: isPr ? "pr" : "es",
+                initialCountry: isUs ? "us" : (isPr ? "pr" : "es"),
                 separateDialCode: true,
-                preferredCountries: isPr
-                    ? ["pr", "co", "ar", "mx", "cl", "pe", "ve"]
-                    : ["es", "co", "ar", "mx", "cl", "pe", "ve"],
+                preferredCountries: isUs
+                    ? ["us", "pr", "co", "ar", "mx", "cl", "pe", "ve"]
+                    : (isPr
+                        ? ["pr", "co", "ar", "mx", "cl", "pe", "ve"]
+                        : ["es", "co", "ar", "mx", "cl", "pe", "ve"]),
                 utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.10/build/js/utils.js",
             });
         }
+
+        // Dynamic text messages from data attributes
+        const loadingText = f.dataset.loadingText || 'Enviando...';
+        const consentErrorMsg = f.dataset.consentError || '⚠ Debes aceptar el consentimiento para continuar.';
+        const captchaRequiredMsg = f.dataset.captchaRequired || '⚠ Este campo es obligatorio. Ingresa el código de la imagen.';
+        const captchaInvalidMsg = f.dataset.captchaInvalid || '❌ El código ingresado es incorrecto. Se generó un nuevo código, inténtalo de nuevo.';
+        const successToastMsg = f.dataset.successToast || '¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.';
+        const duplicateToastMsg = f.dataset.duplicateToast || 'Ya hemos recibido una solicitud con este correo. Nos pondremos en contacto pronto.';
+        const errorFeedbackMsg = f.dataset.errorFeedback || '❌ Error al enviar. Por favor inténtalo de nuevo.';
 
         // CAPTCHA state
         let currentCode = '';
@@ -335,7 +438,7 @@ const privacyPolicyUrl = isPrPage
             // ── Validate consent ──
             let hasError = false;
             if (!consentCheckbox?.checked) {
-                if (consentError) consentError.textContent = '⚠ Debes aceptar el consentimiento para continuar.';
+                if (consentError) consentError.textContent = consentErrorMsg;
                 hasError = true;
             } else {
                 if (consentError) consentError.textContent = '';
@@ -344,12 +447,12 @@ const privacyPolicyUrl = isPrPage
             // ── Validate CAPTCHA ──
             const userCode = captchaInput?.value.trim().toUpperCase();
             if (!userCode) {
-                if (captchaError) captchaError.textContent = '⚠ Este campo es obligatorio. Ingresa el código de la imagen.';
+                if (captchaError) captchaError.textContent = captchaRequiredMsg;
                 captchaInput?.classList.add('invalid');
                 hasError = true;
             } else if (userCode !== currentCode) {
                 refreshCaptcha();
-                if (captchaError) captchaError.textContent = '❌ El código ingresado es incorrecto. Se generó un nuevo código, inténtalo de nuevo.';
+                if (captchaError) captchaError.textContent = captchaInvalidMsg;
                 captchaInput?.classList.add('invalid');
                 hasError = true;
             } else {
@@ -405,7 +508,7 @@ const privacyPolicyUrl = isPrPage
             // Verificar si el correo ya existe
             if (correo) {
                 btn.disabled = true;
-                btn.innerHTML = 'Enviando...';
+                btn.innerHTML = loadingText;
                 try {
                     const checkRes = await fetch('/api/check-email', {
                         method: 'POST',
@@ -415,7 +518,7 @@ const privacyPolicyUrl = isPrPage
                     if (checkRes.ok) {
                         const checkData = await checkRes.json();
                         if (checkData.exists) {
-                            showToast('Ya hemos recibido una solicitud con este correo. Nos pondremos en contacto pronto.', 'success');
+                            showToast(duplicateToastMsg, 'success');
                             (e.target as HTMLFormElement).reset();
                             btn.disabled = false;
                             btn.innerHTML = btn.dataset.originalHtml ?? 'Solicitar llamada gratuita →';
@@ -430,7 +533,7 @@ const privacyPolicyUrl = isPrPage
             }
 
             btn.disabled = true;
-            btn.innerHTML = 'Enviando...';
+            btn.innerHTML = loadingText;
             if (feedback) {
                 feedback.className = 'form-feedback';
                 feedback.textContent = '';
@@ -467,11 +570,11 @@ const privacyPolicyUrl = isPrPage
 
                 f.reset();
                 refreshCaptcha();
-                showToast('¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.', 'success');
+                showToast(successToastMsg, 'success');
             } catch {
                 if (feedback) {
                     feedback.className = 'form-feedback error';
-                    feedback.textContent = '❌ Error al enviar. Por favor inténtalo de nuevo.';
+                    feedback.textContent = errorFeedbackMsg;
                 }
             } finally {
                 btn.disabled = false;

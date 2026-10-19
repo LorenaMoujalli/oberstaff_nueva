@@ -17,6 +17,15 @@ interface Props {
     whatsappNumber?: string;
     showSecondaryButton?: boolean;
     stats?: any[];
+    stat1Number?: string;
+    stat1Description?: string;
+    stat1ColorClass?: string;
+    stat2Number?: string;
+    stat2Description?: string;
+    stat2ColorClass?: string;
+    stat3Number?: string;
+    stat3Description?: string;
+    stat3ColorClass?: string;
 }
 
 const {
@@ -30,7 +39,16 @@ const {
     secondaryHref,
     whatsappNumber,
     showSecondaryButton = true,
-    stats
+    stats,
+    stat1Number,
+    stat1Description,
+    stat1ColorClass,
+    stat2Number,
+    stat2Description,
+    stat2ColorClass,
+    stat3Number,
+    stat3Description,
+    stat3ColorClass
 } = Astro.props;
 
 const finalSecondaryHref = whatsappNumber
@@ -57,6 +75,17 @@ const finalSecondaryHref = whatsappNumber
             showSecondaryButton={showSecondaryButton}
         />
         
-        <HeroStats stats={stats} />
+        <HeroStats 
+            stats={stats} 
+            stat1Number={stat1Number}
+            stat1Description={stat1Description}
+            stat1ColorClass={stat1ColorClass}
+            stat2Number={stat2Number}
+            stat2Description={stat2Description}
+            stat2ColorClass={stat2ColorClass}
+            stat3Number={stat3Number}
+            stat3Description={stat3Description}
+            stat3ColorClass={stat3ColorClass}
+        />
     </div>
 </section>

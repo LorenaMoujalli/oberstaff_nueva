@@ -17,43 +17,100 @@ interface Props {
     title?: string;
     subtitle?: string;
     channels?: Channel[];
+
+    channel1Icon?: string;
+    channel1BgClass?: string;
+    channel1HoverClass?: string;
+    channel1Title?: string;
+    channel1Description?: string;
+    channel1ButtonText?: string;
+    channel1Href?: string;
+    channel1Target?: string;
+
+    channel2Icon?: string;
+    channel2BgClass?: string;
+    channel2HoverClass?: string;
+    channel2Title?: string;
+    channel2Description?: string;
+    channel2ButtonText?: string;
+    channel2Href?: string;
+    channel2Target?: string;
+
+    channel3Icon?: string;
+    channel3BgClass?: string;
+    channel3HoverClass?: string;
+    channel3Title?: string;
+    channel3Description?: string;
+    channel3ButtonText?: string;
+    channel3Href?: string;
+    channel3Target?: string;
 }
 
 const {
     title = "Elige el canal adecuado",
     subtitle = "Selecciona la opción que mejor describa tu caso para que podamos orientarte de forma más precisa.",
-    channels = [
-        {
-            icon: "🏢",
-            bgClass: "bg-soft-purple",
-            hoverClass: "hover-purple",
-            title: "Empresas",
-            description: "Quiero incorporar talento remoto o comparar modelos de colaboración.",
-            buttonText: "Usar formulario principal",
-            href: "#formulario"
-        },
-        {
-            icon: "🚀",
-            bgClass: "bg-soft-pink",
-            hoverClass: "hover-pink",
-            title: "Candidatos",
-            description: 'Quiero formar parte de la red de talento de <strong>Oberstaff<span style="color: #FF66CC">.</span></strong>',
-            buttonText: "Ir a la página para candidatos",
-            href: "https://oberstaff.zohorecruit.com/jobs/careers",
-            target: "_blank"
-        }, 
-        {
-            icon: "🤝",
-            bgClass: "bg-soft-green",
-            hoverClass: "hover-green",
-            title: "Clientes actuales",
-            description: "Necesito soporte sobre una contratación, factura, perfil o proceso activo.",
-            buttonText: "Contactar a soporte",
-            href: "mailto:info@oberstaff.com",
-            target: "_blank"
-        }
-    ] 
+    channels,
+
+    channel1Icon = "🏢",
+    channel1BgClass = "bg-soft-purple",
+    channel1HoverClass = "hover-purple",
+    channel1Title = "Empresas",
+    channel1Description = "Quiero incorporar talento remoto o comparar modelos de colaboración.",
+    channel1ButtonText = "Usar formulario principal",
+    channel1Href = "#formulario",
+    channel1Target = "_self",
+
+    channel2Icon = "🚀",
+    channel2BgClass = "bg-soft-pink",
+    channel2HoverClass = "hover-pink",
+    channel2Title = "Candidatos",
+    channel2Description = 'Quiero formar parte de la red de talento de <strong>Oberstaff<span style="color: #FF66CC">.</span></strong>',
+    channel2ButtonText = "Ir a la página para candidatos",
+    channel2Href = "https://oberstaff.zohorecruit.com/jobs/careers",
+    channel2Target = "_blank",
+
+    channel3Icon = "🤝",
+    channel3BgClass = "bg-soft-green",
+    channel3HoverClass = "hover-green",
+    channel3Title = "Clientes actuales",
+    channel3Description = "Necesito soporte sobre una contratación, factura, perfil o proceso activo.",
+    channel3ButtonText = "Contactar a soporte",
+    channel3Href = "mailto:info@oberstaff.com",
+    channel3Target = "_blank",
 } = Astro.props;
+
+const finalChannels: Channel[] = channels || [
+    {
+        icon: channel1Icon,
+        bgClass: channel1BgClass,
+        hoverClass: channel1HoverClass,
+        title: channel1Title,
+        description: channel1Description,
+        buttonText: channel1ButtonText,
+        href: channel1Href,
+        target: channel1Target
+    },
+    {
+        icon: channel2Icon,
+        bgClass: channel2BgClass,
+        hoverClass: channel2HoverClass,
+        title: channel2Title,
+        description: channel2Description,
+        buttonText: channel2ButtonText,
+        href: channel2Href,
+        target: channel2Target
+    },
+    {
+        icon: channel3Icon,
+        bgClass: channel3BgClass,
+        hoverClass: channel3HoverClass,
+        title: channel3Title,
+        description: channel3Description,
+        buttonText: channel3ButtonText,
+        href: channel3Href,
+        target: channel3Target
+    }
+];
 ---
 <!-- https://oberstaff.zohorecruit.com/jobs/careers
  mailto:soporte@oberstaff.com
@@ -67,7 +124,7 @@ const {
     </div>
 
     <div class="channels-grid">
-        {channels.map((channel) => (
+        {finalChannels.map((channel) => (
             <ChannelCard {...channel} />
         ))}
     </div>

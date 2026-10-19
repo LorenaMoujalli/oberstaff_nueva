@@ -680,7 +680,7 @@ const queEsOutsourcingProps = {
       placeholderEmail="Corporate email *"
       placeholderCompany="Company name *"
       placeholderPhone="Phone number *"
-      smsConsentText={`<strong>By providing your phone number</strong>, you agree to receive customer support SMS messages from <strong>Oberstaff<span style="color: #FF66CC;">.</span></strong> Message frequency may vary. Standard message and data rates may apply. Reply STOP to cancel subscription. Reply HELP for help. <a href="/politica-de-privacidad-y-cookies-de-oberstaff" target="_blank" class="consent-link" style="color: #6663FD; text-decoration: underline;">Privacy policy and cookie usage.</a> <span class="required-star" style="color: #ef4444; font-weight: 700; margin-left: 2px;">*</span>`}
+      smsConsentText={`<strong>By providing your phone number</strong>, you agree to receive customer support SMS messages from <strong>Oberstaff<span style="color: #FF66CC;">.</span></strong> Message frequency may vary. Standard message and data rates may apply. Reply STOP to cancel subscription. Reply HELP for help. <a href="/us/oberstaff-privacy-and-cookie-policy" target="_blank" class="consent-link" style="color: #6663FD; text-decoration: underline;">Privacy policy and cookie usage.</a> <span class="required-star" style="color: #ef4444; font-weight: 700; margin-left: 2px;">*</span>`}
       captchaLabel="Verification code"
       captchaHint="Enter the characters shown in the image"
       captchaPlaceholder="Enter code"
@@ -939,7 +939,7 @@ ctaText="Solicitar perfiles de diseño gráfico remoto →"
       <div 
     slot="bottom-alert" 
     class="profiles-tech-notice"
-    style="background-color: #FFF5F5; border-left: 4px solid #FF4D4D; border-radius: 12px; padding: 18px 24px; max-width: 1050px; width: 100%; margin: 2rem auto 0 auto; text-align: center; color: #1B1B1B; font-family: 'Poppins', sans-serif; font-size: 0.95rem; line-height: 1.6; margin-bottom: 30px"
+    style="background-color: #FFF5F5; border-left: 4px solid #FF4D4D; border-radius: 12px; padding: 18px 24px; max-width: 1050px; width: calc(100% - 32px); box-sizing: border-box; margin: 2rem auto 0 auto; text-align: center; color: #1B1B1B; font-family: 'Poppins', sans-serif; font-size: 0.95rem; line-height: 1.6; margin-bottom: 30px"
 >
     🚨 <strong>* KPI availability depends on project management tools, creative request volume, campaign integration, and clear brand guidelines. </strong>
     <a 
@@ -1745,5 +1745,13 @@ ctaText="Solicitar perfiles de diseño gráfico remoto →"
       grid-column: 1 / -1;
     }
 
-    
+    @media (max-width: 768px) {
+      :global(.profiles-tech-notice) {
+        width: calc(100% - 32px) !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        box-sizing: border-box !important;
+        padding: 18px 18px !important;
+      }
+    }
 </style>

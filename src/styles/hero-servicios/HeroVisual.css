@@ -110,7 +110,9 @@
         width: 100%;
         max-width: 100%;
         box-sizing: border-box;
-        overflow: hidden;
+        overflow: visible;
+        padding-top: 14px;
+        padding-bottom: 6px;
     }
     
     /* --- video-preview --- */

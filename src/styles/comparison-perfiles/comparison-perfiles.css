@@ -2,12 +2,25 @@
     padding: 60px 20px;
     border-top: 1px solid #e5e7eb;
     text-align: center;
+    overflow-x: hidden;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
-.container { max-width: 1200px; margin: 0 auto; }
+.container { 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    width: 100%;
+    box-sizing: border-box;
+}
 
 .table-responsive { 
-    overflow: auto; 
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto; 
+    -webkit-overflow-scrolling: touch;
+    box-sizing: border-box;
     margin: 32px 0 0;
     border-radius: 16px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.05);
@@ -16,6 +29,7 @@
 
 .comparison-table {
     width: 100%;
+    min-width: 520px;
     border-collapse: collapse;
     font-size: 14px;
     font-family: 'Poppins', sans-serif;

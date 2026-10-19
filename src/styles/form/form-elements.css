@@ -108,8 +108,16 @@
 
 @media (max-width: 768px) {
     .form-card {
-        padding: 40px 25px;
-        border-radius: 30px;
+        padding: 30px 18px;
+        border-radius: 20px;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .form-grid {
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .form-group.half-width {
@@ -118,11 +126,19 @@
 
     .form-group {
         text-align: left;
-        /* Asegura que los labels estén a la izquierda en móvil */
+        width: 100%;
+        box-sizing: border-box;
     }
+
+    .form-group input,
+    .form-group textarea {
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
     .btn-submit {
- 
-    font-size: 12px;
-   
-}
+        font-size: 13px;
+        width: 100%;
+        box-sizing: border-box;
+    }
 }

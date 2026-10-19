@@ -84,16 +84,23 @@ const {
         text-decoration: none;
         margin: 0;
         font-weight: 500;
-        white-space: nowrap;
         cursor: pointer;
         transition: all 0.3s ease;
         opacity: 0.9;
+        text-align: center;
+        max-width: 100%;
+        word-break: break-word;
     }
 
     @media (max-width: 600px) {
         .footer-links-row {
             gap: 15px;
             font-size: 12px;
+            padding: 0 15px;
+            box-sizing: border-box;
+        }
+        .footer-link-item {
+            white-space: normal;
         }
     }
 </style>

@@ -3,6 +3,8 @@
     background-color: #FAFAFC;
     border-top: 1px solid rgba(0, 0, 0, 0.03);
     border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+    overflow: hidden;
+    max-width: 100%;
 }
 
 .franja-empresas-container {
@@ -335,30 +337,32 @@
 
     /* --- franja-number --- */
     .franja-number {
-        font-size: 32px;
+        font-size: 24px;
+        line-height: 1.1;
     }
 
     /* --- franja-stat-block --- */
     .franja-stat-block {
         width: auto;
-        flex: 1;
-        min-width: 0;
+        flex: 1 1 90px;
+        min-width: 90px;
+        max-width: 140px;
         gap: 5px;
     }
 
     /* --- franja-vertical-divider --- */
     .franja-vertical-divider {
-        height: 30px;
+        height: 25px;
         flex-shrink: 0;
     }
 
     /* --- franja-stats-left --- */
     .franja-stats-left {
-        gap: 10px;
+        gap: 15px 8px;
         width: 100%;
         padding: 0 10px;
-        justify-content: space-around;
-        flex-wrap: nowrap;
+        justify-content: center;
+        flex-wrap: wrap;
     }
 
     /* --- logo-item (Logos de empresas) --- */

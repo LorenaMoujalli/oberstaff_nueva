@@ -1312,7 +1312,7 @@ const faqsList = [
 				webhookUrl=""
 				formName="Contractor of Record Services US"
 				pais="United States"
-				smsConsentText={`<strong>By providing your phone number</strong>, you agree to receive customer support SMS messages from <strong>Oberstaff<span style="color: #FF66CC;">.</span></strong> Message frequency may vary. Standard message and data rates may apply. Reply STOP to cancel subscription. Reply HELP for help. <a href="/politica-de-privacidad-y-cookies-de-oberstaff" target="_blank" class="consent-link">Privacy policy and cookie usage.</a> <span class="required-star">*</span>`}
+				smsConsentText={`<strong>By providing your phone number</strong>, you agree to receive customer support SMS messages from <strong>Oberstaff<span style="color: #FF66CC;">.</span></strong> Message frequency may vary. Standard message and data rates may apply. Reply STOP to cancel subscription. Reply HELP for help. <a href="/us/oberstaff-privacy-and-cookie-policy" target="_blank" class="consent-link" style="color: #6663FD; text-decoration: underline;">Privacy policy and cookie usage.</a> <span class="required-star">*</span>`}
 				captchaLabel="Verification code"
 				captchaHint="Enter the characters shown in the image"
 				captchaPlaceholder="Enter code"
@@ -1411,6 +1411,24 @@ const faqsList = [
 
 	.service-detail-container :global(.franja-label) {
 		max-width: 280px !important;
+	}
+
+	@media (max-width: 768px) {
+		.service-detail-container :global(.franja-stats-left) {
+			flex-wrap: wrap !important;
+			gap: 15px 8px !important;
+			justify-content: center !important;
+		}
+		.service-detail-container :global(.franja-stat-block) {
+			max-width: 140px !important;
+		}
+		.service-detail-container :global(.franja-label) {
+			max-width: 130px !important;
+			font-size: 11px !important;
+		}
+		.service-detail-container :global(.franja-number) {
+			font-size: 22px !important;
+		}
 	}
 
 	.service-detail-container :global(.franja-logos-slider) {

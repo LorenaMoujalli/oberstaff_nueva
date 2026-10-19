@@ -787,7 +787,7 @@ const faqsList = [
 			<div
 				slot="bottom-alert"
 				class="profiles-tech-notice"
-				style="background-color: #FFF5F5; border-left: 4px solid #FF4D4D; border-top: none !important; border-radius: 12px; padding: 22px 28px 32px 28px; max-width: 1050px; width: 100%; margin: 2rem auto 3.5rem auto; text-align: center; color: #1B1B1B; font-family: 'Poppins', sans-serif; font-size: 0.95rem; line-height: 1.6;"
+				style="background-color: #FFF5F5; border-left: 4px solid #FF4D4D; border-top: none !important; border-radius: 12px; padding: 22px 28px 32px 28px; max-width: 1050px; width: calc(100% - 32px); box-sizing: border-box; margin: 2rem auto 3.5rem auto; text-align: center; color: #1B1B1B; font-family: 'Poppins', sans-serif; font-size: 0.95rem; line-height: 1.6;"
 			>
 				🚨 <strong>What to expect from your EOR partner </strong><br /> Your
 				EOR partner should provide country-specific cost visibility, a clear
@@ -1176,7 +1176,7 @@ const faqsList = [
 
 		<div class="fade-in-section">
 			<ContactFormSection
-				title="Use International Employer of Record Services to Build Your Latin America Team <span style='color: #6663FD; font-weight: 900; white-space: nowrap;'>Without Opening Foreign Entities</span>"
+				title="Use International Employer of Record Services to Build Your Latin America Team <span style='color: #6663FD; font-weight: 900;'>Without Opening Foreign Entities</span>"
 				subtitle="Tell us which role, country, salary range, and target start date you are planning. We will review the hiring structure and prepare an Employer of Record services proposal for your U.S. company. No obligation."
 				buttonText="→ Request a Free Proposal"
 				directLabel="Completing this form takes"
@@ -1203,7 +1203,7 @@ const faqsList = [
 				webhookUrl=""
 				formName="Employer of Record Services US"
 				pais="United States"
-				smsConsentText={`<strong>By providing your phone number</strong>, you agree to receive customer support SMS messages from <strong>Oberstaff<span style="color: #FF66CC;">.</span></strong> Message frequency may vary. Standard message and data rates may apply. Reply STOP to cancel subscription. Reply HELP for help. <a href="/politica-de-privacidad-y-cookies-de-oberstaff" target="_blank" class="consent-link">Privacy policy and cookie usage.</a> <span class="required-star">*</span>`}
+				smsConsentText={`<strong>By providing your phone number</strong>, you agree to receive customer support SMS messages from <strong>Oberstaff<span style="color: #FF66CC;">.</span></strong> Message frequency may vary. Standard message and data rates may apply. Reply STOP to cancel subscription. Reply HELP for help. <a href="/us/oberstaff-privacy-and-cookie-policy" target="_blank" class="consent-link" style="color: #6663FD; text-decoration: underline;">Privacy policy and cookie usage.</a> <span class="required-star">*</span>`}
 				captchaLabel="Verification code"
 				captchaHint="Enter the characters shown in the image"
 				captchaPlaceholder="Enter code"
@@ -1239,9 +1239,17 @@ const faqsList = [
 
 	.service-detail-container :global(.profiles-tech-notice) {
 		border-top: none !important;
+		box-sizing: border-box !important;
 	}
 
 	@media (max-width: 768px) {
+		.service-detail-container :global(.profiles-tech-notice) {
+			width: calc(100% - 32px) !important;
+			margin-left: auto !important;
+			margin-right: auto !important;
+			padding: 18px 20px !important;
+		}
+
 		.service-detail-container :global(.hero-section) {
 			padding-top: 95px !important;
 			padding-bottom: 45px !important;
@@ -1311,6 +1319,24 @@ const faqsList = [
 
 	.service-detail-container :global(.franja-label) {
 		max-width: 280px !important;
+	}
+
+	@media (max-width: 768px) {
+		.service-detail-container :global(.franja-stats-left) {
+			flex-wrap: wrap !important;
+			gap: 15px 8px !important;
+			justify-content: center !important;
+		}
+		.service-detail-container :global(.franja-stat-block) {
+			max-width: 140px !important;
+		}
+		.service-detail-container :global(.franja-label) {
+			max-width: 130px !important;
+			font-size: 11px !important;
+		}
+		.service-detail-container :global(.franja-number) {
+			font-size: 22px !important;
+		}
 	}
 
 	.service-detail-container :global(.franja-logos-slider) {

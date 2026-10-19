@@ -4,38 +4,58 @@ import "../../styles/hero-contacto/HeroStats.css";
 interface Stat {
     number: string;
     description: string;
-    colorClass: string;
+    colorClass?: string;
 }
 
 interface Props {
     stats?: Stat[];
+    stat1Number?: string;
+    stat1Description?: string;
+    stat1ColorClass?: string;
+    stat2Number?: string;
+    stat2Description?: string;
+    stat2ColorClass?: string;
+    stat3Number?: string;
+    stat3Description?: string;
+    stat3ColorClass?: string;
 }
 
 const {
-    stats = [
-        {
-            number: "+500",
-            description: 'empresas han confiado en <strong class="brand-oberstaff text-white">Oberstaff<span class="brand-dot">.</span></strong>',
-            colorClass: "color-pink"
-        },
-        {
-            number: "Hasta un 70 %",
-            description: "de ahorro frente a contratación local",
-            colorClass: "color-purple"
-        },
-        {
-            number: "<30 días",
-            description: "para incorporar perfiles según disponibilidad",
-            colorClass: "color-green"
-        }
-    ]
+    stats,
+    stat1Number = "+500",
+    stat1Description = 'empresas han confiado en <strong class="brand-oberstaff text-white">Oberstaff<span class="brand-dot">.</span></strong>',
+    stat1ColorClass = "color-pink",
+    stat2Number = "Hasta un 70 %",
+    stat2Description = "de ahorro frente a contratación local",
+    stat2ColorClass = "color-purple",
+    stat3Number = "<30 días",
+    stat3Description = "para incorporar perfiles según disponibilidad",
+    stat3ColorClass = "color-green",
 } = Astro.props;
+
+const finalStats: Stat[] = stats || [
+    {
+        number: stat1Number,
+        description: stat1Description,
+        colorClass: stat1ColorClass
+    },
+    {
+        number: stat2Number,
+        description: stat2Description,
+        colorClass: stat2ColorClass
+    },
+    {
+        number: stat3Number,
+        description: stat3Description,
+        colorClass: stat3ColorClass
+    }
+];
 ---
 
 <div class="hero-stats">
-    {stats.map((stat) => (
+    {finalStats.map((stat) => (
         <div class="stat-item">
-            <p class={`stat-number ${stat.colorClass}`}>{stat.number}</p>
+            <p class={`stat-number ${stat.colorClass || 'color-pink'}`}>{stat.number}</p>
             <p class="stat-desc" set:html={stat.description}></p>
         </div>
     ))}

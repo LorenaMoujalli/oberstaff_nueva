@@ -3,13 +3,148 @@ import DashboardLayoutContactUs from "../../layouts/DashboardLayoutContactUs.ast
 import HeroContactoSection from "../../components/hero-contacto/HeroContactoSection.astro";
 import FormContactoSection from "../../components/form-contacto/FormContactoSection.astro";
 import ChannelsSection from "../../components/canales-contacto/ChannelsSection.astro";
+import FAQSection from "../../components/faq-servicios/FAQSection-quienes-somos.astro";
 const ogImage = "contacto-pr.webp";
+
+// ── Textos de la sección Hero ───────────────────────────────────────────────
+const heroProps = {
+    kicker: "",
+    title: 'Let’s build your next high-performing team. Schedule a free consultation with <strong class="brand-oberstaff text-white">Oberstaff<span class="brand-dot">.</span></strong>',
+    subtitle: 'Tell us which roles or functions your U.S. company needs to cover. An <strong class="brand-oberstaff text-white">Oberstaff<span class="brand-dot">.</span></strong> specialist will help you define the right profile, compare the most suitable engagement model, and map the next steps for adding remote professionals from Latin America while keeping operating costs, administrative workload, and U.S. time-zone coverage in view.',
+    features: "⚡ No-obligation introductory call. · 🕓 Coverage aligned with U.S. business hours across Eastern, Central, Mountain, and Pacific time zones, depending on the role.",
+    primaryText: "Schedule a free consultation →",
+    primaryHref: "https://info-oberstaff.zohobookings.com/4327750000001590002/#/4327750000001590002",
+    secondaryText: "📱 Message via WhatsApp",
+    secondaryHref: "https://wa.me/34930289966",
+    showSecondaryButton: false,
+    stat1Number: "+500",
+    stat1Description: 'companies have trusted the <strong class="brand-oberstaff text-white">Oberstaff<span class="brand-dot">.</span></strong> model',
+    stat1ColorClass: "color-pink",
+    stat2Number: "Up to 70%",
+    stat2Description: "Compared with equivalent U.S.-based hiring costs, depending on the role, seniority, and location.",
+    stat2ColorClass: "color-purple",
+    stat3Number: "<30 days",
+    stat3Description: "To onboard professionals ready to contribute, depending on role availability and screening requirements.",
+    stat3ColorClass: "color-green", 
+};
+
+// ── Textos de la sección Formulario de Contacto ─────────────────────────────
+const formProps = {
+    webhookUrl: "",
+    formName: "Contacto Estados Unidos",
+    pais: "Estados Unidos",
+    
+    // Configuración de campos (exclusiva de US)
+    showRolesField: false,
+    showCommentsField: false,
+    phoneBelowEmail: true,
+    
+    // Encabezado del Formulario
+    formTitle: "Tell us what your company needs",
+    formDescription: 'Complete the form and an <strong class="brand-oberstaff">Oberstaff<span class="brand-dot">.</span></strong> specialist will help you define the workforce structure that best fits your operation. If you do not have the full role mapped out yet, we can help clarify responsibilities, seniority, required capabilities, the appropriate engagement model, and the next steps.',
+    formButtonText: "Request a free call →",
+    formMicrocopy: "↳ No commitment - We'll contact you within 24 hours to understand your needs and explain the next steps.",
+    
+    // Placeholders de los campos del formulario
+    namePlaceholder: "Full name *", 
+    companyPlaceholder: "Company name *",
+    emailPlaceholder: "Work email *",
+    phonePlaceholder: "Phone number *",
+    
+    // Textos de consentimiento SMS y Privacidad
+    consentText: '<strong>By providing your phone number</strong>, you agree to receive SMS customer service messages from <strong>Oberstaff<span style="color: #FF66CC;">.</span></strong> Message frequency may vary. Standard message and data rates may apply. Reply STOP to unsubscribe. Reply HELP for help.',
+    privacyPolicyText: "Privacy and Cookie Policy.",
+    privacyPolicyUrl: "/us/oberstaff-privacy-and-cookie-policy",
+    consentErrorText: "⚠ You must accept the consent to continue.",
+    
+    // Textos del Captcha
+    captchaLabel: "Verification code ",
+    captchaHint: "Enter the characters shown in the image",
+    captchaPlaceholder: "Enter the code",
+    captchaRefreshTitle: "New code",
+    captchaRequiredError: "⚠ This field is required. Enter the verification code.",
+    captchaInvalidError: "❌ The code entered is incorrect. A new code has been generated, please try again.",
+    
+    // Mensajes de estado, botón de envío y toasts
+    buttonLoadingText: "Submitting...",
+    successToastMessage: "Message sent successfully! We will be in touch shortly.",
+    duplicateToastMessage: "We have already received an inquiry with this email. We will reach out shortly.",
+    errorFeedbackMessage: "❌ Submission failed. Please try again.",
+    
+    // Columna informativa derecha: Pasos y Temas a revisar
+    stepsTitle: "What happens after you submit the form?",
+    steps: [
+        { number: "1.", text: " We review your request: We assess your business needs, role scope, and priorities to understand the profile you need." },
+        { number: "2.", text: "We coordinate the conversation: We call or message you to schedule a short consultation or request additional details when needed." },
+        { number: "3.", text: "We give you clear guidance: We outline the recommended profile, estimated costs in U.S. dollars (USD), the most suitable engagement model, and an expected hiring timeline." },
+        { number: "4.", text: "We launch the search: If the approach fits your company, we move forward with the formal proposal and talent selection process." }
+    ],
+    reviewTitle: "Key points we will review during the call:",
+    reviewItems: [
+        { text: "The specific responsibilities of the role and the outcomes you expect the remote professional to deliver." },
+        { text: "The seniority, technical capabilities, language needs, and time-zone coverage required for the role." },
+        { text: "The most suitable engagement model for your business: Employer of Record (EOR), staffing/outsourcing, Staff Augmentation, or Contractor of Record (CoR)." },
+        { text: "A projected cost comparison against U.S. salary benchmarks, benefits, payroll taxes, recruiting costs, and other employment overhead relevant to the role." },
+        { text: "How to structure cross-border remote hiring with clearly defined responsibilities, documentation, and compliance considerations." }
+    ]
+}; 
+
+// ── Textos de la sección Canales de Contacto ────────────────────────────────
+const channelsProps = {
+    title: "Choose the right channel",
+    subtitle: "Select the option that best fits your inquiry so we can guide you effectively.",
+    
+    // Canal 1: Empresas
+    channel1Icon: "🏢",
+    channel1Title: "Companies and Employers",
+    channel1Description: "I want to add qualified remote professionals from Latin America or compare Oberstaff's workforce models for my U.S. operation.",
+    channel1ButtonText: "Use main form",
+    channel1Href: "#formulario",
+    
+    // Canal 2: Candidatos
+    channel2Icon: "🚀",
+    channel2Title: "Candidates and Professionals",
+    channel2Description: 'I want to join Oberstaff’s global talent network and apply for opportunities with international companies.',
+    channel2ButtonText: "Go to careers page",
+    channel2Href: "https://oberstaff.zohorecruit.com/jobs/careers",
+    channel2Target: "_blank",
+    
+    // Canal 3: Clientes actuales
+    channel3Icon: "🤝",
+    channel3Title: "Active Clients",
+    channel3Description: "I need direct support with an active process, billing, contracts, or ongoing workforce management.",
+    channel3ButtonText: "Contact support",
+    channel3Href: "mailto:info@oberstaff.com",
+    channel3Target: "_blank"
+};
+
+// ── Textos de la sección FAQs ───────────────────────────────────────────────
+const faqProps = {
+    title: "Frequently asked questions",
+    ctaText: "",
+    ctaButtonText: "Request a free call →",
+    ctaButtonHref: "#formulario",
+    faqs: [
+        {
+            question: "How does <span style='color: #1b1b1b; font-weight: 900;'>Oberstaff<span style='color: #ff66cc; font-weight: 900;'>.</span></span> bill U.S. companies?",
+            answers: [
+                "All billing is issued in U.S. dollars (USD). Depending on the engagement model, your company receives a consolidated monthly invoice covering the agreed services and selected talent, helping simplify cross-border administration and payment workflows."
+            ]
+        },
+        {
+            question: "What should U.S. companies consider when engaging remote talent in Latin America?",
+            answers: [
+                "The responsibilities depend on the engagement model. With Employer of Record (EOR) or outsourcing structures, the local employing entity manages payroll and employment obligations in the professional's country of residence. Contractor and staff augmentation models require different documentation, classification, and operating arrangements. <br><br> <span style=' font-weight: 900;'>Oberstaff<span style='color: #ff66cc; font-weight: 900;'>.</span></span> helps you understand the available model, expected costs, and operational responsibilities before moving forward. Federal and state tax, employment, and worker-classification obligations can vary by company and engagement structure, so your own legal or tax advisers should confirm any obligations specific to your business."
+            ]
+        }  
+    ]
+};
 ---
 
 <DashboardLayoutContactUs
     ogImage={ogImage}
-    title="Contacto Oberstaff Puerto Rico "
-    description="Habla con nuestro equipo en Puerto Rico. Te ayudamos a incorporar profesionales remotos de alto nivel de forma rápida y flexible. ¡Escríbenos! "
+    title="Contact Oberstaff USA | Speak With Our Team "
+    description="Contact Oberstaff for U.S. hiring support. Tell us the roles you need and explore flexible ways to add remote professionals from Latin America. "
     
 >
     <link rel="canonical" href="https://oberstaff.com/pr/contacto/" slot="head" />
@@ -342,21 +477,26 @@ const ogImage = "contacto-pr.webp";
 }
 </script>
     <div class="fade-in-section">
-<HeroContactoSection showSecondaryButton={false} 
-title='Solicita una llamada gratuita con <strong class="brand-oberstaff text-white">Oberstaff<span class="brand-dot">.</span></strong> Puerto Rico'
-features="⚡ Llamada inicial sin compromiso · Atención en español · Horario compatible con Puerto Rico" />
+        <HeroContactoSection {...heroProps} />
+    </div>
+        
+    <div class="fade-in-section"> 
+        <FormContactoSection {...formProps} />
+    </div>
+       
+    <div class="fade-in-section">
+        <ChannelsSection {...channelsProps} /> 
+    </div>
 
-</div>
-    
-<div class="fade-in-section"> 
-  <FormContactoSection webhookUrl="" formName="Contacto Estados Unidos" pais="Estados Unidos" />
-</div>
-   
-<div class="fade-in-section">
- <ChannelsSection /> 
-</div>
-   
+    <div class="fade-in-section faq-quienesomos-wrapper">
+        <FAQSection {...faqProps} />
+    </div>
 
-    
 </DashboardLayoutContactUs>
+
+<style is:global>
+    .faq-quienesomos-wrapper {
+        border-top: 1px solid #e0e0e0;
+    }
+</style>
  

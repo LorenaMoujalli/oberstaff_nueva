@@ -16,6 +16,36 @@ interface Props {
     webhookUrl?: string;
     formName?: string;
     pais?: string;
+
+    // ContactFormCard layout & visibility
+    showRolesField?: boolean;
+    showCommentsField?: boolean;
+    phoneBelowEmail?: boolean;
+
+    // ContactFormCard text props
+    namePlaceholder?: string;
+    companyPlaceholder?: string;
+    emailPlaceholder?: string;
+    phonePlaceholder?: string;
+    rolesPlaceholder?: string;
+    commentsPlaceholder?: string;
+
+    consentText?: string;
+    privacyPolicyText?: string;
+    privacyPolicyUrl?: string;
+    consentErrorText?: string;
+
+    captchaLabel?: string;
+    captchaHint?: string;
+    captchaPlaceholder?: string;
+    captchaRefreshTitle?: string;
+    captchaRequiredError?: string;
+    captchaInvalidError?: string;
+
+    buttonLoadingText?: string;
+    successToastMessage?: string;
+    duplicateToastMessage?: string;
+    errorFeedbackMessage?: string;
 }
 
 const {
@@ -30,7 +60,32 @@ const {
     reviewItems,
     webhookUrl = "",
     formName = "",
-    pais = ""
+    pais = "",
+
+    showRolesField = true,
+    showCommentsField = true,
+    phoneBelowEmail = false,
+
+    namePlaceholder,
+    companyPlaceholder,
+    emailPlaceholder,
+    phonePlaceholder,
+    rolesPlaceholder,
+    commentsPlaceholder,
+    consentText,
+    privacyPolicyText,
+    privacyPolicyUrl,
+    consentErrorText,
+    captchaLabel,
+    captchaHint,
+    captchaPlaceholder,
+    captchaRefreshTitle,
+    captchaRequiredError,
+    captchaInvalidError,
+    buttonLoadingText,
+    successToastMessage,
+    duplicateToastMessage,
+    errorFeedbackMessage
 } = Astro.props;
 ---
 
@@ -44,6 +99,29 @@ const {
             webhookUrl={webhookUrl}
             formName={formName}
             pais={pais}
+            showRolesField={showRolesField}
+            showCommentsField={showCommentsField}
+            phoneBelowEmail={phoneBelowEmail}
+            namePlaceholder={namePlaceholder}
+            companyPlaceholder={companyPlaceholder}
+            emailPlaceholder={emailPlaceholder}
+            phonePlaceholder={phonePlaceholder}
+            rolesPlaceholder={rolesPlaceholder}
+            commentsPlaceholder={commentsPlaceholder}
+            consentText={consentText}
+            privacyPolicyText={privacyPolicyText}
+            privacyPolicyUrl={privacyPolicyUrl}
+            consentErrorText={consentErrorText}
+            captchaLabel={captchaLabel}
+            captchaHint={captchaHint}
+            captchaPlaceholder={captchaPlaceholder}
+            captchaRefreshTitle={captchaRefreshTitle}
+            captchaRequiredError={captchaRequiredError}
+            captchaInvalidError={captchaInvalidError}
+            buttonLoadingText={buttonLoadingText}
+            successToastMessage={successToastMessage}
+            duplicateToastMessage={duplicateToastMessage}
+            errorFeedbackMessage={errorFeedbackMessage}
         />
 
         <ContactInfoColumn 
