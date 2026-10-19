@@ -779,9 +779,9 @@ const faqsList = [
                 secondaryBtnText="Talk to an IT staffing specialist"
                 secondaryBtnHref="#contacto"
                 underBtnText="↳ Takes less than 60 seconds - No obligation"
-                modalTitle="¿Listo para expandir tu equipo en LATAM?"
-                modalDescription="Un especialista te explicará exactamente cuánto puedes ahorrar con nuestro modelo EOR."
-                modalBtnText="Agendar asesoría gratuita"
+                modalTitle="Ready to expand your team in Latin America?"
+                modalDescription="A technical staffing specialist will explain how to integrate pre-vetted engineers into your agile sprints."
+                modalBtnText="Schedule a free consultation"
                 videoAlt="servicio de Staff Augmentation para empresas en Puerto Rico."
             />
         </div>
@@ -816,6 +816,7 @@ const faqsList = [
                 eyebrow=""
                 title="<strong>Staff Augmentation Pricing Model</strong> for U.S. Companies"
                 subtitle=""
+                priceLabel="FROM"
                 plans={[
                     {
                         badge: "MOST POPULAR",
@@ -1053,7 +1054,7 @@ const faqsList = [
             >
                 <div slot="bottom-alert" class="profiles-tech-notice">
                     🚨 <strong>Need non-technical professionals? Sales, administration, marketing, customer support, finance, creative production, and operations roles are handled through our Outsourced Staffing service. → </strong>
-                    <a href="https://oberstaff.com/us/services/outsourced-staffing" 
+                    <a href="/us/services/outsourced-staffing" 
                         >Outsourced Staffing</a
                     >
                 </div>
@@ -1245,6 +1246,7 @@ const faqsList = [
                 title="Companies Growing Their Remote Teams with <span style='font-weight: 900; color: #1b1b1b;'> Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span>"
                 subtitle=""
                 columns={3}
+                videoBtnText="Watch video testimonial →"
                 testimonials={[
                   {
                         stars: 5,
@@ -1358,8 +1360,12 @@ const faqsList = [
                 }}
                 customClass="employer-variant"
                 webhookUrl=""
-                formName="Servicio Staff Augmentation Puerto Rico"
-                pais="Puerto Rico"
+                formName="Staff Augmentation Services US"
+                pais="United States"
+                smsConsentText={`<strong>By providing your phone number</strong>, you agree to receive customer support SMS messages from <strong>Oberstaff<span style="color: #FF66CC;">.</span></strong> Message frequency may vary. Standard message and data rates may apply. Reply STOP to cancel subscription. Reply HELP for help. <a href="/politica-de-privacidad-y-cookies-de-oberstaff" target="_blank" class="consent-link">Privacy policy and cookie usage.</a> <span class="required-star">*</span>`}
+                captchaLabel="Verification code"
+                captchaHint="Enter the characters shown in the image"
+                captchaPlaceholder="Enter code"
             />
         </div>
 

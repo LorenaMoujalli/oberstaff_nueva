@@ -168,16 +168,16 @@ const otrosServiciosProps = {
     footerTitle="Roles relacionados"
     footerLinks={[
         {
-            text: "📹  Editor de video",
-            href: "",
+            text: "📹 Video editor",
+            href: "/us/profiles/hire-video-editor",
         },
         {
-            text: "🔍 Especialista en Google Ads",
-            href: "",
+            text: "🔍 Google ads expert",
+            href: "/us/profiles/hire-google-ads-expert",
         },
         {
-            text: "🎨  Diseñador gráfico",
-            href: "",
+            text: "🎨 Graphic designer",
+            href: "/us/profiles/hire-graphic-designer",
         },
     ]}
 >
@@ -687,8 +687,8 @@ const otrosServiciosProps = {
     <div class="service-detail-container" id="inicio">
         <LeadHeroSection
             webhookUrl=""
-            formName="Perfil Experto en Meta Ads España"
-            pais="España"
+            formName="Facebook Ads Expert Profile U.S."
+            pais="United States"
             topLabel=""
             topLabelInsideH1={true}
             title="Hire Facebook Ads Expert Talent to Scale Facebook and Instagram for Your U.S. Business"
@@ -699,6 +699,14 @@ const otrosServiciosProps = {
             buttonSubtext="↳ It takes less than 1 minute · no commitment"
             footerLinkText="Learn how Oberstaff's international staffing and EOR support works for U.S. companies"
             footerLinkHref=""
+            placeholderName="Full name *"
+            placeholderEmail="Corporate email *"
+            placeholderCompany="Company name *"
+            placeholderPhone="Phone number *"
+            smsConsentText={`<strong>By providing your phone number</strong>, you agree to receive customer support SMS messages from <strong>Oberstaff<span style="color: #FF66CC;">.</span></strong> Message frequency may vary. Standard message and data rates may apply. Reply STOP to cancel subscription. Reply HELP for help. <a href="/politica-de-privacidad-y-cookies-de-oberstaff" target="_blank" class="consent-link" style="color: #6663FD; text-decoration: underline;">Privacy policy and cookie usage.</a> <span class="required-star" style="color: #ef4444; font-weight: 700; margin-left: 2px;">*</span>`}
+            captchaLabel="Verification code"
+            captchaHint="Enter the characters shown in the image"
+            captchaPlaceholder="Enter code"
             badges={[
                 // {
                 //     text: "Optimización diaria de tus campañas Facebook Ads",
@@ -1040,7 +1048,7 @@ const otrosServiciosProps = {
                 subtitle="Compare more than the monthly fee. Whether you are considering a <strong>Facebook Ads freelancer</strong>, a paid social agency, a U.S. employee, or <span style='color: #1b1b1b; font-weight: 800;'> Oberstaff<span style='color: #ff66cc'>.</span></span>, evaluate dedicated account ownership, measurement skill, creative-testing discipline, response speed, cross-functional collaboration, administrative burden, and the operating model behind the engagement."
                 footerNote="*Estimates are directional and may vary by seniority, scope, schedule, country, technical depth, and advertising-account complexity. Media spend is separate from the professional service cost."
                 oberstaffLabel="<span style='color: #1b1b1b; font-weight: 800;'> Oberstaff<span style='color: #ff66cc'>. LATAM</span></span> Facebook Ads Expert"
-                criterioLabel="Criteria",
+                criterioLabel="Criteria"
                 competitors={[
                     "U.S. W-2 hire",
                     "U.S. agency",
@@ -1108,6 +1116,7 @@ const otrosServiciosProps = {
                 cardTitle="All-Inclusive"
                 titleTag="p"
                 cardSubtitle=""
+                labelAbove={true}
                 priceLabel="Starting from"
                 priceAmount="$950"
                 pricePeriod="/month USD"
@@ -1213,6 +1222,8 @@ const otrosServiciosProps = {
             <CasosExitoSection
                 title="Companies that already trust <span style='color:#1b1b1b; font-weight:800;'>Oberstaff<span style='color: #FF66CC; font-weight:800;''>.</span></span>"
                 subtitle=""
+                columns={3}
+                videoBtnText="Watch video testimonial →"
                 testimonials={[
                         {
                                 stars: 5,
@@ -1278,6 +1289,13 @@ const otrosServiciosProps = {
                 noteText=""
                 formName="Hire Facebook Ads Expert U.S."
                 pais="U.S."
+                placeholderName="Full name *"
+                placeholderCompany="Company name *"
+                placeholderEmail="Email *"
+                placeholderPhone="Phone number *"
+                captchaLabel="Verification code"
+                captchaHint="Enter the characters shown in the image"
+                captchaPlaceholder="Enter code"
             />
         </div>
 
@@ -1294,12 +1312,24 @@ const otrosServiciosProps = {
         }
 
         :global(.employer-use-cases-grid) {
-            grid-template-columns: repeat(2, 1fr) !important;
+            display: flex !important;
+            flex-wrap: wrap !important;
+            justify-content: center !important;
+            gap: 30px !important;
+        }
+
+        :global(.employer-use-cases-grid .service-card) {
+            flex: 0 1 calc(50% - 15px) !important;
+            width: calc(50% - 15px) !important;
+            max-width: calc(50% - 15px) !important;
+            box-sizing: border-box !important;
         }
 
         @media (max-width: 900px) {
-            :global(.employer-use-cases-grid) {
-                grid-template-columns: 1fr !important;
+            :global(.employer-use-cases-grid .service-card) {
+                flex: 0 1 100% !important;
+                width: 100% !important;
+                max-width: 100% !important;
             }
         }
 

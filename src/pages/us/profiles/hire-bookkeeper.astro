@@ -185,9 +185,9 @@ const otrosServiciosProps = {
     description="Reduce costes y suma un perfil exclusivo a jornada completa al contratar contable de Latinoamérica sin asumir cargas laborales."
     footerTitle="Roles relacionados"
     footerLinks={[
-        { text: "🗂️ Contratar asistente virtual", href: "" },
-        { text: "📱 Community Manager", href: "" },
-        { text: "🎨 Diseñador gráfico", href: "" },
+        { text: "🗂️ Virtual assistant", href: "/us/profiles/hire-virtual-assistant" },
+        { text: "📱 Community manager", href: "/us/profiles/hire-community-manager" },
+        { text: "🎨 Graphic designer", href: "/us/profiles/hire-graphic-designer" },
     ]}
 >
     <link rel="canonical" href="" slot="head" />
@@ -662,8 +662,8 @@ const otrosServiciosProps = {
     <div class="service-detail-container" id="inicio">
         <LeadHeroSection
             webhookUrl=""
-            formName="Perfil Contable España"
-            pais="España"
+            formName="Bookkeeper Profile U.S."
+            pais="United States"
             topLabel=""
             topLabelInsideH1={false}
             title="Hire a Bookkeeper for Your U.S. Business with Dedicated LATAM Talent"
@@ -674,6 +674,14 @@ const otrosServiciosProps = {
             buttonSubtext="↳ It takes less than 1 minute · no commitment"
             footerLinkText="Learn how Oberstaff's international staffing and talent administration model works for U.S. companies →"
             footerLinkHref=""
+            placeholderName="Full name *"
+            placeholderEmail="Corporate email *"
+            placeholderCompany="Company name *"
+            placeholderPhone="Phone number *"
+            smsConsentText={`<strong>By providing your phone number</strong>, you agree to receive customer support SMS messages from <strong>Oberstaff<span style="color: #FF66CC;">.</span></strong> Message frequency may vary. Standard message and data rates may apply. Reply STOP to cancel subscription. Reply HELP for help. <a href="/politica-de-privacidad-y-cookies-de-oberstaff" target="_blank" class="consent-link" style="color: #6663FD; text-decoration: underline;">Privacy policy and cookie usage.</a> <span class="required-star" style="color: #ef4444; font-weight: 700; margin-left: 2px;">*</span>`}
+            captchaLabel="Verification code"
+            captchaHint="Enter the characters shown in the image"
+            captchaPlaceholder="Enter code"
             badges={[
                 // {
                 //     text: "Talento dedicado 100 % a la salud financiera de tu negocio",
@@ -1078,6 +1086,7 @@ const otrosServiciosProps = {
                 cardTitle="All-Inclusive"
                 titleTag="p"
                 cardSubtitle=""
+                labelAbove={true}
                 priceLabel="Starting from"
                 priceAmount="$950"
                 pricePeriod="/month USD"
@@ -1197,6 +1206,8 @@ const otrosServiciosProps = {
             <CasosExitoSection
                 title="Companies that already trust <span style='color:#1b1b1b; font-weight:800;'>Oberstaff<span style='color: #FF66CC; font-weight:800;''>.</span></span>"
                 subtitle=""
+                columns={3}
+                videoBtnText="Watch video testimonial →"
                 testimonials={[
                         {
                                 stars: 5,
@@ -1257,6 +1268,13 @@ const otrosServiciosProps = {
                 noteText="Note: It takes less than 1 minute to complete"
                 formName="U.S. Bookkeeper Profile"
                 pais="United States"
+                placeholderName="Full name *"
+                placeholderCompany="Company name *"
+                placeholderEmail="Email *"
+                placeholderPhone="Phone number *"
+                captchaLabel="Verification code"
+                captchaHint="Enter the characters shown in the image"
+                captchaPlaceholder="Enter code"
             />
         </div> 
     </div>
@@ -1279,12 +1297,24 @@ const otrosServiciosProps = {
         }
 
         :global(.employer-use-cases-grid) {
-            grid-template-columns: repeat(3, 1fr) !important;
+            display: flex !important;
+            flex-wrap: wrap !important;
+            justify-content: center !important;
+            gap: 30px !important;
+        }
+
+        :global(.employer-use-cases-grid .service-card) {
+            flex: 0 1 calc((100% - 60px) / 3) !important;
+            width: calc((100% - 60px) / 3) !important;
+            max-width: calc((100% - 60px) / 3) !important;
+            box-sizing: border-box !important;
         }
 
         @media (max-width: 900px) {
-            :global(.employer-use-cases-grid) {
-                grid-template-columns: 1fr !important;
+            :global(.employer-use-cases-grid .service-card) {
+                flex: 0 1 100% !important;
+                width: 100% !important;
+                max-width: 100% !important;
             }
         }
 
@@ -1313,6 +1343,28 @@ const otrosServiciosProps = {
             background-color: #fafafc !important;
 
             padding-bottom: 80px !important;
+        }
+
+        :global(.perfiles-grid.grid-modern) {
+            display: flex !important;
+            flex-wrap: wrap !important;
+            justify-content: center !important;
+            gap: 20px !important;
+        }
+
+        :global(.perfiles-grid.grid-modern .perfil-card) {
+            flex: 0 1 calc(50% - 10px) !important;
+            width: calc(50% - 10px) !important;
+            max-width: calc(50% - 10px) !important;
+            box-sizing: border-box !important;
+        }
+
+        @media (max-width: 640px) {
+            :global(.perfiles-grid.grid-modern .perfil-card) {
+                flex: 0 1 100% !important;
+                width: 100% !important;
+                max-width: 100% !important;
+            }
         }
 
         /* Estilos específicos para la sección FAQ en esta página */

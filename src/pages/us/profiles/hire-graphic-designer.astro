@@ -675,8 +675,15 @@ const queEsOutsourcingProps = {
  
       buttonSubtext=""
       footerLinkText="Explore Oberstaff's Remote Staffing Model →"
-      footerLinkHref=""
-      
+      footerLinkHref="/us/services/staff-augmentation"
+      placeholderName="Full name *"
+      placeholderEmail="Corporate email *"
+      placeholderCompany="Company name *"
+      placeholderPhone="Phone number *"
+      smsConsentText={`<strong>By providing your phone number</strong>, you agree to receive customer support SMS messages from <strong>Oberstaff<span style="color: #FF66CC;">.</span></strong> Message frequency may vary. Standard message and data rates may apply. Reply STOP to cancel subscription. Reply HELP for help. <a href="/politica-de-privacidad-y-cookies-de-oberstaff" target="_blank" class="consent-link" style="color: #6663FD; text-decoration: underline;">Privacy policy and cookie usage.</a> <span class="required-star" style="color: #ef4444; font-weight: 700; margin-left: 2px;">*</span>`}
+      captchaLabel="Verification code"
+      captchaHint="Enter the characters shown in the image"
+      captchaPlaceholder="Enter code"
     >
       <Fragment slot="description">
     <span style='font-weight: 800; color: #fffff;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span> helps U.S. companies hire graphic designer talent from Latin America who work as dedicated extensions of internal marketing and creative teams. Each remote graphic designer can produce recurring brand assets, campaign creative, social media graphics, presentations, sales collateral, editorial materials, and print-ready files during the U.S. business hours your company requires. 
@@ -1216,6 +1223,7 @@ ctaText="Solicitar perfiles de diseño gráfico remoto →"
         subtitle="Compare more than the monthly fee. Whether you want to outsource graphic designers, engage a creative agency, hire a local employee, or work with <span style='font-weight: 800; color: #1b1b1b;'>Oberstaff</span><span style='color: #FF66CC; font-weight: 900;'>.</span>, evaluate dedicated capacity, portfolio validation, brand knowledge, revision workflow, source-file ownership, U.S. time-zone overlap, and the administrative model behind the engagement."
         footerNote="*Estimates are based on full-time dedicated professionals. The final budget will be adjusted according to technical experience and country of origin"
         oberstaffLabel="<span style='font-weight:800; color:#1B1B1B;'>Oberstaff<span style='color:#FF66CC;'>.</span></span> <span style='color:#FF66CC; font-weight:700;'>(LATAM)</span> talent"
+        criterioLabel="Criteria"
         competitors={[
           "U.S. W-2 hire",
           "U.S. agency / studio",
@@ -1279,6 +1287,7 @@ ctaText="Solicitar perfiles de diseño gráfico remoto →"
         cardTitle="Best price"
         titleTag="h2"
         cardSubtitle=""
+        labelAbove={true}
         priceLabel="Starting from"
         priceAmount="$950 USD"
         pricePeriod="/month"
@@ -1503,6 +1512,7 @@ ctaText="Solicitar perfiles de diseño gráfico remoto →"
 				title="What <span style='font-weight: 900; color: #1b1b1b;'> Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span> Clients Say About Working With Us"
 				subtitle=""
 				columns={3}
+				videoBtnText="Watch video testimonial →"
 				testimonials={[
           {
 						stars: 5,
@@ -1562,8 +1572,15 @@ ctaText="Solicitar perfiles de diseño gráfico remoto →"
       subtitle="Fill out our quick 1-minute form to receive a curated shortlist of pre-vetted graphic design specialists aligned with your brand, production workflow, software, language, and U.S. schedule requirements."
       buttonText="Request a free Graphic Designer proposal →"
       noteText="Completing this form takes less than 60 seconds"
-      formName="Perfil Diseñador Gráfico España"
-      pais="España"
+      formName="U.S. Graphic Designer Profile"
+      pais="United States"
+      placeholderName="Full name *"
+      placeholderCompany="Company name *"
+      placeholderEmail="Email *"
+      placeholderPhone="Phone number *"
+      captchaLabel="Verification code"
+      captchaHint="Enter the characters shown in the image"
+      captchaPlaceholder="Enter code"
     />
   </div>
 
@@ -1588,6 +1605,28 @@ ctaText="Solicitar perfiles de diseño gráfico remoto →"
     align-items: flex-start !important;
   }
 
+  :global(.employer-use-cases-grid) {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 30px !important;
+  }
+
+  :global(.employer-use-cases-grid .service-card) {
+    flex: 0 1 calc(50% - 15px) !important;
+    width: calc(50% - 15px) !important;
+    max-width: calc(50% - 15px) !important;
+    box-sizing: border-box !important;
+  }
+
+  @media (max-width: 900px) {
+    :global(.employer-use-cases-grid .service-card) {
+      flex: 0 1 100% !important;
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+  }
+
   /* Fondo exclusivo para la sección de áreas del diseñador */
   :global(section.employer-use-cases) {
     background-color: #FAFAFC !important;
@@ -1599,6 +1638,28 @@ ctaText="Solicitar perfiles de diseño gráfico remoto →"
     background-color: #FAFAFC !important;
   
     padding-bottom: 80px !important;
+  }
+
+  :global(.perfiles-grid.grid-modern) {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 20px !important;
+  }
+
+  :global(.perfiles-grid.grid-modern .perfil-card) {
+    flex: 0 1 calc(50% - 10px) !important;
+    width: calc(50% - 10px) !important;
+    max-width: calc(50% - 10px) !important;
+    box-sizing: border-box !important;
+  }
+
+  @media (max-width: 640px) {
+    :global(.perfiles-grid.grid-modern .perfil-card) {
+      flex: 0 1 100% !important;
+      width: 100% !important;
+      max-width: 100% !important;
+    }
   }
 
   /* Estilos específicos para la sección FAQ en esta página */

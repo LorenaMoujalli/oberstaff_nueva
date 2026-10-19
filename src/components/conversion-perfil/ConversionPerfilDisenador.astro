@@ -9,6 +9,16 @@ interface Props {
     isCommunityPR?: boolean;
     formName?: string;
     pais?: string;
+    placeholderName?: string;
+    placeholderCompany?: string;
+    placeholderEmail?: string;
+    placeholderPhone?: string;
+    placeholderNeed?: string;
+    smsConsentText?: string;
+    captchaLabel?: string;
+    captchaHint?: string;
+    captchaPlaceholder?: string;
+    captchaRefreshTitle?: string;
 }
 
 const {
@@ -21,13 +31,41 @@ const {
     isCommunityPR = false,
     formName = "",
     pais = "",
+    placeholderName,
+    placeholderCompany,
+    placeholderEmail,
+    placeholderPhone,
+    placeholderNeed,
+    smsConsentText,
+    captchaLabel,
+    captchaHint,
+    captchaPlaceholder,
+    captchaRefreshTitle,
 } = Astro.props;
 
 const isPrPage = Astro.url.pathname.includes("/pr");
-const finalPais = pais || (isPrPage ? "Puerto Rico" : "España");
+const isUsPage = Astro.url.pathname.includes("/us");
+const finalPais = pais || (isPrPage ? "Puerto Rico" : (isUsPage ? "United States" : "España"));
 const privacyPolicyUrl = isPrPage
     ? "/pr/politica-de-privacidad-y-cookies-de-oberstaff"
     : "/politica-de-privacidad-y-cookies-de-oberstaff";
+
+const finalPlaceholderName = placeholderName || (isUsPage ? "Full name *" : "Nombre completo *");
+const finalPlaceholderCompany = placeholderCompany || (isUsPage ? "Company name *" : "Nombre de la empresa *");
+const finalPlaceholderEmail = placeholderEmail || (isUsPage ? "Email *" : "Email *");
+const finalPlaceholderPhone = placeholderPhone || (isUsPage ? "Phone *" : "Teléfono *");
+const finalPlaceholderNeed = placeholderNeed || (isUsPage ? "Main need: social media, content, community management, social commerce or LinkedIn B2B..." : "Necesidad principal: redes sociales, contenido, atención de comunidad, social commerce o LinkedIn B2B...");
+
+const finalCaptchaLabel = captchaLabel || (isUsPage ? "Verification code" : "Código de verificación");
+const finalCaptchaHint = captchaHint || (isUsPage ? "Enter the text shown in the image" : "Ingresa el texto que ves en la imagen");
+const finalCaptchaPlaceholder = captchaPlaceholder || (isUsPage ? "Enter code" : "Escribe el código");
+const finalCaptchaRefreshTitle = captchaRefreshTitle || (isUsPage ? "New code" : "Nuevo código");
+
+const defaultSmsConsentText = isUsPage
+    ? `<strong>By providing your phone number</strong>, you agree to receive customer support SMS messages from <strong>Oberstaff<span style="color: #FF66CC;">.</span></strong> Message frequency may vary. Standard message and data rates may apply. Reply STOP to cancel subscription. Reply HELP for help. <a href="${privacyPolicyUrl}" target="_blank" class="consent-link" style="color: #6663FD; text-decoration: underline;">Privacy policy and cookie usage.</a>`
+    : `<strong>Al facilitar su número de teléfono</strong>, aceptas recibir mensajes SMS relacionados con atención al cliente de <strong>Oberstaff<span style="color: #FF66CC;">.</span></strong> La frecuencia de los mensajes puede variar. Pueden aplicarse tarifas estándar de mensajes y datos. Responde STOP para cancelar la suscripción. Responde Help para obtener ayuda. <a href="${privacyPolicyUrl}" target="_blank" class="consent-link" style="color: #6663FD; text-decoration: underline;">Política de privacidad y uso de cookies.</a>`;
+
+const finalSmsConsentText = smsConsentText || defaultSmsConsentText;
 ---
 
 <style>
@@ -251,20 +289,21 @@ const privacyPolicyUrl = isPrPage
                 class="conv-d-form"
                 data-webhook-url={webhookUrl}
                 data-is-pr={isPrPage ? "true" : "false"}
+                data-is-us={isUsPage ? "true" : "false"}
                 data-form-name={formName}
                 data-pais={finalPais}
             >
-                <input type="text" placeholder="Nombre completo *" required />
+                <input type="text" placeholder={finalPlaceholderName} required />
                 <input
                     type="text"
-                    placeholder="Nombre de la empresa *"
+                    placeholder={finalPlaceholderCompany}
                     required
                 />
                 <div class="conv-d-row">
-                    <input type="email" placeholder="Email *" required />
+                    <input type="email" placeholder={finalPlaceholderEmail} required />
                     <input
                         type="tel"
-                        placeholder="Teléfono *"
+                        placeholder={finalPlaceholderPhone}
                         required
                         style="width: 100%; box-sizing: border-box;"
                         oninput="this.value = this.value.replace(/[^0-9 ]/g, '')"
@@ -275,7 +314,7 @@ const privacyPolicyUrl = isPrPage
                     isCommunityPR && (
                         <textarea
                             name="Necesidad principal"
-                            placeholder="Necesidad principal: redes sociales, contenido, atención de comunidad, social commerce o LinkedIn B2B..."
+                            placeholder={finalPlaceholderNeed}
                             required
                         />
                     )
@@ -300,24 +339,8 @@ const privacyPolicyUrl = isPrPage
                         <span
                             class="consent-text"
                             style="font-family: 'Poppins', sans-serif; font-size: 10px; line-height: 1.6; color: #4a4a4a;"
-                        >
-                            <strong>Al facilitar su número de teléfono</strong>,
-                            aceptas recibir mensajes SMS relacionados con
-                            atención al cliente de <strong
-                                >Oberstaff<span style="color: #FF66CC;">.</span
-                                ></strong
-                            >
-                            La frecuencia de los mensajes puede variar. Pueden aplicarse
-                            tarifas estándar de mensajes y datos. Responde STOP para
-                            cancelar la suscripción. Responde Help para obtener ayuda.
-                            <a
-                                href={privacyPolicyUrl}
-                                target="_blank"
-                                class="consent-link"
-                                style="color: #6663FD; text-decoration: underline;"
-                                >Política de privacidad y uso de cookies.</a
-                            >
-                        </span>
+                            set:html={finalSmsConsentText}
+                        />
                     </label>
                     <p
                         class="consent-error"
@@ -336,7 +359,7 @@ const privacyPolicyUrl = isPrPage
                     <label
                         class="captcha-label"
                         style="font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 600; color: #1B1B1B; display: block; margin-bottom: 4px;"
-                        >Código de verificación <span
+                        >{finalCaptchaLabel} <span
                             class="required-star"
                             style="color: #ef4444; font-weight: 700; margin-left: 2px;"
                             >*</span
@@ -346,7 +369,7 @@ const privacyPolicyUrl = isPrPage
                         class="captcha-hint"
                         style="font-family: 'Poppins', sans-serif; font-size: 12px; color: #888; margin: 0 0 8px 0;"
                     >
-                        Ingresa el texto que ves en la imagen
+                        {finalCaptchaHint}
                     </p>
                     <div
                         class="captcha-input-row"
@@ -356,7 +379,7 @@ const privacyPolicyUrl = isPrPage
                             type="text"
                             id="captcha-input"
                             class="captcha-input"
-                            placeholder="Escribe el código"
+                            placeholder={finalCaptchaPlaceholder}
                             autocomplete="off"
                             maxlength="8"
                             required
@@ -366,8 +389,8 @@ const privacyPolicyUrl = isPrPage
                             type="button"
                             id="captcha-refresh"
                             class="captcha-refresh-btn"
-                            title="Nuevo código"
-                            aria-label="Generar nuevo código"
+                            title={finalCaptchaRefreshTitle}
+                            aria-label={finalCaptchaRefreshTitle}
                             style="background: none; border: 1.5px solid #6663FD; border-radius: 6px; color: #6663FD; font-size: 18px; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s, color 0.2s; padding: 0; flex-shrink: 0;"
                         >
                             &#x21bb;
@@ -635,6 +658,7 @@ const privacyPolicyUrl = isPrPage
 
             f.addEventListener("submit", async (e) => {
                 e.preventDefault();
+                const isUs = f.dataset.isUs === "true";
                 const feedback = f.querySelector(
                     ".form-feedback",
                 ) as HTMLElement;
@@ -643,8 +667,9 @@ const privacyPolicyUrl = isPrPage
                 let hasError = false;
                 if (!consentCheckbox?.checked) {
                     if (consentError)
-                        consentError.textContent =
-                            "⚠ Debes aceptar el consentimiento para continuar.";
+                        consentError.textContent = isUs
+                            ? "⚠ You must agree to the terms to continue."
+                            : "⚠ Debes aceptar el consentimiento para continuar.";
                     hasError = true;
                 } else {
                     if (consentError) consentError.textContent = "";
@@ -654,15 +679,17 @@ const privacyPolicyUrl = isPrPage
                 const userCode = captchaInput?.value.trim().toUpperCase();
                 if (!userCode) {
                     if (captchaError)
-                        captchaError.textContent =
-                            "⚠ Este campo es obligatorio. Ingresa el código de la imagen.";
+                        captchaError.textContent = isUs
+                            ? "⚠ This field is required. Enter the code from the image."
+                            : "⚠ Este campo es obligatorio. Ingresa el código de la imagen.";
                     captchaInput?.classList.add("invalid");
                     hasError = true;
                 } else if (userCode !== currentCode) {
                     refreshCaptcha();
                     if (captchaError)
-                        captchaError.textContent =
-                            "❌ El código ingresado es incorrecto. Se generó un nuevo código, inténtalo de nuevo.";
+                        captchaError.textContent = isUs
+                            ? "❌ The code entered is incorrect. A new code has been generated, please try again."
+                            : "❌ El código ingresado es incorrecto. Se generó un nuevo código, inténtalo de nuevo.";
                     captchaInput?.classList.add("invalid");
                     hasError = true;
                 } else {
@@ -711,7 +738,7 @@ const privacyPolicyUrl = isPrPage
                 // Verificar si el correo ya existe
                 if (correo) {
                     btn.disabled = true;
-                    btn.innerHTML = "Enviando...";
+                    btn.innerHTML = isUs ? "Sending..." : "Enviando...";
                     try {
                         const checkRes = await fetch('/api/check-email', {
                             method: 'POST',
@@ -721,10 +748,10 @@ const privacyPolicyUrl = isPrPage
                         if (checkRes.ok) {
                             const checkData = await checkRes.json();
                             if (checkData.exists) {
-                                showToast('Ya hemos recibido una solicitud con este correo. Nos pondremos en contacto pronto.', 'success');
+                                showToast(isUs ? 'We have already received a request with this email. We will contact you soon.' : 'Ya hemos recibido una solicitud con este correo. Nos pondremos en contacto pronto.', 'success');
                             (e.target as HTMLFormElement).reset();
                                 btn.disabled = false;
-                                btn.innerHTML = btn.dataset.originalHtml ?? "Solicitar cotización →";
+                                btn.innerHTML = btn.dataset.originalHtml ?? (isUs ? "Request a proposal →" : "Solicitar cotización →");
                                 return;
                             }
                         }
@@ -732,11 +759,11 @@ const privacyPolicyUrl = isPrPage
                         console.error("Error checking email duplicate:", err);
                     }
                     btn.disabled = false;
-                    btn.innerHTML = btn.dataset.originalHtml ?? "Solicitar cotización →";
+                    btn.innerHTML = btn.dataset.originalHtml ?? (isUs ? "Request a proposal →" : "Solicitar cotización →");
                 }
 
                 btn.disabled = true;
-                btn.innerHTML = "Enviando...";
+                btn.innerHTML = isUs ? "Sending..." : "Enviando...";
                 if (feedback) {
                     feedback.className = "form-feedback";
                     feedback.textContent = "";
@@ -774,20 +801,20 @@ const privacyPolicyUrl = isPrPage
                     f.reset();
                     refreshCaptcha();
                     showToast(
-                        "¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.",
+                        isUs ? "Message sent successfully! We will get in touch with you soon." : "¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.",
                         "success",
                     );
                 } catch {
                     if (feedback) {
                         feedback.className = "form-feedback error";
                         feedback.textContent =
-                            "❌ Error al enviar. Por favor inténtalo de nuevo.";
+                            isUs ? "❌ Error sending. Please try again." : "❌ Error al enviar. Por favor inténtalo de nuevo.";
                     }
                 } finally {
                     btn.disabled = false;
                     btn.innerHTML =
                         btn.dataset.originalHtml ??
-                        "Solicitar propuesta gratuita →";
+                        (isUs ? "Request a proposal →" : "Solicitar propuesta gratuita →");
                 }
             });
 

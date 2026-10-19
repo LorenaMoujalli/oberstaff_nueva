@@ -12,6 +12,9 @@ interface Props {
 	ogDescription?: string;
 	ogUrl?: string;
 	ogImage?: string;
+	modalTitle?: string;
+	modalDescription?: string;
+	modalBtnText?: string;
 }
 
 const {
@@ -22,6 +25,9 @@ const {
 	ogDescription = description,
 	ogUrl = Astro.url.href,
 	ogImage = "Contratar-Talento.webp",
+	modalTitle = "Ready to expand your team in Latin America?",
+	modalDescription = "A specialist will explain how our remote staffing solutions help U.S. companies hire faster and reduce overhead.",
+	modalBtnText = "Schedule a free consultation",
 } = Astro.props;
 
 const canonicalOgImage = ogImage
@@ -404,7 +410,11 @@ const canonicalOgImage = ogImage
 			</main>
 			<FooterUs />
 		</div>
-		<VideoPrincipalModal />
+		<VideoPrincipalModal
+			modalTitle={modalTitle}
+			modalDescription={modalDescription}
+			modalBtnText={modalBtnText}
+		/>
 		<VideoTestimonialModal />
 		<!-- 2. Script que inicializa el Chatbot
 		<script type="module" is:inline>

@@ -12,6 +12,7 @@ interface Plan {
     features: string[];
     ctaText: string;
     ctaHref: string;
+    priceLabel?: string;
 }
 
 interface Props {
@@ -19,9 +20,10 @@ interface Props {
     title: string;
     subtitle: string;
     plans: Plan[];
+    priceLabel?: string;
 }
 
-const { eyebrow, title, subtitle, plans } = Astro.props;
+const { eyebrow, title, subtitle, plans, priceLabel } = Astro.props;
 ---
 
 <section class="eor-pricing">
@@ -33,7 +35,7 @@ const { eyebrow, title, subtitle, plans } = Astro.props;
 
     <div class="plans-container">
         {plans.map((plan) => (
-            <PricingCard {...plan} />
+            <PricingCard {...plan} priceLabel={plan.priceLabel || priceLabel} />
         ))}
     </div>
 </section>

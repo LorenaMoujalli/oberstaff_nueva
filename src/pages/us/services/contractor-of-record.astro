@@ -723,7 +723,7 @@ const faqsList = [
 				primaryBtnHref="#contacto"
 				secondaryBtnText="Talk to a COR Specialist"
 				secondaryBtnHref="#contacto"
-				underBtnText="↳ Takes less than 60 seconds - No obligation"
+				underBtnText="↳ Takes less than 1 minute · No obligation"
 				modalTitle="Ready to expand your team in Latin America?"
 				modalDescription="An expert will explain how to hire independent contractors using our Contractor of Record model."
 				modalBtnText="Schedule a free consultation"
@@ -1069,6 +1069,7 @@ const faqsList = [
 				title="What <span style='font-weight: 900; color: #1b1b1b;'> Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span> Clients Say About Working With Us"
 				subtitle=""
 				columns={3}
+				videoBtnText="Watch video testimonial →"
 				testimonials={[
 					{
 						stars: 5,
@@ -1101,13 +1102,12 @@ const faqsList = [
 			/>
 		</div>
 
-		</div>
-
-        	<div class="fade-in-section">
+        <div class="fade-in-section">
 			<PricingSection
 				eyebrow=""
 				title="Contractor of Record Services Pricing <span style='color: #6663fd; font-weight: 900;'>for U.S. Companies<span style='color: #FF66CC; font-weight: 900;'></span></span>"
 				subtitle="The monthly price includes both Oberstaff’s Contractor of Record service and the contractor’s compensation."
+				priceLabel="FROM"
 				plans={[
     {
         badge: "MOST POPULAR",
@@ -1117,7 +1117,7 @@ const faqsList = [
         period: "per active contractor / month",
         teamSize: "Para equipos de 4-20 empleados",
         features: [
-            "</span><div style='margin-left: -2.5rem; width: calc(100% + 2.5rem); background: #ffffff; position: relative; z-index: 10; font-size: 0.875rem; line-height: 1.25rem; color: #4B5563; font-weight: 400; padding-bottom: 0.5rem;'>One monthly price covering talent sourcing, contractor compensation, commercial agreements, onboarding, recurring administration, international payments, and dedicated account support.</div><span>",
+            "<div class='no-check' style='font-size: 0.875rem; line-height: 1.4; color: #4B5563; font-weight: 400; padding-bottom: 0.5rem;'>One monthly price covering talent sourcing, contractor compensation, commercial agreements, onboarding, recurring administration, international payments, and dedicated account support.</div>",
             "Sourcing and presentation of qualified LATAM independent specialists.",
             "Candidate screening and project-fit coordination.",
             "Contractor compensation included in the monthly price.",
@@ -1126,7 +1126,7 @@ const faqsList = [
             "Recurring documentation and international payment management.",
             "Renewal, scope-change, and offboarding support.",
             "One consolidated monthly invoice in U.S. dollars.",
-            "</span><div style='margin-left: -2.5rem; width: calc(100% + 2.5rem); background: #ffffff; position: relative; z-index: 10; font-size: 0.75rem; line-height: 1rem; color: #6B7280; font-style: italic; padding-top: 0.5rem;'>Final pricing depends on the contractor's experience, specialization, country, project scope, expected deliverables, duration, and engagement requirements. The complete monthly price is confirmed in the proposal before activation.</div><span>"
+            "<div class='no-check' style='font-size: 0.75rem; line-height: 1.4; color: #6B7280; font-style: italic; padding-top: 0.5rem;'>Final pricing depends on the contractor's experience, specialization, country, project scope, expected deliverables, duration, and engagement requirements. The complete monthly price is confirmed in the proposal before activation.</div>"
         ],
         ctaText: "Request a proposal", 
         ctaHref: "#contacto",
@@ -1207,7 +1207,7 @@ const faqsList = [
 						title: "Staff Augmentation",
 						quote: "Add software, QA, DevOps, data, and other technical specialists who integrate into your engineering tools, sprints, and delivery workflows.",
 						roles: [
-							{ label: "→ View service ", href: "#" },
+							{ label: "View service", href: "/us/services/staff-augmentation" },
 							],
 						iconColorClass: "purple-text", 
 					},
@@ -1216,7 +1216,7 @@ const faqsList = [
 						title: "Employer of Record",
 						quote: "Hire professionals as local employees through formal employment, payroll, statutory benefits, and country-specific administration.",
 						roles: [
-							{ label: "→ View service ", href: "#" },
+							{ label: "View service ", href: "/us/services/employer-of-record" },
 							
 						],
 						iconColorClass: "blue-text",
@@ -1226,7 +1226,7 @@ const faqsList = [
 						title: "Outsourced Staffing",
 						quote: "Build recurring business capacity across sales, administration, marketing, support, finance, creative, and operations.",
 						roles: [
-							{ label: "→ View service ", href: "#" },
+							{ label: "View service ", href: "/us/services/outsourced-staffing" },
 							],
 						iconColorClass: "pink-text",
 					}
@@ -1310,8 +1310,12 @@ const faqsList = [
 				}}
 				customClass="employer-variant"
 				webhookUrl=""
-				formName="Servicio Contractor of Record Puerto Rico"
-				pais="Puerto Rico"
+				formName="Contractor of Record Services US"
+				pais="United States"
+				smsConsentText={`<strong>By providing your phone number</strong>, you agree to receive customer support SMS messages from <strong>Oberstaff<span style="color: #FF66CC;">.</span></strong> Message frequency may vary. Standard message and data rates may apply. Reply STOP to cancel subscription. Reply HELP for help. <a href="/politica-de-privacidad-y-cookies-de-oberstaff" target="_blank" class="consent-link">Privacy policy and cookie usage.</a> <span class="required-star">*</span>`}
+				captchaLabel="Verification code"
+				captchaHint="Enter the characters shown in the image"
+				captchaPlaceholder="Enter code"
 			/>
 		</div>
 
@@ -1325,6 +1329,27 @@ const faqsList = [
 
 <style>
 	.service-detail-container {
+	}
+
+	/* Separación superior e inferior para el Hero de Contractor US */
+	.service-detail-container :global(.hero-section) {
+		padding-top: 70px !important;
+		padding-bottom: 70px !important;
+	}
+
+	.service-detail-container :global(.hero-actions) {
+		margin-bottom: 50px !important;
+	}
+
+	@media (max-width: 768px) {
+		.service-detail-container :global(.hero-section) {
+			padding-top: 95px !important;
+			padding-bottom: 45px !important;
+		}
+
+		.service-detail-container :global(.hero-actions) {
+			margin-bottom: 30px !important;
+		}
 	}
 
 	/* --- Estilos específicos para el componente de proceso en Employer --- */
@@ -1469,15 +1494,26 @@ const faqsList = [
 	}
 
 	.service-detail-container :global(.btn-pricing-link) {
-		display: inline-block;
-		background-color: #7B70FF;
+		display: inline-block !important;
+		background: #7B70FF !important;
+		background-color: #7B70FF !important;
+		border: 2px solid #7B70FF !important;
 		color: #ffffff !important;
-		padding: 14px 44px;
-		border-radius: 50px;
-		font-weight: 700;
-		text-align: center;
-		transition: all 0.3s ease;
-		text-decoration: none;
+		padding: 14px 44px !important;
+		border-radius: 50px !important;
+		font-weight: 700 !important;
+		font-family: 'Poppins', sans-serif !important;
+		font-size: 14px !important;
+		text-align: center !important;
+		transition: all 0.3s ease !important;
+		text-decoration: none !important;
+	}
+
+	.service-detail-container :global(.btn-pricing-link:hover) {
+		background: transparent !important;
+		background-color: transparent !important;
+		color: #7B70FF !important;
+		border: 2px solid #7B70FF !important;
 	}
 
 	.service-detail-container :global(.process-employer .process-cta-btn) {
@@ -1502,7 +1538,8 @@ const faqsList = [
 	}
 
 	.service-detail-container :global(.faq-section .faq-cta-button) {
-		display: inline-block;
+		display: inline-block !important;
+		background: #7B70FF !important;
 		background-color: #7B70FF !important;
 		border: 2px solid #7B70FF !important;
 		color: #ffffff !important;
@@ -1514,9 +1551,11 @@ const faqsList = [
 		text-align: center !important;
 		text-decoration: none !important;
 		transition: all 0.3s ease !important;
+		margin-top: 20px !important;
 	}
 
 	.service-detail-container :global(.faq-section .faq-cta-button:hover) {
+		background: transparent !important;
 		background-color: transparent !important;
 		color: #7B70FF !important;
 		border: 2px solid #7B70FF !important;

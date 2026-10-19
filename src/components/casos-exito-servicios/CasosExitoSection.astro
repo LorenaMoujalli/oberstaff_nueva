@@ -10,6 +10,7 @@ interface Testimonial {
     avatar?: string;
     videoId?: string;
     imageAlt?: string;
+    videoBtnText?: string;
 }
 
 interface Props {
@@ -19,9 +20,10 @@ interface Props {
     testimonials: Testimonial[];
     columns?: 2 | 3;
     id?: string;
+    videoBtnText?: string;
 }
 
-const { label, title, subtitle, testimonials, columns = 2, id = "casos-de-exito-servicios" } = Astro.props;
+const { label, title, subtitle, testimonials, columns = 2, id = "casos-de-exito-servicios", videoBtnText } = Astro.props;
 ---
 
 <section class="casos-exito" id={id}>
@@ -33,7 +35,7 @@ const { label, title, subtitle, testimonials, columns = 2, id = "casos-de-exito-
 
     <div class={`casos-grid casos-grid-${columns}col`}>
         {testimonials.map((testimonial) => (
-            <TestimonialCard {...testimonial} />
+            <TestimonialCard {...testimonial} videoBtnText={testimonial.videoBtnText || videoBtnText} />
         ))}
     </div>
 </section>

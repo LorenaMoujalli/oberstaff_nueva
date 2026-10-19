@@ -17,6 +17,10 @@ interface Props {
     placeholderPhone?: string;
     formName?: string;
     pais?: string;
+    smsConsentText?: string;
+    captchaLabel?: string;
+    captchaHint?: string;
+    captchaPlaceholder?: string;
 }
 
 const {
@@ -29,22 +33,42 @@ const {
     footerLinkHref = "#",
     cardTitleTag = "p",
     webhookUrl = "",
-    placeholderName = "Nombre completo *",
-    placeholderEmail = "Email corporativo *",
-    placeholderCompany = "Empresa *",
-    placeholderPhone = "Teléfono *",
+    placeholderName,
+    placeholderEmail,
+    placeholderCompany,
+    placeholderPhone,
     formName = "",
     pais = "",
+    smsConsentText,
+    captchaLabel,
+    captchaHint,
+    captchaPlaceholder,
 } = Astro.props;
 
 const isPrPage = Astro.url.pathname.includes('/pr');
-const finalPais = pais || (isPrPage ? "Puerto Rico" : "España");
+const isUsPage = Astro.url.pathname.includes('/us');
+const finalPais = pais || (isPrPage ? "Puerto Rico" : (isUsPage ? "United States" : "España"));
 
 const CardTitleTag = cardTitleTag as any;
 
 const privacyPolicyUrl = isPrPage 
   ? "/pr/politica-de-privacidad-y-cookies-de-oberstaff" 
   : "/politica-de-privacidad-y-cookies-de-oberstaff";
+
+const finalPlaceholderName = placeholderName || (isUsPage ? "Full name *" : "Nombre completo *");
+const finalPlaceholderEmail = placeholderEmail || (isUsPage ? "Work email *" : "Email corporativo *");
+const finalPlaceholderCompany = placeholderCompany || (isUsPage ? "Company name *" : "Empresa *");
+const finalPlaceholderPhone = placeholderPhone || (isUsPage ? "Phone number *" : "Teléfono *");
+
+const finalCaptchaLabel = captchaLabel || (isUsPage ? "Verification code" : "Código de verificación");
+const finalCaptchaHint = captchaHint || (isUsPage ? "Enter the characters shown in the image" : "Ingresa el texto que ves en la imagen");
+const finalCaptchaPlaceholder = captchaPlaceholder || (isUsPage ? "Enter code" : "Escribe el código");
+
+const defaultSmsConsentText = isUsPage 
+  ? `<strong>By providing your phone number</strong>, you agree to receive customer support SMS messages from <strong>Oberstaff<span style="color: #FF66CC;">.</span></strong> Message frequency may vary. Standard message and data rates may apply. Reply STOP to cancel subscription. Reply HELP for help. <a href="${privacyPolicyUrl}" target="_blank" class="consent-link" style="color: #6663FD; text-decoration: underline;">Privacy policy and cookie usage.</a> <span class="required-star" style="color: #ef4444; font-weight: 700; margin-left: 2px;">*</span>`
+  : `<strong>Al facilitar su número de teléfono</strong>, aceptas recibir mensajes SMS relacionados con atención al cliente de <strong>Oberstaff<span style="color: #FF66CC;">.</span></strong> La frecuencia de los mensajes puede variar. Pueden aplicarse tarifas estándar de mensajes y datos. Responde STOP para cancelar la suscripción. Responde Help para obtener ayuda. <a href="${privacyPolicyUrl}" target="_blank" class="consent-link" style="color: #6663FD; text-decoration: underline;">Política de privacidad y uso de cookies.</a> <span class="required-star" style="color: #ef4444; font-weight: 700; margin-left: 2px;">*</span>`;
+
+const finalSmsConsentText = smsConsentText || defaultSmsConsentText;
 ---
 
 <!-- intl-tel-input library -->
@@ -59,21 +83,21 @@ const privacyPolicyUrl = isPrPage
         </div>
 
         <div class="input-group">
-            <input type="text" placeholder={placeholderName} required />
+            <input type="text" placeholder={finalPlaceholderName} required />
         </div>
 
         <div class="input-group">
-            <input type="email" placeholder={placeholderEmail} required />
+            <input type="email" placeholder={finalPlaceholderEmail} required />
         </div>
 
         <div class="input-group">
-            <input type="text" placeholder={placeholderCompany} required />
+            <input type="text" placeholder={finalPlaceholderCompany} required />
         </div>
 
         <div class="input-group">
             <input
                 type="tel"
-                placeholder={placeholderPhone}
+                placeholder={finalPlaceholderPhone}
                 required
                 style="width: 100%; box-sizing: border-box;"
                 oninput="this.value = this.value.replace(/[^0-9 ]/g, '')"
@@ -100,24 +124,8 @@ const privacyPolicyUrl = isPrPage
                 <span
                     class="consent-text"
                     style="font-family: 'Poppins', sans-serif; font-size: 10px; line-height: 1.6; color: #4a4a4a;"
-                >
-                    <strong>Al facilitar su número de teléfono</strong>, aceptas recibir mensajes SMS relacionados con atención al cliente de <strong>Oberstaff<span style="color: #FF66CC;">.</span></strong> La frecuencia de los mensajes puede
-                    variar. Pueden aplicarse tarifas estándar de mensajes y
-                    datos. Responde STOP para cancelar la suscripción. Responde
-                    Help para obtener ayuda.
-                    <a
-                        href={privacyPolicyUrl}
-                        target="_blank"
-                        class="consent-link"
-                        style="color: #6663FD; text-decoration: underline;"
-                        >Política de privacidad y uso de cookies.</a
-                    >
-                    <span
-                        class="required-star"
-                        style="color: #ef4444; font-weight: 700; margin-left: 2px;"
-                        >*</span
-                    >
-                </span>
+                    set:html={finalSmsConsentText}
+                />
             </label>
             <p
                 class="consent-error"
@@ -136,7 +144,7 @@ const privacyPolicyUrl = isPrPage
             <label
                 class="captcha-label"
                 style="font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 600; color: #1B1B1B; display: block; margin-bottom: 4px;"
-                >Código de verificación <span
+                >{finalCaptchaLabel} <span
                     class="required-star"
                     style="color: #ef4444; font-weight: 700; margin-left: 2px;"
                     >*</span
@@ -146,7 +154,7 @@ const privacyPolicyUrl = isPrPage
                 class="captcha-hint"
                 style="font-family: 'Poppins', sans-serif; font-size: 12px; color: #888; margin: 0 0 8px 0;"
             >
-                Ingresa el texto que ves en la imagen
+                {finalCaptchaHint}
             </p>
             <div
                 class="captcha-input-row"
@@ -156,7 +164,7 @@ const privacyPolicyUrl = isPrPage
                     type="text"
                     id="captcha-input"
                     class="captcha-input"
-                    placeholder="Escribe el código"
+                    placeholder={finalCaptchaPlaceholder}
                     autocomplete="off"
                     maxlength="8"
                     required

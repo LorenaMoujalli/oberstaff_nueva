@@ -793,9 +793,9 @@ const faqsList = [
                 primaryBtnHref="#contacto"
                 secondaryBtnText="Talk to a staffing specialist"
                 secondaryBtnHref="#contacto"
-                modalTitle="¿Listo para expandir tu equipo en LATAM?"
-                modalDescription="Un especialista te explicará exactamente cuánto puedes ahorrar con nuestro modelo EOR."
-                modalBtnText="Agendar asesoría gratuita"
+                modalTitle="Ready to expand your team in Latin America?"
+                modalDescription="A staffing specialist will explain how our managed workforce solutions can support your company's growth."
+                modalBtnText="Schedule a free consultation"
                 videoAlt="Outsourcing de personal en Puerto Rico."
             />
         </div>
@@ -845,6 +845,7 @@ const faqsList = [
                 eyebrow=""
                 title="Outsourced Staffing Services <span style='font-weight: 900; color: #6663FD;'>Pricing for U.S. Companies</span>"
                 subtitle=""
+                priceLabel="FROM"
                 plans={[
                     {
                         badge: "MORE POPULAR",
@@ -1008,7 +1009,7 @@ const faqsList = [
                         quote: "",
                         roles: [{ label: "· Sales Development Representative (SDR)", href: "" }, 
                                 { label: "· Appointment Setter", href: "" }, 
-                                { label: "· Sales Closer", href: "" }, 
+                                { label: "· Sales Closer", href: "/us/profiles/hire-sales-closer" }, 
                                 { label: "· CRM Support Specialist", href: "" }
                               ],
                         iconColorClass: "purple-text",
@@ -1018,9 +1019,9 @@ const faqsList = [
                         title: "Marketing and Communication",
                         quote: "",
                         roles: [
-                            { label: "· Google Ads Specialist", href: "" },
-                            { label: "· Meta Ads Specialist", href: "" },
-                            { label: "· SEO Specialist", href: "" },
+                            { label: "· Google Ads Specialist", href: "/us/profiles/hire-google-ads-expert" },
+                            { label: "· Meta Ads Specialist", href: "/us/profiles/hire-facebook-ads-expert" },
+                            { label: "· SEO Specialist", href: "/us/profiles/hire-seo-expert" },
                             { label: "· Social Media Manager", href: "" },
                         ],
                         iconColorClass: "blue-text",
@@ -1030,9 +1031,9 @@ const faqsList = [
                         title: "Finance and Administration",
                         quote: "",
                         roles: [
-                            { label: "· Virtual Assistant", href: "" },
+                            { label: "· Virtual Assistant", href: "/us/profiles/hire-virtual-assistant" },
                             { label: "· Executive Assistant", href: "" },
-                            { label: "· Bookkeeper", href: "" },
+                            { label: "· Bookkeeper", href: "/us/profiles/hire-bookkeeper" },
                             { label: "· Accounts Payable / Accounts Receivable Assistant", href: "" },
                         ],
                         iconColorClass: "pink-text",
@@ -1042,9 +1043,9 @@ const faqsList = [
                         title: "Creative and Content",
                         quote: "",
                         roles: [
-                            { label: "· Graphic Designer", href: "" },
-                            { label: "· Video Editor", href: "" },
-                            { label: "· Copywriter", href: "" },
+                            { label: "· Graphic Designer", href: "/us/profiles/hire-graphic-designer" },
+                            { label: "· Video Editor", href: "/us/profiles/hire-video-editor" },
+                            { label: "· Copywriter", href: "/us/profiles/hire-copywriter" },
                         ],
                         iconColorClass: "orange-text",
                     },
@@ -1074,7 +1075,7 @@ const faqsList = [
             >
                 <div slot="bottom-alert" class="profiles-tech-notice">
                     🚨 <strong>Need technology professionals? Software developers, QA engineers, DevOps specialists, data engineers, and other IT roles are managed through our Staff Augmentation service, where they integrate directly into your technical team, tools, and sprints.
-                    → <a href="https://oberstaff.com/us/services/staff-augmentation/"
+                    → <a href="/us/services/staff-augmentation/"
                         >Staff Augmentation</a
                     >
                 </div>
@@ -1207,6 +1208,7 @@ const faqsList = [
                 title="Companies Growing Their Remote Teams with <span style='font-weight: 900; color: #1b1b1b;'> Oberstaff</span><span style='font-weight: 900; color: #FF66CC;'>.</span>"
                 subtitle=""
                 columns={3}
+                videoBtnText="Watch video testimonial →"
                 testimonials={[
 
                   {
@@ -1322,8 +1324,12 @@ const faqsList = [
                 }}
                 customClass="employer-variant"
                 webhookUrl=""
-                formName="Servicio Outsourcing de Personal Puerto Rico"
-                pais="US"
+                formName="Outsourced Staffing Services US"
+                pais="United States"
+                smsConsentText={`<strong>By providing your phone number</strong>, you agree to receive customer support SMS messages from <strong>Oberstaff<span style="color: #FF66CC;">.</span></strong> Message frequency may vary. Standard message and data rates may apply. Reply STOP to cancel subscription. Reply HELP for help. <a href="/politica-de-privacidad-y-cookies-de-oberstaff" target="_blank" class="consent-link">Privacy policy and cookie usage.</a> <span class="required-star">*</span>`}
+                captchaLabel="Verification code"
+                captchaHint="Enter the characters shown in the image"
+                captchaPlaceholder="Enter code"
             />
         </div>
 
@@ -1535,13 +1541,52 @@ const faqsList = [
         margin-top: 12px !important;
     }
 
+    /* Centrado del video y elementos flotantes para Personal Outsourcing US */
+    .service-detail-container :global(.hero-visual-wrapper) {
+        display: grid !important;
+        grid-template-columns: 1fr auto 1fr !important;
+        align-items: center !important;
+        justify-content: center !important;
+        max-width: 720px !important;
+        margin: 0 auto 30px auto !important;
+        gap: 20px !important;
+    }
+
+    .service-detail-container :global(.hero-visual-wrapper .badge-left) {
+        justify-self: end !important;
+        margin-left: auto !important;
+        white-space: nowrap !important;
+    }
+
+    .service-detail-container :global(.hero-visual-wrapper .video-preview) {
+        justify-self: center !important;
+        margin: 0 auto !important;
+    }
+
+    .service-detail-container :global(.hero-visual-wrapper .badge-right) {
+        justify-self: start !important;
+        margin-right: auto !important;
+        white-space: nowrap !important;
+    }
+
     /* Más padding interno para la sección hero en esta página */
     .service-detail-container :global(.hero-section) {
-        padding-top: 80px !important;
-        padding-bottom: 80px !important;
+        padding-top: 70px !important;
+        padding-bottom: 70px !important;
     }
 
     @media (max-width: 768px) {
+        .service-detail-container :global(.hero-visual-wrapper) {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+        }
+
+        .service-detail-container :global(.hero-section) {
+            padding-top: 95px !important;
+            padding-bottom: 50px !important;
+        }
+
         .service-detail-container :global(.hero-actions) {
             flex-wrap: wrap !important;
         }

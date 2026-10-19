@@ -173,6 +173,10 @@
     text-align: left;
 }
 
+.pricing-features li.no-check-item {
+    display: block;
+}
+
 /* Check icon circular verde */
 .check-icon {
     display: flex;

@@ -11,6 +11,7 @@ interface Props {
     features: string[];
     ctaText: string;
     ctaHref: string;
+    priceLabel?: string;
 }
 
 const { 
@@ -21,7 +22,8 @@ const {
     period, 
     features, 
     ctaText, 
-    ctaHref 
+    ctaHref,
+    priceLabel = "DESDE"
 } = Astro.props;
 ---
 
@@ -39,7 +41,7 @@ const {
             <p class="card-title"><strong>{title}</strong></p>
             
             <div class="price-block">
-                <span class="price-desde">DESDE</span>
+                <span class="price-desde">{priceLabel}</span>
                 <div class="price-main">
                     <span class="price-amount">{price}</span>
                     <span class="price-currency">{currency}</span>
@@ -56,12 +58,15 @@ const {
         <!-- Columna derecha: features -->
         <div class="card-right">
             <ul class="pricing-features">
-                {features.map((feature) => (
-                    <li>
-                        <span class="check-icon" aria-hidden="true">✓</span>
-                        <span set:html={feature}></span>
-                    </li>
-                ))}
+                {features.map((feature) => {
+                    const hideCheck = typeof feature === 'string' && (feature.includes("no-check") || feature.includes("pricing-feature-intro") || feature.includes("pricing-feature-disclaimer"));
+                    return (
+                        <li class={hideCheck ? "no-check-item" : ""}>
+                            {!hideCheck && <span class="check-icon" aria-hidden="true">✓</span>}
+                            <span set:html={feature}></span>
+                        </li>
+                    );
+                })}
             </ul>
         </div>
 

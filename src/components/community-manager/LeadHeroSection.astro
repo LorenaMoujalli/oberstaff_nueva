@@ -40,6 +40,10 @@ interface Props {
     placeholderPhone?: string;
     formName?: string;
     pais?: string;
+    smsConsentText?: string;
+    captchaLabel?: string;
+    captchaHint?: string;
+    captchaPlaceholder?: string;
 }
 
 const {
@@ -67,6 +71,10 @@ const {
     placeholderPhone,
     formName = "",
     pais = "",
+    smsConsentText,
+    captchaLabel,
+    captchaHint,
+    captchaPlaceholder,
 } = Astro.props;
 
 const sectionStyle = backgroundImage 
@@ -108,6 +116,10 @@ const sectionStyle = backgroundImage
             placeholderPhone={placeholderPhone}
             formName={formName}
             pais={pais}
+            smsConsentText={smsConsentText}
+            captchaLabel={captchaLabel}
+            captchaHint={captchaHint}
+            captchaPlaceholder={captchaPlaceholder}
         />
     </div>
 </section>

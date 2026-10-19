@@ -209,6 +209,76 @@ const canonicalOgImage = ogImage
 			<FooterServicesUs />
 		</div>
 		<VideoTestimonialModal />
+
+		<!-- Asegurar que el modal de video principal esté en document.body para centrarse perfectamente en el viewport de US y que la X funcione siempre -->
+		<script is:inline>
+			function closePrincipalModal() {
+				const modal = document.getElementById("videoModal");
+				const player = document.getElementById("player");
+				if (modal) modal.style.display = "none";
+				if (player) player.innerHTML = "";
+				document.body.style.overflow = "auto";
+			}
+
+			function ensureVideoModalInBody() {
+				const modal = document.getElementById("videoModal");
+				const testimonialModal = document.getElementById("videoTestimonialModal");
+				if (modal && modal.parentElement !== document.body) {
+					if (testimonialModal && testimonialModal.parentElement === document.body) {
+						document.body.insertBefore(modal, testimonialModal);
+					} else {
+						document.body.appendChild(modal);
+					}
+				}
+			}
+
+			if (document.readyState === "loading") {
+				document.addEventListener("DOMContentLoaded", ensureVideoModalInBody);
+			} else {
+				ensureVideoModalInBody();
+			}
+
+			// Manejo de eventos de clic para abrir y cerrar el modal
+			document.addEventListener("click", function(e) {
+				const target = e.target;
+				if (!target) return;
+
+				// Abrir: asegurar que esté en el body antes de abrir
+				if (target.closest("#openVideoModal") || target.id === "openVideoModal" || target.closest(".play-button")) {
+					ensureVideoModalInBody();
+				}
+
+				// Cerrar: clic en la X de videoModal o su icono
+				if (target.closest("#videoModal .close-modal")) {
+					e.preventDefault();
+					e.stopPropagation();
+					closePrincipalModal();
+					return;
+				}
+
+				// Cerrar: clic en el botón de acción dentro del modal
+				if (target.closest("#videoModal #modalCtaBtn")) {
+					closePrincipalModal();
+					return;
+				}
+
+				// Cerrar: clic en el fondo oscuro fuera del contenido del videoModal
+				if (target.id === "videoModal") {
+					closePrincipalModal();
+					return;
+				}
+			}, true);
+
+			// Cerrar con tecla Escape
+			document.addEventListener("keydown", function(e) {
+				if (e.key === "Escape") {
+					const modal = document.getElementById("videoModal");
+					if (modal && modal.style.display === "block") {
+						closePrincipalModal();
+					}
+				}
+			});
+		</script>
 	</body>
 </html>
 
@@ -399,6 +469,35 @@ const canonicalOgImage = ogImage
 
 	.fade-in-section.is-visible {
 		opacity: 1;
-		transform: translateY(0);
+		transform: none !important;
+		will-change: auto !important;
+	}
+
+	/* Modal de video centrado en el viewport */
+	#videoModal.modal-overlay {
+		position: fixed !important;
+		top: 0 !important;
+		left: 0 !important;
+		width: 100vw !important;
+		height: 100vh !important;
+		z-index: 999999 !important;
+	}
+
+	#videoModal .modal-content {
+		position: relative !important;
+		margin: 0 auto !important;
+		top: 50% !important;
+		transform: translateY(-50%) !important;
+		max-height: 90vh !important;
+	}
+
+	#videoModal .close-modal {
+		z-index: 1000000 !important;
+		cursor: pointer !important;
+		pointer-events: auto !important;
+	}
+
+	#videoModal .close-modal * {
+		pointer-events: auto !important;
 	}
 </style>

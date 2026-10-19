@@ -28,6 +28,11 @@ const heroProps = {
 	buttonHref2: "#how-it-works",
 	showPedro: false,
 
+	// Props del Modal de Video ("See How It Works")
+	modalTitle: "Ready to expand your team in Latin America?",
+	modalDescription: "A specialist will explain how our remote staffing solutions help U.S. companies hire faster and reduce overhead.",
+	modalBtnText: "Schedule a free consultation",
+
 	// Variables para los elementos flotantes (Hero Cards)
 	card1Name: "Juan Escobar",
 	card1Role: "SEO Specialist",
@@ -455,6 +460,9 @@ const mentionsList = [
 	ogImage={ogImage}
 	title="Remote Staffing Agency for U.S. Companies | Oberstaff"
 	description="Cut your corporate overhead by up to 70% by leveraging a premier remote staffing agency that connects US companies with top South American talent."
+	modalTitle={heroProps.modalTitle}
+	modalDescription={heroProps.modalDescription}
+	modalBtnText={heroProps.modalBtnText}
 >
 	<link rel="canonical" href="" slot="head" />
 	<link rel="alternate" hreflang="es-PR" href="" slot="head" />

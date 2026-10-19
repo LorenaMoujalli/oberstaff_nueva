@@ -9,9 +9,10 @@ interface Props {
     avatar?: string;
     videoId?: string;
     imageAlt?: string;
+    videoBtnText?: string;
 }
 
-const { stars, text, author, role, avatar, videoId, imageAlt } = Astro.props;
+const { stars, text, author, role, avatar, videoId, imageAlt, videoBtnText = "Ver testimonio en vídeo →" } = Astro.props;
 
 const isPrPage = Astro.url.pathname.startsWith('/pr') || Astro.url.pathname.includes('/pr/');
 const isSpainPage = !isPrPage;
@@ -51,7 +52,7 @@ const formattedText = isSpainPage
 
     {videoId && (
         <button type="button" class="video-link open-testimonial-video" data-video-id={videoId}>
-            Ver testimonio en vídeo →
+            {videoBtnText}
         </button>
     )}
 </div>

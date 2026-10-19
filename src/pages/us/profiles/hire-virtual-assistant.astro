@@ -163,9 +163,9 @@ const otrosServiciosProps = {
     description="Talento remoto de LATAM, español nativo y hasta un 70% de ahorro para empresas en España que buscan contratar un asistente virtual. Consulta gratuita."
     footerTitle="Roles relacionados"
     footerLinks={[
-        { text: "💰 Contratar contable remoto", href: "" },
-        { text: "📱 Community Manager", href: "" },
-        { text: "🔍 Experto SEO", href: "" },
+        { text: "💰 Bookkeeper", href: "/us/profiles/hire-bookkeeper" },
+        { text: "📱 Community Manager", href: "/us/profiles/hire-community-manager" },
+        { text: "🔍 SEO expert", href: "/us/profiles/hire-seo-expert" },
     ]}
   
 >
@@ -656,8 +656,8 @@ const otrosServiciosProps = {
     <div class="service-detail-container" id="inicio">
         <LeadHeroSection
             webhookUrl=""
-            formName="Perfil Asistente Virtual España"
-            pais="España"
+            formName="Virtual Assistant Profile U.S."
+            pais="United States"
             topLabel=""
             topLabelInsideH1={true}
             title="Hire a Virtual Assistant for Your U.S. Business"
@@ -668,6 +668,14 @@ const otrosServiciosProps = {
             buttonSubtext="↳ It takes less than 1 minute · no commitment"
             footerLinkText="Learn how Oberstaff's remote staffing model works for U.S. companies →"
             footerLinkHref=""
+            placeholderName="Full name *"
+            placeholderEmail="Corporate email *"
+            placeholderCompany="Company name *"
+            placeholderPhone="Phone number *"
+            smsConsentText={`<strong>By providing your phone number</strong>, you agree to receive customer support SMS messages from <strong>Oberstaff<span style="color: #FF66CC;">.</span></strong> Message frequency may vary. Standard message and data rates may apply. Reply STOP to cancel subscription. Reply HELP for help. <a href="/politica-de-privacidad-y-cookies-de-oberstaff" target="_blank" class="consent-link" style="color: #6663FD; text-decoration: underline;">Privacy policy and cookie usage.</a> <span class="required-star" style="color: #ef4444; font-weight: 700; margin-left: 2px;">*</span>`}
+            captchaLabel="Verification code"
+            captchaHint="Enter the characters shown in the image"
+            captchaPlaceholder="Enter code"
             badges={[
                 // { text: "Talento 100 % enfocado en tu negocio", icon: "🎯" },
                 // { text: "Evaluados previamente en soporte administrativo", icon: "📋" },
@@ -1097,6 +1105,7 @@ const otrosServiciosProps = {
                 cardTitle="All-Inclusive"
                 titleTag="p"
                 cardSubtitle=""
+                labelAbove={true}
                 priceLabel="Starting from"
                 priceAmount="$820"
                 pricePeriod="/month USD"
@@ -1212,6 +1221,8 @@ const otrosServiciosProps = {
             <CasosExitoSection
                 title="Companies that already trust <span style='color:#1b1b1b; font-weight:800;'>Oberstaff<span style='color: #FF66CC; font-weight:800;''>.</span></span>"
                 subtitle=""
+                columns={3}
+                videoBtnText="Watch video testimonial →"
                 testimonials={[
                   {
                         stars: 5,
@@ -1272,6 +1283,13 @@ const otrosServiciosProps = {
                 noteText="Note: It takes less than 1 minute to fill out"
                 formName="U.S. Virtual Assistant Profile"
                 pais="United States"
+                placeholderName="Full name *"
+                placeholderCompany="Company name *"
+                placeholderEmail="Email *"
+                placeholderPhone="Phone number *"
+                captchaLabel="Verification code"
+                captchaHint="Enter the characters shown in the image"
+                captchaPlaceholder="Enter code"
             />
         </div>
 
@@ -1318,6 +1336,28 @@ const otrosServiciosProps = {
             background-color: #fafafc !important;
 
             padding-bottom: 80px !important;
+        }
+
+        :global(.perfiles-grid.grid-modern) {
+            display: flex !important;
+            flex-wrap: wrap !important;
+            justify-content: center !important;
+            gap: 20px !important;
+        }
+
+        :global(.perfiles-grid.grid-modern .perfil-card) {
+            flex: 0 1 calc(50% - 10px) !important;
+            width: calc(50% - 10px) !important;
+            max-width: calc(50% - 10px) !important;
+            box-sizing: border-box !important;
+        }
+
+        @media (max-width: 640px) {
+            :global(.perfiles-grid.grid-modern .perfil-card) {
+                flex: 0 1 100% !important;
+                width: 100% !important;
+                max-width: 100% !important;
+            }
         }
 
         :global(.guia-cards-grid:has(> .guia-card:nth-child(3):last-child) .guia-card:nth-child(3)) {
@@ -1400,10 +1440,5 @@ const otrosServiciosProps = {
             font-weight: 700;
             line-height: 1.4;
         }
-
-        .service-detail-container :global(.guia-cards-grid .guia-card:nth-child(5)) {
-    grid-column: 1 / -1;
-}
-
     </style>
 </DashboardProfilesUs>

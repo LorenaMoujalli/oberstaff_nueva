@@ -73,6 +73,7 @@ const privacyPolicyUrl = isPrPage
 const finalCaptchaLabel = captchaLabel || labels?.captchaLabel || "Código de verificación";
 const finalCaptchaHint = captchaHint || labels?.captchaHint || "Ingresa el texto que ves en la imagen";
 const finalCaptchaPlaceholder = captchaPlaceholder || placeholders?.captcha || "Escribe el código";
+const finalSmsConsentText = smsConsentText || labels?.smsConsentText;
 ---
 
 <!-- intl-tel-input library -->
@@ -137,8 +138,8 @@ const finalCaptchaPlaceholder = captchaPlaceholder || placeholders?.captcha || "
                     class="consent-checkbox"
                     required
                 />
-                {smsConsentText ? (
-                    <span class="consent-text" set:html={smsConsentText} />
+                {finalSmsConsentText ? (
+                    <span class="consent-text" set:html={finalSmsConsentText} />
                 ) : (
                     <span class="consent-text">
                         <strong>Al facilitar su número de teléfono</strong>, aceptas recibir mensajes SMS relacionados con atención al cliente de <strong>Oberstaff<span style="color: #FF66CC;">.</span></strong>
